@@ -1,0 +1,53 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {evaluateCell} from '../core/formulas.mjs';
+const calc=(formula,cells={})=>evaluateCell({...cells,Z99:{value:'='+formula}},'Z99');
+test('conditional aggregates support comparison criteria and escaped wildcards',()=>{
+ const cells={A1:{value:'North'},A2:{value:'South'},A3:{value:'north'},A4:{value:'N*'},B1:{value:'10'},B2:{value:'20'},B3:{value:'30'},B4:{value:'40'}};
+ assert.equal(calc('SUMIF(A1:A4,"north",B1:B4)',cells),40);
+ assert.equal(calc('COUNTIF(B1:B4,">=20")',cells),3);
+ assert.equal(calc('COUNTIF(A1:A4,"N*")',cells),3);
+ assert.equal(calc('COUNTIF(A1:A4,"N~*")',cells),1);
+ assert.equal(calc('AVERAGEIF(A1:A4,"north",B1:B4)',cells),20);
+ assert.equal(calc('SUMIFS(B1:B4,A1:A4,"north",B1:B4,">15")',cells),30);
+ assert.equal(calc('COUNTIFS(A1:A4,"north",B1:B4,">15")',cells),1);
+ assert.equal(calc('AVERAGEIF(A1:A4,"west",B1:B4)',cells),'#DIV/0!');
+ assert.equal(calc('SUMIFS(B1:B4,A1:A3,"north")',cells),'#VALUE!');
+ assert.equal(calc('COUNTIF(A1,"'+('*a'.repeat(24))+'b")',{A1:{value:'a'.repeat(100)}}),0);
+});
+test('text formulas compose with concatenation and preserve case',()=>{
+ assert.equal(calc('UPPER(TRIM("  good   work  "))&"!"'),'GOOD WORK!');
+ assert.equal(calc('LEFT("Arkemis",3)&RIGHT("Arkemis",3)'),'Arkmis');
+ assert.equal(calc('MID("Arkemis",2,3)'),'rke');
+ assert.equal(calc('LEN("Hello")'),5);
+ assert.equal(calc('LOWER("GRID")'),'grid');
+ assert.equal(calc('SUBSTITUTE("a-b-a","a","c",2)'),'a-b-c');
+ assert.equal(calc('CONCAT("a","b",12)'),'ab12');
+ assert.equal(calc('LEFT("hi",-1)'),'#VALUE!');
+ assert.equal(calc('LEN(A1)',{A1:{value:'#hashtag',valueType:'text'}}),8);
+ assert.equal(calc('LEN(A1)',{A1:{value:'="#REF!"'}}),5);
+ assert.equal(calc('SUM("2",3)'),5);
+ assert.equal(calc('SUM(A1,3)',{A1:{value:'2',valueType:'text'}}),3);
+ assert.equal(calc('CONCAT(A1,A1)',{A1:{value:'x'.repeat(20000)}}),'#VALUE!');
+ assert.equal(calc('A1&A1',{A1:{value:'x'.repeat(20000)}}),'#VALUE!');
+ assert.equal(calc('SUBSTITUTE(A1,"x",A2)',{A1:{value:'x'.repeat(1000)},A2:{value:'y'.repeat(100)}}),'#VALUE!');
+});
+test('IFERROR lazily evaluates fallback and boolean functions work',()=>{
+ assert.equal(calc('IFERROR(1/0,42)'),42);
+ assert.equal(calc('IFERROR(7,1/0)'),7);
+ assert.equal(calc('IFERROR(UNKNOWN(3),"missing")'),'missing');
+ assert.equal(calc('AND(1,2,0)'),0);
+ assert.equal(calc('OR(0,1)'),1);
+ assert.equal(calc('NOT(0)'),1);
+ assert.equal(calc('IF(AND(2>1,3<4),"yes","no")'),'yes');
+});
+test('numeric functions handle negative values and text cells in aggregates',()=>{
+ assert.equal(calc('INT(-1.2)'),-2);
+ assert.equal(calc('MOD(-3,2)'),1);
+ assert.equal(calc('ROUNDUP(-1.21,1)'),-1.3);
+ assert.equal(calc('ROUNDDOWN(-1.29,1)'),-1.2);
+ assert.equal(calc('SQRT(81)'),9);
+ assert.equal(calc('SQRT(-1)'),'#NUM!');
+ assert.equal(calc('SUM(A1:A2)',{A1:{value:'10',valueType:'text'},A2:{value:'5'}}),5);
+ assert.equal(calc('COUNT(A1:A2)',{A1:{value:'10',valueType:'text'},A2:{value:'5'}}),1);
+});

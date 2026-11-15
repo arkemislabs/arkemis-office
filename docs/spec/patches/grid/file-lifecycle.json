@@ -1,0 +1,29 @@
+{
+  "dialogs": {
+    "dialog.saveChanges": {
+      "title": "Grid",
+      "command": "file.close",
+      "note": "Office: Excel's message box \"Do you want to save the changes you made to <name>?\" with Save / Don't Save / Cancel (gridcraft show.rs:293); the text comes from core/common/commands/file.mjs saveChangesText.",
+      "tabs": [{"name": "", "fields": [{"id": "message", "label": "Do you want to save the changes you made to <title>?", "kind": "message", "source": "upstream"}]}],
+      "buttons": ["Save", "Don't Save", "Cancel"]
+    },
+    "dialog.open": {
+      "command": null,
+      "system": true,
+      "note": "The system Open dialog (gridcraft files.rs services.pick_open): file.open asks main for it (electron/main.cjs studio:file-pick-open); no in-app dialog."
+    },
+    "dialog.saveAs": {
+      "command": null,
+      "system": true,
+      "note": "The system Save As dialog (gridcraft backstage.rs:700, native picker): file.saveAs asks main for it (electron/main.cjs studio:file-pick-save); no in-app dialog."
+    },
+    "dialog.start": {
+      "command": null,
+      "note": "Excel's Start screen is File > Home (src/shell/backstage/pages.tsx HomePage: Blank workbook + Recent); the template gallery is not translated yet."
+    },
+    "dialog.openPassword": {
+      "command": null,
+      "note": "Opening password-protected workbooks is not translated yet (the format worker cannot decrypt them); the dialog stays hidden until it is."
+    }
+  }
+}

@@ -1,0 +1,148 @@
+{
+ "controls": {
+  "alltools.standards.save-as-pdf-a": {
+   "command": null,
+   "dialog": "dialog.pdfa",
+   "note": "printcraft crates/preflight and crates/ui-egui/src/dialogs/standards_ui.rs at 8f16855 (commands/standards.mjs). Verify, then Save as PDF/A-2b or -3b; a pass lists what was not checked."
+  },
+  "convert.other.pdfa": {
+   "command": null,
+   "dialog": "dialog.pdfa",
+   "note": "printcraft crates/preflight and crates/ui-egui/src/dialogs/standards_ui.rs at 8f16855 (commands/standards.mjs). Verify, then Save as PDF/A-2b or -3b; a pass lists what was not checked."
+  },
+  "alltools.standards.preflight": {
+   "command": null,
+   "dialog": "dialog.preflight",
+   "note": "printcraft crates/preflight and crates/ui-egui/src/dialogs/standards_ui.rs at 8f16855 (commands/standards.mjs). The PDF/A profiles; the other profiles are not checked against upstream."
+  },
+  "alltools.print_production.preflight": {
+   "command": null,
+   "dialog": "dialog.preflight",
+   "note": "printcraft crates/preflight and crates/ui-egui/src/dialogs/standards_ui.rs at 8f16855 (commands/standards.mjs). The PDF/A profiles; the other profiles are not checked against upstream."
+  },
+  "alltools.standards.save-as-pdf-ua": {
+   "command": null,
+   "dialog": "dialog.preflight",
+   "args": {
+    "profile": "pdfua-1"
+   },
+   "label": "Check PDF/UA",
+   "note": "Saving as PDF/UA is not possible here: nothing can make a document conform. Not checked against upstream (it has none): follows ISO 14289-1 / ISO 15930-7 for the points that can be read from the objects, says which it does not check, and never says the document conforms. Opens Preflight on its profile.",
+   "icon": "file-check"
+  },
+  "alltools.standards.save-as-pdf-x": {
+   "command": null,
+   "dialog": "dialog.preflight",
+   "args": {
+    "profile": "pdfx-4"
+   },
+   "label": "Check PDF/X",
+   "note": "Converting to PDF/X is not possible here (it needs colour conversion to the output condition). Not checked against upstream (it has none): follows ISO 14289-1 / ISO 15930-7 for the points that can be read from the objects, says which it does not check, and never says the document conforms. Opens Preflight on its profile.",
+   "icon": "file-check"
+  },
+  "convert.other.pdfx": {
+   "command": null,
+   "dialog": "dialog.preflight",
+   "args": {
+    "profile": "pdfx-4"
+   },
+   "label": "Check PDF/X",
+   "note": "Converting to PDF/X is not possible here (it needs colour conversion to the output condition). Not checked against upstream (it has none): follows ISO 14289-1 / ISO 15930-7 for the points that can be read from the objects, says which it does not check, and never says the document conforms. Opens Preflight on its profile.",
+   "icon": "file-check"
+  },
+  "alltools.print_production.output-preview": {
+   "command": null,
+   "dialog": "dialog.output-preview",
+   "note": "Not checked against upstream (it has none): the inks, colour spaces and warnings read from the objects; the page is not simulated."
+  },
+  "rail.panels.standards": {
+   "command": "standards.panel",
+   "args": null,
+   "note": "The standards the document declares and the checks one click away (panes/standards.tsx)."
+  }
+ },
+ "dialogs": {
+  "dialog.pdfa": {
+   "tabs": [
+    {
+     "name": "General",
+     "fields": [
+      {
+       "id": "level",
+       "label": "Conformance level:",
+       "kind": "select",
+       "options": [
+        "PDF/A-2b",
+        "PDF/A-3b"
+       ]
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "Close"
+   ],
+   "note": "printcraft offers PDF/A-2b and PDF/A-3b; the body (declared conformance, the problems, Verify, Save as PDF/A) is src/apps/folio/dialogs/pdfa.tsx."
+  },
+  "dialog.preflight": {
+   "tabs": [
+    {
+     "name": "General",
+     "fields": [
+      {
+       "id": "profile",
+       "label": "Profile:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "pdfa-2b",
+         "label": "PDF/A-2b compliance (verify)"
+        },
+        {
+         "value": "pdfa-3b",
+         "label": "PDF/A-3b compliance (verify)"
+        },
+        {
+         "value": "pdfua-1",
+         "label": "PDF/UA-1 (partial check)"
+        },
+        {
+         "value": "pdfx-4",
+         "label": "PDF/X-4 (partial check)"
+        },
+        {
+         "value": "fonts",
+         "label": "Fonts that are not embedded"
+        },
+        {
+         "value": "colour",
+         "label": "Colour and inks"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "Close"
+   ]
+  },
+  "dialog.output-preview": {
+   "tabs": [
+    {
+     "name": "General",
+     "fields": [
+      {
+       "id": "note",
+       "label": "Simulation profile, separations and colour warnings are read from the document.",
+       "kind": "label"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "Close"
+   ]
+  }
+ }
+}

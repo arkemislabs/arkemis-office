@@ -1,0 +1,104 @@
+{
+  "tab": "insert",
+  "keytip": "N",
+  "source": "gridcraft 146161b4b450a56e5e59a083ba0478582d1e602b crates/ui-egui/src/ribbon/insert.rs (insert: PivotTable/Table, Pictures/Shapes/Icons, Recommended Charts large + two rows of three chart-type icon menus, Slicer, Sparklines, Checkbox, Link, Comment, Text Box, Header & Footer, Symbol all large); keytips from crates/ui-egui/src/keytips/keytips.json; Recommended PivotTables, 3D Models/SmartArt/Screenshot, Add-ins, Maps, PivotChart, Tours, Timeline, WordArt/Signature Line/Object and Equation placed as in Excel for Windows",
+  "groups": {
+    "tables": {
+      "collapseOrder": 13,
+      "layout": [
+        {"large": "insert.tables.pivotTable"},
+        {"large": "insert.tables.recommendedPivotTables"},
+        {"large": "insert.tables.table"}
+      ]
+    },
+    "illustrations": {
+      "collapseOrder": 11,
+      "layout": [
+        {"large": "insert.illustrations.pictures"},
+        {"large": "insert.illustrations.shapes"},
+        {"large": "insert.illustrations.icons"},
+        {"stack": ["insert.illustrations.3dModels", "insert.illustrations.smartArt", "insert.illustrations.screenshot"]}
+      ]
+    },
+    "add-ins": {
+      "collapseOrder": 2,
+      "layout": [
+        {"stack": ["insert.addins.get", "insert.addins.my"]}
+      ]
+    },
+    "charts": {
+      "collapseOrder": 12,
+      "layout": [
+        {"large": "insert.charts.recommended"},
+        {"rows": [
+          ["insert.charts.columnBar", "insert.charts.lineArea", "insert.charts.pieDoughnut"],
+          ["insert.charts.scatterBubble", "insert.charts.statistic", "insert.charts.hierarchy"]
+        ]},
+        {"large": "insert.charts.maps"},
+        {"large": "insert.charts.pivotChart"}
+      ]
+    },
+    "tours": {
+      "collapseOrder": 1,
+      "layout": [
+        {"large": "insert.tours.3dMap"}
+      ]
+    },
+    "sparklines": {
+      "collapseOrder": 8,
+      "layout": [
+        {"large": "insert.sparklines.sparklines"}
+      ]
+    },
+    "filters": {
+      "collapseOrder": 7,
+      "layout": [
+        {"large": "insert.filters.slicer"},
+        {"large": "insert.filters.timeline"}
+      ]
+    },
+    "cell-controls": {
+      "collapseOrder": 3,
+      "layout": [
+        {"large": "insert.cellControls.checkbox"}
+      ]
+    },
+    "links": {
+      "collapseOrder": 6,
+      "layout": [
+        {"large": "insert.links.link"}
+      ]
+    },
+    "comments": {
+      "collapseOrder": 5,
+      "layout": [
+        {"large": "insert.comments.comment"}
+      ]
+    },
+    "text": {
+      "collapseOrder": 10,
+      "layout": [
+        {"large": "insert.text.textBox"},
+        {"large": "insert.text.headerFooter"},
+        {"stack": ["insert.text.wordArt", "insert.text.signatureLine", "insert.text.object"]}
+      ]
+    },
+    "symbols": {
+      "collapseOrder": 4,
+      "layout": [
+        {"large": "insert.symbols.equation"},
+        {"large": "insert.symbols.symbol"}
+      ]
+    }
+  },
+  "keytips": {
+    "insert.tables.pivotTable": "V", "insert.tables.recommendedPivotTables": "SP", "insert.tables.table": "T",
+    "insert.illustrations.pictures": "P", "insert.illustrations.shapes": "SH", "insert.illustrations.icons": "NS", "insert.illustrations.screenshot": "SC",
+    "insert.charts.recommended": "R", "insert.charts.columnBar": "C1", "insert.charts.lineArea": "N1", "insert.charts.pieDoughnut": "Q",
+    "insert.charts.scatterBubble": "D", "insert.charts.statistic": "SA", "insert.charts.hierarchy": "HI", "insert.charts.maps": "M2", "insert.charts.pivotChart": "SZ",
+    "insert.sparklines.sparklines": "ZK", "insert.filters.slicer": "SF", "insert.filters.timeline": "ST", "insert.cellControls.checkbox": "CB",
+    "insert.links.link": "I2", "insert.comments.comment": "C2",
+    "insert.text.textBox": "X", "insert.text.headerFooter": "HF", "insert.text.wordArt": "W", "insert.text.object": "J",
+    "insert.symbols.equation": "E", "insert.symbols.symbol": "U"
+  }
+}

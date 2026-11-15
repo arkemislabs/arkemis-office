@@ -1,0 +1,84 @@
+{
+ "controls": {
+  "quick.bar.select": {
+   "command": "tool.select",
+   "note": "printcraft canvas/bars.rs quick_bar: sets QuickTool::Select (src/apps/folio/ui-commands/surface.ts tool.select; design note F-folio--layout-quick-tools--select-hand-highlighter)."
+  },
+  "quick.bar.hand": {
+   "command": "tool.hand",
+   "note": "printcraft canvas/bars.rs quick_bar: sets QuickTool::Hand (src/apps/folio/ui-commands/surface.ts tool.hand)."
+  },
+  "rail.panels.pages": {
+   "args": {
+    "panel": "pages"
+   }
+  },
+  "rail.panels.bookmarks": {
+   "args": {
+    "panel": "bookmarks"
+   }
+  },
+  "rail.panels.layers": {
+   "command": "layers.panel",
+   "args": null,
+   "note": "printcraft chrome.rs rail: Layers; the panel lists the document's layers with an eye each (panes/layers.tsx)."
+  },
+  "rail.panels.attachments": {
+   "command": "attachments.panel",
+   "args": null,
+   "note": "printcraft chrome.rs rail: Attachments; the panel lists the files attached to the document and its comments (panes/attachments.tsx)."
+  },
+  "rail.panels.destinations": {
+   "command": null,
+   "note": "view.panel {\"panel\":\"destinations\"}: no Destinations panel yet, so the toggle is pending."
+  },
+  "rail.panels.content": {
+   "command": null,
+   "note": "view.panel {\"panel\":\"content\"}: no Content panel yet, so the toggle is pending."
+  },
+  "rail.panels.articles": {
+   "command": null,
+   "note": "view.panel {\"panel\":\"articles\"}: no Articles panel yet, so the toggle is pending."
+  },
+  "rail.panels.model-tree": {
+   "command": null,
+   "note": "view.panel {\"panel\":\"model-tree\"}: no Model Tree panel yet, so the toggle is pending."
+  },
+  "rail.nav.zoom-in": {
+   "command": "view.zoomIn",
+   "note": "printcraft chrome.rs right_rail: view.zoom_step(true), the next of Acrobat's zoom steps (core/common/commands/view.mjs view.zoomIn, PDF steps)."
+  },
+  "rail.nav.zoom-out": {
+   "command": "view.zoomOut",
+   "note": "printcraft chrome.rs right_rail: view.zoom_step(false) (core/common/commands/view.mjs view.zoomOut)."
+  },
+  "rail.nav.zoom-input": {
+   "command": "view.zoom",
+   "args": {
+    "value": "<percent>"
+   },
+   "note": "printcraft chrome.rs:620: type a percentage and press Enter (view.set_zoom; core/common/commands/view.mjs view.zoom, PDF 8–6400%)."
+  },
+  "rail.nav.next-page": {
+   "command": "view.step_page",
+   "args": {
+    "forward": true
+   },
+   "note": "printcraft chrome.rs:640 view.step_page(true) (src/apps/folio/ui-commands/surface.ts)."
+  },
+  "rail.nav.previous-page": {
+   "command": "view.step_page",
+   "args": {
+    "forward": false
+   },
+   "note": "printcraft chrome.rs:643 view.step_page(false)."
+  },
+  "organize.grid.close": {
+   "command": "page.organize",
+   "args": {
+    "open": false
+   },
+   "note": "printcraft canvas/organize.rs organize_toolbar: Close sets view.organize = false (Back to the document)."
+  }
+ }
+}

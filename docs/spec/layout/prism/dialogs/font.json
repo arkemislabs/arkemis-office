@@ -1,0 +1,48 @@
+{
+  "source": "deckcraft crates/ui-egui/src/dialogs/font.rs (min width 460, the AaBbCcDd sample under the fields) at f893f6af7d36a5409fd804e81a34fd895cfefedf; PowerPoint Font dialog (Font / Character Spacing pages: Latin text font, Font style, Size in a row; Font color, Underline style; Effects)",
+  "width": 520,
+  "height": 430,
+  "sections": [
+    {
+      "fields": [
+        "family",
+        "style",
+        "size"
+      ],
+      "columns": 3
+    },
+    {
+      "title": "All text",
+      "fields": [
+        "color",
+        "underline"
+      ],
+      "columns": 2
+    },
+    {
+      "title": "Effects",
+      "fields": [
+        "strikeSingle",
+        "smallCaps",
+        "strikeDouble",
+        "allCaps",
+        "superscript",
+        "subscript",
+        "offset"
+      ],
+      "columns": 2
+    },
+    {
+      "fields": [
+        "spacingPreset",
+        "spacing"
+      ],
+      "columns": 2
+    },
+    {
+      "fields": [
+        "preview"
+      ]
+    }
+  ]
+}

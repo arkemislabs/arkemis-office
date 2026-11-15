@@ -1,0 +1,16 @@
+{
+ "controls": {
+  "alltools.compare.select-files-to-compare": {"dialog": null, "note": "printcraft commands.rs:226 opens the Compare Files dialog to pick the older version among the open documents. This window has no other open documents to pick from, so the older version is a file: the system Open dialog."},
+  "compare.show": {
+   "kind": "dropdown", "label": "Show", "options": null, "command": "compare.show", "valueLabel": true,
+   "items": [{"id": "compare.show.text", "label": "Text", "command": "compare.show", "args": {"what": "text"}}],
+   "note": "Show: Text lists and shades the text differences. The Visual choice (page against page, rendering both files) is not translated, so it is not offered."
+  },
+  "compare.side-by-side": {"command": null, "note": "Hidden: upstream puts the old file's tab beside the new file's. The older version is read from a file here and is not open in a tab, so the new file shows alone."},
+  "compare.new-only": {"command": null, "note": "Hidden with Side by side: the new file alone is how the comparison shows here."},
+  "compare.mark": {"command": "compare.mark"},
+  "compare.report": {"command": "compare.report", "dialog": null, "note": "printcraft opens the report as a new tab; here it is saved as a PDF (the system Save dialog)."},
+  "compare.clear": {"command": "compare.clear"},
+  "compare.filter": {"command": null, "note": "Hidden: Acrobat's Filter (text, images, annotations, formatting, background) is not in printcraft, which compares text only."}
+ }
+}

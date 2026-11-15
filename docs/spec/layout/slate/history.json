@@ -1,0 +1,55 @@
+{
+  "tab": "history",
+  "keytip": "S",
+  "source": "office: OneNote for Microsoft 365, History tab (Slate has no ArtCraft upstream; architecture section 1)",
+  "groups": {
+    "unread": {
+      "collapseOrder": 3,
+      "collapsedIcon": "arrow-unread",
+      "layout": [
+        {
+          "large": "history.unread.next-unread"
+        },
+        {
+          "large": "history.unread.mark-as-read"
+        }
+      ]
+    },
+    "authors": {
+      "collapseOrder": 2,
+      "collapsedIcon": "person-search",
+      "layout": [
+        {
+          "large": "history.authors.find-by-author"
+        },
+        {
+          "large": "history.authors.hide-authors"
+        }
+      ]
+    },
+    "history": {
+      "collapseOrder": 1,
+      "collapsedIcon": "clock-pages",
+      "layout": [
+        {
+          "large": "history.history.recent-edits"
+        },
+        {
+          "large": "history.history.page-versions"
+        },
+        {
+          "large": "history.history.notebook-recycle-bin"
+        }
+      ]
+    }
+  },
+  "keytips": {
+    "history.unread.next-unread": "N",
+    "history.unread.mark-as-read": "M",
+    "history.authors.find-by-author": "A",
+    "history.authors.hide-authors": "H",
+    "history.history.recent-edits": "R",
+    "history.history.page-versions": "V",
+    "history.history.notebook-recycle-bin": "B"
+  }
+}

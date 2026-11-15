@@ -1,0 +1,64 @@
+{
+  "dialogs": {
+    "dialog.font": {
+      "title": "Font",
+      "command": "format.set",
+      "note": "U:quill/format: Word's Font dialog (Font and Advanced tabs) over wordcraft ui-egui/src/dialogs/dispatch.rs:98 font_dialog and font.rs font_props/apply_font; OK sends only the properties that changed as one format.set. Set As Default and Text Effects… stay out until docDefaults editing and text effects are translated; Word's OpenType features (ligatures, number spacing/forms, stylistic sets, contextual alternates) stay out because the layout does not shape them.",
+      "tabs": [
+        {"name": "Font", "fields": [
+          {"id": "font", "label": "Font:", "kind": "combo", "note": "installed families, each in its own face; type to find"},
+          {"id": "fontStyle", "label": "Font style:", "kind": "select", "options": [
+            {"value": "regular", "label": "Regular"}, {"value": "italic", "label": "Italic"}, {"value": "bold", "label": "Bold"}, {"value": "boldItalic", "label": "Bold Italic"}]},
+          {"id": "size", "label": "Size:", "kind": "combo", "options": ["8", "9", "10", "10.5", "11", "12", "14", "16", "18", "20", "22", "24", "26", "28", "36", "48", "72"]},
+          {"id": "fontEastAsia", "label": "Asian text font:", "kind": "combo", "visibleWhen": "asian", "note": "shown when East Asian text is selected"},
+          {"id": "color", "label": "Font color:", "kind": "color", "options": ["Automatic"]},
+          {"id": "underlineStyle", "label": "Underline style:", "kind": "select", "options": [
+            {"value": "none", "label": "(none)"}, {"value": "words", "label": "Words only"}, {"value": "single", "label": "Single"},
+            {"value": "double", "label": "Double"}, {"value": "thick", "label": "Thick"}, {"value": "dotted", "label": "Dotted"},
+            {"value": "dash", "label": "Dashed"}, {"value": "dotDash", "label": "Dot-dash"}, {"value": "dotDotDash", "label": "Dot-dot-dash"},
+            {"value": "wave", "label": "Wave"}, {"value": "doubleWave", "label": "Double wave"}]},
+          {"id": "underlineColor", "label": "Underline color:", "kind": "color", "options": ["Automatic"], "enabledWhen": "underlineStyle!=none"},
+          {"id": "strike", "label": "Strikethrough", "kind": "checkbox"},
+          {"id": "doubleStrike", "label": "Double strikethrough", "kind": "checkbox"},
+          {"id": "superscript", "label": "Superscript", "kind": "checkbox"},
+          {"id": "subscript", "label": "Subscript", "kind": "checkbox"},
+          {"id": "smallCaps", "label": "Small caps", "kind": "checkbox"},
+          {"id": "allCaps", "label": "All caps", "kind": "checkbox"},
+          {"id": "hidden", "label": "Hidden", "kind": "checkbox"},
+          {"id": "shadow", "label": "Shadow", "kind": "checkbox"},
+          {"id": "outline", "label": "Outline", "kind": "checkbox"},
+          {"id": "emboss", "label": "Emboss", "kind": "checkbox"},
+          {"id": "engrave", "label": "Engrave", "kind": "checkbox"},
+          {"id": "preview", "label": "Preview", "kind": "preview"}
+        ]},
+        {"name": "Advanced", "fields": [
+          {"id": "scale", "label": "Scale:", "kind": "combo", "options": ["200%", "150%", "100%", "90%", "80%", "66%", "50%", "33%"], "note": "1% to 600%"},
+          {"id": "spacingType", "label": "Spacing:", "kind": "select", "options": [
+            {"value": "normal", "label": "Normal"}, {"value": "expanded", "label": "Expanded"}, {"value": "condensed", "label": "Condensed"}]},
+          {"id": "spacingBy", "label": "By:", "kind": "number", "unit": "pt", "min": 0, "max": 100, "step": 0.1},
+          {"id": "position", "label": "Position:", "kind": "select", "options": [
+            {"value": "normal", "label": "Normal"}, {"value": "raised", "label": "Raised"}, {"value": "lowered", "label": "Lowered"}]},
+          {"id": "positionBy", "label": "By:", "kind": "number", "unit": "pt", "min": 0, "max": 1584, "step": 0.5},
+          {"id": "kerning", "label": "Kerning for fonts:", "kind": "checkbox"},
+          {"id": "kerningAt", "label": "Points and above", "kind": "number", "unit": "pt", "min": 1, "max": 1638, "step": 0.5, "enabledWhen": "kerning"},
+          {"id": "previewAdvanced", "label": "Preview", "kind": "preview"}
+        ]}
+      ],
+      "buttons": ["OK", "Cancel"]
+    },
+    "dialog.enclose": {
+      "title": "Enclose Characters",
+      "command": "format.enclose",
+      "note": "U:quill/format: wordcraft ui-egui/src/dialogs/dispatch.rs:469 enclose_dialog (Style radios, Text up to 2 characters, Enclosure list, preview), Word's arrangement.",
+      "tabs": [{"name": "", "fields": [
+        {"id": "style", "label": "Style", "kind": "radio", "options": [
+          {"value": "none", "label": "None"}, {"value": "shrink", "label": "Shrink text"}, {"value": "enlarge", "label": "Enlarge symbol"}]},
+        {"id": "text", "label": "Text:", "kind": "text", "note": "one full-width or two half-width characters"},
+        {"id": "enclosure", "label": "Enclosure:", "kind": "list", "options": [
+          {"value": "circle", "label": "○  Circle"}, {"value": "square", "label": "□  Square"}, {"value": "triangle", "label": "△  Triangle"}, {"value": "diamond", "label": "◇  Diamond"}]},
+        {"id": "preview", "label": "Preview", "kind": "preview"}
+      ]}],
+      "buttons": ["OK", "Cancel"]
+    }
+  }
+}

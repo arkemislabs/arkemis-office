@@ -1,0 +1,23 @@
+{
+  "source": "Word Word Count (Statistics, Include textboxes, footnotes and endnotes, Close); wordcraft dispatch.rs:760",
+  "width": 380,
+  "height": 380,
+  "sections": [
+    {
+      "title": "Statistics:",
+      "fields": [
+        "pages",
+        "words",
+        "characters",
+        "charactersWithSpaces",
+        "paragraphs",
+        "lines"
+      ]
+    },
+    {
+      "fields": [
+        "includeTextBoxes"
+      ]
+    }
+  ]
+}

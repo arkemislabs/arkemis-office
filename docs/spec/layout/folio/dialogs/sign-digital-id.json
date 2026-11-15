@@ -1,0 +1,11 @@
+{
+  "source": "printcraft 3109bb2359759e24ef490e1cdbdba00722b20972 crates/ui-egui/src/tools/sign_ui/dialog.rs (Choose ID ▸ Configure ▸ Sign as with Back / Continue / Sign / Cancel); Acrobat Sign with a Digital ID",
+  "width": 620,
+  "height": 520,
+  "buttonsWhen": {
+    "back": {"step": ["configure", "sign"]},
+    "continue": {"step": ["choose", "configure"]},
+    "sign": {"step": ["sign"]}
+  },
+  "promote": ["continue"]
+}

@@ -1,0 +1,25 @@
+{
+  "controls": {
+    "home.clipboard.paste.picture": {
+      "command": null,
+      "note": "U:slate/clipboard: hidden. Paste as Picture needs an image from the system clipboard; the app's clipboard bridge carries text and HTML only, so there is no picture to paste."
+    },
+    "home.clipboard.paste.set-default-paste": {
+      "command": null,
+      "dialog": null,
+      "note": "U:slate/clipboard: hidden. Set Default Paste opens the Options dialog's Advanced page, which is not part of this app; Paste uses Keep Source Formatting and the Paste menu offers every other mode."
+    },
+    "home.tags.outlook-tasks": {
+      "note": "U:slate/home: hidden. Outlook Tasks creates tasks in Microsoft Outlook (and shows them in its to-do list); the app has no Outlook and no task service. To Do tags on the page do the same job locally."
+    },
+    "home.email.email-page": {
+      "note": "U:slate/home: hidden. Email Page sends the page through Outlook as a message; the app has no mail client to hand a message to and sends nothing on the person's behalf."
+    },
+    "home.meetings.meeting-details": {
+      "note": "U:slate/home: hidden. Meeting Details lists the person's Outlook calendar and writes a meeting into the page; the app has no calendar service (Insert > Date & Time stamps the page instead)."
+    },
+    "home.voice.dictate": {
+      "note": "U:slate/home: hidden. Dictate needs a speech recognition service and the microphone; this app has no speech engine of its own."
+    }
+  }
+}

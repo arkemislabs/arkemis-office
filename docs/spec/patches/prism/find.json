@@ -1,0 +1,121 @@
+{
+  "controls": {
+    "home.editing.find": {
+      "command": null,
+      "dialog": "dialog.find",
+      "note": "U:prism/find: deckcraft's app.find is a front-end request that opens the Find dialog (dialogs/find.rs); the control opens it directly until U:prism/app registers app.find (design note U-prism-find--U-prism-app--find-dialog)."
+    },
+    "home.editing.replace": {
+      "command": null,
+      "dialog": "dialog.find",
+      "note": "U:prism/find: deckcraft's app.replace opens the Find dialog in replace mode; until dialog models receive the opener's args (design note U-prism-find--integrator--dialog-init-args) it opens Find, where Replace… switches mode.",
+      "items": [
+        {
+          "label": "Replace…",
+          "command": null,
+          "dialog": "dialog.find",
+          "source": "upstream",
+          "sourceRef": "crates/ui-egui/src/ribbon/home.rs:463"
+        },
+        {
+          "label": "Replace Fonts…",
+          "command": "font.replace",
+          "dialog": "dialog.replaceFonts",
+          "source": "upstream",
+          "sourceRef": "crates/ui-egui/src/ribbon/home.rs:464"
+        }
+      ]
+    }
+  },
+  "dialogs": {
+    "dialog.find": {
+      "note": "U:prism/find: deckcraft dialogs/find.rs find_dialog. Find what, Replace with (replace mode), Match case, Find whole words only, then the buttons in a row (Find Next; Replace and Replace All in replace mode; Replace… switches to it), the status line; the dialog stays open while they run, the footer keeps Close. PowerPoint's Match half/full width forms has no engine support and stays hidden.",
+      "tabs": [
+        {
+          "name": "Find",
+          "fields": [
+            {
+              "id": "text",
+              "label": "Find what:",
+              "kind": "text",
+              "options": [],
+              "source": "upstream",
+              "sourceRef": "crates/ui-egui/src/dialogs/find.rs:6"
+            },
+            {
+              "id": "with",
+              "label": "Replace with:",
+              "kind": "text",
+              "options": [],
+              "visibleWhen": "replace == true",
+              "source": "upstream",
+              "sourceRef": "crates/ui-egui/src/dialogs/find.rs:19"
+            },
+            {
+              "id": "matchCase",
+              "label": "Match case",
+              "kind": "checkbox",
+              "options": [],
+              "source": "upstream",
+              "sourceRef": "crates/ui-egui/src/dialogs/find.rs:21"
+            },
+            {
+              "id": "wholeWords",
+              "label": "Find whole words only",
+              "kind": "checkbox",
+              "options": [],
+              "source": "upstream",
+              "sourceRef": "crates/ui-egui/src/dialogs/find.rs:22"
+            },
+            {
+              "id": "findNext",
+              "label": "Find Next",
+              "kind": "button",
+              "options": [],
+              "source": "upstream",
+              "sourceRef": "crates/ui-egui/src/dialogs/find.rs:31"
+            },
+            {
+              "id": "replace",
+              "label": "Replace",
+              "kind": "button",
+              "options": [],
+              "visibleWhen": "replace == true",
+              "source": "upstream",
+              "sourceRef": "crates/ui-egui/src/dialogs/find.rs:35"
+            },
+            {
+              "id": "replaceAll",
+              "label": "Replace All",
+              "kind": "button",
+              "options": [],
+              "visibleWhen": "replace == true",
+              "source": "upstream",
+              "sourceRef": "crates/ui-egui/src/dialogs/find.rs:48"
+            },
+            {
+              "id": "replaceMode",
+              "label": "Replace…",
+              "kind": "button",
+              "options": [],
+              "visibleWhen": "replace != true",
+              "source": "upstream",
+              "sourceRef": "crates/ui-egui/src/dialogs/find.rs:58"
+            },
+            {
+              "id": "status",
+              "label": "",
+              "kind": "label",
+              "options": [],
+              "source": "upstream",
+              "sourceRef": "crates/ui-egui/src/dialogs/find.rs:81"
+            }
+          ]
+        }
+      ],
+      "buttons": [
+        "Close"
+      ]
+    }
+  }
+}

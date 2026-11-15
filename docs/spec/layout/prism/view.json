@@ -1,0 +1,141 @@
+{
+  "tab": "view",
+  "keytip": "W",
+  "source": "deckcraft crates/ui-egui/src/ribbon/view.rs (view) @ f893f6af7d36a5409fd804e81a34fd895cfefedf; Color, Black and White, Window and Macros placed as PowerPoint",
+  "groups": {
+    "presentation-views": {
+      "collapseOrder": 7,
+      "collapsedIcon": "view-normal",
+      "layout": [
+        {
+          "large": "view.views.normal"
+        },
+        {
+          "large": "view.views.outline"
+        },
+        {
+          "large": "view.views.sorter"
+        },
+        {
+          "large": "view.views.notes-page"
+        },
+        {
+          "large": "view.views.reading"
+        }
+      ]
+    },
+    "master-views": {
+      "collapseOrder": 6,
+      "collapsedIcon": "slide-master",
+      "layout": [
+        {
+          "large": "view.masters.slide"
+        },
+        {
+          "large": "view.masters.handout"
+        },
+        {
+          "large": "view.masters.notes"
+        }
+      ]
+    },
+    "show": {
+      "collapseOrder": 5,
+      "collapsedIcon": "notes",
+      "layout": [
+        {
+          "stack": [
+            "view.show.ruler",
+            "view.show.gridlines",
+            "view.show.guides"
+          ]
+        },
+        {
+          "large": "view.show.notes"
+        }
+      ]
+    },
+    "zoom": {
+      "collapseOrder": 4,
+      "collapsedIcon": "magnifier",
+      "layout": [
+        {
+          "large": "view.zoom.zoom"
+        },
+        {
+          "large": "view.zoom.fit"
+        }
+      ]
+    },
+    "color-grayscale": {
+      "collapseOrder": 3,
+      "collapsedIcon": "grayscale",
+      "layout": [
+        {
+          "large": "view.color.color"
+        },
+        {
+          "large": "view.color.grayscale"
+        },
+        {
+          "large": "view.color.black-white"
+        },
+        {
+          "large": "view.color.dark-mode"
+        }
+      ]
+    },
+    "window": {
+      "collapseOrder": 2,
+      "collapsedIcon": "window-plus",
+      "layout": [
+        {
+          "large": "view.window.new"
+        },
+        {
+          "stack": [
+            "view.window.arrange-all",
+            "view.window.cascade",
+            "view.window.move-split"
+          ]
+        },
+        {
+          "large": "view.window.switch"
+        }
+      ]
+    },
+    "macros": {
+      "collapseOrder": 1,
+      "layout": [
+        {
+          "large": "view.macros.macros"
+        }
+      ]
+    }
+  },
+  "keytips": {
+    "view.views.normal": "L",
+    "view.views.outline": "PO",
+    "view.views.sorter": "I",
+    "view.views.notes-page": "T",
+    "view.views.reading": "D",
+    "view.masters.slide": "M",
+    "view.masters.handout": "H",
+    "view.masters.notes": "B",
+    "view.show.ruler": "R",
+    "view.show.gridlines": "G",
+    "view.show.guides": "U",
+    "view.show.notes": "N",
+    "view.zoom.zoom": "Q",
+    "view.zoom.fit": "J",
+    "view.color.color": "C",
+    "view.color.grayscale": "A",
+    "view.color.black-white": "K",
+    "view.window.new": "W",
+    "view.window.arrange-all": "Y",
+    "view.window.cascade": "E",
+    "view.window.move-split": "S",
+    "view.window.switch": "Z",
+    "view.macros.macros": "PM"
+  }
+}

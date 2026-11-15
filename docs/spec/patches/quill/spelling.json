@@ -1,0 +1,331 @@
+{
+  "contextMenus": {
+    "selection": {
+      "items": [
+        {
+          "label": "Suggestions",
+          "command": "review.applySuggestion",
+          "args": {
+            "text": "<suggestion>"
+          },
+          "kind": "list",
+          "dynamic": true,
+          "style": "strong",
+          "source": "upstream",
+          "sourceRef": "crates/ui-egui/src/canvas/context_menu.rs:51"
+        },
+        {
+          "label": "Ignore All",
+          "command": "review.ignoreAll",
+          "source": "upstream",
+          "sourceRef": "crates/ui-egui/src/canvas/context_menu.rs:51"
+        },
+        {
+          "label": "Add to Dictionary",
+          "command": "review.addToDictionary",
+          "source": "upstream",
+          "sourceRef": "crates/ui-egui/src/canvas/context_menu.rs:51"
+        },
+        {
+          "label": "Spelling…",
+          "command": "review.spelling",
+          "source": "office",
+          "sourceRef": "office:Microsoft Word › right-click menu on a misspelt word"
+        },
+        "-",
+        {
+          "label": "Cut",
+          "command": "edit.cut",
+          "icon": "cut",
+          "source": "upstream"
+        },
+        {
+          "label": "Copy",
+          "command": "edit.copy",
+          "icon": "copy",
+          "source": "upstream"
+        },
+        {
+          "label": "Paste",
+          "command": "edit.paste",
+          "icon": "paste",
+          "source": "upstream"
+        },
+        {
+          "label": "Keep Text Only",
+          "command": "edit.pasteText",
+          "icon": "paste-text-only",
+          "source": "upstream"
+        },
+        {
+          "label": "Merge Formatting",
+          "command": "edit.pasteMerge",
+          "icon": "paste-merge",
+          "source": "upstream"
+        },
+        {
+          "label": "Paste Special…",
+          "command": "edit.pasteSpecial",
+          "icon": "paste",
+          "source": "upstream"
+        },
+        {
+          "label": "Synonyms",
+          "source": "upstream",
+          "items": [
+            {
+              "label": "Synonym",
+              "command": "review.applySynonym",
+              "args": {
+                "text": "<synonym>"
+              },
+              "kind": "list",
+              "dynamic": true,
+              "source": "upstream"
+            },
+            {
+              "label": "Thesaurus…",
+              "command": "review.thesaurus",
+              "source": "upstream"
+            }
+          ]
+        },
+        "-",
+        {
+          "label": "Font…",
+          "dialog": "dialog.font",
+          "source": "upstream"
+        },
+        {
+          "label": "Paragraph…",
+          "dialog": "dialog.paragraph",
+          "source": "upstream"
+        },
+        {
+          "label": "Link…",
+          "dialog": "dialog.link",
+          "source": "upstream"
+        },
+        {
+          "label": "New Comment",
+          "command": "review.newComment",
+          "icon": "comment-plus",
+          "source": "upstream"
+        },
+        {
+          "label": "Search \"…\" (Smart Lookup)",
+          "command": null,
+          "source": "office"
+        },
+        {
+          "label": "Translate",
+          "command": null,
+          "source": "office"
+        },
+        {
+          "label": "Read Aloud",
+          "command": null,
+          "source": "office"
+        },
+        {
+          "label": "Bullets",
+          "icon": "bullets",
+          "source": "upstream",
+          "items": [
+            {
+              "header": "Bullet Library"
+            },
+            {
+              "label": "•",
+              "command": "para.bullets",
+              "args": {
+                "kind": "•"
+              },
+              "kind": "tile",
+              "source": "upstream"
+            },
+            {
+              "label": "○",
+              "command": "para.bullets",
+              "args": {
+                "kind": "○"
+              },
+              "kind": "tile",
+              "source": "upstream"
+            },
+            {
+              "label": "▪",
+              "command": "para.bullets",
+              "args": {
+                "kind": "▪"
+              },
+              "kind": "tile",
+              "source": "upstream"
+            },
+            {
+              "label": "◆",
+              "command": "para.bullets",
+              "args": {
+                "kind": "◆"
+              },
+              "kind": "tile",
+              "source": "upstream"
+            },
+            {
+              "label": "➢",
+              "command": "para.bullets",
+              "args": {
+                "kind": "➢"
+              },
+              "kind": "tile",
+              "source": "upstream"
+            },
+            {
+              "label": "✓",
+              "command": "para.bullets",
+              "args": {
+                "kind": "✓"
+              },
+              "kind": "tile",
+              "source": "upstream"
+            }
+          ]
+        },
+        {
+          "label": "Numbering",
+          "icon": "numbering",
+          "source": "upstream",
+          "items": [
+            {
+              "header": "Numbering Library"
+            },
+            {
+              "label": "1. 2. 3.",
+              "command": "para.numbering",
+              "args": {
+                "kind": "numbered"
+              },
+              "kind": "tile",
+              "source": "upstream"
+            },
+            {
+              "label": "1) 2) 3)",
+              "command": "para.numbering",
+              "args": {
+                "kind": "numberedParen"
+              },
+              "kind": "tile",
+              "source": "upstream"
+            },
+            {
+              "label": "I. II. III.",
+              "command": "para.numbering",
+              "args": {
+                "kind": "outline"
+              },
+              "kind": "tile",
+              "source": "upstream"
+            },
+            {
+              "label": "A. B. C.",
+              "command": "para.numbering",
+              "args": {
+                "kind": "upperLetter"
+              },
+              "kind": "tile",
+              "source": "upstream"
+            },
+            {
+              "label": "a) b) c)",
+              "command": "para.numbering",
+              "args": {
+                "kind": "lowerLetter"
+              },
+              "kind": "tile",
+              "source": "upstream"
+            },
+            {
+              "label": "i. ii. iii.",
+              "command": "para.numbering",
+              "args": {
+                "kind": "lowerRoman"
+              },
+              "kind": "tile",
+              "source": "upstream"
+            }
+          ]
+        },
+        {
+          "label": "Styles",
+          "source": "upstream",
+          "items": [
+            {
+              "label": "Normal",
+              "command": "para.style",
+              "args": {
+                "style": "Normal"
+              },
+              "source": "upstream"
+            },
+            {
+              "label": "No Spacing",
+              "command": "para.style",
+              "args": {
+                "style": "No Spacing"
+              },
+              "source": "upstream"
+            },
+            {
+              "label": "Heading 1",
+              "command": "para.style",
+              "args": {
+                "style": "Heading 1"
+              },
+              "source": "upstream"
+            },
+            {
+              "label": "Heading 2",
+              "command": "para.style",
+              "args": {
+                "style": "Heading 2"
+              },
+              "source": "upstream"
+            },
+            {
+              "label": "Heading 3",
+              "command": "para.style",
+              "args": {
+                "style": "Heading 3"
+              },
+              "source": "upstream"
+            },
+            {
+              "label": "Title",
+              "command": "para.style",
+              "args": {
+                "style": "Title"
+              },
+              "source": "upstream"
+            },
+            {
+              "label": "Subtitle",
+              "command": "para.style",
+              "args": {
+                "style": "Subtitle"
+              },
+              "source": "upstream"
+            },
+            {
+              "label": "Quote",
+              "command": "para.style",
+              "args": {
+                "style": "Quote"
+              },
+              "source": "upstream"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

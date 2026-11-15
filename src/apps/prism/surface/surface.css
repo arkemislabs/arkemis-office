@@ -1,0 +1,180 @@
+/* Prism surface (F:prism): PowerPoint's Normal view in the Arkemis skin. The panes follow the
+   shell's graphite tokens; the slide itself is drawn by the document (its own background), and the
+   selection handles are PowerPoint/deckcraft's: white circles with a grey ring, a rotate handle on
+   a stem, yellow adjust handles. */
+
+.prism-surface {
+  position: absolute; inset: 0; display: flex; min-width: 0; min-height: 0; user-select: none;
+  --prism-chrome: #141416; --prism-canvas: #0d0d0e; --prism-accent: #e8774e; --prism-select: #8fa9cf;
+  --prism-guide: #e8541f; --prism-marquee: rgb(80 130 230);
+}
+
+/* ── Thumbnails ─────────────────────────────────────────────────────────────────────── */
+.prism-thumbs {
+  position: relative; flex: none; width: var(--prism-thumbs, 236px); overflow-y: auto; overflow-x: hidden;
+  background: var(--prism-chrome); scrollbar-width: thin; scrollbar-color: rgba(255,255,255,.18) transparent;
+}
+.prism-thumbs-inner { position: relative; width: 100%; }
+.prism-thumb { position: absolute; left: 0; right: 0; cursor: default; }
+.prism-thumb-num {
+  position: absolute; left: 1px; width: 28px; top: 8px; text-align: center; letter-spacing: -.02em;
+  color: var(--sh-text-3, #85858c); font: 500 12px/1 var(--ark-font, system-ui); font-variant-numeric: tabular-nums;
+}
+.prism-thumb.is-selected .prism-thumb-num { color: var(--sh-text-1, #f2f2f3); }
+.prism-thumb-hidden { position: absolute; left: 8px; top: 6px; width: 12px; height: 12px; color: var(--sh-text-3, #85858c); }
+.prism-thumb-star { position: absolute; left: 4px; width: 20px; top: 26px; text-align: center; color: var(--sh-text-3, #85858c); font-size: 10px; }
+.prism-thumb-img {
+  position: absolute; left: 30px; top: 6px; background: #fff; overflow: hidden;
+  box-shadow: 0 0 0 1px rgba(255,255,255,.14);
+}
+.prism-thumb:hover .prism-thumb-img { box-shadow: 0 0 0 2px rgba(255,255,255,.32); }
+.prism-thumb.is-selected .prism-thumb-img { box-shadow: 0 0 0 2px var(--prism-chrome), 0 0 0 5px var(--prism-accent); border-radius: 1px; }
+.prism-thumb.is-hidden .prism-thumb-img > svg { opacity: .55; }
+.prism-thumb-img > svg { display: block; width: 100%; height: 100%; }
+.prism-zoom-thumb { display: block; flex: none; width: 96px; height: 54px; background: #fff; overflow: hidden; border-radius: 2px; }
+.prism-zoom-thumb > svg { display: block; width: 100%; height: 100%; }
+.prism-thumb-section {
+  position: absolute; left: 0; right: 0; display: flex; align-items: center; gap: 6px; padding-left: 10px;
+  color: var(--sh-text-2, #b4b4ba); font: 500 12px/1 var(--ark-font, system-ui); white-space: pre; overflow: hidden;
+}
+.prism-thumb-section svg { width: 8px; height: 8px; flex: none; }
+.prism-thumb-drop { position: absolute; left: 26px; right: 4px; height: 2px; margin-top: -1px; background: var(--prism-accent); border-radius: 1px; pointer-events: none; }
+.prism-thumbs .prism-thumb-new {
+  position: absolute; left: 30px; right: 10px; height: 34px; border: 0; border-radius: 6px; background: transparent;
+  color: transparent; font: 500 12px/1 var(--ark-font, system-ui);
+}
+.prism-thumbs .prism-thumb-new:hover { color: var(--sh-text-3, #85858c); background: var(--sh-hover, rgba(255,255,255,.075)); }
+
+/* ── Dividers ───────────────────────────────────────────────────────────────────────── */
+.prism-divider { flex: none; position: relative; z-index: 2; background: transparent; }
+.prism-divider.is-vertical { width: 5px; margin: 0 -2px; cursor: col-resize; }
+.prism-divider.is-horizontal { height: 5px; margin: -2px 0; cursor: row-resize; }
+.prism-divider::after { content: ''; position: absolute; background: var(--sh-divider, rgba(255,255,255,.075)); }
+.prism-divider.is-vertical::after { left: 2px; top: 0; bottom: 0; width: 1px; }
+.prism-divider.is-horizontal::after { top: 2px; left: 0; right: 0; height: 1px; }
+.prism-divider:hover::after { background: rgba(255,255,255,.22); }
+
+/* ── Canvas ─────────────────────────────────────────────────────────────────────────── */
+.prism-main { position: relative; flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.prism-canvas { position: relative; flex: 1; min-height: 0; overflow: auto; background: var(--prism-canvas); scrollbar-width: thin; scrollbar-color: rgba(255,255,255,.18) transparent; }
+.prism-stage { position: relative; touch-action: none; }
+.prism-slide-frame { position: absolute; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.45), 0 14px 38px -16px rgba(0,0,0,.85); }
+.prism-slide-svg { display: block; width: 100%; height: 100%; }
+.prism-slide-svg text { user-select: none; }
+.prism-overlay { position: absolute; left: 0; top: 0; pointer-events: none; overflow: visible; }
+.prism-selbox { fill: none; stroke: var(--prism-select); stroke-width: 1; }
+.prism-selbox.is-editing { stroke-dasharray: 4 3; }
+.prism-selline { stroke: var(--prism-select); stroke-width: 1; }
+.prism-handle { fill: #fff; stroke: #6c6c70; stroke-width: 1; }
+.prism-handle.is-glued { fill: var(--prism-accent); stroke: #fff; }
+.prism-handle.is-locked { fill: #9a9aa0; stroke: #fff; }
+.prism-rotate circle { fill: #fff; stroke: none; }
+.prism-rotate path { fill: none; stroke: #6c6c70; stroke-width: 1.3; }
+.prism-vertex { fill: #fff; stroke: #1b1b1f; stroke-width: 1.2; }
+.prism-vertex.is-chosen { fill: #1b1b1f; stroke: #fff; }
+.prism-handle-line { stroke: #6c6c70; stroke-width: 1; }
+.prism-handle-dot { fill: #fff; stroke: #1b1b1f; stroke-width: 1.2; }
+.prism-adjust { fill: #ffd23f; stroke: #8a6a00; stroke-width: 1; }
+.prism-smartguide { stroke: var(--prism-guide); stroke-width: 1; stroke-dasharray: 5 3; }
+.prism-drawguide { stroke: #8c8c92; stroke-width: 1; stroke-dasharray: 4 3; }
+.prism-grid { stroke: rgba(0,0,0,.14); stroke-width: 1; stroke-dasharray: 1 3; }
+.prism-marquee { fill: rgb(80 130 230 / 12%); stroke: var(--prism-marquee); stroke-width: 1; }
+.prism-preview { fill: none; stroke: var(--prism-accent); stroke-width: 1; }
+.prism-freeform { fill: none; stroke: var(--prism-accent); stroke-width: 1.5; }
+.prism-glue { fill: var(--prism-accent); stroke: #fff; stroke-width: 1.5; }
+.prism-textsel { fill: rgb(80 130 230 / 32%); }
+.prism-tablegrid { fill: none; stroke: rgba(0,0,0,.35); stroke-width: 1; stroke-dasharray: 1 3; }
+.prism-cellsel { fill: rgb(80 130 230 / 26%); stroke: none; }
+.prism-cellrange { fill: none; stroke: var(--prism-marquee); stroke-width: 1.5; }
+.prism-caret { stroke: #000; animation: prism-blink 1.06s steps(1) infinite; }
+@keyframes prism-blink { 50% { opacity: 0; } }
+.prism-input {
+  position: absolute; left: 0; top: 0; width: 1px; height: 1px; padding: 0; border: 0; opacity: 0; resize: none; overflow: hidden;
+  pointer-events: none; outline: none;
+}
+.prism-empty { flex: 1; display: grid; place-items: center; color: var(--sh-text-3, #85858c); font: 14px var(--ark-font, system-ui); background: var(--prism-canvas); }
+
+/* ── Notes ──────────────────────────────────────────────────────────────────────────── */
+.prism-notes-wrap { flex: none; min-height: 0; overflow: hidden; background: var(--prism-chrome); }
+.prism-notes { height: 100%; }
+.prism-notes-text {
+  display: block; width: 100%; height: 100%; padding: 8px 14px; border: 0; resize: none; outline: none;
+  background: transparent; color: var(--sh-text-1, #f2f2f3); font: 13px/1.45 var(--ark-font, system-ui); user-select: text;
+}
+.prism-notes-text::placeholder { color: var(--sh-text-3, #85858c); }
+
+.prism-legacy { margin: auto; padding: 32px; max-width: 460px; text-align: center; color: var(--sh-text-2, #b4b4ba); font: 13px/1.5 var(--ark-font, system-ui); }
+.prism-surface .prism-empty-add { border: 0; background: transparent; color: var(--sh-text-3, #85858c); font: 14px var(--ark-font, system-ui); padding: 12px 18px; border-radius: 8px; }
+.prism-surface .prism-empty-add:hover { color: var(--sh-text-1, #f2f2f3); background: var(--sh-hover, rgba(255,255,255,.075)); }
+
+/* ── Animation tags and the thumbnail star ──────────────────────────────────────────── */
+.prism-thumb-star { position: absolute; left: 10px; top: 28px; width: 11px; height: 11px; color: var(--sh-text-3, #85858c); }
+.prism-thumb.is-selected .prism-thumb-star { color: var(--sh-text-2, #b4b4ba); }
+.prism-animtag rect { fill: #2a2a2e; stroke: rgba(255,255,255,.55); stroke-width: 1; }
+.prism-animtag text { fill: #f2f2f3; font: 600 10.5px/1 var(--ark-font, system-ui); }
+.prism-animtag-bolt { fill: #f2f2f3; }
+.prism-animtag.is-picked rect { fill: var(--prism-accent); stroke: #fff; }
+
+/* ── View modes: Slide Sorter, Notes Page, Outline, rulers, Grayscale ─────────────────────── */
+.prism-surface.is-grayscale .prism-thumb-img, .prism-surface.is-grayscale .prism-stage > svg, .prism-surface.is-grayscale .prism-sorter-img,
+.prism-surface.is-grayscale .prism-notespage-slide, .prism-surface.is-grayscale .prism-slide, .prism-surface.is-grayscale .prism-slide-svg { filter: grayscale(1); }
+.prism-surface.is-blackwhite .prism-thumb-img, .prism-surface.is-blackwhite .prism-stage > svg, .prism-surface.is-blackwhite .prism-sorter-img,
+.prism-surface.is-blackwhite .prism-notespage-slide, .prism-surface.is-blackwhite .prism-slide, .prism-surface.is-blackwhite .prism-slide-svg { filter: grayscale(1) brightness(1.7) contrast(100); }
+.prism-surface.is-moving-split .prism-divider::after { background: var(--prism-accent); width: 2px; }
+.prism-ruler { stroke: rgba(255,255,255,.55); stroke-width: 1; }
+.prism-ruler-text { fill: rgba(255,255,255,.6); font: 9px var(--ark-font, system-ui); }
+.prism-sorter { flex: 1; min-width: 0; overflow-y: auto; padding: 14px 18px 28px; background: var(--prism-canvas); scrollbar-width: thin; scrollbar-color: rgba(255,255,255,.18) transparent; }
+.prism-sorter-head { display: flex; align-items: center; gap: 8px; width: 100%; height: 30px; margin: 6px 0; padding: 0 10px; border: 0; border-radius: 6px; background: var(--prism-chrome); color: var(--sh-text-1, #f2f2f3); font: 12.5px var(--ark-font, system-ui); text-align: left; }
+.prism-sorter-head svg { width: 9px; height: 9px; transition: transform .12s; }
+.prism-sorter-head small { color: var(--sh-text-3, #85858c); }
+.prism-sorter-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px 14px; padding: 8px 0 16px; }
+.prism-sorter-slide { position: relative; padding: 6px; border-radius: 6px; cursor: default; box-shadow: inset 0 0 0 2px transparent; }
+.prism-sorter-slide:hover { background: rgba(255,255,255,.05); }
+.prism-sorter-slide.is-selected { box-shadow: inset 0 0 0 2px var(--prism-accent); background: rgba(232,119,78,.1); }
+.prism-sorter-slide.is-hidden .prism-sorter-img { opacity: .45; }
+.prism-sorter-slide.is-drop-before::before, .prism-sorter-slide.is-drop-after::after { content: ''; position: absolute; top: 2px; bottom: 2px; width: 3px; border-radius: 2px; background: var(--prism-accent); }
+.prism-sorter-slide.is-drop-before::before { left: -9px; }
+.prism-sorter-slide.is-drop-after::after { right: -9px; }
+.prism-sorter-img { background: #fff; box-shadow: 0 0 0 1px rgba(255,255,255,.14); overflow: hidden; line-height: 0; }
+.prism-sorter-img svg { display: block; width: 100%; height: auto; }
+.prism-sorter-meta { display: flex; align-items: center; gap: 6px; margin-top: 4px; color: var(--sh-text-2, #b4b4ba); font: 12px var(--ark-font, system-ui); }
+.prism-sorter-meta svg { width: 11px; height: 11px; }
+.prism-sorter-meta small { color: var(--sh-text-3, #85858c); }
+.prism-sorter-empty { color: var(--sh-text-3, #85858c); }
+.prism-notespage { flex: 1; min-width: 0; display: grid; place-items: center; background: var(--prism-canvas); overflow: auto; }
+.prism-notespage-sheet { position: relative; background: #fff; box-shadow: 2px 2px 0 rgba(0,0,0,.4); }
+.prism-notespage-slide { position: absolute; box-shadow: 0 0 0 1px #888; line-height: 0; overflow: hidden; background: #fff; }
+.prism-notespage-slide svg { width: 100%; height: 100%; }
+.prism-notespage-notes { position: absolute; color: #222; }
+.prism-notespage-notes .prism-notes, .prism-notespage-notes .prism-notes-text { height: 100%; width: 100%; background: transparent; color: #222; }
+.prism-outline { flex: none; width: 360px; overflow-y: auto; padding: 10px 12px; background: var(--prism-chrome); scrollbar-width: thin; scrollbar-color: rgba(255,255,255,.18) transparent; }
+.prism-outline-slide { padding: 4px 0 6px; border-radius: 6px; }
+.prism-outline-slide.is-current { background: rgba(255,255,255,.05); }
+.prism-outline-title { display: flex; align-items: center; gap: 8px; }
+.prism-outline-num { width: 22px; text-align: right; color: var(--sh-text-3, #85858c); font: 12px var(--ark-font, system-ui); font-variant-numeric: tabular-nums; }
+.prism-outline-title i { width: 14px; height: 10px; border: 1px solid var(--sh-text-3, #85858c); border-radius: 1px; flex: none; }
+.prism-outline-slide.is-current .prism-outline-title i { border-color: var(--prism-accent); }
+.prism-outline-line { width: 100%; box-sizing: border-box; border: 0; border-radius: 4px; background: transparent; color: var(--sh-text-1, #f2f2f3); font: 13px/1.45 var(--ark-font, system-ui); resize: none; outline: none; padding: 2px 4px; }
+.prism-outline-line.is-title { font-weight: 600; font-size: 14px; }
+.prism-outline-line.is-body { margin-left: 58px; width: calc(100% - 58px); color: var(--sh-text-2, #b4b4ba); }
+.prism-outline-line:focus { box-shadow: inset 0 0 0 1.5px var(--prism-accent); background: rgba(0,0,0,.25); }
+
+/* ── Master views ─────────────────────────────────────────────────────────────────────────── */
+.prism-master-list { flex: none; width: 236px; overflow-y: auto; padding: 8px 10px; background: var(--prism-chrome); display: flex; flex-direction: column; gap: 8px; scrollbar-width: thin; scrollbar-color: rgba(255,255,255,.18) transparent; }
+.prism-master-item { display: flex; flex-direction: column; gap: 3px; padding: 5px; border: 0; border-radius: 6px; background: transparent; color: var(--sh-text-2, #b4b4ba); font: 11.5px var(--ark-font, system-ui); text-align: left; cursor: default; box-shadow: inset 0 0 0 2px transparent; }
+.prism-master-item:hover { background: rgba(255,255,255,.05); }
+.prism-master-item.is-selected { box-shadow: inset 0 0 0 2px var(--prism-accent); background: rgba(232,119,78,.1); color: var(--sh-text-1, #f2f2f3); }
+.prism-master-item.is-master .prism-master-img { width: 100%; }
+.prism-master-item:not(.is-master) { margin-left: 14px; }
+.prism-master-img { display: block; background: #fff; box-shadow: 0 0 0 1px rgba(255,255,255,.14); line-height: 0; overflow: hidden; }
+.prism-master-img svg { width: 100%; height: auto; display: block; }
+.prism-master-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* Spelling squiggles under misspelt words (U:prism/spelling). */
+.prism-squiggle { fill: none; stroke: #e02020; stroke-width: 1; stroke-linejoin: round; pointer-events: none; }
+
+/* The Ruler stencil of the Draw tab. */
+.prism-stencil-body { fill: rgba(236, 215, 160, .55); stroke: rgba(120, 96, 40, .85); stroke-width: 1; }
+.prism-stencil-tick { stroke: rgba(70, 55, 20, .9); stroke-width: .8; }
+.prism-stencil-num { fill: rgba(70, 55, 20, .95); font: 10px var(--ark-font, system-ui); }
+.prism-stencil-angle { fill: rgba(70, 55, 20, .8); font: 11px var(--ark-font, system-ui); }

@@ -1,0 +1,47 @@
+{
+  "tab": "chart-design",
+  "source": "gridcraft 146161b4b450a56e5e59a083ba0478582d1e602b crates/ui-egui/src/ribbon/contextual.rs (chart_design: Add Chart Element, Switch Row/Column, Select Data, Change Chart Type, Format Pane, Chart Title, Delete Chart, every one large); Quick Layout, Chart Styles and Location placed as in Excel for Windows",
+  "groups": {
+    "chart-layouts": {
+      "collapseOrder": 5,
+      "layout": [
+        {"large": "chartDesign.layouts.addElement"},
+        {"large": "chartDesign.layouts.quickLayout"}
+      ]
+    },
+    "chart-styles": {
+      "collapseOrder": 1,
+      "layout": [
+        {"large": "chartDesign.styles.changeColors"},
+        {"gallery": "chartDesign.styles.gallery", "inline": true, "columns": 6}
+      ]
+    },
+    "data": {
+      "collapseOrder": 4,
+      "layout": [
+        {"large": "chartDesign.data.switchRowColumn"},
+        {"large": "chartDesign.data.selectData"}
+      ]
+    },
+    "type": {
+      "collapseOrder": 3,
+      "layout": [
+        {"large": "chartDesign.type.changeChartType"}
+      ]
+    },
+    "location": {
+      "collapseOrder": 2,
+      "layout": [
+        {"large": "chartDesign.location.moveChart"}
+      ]
+    },
+    "format": {
+      "collapseOrder": 6,
+      "layout": [
+        {"large": "chartDesign.format.formatPane"},
+        {"large": "chartDesign.format.chartTitle"},
+        {"large": "chartDesign.format.deleteChart"}
+      ]
+    }
+  }
+}

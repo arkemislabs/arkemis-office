@@ -1,0 +1,72 @@
+{
+ "controls": {
+  "combine.add.files.add-folder": {
+   "command": "combine.add_folder",
+   "args": {
+    "recursive": false
+   },
+   "note": "printcraft combine_ui/session.rs combine_add_folder and parts.rs combinable_in at 8f16855 (commands/combine_more.mjs): the PDFs of the folder in natural order, up to 1000."
+  },
+  "combine.add.files.add-folder-and-subfolders": {
+   "command": "combine.add_folder",
+   "args": {
+    "recursive": true
+   },
+   "note": "printcraft combine_ui/session.rs combine_add_folder and parts.rs combinable_in at 8f16855 (commands/combine_more.mjs): the PDFs of the folder in natural order, up to 1000. The folders inside it too, not hidden ones, 16 deep at most."
+  },
+  "combine.view.reset-columns": {
+   "command": "combine.columns",
+   "args": {
+    "reset": true
+   },
+   "note": "printcraft combine_ui/files.rs Columns::default: the usual order of the list's columns. A column heading drags to a new place; a click sorts by it (combine.sort)."
+  },
+  "combine.go.options": {
+   "command": "combine.options",
+   "dialog": null,
+   "note": "Acrobat's Combine options: bookmarks, a blank page after a file with an odd number of pages, the file size. Not checked against upstream (printcraft has no options)."
+  }
+ },
+ "dialogs": {
+  "dialog.combine-options": {
+   "title": "Combine options",
+   "tabs": [
+    {
+     "name": "General",
+     "fields": [
+      {
+       "id": "bookmarks",
+       "label": "Add a bookmark for each file",
+       "kind": "checkbox"
+      },
+      {
+       "id": "blankAfterOdd",
+       "label": "Add a blank page after a file with an odd number of pages",
+       "kind": "checkbox"
+      },
+      {
+       "id": "size",
+       "label": "File size",
+       "kind": "select",
+       "options": [
+        {
+         "value": "default",
+         "label": "Default file size"
+        },
+        {
+         "value": "smaller",
+         "label": "Smaller file size"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ],
+   "note": "Acrobat's Combine options. Not checked against upstream (printcraft has none)."
+  }
+ }
+}

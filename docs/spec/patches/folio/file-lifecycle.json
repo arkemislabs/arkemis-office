@@ -1,0 +1,11 @@
+{
+  "dialogs": {
+    "prompt.save-changes": {
+      "title": "PDF",
+      "command": "file.close",
+      "note": "Acrobat asks \"Do you want to save changes to <name> before closing?\" with Yes / No / Cancel (printcraft prompts.rs:97 words it as a title); text from core/common/commands/file.mjs saveChangesText.",
+      "tabs": [{"name": "", "fields": [{"id": "message", "label": "Do you want to save changes to “{name}” before closing?", "kind": "message", "source": "office"}]}],
+      "buttons": ["Yes", "No", "Cancel"]
+    }
+  }
+}

@@ -1,0 +1,2 @@
+/* Add Header and Footer: the six text boxes are one or two lines each, so the dialog fits the window with its preview and buttons (the body scrolls when it still does not). */
+.gd [data-field-id$="-header-text"] textarea, .gd [data-field-id$="-footer-text"] textarea { height: 46px; min-height: 46px; resize: vertical; }

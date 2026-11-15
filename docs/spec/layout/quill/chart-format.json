@@ -1,0 +1,55 @@
+{
+  "tab": "chart-format",
+  "source": "wordcraft aadb077e072b7de05f724e359d8db82e151f125c crates/ui-egui/src/ribbon/common.rs graphic_size and shape.rs alt_text_group, arrange.rs; Chart Format (Alt Text, Arrange, Size) placed as in Microsoft Word for Windows; Current Selection (the element list and Format Selection) and the Shape Styles gallery (the chart area's fill and border) as in Word; Shape Fill, Outline and Effects and the WordArt styles have nothing to format on a chart and stay out",
+  "groups": {
+    "current-selection": {
+      "collapseOrder": 4,
+      "layout": [
+        {"stack": ["chart-format.current-selection.element", "chart-format.current-selection.format-selection"]}
+      ]
+    },
+    "shape-styles": {
+      "collapseOrder": 5,
+      "layout": [
+        {"gallery": "chart-format.shape-styles.shape-styles", "inline": true, "columns": 6}
+      ]
+    },
+    "accessibility": {
+      "collapseOrder": 3,
+      "layout": [
+        {
+          "large": "chart-format.accessibility.alt-text"
+        }
+      ]
+    },
+    "arrange": {
+      "collapseOrder": 1,
+      "layout": [
+        {
+          "large": "chart-format.arrange.position"
+        },
+        {
+          "large": "chart-format.arrange.wrap-text"
+        },
+        {
+          "stack": [
+            "chart-format.arrange.bring-forward",
+            "chart-format.arrange.send-backward",
+            "chart-format.arrange.align"
+          ]
+        }
+      ]
+    },
+    "size": {
+      "collapseOrder": 2,
+      "layout": [
+        {
+          "stack": [
+            "chart-format.size.h",
+            "chart-format.size.w"
+          ]
+        }
+      ]
+    }
+  }
+}

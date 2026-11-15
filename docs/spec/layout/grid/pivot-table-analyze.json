@@ -1,0 +1,67 @@
+{
+  "tab": "pivot-table-analyze",
+  "source": "Microsoft Excel for Windows › PivotTable Analyze; gridcraft draws no ribbon tab for PivotTables (its pivot_pane.rs is the field list), the spec takes the tab from Excel",
+  "groups": {
+    "pivot-table": {
+      "collapseOrder": 1,
+      "layout": [
+        {"stack": ["pivotAnalyze.pivotTable.name", "pivotAnalyze.pivotTable.options"]}
+      ]
+    },
+    "active-field": {
+      "collapseOrder": 2,
+      "layout": [
+        {"stack": ["pivotAnalyze.activeField.name", "pivotAnalyze.activeField.fieldSettings"]},
+        {"large": "pivotAnalyze.activeField.drillDown"},
+        {"large": "pivotAnalyze.activeField.drillUp"},
+        {"rows": [["pivotAnalyze.activeField.expandField"], ["pivotAnalyze.activeField.collapseField"]]}
+      ]
+    },
+    "group": {
+      "collapseOrder": 3,
+      "layout": [
+        {"stack": ["pivotAnalyze.group.groupSelection", "pivotAnalyze.group.ungroup", "pivotAnalyze.group.groupField"]}
+      ]
+    },
+    "filter": {
+      "collapseOrder": 4,
+      "layout": [
+        {"stack": ["pivotAnalyze.filter.insertSlicer", "pivotAnalyze.filter.insertTimeline", "pivotAnalyze.filter.filterConnections"]}
+      ]
+    },
+    "data": {
+      "collapseOrder": 5,
+      "layout": [
+        {"large": "pivotAnalyze.data.refresh"},
+        {"large": "pivotAnalyze.data.changeSource"}
+      ]
+    },
+    "actions": {
+      "collapseOrder": 6,
+      "layout": [
+        {"stack": ["pivotAnalyze.actions.clear", "pivotAnalyze.actions.select", "pivotAnalyze.actions.move"]}
+      ]
+    },
+    "calculations": {
+      "collapseOrder": 7,
+      "layout": [
+        {"stack": ["pivotAnalyze.calculations.fieldsItemsSets", "pivotAnalyze.calculations.olapTools", "pivotAnalyze.calculations.relationships"]}
+      ]
+    },
+    "tools": {
+      "collapseOrder": 8,
+      "layout": [
+        {"large": "pivotAnalyze.tools.pivotChart"},
+        {"large": "pivotAnalyze.tools.recommended"}
+      ]
+    },
+    "show": {
+      "collapseOrder": 9,
+      "layout": [
+        {"large": "pivotAnalyze.show.fieldList"},
+        {"large": "pivotAnalyze.show.buttons"},
+        {"large": "pivotAnalyze.show.fieldHeaders"}
+      ]
+    }
+  }
+}

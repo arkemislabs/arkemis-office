@@ -1,0 +1,80 @@
+{
+  "controls": {
+    "draw.tools.select": {
+      "args": {
+        "mode": "select"
+      },
+      "note": "U:grid/draw: Select Objects (gridcraft draw.lasso: no pen or eraser, objects are picked by clicking them). Pressed while no Draw tool is picked."
+    },
+    "draw.tools.lasso": {
+      "args": {
+        "mode": "lasso"
+      },
+      "note": "U:grid/draw: Lasso Select: drag a loop on the sheet and the ink strokes inside it are selected (Delete removes them, dragging inside moves them). gridcraft's lasso only puts the pen away; the loop is Excel's."
+    },
+    "draw.tools.penBlue": {
+      "note": "U:grid/draw: translated from gridcraft draw.pen (colour #1F5FC9, width 2); dragging on the sheet draws a stroke (draw.stroke). Pressed while it is the pen in use.",
+      "args": {
+        "color": "#1F5FC9",
+        "width": 2
+      }
+    },
+    "draw.tools.penBlack": {
+      "note": "U:grid/draw: translated from gridcraft draw.pen (colour #000000, width 2).",
+      "args": {
+        "color": "#000000",
+        "width": 2
+      }
+    },
+    "draw.tools.penRed": {
+      "note": "U:grid/draw: translated from gridcraft draw.pen (colour #D13B2F, width 2).",
+      "args": {
+        "color": "#D13B2F",
+        "width": 2
+      }
+    },
+    "draw.tools.penHighlighter": {
+      "note": "U:grid/draw: a pen 12 px wide; strokes wider than 8 px are drawn and saved at 45% (a highlighter), as gridcraft's xlsx ink does.",
+      "args": {
+        "color": "#F2E33A",
+        "width": 12
+      }
+    },
+    "draw.tools.eraser": {
+      "note": "U:grid/draw: translated from gridcraft draw.eraser: dragging over an ink stroke deletes it (draw.erase at each point)."
+    },
+    "draw.tools.addPen.pen": {
+      "args": {
+        "kind": "pen"
+      },
+      "note": "U:grid/draw: Add Pen offers Pen, Pencil and Highlighter; each picks that pen with its colour and width (the ribbon has the four fixed pens, so a pen is not added to a gallery).",
+      "icon": "pen-black"
+    },
+    "draw.tools.addPen.pencil": {
+      "args": {
+        "kind": "pencil"
+      },
+      "icon": "pencil"
+    },
+    "draw.tools.addPen.highlighter": {
+      "args": {
+        "kind": "highlighter"
+      },
+      "icon": "highlighter"
+    },
+    "draw.tools.drawWithTouch": {
+      "command": null,
+      "note": "U:grid/draw: the sheet takes the mouse and pen only, there is no touch input to switch on; hidden."
+    },
+    "draw.convert.inkToShape": {
+      "note": "U:grid/draw: translated from gridcraft draw.inkToShape: an open stroke becomes a line; a closed one a rectangle, triangle or ellipse. Converts the lasso's strokes, else the selected stroke, else the last."
+    },
+    "draw.convert.inkToMath": {
+      "command": null,
+      "note": "U:grid/draw: needs handwriting recognition and an equation object; gridcraft has neither; hidden."
+    },
+    "draw.replay.inkReplay": {
+      "note": "U:grid/draw: replays the sheet's ink stroke by stroke in the order it was drawn (view state only; not in gridcraft, whose ribbon has no Replay)."
+    }
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "source": "deckcraft crates/ui-egui/src/dialogs/body.rs dlg_chart_data (the grid, + Row, + Series); PowerPoint's Edit Data worksheet (column letters, row numbers, the data range, Switch Row/Column)",
+  "width": 640,
+  "height": 430
+}

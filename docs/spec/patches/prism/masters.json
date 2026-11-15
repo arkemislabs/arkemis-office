@@ -1,0 +1,225 @@
+{
+  "controls": {
+    "slidemaster.edit.insert-master": {
+      "note": "Hidden: deckcraft has no Insert Slide Master (a deck keeps the masters its file has; Browse for Themes can bring a template's)."
+    },
+    "slidemaster.edit.rename": {
+      "command": "master.renameLayout",
+      "params": null,
+      "note": "U:prism/masters: opens Rename Layout (dialog.renameLayout) on the open layout."
+    },
+    "slidemaster.edit.insert-layout": {
+      "note": "U:prism/masters: a new custom layout after the open one, with a title placeholder, which becomes the open layout."
+    },
+    "slidemaster.edit.delete": {
+      "note": "U:prism/masters: deletes the open layout; refused while slides use it or it is the last one."
+    },
+    "slidemaster.edit.preserve": {
+      "params": {
+        "preserve": "<bool>"
+      },
+      "note": "U:prism/masters: keep the master or layout even when no slide uses it."
+    },
+    "slidemaster.layout.master-layout": {
+      "command": null,
+      "note": "Hidden: deckcraft has no Master Layout dialog; its Title and Footers check boxes beside it do the same."
+    },
+    "slidemaster.layout.title": {
+      "params": {
+        "title": "<bool>",
+        "field": "title"
+      },
+      "note": "U:prism/masters: show or hide the Title placeholder of the open master or layout."
+    },
+    "slidemaster.layout.footers": {
+      "params": {
+        "footers": "<bool>",
+        "field": "footers"
+      },
+      "note": "U:prism/masters: show or hide the date, footer and slide number placeholders of the open master or layout."
+    },
+    "slidemaster.layout.insert-placeholder": {
+      "params": null,
+      "items": [
+        {
+          "label": "Content",
+          "command": "master.insertPlaceholder",
+          "params": {
+            "kind": "content"
+          },
+          "source": "upstream",
+          "sourceRef": "crates/ui-egui/src/ribbon/masters.rs:51"
+        },
+        {
+          "label": "Text",
+          "command": "master.insertPlaceholder",
+          "params": {
+            "kind": "text"
+          },
+          "source": "upstream",
+          "sourceRef": "crates/ui-egui/src/ribbon/masters.rs:51"
+        },
+        {
+          "label": "Picture",
+          "command": "master.insertPlaceholder",
+          "params": {
+            "kind": "picture"
+          },
+          "source": "upstream",
+          "sourceRef": "crates/ui-egui/src/ribbon/masters.rs:51"
+        },
+        {
+          "label": "Chart",
+          "command": "master.insertPlaceholder",
+          "params": {
+            "kind": "chart"
+          },
+          "source": "upstream",
+          "sourceRef": "crates/ui-egui/src/ribbon/masters.rs:51"
+        },
+        {
+          "label": "Table",
+          "command": "master.insertPlaceholder",
+          "params": {
+            "kind": "table"
+          },
+          "source": "upstream",
+          "sourceRef": "crates/ui-egui/src/ribbon/masters.rs:51"
+        },
+        {
+          "label": "Media",
+          "command": "master.insertPlaceholder",
+          "params": {
+            "kind": "media"
+          },
+          "source": "upstream",
+          "sourceRef": "crates/ui-egui/src/ribbon/masters.rs:51"
+        }
+      ],
+      "note": "U:prism/masters: adds a Content, Text, Picture, Chart, Table or Media placeholder to the open layout."
+    },
+    "slidemaster.theme.themes.browse-for-themes": {
+      "command": "design.browseTheme",
+      "note": "U:prism/masters: the same as Design > Browse for Themes."
+    },
+    "slidemaster.background.styles": {
+      "command": "pane.toggle",
+      "params": {
+        "pane": "background"
+      },
+      "kind": "toggle",
+      "note": "U:prism/masters: Format Background for the open master, layout, handout or notes master."
+    },
+    "handoutmaster.background.styles": {
+      "command": "pane.toggle",
+      "params": {
+        "pane": "background"
+      },
+      "kind": "toggle",
+      "note": "U:prism/masters: Format Background for the open master, layout, handout or notes master."
+    },
+    "notesmaster.background.styles": {
+      "command": "pane.toggle",
+      "params": {
+        "pane": "background"
+      },
+      "kind": "toggle",
+      "note": "U:prism/masters: Format Background for the open master, layout, handout or notes master."
+    },
+    "handoutmaster.setup.orientation": {
+      "note": "Hidden: deckcraft has no page orientation setting."
+    },
+    "notesmaster.setup.orientation": {
+      "note": "Hidden: deckcraft has no page orientation setting."
+    },
+    "handoutmaster.setup.per-page": {
+      "command": "handout.perPage",
+      "params": null,
+      "items": [
+        {
+          "id": "handoutmaster.setup.per-page.n",
+          "label": "Slides per page",
+          "kind": "list",
+          "command": "handout.perPage",
+          "params": {
+            "n": "<n>"
+          },
+          "dynamic": true,
+          "source": "upstream",
+          "sourceRef": "crates/ui-egui/src/ribbon/masters.rs:104"
+        }
+      ],
+      "note": "U:prism/masters: how many slides a handout page holds (1, 2, 3, 4, 6, 9); kept with the open window."
+    },
+    "handoutmaster.placeholders.header": {
+      "params": {
+        "header": "<bool>",
+        "field": "header"
+      },
+      "note": "U:prism/masters: show or hide this placeholder of the master."
+    },
+    "handoutmaster.placeholders.date": {
+      "params": {
+        "date": "<bool>",
+        "field": "date"
+      },
+      "note": "U:prism/masters: show or hide this placeholder of the master."
+    },
+    "handoutmaster.placeholders.footer": {
+      "params": {
+        "footer": "<bool>",
+        "field": "footer"
+      },
+      "note": "U:prism/masters: show or hide this placeholder of the master."
+    },
+    "handoutmaster.placeholders.pageNumber": {
+      "params": {
+        "pageNumber": "<bool>",
+        "field": "pageNumber"
+      },
+      "note": "U:prism/masters: show or hide this placeholder of the master."
+    },
+    "notesmaster.placeholders.header": {
+      "params": {
+        "header": "<bool>",
+        "field": "header"
+      },
+      "note": "U:prism/masters: show or hide this placeholder of the master."
+    },
+    "notesmaster.placeholders.slideImage": {
+      "params": {
+        "slideImage": "<bool>",
+        "field": "slideImage"
+      },
+      "note": "U:prism/masters: show or hide this placeholder of the master."
+    },
+    "notesmaster.placeholders.footer": {
+      "params": {
+        "footer": "<bool>",
+        "field": "footer"
+      },
+      "note": "U:prism/masters: show or hide this placeholder of the master."
+    },
+    "notesmaster.placeholders.date": {
+      "params": {
+        "date": "<bool>",
+        "field": "date"
+      },
+      "note": "U:prism/masters: show or hide this placeholder of the master."
+    },
+    "notesmaster.placeholders.body": {
+      "params": {
+        "body": "<bool>",
+        "field": "body"
+      },
+      "note": "U:prism/masters: show or hide this placeholder of the master."
+    },
+    "notesmaster.placeholders.pageNumber": {
+      "params": {
+        "pageNumber": "<bool>",
+        "field": "pageNumber"
+      },
+      "note": "U:prism/masters: show or hide this placeholder of the master."
+    }
+  }
+}

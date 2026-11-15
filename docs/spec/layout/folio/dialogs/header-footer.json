@@ -1,0 +1,14 @@
+{
+  "source": "printcraft crates/ui-egui/src/dialogs/marks_ui.rs:337 (HeaderFooter body) at 3109bb2359759e24ef490e1cdbdba00722b20972; Acrobat Add Header and Footer: font row and margins on top, the 3 x 2 text boxes, the token row, Page Range Options, then the preview",
+  "width": 760,
+  "height": 640,
+  "sections": [
+    {"fields": ["font", "size", "color", "underline"], "columns": 4},
+    {"title": "Margins", "fields": ["margin-top", "margin-bottom", "margin-left", "margin-right"], "columns": 4},
+    {"fields": ["left-header-text", "center-header-text", "right-header-text"], "columns": 3},
+    {"fields": ["left-footer-text", "center-footer-text", "right-footer-text"], "columns": 3},
+    {"fields": ["page-format", "insert-page", "date-format", "insert-date", "start"], "columns": 5},
+    {"fields": ["shrink"]},
+    {"title": "Page Range Options", "fields": ["scope", "from", "to", "subset"], "columns": 4}
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "tab": "help",
+  "source": "office: PowerPoint Help tab (deckcraft has no Help ribbon; its Help menu commands)",
+  "groups": {
+    "help": {
+      "collapseOrder": 1,
+      "layout": [
+        {
+          "large": "help.help.help"
+        },
+        {
+          "large": "help.help.about"
+        },
+        {
+          "large": "help.help.updates"
+        },
+        {
+          "large": "help.help.feedback"
+        },
+        {
+          "large": "help.help.palette"
+        }
+      ]
+    }
+  }
+}

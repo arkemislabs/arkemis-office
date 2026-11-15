@@ -1,0 +1,17 @@
+{
+  "dialogs": {
+    "dialog.recognize-text": {
+      "note": "printcraft workflows/ocr_ui.rs:99. Output offers Searchable Image (Exact) only, as printcraft does (the Office/Acrobat ClearScan outputs are not implemented); the languages are the recogniser's.",
+      "tabs": [{"name": "General", "fields": [
+        {"id": "pages", "label": "Pages", "kind": "radio", "options": ["All pages", "Current page", "From"]},
+        {"id": "from", "label": "From", "kind": "number", "min": 1, "visibleWhen": "pages == From"},
+        {"id": "to", "label": "to", "kind": "number", "min": 1, "visibleWhen": "pages == From"},
+        {"id": "language", "label": "Document language", "kind": "select", "options": ["English"]},
+        {"id": "output", "label": "Output", "kind": "select", "options": ["Searchable Image (Exact)"]},
+        {"id": "downsample", "label": "Downsample to", "kind": "select", "options": ["600 dpi", "300 dpi", "150 dpi", "72 dpi"]},
+        {"id": "force", "label": "Also recognize pages that already have text", "kind": "checkbox"}
+      ]}],
+      "buttons": ["Recognize text", "Cancel"]
+    }
+  }
+}

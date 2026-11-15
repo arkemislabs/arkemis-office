@@ -1,0 +1,3988 @@
+{
+ "controls": {
+  "formulas.functionLibrary.financial": {
+   "items": [
+    {
+     "label": "CUMIPMT",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "CUMIPMT"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Cumulative interest paid between two periods."
+    },
+    {
+     "label": "CUMPRINC",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "CUMPRINC"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Cumulative principal paid between two periods."
+    },
+    {
+     "label": "FV",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "FV"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Future value of an investment with constant payments and rate."
+    },
+    {
+     "label": "IPMT",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "IPMT"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Interest part of a given period's payment."
+    },
+    {
+     "label": "IRR",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "IRR"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Internal rate of return of periodic cash flows."
+    },
+    {
+     "label": "MIRR",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "MIRR"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Modified internal rate of return."
+    },
+    {
+     "label": "NPER",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "NPER"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Number of periods needed to pay off or accumulate an amount."
+    },
+    {
+     "label": "NPV",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "NPV"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Net present value of periodic cash flows at a discount rate."
+    },
+    {
+     "label": "PMT",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "PMT"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Payment for a loan with constant payments and a constant interest rate."
+    },
+    {
+     "label": "PPMT",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "PPMT"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Principal part of a given period's payment."
+    },
+    {
+     "label": "PV",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "PV"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Present value of a series of equal future payments."
+    },
+    {
+     "label": "RATE",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "RATE"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Interest rate per period of an annuity."
+    },
+    {
+     "label": "XIRR",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "XIRR"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Internal rate of return of cash flows on specific dates."
+    },
+    {
+     "label": "XNPV",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "XNPV"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Net present value of cash flows on specific dates."
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "Insert Function…",
+     "dialog": "dialog.insertFunction",
+     "source": "office"
+    }
+   ]
+  },
+  "formulas.functionLibrary.logical": {
+   "items": [
+    {
+     "label": "AND",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "AND"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "TRUE when every argument is TRUE."
+    },
+    {
+     "label": "BYCOL",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "BYCOL"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Applies a LAMBDA to each column."
+    },
+    {
+     "label": "BYROW",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "BYROW"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Applies a LAMBDA to each row."
+    },
+    {
+     "label": "FALSE",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "FALSE"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Returns the logical value FALSE."
+    },
+    {
+     "label": "IF",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "IF"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Returns one value when a condition is TRUE and another when it is FALSE."
+    },
+    {
+     "label": "IFERROR",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "IFERROR"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Returns a fallback when the value is an error, otherwise the value."
+    },
+    {
+     "label": "IFNA",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "IFNA"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Returns a fallback when the value is #N/A, otherwise the value."
+    },
+    {
+     "label": "IFS",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "IFS"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Returns the value paired with the first condition that is TRUE."
+    },
+    {
+     "label": "LAMBDA",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "LAMBDA"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Creates a reusable custom function."
+    },
+    {
+     "label": "LET",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "LET"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Names intermediate results."
+    },
+    {
+     "label": "MAKEARRAY",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "MAKEARRAY"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Builds an array from a LAMBDA."
+    },
+    {
+     "label": "MAP",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "MAP"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Applies a LAMBDA to each value."
+    },
+    {
+     "label": "NOT",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "NOT"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Reverses a logical value."
+    },
+    {
+     "label": "OR",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "OR"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "TRUE when at least one argument is TRUE."
+    },
+    {
+     "label": "REDUCE",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "REDUCE"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Accumulates an array into one value."
+    },
+    {
+     "label": "SCAN",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "SCAN"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Running accumulation of an array."
+    },
+    {
+     "label": "SWITCH",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "SWITCH"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Compares an expression with a list of values and returns the result paired with the first match."
+    },
+    {
+     "label": "TRUE",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "TRUE"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Returns the logical value TRUE."
+    },
+    {
+     "label": "XOR",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "XOR"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "TRUE when an odd number of arguments are TRUE."
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "Insert Function…",
+     "dialog": "dialog.insertFunction",
+     "source": "office"
+    }
+   ]
+  },
+  "formulas.functionLibrary.text": {
+   "items": [
+    {
+     "label": "ARRAYTOTEXT",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "ARRAYTOTEXT"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Converts an array to text, either as a comma list or as a strict array constant."
+    },
+    {
+     "label": "ASC",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "ASC"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Converts full-width characters to half-width (no change for single-byte text)."
+    },
+    {
+     "label": "BAHTTEXT",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "BAHTTEXT"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Spells out a number in Thai words with Baht."
+    },
+    {
+     "label": "CHAR",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "CHAR"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Returns the character for a code from the Windows-1252 character set."
+    },
+    {
+     "label": "CLEAN",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "CLEAN"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Removes non-printable control characters from text."
+    },
+    {
+     "label": "CODE",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "CODE"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Returns the Windows-1252 code of the first character of a text."
+    },
+    {
+     "label": "CONCAT",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "CONCAT"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Joins text from values and every cell of ranges, without a separator."
+    },
+    {
+     "label": "CONCATENATE",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "CONCATENATE"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Joins several text values into one."
+    },
+    {
+     "label": "DBCS",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "DBCS"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Converts half-width characters to full-width (no change in this locale)."
+    },
+    {
+     "label": "DOLLAR",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "DOLLAR"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Formats a number as currency text."
+    },
+    {
+     "label": "EXACT",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "EXACT"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "TRUE when two texts are identical, including case."
+    },
+    {
+     "label": "FIND",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "FIND"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Finds the position of one text in another (case-sensitive)."
+    },
+    {
+     "label": "FINDB",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "FINDB"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Byte version of FIND."
+    },
+    {
+     "label": "FIXED",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "FIXED"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Rounds a number and formats it as text with fixed decimals and optional thousands separators."
+    },
+    {
+     "label": "JIS",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "JIS"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Converts half-width characters to full-width (no change in this locale)."
+    },
+    {
+     "label": "LEFT",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "LEFT"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Returns the first characters of a text."
+    },
+    {
+     "label": "LEFTB",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "LEFTB"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Byte version of LEFT (same as LEFT for single-byte text)."
+    },
+    {
+     "label": "LEN",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "LEN"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Counts the characters in a text."
+    },
+    {
+     "label": "LENB",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "LENB"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Byte version of LEN (same as LEN for single-byte text)."
+    },
+    {
+     "label": "LOWER",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "LOWER"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Converts text to lower case."
+    },
+    {
+     "label": "MID",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "MID"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Returns characters from the middle of a text."
+    },
+    {
+     "label": "MIDB",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "MIDB"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Byte version of MID (same as MID for single-byte text)."
+    },
+    {
+     "label": "NUMBERVALUE",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "NUMBERVALUE"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Converts text to a number using the given decimal and group separators."
+    },
+    {
+     "label": "PHONETIC",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "PHONETIC"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Returns the phonetic (furigana) text; here the text itself."
+    },
+    {
+     "label": "PROPER",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "PROPER"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Capitalises the first letter of each word and lower-cases the rest."
+    },
+    {
+     "label": "REGEXEXTRACT",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "REGEXEXTRACT"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Extracts the first match, all matches or the capture groups of a regular expression."
+    },
+    {
+     "label": "REGEXREPLACE",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "REGEXREPLACE"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Replaces matches of a regular expression, all of them or a chosen occurrence."
+    },
+    {
+     "label": "REGEXTEST",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "REGEXTEST"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "TRUE when a regular expression matches somewhere in the text."
+    },
+    {
+     "label": "REPLACE",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "REPLACE"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Replaces part of a text by position."
+    },
+    {
+     "label": "REPLACEB",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "REPLACEB"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Byte version of REPLACE."
+    },
+    {
+     "label": "REPT",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "REPT"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Repeats a text a given number of times."
+    },
+    {
+     "label": "RIGHT",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "RIGHT"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Returns the last characters of a text."
+    },
+    {
+     "label": "RIGHTB",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "RIGHTB"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Byte version of RIGHT (same as RIGHT for single-byte text)."
+    },
+    {
+     "label": "SEARCH",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "SEARCH"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Finds the position of one text in another, ignoring case and allowing wildcards."
+    },
+    {
+     "label": "SEARCHB",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "SEARCHB"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Byte version of SEARCH."
+    },
+    {
+     "label": "SUBSTITUTE",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "SUBSTITUTE"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Replaces occurrences of one text with another, optionally only a given occurrence."
+    },
+    {
+     "label": "T",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "T"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Returns the value if it is text, otherwise empty text."
+    },
+    {
+     "label": "TEXT",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "TEXT"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Formats a number as text."
+    },
+    {
+     "label": "TEXTAFTER",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "TEXTAFTER"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Returns the text that comes after a delimiter."
+    },
+    {
+     "label": "TEXTBEFORE",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "TEXTBEFORE"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Returns the text that comes before a delimiter."
+    },
+    {
+     "label": "TEXTJOIN",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "TEXTJOIN"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Joins text from values and ranges with a delimiter, optionally skipping empty items."
+    },
+    {
+     "label": "TEXTSPLIT",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "TEXTSPLIT"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Splits text into a grid of columns and rows at the given delimiters."
+    },
+    {
+     "label": "TRIM",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "TRIM"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Removes leading and trailing spaces and collapses runs of spaces to one."
+    },
+    {
+     "label": "UNICHAR",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "UNICHAR"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Returns the character for a Unicode code point."
+    },
+    {
+     "label": "UNICODE",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "UNICODE"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Returns the Unicode code point of the first character of a text."
+    },
+    {
+     "label": "UPPER",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "UPPER"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Converts text to upper case."
+    },
+    {
+     "label": "VALUE",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "VALUE"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Converts text that looks like a number, date or time into a number."
+    },
+    {
+     "label": "VALUETOTEXT",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "VALUETOTEXT"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Converts any value to text, optionally in strict (quoted) form."
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "Insert Function…",
+     "dialog": "dialog.insertFunction",
+     "source": "office"
+    }
+   ]
+  },
+  "formulas.functionLibrary.dateTime": {
+   "items": [
+    {
+     "label": "DATE",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "DATE"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Builds a date serial number from a year, month and day."
+    },
+    {
+     "label": "DATEDIF",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "DATEDIF"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Counts whole years, months or days between two dates. unit: Y, M, D, MD, YM or YD."
+    },
+    {
+     "label": "DATEVALUE",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "DATEVALUE"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Converts a date written as text into a date serial number."
+    },
+    {
+     "label": "DAY",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "DAY"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Returns the day of the month of a date."
+    },
+    {
+     "label": "DAYS",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "DAYS"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Returns the number of days between two dates."
+    },
+    {
+     "label": "DAYS360",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "DAYS360"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Days between two dates on a 360-day year (twelve 30-day months)."
+    },
+    {
+     "label": "EDATE",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "EDATE"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Returns the date a number of months before or after a date."
+    },
+    {
+     "label": "EOMONTH",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "EOMONTH"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Returns the last day of the month a number of months away."
+    },
+    {
+     "label": "HOUR",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "HOUR"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Returns the hour (0-23) of a time."
+    },
+    {
+     "label": "ISOWEEKNUM",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "ISOWEEKNUM"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Returns the ISO 8601 week number of a date."
+    },
+    {
+     "label": "MINUTE",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "MINUTE"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Returns the minute (0-59) of a time."
+    },
+    {
+     "label": "MONTH",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "MONTH"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Returns the month (1-12) of a date."
+    },
+    {
+     "label": "NETWORKDAYS",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "NETWORKDAYS"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Counts working days between two dates, Monday to Friday, minus holidays."
+    },
+    {
+     "label": "NETWORKDAYS.INTL",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "NETWORKDAYS.INTL"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Counts working days between two dates with a chosen weekend."
+    },
+    {
+     "label": "NOW",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "NOW"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Returns the current date and time."
+    },
+    {
+     "label": "SECOND",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "SECOND"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Returns the second (0-59) of a time."
+    },
+    {
+     "label": "TIME",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "TIME"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Builds a time (a fraction of a day) from hours, minutes and seconds."
+    },
+    {
+     "label": "TIMEVALUE",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "TIMEVALUE"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Converts a time written as text into a fraction of a day."
+    },
+    {
+     "label": "TODAY",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "TODAY"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Returns the current date."
+    },
+    {
+     "label": "WEEKDAY",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "WEEKDAY"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Returns the day of the week of a date as a number."
+    },
+    {
+     "label": "WEEKNUM",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "WEEKNUM"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Returns the week number of a date within its year."
+    },
+    {
+     "label": "WORKDAY",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "WORKDAY"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Returns the date a number of working days away."
+    },
+    {
+     "label": "WORKDAY.INTL",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "WORKDAY.INTL"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Returns the date a number of working days away with a chosen weekend."
+    },
+    {
+     "label": "YEAR",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "YEAR"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Returns the year of a date."
+    },
+    {
+     "label": "YEARFRAC",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "YEARFRAC"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Fraction of a year between two dates on a day-count basis."
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "Insert Function…",
+     "dialog": "dialog.insertFunction",
+     "source": "office"
+    }
+   ]
+  },
+  "formulas.functionLibrary.lookup": {
+   "items": [
+    {
+     "label": "ADDRESS",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "ADDRESS"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Builds a cell address as text from row and column numbers."
+    },
+    {
+     "label": "AREAS",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "AREAS"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Number of areas in a reference."
+    },
+    {
+     "label": "CHOOSE",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "CHOOSE"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Picks a value from the list by its position."
+    },
+    {
+     "label": "CHOOSECOLS",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "CHOOSECOLS"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Picks columns of an array by position (negative counts from the end)."
+    },
+    {
+     "label": "CHOOSEROWS",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "CHOOSEROWS"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Picks rows of an array by position (negative counts from the end)."
+    },
+    {
+     "label": "COLUMN",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "COLUMN"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Column number of a reference."
+    },
+    {
+     "label": "COLUMNS",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "COLUMNS"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Counts the columns in an array or range."
+    },
+    {
+     "label": "DROP",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "DROP"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Removes rows or columns from the start (or end) of an array."
+    },
+    {
+     "label": "EXPAND",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "EXPAND"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Grows an array to the given size, filling new cells with a pad value."
+    },
+    {
+     "label": "FILTER",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "FILTER"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Keeps the rows or columns of an array whose include flag is TRUE."
+    },
+    {
+     "label": "FORMULATEXT",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "FORMULATEXT"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "The formula of a cell as text."
+    },
+    {
+     "label": "HLOOKUP",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "HLOOKUP"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Finds a value in the first row of a table and returns the value in the same column of another row."
+    },
+    {
+     "label": "HSTACK",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "HSTACK"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Places arrays side by side."
+    },
+    {
+     "label": "INDEX",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "INDEX"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Returns the element, row or column of an array at the given position."
+    },
+    {
+     "label": "INDIRECT",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "INDIRECT"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "The reference named by a text string."
+    },
+    {
+     "label": "LOOKUP",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "LOOKUP"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Approximate lookup in a sorted vector or the first row/column of an array."
+    },
+    {
+     "label": "MATCH",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "MATCH"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Returns the 1-based position of a value in a row or column."
+    },
+    {
+     "label": "OFFSET",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "OFFSET"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "A reference shifted from a starting point."
+    },
+    {
+     "label": "ROW",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "ROW"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Row number of a reference."
+    },
+    {
+     "label": "ROWS",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "ROWS"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Counts the rows in an array or range."
+    },
+    {
+     "label": "SORT",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "SORT"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Sorts the rows (or columns) of an array by one or more of its columns."
+    },
+    {
+     "label": "SORTBY",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "SORTBY"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Sorts an array by the values of other arrays of matching size."
+    },
+    {
+     "label": "TAKE",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "TAKE"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Keeps rows or columns from the start (or end) of an array."
+    },
+    {
+     "label": "TOCOL",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "TOCOL"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Flattens an array into a single column, optionally skipping blanks or errors."
+    },
+    {
+     "label": "TOROW",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "TOROW"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Flattens an array into a single row, optionally skipping blanks or errors."
+    },
+    {
+     "label": "TRANSPOSE",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "TRANSPOSE"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Swaps the rows and columns of an array."
+    },
+    {
+     "label": "TRIMRANGE",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "TRIMRANGE"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "A range or array without its blank outer rows and columns."
+    },
+    {
+     "label": "UNIQUE",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "UNIQUE"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Returns the distinct rows or columns of an array."
+    },
+    {
+     "label": "VLOOKUP",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "VLOOKUP"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Finds a value in the first column of a table and returns the value in the same row of another column."
+    },
+    {
+     "label": "VSTACK",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "VSTACK"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Stacks arrays on top of each other."
+    },
+    {
+     "label": "WRAPCOLS",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "WRAPCOLS"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Breaks a row or column into columns of the given length."
+    },
+    {
+     "label": "WRAPROWS",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "WRAPROWS"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Breaks a row or column into rows of the given length."
+    },
+    {
+     "label": "XLOOKUP",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "XLOOKUP"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Searches a row or column and returns the matching item, row or column from another array."
+    },
+    {
+     "label": "XMATCH",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "XMATCH"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Returns the position of a value in a row or column with flexible match and search modes."
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "Insert Function…",
+     "dialog": "dialog.insertFunction",
+     "source": "office"
+    }
+   ]
+  },
+  "formulas.functionLibrary.mathTrig": {
+   "items": [
+    {
+     "label": "ABS",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "ABS"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Absolute value of a number."
+    },
+    {
+     "label": "ACOS",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "ACOS"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Arccosine in radians."
+    },
+    {
+     "label": "ACOSH",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "ACOSH"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Inverse hyperbolic cosine."
+    },
+    {
+     "label": "ACOT",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "ACOT"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Arccotangent in radians (0 to pi)."
+    },
+    {
+     "label": "ACOTH",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "ACOTH"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Inverse hyperbolic cotangent."
+    },
+    {
+     "label": "AGGREGATE",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "AGGREGATE"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "An aggregate that can skip hidden rows and errors."
+    },
+    {
+     "label": "ARABIC",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "ARABIC"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Converts Roman numerals to a number."
+    },
+    {
+     "label": "ASIN",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "ASIN"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Arcsine in radians."
+    },
+    {
+     "label": "ASINH",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "ASINH"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Inverse hyperbolic sine."
+    },
+    {
+     "label": "ATAN",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "ATAN"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Arctangent in radians."
+    },
+    {
+     "label": "ATAN2",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "ATAN2"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Angle of the point (x, y) from the x-axis in radians."
+    },
+    {
+     "label": "ATANH",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "ATANH"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Inverse hyperbolic tangent."
+    },
+    {
+     "label": "BASE",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "BASE"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Writes a number in another base, padded with zeros."
+    },
+    {
+     "label": "CEILING.MATH",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "CEILING.MATH"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Rounds a number up to the nearest integer or multiple."
+    },
+    {
+     "label": "CEILING.PRECISE",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "CEILING.PRECISE"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Rounds a number toward positive infinity to a multiple."
+    },
+    {
+     "label": "COMBIN",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "COMBIN"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Number of combinations without repetition."
+    },
+    {
+     "label": "COMBINA",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "COMBINA"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Number of combinations with repetition."
+    },
+    {
+     "label": "COS",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "COS"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Cosine of an angle in radians."
+    },
+    {
+     "label": "COSH",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "COSH"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Hyperbolic cosine."
+    },
+    {
+     "label": "COT",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "COT"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Cotangent of an angle in radians."
+    },
+    {
+     "label": "COTH",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "COTH"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Hyperbolic cotangent."
+    },
+    {
+     "label": "CSC",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "CSC"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Cosecant of an angle in radians."
+    },
+    {
+     "label": "CSCH",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "CSCH"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Hyperbolic cosecant."
+    },
+    {
+     "label": "DECIMAL",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "DECIMAL"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Reads text in a given base as a number."
+    },
+    {
+     "label": "DEGREES",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "DEGREES"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Converts radians to degrees."
+    },
+    {
+     "label": "EVEN",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "EVEN"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Rounds away from zero to the nearest even integer."
+    },
+    {
+     "label": "EXP",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "EXP"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "e raised to the given power."
+    },
+    {
+     "label": "FACT",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "FACT"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Factorial of a number."
+    },
+    {
+     "label": "FACTDOUBLE",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "FACTDOUBLE"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Double factorial of a number."
+    },
+    {
+     "label": "FLOOR.MATH",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "FLOOR.MATH"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Rounds a number down to the nearest integer or multiple."
+    },
+    {
+     "label": "FLOOR.PRECISE",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "FLOOR.PRECISE"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Rounds a number toward negative infinity to a multiple."
+    },
+    {
+     "label": "GCD",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "GCD"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Greatest common divisor of integers."
+    },
+    {
+     "label": "INT",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "INT"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Rounds a number down to the nearest integer."
+    },
+    {
+     "label": "ISO.CEILING",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "ISO.CEILING"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Rounds a number toward positive infinity to a multiple."
+    },
+    {
+     "label": "LCM",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "LCM"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Least common multiple of integers."
+    },
+    {
+     "label": "LN",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "LN"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Natural logarithm."
+    },
+    {
+     "label": "LOG",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "LOG"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Logarithm to the given base (10 by default)."
+    },
+    {
+     "label": "LOG10",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "LOG10"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Base-10 logarithm."
+    },
+    {
+     "label": "MDETERM",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "MDETERM"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Determinant of a square matrix."
+    },
+    {
+     "label": "MINVERSE",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "MINVERSE"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Inverse of a square matrix."
+    },
+    {
+     "label": "MMULT",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "MMULT"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Matrix product of two arrays."
+    },
+    {
+     "label": "MOD",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "MOD"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Remainder of a division, with the sign of the divisor."
+    },
+    {
+     "label": "MROUND",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "MROUND"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Rounds a number to the nearest multiple."
+    },
+    {
+     "label": "MULTINOMIAL",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "MULTINOMIAL"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Ratio of the factorial of a sum to the product of factorials."
+    },
+    {
+     "label": "MUNIT",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "MUNIT"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Identity matrix of the given size."
+    },
+    {
+     "label": "ODD",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "ODD"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Rounds away from zero to the nearest odd integer."
+    },
+    {
+     "label": "PERCENTOF",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "PERCENTOF"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "The sum of a subset as a fraction of the sum of all the values."
+    },
+    {
+     "label": "PI",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "PI"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "The constant pi to 15 digits."
+    },
+    {
+     "label": "POWER",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "POWER"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Raises a number to a power."
+    },
+    {
+     "label": "PRODUCT",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "PRODUCT"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Multiplies all the numbers in the arguments."
+    },
+    {
+     "label": "QUOTIENT",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "QUOTIENT"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Integer part of a division."
+    },
+    {
+     "label": "RADIANS",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "RADIANS"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Converts degrees to radians."
+    },
+    {
+     "label": "RAND",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "RAND"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "A random number between 0 and 1, recalculated every time."
+    },
+    {
+     "label": "RANDARRAY",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "RANDARRAY"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Builds an array of random numbers in a range."
+    },
+    {
+     "label": "RANDBETWEEN",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "RANDBETWEEN"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "A random integer between two bounds, inclusive."
+    },
+    {
+     "label": "ROMAN",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "ROMAN"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Converts a number to Roman numerals in one of five styles."
+    },
+    {
+     "label": "ROUND",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "ROUND"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Rounds a number to a given number of digits, halves away from zero."
+    },
+    {
+     "label": "ROUNDDOWN",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "ROUNDDOWN"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Rounds a number toward zero to a given number of digits."
+    },
+    {
+     "label": "ROUNDUP",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "ROUNDUP"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Rounds a number away from zero to a given number of digits."
+    },
+    {
+     "label": "SEC",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "SEC"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Secant of an angle in radians."
+    },
+    {
+     "label": "SECH",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "SECH"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Hyperbolic secant."
+    },
+    {
+     "label": "SEQUENCE",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "SEQUENCE"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Builds an array of evenly stepped numbers."
+    },
+    {
+     "label": "SERIESSUM",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "SERIESSUM"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Sum of a power series."
+    },
+    {
+     "label": "SIGN",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "SIGN"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "1 for positive, -1 for negative and 0 for zero."
+    },
+    {
+     "label": "SIN",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "SIN"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Sine of an angle in radians."
+    },
+    {
+     "label": "SINH",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "SINH"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Hyperbolic sine."
+    },
+    {
+     "label": "SQRT",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "SQRT"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Positive square root."
+    },
+    {
+     "label": "SQRTPI",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "SQRTPI"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Square root of the number times pi."
+    },
+    {
+     "label": "SUBTOTAL",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "SUBTOTAL"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "A subtotal that can skip hidden rows."
+    },
+    {
+     "label": "SUM",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "SUM"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Adds all the numbers in the arguments."
+    },
+    {
+     "label": "SUMIF",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "SUMIF"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Adds the cells that meet a condition."
+    },
+    {
+     "label": "SUMIFS",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "SUMIFS"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Adds the cells that meet every condition."
+    },
+    {
+     "label": "SUMPRODUCT",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "SUMPRODUCT"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Multiplies matching elements of equally sized arrays and adds the products."
+    },
+    {
+     "label": "SUMSQ",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "SUMSQ"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Adds the squares of the numbers."
+    },
+    {
+     "label": "SUMX2MY2",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "SUMX2MY2"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Sums the differences of squares of matching elements."
+    },
+    {
+     "label": "SUMX2PY2",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "SUMX2PY2"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Sums the sums of squares of matching elements."
+    },
+    {
+     "label": "SUMXMY2",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "SUMXMY2"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Sums the squared differences of matching elements."
+    },
+    {
+     "label": "TAN",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "TAN"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Tangent of an angle in radians."
+    },
+    {
+     "label": "TANH",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "TANH"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Hyperbolic tangent."
+    },
+    {
+     "label": "TRUNC",
+     "command": "formulas.insertFunction",
+     "params": {
+      "name": "TRUNC"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+     "tooltip": "Cuts off the fractional part of a number at the given digits."
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "Insert Function…",
+     "dialog": "dialog.insertFunction",
+     "source": "office"
+    }
+   ]
+  },
+  "formulas.functionLibrary.moreFunctions": {
+   "items": [
+    {
+     "label": "Statistical",
+     "items": [
+      {
+       "label": "AVEDEV",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "AVEDEV"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Average absolute deviation from the mean."
+      },
+      {
+       "label": "AVERAGE",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "AVERAGE"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Arithmetic mean of the numbers."
+      },
+      {
+       "label": "AVERAGEA",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "AVERAGEA"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Mean counting text as 0 and logical values as 1 or 0."
+      },
+      {
+       "label": "AVERAGEIF",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "AVERAGEIF"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Average of the cells that meet a condition."
+      },
+      {
+       "label": "AVERAGEIFS",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "AVERAGEIFS"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Average of the cells that meet every condition."
+      },
+      {
+       "label": "CORREL",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "CORREL"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Correlation coefficient of two data sets."
+      },
+      {
+       "label": "COUNT",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "COUNT"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Counts the numbers."
+      },
+      {
+       "label": "COUNTA",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "COUNTA"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Counts the non-empty values."
+      },
+      {
+       "label": "COUNTBLANK",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "COUNTBLANK"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Counts empty cells and empty text in a range."
+      },
+      {
+       "label": "COUNTIF",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "COUNTIF"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Counts the cells that meet a condition."
+      },
+      {
+       "label": "COUNTIFS",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "COUNTIFS"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Counts the cells that meet every condition."
+      },
+      {
+       "label": "COVARIANCE.P",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "COVARIANCE.P"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Population covariance of paired values."
+      },
+      {
+       "label": "COVARIANCE.S",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "COVARIANCE.S"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Sample covariance of paired values."
+      },
+      {
+       "label": "DEVSQ",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "DEVSQ"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Sum of squared deviations from the mean."
+      },
+      {
+       "label": "FISHER",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "FISHER"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Fisher transformation."
+      },
+      {
+       "label": "FISHERINV",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "FISHERINV"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Inverse of the Fisher transformation."
+      },
+      {
+       "label": "FORECAST.LINEAR",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "FORECAST.LINEAR"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Predicts a value along a linear trend."
+      },
+      {
+       "label": "FREQUENCY",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "FREQUENCY"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Counts how many values fall into each bin, as a vertical array."
+      },
+      {
+       "label": "GAMMALN",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "GAMMALN"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Natural log of the gamma function."
+      },
+      {
+       "label": "GAMMALN.PRECISE",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "GAMMALN.PRECISE"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Natural log of the gamma function."
+      },
+      {
+       "label": "GAUSS",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "GAUSS"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Probability that a standard normal value falls between the mean and z."
+      },
+      {
+       "label": "GEOMEAN",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "GEOMEAN"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Geometric mean of positive numbers."
+      },
+      {
+       "label": "HARMEAN",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "HARMEAN"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Harmonic mean of positive numbers."
+      },
+      {
+       "label": "INTERCEPT",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "INTERCEPT"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Y-intercept of the least-squares regression line."
+      },
+      {
+       "label": "KURT",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "KURT"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Excess kurtosis of a sample."
+      },
+      {
+       "label": "LARGE",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "LARGE"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "The k-th largest number in a data set."
+      },
+      {
+       "label": "MAX",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "MAX"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Largest number (0 when there are none)."
+      },
+      {
+       "label": "MAXA",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "MAXA"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Largest value counting text as 0 and logicals as 1/0."
+      },
+      {
+       "label": "MAXIFS",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "MAXIFS"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Largest value among cells that meet every condition."
+      },
+      {
+       "label": "MEDIAN",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "MEDIAN"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Middle value of the numbers."
+      },
+      {
+       "label": "MIN",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "MIN"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Smallest number (0 when there are none)."
+      },
+      {
+       "label": "MINA",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "MINA"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Smallest value counting text as 0 and logicals as 1/0."
+      },
+      {
+       "label": "MINIFS",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "MINIFS"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Smallest value among cells that meet every condition."
+      },
+      {
+       "label": "MODE.MULT",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "MODE.MULT"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Vertical array of all the most frequent numbers."
+      },
+      {
+       "label": "MODE.SNGL",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "MODE.SNGL"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Most frequently occurring number."
+      },
+      {
+       "label": "NORM.DIST",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "NORM.DIST"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Normal distribution density or cumulative probability."
+      },
+      {
+       "label": "NORM.INV",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "NORM.INV"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Inverse of the normal cumulative distribution."
+      },
+      {
+       "label": "NORM.S.DIST",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "NORM.S.DIST"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Standard normal density or cumulative probability."
+      },
+      {
+       "label": "NORM.S.INV",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "NORM.S.INV"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Inverse of the standard normal cumulative distribution."
+      },
+      {
+       "label": "PEARSON",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "PEARSON"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Pearson product-moment correlation coefficient."
+      },
+      {
+       "label": "PERCENTILE.EXC",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "PERCENTILE.EXC"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "k-th percentile, k strictly between 0 and 1."
+      },
+      {
+       "label": "PERCENTILE.INC",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "PERCENTILE.INC"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "k-th percentile, k from 0 to 1 inclusive."
+      },
+      {
+       "label": "PERCENTRANK.EXC",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "PERCENTRANK.EXC"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Relative standing of a value strictly between 0 and 1."
+      },
+      {
+       "label": "PERCENTRANK.INC",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "PERCENTRANK.INC"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Relative standing of a value from 0 to 1 inclusive."
+      },
+      {
+       "label": "PERMUT",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "PERMUT"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Number of ordered selections without repetition."
+      },
+      {
+       "label": "PERMUTATIONA",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "PERMUTATIONA"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Number of ordered selections with repetition."
+      },
+      {
+       "label": "PHI",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "PHI"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Standard normal density."
+      },
+      {
+       "label": "PROB",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "PROB"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Probability that values fall between two limits."
+      },
+      {
+       "label": "QUARTILE.EXC",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "QUARTILE.EXC"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Quartile (1–3) of a data set, exclusive method."
+      },
+      {
+       "label": "QUARTILE.INC",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "QUARTILE.INC"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Quartile (0–4) of a data set, inclusive method."
+      },
+      {
+       "label": "RANK.AVG",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "RANK.AVG"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Rank of a number within a list; ties get the average rank."
+      },
+      {
+       "label": "RANK.EQ",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "RANK.EQ"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Rank of a number within a list; ties share the top rank."
+      },
+      {
+       "label": "RSQ",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "RSQ"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Square of the correlation coefficient."
+      },
+      {
+       "label": "SKEW",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "SKEW"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Sample skewness."
+      },
+      {
+       "label": "SKEW.P",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "SKEW.P"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Population skewness."
+      },
+      {
+       "label": "SLOPE",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "SLOPE"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Slope of the least-squares regression line."
+      },
+      {
+       "label": "SMALL",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "SMALL"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "The k-th smallest number in a data set."
+      },
+      {
+       "label": "STANDARDIZE",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "STANDARDIZE"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Z-score of a value."
+      },
+      {
+       "label": "STDEV.P",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "STDEV.P"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Population standard deviation."
+      },
+      {
+       "label": "STDEV.S",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "STDEV.S"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Sample standard deviation."
+      },
+      {
+       "label": "STDEVA",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "STDEVA"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Sample standard deviation counting text as 0 and logicals as 1/0."
+      },
+      {
+       "label": "STDEVPA",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "STDEVPA"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Population standard deviation counting text as 0 and logicals as 1/0."
+      },
+      {
+       "label": "STEYX",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "STEYX"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Standard error of predicted y values in a regression."
+      },
+      {
+       "label": "TRIMMEAN",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "TRIMMEAN"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Mean after trimming a fraction of points from both ends."
+      },
+      {
+       "label": "VAR.P",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "VAR.P"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Population variance."
+      },
+      {
+       "label": "VAR.S",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "VAR.S"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Sample variance."
+      },
+      {
+       "label": "VARA",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "VARA"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Sample variance counting text as 0 and logicals as 1/0."
+      },
+      {
+       "label": "VARPA",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "VARPA"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Population variance counting text as 0 and logicals as 1/0."
+      }
+     ],
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:43"
+    },
+    {
+     "label": "Engineering",
+     "items": [
+      {
+       "label": "BESSELI",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "BESSELI"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Modified Bessel function of the first kind, I_n(x)."
+      },
+      {
+       "label": "BESSELJ",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "BESSELJ"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Bessel function of the first kind, J_n(x)."
+      },
+      {
+       "label": "BESSELK",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "BESSELK"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Modified Bessel function of the second kind, K_n(x)."
+      },
+      {
+       "label": "BESSELY",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "BESSELY"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Bessel function of the second kind, Y_n(x)."
+      },
+      {
+       "label": "BIN2DEC",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "BIN2DEC"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Converts a binary number to decimal."
+      },
+      {
+       "label": "BIN2HEX",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "BIN2HEX"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Converts a binary number to hexadecimal."
+      },
+      {
+       "label": "BIN2OCT",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "BIN2OCT"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Converts a binary number to octal."
+      },
+      {
+       "label": "BITAND",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "BITAND"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Bitwise AND of two non-negative integers."
+      },
+      {
+       "label": "BITLSHIFT",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "BITLSHIFT"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Shifts the bits of a number left (right for negative shifts)."
+      },
+      {
+       "label": "BITOR",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "BITOR"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Bitwise OR of two non-negative integers."
+      },
+      {
+       "label": "BITRSHIFT",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "BITRSHIFT"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Shifts the bits of a number right (left for negative shifts)."
+      },
+      {
+       "label": "BITXOR",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "BITXOR"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Bitwise exclusive OR of two non-negative integers."
+      },
+      {
+       "label": "COMPLEX",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "COMPLEX"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Builds a complex number as text from real and imaginary parts."
+      },
+      {
+       "label": "CONVERT",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "CONVERT"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Converts a measurement from one unit to another."
+      },
+      {
+       "label": "DEC2BIN",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "DEC2BIN"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Converts a decimal number to binary."
+      },
+      {
+       "label": "DEC2HEX",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "DEC2HEX"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Converts a decimal number to hexadecimal."
+      },
+      {
+       "label": "DEC2OCT",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "DEC2OCT"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Converts a decimal number to octal."
+      },
+      {
+       "label": "DELTA",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "DELTA"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Returns 1 when two numbers are equal, otherwise 0."
+      },
+      {
+       "label": "ERF",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "ERF"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Error function integrated from 0 to a limit, or between two limits."
+      },
+      {
+       "label": "ERF.PRECISE",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "ERF.PRECISE"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Error function integrated from 0 to x."
+      },
+      {
+       "label": "ERFC",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "ERFC"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Complementary error function, 1 - ERF(x)."
+      },
+      {
+       "label": "ERFC.PRECISE",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "ERFC.PRECISE"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Complementary error function, 1 - ERF(x)."
+      },
+      {
+       "label": "GESTEP",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "GESTEP"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Returns 1 when a number is at least the step, otherwise 0."
+      },
+      {
+       "label": "HEX2BIN",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "HEX2BIN"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Converts a hexadecimal number to binary."
+      },
+      {
+       "label": "HEX2DEC",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "HEX2DEC"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Converts a hexadecimal number to decimal."
+      },
+      {
+       "label": "HEX2OCT",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "HEX2OCT"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Converts a hexadecimal number to octal."
+      },
+      {
+       "label": "IMABS",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "IMABS"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Absolute value (modulus) of a complex number."
+      },
+      {
+       "label": "IMAGINARY",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "IMAGINARY"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Imaginary coefficient of a complex number."
+      },
+      {
+       "label": "IMARGUMENT",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "IMARGUMENT"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Angle of a complex number in radians."
+      },
+      {
+       "label": "IMCONJUGATE",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "IMCONJUGATE"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Complex conjugate of a complex number."
+      },
+      {
+       "label": "IMCOS",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "IMCOS"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Cosine of a complex number."
+      },
+      {
+       "label": "IMCOSH",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "IMCOSH"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Hyperbolic cosine of a complex number."
+      },
+      {
+       "label": "IMCOT",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "IMCOT"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Cotangent of a complex number."
+      },
+      {
+       "label": "IMCSC",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "IMCSC"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Cosecant of a complex number."
+      },
+      {
+       "label": "IMCSCH",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "IMCSCH"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Hyperbolic cosecant of a complex number."
+      },
+      {
+       "label": "IMDIV",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "IMDIV"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Quotient of two complex numbers."
+      },
+      {
+       "label": "IMEXP",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "IMEXP"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Exponential of a complex number."
+      },
+      {
+       "label": "IMLN",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "IMLN"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Natural logarithm of a complex number."
+      },
+      {
+       "label": "IMLOG10",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "IMLOG10"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Base-10 logarithm of a complex number."
+      },
+      {
+       "label": "IMLOG2",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "IMLOG2"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Base-2 logarithm of a complex number."
+      },
+      {
+       "label": "IMPOWER",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "IMPOWER"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Raises a complex number to a power."
+      },
+      {
+       "label": "IMPRODUCT",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "IMPRODUCT"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Product of complex numbers."
+      },
+      {
+       "label": "IMREAL",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "IMREAL"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Real coefficient of a complex number."
+      },
+      {
+       "label": "IMSEC",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "IMSEC"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Secant of a complex number."
+      },
+      {
+       "label": "IMSECH",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "IMSECH"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Hyperbolic secant of a complex number."
+      },
+      {
+       "label": "IMSIN",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "IMSIN"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Sine of a complex number."
+      },
+      {
+       "label": "IMSINH",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "IMSINH"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Hyperbolic sine of a complex number."
+      },
+      {
+       "label": "IMSQRT",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "IMSQRT"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Square root of a complex number."
+      },
+      {
+       "label": "IMSUB",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "IMSUB"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Difference of two complex numbers."
+      },
+      {
+       "label": "IMSUM",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "IMSUM"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Sum of complex numbers."
+      },
+      {
+       "label": "IMTAN",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "IMTAN"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Tangent of a complex number."
+      },
+      {
+       "label": "OCT2BIN",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "OCT2BIN"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Converts an octal number to binary."
+      },
+      {
+       "label": "OCT2DEC",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "OCT2DEC"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Converts an octal number to decimal."
+      },
+      {
+       "label": "OCT2HEX",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "OCT2HEX"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Converts an octal number to hexadecimal."
+      }
+     ],
+     "source": "office",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:43"
+    },
+    {
+     "label": "Information",
+     "items": [
+      {
+       "label": "CELL",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "CELL"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Information about a cell."
+      },
+      {
+       "label": "ERROR.TYPE",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "ERROR.TYPE"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Returns the number identifying an error value, or #N/A if it is not an error."
+      },
+      {
+       "label": "HYPERLINK",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "HYPERLINK"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Creates a link; the cell shows the friendly name, or the link itself."
+      },
+      {
+       "label": "INFO",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "INFO"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Returns information about the operating environment."
+      },
+      {
+       "label": "ISBLANK",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "ISBLANK"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "TRUE when the value refers to an empty cell."
+      },
+      {
+       "label": "ISERR",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "ISERR"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "TRUE when the value is any error other than #N/A."
+      },
+      {
+       "label": "ISERROR",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "ISERROR"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "TRUE when the value is any error."
+      },
+      {
+       "label": "ISEVEN",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "ISEVEN"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "TRUE when the integer part of a number is even."
+      },
+      {
+       "label": "ISFORMULA",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "ISFORMULA"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "TRUE when the cell has a formula."
+      },
+      {
+       "label": "ISLOGICAL",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "ISLOGICAL"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "TRUE when the value is TRUE or FALSE."
+      },
+      {
+       "label": "ISNA",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "ISNA"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "TRUE when the value is the #N/A error."
+      },
+      {
+       "label": "ISNONTEXT",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "ISNONTEXT"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "TRUE when the value is anything other than text."
+      },
+      {
+       "label": "ISNUMBER",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "ISNUMBER"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "TRUE when the value is a number."
+      },
+      {
+       "label": "ISODD",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "ISODD"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "TRUE when the integer part of a number is odd."
+      },
+      {
+       "label": "ISOMITTED",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "ISOMITTED"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "TRUE when a LAMBDA argument was left out."
+      },
+      {
+       "label": "ISREF",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "ISREF"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "TRUE for references."
+      },
+      {
+       "label": "ISTEXT",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "ISTEXT"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "TRUE when the value is text."
+      },
+      {
+       "label": "N",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "N"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Converts a value to a number: numbers stay, TRUE is 1, everything else is 0."
+      },
+      {
+       "label": "NA",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "NA"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Returns the #N/A error value."
+      },
+      {
+       "label": "SHEET",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "SHEET"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Sheet number."
+      },
+      {
+       "label": "SHEETS",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "SHEETS"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Number of sheets."
+      },
+      {
+       "label": "TYPE",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "TYPE"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Returns a code for the kind of value: 1 number, 2 text, 4 logical, 16 error, 64 array."
+      }
+     ],
+     "source": "office",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:43"
+    },
+    {
+     "label": "Compatibility",
+     "items": [
+      {
+       "label": "CEILING",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "CEILING"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Rounds a number up to a multiple of significance."
+      },
+      {
+       "label": "COVAR",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "COVAR"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Population covariance of paired values."
+      },
+      {
+       "label": "FLOOR",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "FLOOR"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Rounds a number down to a multiple of significance."
+      },
+      {
+       "label": "FORECAST",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "FORECAST"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Predicts a value along a linear trend."
+      },
+      {
+       "label": "MODE",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "MODE"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Most frequently occurring number."
+      },
+      {
+       "label": "NORMDIST",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "NORMDIST"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Normal distribution density or cumulative probability."
+      },
+      {
+       "label": "NORMINV",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "NORMINV"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Inverse of the normal cumulative distribution."
+      },
+      {
+       "label": "NORMSDIST",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "NORMSDIST"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Standard normal cumulative probability."
+      },
+      {
+       "label": "NORMSINV",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "NORMSINV"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Inverse of the standard normal cumulative distribution."
+      },
+      {
+       "label": "PERCENTILE",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "PERCENTILE"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "k-th percentile, k from 0 to 1 inclusive."
+      },
+      {
+       "label": "PERCENTRANK",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "PERCENTRANK"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Relative standing of a value as a fraction of the data set."
+      },
+      {
+       "label": "QUARTILE",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "QUARTILE"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Quartile (0–4) of a data set."
+      },
+      {
+       "label": "RANK",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "RANK"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Rank of a number within a list."
+      },
+      {
+       "label": "STDEV",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "STDEV"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Sample standard deviation."
+      },
+      {
+       "label": "STDEVP",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "STDEVP"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Population standard deviation."
+      },
+      {
+       "label": "USDOLLAR",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "USDOLLAR"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Formats a number as currency text, like DOLLAR."
+      },
+      {
+       "label": "VAR",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "VAR"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Sample variance."
+      },
+      {
+       "label": "VARP",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "VARP"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Population variance."
+      }
+     ],
+     "source": "office",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:43"
+    },
+    {
+     "label": "Web",
+     "items": [
+      {
+       "label": "ENCODEURL",
+       "command": "formulas.insertFunction",
+       "params": {
+        "name": "ENCODEURL"
+       },
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:51",
+       "tooltip": "Percent-encodes text for use in a URL."
+      }
+     ],
+     "source": "office",
+     "sourceRef": "crates/ui-egui/src/ribbon/formulas.rs:43"
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "Insert Function…",
+     "dialog": "dialog.insertFunction",
+     "source": "office"
+    }
+   ],
+   "note": "Cube functions are not translated (gridcraft has none), so Cube is not listed."
+  }
+ },
+ "dialogs": {
+  "dialog.insertFunction": {
+   "buttons": [
+    "OK",
+    "Cancel"
+   ],
+   "note": "Go sits beside the search box (Excel). Help on this function is left out: there is no offline help. OK starts =NAME( in the cell and opens Function Arguments (Excel)."
+  },
+  "dialog.functionArguments": {
+   "buttons": [
+    "OK",
+    "Cancel"
+   ],
+   "note": "Help on this function is left out: there is no offline help."
+  },
+  "dialog.nameManager": {
+   "buttons": [
+    "Close"
+   ],
+   "note": "New…, Edit… and Delete sit over the list, Filter on the right, as in Excel."
+  },
+  "dialog.errorChecking": {
+   "buttons": [
+    "Close"
+   ],
+   "note": "Show Calculation Steps…, Edit in Formula Bar, Previous and Next sit in the dialog as in Excel. Help on this Error shows the short offline advice, Ignore Error keeps the cell in the sheet (ignoredErrors, saved in .xlsx) and Options… resets the ignored errors (Excel opens its online help and rule list; not checked against upstream)."
+  },
+  "dialog.evaluateFormula": {
+   "buttons": [
+    "Close"
+   ],
+   "note": "Evaluate (Restart at the end) sits under the Evaluation box. Step In goes into the formula of the cell the underlined reference names and Step Out comes back (Excel's behaviour, not checked against upstream)."
+  }
+ }
+}

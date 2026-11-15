@@ -1,0 +1,150 @@
+{
+ "controls": {
+  "review.proofing.spelling": {
+   "params": null,
+   "dialog": null,
+   "note": "U:prism/spelling: opens the Spelling pane (panes/spelling.tsx, review.spelling, F7) on the first misspelt or repeated word on or after the current slide, going to its slide and shape: Ignore, Ignore All, Add (to the dictionary), the suggestions, Change, Change All and Delete for a repeated word. Words are checked against the bundled US English dictionary (nspell over dictionary-en, core/common/lib/spelling.mjs); text in another language, or marked do-not-check, is left out. Squiggles under the misspelt words of the slide's shapes and table cells (not in the notes box, a plain text field: the notes are read by the pane) and the right-click menu on one: U:prism/spelling."
+  },
+  "review.proofing.thesaurus": {
+   "command": "pane.toggle",
+   "params": {
+    "pane": "thesaurus"
+   },
+   "kind": "toggle",
+   "note": "U:prism/review: shows or hides the Thesaurus pane (panes/thesaurus.tsx): a search box, the senses and synonyms of the word, a click inserts the synonym while editing text."
+  },
+  "review.accessibility.check": {
+   "items": [
+    {
+     "label": "Alt Text",
+     "command": null,
+     "dialog": "dialog.altText",
+     "source": "office",
+     "sourceRef": "office: Microsoft PowerPoint"
+    }
+   ],
+   "note": "U:prism/review: opens the Accessibility Checker dialog (dialog.accessibility): a slide without a title, a picture, chart, media or group without alternative text, text hard to read on a solid background, each with Go to. Hidden: Keep Accessibility Checker running while I work (deckcraft checks on demand)."
+  },
+  "review.insights.search": {
+   "note": "Hidden: deckcraft has no Smart Lookup (Search) and the app does not look words up online."
+  },
+  "review.language.translate": {
+   "note": "Hidden: deckcraft's Translate is a disabled button (it needs a language model that is not bundled)."
+  },
+  "review.comments.new": {
+   "params": null,
+   "note": "U:prism/review: opens the New Comment dialog (dialog.comment); the comment goes on the current slide, pointing at the selected shape, and the Comments pane shows it."
+  },
+  "review.comments.delete": {
+   "params": {
+    "focused": true
+   },
+   "items": [
+    {
+     "label": "Delete",
+     "command": "comment.delete",
+     "params": {
+      "focused": true
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/review.rs:52"
+    },
+    {
+     "label": "Delete All Comments on Slide",
+     "command": "comment.delete",
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/review.rs:52"
+    },
+    {
+     "label": "Delete All Comments in This Presentation",
+     "command": "comment.delete",
+     "params": {
+      "all": true
+     },
+     "source": "upstream",
+     "sourceRef": "crates/engine/src/cmd/review.rs:150"
+    }
+   ],
+   "note": "U:prism/review: Delete removes the comment the pane or Next / Previous last went to (else every comment of the slide); the menu also deletes every comment of the slide or of the presentation."
+  },
+  "review.comments.show": {
+   "command": "pane.toggle",
+   "params": {
+    "pane": "comments",
+    "toggle": null
+   },
+   "kind": "toggle",
+   "note": "U:prism/review: shows or hides the Comments pane (panes/comments.tsx); on while it is open."
+  },
+  "review.compare.compare": {
+   "command": "review.compare",
+   "note": "U:prism/review: the system Open dialog picks the revised copy (a .pptx); the Revisions pane opens with the slide-level differences (review.compare)."
+  },
+  "review.compare.accept": {
+   "items": [
+    {
+     "label": "Accept All Changes to the Presentation",
+     "command": "review.accept",
+     "params": {
+      "all": true
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/review.rs:36"
+    }
+   ],
+   "note": "U:prism/review: Accept All takes every revision into the open presentation; one revision at a time is accepted in the Revisions pane. Hidden: Accept Change and Accept All Changes to This Slide (deckcraft accepts per revision in the pane only)."
+  },
+  "review.compare.reject": {
+   "items": [
+    {
+     "label": "Reject All Changes to the Presentation",
+     "command": "review.reject",
+     "params": {
+      "all": true
+     },
+     "source": "upstream",
+     "sourceRef": "crates/engine/src/cmd/review.rs:565"
+    }
+   ],
+   "note": "U:prism/review: Reject All drops every revision without applying it; one at a time in the Revisions pane."
+  },
+  "review.compare.previous": {
+   "command": "review.goToChange",
+   "args": {
+    "dir": "previous"
+   },
+   "note": "U:prism/review: PowerPoint's Previous Change: goes to the slide of the previous revision still to review (not checked against upstream)."
+  },
+  "review.compare.next": {
+   "command": "review.goToChange",
+   "args": {
+    "dir": "next"
+   },
+   "note": "U:prism/review: PowerPoint's Next Change: goes to the slide of the next revision still to review (not checked against upstream)."
+  },
+  "review.compare.pane": {
+   "command": "pane.toggle",
+   "params": {
+    "pane": "revisions"
+   },
+   "note": "U:prism/review: shows or hides the Revisions pane (panes/revisions.tsx)."
+  },
+  "review.ink.hide": {
+   "command": "review.hideInk",
+   "kind": "toggle",
+   "note": "U:prism/review: PowerPoint's Hide Ink: the ink on the slides is not drawn in the editor and the slide list (not checked against upstream)."
+  }
+ },
+ "dialogs": {
+  "dialog.comment": {
+   "note": "U:prism/review: the comment text; Post adds it to the current slide (comment.add). PowerPoint posts inline in the Comments pane; deckcraft uses this dialog."
+  },
+  "dialog.spelling": {
+   "command": null,
+   "note": "U:prism/review: replaced by the Spelling pane (U:prism/spelling); the ribbon, F7 and the Quick Access Toolbar open the pane, and the old list dialog has no model, so nothing reaches it."
+  },
+  "dialog.accessibility": {
+   "note": "U:prism/review: drawn by src/apps/prism/dialogs/accessibility.tsx over review.accessibility (the list is live); Close closes it. Not offered: the Errors / Warnings / Tips grouping and Keep Accessibility Checker running (nothing upstream)."
+  }
+ }
+}

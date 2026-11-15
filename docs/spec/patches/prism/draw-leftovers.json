@@ -1,0 +1,17 @@
+{
+ "controls": {
+  "draw.tools.lasso": {
+   "command": "tool.lasso",
+   "note": "U:prism/draw: PowerPoint's Lasso Select: a loop drawn freehand selects the objects whose centre is inside it and the ink with a point inside it (deckcraft's Select button only carries the lasso icon; not checked against upstream)."
+  },
+  "draw.convert.ink-to-text": {
+   "note": "U:prism/draw: hidden: deckcraft's Ink to Text is a disabled \"coming soon\" button; there is no handwriting recognizer."
+  },
+  "draw.convert.ink-to-math": {
+   "note": "U:prism/draw: hidden: deckcraft's Ink to Math is a disabled \"coming soon\" button; there is no math recognizer."
+  },
+  "draw.replay.ink-replay": {
+   "note": "U:prism/draw: hidden: deckcraft does not keep when each stroke was drawn, so there is nothing to replay."
+  }
+ }
+}

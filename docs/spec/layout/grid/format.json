@@ -1,0 +1,52 @@
+{
+  "tab": "format",
+  "source": "Microsoft Excel for Windows › Format (Chart Tools); gridcraft draws no Format tab, the spec takes it from Excel",
+  "groups": {
+    "current-selection": {
+      "collapseOrder": 1,
+      "layout": [
+        {"stack": ["chartFormat.selection.elements", "chartFormat.selection.formatSelection", "chartFormat.selection.resetToMatchStyle"]}
+      ]
+    },
+    "insert-shapes": {
+      "collapseOrder": 2,
+      "layout": [
+        {"gallery": "chartFormat.insertShapes.shapes", "inline": true, "columns": 6},
+        {"stack": ["chartFormat.insertShapes.changeShape"]}
+      ]
+    },
+    "shape-styles": {
+      "collapseOrder": 3,
+      "layout": [
+        {"gallery": "chartFormat.shapeStyles.gallery", "inline": true, "columns": 5},
+        {"stack": ["chartFormat.shapeStyles.fill", "chartFormat.shapeStyles.outline", "chartFormat.shapeStyles.effects"]}
+      ]
+    },
+    "word-art-styles": {
+      "collapseOrder": 4,
+      "layout": [
+        {"gallery": "chartFormat.wordArt.gallery", "inline": true, "columns": 3},
+        {"rows": [["chartFormat.wordArt.textFill"], ["chartFormat.wordArt.textOutline"], ["chartFormat.wordArt.textEffects"]]}
+      ]
+    },
+    "accessibility": {
+      "collapseOrder": 5,
+      "layout": [
+        {"large": "chartFormat.accessibility.altText"}
+      ]
+    },
+    "arrange": {
+      "collapseOrder": 6,
+      "layout": [
+        {"stack": ["chartFormat.arrange.bringForward", "chartFormat.arrange.sendBackward", "chartFormat.arrange.selectionPane"]},
+        {"rows": [["chartFormat.arrange.align"], ["chartFormat.arrange.group"], ["chartFormat.arrange.rotate"]]}
+      ]
+    },
+    "size": {
+      "collapseOrder": 7,
+      "layout": [
+        {"stack": ["chartFormat.size.height", "chartFormat.size.width"]}
+      ]
+    }
+  }
+}

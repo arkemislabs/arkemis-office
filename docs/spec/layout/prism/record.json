@@ -1,0 +1,59 @@
+{
+  "tab": "record",
+  "keytip": "C",
+  "source": "deckcraft crates/ui-egui/src/ribbon/slide_show.rs (record) @ f893f6af7d36a5409fd804e81a34fd895cfefedf; Content and Save placed as PowerPoint",
+  "groups": {
+    "record": {
+      "collapseOrder": 4,
+      "collapsedIcon": "camera",
+      "layout": [
+        {
+          "large": "record.record.cameo"
+        },
+        {
+          "large": "record.record.from-beginning"
+        },
+        {
+          "large": "record.record.from-current"
+        }
+      ]
+    },
+    "content": {
+      "collapseOrder": 3,
+      "layout": [
+        {
+          "large": "record.content.screenshot"
+        },
+        {
+          "large": "record.content.screen-recording"
+        },
+        {
+          "large": "record.content.video"
+        },
+        {
+          "large": "record.content.audio"
+        }
+      ]
+    },
+    "save": {
+      "collapseOrder": 2,
+      "layout": [
+        {
+          "large": "record.save.save-as-show"
+        },
+        {
+          "large": "record.save.export-video"
+        }
+      ]
+    },
+    "learn-more": {
+      "collapseOrder": 1,
+      "collapsedIcon": "help",
+      "layout": [
+        {
+          "large": "record.help.learn-more"
+        }
+      ]
+    }
+  }
+}

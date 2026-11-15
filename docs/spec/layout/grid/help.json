@@ -1,0 +1,17 @@
+{
+  "tab": "help",
+  "source": "Microsoft Excel for Windows › Help (gridcraft has no Help tab; its Check for Updates sits on Automate, crates/ui-egui/src/ribbon/automate.rs, as a large button)",
+  "groups": {
+    "help-and-support": {
+      "collapseOrder": 1,
+      "layout": [
+        {"large": "help.help.help"},
+        {"large": "help.help.contactSupport"},
+        {"large": "help.help.feedback"},
+        {"large": "help.help.showTraining"},
+        {"large": "help.help.whatsNew"},
+        {"large": "help.help.checkForUpdates"}
+      ]
+    }
+  }
+}

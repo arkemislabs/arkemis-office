@@ -1,0 +1,191 @@
+/* PDF surface (F:folio): Acrobat's document view in the Arkemis skin. The view behind the pages is
+   the shell's graphite; pages are paper with a soft shadow; the side panel uses the shell's panel
+   tokens. Selection colours follow printcraft (text #3A7BF0 at 70/255, comments #1473E6). */
+
+.folio-surface {
+  position: absolute; inset: 0; display: flex; min-width: 0; min-height: 0; outline: none;
+  --folio-select: rgba(58, 123, 240, .275); --folio-blue: #1473e6; user-select: none;
+}
+.folio-scroll { position: relative; flex: 1; min-width: 0; overflow: auto; background: #1a1a1c; overscroll-behavior: contain; }
+.folio-canvas { position: relative; margin: 0 auto; }
+.folio-empty { display: grid; place-items: center; height: 100%; color: var(--sh-text-3, #85858c); font: 13px var(--ark-font, system-ui); }
+
+.folio-page {
+  position: absolute; background: #fff; touch-action: none;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.35), 0 2px 10px rgba(0,0,0,.45);
+}
+.folio-page-canvas { position: absolute; inset: 0; display: block; }
+
+.folio-selection, .folio-comment-hover, .folio-comment-selected { position: absolute; inset: 0; pointer-events: none; }
+.folio-selection i { position: absolute; border-radius: 1px; background: var(--folio-select); }
+.folio-selection b { position: absolute; border: 1px solid #3a7bf0; }
+.folio-comment-hover i { position: absolute; border-radius: 2px; box-shadow: 0 0 0 1px rgba(20, 115, 230, .7); }
+.folio-comment-selected i { position: absolute; box-shadow: 0 0 0 1px var(--folio-blue); }
+.folio-comment-selected u {
+  position: absolute; width: 9px; height: 9px; margin: -4.5px 0 0 -4.5px; border-radius: 50%;
+  background: #fff; box-shadow: 0 0 0 1px var(--folio-blue);
+}
+.folio-comment-selected u.is-point { width: 10px; height: 10px; margin: -5px 0 0 -5px; }
+.folio-ink-preview { position: absolute; inset: 0; pointer-events: none; overflow: visible; }
+
+.folio-composer {
+  position: absolute; z-index: 5; display: flex; flex-direction: column; gap: 8px; width: 260px; padding: 10px;
+  border-radius: 12px; background: rgba(28, 28, 31, .92); backdrop-filter: blur(18px) saturate(1.4);
+  box-shadow: 0 0 0 1px rgba(255,255,255,.1), 0 12px 32px rgba(0,0,0,.5); color: var(--sh-text-1, #f2f2f3);
+}
+.folio-composer textarea {
+  min-height: 72px; resize: vertical; padding: 8px; border-radius: 8px; border: 1px solid var(--sh-field-border, rgba(255,255,255,.14));
+  background: var(--sh-field, rgba(0,0,0,.24)); color: inherit; font: 13px/1.4 var(--ark-font, system-ui); outline: none;
+}
+.folio-composer textarea:focus { border-color: var(--sh-focus, #aacbff); }
+.folio-composer div { display: flex; justify-content: flex-end; gap: 6px; }
+.folio-composer button {
+  height: 26px; padding: 0 12px; border: 0; border-radius: 7px; background: var(--sh-hover, rgba(255,255,255,.075)); color: inherit; font: 12px var(--ark-font, system-ui);
+}
+.folio-composer button.is-primary { background: #e9e9ec; color: #111; font-weight: 600; }
+
+.folio-side {
+  position: relative; flex: none; display: flex; flex-direction: column; min-height: 0;
+  background: var(--sh-panel, #18181a); box-shadow: inset 1px 0 0 var(--sh-panel-border, rgba(255,255,255,.085));
+}
+.folio-side-grip { position: absolute; left: -3px; top: 0; bottom: 0; width: 6px; cursor: ew-resize; z-index: 2; }
+.folio-side-head { flex: none; display: flex; align-items: center; justify-content: space-between; height: 40px; padding: 0 8px 0 14px; }
+.folio-side-head h2 { margin: 0; font: 600 12.5px/1 var(--ark-font, system-ui); color: var(--sh-text-1, #f2f2f3); }
+.folio-side-close { display: grid; place-items: center; width: 26px; height: 26px; padding: 0; border: 0; border-radius: 7px; background: transparent; color: var(--sh-text-2, #b4b4ba); }
+.folio-side-close:hover { background: var(--sh-hover); color: var(--sh-text-1); }
+.folio-side-empty { margin: 14px; color: var(--sh-text-3, #85858c); font: 12px var(--ark-font, system-ui); }
+
+.folio-thumbs { flex: 1; min-height: 0; overflow: auto; }
+.folio-thumb {
+  position: absolute; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 6px;
+  padding: 8px; border: 0; border-radius: 8px; background: transparent; color: var(--sh-text-3, #85858c);
+}
+.folio-thumb:hover { background: var(--sh-hover, rgba(255,255,255,.075)); }
+.folio-thumb.is-current { background: rgba(170, 203, 255, .12); color: var(--sh-focus, #aacbff); }
+.folio-thumb-canvas { display: block; background: #fff; box-shadow: 0 0 0 1px rgba(255,255,255,.18); }
+.folio-thumb.is-current .folio-thumb-canvas { box-shadow: 0 0 0 2px var(--sh-focus, #aacbff); }
+.folio-thumb span { font: 500 12px/1 var(--ark-font, system-ui); }
+
+.folio-bms, .folio-bms ul { list-style: none; margin: 0; padding: 0; }
+.folio-bms { flex: 1; min-height: 0; overflow: auto; padding: 4px 6px 12px; }
+.folio-bm { display: flex; align-items: center; gap: 2px; min-height: 26px; border-radius: 6px; }
+.folio-bm:hover { background: var(--sh-hover, rgba(255,255,255,.075)); }
+.folio-bm.is-current { background: rgba(170, 203, 255, .1); }
+.folio-bm-twisty { display: grid; place-items: center; width: 18px; height: 18px; padding: 0; border: 0; border-radius: 4px; background: transparent; color: var(--sh-text-2); }
+.folio-bm-leaf { width: 18px; flex: none; }
+.folio-bm-title {
+  flex: 1; min-width: 0; padding: 4px 6px; border: 0; background: transparent; color: var(--sh-text-1, #f2f2f3); text-align: left;
+  font: 12.5px/1.3 var(--ark-font, system-ui); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.folio-bm-title:disabled { color: var(--sh-text-3); }
+
+.folio-busy {
+  position: absolute; left: 50%; bottom: 18px; transform: translateX(-50%); padding: 7px 14px; border-radius: 99px;
+  background: rgba(28, 28, 31, .9); box-shadow: 0 0 0 1px rgba(255,255,255,.1); color: var(--sh-text-2); font: 12px var(--ark-font, system-ui);
+}
+
+/* Organize Pages: the page grid (canvas/organize.rs). */
+.folio-scroll[hidden] { display: none; }
+.folio-organize { position: relative; flex: 1; min-width: 0; overflow-y: auto; outline: 0; background: #1a1a1c; scrollbar-width: thin; }
+.folio-organize-inner { position: relative; }
+.folio-organize-cell { position: absolute; display: flex; flex-direction: column; align-items: center; border-radius: 10px; user-select: none; touch-action: none; }
+.folio-organize-cell:hover .folio-organize-picture { background: rgba(255,255,255,.05); }
+.folio-organize-cell.is-selected .folio-organize-picture { background: rgba(255,255,255,.09); box-shadow: inset 0 0 0 2px rgba(255,255,255,.7); }
+.folio-organize-cell.is-moving { opacity: .45; }
+.folio-organize-picture { display: grid; place-items: center; border-radius: 10px; transition: background-color .08s linear; }
+.folio-organize-picture canvas { display: block; background: #fff; box-shadow: 0 1px 4px rgba(0,0,0,.45); }
+.folio-organize-label { margin-top: 6px; color: #c9cad0; font-size: 12px; }
+.folio-organize-check { position: absolute; left: 8px; top: 8px; width: 20px; height: 20px; border: 0; border-radius: 5px; padding: 0;
+  background: rgba(27,27,27,.75); box-shadow: inset 0 0 0 1.5px rgba(255,255,255,.5); opacity: 0; transition: opacity .08s linear; }
+.folio-organize-cell:hover .folio-organize-check, .folio-organize-check.is-on { opacity: 1; }
+.folio-organize-check.is-on { background: #f4f4f6 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14'%3E%3Cpath d='m3.25 7.25 2.5 2.5 5-5.5' fill='none' stroke='%231b1b1b' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 14px no-repeat; box-shadow: none; }
+.folio-organize-gap { position: absolute; width: 22px; height: 22px; padding: 0; border: 0; border-radius: 50%; background: #2a2a2a; color: #e9e9ec;
+  font: 600 15px/22px var(--ark-font, system-ui); box-shadow: inset 0 0 0 1px rgba(255,255,255,.16); opacity: 0; transition: opacity .1s linear; }
+.folio-organize-gap:hover, .folio-organize-gap:focus-visible { opacity: 1; background: #3a3a3a; }
+.folio-organize-drop { position: absolute; width: 3px; border-radius: 2px; background: #f4f4f6; pointer-events: none; }
+.folio-organize-drop.is-copy::after { content: '+'; position: absolute; top: -18px; left: -6px; color: #f4f4f6; font-weight: 700; }
+
+/* The form layer (FormLayer.tsx): fields filled in place, Prepare a form's fill, tags and handles. */
+.ff-layer { position: absolute; inset: 0; pointer-events: none; }
+.ff-layer.is-prepare { pointer-events: auto; }
+.ff-w, .ff-box { position: absolute; box-sizing: border-box; pointer-events: auto; padding: 0; margin: 0; border: 0; background: transparent; }
+.ff-w.is-highlighted { box-shadow: inset 0 0 0 1px rgba(20, 115, 230, .35); }
+.ff-w:focus-within, .ff-w:focus-visible { outline: 2px solid var(--folio-blue); outline-offset: 0; }
+.ff-w.ff-checkbox, .ff-w.ff-radio, .ff-w.ff-pushbutton, .ff-w.ff-signature, .ff-w.ff-list { cursor: pointer; }
+.ff-w.is-readonly { cursor: default; }
+.ff-input { position: absolute; inset: 0; width: 100%; height: 100%; box-sizing: border-box; padding: 0 2px; border: 0; outline: none; resize: none;
+  background: transparent; color: transparent !important; caret-color: #111; font-family: Helvetica, Arial, sans-serif; line-height: 1.15; user-select: text; }
+.ff-input:focus { background: #fff; color: #000 !important; }
+textarea.ff-input { padding: 2px; }
+.ff-select { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; }
+.ff-box { border: 1px solid; user-select: none; }
+.ff-box.is-selected { box-shadow: 0 0 0 1px var(--folio-blue); }
+.ff-tag { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); max-width: 100%; padding: 1px 3px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  color: #fff; font: 9px/1.2 var(--ark-font, system-ui); pointer-events: none; }
+.ff-handle { position: absolute; width: 9px; height: 9px; margin: -4.5px 0 0 -4.5px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 1.5px var(--folio-blue); cursor: nwse-resize; }
+.ff-handle:nth-of-type(2n) { cursor: nesw-resize; }
+.ff-drawing { position: absolute; background: rgba(77, 148, 240, .35); box-shadow: inset 0 0 0 1px var(--folio-blue); pointer-events: none; }
+.ff-hint { position: absolute; left: 50%; bottom: 10px; transform: translateX(-50%); padding: 4px 10px; border-radius: 999px; background: rgba(28, 28, 31, .9); color: #f2f2f3; font: 11px var(--ark-font, system-ui); pointer-events: none; white-space: nowrap; }
+
+/* A password-protected PDF waiting for its password. */
+.folio-locked { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; text-align: center; }
+.folio-locked b { color: var(--sh-text-1, #ececf0); font-size: 15px; font-weight: 600; }
+.folio-locked span { max-width: 360px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.folio-locked button { margin-top: 8px; height: 30px; padding: 0 16px; border-radius: 15px; border: 0; background: var(--sh-accent, #4d8dff); color: #fff; font: 600 13px var(--ark-font, system-ui); cursor: pointer; }
+
+/* The Redact tool: the box being drawn. */
+.folio-redact-box { position: absolute; border: 1.5px solid #e32222; background: rgba(227, 34, 34, 0.12); pointer-events: none; }
+
+/* Non-continuous display: the scroll snaps to the page or spread slots. */
+.folio-scroll[data-snap] { scroll-snap-type: y proximity; }
+.folio-snap { position: absolute; left: 0; width: 1px; height: 1px; scroll-snap-align: start; pointer-events: none; }
+/* Read mode and full screen: the page fills the window (View > Read mode, Full screen mode). */
+.shell[data-folio-screen] .fa-modebar, .shell[data-folio-screen] .fa-left, .shell[data-folio-screen] .fa-docbars, .shell[data-folio-screen] .fa-quickbar,
+.shell[data-folio-screen] .fa-rail, .shell[data-folio-screen] .folio-side { display: none !important; }
+.shell[data-folio-screen=presentation] .shell-titlebar { display: none !important; }
+.shell[data-folio-screen=presentation] { background: #000; }
+.shell[data-folio-screen=presentation] .folio-scroll { background: #000; }
+/* The marquee zoom tool. */
+.folio-surface[data-tool="view.marquee_zoom"] .folio-page { cursor: zoom-in; }
+
+/* Find: the matches on the page, the current one standing out (canvas/find.rs). */
+.folio-find { position: absolute; inset: 0; pointer-events: none; }
+.folio-find i { position: absolute; border-radius: 2px; background: rgba(255, 214, 0, .38); mix-blend-mode: multiply; }
+.folio-find i.is-current { background: rgba(255, 140, 0, .55); outline: 1.5px solid #f08000; }
+.folio-findbar { position: absolute; top: 12px; right: 22px; z-index: 6; display: flex; align-items: center; gap: 4px; padding: 5px 8px 5px 12px; border-radius: 12px; background: var(--sh-card, #26262a); border: 1px solid var(--sh-field-border, rgba(255,255,255,.12)); box-shadow: 0 6px 22px rgba(0,0,0,.45); color: var(--sh-text-1, #ececf0); font: 13px var(--ark-font, system-ui); }
+.folio-findbar input[type=text], .folio-findbar input:not([type]) { width: 220px; border: 0; background: transparent; color: inherit; font: inherit; outline: none; }
+.folio-findbar .ffb-status { min-width: 64px; color: var(--sh-text-3, #85858c); font-size: 12px; text-align: right; }
+.folio-findbar .ffb-btn { display: grid; place-items: center; width: 26px; height: 26px; border: 0; border-radius: 7px; background: transparent; color: var(--sh-text-2, #b7b7bd); cursor: pointer; }
+.folio-findbar .ffb-btn:hover:not(:disabled) { background: var(--sh-hover, rgba(255,255,255,.08)); color: var(--sh-text-1, #fff); }
+.folio-findbar .ffb-btn:disabled { opacity: .35; cursor: default; }
+.folio-findbar .ffb-btn.is-on { color: var(--sh-accent, #4d8dff); }
+.folio-findbar .ffb-menu { position: absolute; top: 38px; right: 8px; display: flex; flex-direction: column; gap: 6px; padding: 10px 12px; border-radius: 10px; background: var(--sh-card, #26262a); border: 1px solid var(--sh-field-border, rgba(255,255,255,.12)); box-shadow: 0 6px 22px rgba(0,0,0,.45); }
+.folio-findbar .ffb-menu label { display: flex; align-items: center; gap: 8px; white-space: nowrap; }
+
+.folio-measure { position: absolute; left: 0; top: 0; pointer-events: none; overflow: visible; }
+.folio-measure text { font-family: var(--ark-font, system-ui, sans-serif); paint-order: stroke; stroke: rgba(255, 255, 255, .85); stroke-width: 3px; }
+.folio-compare { position: absolute; inset: 0; pointer-events: none; }
+.folio-compare i { position: absolute; border-radius: 2px; mix-blend-mode: multiply; }
+.folio-compare i[data-kind="Replaced"] { background: rgba(51, 115, 242, .32); }
+.folio-compare i[data-kind="Inserted"] { background: rgba(51, 191, 77, .34); }
+.folio-compare i[data-kind="Deleted"] { background: rgba(230, 64, 64, .32); }
+.folio-compare i.is-selected { outline: 2px solid #1473e6; outline-offset: 1px; mix-blend-mode: normal; }
+/* Edit text & images: the paragraph boxes and the open paragraph's editor (edit_text_ui.rs: outlined on hover, solid while open). */
+.folio-edit-layer { position: absolute; inset: 0; z-index: 3; }
+.folio-edit-box { position: absolute; box-sizing: border-box; border: 1px dashed rgba(20, 115, 230, .55); border-radius: 2px; pointer-events: none; }
+.folio-edit-box.is-hover { border: 1.5px solid #1473e6; background: rgba(20, 115, 230, .07); }
+.folio-edit-box.is-locked { border-color: rgba(160, 160, 170, .5); }
+.folio-edit-box.is-moving { border: 1.5px solid #1473e6; background: rgba(20, 115, 230, .12); }
+.folio-edit-input { position: absolute; box-sizing: border-box; margin: 0; padding: 2px; resize: none; overflow: hidden; white-space: pre-wrap; overflow-wrap: break-word; background: #fff; border: 1.5px solid #1473e6; border-radius: 2px; outline: none; }
+.folio-edit-image { position: absolute; box-sizing: border-box; border: 1px dashed rgba(20, 115, 230, .45); pointer-events: none; }
+.folio-edit-image.is-picked { border: 1.5px solid #1473e6; background: rgba(20, 115, 230, .06); }
+.folio-edit-image.is-moving { background: rgba(20, 115, 230, .14); }
+.folio-edit-image u { position: absolute; width: 9px; height: 9px; margin: -4.5px 0 0 -4.5px; border: 1.5px solid #1473e6; border-radius: 2px; background: #fff; }
+.folio-edit-layer[data-adding="true"] .folio-edit-image.is-added { border-style: solid; }
+.folio-edge-handle { position: absolute; box-sizing: border-box; border: 1px solid #1473e6; border-radius: 2px; background: #fff; pointer-events: none; }
+.folio-edit-box:has(.folio-edge-handle) { overflow: visible; }
+.folio-edit-caret { position: absolute; width: 1.5px; pointer-events: none; animation: folio-caret 1.06s steps(1, end) infinite; }
+.folio-edit-caret.is-solid { animation: none; opacity: 1; }
+@keyframes folio-caret { 0%, 55% { opacity: 1; } 56%, 100% { opacity: 0; } }
+.folio-edit-link { position: absolute; box-sizing: border-box; border: 1.5px solid #1473e6; border-radius: 2px; background: rgba(20, 115, 230, .08); pointer-events: none; }
+.folio-edit-link.is-picked { border-width: 2px; background: rgba(20, 115, 230, .2); }

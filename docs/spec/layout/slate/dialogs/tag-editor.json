@@ -1,0 +1,28 @@
+{
+  "source": "OneNote New Tag / Modify Tag: Format (Display name, Symbol, Font Color, Highlight Color) and Preview",
+  "width": 380,
+  "height": 300,
+  "sections": [
+    {
+      "fields": [
+        "displayName"
+      ]
+    },
+    {
+      "fields": [
+        "symbol"
+      ]
+    },
+    {
+      "fields": [
+        "fontColor",
+        "highlightColor"
+      ]
+    },
+    {
+      "fields": [
+        "preview"
+      ]
+    }
+  ]
+}

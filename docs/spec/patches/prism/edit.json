@@ -1,0 +1,27 @@
+{
+  "controls": {
+    "home.clipboard.paste": {
+      "note": "U:prism/edit: Paste's menu as deckcraft ribbon/home.rs:12 lists it plus PowerPoint's Keep Source Formatting. Picture (paste the copied shapes as a PNG) needs deckcraft's render_shape, which has no core translation yet, so it is not offered (edit.pasteSpecial refuses as: picture).",
+      "items": [
+        {"label": "Paste", "command": "edit.paste", "source": "upstream", "sourceRef": "crates/ui-egui/src/ribbon/home.rs:18"},
+        {"label": "Keep Source Formatting", "command": "edit.pasteSpecial", "params": {"as": "keepSource"}, "note": "PowerPoint paste-option icons", "source": "office", "sourceRef": "office: Microsoft PowerPoint"},
+        {"label": "Paste and Match Formatting", "command": "edit.pasteText", "source": "upstream", "sourceRef": "crates/ui-egui/src/ribbon/home.rs:21"},
+        {"label": "Paste Special…", "command": null, "dialog": "dialog.pasteSpecial", "note": "deckcraft app.pasteSpecial opens this dialog (front-end request)", "source": "upstream", "sourceRef": "crates/ui-egui/src/ribbon/home.rs:24"},
+        {"label": "Paste Formatting", "command": "format.painterApply", "source": "upstream", "sourceRef": "crates/ui-egui/src/ribbon/home.rs:27"}
+      ]
+    }
+  },
+  "dialogs": {
+    "dialog.pasteSpecial": {
+      "note": "U:prism/edit: deckcraft body.rs:897 dlg_paste_special (As: radio, OK) with PowerPoint's Result line. Paste link and Display as icon (OLE objects) and Picture (PNG) (needs the slide renderer in core) are not offered.",
+      "tabs": [
+        {"name": "Paste", "fields": [
+          {"id": "as", "label": "As:", "kind": "radio", "param": "as", "source": "upstream", "sourceRef": "crates/ui-egui/src/dialogs/body.rs:906",
+            "options": [{"value": "destinationTheme", "label": "Use Destination Theme"}, {"value": "keepSource", "label": "Keep Source Formatting"}, {"value": "text", "label": "Keep Text Only"}]},
+          {"id": "result", "label": "Result", "kind": "label", "options": [], "source": "office"}
+        ]}
+      ],
+      "buttons": ["OK", "Cancel"]
+    }
+  }
+}

@@ -1,0 +1,2 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {gridFormulaCatalog} from '../core/grid-formula-catalog.mjs';import {evaluateCell,isCalculationError} from '../core/formulas.mjs';
+test('every formula picker example is connected and evaluates without errors',()=>{assert.equal(gridFormulaCatalog.length,72);for(const f of gridFormulaCatalog){const cache=new Map(),value=evaluateCell({A1:{value:f.example}},'A1',new Set(),cache);assert.equal(isCalculationError(cache,'A1'),false,`${f.name}: ${value}`);}});

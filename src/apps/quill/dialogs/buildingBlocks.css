@@ -1,0 +1,24 @@
+/* Building Blocks Organizer (Insert › Quick Parts): Word's table, preview and buttons. */
+.bb-organizer { width: 620px; max-width: 100%; box-sizing: border-box; }
+.bb-main { display: grid; grid-template-columns: minmax(0, 1fr) 170px; gap: 14px; align-items: start; }
+.bb-left { display: grid; gap: 6px; min-width: 0; }
+.bb-table { border: 1px solid var(--sh-border, rgba(255,255,255,.14)); border-radius: 6px; background: rgba(0,0,0,.18); height: 230px; display: flex; flex-direction: column; overflow: hidden; }
+.bb-head, .bb-row { display: grid; grid-template-columns: 1.3fr 1.15fr 1fr 1.25fr; gap: 6px; padding: 0 8px; font-size: 12px; }
+.bb-head { background: rgba(255,255,255,.06); border-bottom: 1px solid rgba(255,255,255,.1); }
+.bb-th { display: flex; align-items: center; gap: 4px; padding: 5px 0; background: none; border: 0; color: inherit; font: inherit; font-weight: 600; text-align: left; cursor: pointer; }
+.bb-th:hover { color: var(--ark-accent, #8aa8ff); }
+.bb-arrow { font-size: 8px; opacity: .8; }
+.bb-body { overflow: auto; flex: 1; }
+.bb-row { padding-top: 4px; padding-bottom: 4px; cursor: default; }
+.bb-row:hover { background: rgba(255,255,255,.06); }
+.bb-row.is-selected { background: var(--sh-checked, rgba(91,141,239,.28)); }
+.bb-row span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bb-empty { margin: 10px; opacity: .7; font-size: 12px; }
+.bb-right { display: grid; gap: 8px; }
+.bb-page { height: 190px; padding: 10px 12px; background: #fff; color: #000; border: 1px solid var(--sh-border, rgba(255,255,255,.14)); border-radius: 4px; font-size: 11.5px; line-height: 1.4; overflow: hidden; white-space: pre-wrap; word-break: break-word; }
+.bb-muted { color: #77777f; }
+.bb-caption { font-size: 12px; display: grid; gap: 2px; }
+.bb-caption .bb-muted { color: inherit; opacity: .6; }
+.bb-buttons { display: flex; gap: 8px; margin-top: 10px; }
+.bb-page.is-blank { display: grid; place-items: center; text-align: center; background: #fff repeating-linear-gradient(to bottom, transparent 0 22px, rgba(0,0,0,.07) 22px 23px); }
+.bb-hint { opacity: .7; font-size: 11.5px; }

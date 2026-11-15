@@ -1,0 +1,17 @@
+{
+  "source": "deckcraft crates/ui-egui/src/dialogs/body.rs:617 (dlg_outline: the instruction line, a 10-row 380 pt monospace box, Insert / Cancel) at f893f6af7d36a5409fd804e81a34fd895cfefedf",
+  "width": 460,
+  "height": 320,
+  "sections": [
+    {
+      "fields": [
+        "hint"
+      ]
+    },
+    {
+      "fields": [
+        "text"
+      ]
+    }
+  ]
+}

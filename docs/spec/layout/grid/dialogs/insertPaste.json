@@ -1,0 +1,12 @@
+{
+  "source": "gridcraft crates/ui-egui/src/dialogs.rs:242 at 146161b4b450a56e5e59a083ba0478582d1e602b; Excel Insert Paste",
+  "width": 260,
+  "height": 180,
+  "sections": [
+    {
+      "fields": [
+        "shift"
+      ]
+    }
+  ]
+}

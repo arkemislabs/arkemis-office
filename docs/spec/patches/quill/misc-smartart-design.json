@@ -1,0 +1,512 @@
+{
+  "controls": {
+    "smartart-design.create-graphic.add-shape": {
+      "args": null,
+      "command": "smartArt.addShape",
+      "note": "U:quill/smartart: smartArt.addShape (wordcraft cmd/smart_art.rs `add_shape`, with PowerPoint's outline operations, core/prism/lib/smartart.mjs): a new item after, before, above or below the item the Text Pane is on (the last without one), or an assistant of an organization chart.",
+      "items": [
+        {
+          "id": "smartart-design.create-graphic.add-shape.add-shape-after",
+          "label": "Add Shape After",
+          "kind": "button",
+          "command": "smartArt.addShape",
+          "args": {
+            "position": "after"
+          },
+          "source": "office"
+        },
+        {
+          "id": "smartart-design.create-graphic.add-shape.add-shape-before",
+          "label": "Add Shape Before",
+          "kind": "button",
+          "command": "smartArt.addShape",
+          "args": {
+            "position": "before"
+          },
+          "source": "office"
+        },
+        {
+          "id": "smartart-design.create-graphic.add-shape.add-shape-above",
+          "label": "Add Shape Above",
+          "kind": "button",
+          "command": "smartArt.addShape",
+          "args": {
+            "position": "above"
+          },
+          "source": "office"
+        },
+        {
+          "id": "smartart-design.create-graphic.add-shape.add-shape-below",
+          "label": "Add Shape Below",
+          "kind": "button",
+          "command": "smartArt.addShape",
+          "args": {
+            "position": "below"
+          },
+          "source": "office"
+        },
+        {
+          "id": "smartart-design.create-graphic.add-shape.add-assistant",
+          "label": "Add Assistant",
+          "kind": "button",
+          "command": "smartArt.addShape",
+          "args": {
+            "position": "assistant"
+          },
+          "source": "office"
+        }
+      ]
+    },
+    "smartart-design.create-graphic.add-bullet": {
+      "command": "smartArt.addShape",
+      "args": {
+        "position": "below"
+      },
+      "note": "U:quill/smartart: a new sub-item under the item the Text Pane is on (the outline's next level); the same operation as Add Shape Below. Not checked against upstream."
+    },
+    "smartart-design.create-graphic.promote": {
+      "args": null,
+      "note": "U:quill/smartart: smartArt.promote (wordcraft cmd/smart_art.rs): the item the Text Pane is on and the items under it move up a level."
+    },
+    "smartart-design.create-graphic.demote": {
+      "args": null,
+      "note": "U:quill/smartart: smartArt.demote (wordcraft cmd/smart_art.rs): the item and the items under it move down a level, under the item before it."
+    },
+    "smartart-design.create-graphic.text-pane": {
+      "note": "U:quill/smartart: smartArt.textPane (wordcraft cmd/smart_art.rs) shows the Text Pane (panes/smartArtText.tsx): the items as bullet rows; Enter adds an item after, Tab and Shift+Tab demote and promote, Backspace on an empty row removes it."
+    },
+    "smartart-design.create-graphic.right-to-left": {
+      "command": "smartArt.rtl",
+      "note": "U:quill/smartart: mirrors the graphic (smartArt.rtl). Word's, not in wordcraft: not checked against upstream."
+    },
+    "smartart-design.create-graphic.move-up": {
+      "command": "smartArt.moveUp",
+      "note": "U:quill/smartart: the item and its sub-items go above the item before it on its level (smartArt.moveUp). Word's, not in wordcraft: not checked against upstream."
+    },
+    "smartart-design.create-graphic.move-down": {
+      "command": "smartArt.moveDown",
+      "note": "U:quill/smartart: the item and its sub-items go below the item after it on its level (smartArt.moveDown). Word's, not in wordcraft: not checked against upstream."
+    },
+    "smartart-design.create-graphic.layout": {
+      "note": "U:quill/smartart: hidden: Word's Layout menu offers the organization chart layouts (Standard, Both, Left Hanging, Right Hanging) and neither wordcraft nor PowerPoint's engine has them; the Layouts gallery changes the layout."
+    },
+    "smartart-design.layouts.layouts": {
+      "args": {
+        "layout": "<layout>"
+      },
+      "note": "U:quill/smartart: smartArt.layout: all 45 of PowerPoint's SmartArt layouts (core/prism/lib/smartart.mjs), each drawn small from the sample outline in the graphic's own colours and style; wordcraft has eight (basicList, process, cycle, hierarchy, pyramid, radial, matrix, venn)."
+    },
+    "smartart-design.smartart-styles.change-colors": {
+      "kind": "gallery",
+      "args": {
+        "colors": "<id>"
+      },
+      "items": null,
+      "note": "U:quill/smartart: smartArt.colors: Colorful, the four Colorful Ranges, one accent for every shape (Accent 1 to 6) and the six Gradient Ranges, each drawn as swatches of the document's theme (wordcraft has accent1 to accent6 and colorful)."
+    },
+    "smartart-design.smartart-styles.smartart-styles": {
+      "command": "smartArt.style",
+      "args": {
+        "style": "<style>"
+      },
+      "note": "U:quill/smartart: smartArt.style: the nine SmartArt Styles, drawn on the graphic itself: Simple Fill, Subtle Effect, Intense Effect, White Outline and the bevelled Polished, Inset, Cartoon, Powder and Brick Scene (shown flat, with the shadow; the 3-D scene is not drawn)."
+    },
+    "smartart-design.reset.reset-graphic": {
+      "note": "U:quill/smartart: smartArt.reset (wordcraft cmd/smart_art.rs): back to the default colours and style (and not mirrored); the items and layout stay."
+    },
+    "smartart-design.reset.convert": {
+      "note": "U:quill/smartart: hidden: Convert to Text and Convert to Shapes have no engine in wordcraft (a Word page keeps a group's shapes as one drawing: groups do not hold shapes here)."
+    },
+    "smartart-design.size.h": {
+      "command": "smartArt.size",
+      "args": {
+        "height": "<pt>",
+        "lockAspect": null
+      },
+      "note": "U:quill/smartart: smartArt.size: the graphic's height in points; the shapes are laid out again at the new size."
+    },
+    "smartart-design.size.w": {
+      "command": "smartArt.size",
+      "args": {
+        "width": "<pt>",
+        "lockAspect": null
+      },
+      "note": "U:quill/smartart: smartArt.size: the graphic's width in points; the shapes are laid out again at the new size."
+    }
+  },
+  "commands": {
+    "smartArt.outline": {
+      "id": "smartArt.outline",
+      "label": "SmartArt Outline",
+      "location": "SmartArt Design",
+      "args": [],
+      "paramsDoc": "{} -> {layout, items, colors, style, rtl, active}",
+      "summary": "SmartArt Outline (SmartArt Design): the items of the selected graphic (read)"
+    },
+    "smartArt.focus": {
+      "id": "smartArt.focus",
+      "label": "Select Item",
+      "location": "SmartArt Design › Create Graphic",
+      "args": [
+        "index"
+      ],
+      "paramsDoc": "{\"index\": item index}",
+      "summary": "Select Item (SmartArt Design): the item the Text Pane is on",
+      "pure": true
+    },
+    "smartArt.addShape": {
+      "args": [
+        "position",
+        "index",
+        "text",
+        "below",
+        "after",
+        "before"
+      ],
+      "paramsDoc": "{\"position\"?: after|before|above|below|assistant, \"index\"?: item index (default: the item the Text Pane is on, else the last), \"text\"?: string}"
+    },
+    "smartArt.removeItem": {
+      "id": "smartArt.removeItem",
+      "label": "Remove Item",
+      "location": "SmartArt Design › Create Graphic",
+      "args": [
+        "index"
+      ],
+      "paramsDoc": "{\"index\"?: item index}",
+      "summary": "Remove Item (SmartArt Design): the item goes and its sub-items move up a level"
+    },
+    "smartArt.moveUp": {
+      "id": "smartArt.moveUp",
+      "label": "Move Up",
+      "location": "SmartArt Design › Create Graphic",
+      "args": [
+        "index"
+      ],
+      "paramsDoc": "{\"index\"?: item index}",
+      "summary": "Move Up (SmartArt Design › Create Graphic)"
+    },
+    "smartArt.moveDown": {
+      "id": "smartArt.moveDown",
+      "label": "Move Down",
+      "location": "SmartArt Design › Create Graphic",
+      "args": [
+        "index"
+      ],
+      "paramsDoc": "{\"index\"?: item index}",
+      "summary": "Move Down (SmartArt Design › Create Graphic)"
+    },
+    "smartArt.rtl": {
+      "id": "smartArt.rtl",
+      "label": "Right to Left",
+      "location": "SmartArt Design › Create Graphic",
+      "args": [
+        "value"
+      ],
+      "paramsDoc": "{\"value\"?: bool}",
+      "summary": "Right to Left (SmartArt Design › Create Graphic)"
+    },
+    "smartArt.layout": {
+      "args": [
+        "layout"
+      ],
+      "paramsDoc": "{\"layout\": one of the 45 layout ids (list, blockList, hBulletList, process, chevron, ..., nestedTarget)}"
+    },
+    "smartArt.colors": {
+      "args": [
+        "colors",
+        "variant"
+      ],
+      "paramsDoc": "{\"colors\": colorful|range23|range34|range45|range56|accent1..accent6|accent1Grad..accent6Grad}"
+    },
+    "smartArt.style": {
+      "id": "smartArt.style",
+      "label": "SmartArt Styles",
+      "location": "SmartArt Design › SmartArt Styles",
+      "args": [
+        "style"
+      ],
+      "paramsDoc": "{\"style\": flat|subtle|intense|outline|polished|inset|cartoon|powder|brick}",
+      "summary": "SmartArt Styles (SmartArt Design)"
+    },
+    "smartArt.size": {
+      "id": "smartArt.size",
+      "label": "SmartArt Size",
+      "location": "SmartArt Design › Size",
+      "args": [
+        "width",
+        "height"
+      ],
+      "paramsDoc": "{\"width\"?: pt, \"height\"?: pt}",
+      "summary": "Size (SmartArt Design)"
+    },
+    "insert.smartArt": {
+      "args": [
+        "layout",
+        "items",
+        "colors",
+        "style",
+        "width",
+        "height"
+      ],
+      "paramsDoc": "{\"layout\"?: one of the 45 layout ids, \"items\"?: [string | {text, level}], \"colors\"?, \"style\"?, \"width\"?: pt, \"height\"?: pt}"
+    }
+  },
+  "dialogs": {
+    "dialog.insertSmartArt": {
+      "tabs": [
+        {
+          "name": "Graphic",
+          "fields": [
+            {
+              "id": "category",
+              "label": "Category",
+              "kind": "list",
+              "options": [
+                {
+                  "value": "All",
+                  "label": "All"
+                },
+                {
+                  "value": "List",
+                  "label": "List"
+                },
+                {
+                  "value": "Process",
+                  "label": "Process"
+                },
+                {
+                  "value": "Cycle",
+                  "label": "Cycle"
+                },
+                {
+                  "value": "Hierarchy",
+                  "label": "Hierarchy"
+                },
+                {
+                  "value": "Relationship",
+                  "label": "Relationship"
+                },
+                {
+                  "value": "Matrix",
+                  "label": "Matrix"
+                },
+                {
+                  "value": "Pyramid",
+                  "label": "Pyramid"
+                },
+                {
+                  "value": "Picture",
+                  "label": "Picture"
+                }
+              ],
+              "source": "office"
+            },
+            {
+              "id": "kind",
+              "label": "Pick a graphic",
+              "kind": "list",
+              "options": [
+                {
+                  "value": "list",
+                  "label": "Vertical Bullet List"
+                },
+                {
+                  "value": "blockList",
+                  "label": "Basic Block List"
+                },
+                {
+                  "value": "hBulletList",
+                  "label": "Horizontal Bullet List"
+                },
+                {
+                  "value": "process",
+                  "label": "Basic Process"
+                },
+                {
+                  "value": "chevron",
+                  "label": "Basic Chevron Process"
+                },
+                {
+                  "value": "verticalProcess",
+                  "label": "Vertical Process"
+                },
+                {
+                  "value": "stepUp",
+                  "label": "Step Up Process"
+                },
+                {
+                  "value": "cycle",
+                  "label": "Basic Cycle"
+                },
+                {
+                  "value": "blockCycle",
+                  "label": "Block Cycle"
+                },
+                {
+                  "value": "radial",
+                  "label": "Basic Radial"
+                },
+                {
+                  "value": "hierarchy",
+                  "label": "Hierarchy"
+                },
+                {
+                  "value": "pyramid",
+                  "label": "Basic Pyramid"
+                },
+                {
+                  "value": "invertedPyramid",
+                  "label": "Inverted Pyramid"
+                },
+                {
+                  "value": "matrix",
+                  "label": "Basic Matrix"
+                },
+                {
+                  "value": "titledMatrix",
+                  "label": "Titled Matrix"
+                },
+                {
+                  "value": "pictureList",
+                  "label": "Vertical Picture List"
+                },
+                {
+                  "value": "pictureCaption",
+                  "label": "Picture Caption List"
+                },
+                {
+                  "value": "pictureProcess",
+                  "label": "Picture Accent Process"
+                },
+                {
+                  "value": "pictureHList",
+                  "label": "Horizontal Picture List"
+                },
+                {
+                  "value": "timeline",
+                  "label": "Basic Timeline"
+                },
+                {
+                  "value": "venn",
+                  "label": "Basic Venn"
+                },
+                {
+                  "value": "target",
+                  "label": "Basic Target"
+                },
+                {
+                  "value": "textCycle",
+                  "label": "Text Cycle"
+                },
+                {
+                  "value": "continuousCycle",
+                  "label": "Continuous Cycle"
+                },
+                {
+                  "value": "horizontalHierarchy",
+                  "label": "Horizontal Hierarchy"
+                },
+                {
+                  "value": "gridMatrix",
+                  "label": "Grid Matrix"
+                },
+                {
+                  "value": "gear",
+                  "label": "Gear"
+                },
+                {
+                  "value": "funnel",
+                  "label": "Funnel"
+                },
+                {
+                  "value": "segmentedCycle",
+                  "label": "Segmented Cycle"
+                },
+                {
+                  "value": "multidirectionalCycle",
+                  "label": "Multidirectional Cycle"
+                },
+                {
+                  "value": "orgChart",
+                  "label": "Organization Chart"
+                },
+                {
+                  "value": "halfCircleOrgChart",
+                  "label": "Half Circle Organization Chart"
+                },
+                {
+                  "value": "cycleMatrix",
+                  "label": "Cycle Matrix"
+                },
+                {
+                  "value": "segmentedPyramid",
+                  "label": "Segmented Pyramid"
+                },
+                {
+                  "value": "pie",
+                  "label": "Basic Pie"
+                },
+                {
+                  "value": "nameTitleOrgChart",
+                  "label": "Name and Title Organization Chart"
+                },
+                {
+                  "value": "verticalBoxList",
+                  "label": "Vertical Box List"
+                },
+                {
+                  "value": "trapezoidList",
+                  "label": "Trapezoid List"
+                },
+                {
+                  "value": "tableList",
+                  "label": "Table List"
+                },
+                {
+                  "value": "accentProcess",
+                  "label": "Accent Process"
+                },
+                {
+                  "value": "continuousBlockProcess",
+                  "label": "Continuous Block Process"
+                },
+                {
+                  "value": "bendingProcess",
+                  "label": "Basic Bending Process"
+                },
+                {
+                  "value": "linearVenn",
+                  "label": "Linear Venn"
+                },
+                {
+                  "value": "stackedVenn",
+                  "label": "Stacked Venn"
+                },
+                {
+                  "value": "nestedTarget",
+                  "label": "Nested Target"
+                }
+              ],
+              "default": "blockList",
+              "param": "kind",
+              "note": "drawn as thumbnails (src/apps/prism/surface/SmartArtGallery.tsx)",
+              "source": "upstream",
+              "sourceRef": "crates/ui-egui/src/dialogs/body.rs:1247"
+            },
+            {
+              "id": "preview",
+              "label": "Preview and name",
+              "kind": "preview",
+              "options": [],
+              "source": "office"
+            }
+          ]
+        }
+      ],
+      "note": "U:quill/smartart: the 45 layouts drawn as thumbnails by category (PowerPoint's dialog on its engine); wordcraft lists eight. The items are typed in the Text Pane afterwards.",
+      "id": "dialog.insertSmartArt",
+      "title": "Choose a SmartArt Graphic",
+      "command": "insert.smartArt"
+    }
+  }
+}

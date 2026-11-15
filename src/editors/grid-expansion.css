@@ -1,0 +1,4 @@
+.hide-gridlines .ed-cell{border-right-color:transparent;border-bottom-color:transparent}
+.ribbon-commands>input:not([type=color]){height:32px;border:1px solid var(--ark-border);border-radius:10px;background:var(--ark-field);padding:0 10px;width:160px;min-width:0}
+.ribbon-tabs{overflow-x:auto;flex-shrink:0}
+.ribbon-tabs button{white-space:nowrap;flex-shrink:0}

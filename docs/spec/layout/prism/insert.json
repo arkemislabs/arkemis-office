@@ -1,0 +1,175 @@
+{
+  "tab": "insert",
+  "keytip": "N",
+  "source": "deckcraft crates/ui-egui/src/ribbon/insert.rs (insert, photo_album_button) @ f893f6af7d36a5409fd804e81a34fd895cfefedf; Camera, Add-ins, Object and Screen Recording placed as PowerPoint",
+  "groups": {
+    "slides": {
+      "collapseOrder": 11,
+      "collapsedIcon": "slide-plus",
+      "layout": [
+        {
+          "large": "insert.slides.new-slide"
+        },
+        {
+          "large": "insert.slides.reuse"
+        }
+      ]
+    },
+    "tables": {
+      "collapseOrder": 10,
+      "collapsedIcon": "table",
+      "layout": [
+        {
+          "large": "insert.tables.table"
+        }
+      ]
+    },
+    "images": {
+      "collapseOrder": 9,
+      "collapsedIcon": "image",
+      "layout": [
+        {
+          "large": "insert.images.pictures"
+        },
+        {
+          "large": "insert.images.screenshot"
+        },
+        {
+          "large": "insert.images.photo-album"
+        }
+      ]
+    },
+    "camera": {
+      "collapseOrder": 8,
+      "collapsedIcon": "camera",
+      "layout": [
+        {
+          "large": "insert.camera.cameo"
+        }
+      ]
+    },
+    "illustrations": {
+      "collapseOrder": 7,
+      "collapsedIcon": "shapes",
+      "layout": [
+        {
+          "large": "insert.illustrations.shapes"
+        },
+        {
+          "large": "insert.illustrations.icons"
+        },
+        {
+          "large": "insert.illustrations.3d-models"
+        },
+        {
+          "large": "insert.illustrations.smartart"
+        },
+        {
+          "large": "insert.illustrations.chart"
+        }
+      ]
+    },
+    "add-ins": {
+      "collapseOrder": 6,
+      "collapsedIcon": "store",
+      "layout": [
+        {
+          "large": "insert.addins.get"
+        }
+      ]
+    },
+    "links": {
+      "collapseOrder": 5,
+      "collapsedIcon": "zoom-slide",
+      "layout": [
+        {
+          "large": "insert.links.zoom"
+        },
+        {
+          "large": "insert.links.link"
+        },
+        {
+          "large": "insert.links.action"
+        }
+      ]
+    },
+    "comments": {
+      "collapseOrder": 4,
+      "collapsedIcon": "comment-plus",
+      "layout": [
+        {
+          "large": "insert.comments.comment"
+        }
+      ]
+    },
+    "text": {
+      "collapseOrder": 3,
+      "collapsedIcon": "text-box",
+      "layout": [
+        {
+          "large": "insert.text.text-box"
+        },
+        {
+          "large": "insert.text.header-footer"
+        },
+        {
+          "large": "insert.text.wordart"
+        },
+        {
+          "large": "insert.text.date-time"
+        },
+        {
+          "large": "insert.text.slide-number"
+        },
+        {
+          "large": "insert.text.object"
+        }
+      ]
+    },
+    "symbols": {
+      "collapseOrder": 2,
+      "collapsedIcon": "pi",
+      "layout": [
+        {
+          "large": "insert.symbols.equation"
+        },
+        {
+          "large": "insert.symbols.symbol"
+        }
+      ]
+    },
+    "media": {
+      "collapseOrder": 1,
+      "collapsedIcon": "video",
+      "layout": [
+        {
+          "large": "insert.media.video"
+        },
+        {
+          "large": "insert.media.audio"
+        },
+        {
+          "large": "insert.media.screen-recording"
+        }
+      ]
+    }
+  },
+  "keytips": {
+    "insert.slides.new-slide": "I",
+    "insert.tables.table": "T",
+    "insert.images.pictures": "P",
+    "insert.illustrations.shapes": "SH",
+    "insert.illustrations.smartart": "M",
+    "insert.illustrations.chart": "C",
+    "insert.text.text-box": "X",
+    "insert.text.header-footer": "H",
+    "insert.text.wordart": "W",
+    "insert.text.date-time": "D",
+    "insert.text.slide-number": "SN",
+    "insert.text.object": "J",
+    "insert.symbols.equation": "E",
+    "insert.symbols.symbol": "U",
+    "insert.media.video": "V",
+    "insert.media.audio": "O"
+  }
+}

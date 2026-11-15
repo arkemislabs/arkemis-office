@@ -1,0 +1,87 @@
+{
+  "tab": "view",
+  "keytip": "W",
+  "source": "wordcraft aadb077e072b7de05f724e359d8db82e151f125c crates/ui-egui/src/ribbon/view.rs (view); Window's side-by-side stack and the SharePoint group placed as in Word for Windows; keytips from Word for Windows",
+  "groups": {
+    "views": {
+      "collapseOrder": 10,
+      "layout": [
+        {"large": "view.views.read-mode"},
+        {"large": "view.views.print-layout"},
+        {"large": "view.views.web-layout"},
+        {"stack": ["view.views.outline", "view.views.draft"]}
+      ]
+    },
+    "immersive": {
+      "collapseOrder": 9,
+      "layout": [
+        {"large": "view.immersive.focus"},
+        {"large": "view.immersive.immersive-reader"}
+      ]
+    },
+    "page-movement": {
+      "collapseOrder": 8,
+      "layout": [
+        {"large": "view.page-movement.vertical"},
+        {"large": "view.page-movement.side-to-side"}
+      ]
+    },
+    "show": {
+      "collapseOrder": 7,
+      "layout": [
+        {"stack": ["view.show.ruler", "view.show.gridlines", "view.show.navigation-pane"]},
+        {"stack": ["view.show.hide-white-space"]}
+      ]
+    },
+    "zoom": {
+      "collapseOrder": 6,
+      "layout": [
+        {"large": "view.zoom.zoom"},
+        {"large": "view.zoom.100pct"},
+        {"stack": ["view.zoom.zoom-in", "view.zoom.zoom-out"]},
+        {"stack": ["view.zoom.one-page", "view.zoom.multiple-pages", "view.zoom.page-width"]}
+      ]
+    },
+    "dark-mode": {
+      "collapseOrder": 5,
+      "layout": [
+        {"large": "view.dark-mode.switch-modes"},
+        {"large": "view.dark-mode.interface-theme"}
+      ]
+    },
+    "window": {
+      "collapseOrder": 11,
+      "layout": [
+        {"stack": ["view.window.new-window", "view.window.arrange-all", "view.window.split"]},
+        {"rows": [["view.window.view-side-by-side", "view.window.synchronous-scrolling"], ["view.window.reset-window-position", "view.window.full-screen"]]},
+        {"large": "view.window.switch-windows"}
+      ]
+    },
+    "macros": {
+      "collapseOrder": 3,
+      "layout": [
+        {"large": "view.macros.macros"}
+      ]
+    },
+    "templates": {
+      "collapseOrder": 2,
+      "layout": [
+        {"large": "view.templates.templates"}
+      ]
+    },
+    "share-point": {
+      "collapseOrder": 1,
+      "layout": [
+        {"large": "view.sharepoint.properties"}
+      ]
+    }
+  },
+  "keytips": {
+    "view.views.read-mode": "F", "view.views.print-layout": "P", "view.views.web-layout": "L", "view.views.outline": "U", "view.views.draft": "E",
+    "view.show.ruler": "R", "view.show.navigation-pane": "K",
+    "view.zoom.zoom": "Q", "view.zoom.100pct": "J", "view.zoom.page-width": "I",
+    "view.window.new-window": "N", "view.window.arrange-all": "A", "view.window.split": "S", "view.window.view-side-by-side": "B",
+    "view.window.synchronous-scrolling": "YS", "view.window.reset-window-position": "T", "view.window.switch-windows": "W",
+    "view.macros.macros": "M"
+  }
+}

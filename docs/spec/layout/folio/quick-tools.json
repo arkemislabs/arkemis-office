@@ -1,0 +1,67 @@
+{
+  "tab": "quick-tools",
+  "source": "printcraft crates/ui-egui/src/canvas/bars.rs (quick tools bar, tool properties) @ 3109bb2359759e24ef490e1cdbdba00722b20972",
+  "note": "The floating quick tools bar: one row of icon tools in bar order, then the active tool's properties.",
+  "groups": {
+    "quick-bar": {
+      "collapseOrder": 3,
+      "collapsedIcon": "mouse-pointer-2",
+      "layout": [
+        {
+          "rows": [
+            [
+              "quick.bar.select",
+              "quick.bar.hand",
+              "quick.bar.comment",
+              "quick.bar.highlight",
+              "quick.bar.draw",
+              "quick.bar.edit-text",
+              "quick.bar.fill-sign",
+              "quick.bar.add-text",
+              "quick.bar.more-tools"
+            ]
+          ]
+        }
+      ]
+    },
+    "fill-and-sign-text-size": {
+      "collapseOrder": 1,
+      "collapsedIcon": "a-large-small",
+      "layout": [
+        {
+          "rows": [
+            [
+              "quick.fill.font-size"
+            ]
+          ]
+        }
+      ],
+      "widths": {
+        "quick.fill.font-size": 56
+      }
+    },
+    "comment-tool-properties": {
+      "collapseOrder": 2,
+      "collapsedIcon": "pin",
+      "layout": [
+        {
+          "rows": [
+            [
+              "quick.comment.keep-tool",
+              "quick.comment.colour",
+              "quick.comment.fill"
+            ],
+            [
+              "quick.comment.opacity",
+              "quick.comment.thickness"
+            ]
+          ]
+        }
+      ],
+      "widths": {
+        "quick.comment.opacity": 56,
+        "quick.comment.thickness": 56
+      }
+    }
+  }
+}

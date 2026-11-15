@@ -1,0 +1,13 @@
+async function openPdfTool(page,name){await page.getByRole('button',{name:'All tools',exact:true}).click();await page.getByRole('button',{name,exact:true}).click();}
+import {_electron as electron,expect as baseExpect} from '@playwright/test';
+import {signedFixture} from './pdf-signed-fixture.mjs';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+const expect=baseExpect.configure({timeout:45000}),root=path.resolve(import.meta.dirname,'..'),artifacts=path.join(root,'artifacts','pdf-signature-ui');await fs.mkdir(artifacts,{recursive:true});
+const fixture=path.join(artifacts,'signed-test.pdf'),{bytes}=await signedFixture();await fs.writeFile(fixture,bytes);const data=await fs.mkdtemp(path.join(artifacts,'profile-')),env={...process.env,ARKEMIS_STUDIO_DATA:data};delete env.ELECTRON_RUN_AS_NODE;
+let app;try{
+ app=await electron.launch({executablePath:process.env.ARKEMIS_ELECTRON_PATH||path.resolve(root,'../node_modules/electron/dist/electron.exe'),args:[root,'--product=folio'],env,timeout:60000});const page=await app.firstWindow();
+ await app.evaluate(({dialog},file)=>{dialog.showOpenDialog=async()=>({canceled:false,filePaths:[file]});},fixture);await page.getByRole('button',{name:'Open file',exact:true}).click();
+ await page.getByRole('button',{name:'Check signatures',exact:true}).click();const result=page.getByRole('article',{name:'Digital signature 1',exact:true});await expect(result).toContainText('Signed bytes match');await expect(result).toContainText('Covers the current document.');await expect(result).toContainText('Certificate trust: not verified.');await expect(result).toContainText('Local TEST signer');
+ await openPdfTool(page,'Organize Pages');await page.getByLabel('Page label style',{exact:true}).selectOption('r');await page.getByRole('button',{name:'Apply page labels',exact:true}).click();await expect(page.getByRole('button',{name:'Check signatures',exact:true})).toBeEnabled();await page.getByRole('button',{name:'Check signatures',exact:true}).click();await expect(result).toContainText('Current edits are not signed.');await expect(result).toContainText('Does not verify the complete current document.');await page.screenshot({path:path.join(artifacts,'signature-inspection.png')});console.log('Digital signature UI passed: real signed fixture, offline integrity, trust distinction, label edits invalidate current coverage.');
+}finally{if(app){const child=app.process();await Promise.race([app.evaluate(({app})=>app.exit(0)).catch(()=>{}),new Promise(resolve=>setTimeout(resolve,2000))]);if(child.exitCode===null)child.kill();await Promise.race([app.close().catch(()=>{}),new Promise(resolve=>setTimeout(resolve,2000))]);}}

@@ -1,0 +1,184 @@
+{
+ "controls": {
+  "insert.header-footer.header.blank": {
+   "thumb": {
+    "page": {
+     "part": "header",
+     "cells": [
+      [
+       "left",
+       "[Type here]"
+      ]
+     ]
+    }
+   }
+  },
+  "insert.header-footer.header.blank-three-columns": {
+   "thumb": {
+    "page": {
+     "part": "header",
+     "cells": [
+      [
+       "left",
+       "[Type here]"
+      ],
+      [
+       "center",
+       "[Type here]"
+      ],
+      [
+       "right",
+       "[Type here]"
+      ]
+     ]
+    }
+   }
+  },
+  "insert.header-footer.header.document-title": {
+   "thumb": {
+    "page": {
+     "part": "header",
+     "cells": [
+      [
+       "center",
+       "[Document title]"
+      ]
+     ]
+    }
+   }
+  },
+  "insert.header-footer.footer.blank": {
+   "thumb": {
+    "page": {
+     "part": "footer",
+     "cells": [
+      [
+       "left",
+       "[Type here]"
+      ]
+     ]
+    }
+   }
+  },
+  "insert.header-footer.footer.blank-three-columns": {
+   "thumb": {
+    "page": {
+     "part": "footer",
+     "cells": [
+      [
+       "left",
+       "[Type here]"
+      ],
+      [
+       "center",
+       "[Type here]"
+      ],
+      [
+       "right",
+       "[Type here]"
+      ]
+     ]
+    }
+   }
+  },
+  "insert.header-footer.footer.page-number": {
+   "thumb": {
+    "page": {
+     "part": "footer",
+     "cells": [
+      [
+       "right",
+       "Page 1"
+      ]
+     ]
+    }
+   }
+  },
+  "insert.header-footer.page-number.top-of-page": {
+   "thumb": {
+    "page": {
+     "part": "header",
+     "cells": [
+      [
+       "right",
+       "1"
+      ]
+     ]
+    }
+   }
+  },
+  "insert.header-footer.page-number.bottom-of-page": {
+   "thumb": {
+    "page": {
+     "part": "footer",
+     "cells": [
+      [
+       "center",
+       "1"
+      ]
+     ]
+    }
+   }
+  },
+  "insert.header-footer.page-number.page-x-of-y": {
+   "thumb": {
+    "page": {
+     "part": "footer",
+     "cells": [
+      [
+       "center",
+       "Page 1 of 3"
+      ]
+     ]
+    }
+   }
+  },
+  "insert.header-footer.page-number.page-margins": {
+   "thumb": {
+    "page": {
+     "part": "margin",
+     "cells": [
+      [
+       "right",
+       "1"
+      ]
+     ]
+    }
+   }
+  },
+  "insert.header-footer.page-number.current-position": {
+   "thumb": {
+    "page": {
+     "part": "inline",
+     "cells": [
+      [
+       "left",
+       "1"
+      ]
+     ]
+    }
+   }
+  },
+  "insert.pages.cover-page.studio-cover": {
+   "thumb": {
+    "page": {
+     "part": "cover",
+     "cells": [
+      [
+       "center",
+       "[Document title]"
+      ]
+     ]
+    }
+   }
+  },
+  "insert.text.text-box.simple-text-box": {
+   "thumb": {
+    "page": {
+     "part": "textbox",
+     "cells": []
+    }
+   }
+  }
+ }
+}

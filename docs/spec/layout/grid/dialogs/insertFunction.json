@@ -1,0 +1,11 @@
+{
+  "source": "gridcraft 146161b4b450a56e5e59a083ba0478582d1e602b crates/ui-egui/src/dialogs/insert_function.rs; Excel Insert Function (search + Go, category, list, signature and description)",
+  "width": 520,
+  "height": 470,
+  "sections": [
+    {"fields": ["search"], "columns": 1},
+    {"fields": ["category"], "columns": 1},
+    {"fields": ["function"]},
+    {"fields": ["signature", "description"]}
+  ]
+}

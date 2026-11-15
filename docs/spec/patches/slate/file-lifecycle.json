@@ -1,0 +1,8 @@
+{
+  "dialogs": {
+    "dialog.print": {
+      "command": null,
+      "note": "OneNote's Print dialog prints a page range (Selection / Current Page) that file.print does not take yet; until Slate's owner wires it, File > Print (src/shell/backstage/pages.tsx PrintPage) prints through file.print."
+    }
+  }
+}

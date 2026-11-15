@@ -1,0 +1,59 @@
+{
+  "tab": "convert",
+  "source": "printcraft crates/engine/src/catalog.rs (export), crates/ui-egui/src/panels/organize_panel.rs @ 3109bb2359759e24ef490e1cdbdba00722b20972",
+  "groups": {
+    "export-to": {
+      "collapseOrder": 2,
+      "collapsedIcon": "file-text",
+      "layout": [
+        {
+          "stack": [
+            "convert.export.microsoft-word-docx",
+            "convert.export.spreadsheet-xlsx",
+            "convert.export.presentation-pptx"
+          ]
+        },
+        {
+          "stack": [
+            "convert.export.image-png",
+            "convert.export.export-all-images",
+            "convert.export.html-web-page"
+          ]
+        },
+        {
+          "stack": [
+            "convert.export.rich-text-format-rtf",
+            "convert.export.text-plain",
+            "convert.export.postscript-eps"
+          ]
+        },
+        {
+          "stack": [
+            "convert.export.xml",
+            "convert.export.eps",
+            "convert.export.jpeg2000"
+          ]
+        }
+      ]
+    },
+    "save-as-other": {
+      "collapseOrder": 1,
+      "collapsedIcon": "file-down",
+      "layout": [
+        {
+          "stack": [
+            "convert.other.reduced",
+            "convert.other.optimized",
+            "convert.other.pdfa"
+          ]
+        },
+        {
+          "stack": [
+            "convert.other.pdfx",
+            "convert.other.pdfe"
+          ]
+        }
+      ]
+    }
+  }
+}

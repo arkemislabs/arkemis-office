@@ -1,0 +1,61 @@
+{
+  "tab": "shape-format",
+  "source": "wordcraft aadb077e072b7de05f724e359d8db82e151f125c crates/ui-egui/src/ribbon/shape.rs (shape_format: Shape Styles Fill/Outline/Effects stack, Drawing Canvas large menu, WordArt Styles large Styles + Text Fill/Outline/Effects stack, Arrange Position/Wrap + Rotate/Align stack, Size rows W/H then rotation, shape_text_group stack, alt_text_group); Insert Shapes, the Shape Styles gallery, Bring Forward/Send Backward/Selection Pane and Group placed as in Word for Windows",
+  "groups": {
+    "insert-shapes": {
+      "collapseOrder": 1,
+      "layout": [
+        {"large": "shape-format.insert-shapes.shapes"},
+        {"stack": ["shape-format.insert-shapes.edit-shape", "shape-format.insert-shapes.draw-text-box"]}
+      ]
+    },
+    "shape-styles": {
+      "collapseOrder": 2,
+      "layout": [
+        {"gallery": "shape-format.shape-styles.shape-styles", "inline": true, "columns": 6},
+        {"stack": ["shape-format.shape-styles.shape-fill", "shape-format.shape-styles.shape-outline", "shape-format.shape-styles.shape-effects"]}
+      ]
+    },
+    "accessibility": {
+      "collapseOrder": 3,
+      "layout": [
+        {"large": "shape-format.accessibility.alt-text"}
+      ]
+    },
+    "drawing-canvas": {
+      "collapseOrder": 4,
+      "layout": [
+        {"large": "shape-format.drawing-canvas.drawing-canvas"}
+      ]
+    },
+    "word-art-styles": {
+      "collapseOrder": 5,
+      "layout": [
+        {"large": "shape-format.wordart-styles.styles"},
+        {"stack": ["shape-format.wordart-styles.text-fill", "shape-format.wordart-styles.text-outline", "shape-format.wordart-styles.text-effects"]}
+      ]
+    },
+    "text": {
+      "collapseOrder": 6,
+      "layout": [
+        {"stack": ["shape-format.text.text-direction", "shape-format.text.align-text", "shape-format.text.create-link"]}
+      ]
+    },
+    "arrange": {
+      "collapseOrder": 7,
+      "layout": [
+        {"large": "shape-format.arrange.position"},
+        {"large": "shape-format.arrange.wrap-text"},
+        {"stack": ["shape-format.arrange.bring-forward", "shape-format.arrange.send-backward", "shape-format.arrange.selection-pane"]},
+        {"stack": ["shape-format.arrange.rotate", "shape-format.arrange.align", "shape-format.arrange.group"]}
+      ]
+    },
+    "size": {
+      "collapseOrder": 8,
+      "layout": [
+        {"rows": [["shape-format.size.width", "shape-format.size.height"], ["shape-format.size.rotation"]]}
+      ],
+      "widths": {"shape-format.size.width": 56, "shape-format.size.height": 56, "shape-format.size.rotation": 48}
+    }
+  }
+}

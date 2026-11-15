@@ -1,0 +1,1373 @@
+{
+ "controls": {
+  "table-layout.cell-size.height": {
+   "args": {
+    "height": "<pt>",
+    "rule": null
+   }
+  },
+  "table-design.table-styles.styles.new-table-style": {
+   "command": "table.newStyle",
+   "args": null
+  },
+  "table-design.table-styles.styles.modify-table-style": {
+   "command": "table.modifyStyle",
+   "args": null,
+   "dialog": "dialog.modifyTableStyle"
+  },
+  "table-design.table-style-options.header-row": {
+   "args": {
+    "toggle": "headerRow"
+   }
+  },
+  "table-design.table-style-options.total-row": {
+   "args": {
+    "toggle": "totalRow"
+   }
+  },
+  "table-design.table-style-options.banded-rows": {
+   "args": {
+    "toggle": "bandedRows"
+   }
+  },
+  "table-design.table-style-options.first-column": {
+   "args": {
+    "toggle": "firstColumn"
+   }
+  },
+  "table-design.table-style-options.last-column": {
+   "args": {
+    "toggle": "lastColumn"
+   }
+  },
+  "table-design.table-style-options.banded-columns": {
+   "args": {
+    "toggle": "bandedColumns"
+   }
+  }
+ },
+ "commands": {
+  "table.modifyStyle": {
+   "opensDialogWithoutArgs": "dialog.modifyTableStyle"
+  }
+ },
+ "dialogs": {
+  "dialog.insertTable": {
+   "note": "U:quill/table: wordcraft dispatch.rs insert_table_dialog (columns 1-63, rows) with Word's AutoFit behavior. Remember dimensions has no upstream command or option and stays out.",
+   "tabs": [
+    {
+     "name": "Insert Table",
+     "fields": [
+      {
+       "id": "cols",
+       "label": "Number of columns:",
+       "kind": "number",
+       "min": 1,
+       "max": 63,
+       "step": 1
+      },
+      {
+       "id": "rows",
+       "label": "Number of rows:",
+       "kind": "number",
+       "min": 1,
+       "max": 32767,
+       "step": 1
+      },
+      {
+       "id": "autofit",
+       "label": "AutoFit behavior",
+       "kind": "radio",
+       "options": [
+        {
+         "value": "fixed",
+         "label": "Fixed column width: Auto"
+        },
+        {
+         "value": "contents",
+         "label": "AutoFit to contents"
+        },
+        {
+         "value": "window",
+         "label": "AutoFit to window"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ]
+  },
+  "dialog.tableProperties": {
+   "note": "U:quill/table: wordcraft forms.rs TableForm with Word's tabs. Text wrapping Around needs floating tables in the layout (not translated) and stays out; Borders and Shading / Options open other units' dialogs.",
+   "tabs": [
+    {
+     "name": "Table",
+     "fields": [
+      {
+       "id": "widthOn",
+       "label": "Preferred width:",
+       "kind": "checkbox"
+      },
+      {
+       "id": "width",
+       "label": "",
+       "kind": "number",
+       "min": 0,
+       "max": 22,
+       "step": 0.01,
+       "enabledWhen": "widthOn"
+      },
+      {
+       "id": "measureIn",
+       "label": "Measure in:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "inches",
+         "label": "Inches"
+        },
+        {
+         "value": "percent",
+         "label": "Percent"
+        }
+       ],
+       "enabledWhen": "widthOn"
+      },
+      {
+       "id": "alignment",
+       "label": "Alignment",
+       "kind": "radio",
+       "options": [
+        {
+         "value": "left",
+         "label": "Left"
+        },
+        {
+         "value": "center",
+         "label": "Center"
+        },
+        {
+         "value": "right",
+         "label": "Right"
+        }
+       ]
+      },
+      {
+       "id": "indent",
+       "label": "Indent from left:",
+       "kind": "number",
+       "min": -11,
+       "max": 22,
+       "step": 0.01,
+       "unit": "\"",
+       "visibleWhen": "alignment==left"
+      },
+      {
+       "id": "direction",
+       "label": "Table direction",
+       "kind": "radio",
+       "options": [
+        {
+         "value": "ltr",
+         "label": "Left-to-right"
+        },
+        {
+         "value": "rtl",
+         "label": "Right-to-left"
+        }
+       ]
+      },
+      {
+       "id": "options",
+       "label": "Options…",
+       "kind": "button",
+       "dialog": "dialog.tableCellMargins"
+      }
+     ]
+    },
+    {
+     "name": "Row",
+     "fields": [
+      {
+       "id": "heightOn",
+       "label": "Specify height:",
+       "kind": "checkbox"
+      },
+      {
+       "id": "height",
+       "label": "",
+       "kind": "number",
+       "min": 0,
+       "max": 22,
+       "step": 0.01,
+       "unit": "\"",
+       "enabledWhen": "heightOn"
+      },
+      {
+       "id": "heightRule",
+       "label": "Row height is:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "atLeast",
+         "label": "At least"
+        },
+        {
+         "value": "exact",
+         "label": "Exactly"
+        }
+       ],
+       "enabledWhen": "heightOn"
+      },
+      {
+       "id": "allowBreak",
+       "label": "Allow row to break across pages",
+       "kind": "checkbox"
+      },
+      {
+       "id": "headerRow",
+       "label": "Repeat as header row at the top of each page",
+       "kind": "checkbox"
+      }
+     ]
+    },
+    {
+     "name": "Column",
+     "fields": [
+      {
+       "id": "columnWidth",
+       "label": "Preferred width:",
+       "kind": "number",
+       "min": 0.1,
+       "max": 22,
+       "step": 0.01,
+       "unit": "\""
+      }
+     ]
+    },
+    {
+     "name": "Cell",
+     "fields": [
+      {
+       "id": "cellWidthOn",
+       "label": "Preferred width:",
+       "kind": "checkbox"
+      },
+      {
+       "id": "cellWidth",
+       "label": "",
+       "kind": "number",
+       "min": 0.1,
+       "max": 22,
+       "step": 0.01,
+       "unit": "\"",
+       "enabledWhen": "cellWidthOn"
+      },
+      {
+       "id": "valign",
+       "label": "Vertical alignment",
+       "kind": "radio",
+       "options": [
+        {
+         "value": "top",
+         "label": "Top"
+        },
+        {
+         "value": "center",
+         "label": "Center"
+        },
+        {
+         "value": "bottom",
+         "label": "Bottom"
+        }
+       ]
+      },
+      {
+       "id": "cellOptions",
+       "label": "Options…",
+       "kind": "button",
+       "dialog": "dialog.tableCellMargins"
+      }
+     ]
+    },
+    {
+     "name": "Alt Text",
+     "fields": [
+      {
+       "id": "title",
+       "label": "Title",
+       "kind": "text"
+      },
+      {
+       "id": "description",
+       "label": "Description",
+       "kind": "text",
+       "multiline": true
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ]
+  },
+  "dialog.deleteCells": {
+   "command": "table.deleteCells",
+   "note": "U:quill/table: Word's Delete Cells; Shift cells up has no upstream command and stays out.",
+   "tabs": [
+    {
+     "name": "Delete Cells",
+     "fields": [
+      {
+       "id": "mode",
+       "label": "",
+       "kind": "radio",
+       "options": [
+        {
+         "value": "left",
+         "label": "Shift cells left"
+        },
+        {
+         "value": "row",
+         "label": "Delete entire row"
+        },
+        {
+         "value": "column",
+         "label": "Delete entire column"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ]
+  },
+  "dialog.insertCells": {
+   "command": "table.insertRowAbove",
+   "applies": "table.insertRowAbove / table.insertColumnLeft",
+   "note": "U:quill/table_mouse: Word's Insert Cells; the two shift choices have no upstream command and stay out.",
+   "tabs": [
+    {
+     "name": "Insert Cells",
+     "fields": [
+      {
+       "id": "mode",
+       "label": "",
+       "kind": "radio",
+       "options": [
+        {
+         "value": "row",
+         "label": "Insert entire row"
+        },
+        {
+         "value": "column",
+         "label": "Insert entire column"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ]
+  },
+  "dialog.splitCells": {
+   "tabs": [
+    {
+     "name": "Split Cells",
+     "fields": [
+      {
+       "id": "cols",
+       "label": "Number of columns:",
+       "kind": "number",
+       "min": 1,
+       "max": 63,
+       "step": 1
+      },
+      {
+       "id": "rows",
+       "label": "Number of rows:",
+       "kind": "number",
+       "min": 1,
+       "max": 63,
+       "step": 1
+      },
+      {
+       "id": "merge",
+       "label": "Merge cells before split",
+       "kind": "checkbox",
+       "enabledWhen": "several"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ]
+  },
+  "dialog.textToTable": {
+   "tabs": [
+    {
+     "name": "Convert Text to Table",
+     "fields": [
+      {
+       "id": "cols",
+       "label": "Number of columns:",
+       "kind": "number",
+       "min": 1,
+       "max": 63,
+       "step": 1
+      },
+      {
+       "id": "rows",
+       "label": "Number of rows:",
+       "kind": "number",
+       "readOnly": true
+      },
+      {
+       "id": "autofit",
+       "label": "AutoFit behavior",
+       "kind": "radio",
+       "options": [
+        {
+         "value": "initial",
+         "label": "Fixed column width:"
+        },
+        {
+         "value": "contents",
+         "label": "AutoFit to contents"
+        },
+        {
+         "value": "window",
+         "label": "AutoFit to window"
+        }
+       ]
+      },
+      {
+       "id": "width",
+       "label": "Column width",
+       "kind": "text",
+       "visibleWhen": "autofit==initial"
+      },
+      {
+       "id": "separator",
+       "label": "Separate text at",
+       "kind": "radio",
+       "options": [
+        {
+         "value": "paragraph",
+         "label": "Paragraphs"
+        },
+        {
+         "value": "comma",
+         "label": "Commas"
+        },
+        {
+         "value": "tab",
+         "label": "Tabs"
+        },
+        {
+         "value": "other",
+         "label": "Other:"
+        }
+       ]
+      },
+      {
+       "id": "other",
+       "label": "Other:",
+       "kind": "text"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ]
+  },
+  "dialog.tableToText": {
+   "title": "Convert Table To Text",
+   "tabs": [
+    {
+     "name": "Convert Table to Text",
+     "fields": [
+      {
+       "id": "separator",
+       "label": "Separate text with",
+       "kind": "radio",
+       "options": [
+        {
+         "value": "paragraph",
+         "label": "Paragraph marks"
+        },
+        {
+         "value": "tab",
+         "label": "Tabs"
+        },
+        {
+         "value": "comma",
+         "label": "Commas"
+        },
+        {
+         "value": "other",
+         "label": "Other:"
+        }
+       ]
+      },
+      {
+       "id": "other",
+       "label": "Other:",
+       "kind": "text"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ]
+  },
+  "dialog.tableSort": {
+   "officeButtons": null,
+   "tabs": [
+    {
+     "name": "Sort",
+     "fields": [
+      {
+       "id": "column",
+       "label": "",
+       "kind": "select",
+       "options": [
+        {
+         "value": 0,
+         "label": "Column 1"
+        }
+       ]
+      },
+      {
+       "id": "order",
+       "label": "",
+       "kind": "radio",
+       "options": [
+        {
+         "value": "ascending",
+         "label": "Ascending"
+        },
+        {
+         "value": "descending",
+         "label": "Descending"
+        }
+       ]
+      },
+      {
+       "id": "header",
+       "label": "My list has",
+       "kind": "radio",
+       "options": [
+        {
+         "value": "yes",
+         "label": "Header row"
+        },
+        {
+         "value": "no",
+         "label": "No header row"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ]
+  },
+  "dialog.tableFormula": {
+   "tabs": [
+    {
+     "name": "Formula",
+     "fields": [
+      {
+       "id": "formula",
+       "label": "Formula:",
+       "kind": "text"
+      },
+      {
+       "id": "numberFormat",
+       "label": "Number format:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "",
+         "label": ""
+        },
+        {
+         "value": "#,##0",
+         "label": "#,##0"
+        },
+        {
+         "value": "#,##0.00",
+         "label": "#,##0.00"
+        },
+        {
+         "value": "$#,##0.00;($#,##0.00)",
+         "label": "$#,##0.00;($#,##0.00)"
+        },
+        {
+         "value": "0",
+         "label": "0"
+        },
+        {
+         "value": "0%",
+         "label": "0%"
+        },
+        {
+         "value": "0.00",
+         "label": "0.00"
+        },
+        {
+         "value": "0.00%",
+         "label": "0.00%"
+        }
+       ]
+      },
+      {
+       "id": "pasteFunction",
+       "label": "Paste function:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "ABS",
+         "label": "ABS"
+        },
+        {
+         "value": "AND",
+         "label": "AND"
+        },
+        {
+         "value": "AVERAGE",
+         "label": "AVERAGE"
+        },
+        {
+         "value": "COUNT",
+         "label": "COUNT"
+        },
+        {
+         "value": "DEFINED",
+         "label": "DEFINED"
+        },
+        {
+         "value": "FALSE",
+         "label": "FALSE"
+        },
+        {
+         "value": "IF",
+         "label": "IF"
+        },
+        {
+         "value": "INT",
+         "label": "INT"
+        },
+        {
+         "value": "MAX",
+         "label": "MAX"
+        },
+        {
+         "value": "MIN",
+         "label": "MIN"
+        },
+        {
+         "value": "MOD",
+         "label": "MOD"
+        },
+        {
+         "value": "NOT",
+         "label": "NOT"
+        },
+        {
+         "value": "OR",
+         "label": "OR"
+        },
+        {
+         "value": "PRODUCT",
+         "label": "PRODUCT"
+        },
+        {
+         "value": "ROUND",
+         "label": "ROUND"
+        },
+        {
+         "value": "SIGN",
+         "label": "SIGN"
+        },
+        {
+         "value": "SUM",
+         "label": "SUM"
+        },
+        {
+         "value": "TRUE",
+         "label": "TRUE"
+        }
+       ]
+      },
+      {
+       "id": "pasteBookmark",
+       "label": "Paste bookmark:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "",
+         "label": ""
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ]
+  },
+  "dialog.tableStyle": {
+   "title": "Create New Style from Formatting",
+   "officeButtons": null,
+   "tabs": [
+    {
+     "name": "Properties",
+     "fields": [
+      {
+       "id": "name",
+       "label": "Name:",
+       "kind": "text"
+      },
+      {
+       "id": "basedOn",
+       "label": "Style based on:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "TableGrid",
+         "label": "Table Grid"
+        }
+       ]
+      },
+      {
+       "id": "region",
+       "label": "Apply formatting to:",
+       "kind": "select",
+       "options": [
+        {
+         "value": 0,
+         "label": "Whole Table"
+        },
+        {
+         "value": 1,
+         "label": "Header Row"
+        },
+        {
+         "value": 2,
+         "label": "Total Row"
+        },
+        {
+         "value": 3,
+         "label": "First Column"
+        },
+        {
+         "value": 4,
+         "label": "Last Column"
+        },
+        {
+         "value": 5,
+         "label": "Odd Banded Rows"
+        },
+        {
+         "value": 6,
+         "label": "Even Banded Rows"
+        },
+        {
+         "value": 7,
+         "label": "Odd Banded Columns"
+        },
+        {
+         "value": 8,
+         "label": "Even Banded Columns"
+        },
+        {
+         "value": 9,
+         "label": "Top Left Cell"
+        },
+        {
+         "value": 10,
+         "label": "Top Right Cell"
+        },
+        {
+         "value": 11,
+         "label": "Bottom Left Cell"
+        },
+        {
+         "value": 12,
+         "label": "Bottom Right Cell"
+        }
+       ]
+      },
+      {
+       "id": "font",
+       "label": "Font:",
+       "kind": "select"
+      },
+      {
+       "id": "size",
+       "label": "Size:",
+       "kind": "text"
+      },
+      {
+       "id": "bold",
+       "label": "Bold",
+       "kind": "checkbox"
+      },
+      {
+       "id": "italic",
+       "label": "Italic",
+       "kind": "checkbox"
+      },
+      {
+       "id": "underline",
+       "label": "Underline",
+       "kind": "checkbox"
+      },
+      {
+       "id": "fontColor",
+       "label": "Font color:",
+       "kind": "color"
+      },
+      {
+       "id": "borderStyle",
+       "label": "Line style:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "single",
+         "label": "Single"
+        },
+        {
+         "value": "dotted",
+         "label": "Dotted"
+        },
+        {
+         "value": "dashed",
+         "label": "Dashed"
+        },
+        {
+         "value": "dotDash",
+         "label": "Dot dash"
+        },
+        {
+         "value": "double",
+         "label": "Double"
+        },
+        {
+         "value": "triple",
+         "label": "Triple"
+        },
+        {
+         "value": "thick",
+         "label": "Thick"
+        },
+        {
+         "value": "wave",
+         "label": "Wave"
+        }
+       ]
+      },
+      {
+       "id": "borderWidth",
+       "label": "Width:",
+       "kind": "select",
+       "options": [
+        {
+         "value": 0.25,
+         "label": "0.25 pt"
+        },
+        {
+         "value": 0.5,
+         "label": "0.5 pt"
+        },
+        {
+         "value": 0.75,
+         "label": "0.75 pt"
+        },
+        {
+         "value": 1,
+         "label": "1 pt"
+        },
+        {
+         "value": 1.5,
+         "label": "1.5 pt"
+        },
+        {
+         "value": 2.25,
+         "label": "2.25 pt"
+        },
+        {
+         "value": 3,
+         "label": "3 pt"
+        },
+        {
+         "value": 4.5,
+         "label": "4.5 pt"
+        },
+        {
+         "value": 6,
+         "label": "6 pt"
+        }
+       ]
+      },
+      {
+       "id": "borderColor",
+       "label": "Border color:",
+       "kind": "color"
+      },
+      {
+       "id": "borders",
+       "label": "Borders",
+       "kind": "select",
+       "options": [
+        {
+         "value": "all",
+         "label": "All Borders"
+        },
+        {
+         "value": "none",
+         "label": "No Border"
+        },
+        {
+         "value": "outside",
+         "label": "Outside Borders"
+        },
+        {
+         "value": "inside",
+         "label": "Inside Borders"
+        },
+        {
+         "value": "top",
+         "label": "Top Border"
+        },
+        {
+         "value": "bottom",
+         "label": "Bottom Border"
+        },
+        {
+         "value": "left",
+         "label": "Left Border"
+        },
+        {
+         "value": "right",
+         "label": "Right Border"
+        },
+        {
+         "value": "insideH",
+         "label": "Inside Horizontal Border"
+        },
+        {
+         "value": "insideV",
+         "label": "Inside Vertical Border"
+        }
+       ]
+      },
+      {
+       "id": "fill",
+       "label": "Fill color:",
+       "kind": "color"
+      },
+      {
+       "id": "alignment",
+       "label": "Alignment:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "",
+         "label": "(not set)"
+        },
+        {
+         "value": "topLeft",
+         "label": "Align Top Left"
+        },
+        {
+         "value": "topCenter",
+         "label": "Align Top Center"
+        },
+        {
+         "value": "topRight",
+         "label": "Align Top Right"
+        },
+        {
+         "value": "centerLeft",
+         "label": "Align Center Left"
+        },
+        {
+         "value": "center",
+         "label": "Align Center"
+        },
+        {
+         "value": "centerRight",
+         "label": "Align Center Right"
+        },
+        {
+         "value": "bottomLeft",
+         "label": "Align Bottom Left"
+        },
+        {
+         "value": "bottomCenter",
+         "label": "Align Bottom Center"
+        },
+        {
+         "value": "bottomRight",
+         "label": "Align Bottom Right"
+        }
+       ]
+      },
+      {
+       "id": "preview",
+       "label": "Preview",
+       "kind": "preview"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ]
+  },
+  "dialog.modifyTableStyle": {
+   "title": "Modify Style",
+   "command": "table.modifyStyle",
+   "applies": "table.modifyStyle",
+   "sourceRef": "crates/ui-egui/src/dialogs/dialogs_table_style.rs:625",
+   "source": "upstream",
+   "openedBy": [
+    "table.modifyStyle"
+   ],
+   "note": "U:quill/table_style: upstream opens one form as newTableStyle or modifyTableStyle; this is the Modify one.",
+   "tabs": [
+    {
+     "name": "Properties",
+     "fields": [
+      {
+       "id": "name",
+       "label": "Name:",
+       "kind": "text"
+      },
+      {
+       "id": "basedOn",
+       "label": "Style based on:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "TableGrid",
+         "label": "Table Grid"
+        }
+       ]
+      },
+      {
+       "id": "region",
+       "label": "Apply formatting to:",
+       "kind": "select",
+       "options": [
+        {
+         "value": 0,
+         "label": "Whole Table"
+        },
+        {
+         "value": 1,
+         "label": "Header Row"
+        },
+        {
+         "value": 2,
+         "label": "Total Row"
+        },
+        {
+         "value": 3,
+         "label": "First Column"
+        },
+        {
+         "value": 4,
+         "label": "Last Column"
+        },
+        {
+         "value": 5,
+         "label": "Odd Banded Rows"
+        },
+        {
+         "value": 6,
+         "label": "Even Banded Rows"
+        },
+        {
+         "value": 7,
+         "label": "Odd Banded Columns"
+        },
+        {
+         "value": 8,
+         "label": "Even Banded Columns"
+        },
+        {
+         "value": 9,
+         "label": "Top Left Cell"
+        },
+        {
+         "value": 10,
+         "label": "Top Right Cell"
+        },
+        {
+         "value": 11,
+         "label": "Bottom Left Cell"
+        },
+        {
+         "value": 12,
+         "label": "Bottom Right Cell"
+        }
+       ]
+      },
+      {
+       "id": "font",
+       "label": "Font:",
+       "kind": "select"
+      },
+      {
+       "id": "size",
+       "label": "Size:",
+       "kind": "text"
+      },
+      {
+       "id": "bold",
+       "label": "Bold",
+       "kind": "checkbox"
+      },
+      {
+       "id": "italic",
+       "label": "Italic",
+       "kind": "checkbox"
+      },
+      {
+       "id": "underline",
+       "label": "Underline",
+       "kind": "checkbox"
+      },
+      {
+       "id": "fontColor",
+       "label": "Font color:",
+       "kind": "color"
+      },
+      {
+       "id": "borderStyle",
+       "label": "Line style:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "single",
+         "label": "Single"
+        },
+        {
+         "value": "dotted",
+         "label": "Dotted"
+        },
+        {
+         "value": "dashed",
+         "label": "Dashed"
+        },
+        {
+         "value": "dotDash",
+         "label": "Dot dash"
+        },
+        {
+         "value": "double",
+         "label": "Double"
+        },
+        {
+         "value": "triple",
+         "label": "Triple"
+        },
+        {
+         "value": "thick",
+         "label": "Thick"
+        },
+        {
+         "value": "wave",
+         "label": "Wave"
+        }
+       ]
+      },
+      {
+       "id": "borderWidth",
+       "label": "Width:",
+       "kind": "select",
+       "options": [
+        {
+         "value": 0.25,
+         "label": "0.25 pt"
+        },
+        {
+         "value": 0.5,
+         "label": "0.5 pt"
+        },
+        {
+         "value": 0.75,
+         "label": "0.75 pt"
+        },
+        {
+         "value": 1,
+         "label": "1 pt"
+        },
+        {
+         "value": 1.5,
+         "label": "1.5 pt"
+        },
+        {
+         "value": 2.25,
+         "label": "2.25 pt"
+        },
+        {
+         "value": 3,
+         "label": "3 pt"
+        },
+        {
+         "value": 4.5,
+         "label": "4.5 pt"
+        },
+        {
+         "value": 6,
+         "label": "6 pt"
+        }
+       ]
+      },
+      {
+       "id": "borderColor",
+       "label": "Border color:",
+       "kind": "color"
+      },
+      {
+       "id": "borders",
+       "label": "Borders",
+       "kind": "select",
+       "options": [
+        {
+         "value": "all",
+         "label": "All Borders"
+        },
+        {
+         "value": "none",
+         "label": "No Border"
+        },
+        {
+         "value": "outside",
+         "label": "Outside Borders"
+        },
+        {
+         "value": "inside",
+         "label": "Inside Borders"
+        },
+        {
+         "value": "top",
+         "label": "Top Border"
+        },
+        {
+         "value": "bottom",
+         "label": "Bottom Border"
+        },
+        {
+         "value": "left",
+         "label": "Left Border"
+        },
+        {
+         "value": "right",
+         "label": "Right Border"
+        },
+        {
+         "value": "insideH",
+         "label": "Inside Horizontal Border"
+        },
+        {
+         "value": "insideV",
+         "label": "Inside Vertical Border"
+        }
+       ]
+      },
+      {
+       "id": "fill",
+       "label": "Fill color:",
+       "kind": "color"
+      },
+      {
+       "id": "alignment",
+       "label": "Alignment:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "",
+         "label": "(not set)"
+        },
+        {
+         "value": "topLeft",
+         "label": "Align Top Left"
+        },
+        {
+         "value": "topCenter",
+         "label": "Align Top Center"
+        },
+        {
+         "value": "topRight",
+         "label": "Align Top Right"
+        },
+        {
+         "value": "centerLeft",
+         "label": "Align Center Left"
+        },
+        {
+         "value": "center",
+         "label": "Align Center"
+        },
+        {
+         "value": "centerRight",
+         "label": "Align Center Right"
+        },
+        {
+         "value": "bottomLeft",
+         "label": "Align Bottom Left"
+        },
+        {
+         "value": "bottomCenter",
+         "label": "Align Bottom Center"
+        },
+        {
+         "value": "bottomRight",
+         "label": "Align Bottom Right"
+        }
+       ]
+      },
+      {
+       "id": "preview",
+       "label": "Preview",
+       "kind": "preview"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ]
+  }
+ }
+}

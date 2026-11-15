@@ -1,0 +1,8 @@
+{
+  "source": "Excel Create Names from Selection over gridcraft 146161b4b450a56e5e59a083ba0478582d1e602b crates/engine/src/cmd/formulas.rs create_from_selection",
+  "width": 300,
+  "height": 230,
+  "sections": [
+    {"title": "Create names from values in the:", "fields": ["top", "left", "bottom", "right"]}
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "controls": {
+    "view.zoom.zoom": {
+      "command": "view.zoom",
+      "params": null,
+      "dialog": "dialog.zoom",
+      "note": "U:prism/view: the Zoom dialog (dialog.zoom); the arrow lists the percents and Fit."
+    },
+    "view.color.color": {
+      "command": "view.color",
+      "params": null,
+      "note": "U:prism/view: draw the slides in full color (view.color); on while Grayscale is off."
+    },
+    "view.color.grayscale": {
+      "params": null,
+      "note": "U:prism/view: draw the slides in grays (view.grayscale)."
+    },
+    "view.color.dark-mode": {
+      "command": null,
+      "note": "Hidden: deckcraft's Dark Mode switches the app's own light and dark theme; the app has one skin."
+    },
+    "view.window.arrange-all": {
+      "command": "view.arrangeAll",
+      "note": "U:prism/view: the open windows stacked one above the other (host windows)."
+    },
+    "view.window.switch": {
+      "command": "view.switchWindows",
+      "items": [
+        {
+          "id": "view.window.switch.windows",
+          "label": "Windows",
+          "kind": "list",
+          "command": "view.switchWindows",
+          "params": {
+            "value": "<n>"
+          },
+          "dynamic": true,
+          "source": "upstream"
+        }
+      ],
+      "note": "U:prism/view: the open windows in the order they were opened, the current one checked; a click brings that window to the front."
+    },
+    "view.macros.macros": {
+      "note": "Hidden: deckcraft has no macros."
+    }
+  }
+}

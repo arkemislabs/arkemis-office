@@ -1,0 +1,135 @@
+{
+  "tab": "picture-format",
+  "keytip": "JP",
+  "source": "deckcraft crates/ui-egui/src/ribbon/picture_format.rs (picture_format), arrange.rs (arrange_group, size_group) @ f893f6af7d36a5409fd804e81a34fd895cfefedf; Picture Effects and Picture Layout placed as PowerPoint",
+  "groups": {
+    "adjust": {
+      "collapseOrder": 4,
+      "collapsedIcon": "remove-bg",
+      "layout": [
+        {
+          "large": "pictureformat.adjust.remove-background"
+        },
+        {
+          "large": "pictureformat.adjust.corrections"
+        },
+        {
+          "large": "pictureformat.adjust.color"
+        },
+        {
+          "large": "pictureformat.adjust.artistic"
+        },
+        {
+          "large": "pictureformat.adjust.transparency"
+        },
+        {
+          "stack": [
+            "pictureformat.adjust.change",
+            "pictureformat.adjust.reset",
+            "pictureformat.adjust.compress"
+          ]
+        }
+      ]
+    },
+    "picture-styles": {
+      "collapseOrder": 3,
+      "collapsedIcon": "picture-style",
+      "layout": [
+        {
+          "gallery": "pictureformat.styles.gallery",
+          "inline": true,
+          "columns": 4
+        },
+        {
+          "stack": [
+            "pictureformat.styles.border",
+            "pictureformat.styles.effects",
+            "pictureformat.styles.layout"
+          ]
+        },
+        {
+          "stack": [
+            "pictureformat.styles.reset-style"
+          ]
+        }
+      ]
+    },
+    "accessibility": {
+      "collapseOrder": 1,
+      "collapsedIcon": "alt-text",
+      "layout": [
+        {
+          "large": "pictureformat.accessibility.alt-text"
+        }
+      ]
+    },
+    "arrange": {
+      "collapseOrder": 2,
+      "collapsedIcon": "bring-forward",
+      "layout": [
+        {
+          "large": "pictureformat.arrange.bring-forward"
+        },
+        {
+          "large": "pictureformat.arrange.send-backward"
+        },
+        {
+          "large": "pictureformat.arrange.selection-pane"
+        },
+        {
+          "large": "pictureformat.arrange.align"
+        },
+        {
+          "stack": [
+            "pictureformat.arrange.group",
+            "pictureformat.arrange.rotate"
+          ]
+        }
+      ]
+    },
+    "size": {
+      "collapseOrder": 5,
+      "collapsedIcon": "crop",
+      "layout": [
+        {
+          "large": "pictureformat.size.crop"
+        },
+        {
+          "rows": [
+            [
+              "pictureformat.size.height"
+            ],
+            [
+              "pictureformat.size.width"
+            ]
+          ]
+        }
+      ],
+      "widths": {
+        "pictureformat.size.height": 72,
+        "pictureformat.size.width": 72
+      }
+    }
+  },
+  "keytips": {
+    "pictureformat.adjust.remove-background": "E",
+    "pictureformat.adjust.corrections": "R",
+    "pictureformat.adjust.color": "I",
+    "pictureformat.adjust.artistic": "Y",
+    "pictureformat.adjust.compress": "M",
+    "pictureformat.adjust.change": "N",
+    "pictureformat.adjust.reset": "Q",
+    "pictureformat.styles.border": "SO",
+    "pictureformat.styles.effects": "SE",
+    "pictureformat.styles.layout": "L",
+    "pictureformat.arrange.bring-forward": "AF",
+    "pictureformat.arrange.send-backward": "AE",
+    "pictureformat.arrange.selection-pane": "AP",
+    "pictureformat.arrange.align": "AA",
+    "pictureformat.arrange.group": "GG",
+    "pictureformat.arrange.rotate": "AY",
+    "pictureformat.size.crop": "C",
+    "pictureformat.size.height": "HH",
+    "pictureformat.size.width": "WW"
+  }
+}

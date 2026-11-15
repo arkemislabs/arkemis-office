@@ -1,0 +1,541 @@
+{
+ "controls": {
+  "mailings.create.envelopes": {
+   "note": "U:quill/mailings: wordcraft ribbon/mailings.rs and dialogs_layout/print.rs: the Envelopes dialog (delivery and return address, size) with Add to Document and New Document. Word's Labels tab, Options… and electronic postage are not upstream and stay hidden; Labels is its own control."
+  },
+  "mailings.create.labels": {
+   "note": "U:quill/mailings: dialogs_layout/print.rs labels_ui: address or one label per recipient, the label product, a full page or a single label at a row and column; New Document makes the sheet. No printing; Word's Options… (vendors and product numbers) and Envelopes tab are not upstream."
+  },
+  "mailings.start-mail-merge.start-mail-merge": {
+   "note": "U:quill/mailings: the kinds upstream makes (Letters, E-mail Messages, Envelopes, Labels, Directory, Normal Word Document; the current one checked; saved in the .docx as w:mailMerge). Hidden (no upstream engine): Step-by-Step Mail Merge Wizard…"
+  },
+  "mailings.start-mail-merge.select-recipients": {
+   "note": "U:quill/mailings: ribbon/mailings.rs: Type a New List… (the Recipient List dialog with empty fields) and Use an Existing List… (the system Open dialog: CSV, TSV, text, .xlsx, .xlsm, .ods; a workbook with several sheets asks which). Hidden (no upstream engine): Choose from Outlook Contacts…; .xls workbooks are refused with a message.",
+   "items": [
+    {
+     "id": "mailings.start-mail-merge.select-recipients.type-a-new-list",
+     "label": "Type a New List…",
+     "command": null,
+     "dialog": "dialog.newRecipientList",
+     "source": "upstream"
+    },
+    {
+     "id": "mailings.start-mail-merge.select-recipients.use-an-existing-list",
+     "label": "Use an Existing List…",
+     "command": "ui.openRecipientList",
+     "source": "upstream"
+    }
+   ]
+  },
+  "mailings.write-insert-fields.insert-merge-field": {
+   "note": "U:quill/mailings: the button opens Insert Merge Field (the list's fields); the arrow lists the fields of the recipient list as Word does and inserts the one picked.",
+   "items": [
+    {
+     "id": "mailings.write-insert-fields.insert-merge-field.fields",
+     "label": "Fields",
+     "kind": "list",
+     "command": "mailings.insertField",
+     "args": {
+      "field": "<field>"
+     },
+     "dynamic": true,
+     "source": "upstream"
+    }
+   ]
+  },
+  "mailings.write-insert-fields.rules": {
+   "note": "U:quill/mailings: ribbon/mailings.rs and dialogs/dispatch.rs merge_rule_dialog: If…Then…Else…, Merge Record #, Next Record and Skip Record If…; Next Record If… uses the engine's NEXTIF with the same form. Hidden (no upstream engine): Ask…, Fill-in…, Merge Sequence #, Set Bookmark….",
+   "items": [
+    {
+     "id": "mailings.write-insert-fields.rules.if-then-else",
+     "label": "If…Then…Else…",
+     "command": null,
+     "dialog": "dialog.mergeRule",
+     "args": {
+      "rule": "IF"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "mailings.write-insert-fields.rules.merge-record",
+     "label": "Merge Record #",
+     "command": "mailings.rules",
+     "args": {
+      "rule": "MERGEREC"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "mailings.write-insert-fields.rules.next-record",
+     "label": "Next Record",
+     "command": "mailings.rules",
+     "args": {
+      "rule": "NEXT"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "mailings.write-insert-fields.rules.next-record-if",
+     "label": "Next Record If…",
+     "command": null,
+     "dialog": "dialog.mergeRule",
+     "args": {
+      "rule": "NEXTIF"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "mailings.write-insert-fields.rules.skip-record-if",
+     "label": "Skip Record If…",
+     "command": null,
+     "dialog": "dialog.mergeRule",
+     "args": {
+      "rule": "SKIPIF"
+     },
+     "source": "upstream"
+    }
+   ]
+  },
+  "mailings.write-insert-fields.address-block": {
+   "note": "U:quill/mailings: ribbon/mailings.rs: inserts an ADDRESSBLOCK field (name, company, street, city line, country from the matched fields) directly, as upstream does; Word's Insert Address Block dialog with its format choices is not upstream and stays out."
+  },
+  "mailings.write-insert-fields.greeting-line": {
+   "note": "U:quill/mailings: ribbon/mailings.rs: inserts a GREETINGLINE field (\"Dear First Last,\") directly, as upstream does; Word's Insert Greeting Line dialog is not upstream and stays out."
+  },
+  "mailings.write-insert-fields.update-labels": {
+   "note": "U:quill/mailings: Update Labels has no upstream counterpart (labels are made from the recipients in the Labels dialog); hidden."
+  },
+  "mailings.write-insert-fields.highlight-merge-fields": {
+   "note": "U:quill/mailings: the toggle upstream keeps (merge.highlight); the page shades the merge fields while it is on."
+  },
+  "mailings.finish.finish-merge": {
+   "note": "U:quill/mailings: Edit Individual Documents… (which records, then a new document). Hidden (no upstream engine): Print Documents… (no printing) and Send Email Messages… (no mail)."
+  }
+ },
+ "dialogs": {
+  "dialog.addressBlock": {
+   "command": null,
+   "applies": null,
+   "note": "U:quill/mailings: Word's Insert Address Block dialog (name format, company, postal address, country) is not upstream (the engine inserts the field directly, in one fixed format), so the dialog is not offered; the control inserts the field."
+  },
+  "dialog.greetingLine": {
+   "command": null,
+   "applies": null,
+   "note": "U:quill/mailings: Word's Insert Greeting Line dialog (salutation, name format, punctuation, invalid names) is not upstream (the engine inserts the field directly, in one fixed format), so the dialog is not offered; the control inserts the field."
+  },
+  "dialog.envelopes": {
+   "title": "Envelopes",
+   "command": "mailings.envelopes",
+   "note": "U:quill/mailings: dialogs_layout/print.rs envelopes_ui; drawn by src/apps/quill/dialogs/envelopes.tsx.",
+   "tabs": [
+    {
+     "name": "Envelopes",
+     "fields": [
+      {
+       "id": "delivery",
+       "label": "Delivery address:",
+       "kind": "text",
+       "multiline": true
+      },
+      {
+       "id": "omit",
+       "label": "Omit",
+       "kind": "checkbox"
+      },
+      {
+       "id": "ret",
+       "label": "Return address:",
+       "kind": "text",
+       "multiline": true,
+       "enabledWhen": "!omit"
+      },
+      {
+       "id": "size",
+       "label": "Envelope size:",
+       "kind": "select",
+       "options": [
+        {
+         "value": 0,
+         "label": "#10   4.13 × 9.5 in"
+        },
+        {
+         "value": 1,
+         "label": "#9   3.88 × 8.88 in"
+        },
+        {
+         "value": 2,
+         "label": "Monarch   3.88 × 7.5 in"
+        },
+        {
+         "value": 3,
+         "label": "DL   110 × 220 mm"
+        },
+        {
+         "value": 4,
+         "label": "C4   229 × 324 mm"
+        },
+        {
+         "value": 5,
+         "label": "C5   162 × 229 mm"
+        },
+        {
+         "value": 6,
+         "label": "C6   114 × 162 mm"
+        },
+        {
+         "value": 7,
+         "label": "B5   176 × 250 mm"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "Add to Document",
+    "New Document",
+    "Cancel"
+   ]
+  },
+  "dialog.labels": {
+   "title": "Labels",
+   "command": "mailings.labels",
+   "note": "U:quill/mailings: dialogs_layout/print.rs labels_ui; drawn by src/apps/quill/dialogs/labels.tsx.",
+   "tabs": [
+    {
+     "name": "Labels",
+     "fields": [
+      {
+       "id": "recipients",
+       "label": "One label per recipient",
+       "kind": "checkbox",
+       "visibleWhen": "hasRecipients"
+      },
+      {
+       "id": "text",
+       "label": "Address:",
+       "kind": "text",
+       "multiline": true,
+       "visibleWhen": "!recipients"
+      },
+      {
+       "id": "product",
+       "label": "Label:",
+       "kind": "select",
+       "options": [
+        {
+         "value": 0,
+         "label": "Address labels, 3 × 10, 2.625\" × 1\" (Letter)"
+        },
+        {
+         "value": 1,
+         "label": "Address labels, 2 × 10, 4\" × 1\" (Letter)"
+        },
+        {
+         "value": 2,
+         "label": "Address labels, 2 × 7, 4\" × 1.333\" (Letter)"
+        },
+        {
+         "value": 3,
+         "label": "Shipping labels, 2 × 5, 4\" × 2\" (Letter)"
+        },
+        {
+         "value": 4,
+         "label": "Return address labels, 4 × 20, 1.75\" × 0.5\" (Letter)"
+        },
+        {
+         "value": 5,
+         "label": "Address labels, 3 × 7, 63.5 × 38.1 mm (A4)"
+        },
+        {
+         "value": 6,
+         "label": "Address labels, 2 × 7, 99.1 × 38.1 mm (A4)"
+        },
+        {
+         "value": 7,
+         "label": "Address labels, 3 × 8, 63.5 × 33.9 mm (A4)"
+        },
+        {
+         "value": 8,
+         "label": "Shipping labels, 2 × 4, 99.1 × 67.7 mm (A4)"
+        }
+       ]
+      },
+      {
+       "id": "single",
+       "label": "Print",
+       "kind": "radio",
+       "options": [
+        {
+         "value": false,
+         "label": "Full page of the same label"
+        },
+        {
+         "value": true,
+         "label": "Single label"
+        }
+       ]
+      },
+      {
+       "id": "row",
+       "label": "Row:",
+       "kind": "number",
+       "min": 1,
+       "max": 40,
+       "visibleWhen": "single"
+      },
+      {
+       "id": "col",
+       "label": "Column:",
+       "kind": "number",
+       "min": 1,
+       "max": 10,
+       "visibleWhen": "single"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "New Document",
+    "Cancel"
+   ]
+  },
+  "dialog.recipientList": {
+   "title": "Recipient List",
+   "command": "mailings.recipients",
+   "note": "U:quill/mailings: dialogs/mailings.rs recipient_list and recipient_filter; drawn by src/apps/quill/dialogs/recipientList.tsx. Word's check boxes per record, Find duplicates and Validate addresses are not upstream.",
+   "tabs": [
+    {
+     "name": "Recipients",
+     "fields": [
+      {
+       "id": "grid",
+       "label": "Field name header row and the records",
+       "kind": "grid"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ]
+  },
+  "dialog.newRecipientList": {
+   "title": "Recipient List",
+   "command": "mailings.recipients",
+   "note": "U:quill/mailings: Type a New List…: the Recipient List dialog with the starting fields (First Name, Last Name, Address, City, Postal Code) and one empty record.",
+   "tabs": [
+    {
+     "name": "Recipients",
+     "fields": [
+      {
+       "id": "grid",
+       "label": "Field name header row and the records",
+       "kind": "grid"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ]
+  },
+  "dialog.insertMergeField": {
+   "title": "Insert Merge Field",
+   "command": "mailings.insertField",
+   "tabs": [
+    {
+     "name": "Insert Merge Field",
+     "fields": [
+      {
+       "id": "fields",
+       "label": "Fields:",
+       "kind": "list"
+      },
+      {
+       "id": "field",
+       "label": "Field:",
+       "kind": "text"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "Insert",
+    "Cancel"
+   ]
+  },
+  "dialog.findRecipient": {
+   "title": "Find Recipient",
+   "command": "mailings.findRecipient",
+   "tabs": [
+    {
+     "name": "Find Recipient",
+     "fields": [
+      {
+       "id": "text",
+       "label": "Find:",
+       "kind": "text"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "Find",
+    "Cancel"
+   ]
+  },
+  "dialog.mergeRecords": {
+   "title": "Merge to New Document",
+   "command": "mailings.finish",
+   "tabs": [
+    {
+     "name": "Merge records",
+     "fields": [
+      {
+       "id": "choice",
+       "label": "Merge records",
+       "kind": "radio",
+       "options": [
+        {
+         "value": "all",
+         "label": "All"
+        },
+        {
+         "value": "current",
+         "label": "Current record"
+        },
+        {
+         "value": "range",
+         "label": "From:"
+        }
+       ]
+      },
+      {
+       "id": "from",
+       "label": "From:",
+       "kind": "text",
+       "visibleWhen": "choice==range"
+      },
+      {
+       "id": "to",
+       "label": "To:",
+       "kind": "text",
+       "visibleWhen": "choice==range"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ]
+  },
+  "dialog.mergeRule": {
+   "title": "Insert Field: If",
+   "command": "mailings.rules",
+   "note": "U:quill/mailings: dialogs/dispatch.rs merge_rule_dialog; drawn by src/apps/quill/dialogs/mergeRule.tsx (the rule comes from the control that opened it).",
+   "tabs": [
+    {
+     "name": "Rule",
+     "fields": [
+      {
+       "id": "field",
+       "label": "Field:",
+       "kind": "select",
+       "options": []
+      },
+      {
+       "id": "value",
+       "label": "Equals:",
+       "kind": "text"
+      },
+      {
+       "id": "then",
+       "label": "Then insert:",
+       "kind": "text"
+      },
+      {
+       "id": "else",
+       "label": "Otherwise insert:",
+       "kind": "text"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ]
+  },
+  "dialog.matchFields": {
+   "title": "Match Fields",
+   "command": "mailings.matchFields",
+   "note": "U:quill/mailings: dialogs/dispatch.rs match_fields_dialog (read-only, as upstream); drawn by src/apps/quill/dialogs/matchFields.tsx.",
+   "tabs": [
+    {
+     "name": "Match Fields",
+     "fields": [
+      {
+       "id": "mapping",
+       "label": "Address and greeting parts and the recipient-list fields that fill them",
+       "kind": "grid"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "Close"
+   ]
+  },
+  "dialog.checkErrors": {
+   "title": "Checking and Reporting Errors",
+   "command": "mailings.checkErrors",
+   "note": "U:quill/mailings: dialogs/dispatch.rs check_errors_dialog; drawn by src/apps/quill/dialogs/checkErrors.tsx.",
+   "tabs": [
+    {
+     "name": "Check for Errors",
+     "fields": [
+      {
+       "id": "result",
+       "label": "Merge fields that are not in the recipient list",
+       "kind": "grid"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "Close"
+   ]
+  },
+  "dialog.selectTable": {
+   "title": "Select Table",
+   "command": null,
+   "presentation": "modal",
+   "note": "U:quill/mailings: dialogs/dispatch.rs select_table_dialog: the sheets of a workbook with several; asked by ui.openRecipientList.",
+   "tabs": [
+    {
+     "name": "Select Table",
+     "fields": [
+      {
+       "id": "sheets",
+       "label": "Choose the sheet that holds the recipients.",
+       "kind": "list"
+      },
+      {
+       "id": "headers",
+       "label": "First row of data contains column headers",
+       "kind": "checkbox"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ]
+  }
+ }
+}

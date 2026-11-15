@@ -1,0 +1,92 @@
+{
+  "tab": "notes-master",
+  "keytip": "O",
+  "source": "deckcraft crates/ui-egui/src/ribbon/masters.rs (notes_master) @ f893f6af7d36a5409fd804e81a34fd895cfefedf; Notes Page Orientation, Slide Size and Colors/Fonts/Effects placed as PowerPoint",
+  "groups": {
+    "page-setup": {
+      "collapseOrder": 4,
+      "layout": [
+        {
+          "large": "notesmaster.setup.orientation"
+        },
+        {
+          "large": "notesmaster.setup.slide-size"
+        }
+      ]
+    },
+    "placeholders": {
+      "collapseOrder": 3,
+      "layout": [
+        {
+          "stack": [
+            "notesmaster.placeholders.header",
+            "notesmaster.placeholders.slideImage",
+            "notesmaster.placeholders.footer"
+          ]
+        },
+        {
+          "stack": [
+            "notesmaster.placeholders.date",
+            "notesmaster.placeholders.body",
+            "notesmaster.placeholders.pageNumber"
+          ]
+        }
+      ]
+    },
+    "edit-theme": {
+      "collapseOrder": 2,
+      "layout": [
+        {
+          "large": "notesmaster.theme.themes"
+        }
+      ]
+    },
+    "background": {
+      "collapseOrder": 5,
+      "collapsedIcon": "background-styles",
+      "layout": [
+        {
+          "stack": [
+            "notesmaster.background.colors",
+            "notesmaster.background.fonts",
+            "notesmaster.background.effects"
+          ]
+        },
+        {
+          "large": "notesmaster.background.styles"
+        },
+        {
+          "stack": [
+            "notesmaster.background.hide-graphics"
+          ]
+        }
+      ]
+    },
+    "close": {
+      "collapseOrder": 1,
+      "collapsedIcon": "close-x",
+      "layout": [
+        {
+          "large": "notesmaster.close.close"
+        }
+      ]
+    }
+  },
+  "keytips": {
+    "notesmaster.setup.orientation": "O",
+    "notesmaster.setup.slide-size": "S",
+    "notesmaster.placeholders.header": "H",
+    "notesmaster.placeholders.slideImage": "I",
+    "notesmaster.placeholders.footer": "F",
+    "notesmaster.placeholders.date": "D",
+    "notesmaster.placeholders.body": "B",
+    "notesmaster.placeholders.pageNumber": "N",
+    "notesmaster.theme.themes": "TH",
+    "notesmaster.background.colors": "TC",
+    "notesmaster.background.fonts": "TF",
+    "notesmaster.background.effects": "TE",
+    "notesmaster.background.styles": "Y",
+    "notesmaster.background.hide-graphics": "G",
+    "notesmaster.close.close": "C"
+  }
+}

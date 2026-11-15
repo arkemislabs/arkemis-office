@@ -1,0 +1,587 @@
+{
+ "controls": {
+  "insert.links.link": {
+   "command": "insert.link",
+   "args": null,
+   "items": [
+    {
+     "label": "Recent items",
+     "command": null,
+     "source": "office"
+    },
+    {
+     "label": "Insert Link…",
+     "command": "insert.link",
+     "args": null,
+     "dialog": "dialog.link",
+     "source": "upstream",
+     "registered": true
+    },
+    {
+     "label": "Remove Link",
+     "command": "insert.removeLink",
+     "source": "office",
+     "registered": true
+    }
+   ]
+  },
+  "insert.tables.table.insert-table": {
+   "command": "insert.table",
+   "args": null
+  },
+  "insert.links.bookmark": {
+   "command": "insert.bookmark",
+   "args": null
+  },
+  "insert.text.quick-parts.field": {
+   "command": "insert.field",
+   "args": null
+  },
+  "header-footer.insert.document-info.field": {
+   "command": "insert.field",
+   "args": null
+  },
+  "insert.text.drop-cap.drop-cap-options": {
+   "command": "insert.dropCap",
+   "args": null
+  },
+  "insert.symbols.symbol.more-symbols": {
+   "command": "insert.symbol",
+   "args": null
+  }
+ },
+ "dialogs": {
+  "dialog.link": {
+   "officeButtons": null,
+   "note": "U:quill/insert: wordcraft dispatch.rs link_dialog. Browse for File (the system Open dialog, path only), Bookmark… (Select Place in Document: top, headings, bookmarks) and ScreenTip… (saved as w:tooltip) are Word's own, drawn by src/apps/quill/dialogs/link.tsx; E-mail Address makes a mailto: link (not checked against upstream). Create New Document has no engine (no second document is made from a link) and stays hidden.",
+   "tabs": [
+    {
+     "name": "Insert Hyperlink",
+     "fields": [
+      {
+       "id": "linkTo",
+       "label": "Link to:",
+       "kind": "list",
+       "options": [
+        {
+         "value": "file",
+         "label": "Existing File or Web Page"
+        },
+        {
+         "value": "place",
+         "label": "Place in This Document"
+        },
+        {
+         "value": "email",
+         "label": "E-mail Address"
+        }
+       ]
+      },
+      {
+       "id": "text",
+       "label": "Text to display:",
+       "kind": "text"
+      },
+      {
+       "id": "address",
+       "label": "Address:",
+       "kind": "text",
+       "visibleWhen": "linkTo==file"
+      },
+      {
+       "id": "email",
+       "label": "E-mail address:",
+       "kind": "text",
+       "visibleWhen": "linkTo==email"
+      },
+      {
+       "id": "subject",
+       "label": "Subject:",
+       "kind": "text",
+       "visibleWhen": "linkTo==email"
+      },
+      {
+       "id": "place",
+       "label": "Select a place in this document:",
+       "kind": "list",
+       "visibleWhen": "linkTo==place"
+      },
+      {
+       "id": "removeLink",
+       "label": "Remove Link",
+       "kind": "button",
+       "command": "insert.removeLink",
+       "visibleWhen": "isLink"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ]
+  },
+  "dialog.bookmark": {
+   "command": "insert.bookmark",
+   "tabs": [
+    {
+     "name": "Bookmark",
+     "fields": [
+      {
+       "id": "name",
+       "label": "Bookmark name:",
+       "kind": "text"
+      },
+      {
+       "id": "list",
+       "label": "",
+       "kind": "list",
+       "note": "The document has no bookmarks yet."
+      },
+      {
+       "id": "delete",
+       "label": "Delete",
+       "kind": "button",
+       "command": "insert.deleteBookmark"
+      },
+      {
+       "id": "goTo",
+       "label": "Go To",
+       "kind": "button",
+       "command": "edit.goto"
+      },
+      {
+       "id": "sortBy",
+       "label": "Sort by:",
+       "kind": "radio",
+       "options": [
+        {
+         "value": "name",
+         "label": "Name"
+        },
+        {
+         "value": "location",
+         "label": "Location"
+        }
+       ]
+      },
+      {
+       "id": "hidden",
+       "label": "Hidden bookmarks",
+       "kind": "checkbox"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "Add",
+    "Cancel"
+   ]
+  },
+  "dialog.symbol": {
+   "officeButtons": null,
+   "tabs": [
+    {
+     "name": "Symbols",
+     "fields": [
+      {
+       "id": "font",
+       "label": "Font:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "(normal text)",
+         "label": "(normal text)"
+        }
+       ]
+      },
+      {
+       "id": "subset",
+       "label": "Subset:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "Basic Latin",
+         "label": "Basic Latin"
+        }
+       ]
+      },
+      {
+       "id": "grid",
+       "label": "",
+       "kind": "list"
+      },
+      {
+       "id": "recent",
+       "label": "Recently used symbols:",
+       "kind": "list"
+      },
+      {
+       "id": "code",
+       "label": "Character code:",
+       "kind": "text"
+      },
+      {
+       "id": "from",
+       "label": "from:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "unicode",
+         "label": "Unicode (hex)"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Special Characters",
+     "fields": [
+      {
+       "id": "list",
+       "label": "Character",
+       "kind": "list",
+       "options": [
+        {
+         "value": "Em Dash",
+         "label": "— Em Dash"
+        },
+        {
+         "value": "En Dash",
+         "label": "– En Dash"
+        },
+        {
+         "value": "Nonbreaking Hyphen",
+         "label": "‑ Nonbreaking Hyphen  Ctrl+Shift+_"
+        },
+        {
+         "value": "Optional Hyphen",
+         "label": "Optional Hyphen  Ctrl+-"
+        },
+        {
+         "value": "Em Space",
+         "label": "Em Space"
+        },
+        {
+         "value": "En Space",
+         "label": "En Space"
+        },
+        {
+         "value": "1/4 Em Space",
+         "label": "1/4 Em Space"
+        },
+        {
+         "value": "Nonbreaking Space",
+         "label": "Nonbreaking Space  Ctrl+Shift+Space"
+        },
+        {
+         "value": "Copyright",
+         "label": "© Copyright  Alt+Ctrl+C"
+        },
+        {
+         "value": "Registered",
+         "label": "® Registered  Alt+Ctrl+R"
+        },
+        {
+         "value": "Trademark",
+         "label": "™ Trademark  Alt+Ctrl+T"
+        },
+        {
+         "value": "Section Mark",
+         "label": "§ Section Mark"
+        },
+        {
+         "value": "Paragraph Mark",
+         "label": "¶ Paragraph Mark"
+        },
+        {
+         "value": "Ellipsis",
+         "label": "… Ellipsis  Alt+Ctrl+."
+        },
+        {
+         "value": "Single Opening Quote",
+         "label": "‘ Single Opening Quote"
+        },
+        {
+         "value": "Single Closing Quote",
+         "label": "’ Single Closing Quote"
+        },
+        {
+         "value": "Double Opening Quote",
+         "label": "“ Double Opening Quote"
+        },
+        {
+         "value": "Double Closing Quote",
+         "label": "” Double Closing Quote"
+        },
+        {
+         "value": "No-Width Optional Break",
+         "label": "No-Width Optional Break"
+        },
+        {
+         "value": "No-Width Non Break",
+         "label": "No-Width Non Break"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "Insert",
+    "Cancel"
+   ]
+  },
+  "dialog.field": {
+   "officeButtons": null,
+   "tabs": [
+    {
+     "name": "Field",
+     "fields": [
+      {
+       "id": "categories",
+       "label": "Categories:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "(All)",
+         "label": "(All)"
+        },
+        {
+         "value": "Date and Time",
+         "label": "Date and Time"
+        },
+        {
+         "value": "Document Information",
+         "label": "Document Information"
+        },
+        {
+         "value": "Links and References",
+         "label": "Links and References"
+        },
+        {
+         "value": "Index and Tables",
+         "label": "Index and Tables"
+        },
+        {
+         "value": "Mail Merge",
+         "label": "Mail Merge"
+        },
+        {
+         "value": "Numbering",
+         "label": "Numbering"
+        }
+       ]
+      },
+      {
+       "id": "names",
+       "label": "Field names:",
+       "kind": "list"
+      },
+      {
+       "id": "description",
+       "label": "Description:",
+       "kind": "text",
+       "readOnly": true
+      },
+      {
+       "id": "dateFormat",
+       "label": "Date formats:",
+       "kind": "list"
+      },
+      {
+       "id": "numberFormat",
+       "label": "Format:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "",
+         "label": "(none)"
+        },
+        {
+         "value": "Arabic",
+         "label": "1, 2, 3, …"
+        },
+        {
+         "value": "alphabetic",
+         "label": "a, b, c, …"
+        },
+        {
+         "value": "ALPHABETIC",
+         "label": "A, B, C, …"
+        },
+        {
+         "value": "roman",
+         "label": "i, ii, iii, …"
+        },
+        {
+         "value": "ROMAN",
+         "label": "I, II, III, …"
+        },
+        {
+         "value": "Ordinal",
+         "label": "1st, 2nd, 3rd, …"
+        },
+        {
+         "value": "CardText",
+         "label": "One, Two, Three, …"
+        },
+        {
+         "value": "OrdText",
+         "label": "First, Second, Third, …"
+        }
+       ]
+      },
+      {
+       "id": "target",
+       "label": "Name:",
+       "kind": "text"
+      },
+      {
+       "id": "codes",
+       "label": "Field codes:",
+       "kind": "text"
+      },
+      {
+       "id": "preserve",
+       "label": "Preserve formatting during updates",
+       "kind": "checkbox"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ]
+  },
+  "dialog.dateTime": {
+   "tabs": [
+    {
+     "name": "Date and Time",
+     "fields": [
+      {
+       "id": "formats",
+       "label": "Available formats:",
+       "kind": "list"
+      },
+      {
+       "id": "language",
+       "label": "Language:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "en-US",
+         "label": "English (United States)"
+        }
+       ]
+      },
+      {
+       "id": "updateAuto",
+       "label": "Update automatically",
+       "kind": "checkbox"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ]
+  },
+  "dialog.dropCap": {
+   "tabs": [
+    {
+     "name": "Drop Cap",
+     "fields": [
+      {
+       "id": "position",
+       "label": "Position",
+       "kind": "radio",
+       "options": [
+        {
+         "value": "none",
+         "label": "None"
+        },
+        {
+         "value": "dropped",
+         "label": "Dropped"
+        },
+        {
+         "value": "margin",
+         "label": "In margin"
+        }
+       ]
+      },
+      {
+       "id": "font",
+       "label": "Font:",
+       "kind": "select"
+      },
+      {
+       "id": "lines",
+       "label": "Lines to drop:",
+       "kind": "number",
+       "min": 1,
+       "max": 10,
+       "step": 1
+      },
+      {
+       "id": "distance",
+       "label": "Distance from text:",
+       "kind": "number",
+       "min": 0,
+       "max": 22,
+       "step": 0.1,
+       "unit": "\""
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ]
+  },
+  "dialog.selectPlace": {
+   "title": "Select Place in Document",
+   "note": "U:quill/insert: Word's Select Place in Document (Insert Hyperlink › Bookmark…): the top, the headings and the bookmarks; OK gives the place to the Insert Hyperlink box. Drawn by src/apps/quill/dialogs/selectPlace.tsx.",
+   "tabs": [
+    {
+     "name": "Select Place in Document",
+     "fields": [
+      {
+       "id": "place",
+       "label": "Select a place in this document:",
+       "kind": "list"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ]
+  },
+  "dialog.screenTip": {
+   "title": "Set Hyperlink ScreenTip",
+   "note": "U:quill/insert: Word's Set Hyperlink ScreenTip: one text, saved as the hyperlink's w:tooltip.",
+   "tabs": [
+    {
+     "name": "Set Hyperlink ScreenTip",
+     "fields": [
+      {
+       "id": "tip",
+       "label": "ScreenTip text:",
+       "kind": "text"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ]
+  }
+ }
+}

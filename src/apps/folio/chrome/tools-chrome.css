@@ -1,0 +1,34 @@
+/* The All tools expanded view (AllToolsPage.tsx) and the notice bar (NoticeBar.tsx), in the Acrobat skin of acrobat.css. */
+
+.fa-alltools-page { position: absolute; inset: 0; z-index: 7; display: flex; flex-direction: column; padding: 20px 28px 0 36px; background: var(--fa-panel); overflow: hidden; }
+.fa-alltools-head { display: flex; align-items: center; }
+.fa-alltools-head h1 { margin: 0; font: 600 22px/1.2 var(--ark-font); color: var(--fa-text); }
+.fa-alltools-search { width: min(520px, 100%); height: 34px; margin: 12px 0 10px; padding: 0 12px; border: 1px solid var(--fa-line-strong); border-radius: 9px; background: var(--fa-raised); color: var(--fa-text); font: 13.5px var(--ark-font); outline: 0; }
+.fa-alltools-search:focus { border-color: var(--sh-focus); }
+.fa-alltools-scroll { flex: 1; min-height: 0; overflow: auto; padding: 0 0 28px; border-top: 1px solid var(--fa-line); }
+.fa-alltools-scroll h2 { margin: 22px 0 10px; font: 600 16px var(--ark-font); color: var(--fa-text); }
+.fa-alltools-tiles { display: flex; flex-wrap: wrap; gap: 14px; }
+.fa-alltools-tile { position: relative; display: flex; flex-direction: column; align-items: center; width: 148px; height: 118px; padding: 20px 8px 8px; border: 0; border-radius: 10px; background: var(--fa-raised); box-shadow: inset 0 0 0 1px var(--fa-line); color: var(--fa-text); font: 500 13px var(--ark-font); text-align: center; }
+.fa-alltools-tile:hover { background: var(--fa-on); }
+.fa-alltools-tile:active { background: var(--fa-press); }
+.fa-alltools-icon { display: grid; place-items: center; width: 32px; height: 32px; }
+.fa-alltools-icon .shell-icon { width: 30px; height: 30px; }
+.fa-alltools-name { margin-top: 8px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.fa-alltools-tile small { margin-top: 3px; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--fa-text-3); font-weight: 400; font-size: 11px; }
+
+.fa-notice { flex: none; display: flex; align-items: center; gap: 10px; min-height: 42px; padding: 7px 14px; background: rgba(255,255,255,.08); border-bottom: 1px solid var(--fa-line); color: var(--fa-text); font: 13px/1.35 var(--ark-font); }
+.fa-notice > .shell-icon { flex: none; color: var(--fa-text-2); }
+.fa-notice-text { flex: 1; min-width: 0; }
+.fa-notice-buttons { flex: none; display: flex; align-items: center; gap: 6px; }
+.fa-notice .rb-medium { height: 28px; padding: 0 12px; border-radius: 14px; box-shadow: inset 0 0 0 1px var(--fa-line-strong); font-size: 12.5px; }
+.fa-notice .rb-medium .shell-icon { display: none; }
+
+/* The quick bar's property spinners (Opacity, Line thickness, Font size) stay as narrow as its icon buttons; their names are in the tooltips. */
+.fa-quick-group .rb-spinner { gap: 0; }
+.fa-quick-group .rb-spinner-label { display: none; }
+.fa-quick-group .rb-spinner-box { width: 44px !important; }
+.fa-quick-group .rb-spinner-box input { padding: 0 2px 0 5px; font-size: 11px; }
+
+/* The password strength bar (Protect Using Password) fills the dialog row: the shared meter is as wide as its text. */
+.gd .sf-meter { width: min(100%, 360px); min-width: 240px; }
+.gd .sf-meter-text { min-height: 16px; }

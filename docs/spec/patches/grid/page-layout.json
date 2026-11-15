@@ -1,0 +1,690 @@
+{
+  "controls": {
+    "pageLayout.themes.themes": {
+      "note": "U:grid/page-layout: checked against gridcraft (cmd::view::themes(): Craft, Slate, Meadow, Ember, Ocean, Orchid, Graphite) and Excel's Office themes; tiles are drawn from the command's own list (pageLayout.theme).",
+      "args": {
+        "name": "<theme>"
+      }
+    },
+    "pageLayout.themes.colors": {
+      "kind": "gallery",
+      "note": "U:grid/page-layout: colour sets drawn as tiles from pageLayout.themeColors.",
+      "args": {
+        "name": "<set>"
+      }
+    },
+    "pageLayout.themes.fonts": {
+      "kind": "gallery",
+      "note": "U:grid/page-layout: font pairs drawn as tiles from pageLayout.themeFonts.",
+      "args": {
+        "name": "<pair>"
+      }
+    },
+    "pageLayout.themes.effects": {
+      "note": "U:grid/page-layout: checked against gridcraft (pageLayout.themeEffects is registered but does nothing, |_, _| ok()); a file keeps its own effect scheme and the sheet's shapes have no effect scheme to change, so Effects stays hidden."
+    },
+    "pageLayout.pageSetup.printTitles": {
+      "command": null,
+      "note": "U:grid/page-layout: opens Page Setup on its Sheet tab, as Excel's Print Titles does (pageLayout.printTitles sets them without the dialog)."
+    },
+    "pageLayout.pageSetup.background": {
+      "command": "pageLayout.background",
+      "args": null,
+      "dialog": "dialog.sheetBackground",
+      "kind": "toggle",
+      "checkedLabel": "Delete Background",
+      "note": "U:grid/page-layout: checked against gridcraft (background: a picture named \"Sheet background\" placed at A1; clear deletes it). With a background on the sheet the button reads Delete Background and its dialog asks to delete it."
+    },
+    "pageLayout.scaleToFit.width": {
+      "options": [
+        "Automatic",
+        "1 page",
+        "2 pages",
+        "3 pages",
+        "4 pages",
+        "5 pages",
+        "6 pages",
+        "7 pages",
+        "8 pages",
+        "9 pages"
+      ],
+      "args": {
+        "width": "<n>"
+      }
+    },
+    "pageLayout.scaleToFit.height": {
+      "options": [
+        "Automatic",
+        "1 page",
+        "2 pages",
+        "3 pages",
+        "4 pages",
+        "5 pages",
+        "6 pages",
+        "7 pages",
+        "8 pages",
+        "9 pages"
+      ],
+      "args": {
+        "height": "<n>"
+      }
+    },
+    "pageLayout.arrange.selectionPane": {
+      "command": "arrange.selectionPane",
+      "args": {
+        "on": "<bool>"
+      },
+      "note": "U:grid/page-layout: checked against gridcraft (arrange.selectionPane returns the stacking list; its ribbon has no button). The Selection Pane (src/apps/grid/panes/selection.tsx) lists the objects front to back with names, an eye to hide each, Show All, Hide All and the stacking arrows; not checked against upstream."
+    },
+    "pageLayout.arrange.align": {
+      "command": "arrange.align",
+      "note": "U:grid/page-layout: checked against gridcraft (arrange.align takes object ids); with objects picked together (Shift or Ctrl click) Align needs two, Distribute three, as Excel; Snap to Grid and Snap to Shape are window settings the drag follows (not checked against upstream)."
+    },
+    "pageLayout.arrange.group": {
+      "command": "arrange.group",
+      "note": "U:grid/page-layout: checked against gridcraft (arrange.group takes object ids and aligns their left edges); picked objects are grouped (`group` on each member, one pick takes the group), Ungroup splits and Regroup puts the last group back (not checked against upstream)."
+    },
+    "pageLayout.arrange.rotate": {
+      "note": "U:grid/page-layout: checked against gridcraft (arrange.rotate swaps the width and height of a shape); Rotate Right and Left 90 and Flip turn and mirror the picked pictures and shapes (rotation, flipH, flipV; charts are not turned), as Excel (not checked against upstream)."
+    },
+    "pageLayout.scaleToFit.scale": {
+      "args": {
+        "scale": "<n>"
+      }
+    },
+    "pageLayout.sheetOptions.rightToLeft": {
+      "command": "view.rightToLeft",
+      "args": {
+        "on": "<bool>"
+      },
+      "note": "U:grid/page-layout: checked against gridcraft (view.rightToLeft, sheet_flag): column A at the right edge, the row headings on the right, the text mirrored with the layout; saved as the sheet view's rightToLeft."
+    }
+  },
+  "commands": {
+    "pageLayout.customizeColors": {
+      "args": [],
+      "sourceRef": "office:Excel Page Layout > Colors > Customize Colors",
+      "summary": "Edit the theme colours."
+    },
+    "pageLayout.customizeFonts": {
+      "args": [],
+      "sourceRef": "office:Excel Page Layout > Fonts > Customize Fonts",
+      "summary": "Edit the theme fonts."
+    },
+    "pageLayout.headerFooterPreset": {
+      "args": [],
+      "sourceRef": "office:Excel Header & Footer > Header / Footer presets",
+      "summary": "Pick a built-in header or footer text."
+    }
+  },
+  "dialogs": {
+    "dialog.pageSetup": {
+      "note": "U:grid/page-layout: Excel's Page Setup, four tabs. Print quality, the margin preview, Print… and Options… are left out (the print system dialog owns them); the margin boxes are headerMargin and footerMargin so they differ from the Header/Footer tab's header and footer text.",
+      "buttons": [
+        "OK",
+        "Cancel"
+      ],
+      "tabs": [
+        {
+          "name": "Page",
+          "fields": [
+            {
+              "id": "orientation",
+              "label": "Orientation",
+              "kind": "radio",
+              "options": [
+                {
+                  "value": "portrait",
+                  "label": "Portrait"
+                },
+                {
+                  "value": "landscape",
+                  "label": "Landscape"
+                }
+              ]
+            },
+            {
+              "id": "scaling",
+              "label": "Scaling",
+              "kind": "radio",
+              "options": [
+                {
+                  "value": "adjust",
+                  "label": "Adjust to: % normal size"
+                },
+                {
+                  "value": "fit",
+                  "label": "Fit to: pages wide by tall"
+                }
+              ]
+            },
+            {
+              "id": "scale",
+              "label": "Adjust to (% normal size)",
+              "kind": "number",
+              "options": [],
+              "visibleWhen": "scaling==adjust"
+            },
+            {
+              "id": "fitWidth",
+              "label": "Fit to (pages wide)",
+              "kind": "number",
+              "options": [],
+              "visibleWhen": "scaling==fit"
+            },
+            {
+              "id": "fitHeight",
+              "label": "Fit to (pages tall)",
+              "kind": "number",
+              "options": [],
+              "visibleWhen": "scaling==fit"
+            },
+            {
+              "id": "paper",
+              "label": "Paper size:",
+              "kind": "select",
+              "options": [
+                "Letter",
+                "Legal",
+                "Tabloid",
+                "Ledger",
+                "Executive",
+                "A3",
+                "A4",
+                "A5",
+                "A6",
+                "B4",
+                "B5",
+                "B6",
+                "B4 (ISO)",
+                "B5 (ISO)",
+                "B6 (ISO)",
+                "Japanese Postcard",
+                "Japanese Double Postcard",
+                "Japanese Envelope #3",
+                "Japanese Envelope #4",
+                "Japanese Envelope Kaku #2",
+                "Japanese Envelope Kaku #3"
+              ]
+            },
+            {
+              "id": "firstPage",
+              "label": "First page number:",
+              "kind": "text",
+              "options": []
+            }
+          ]
+        },
+        {
+          "name": "Margins",
+          "fields": [
+            {
+              "id": "top",
+              "label": "Top margin (in):",
+              "kind": "number",
+              "options": []
+            },
+            {
+              "id": "headerMargin",
+              "label": "Header (in):",
+              "kind": "number",
+              "options": []
+            },
+            {
+              "id": "left",
+              "label": "Left margin (in):",
+              "kind": "number",
+              "options": []
+            },
+            {
+              "id": "right",
+              "label": "Right margin (in):",
+              "kind": "number",
+              "options": []
+            },
+            {
+              "id": "bottom",
+              "label": "Bottom margin (in):",
+              "kind": "number",
+              "options": []
+            },
+            {
+              "id": "footerMargin",
+              "label": "Footer (in):",
+              "kind": "number",
+              "options": []
+            },
+            {
+              "id": "centerHorizontally",
+              "label": "Center on page: Horizontally",
+              "kind": "checkbox",
+              "options": []
+            },
+            {
+              "id": "centerVertically",
+              "label": "Center on page: Vertically",
+              "kind": "checkbox",
+              "options": []
+            }
+          ]
+        },
+        {
+          "name": "Header/Footer",
+          "fields": [
+            {
+              "id": "header",
+              "label": "Header (&L left, &C center, &R right; &P page, &N pages, &A sheet, &F file, &D date):",
+              "kind": "text",
+              "options": []
+            },
+            {
+              "id": "footer",
+              "label": "Footer:",
+              "kind": "text",
+              "options": []
+            },
+            {
+              "id": "differentOddEven",
+              "label": "Different odd and even pages",
+              "kind": "checkbox",
+              "options": []
+            },
+            {
+              "id": "differentFirst",
+              "label": "Different first page",
+              "kind": "checkbox",
+              "options": []
+            },
+            {
+              "id": "scaleWithDoc",
+              "label": "Scale with document",
+              "kind": "checkbox",
+              "options": []
+            },
+            {
+              "id": "alignWithMargins",
+              "label": "Align with page margins",
+              "kind": "checkbox",
+              "options": []
+            }
+          ]
+        },
+        {
+          "name": "Sheet",
+          "fields": [
+            {
+              "id": "printArea",
+              "label": "Print area:",
+              "kind": "text",
+              "options": []
+            },
+            {
+              "id": "printTitleRows",
+              "label": "Rows to repeat at top:",
+              "kind": "text",
+              "options": []
+            },
+            {
+              "id": "printTitleColumns",
+              "label": "Columns to repeat at left:",
+              "kind": "text",
+              "options": []
+            },
+            {
+              "id": "gridlines",
+              "label": "Gridlines",
+              "kind": "checkbox",
+              "options": []
+            },
+            {
+              "id": "blackAndWhite",
+              "label": "Black and white",
+              "kind": "checkbox",
+              "options": []
+            },
+            {
+              "id": "draftQuality",
+              "label": "Draft quality",
+              "kind": "checkbox",
+              "options": []
+            },
+            {
+              "id": "headings",
+              "label": "Row and column headings",
+              "kind": "checkbox",
+              "options": []
+            },
+            {
+              "id": "comments",
+              "label": "Comments and notes:",
+              "kind": "select",
+              "options": [
+                "(None)",
+                "At end of sheet",
+                "As displayed on sheet"
+              ]
+            },
+            {
+              "id": "errors",
+              "label": "Cell errors as:",
+              "kind": "select",
+              "options": [
+                "displayed",
+                "<blank>",
+                "--",
+                "#N/A"
+              ]
+            },
+            {
+              "id": "pageOrder",
+              "label": "Page order",
+              "kind": "radio",
+              "options": [
+                {
+                  "value": "downThenOver",
+                  "label": "Down, then over"
+                },
+                {
+                  "value": "overThenDown",
+                  "label": "Over, then down"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "dialog.headerFooter": {
+      "note": "U:grid/page-layout: checked against gridcraft (cmd/view.rs header_footer, print/header_footer.rs): sections are edited with the field names &[Page], &[Pages], &[Date], &[Time], &[Path], &[File], &[Tab], &[Picture] and kept as codes, at most 255 characters; the first page and the even pages have their own texts. The Header and Footer drop-downs fill the sections with Excel's presets (Page 1, Page 1 of ?, Sheet1, Confidential, date, Page 1, file name, ...); not checked against upstream.",
+      "buttons": [
+        "OK",
+        "Cancel"
+      ],
+      "tabs": [
+        {
+          "name": "Header",
+          "fields": [
+            {
+              "id": "headerPreset",
+              "label": "Header:",
+              "kind": "select",
+              "options": [
+                "(none)",
+                "Page 1",
+                "Page 1 of ?",
+                "Sheet1",
+                "Confidential, date, Page 1",
+                "File name",
+                "Page 1, File name",
+                "Page 1, Sheet1",
+                "File name, Sheet1, Page 1"
+              ]
+            },
+            {
+              "id": "left",
+              "label": "Left section:",
+              "kind": "text",
+              "options": [],
+              "multiline": true
+            },
+            {
+              "id": "center",
+              "label": "Center section:",
+              "kind": "text",
+              "options": [],
+              "multiline": true
+            },
+            {
+              "id": "right",
+              "label": "Right section:",
+              "kind": "text",
+              "options": [],
+              "multiline": true
+            }
+          ]
+        },
+        {
+          "name": "Footer",
+          "fields": [
+            {
+              "id": "footerPreset",
+              "label": "Footer:",
+              "kind": "select",
+              "options": [
+                "(none)",
+                "Page 1",
+                "Page 1 of ?",
+                "Sheet1",
+                "Confidential, date, Page 1",
+                "File name",
+                "Page 1, File name",
+                "Page 1, Sheet1",
+                "File name, Sheet1, Page 1"
+              ]
+            },
+            {
+              "id": "footerLeft",
+              "label": "Left section:",
+              "kind": "text",
+              "options": [],
+              "multiline": true
+            },
+            {
+              "id": "footerCenter",
+              "label": "Center section:",
+              "kind": "text",
+              "options": [],
+              "multiline": true
+            },
+            {
+              "id": "footerRight",
+              "label": "Right section:",
+              "kind": "text",
+              "options": [],
+              "multiline": true
+            }
+          ]
+        },
+        {
+          "name": "Options",
+          "fields": [
+            {
+              "id": "differentFirst",
+              "label": "Different first page",
+              "kind": "checkbox",
+              "options": []
+            },
+            {
+              "id": "differentOddEven",
+              "label": "Different odd & even pages",
+              "kind": "checkbox",
+              "options": []
+            },
+            {
+              "id": "scaleWithDoc",
+              "label": "Scale with document",
+              "kind": "checkbox",
+              "options": []
+            },
+            {
+              "id": "alignWithMargins",
+              "label": "Align with page margins",
+              "kind": "checkbox",
+              "options": []
+            }
+          ]
+        },
+        {
+          "name": "First Page",
+          "fields": [
+            {
+              "id": "firstHeaderPreset",
+              "label": "First page header:",
+              "kind": "select",
+              "options": [
+                "(none)",
+                "Page 1",
+                "Page 1 of ?",
+                "Sheet1",
+                "Confidential, date, Page 1",
+                "File name",
+                "Page 1, File name",
+                "Page 1, Sheet1",
+                "File name, Sheet1, Page 1"
+              ]
+            },
+            {
+              "id": "firstLeft",
+              "label": "Left header section:",
+              "kind": "text",
+              "options": [],
+              "multiline": true,
+              "visibleWhen": "differentFirst==true"
+            },
+            {
+              "id": "firstCenter",
+              "label": "Center header section:",
+              "kind": "text",
+              "options": [],
+              "multiline": true,
+              "visibleWhen": "differentFirst==true"
+            },
+            {
+              "id": "firstRight",
+              "label": "Right header section:",
+              "kind": "text",
+              "options": [],
+              "multiline": true,
+              "visibleWhen": "differentFirst==true"
+            },
+            {
+              "id": "firstFooterPreset",
+              "label": "First page footer:",
+              "kind": "select",
+              "options": [
+                "(none)",
+                "Page 1",
+                "Page 1 of ?",
+                "Sheet1",
+                "Confidential, date, Page 1",
+                "File name",
+                "Page 1, File name",
+                "Page 1, Sheet1",
+                "File name, Sheet1, Page 1"
+              ]
+            },
+            {
+              "id": "firstFooterLeft",
+              "label": "Left footer section:",
+              "kind": "text",
+              "options": [],
+              "multiline": true,
+              "visibleWhen": "differentFirst==true"
+            },
+            {
+              "id": "firstFooterCenter",
+              "label": "Center footer section:",
+              "kind": "text",
+              "options": [],
+              "multiline": true,
+              "visibleWhen": "differentFirst==true"
+            },
+            {
+              "id": "firstFooterRight",
+              "label": "Right footer section:",
+              "kind": "text",
+              "options": [],
+              "multiline": true,
+              "visibleWhen": "differentFirst==true"
+            }
+          ]
+        },
+        {
+          "name": "Even Pages",
+          "fields": [
+            {
+              "id": "evenHeaderPreset",
+              "label": "Even page header:",
+              "kind": "select",
+              "options": [
+                "(none)",
+                "Page 1",
+                "Page 1 of ?",
+                "Sheet1",
+                "Confidential, date, Page 1",
+                "File name",
+                "Page 1, File name",
+                "Page 1, Sheet1",
+                "File name, Sheet1, Page 1"
+              ]
+            },
+            {
+              "id": "evenLeft",
+              "label": "Left header section:",
+              "kind": "text",
+              "options": [],
+              "multiline": true,
+              "visibleWhen": "differentOddEven==true"
+            },
+            {
+              "id": "evenCenter",
+              "label": "Center header section:",
+              "kind": "text",
+              "options": [],
+              "multiline": true,
+              "visibleWhen": "differentOddEven==true"
+            },
+            {
+              "id": "evenRight",
+              "label": "Right header section:",
+              "kind": "text",
+              "options": [],
+              "multiline": true,
+              "visibleWhen": "differentOddEven==true"
+            },
+            {
+              "id": "evenFooterPreset",
+              "label": "Even page footer:",
+              "kind": "select",
+              "options": [
+                "(none)",
+                "Page 1",
+                "Page 1 of ?",
+                "Sheet1",
+                "Confidential, date, Page 1",
+                "File name",
+                "Page 1, File name",
+                "Page 1, Sheet1",
+                "File name, Sheet1, Page 1"
+              ]
+            },
+            {
+              "id": "evenFooterLeft",
+              "label": "Left footer section:",
+              "kind": "text",
+              "options": [],
+              "multiline": true,
+              "visibleWhen": "differentOddEven==true"
+            },
+            {
+              "id": "evenFooterCenter",
+              "label": "Center footer section:",
+              "kind": "text",
+              "options": [],
+              "multiline": true,
+              "visibleWhen": "differentOddEven==true"
+            },
+            {
+              "id": "evenFooterRight",
+              "label": "Right footer section:",
+              "kind": "text",
+              "options": [],
+              "multiline": true,
+              "visibleWhen": "differentOddEven==true"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

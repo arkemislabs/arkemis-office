@@ -1,0 +1,280 @@
+{
+ "controls": {
+  "home.drawing.arrange.align.align-left": {
+   "args": {
+    "edge": "left"
+   }
+  },
+  "home.drawing.arrange.align.align-center": {
+   "args": {
+    "edge": "center"
+   }
+  },
+  "home.drawing.arrange.align.align-right": {
+   "args": {
+    "edge": "right"
+   }
+  },
+  "home.drawing.arrange.align.align-top": {
+   "args": {
+    "edge": "top"
+   }
+  },
+  "home.drawing.arrange.align.align-middle": {
+   "args": {
+    "edge": "middle"
+   }
+  },
+  "home.drawing.arrange.align.align-bottom": {
+   "args": {
+    "edge": "bottom"
+   }
+  },
+  "home.drawing.arrange.align.distribute-horizontally": {
+   "args": {
+    "dir": "horizontal"
+   }
+  },
+  "home.drawing.arrange.align.distribute-vertically": {
+   "args": {
+    "dir": "vertical"
+   }
+  },
+  "shapeformat.arrange.align.align-left": {
+   "args": {
+    "edge": "left"
+   }
+  },
+  "shapeformat.arrange.align.align-center": {
+   "args": {
+    "edge": "center"
+   }
+  },
+  "shapeformat.arrange.align.align-right": {
+   "args": {
+    "edge": "right"
+   }
+  },
+  "shapeformat.arrange.align.align-top": {
+   "args": {
+    "edge": "top"
+   }
+  },
+  "shapeformat.arrange.align.align-middle": {
+   "args": {
+    "edge": "middle"
+   }
+  },
+  "shapeformat.arrange.align.align-bottom": {
+   "args": {
+    "edge": "bottom"
+   }
+  },
+  "shapeformat.arrange.align.distribute-horizontally": {
+   "args": {
+    "dir": "horizontal"
+   }
+  },
+  "shapeformat.arrange.align.distribute-vertically": {
+   "args": {
+    "dir": "vertical"
+   }
+  },
+  "pictureformat.arrange.align.align-left": {
+   "args": {
+    "edge": "left"
+   }
+  },
+  "pictureformat.arrange.align.align-center": {
+   "args": {
+    "edge": "center"
+   }
+  },
+  "pictureformat.arrange.align.align-right": {
+   "args": {
+    "edge": "right"
+   }
+  },
+  "pictureformat.arrange.align.align-top": {
+   "args": {
+    "edge": "top"
+   }
+  },
+  "pictureformat.arrange.align.align-middle": {
+   "args": {
+    "edge": "middle"
+   }
+  },
+  "pictureformat.arrange.align.align-bottom": {
+   "args": {
+    "edge": "bottom"
+   }
+  },
+  "pictureformat.arrange.align.distribute-horizontally": {
+   "args": {
+    "dir": "horizontal"
+   }
+  },
+  "pictureformat.arrange.align.distribute-vertically": {
+   "args": {
+    "dir": "vertical"
+   }
+  },
+  "tablelayout.arrange.align.align-left": {
+   "args": {
+    "edge": "left"
+   }
+  },
+  "tablelayout.arrange.align.align-center": {
+   "args": {
+    "edge": "center"
+   }
+  },
+  "tablelayout.arrange.align.align-right": {
+   "args": {
+    "edge": "right"
+   }
+  },
+  "tablelayout.arrange.align.align-top": {
+   "args": {
+    "edge": "top"
+   }
+  },
+  "tablelayout.arrange.align.align-middle": {
+   "args": {
+    "edge": "middle"
+   }
+  },
+  "tablelayout.arrange.align.align-bottom": {
+   "args": {
+    "edge": "bottom"
+   }
+  },
+  "tablelayout.arrange.align.distribute-horizontally": {
+   "args": {
+    "dir": "horizontal"
+   }
+  },
+  "tablelayout.arrange.align.distribute-vertically": {
+   "args": {
+    "dir": "vertical"
+   }
+  },
+  "chartdesign.arrange.align.align-left": {
+   "args": {
+    "edge": "left"
+   }
+  },
+  "chartdesign.arrange.align.align-center": {
+   "args": {
+    "edge": "center"
+   }
+  },
+  "chartdesign.arrange.align.align-right": {
+   "args": {
+    "edge": "right"
+   }
+  },
+  "chartdesign.arrange.align.align-top": {
+   "args": {
+    "edge": "top"
+   }
+  },
+  "chartdesign.arrange.align.align-middle": {
+   "args": {
+    "edge": "middle"
+   }
+  },
+  "chartdesign.arrange.align.align-bottom": {
+   "args": {
+    "edge": "bottom"
+   }
+  },
+  "chartdesign.arrange.align.distribute-horizontally": {
+   "args": {
+    "dir": "horizontal"
+   }
+  },
+  "chartdesign.arrange.align.distribute-vertically": {
+   "args": {
+    "dir": "vertical"
+   }
+  },
+  "smartart.arrange.align.align-left": {
+   "args": {
+    "edge": "left"
+   }
+  },
+  "smartart.arrange.align.align-center": {
+   "args": {
+    "edge": "center"
+   }
+  },
+  "smartart.arrange.align.align-right": {
+   "args": {
+    "edge": "right"
+   }
+  },
+  "smartart.arrange.align.align-top": {
+   "args": {
+    "edge": "top"
+   }
+  },
+  "smartart.arrange.align.align-middle": {
+   "args": {
+    "edge": "middle"
+   }
+  },
+  "smartart.arrange.align.align-bottom": {
+   "args": {
+    "edge": "bottom"
+   }
+  },
+  "smartart.arrange.align.distribute-horizontally": {
+   "args": {
+    "dir": "horizontal"
+   }
+  },
+  "smartart.arrange.align.distribute-vertically": {
+   "args": {
+    "dir": "vertical"
+   }
+  },
+  "home.drawing.arrange.align.align-to-slide": {
+   "command": "arrange.alignTo",
+   "args": {
+    "slide": true
+   },
+   "kind": "toggle",
+   "source": "upstream",
+   "sourceRef": "deckcraft crates/ui-egui/src/ribbon/arrange.rs align_menu"
+  },
+  "home.drawing.arrange.align.align-selected-objects": {
+   "command": "arrange.alignTo",
+   "args": {
+    "slide": false
+   },
+   "kind": "toggle",
+   "source": "upstream",
+   "sourceRef": "deckcraft crates/ui-egui/src/ribbon/arrange.rs align_menu"
+  },
+  "shapeformat.arrange.align.align-to-slide": {
+   "command": "arrange.alignTo",
+   "args": {
+    "slide": true
+   },
+   "kind": "toggle",
+   "source": "upstream",
+   "sourceRef": "deckcraft crates/ui-egui/src/ribbon/arrange.rs align_menu"
+  },
+  "shapeformat.arrange.align.align-selected-objects": {
+   "command": "arrange.alignTo",
+   "args": {
+    "slide": false
+   },
+   "kind": "toggle",
+   "source": "upstream",
+   "sourceRef": "deckcraft crates/ui-egui/src/ribbon/arrange.rs align_menu"
+  }
+ }
+}

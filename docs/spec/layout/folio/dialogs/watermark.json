@@ -1,0 +1,11 @@
+{
+  "source": "printcraft crates/ui-egui/src/dialogs/marks_ui.rs:338 (Watermark body) at 3109bb2359759e24ef490e1cdbdba00722b20972; Acrobat Add Watermark: Source, Appearance (rotation, opacity, location), Position (offset), Page Range Options, preview",
+  "width": 640,
+  "height": 640,
+  "sections": [
+    {"title": "Source", "fields": ["source", "text", "file", "file-page", "scale"]},
+    {"title": "Appearance", "fields": ["fit", "size", "color", "rotation", "degrees", "opacity", "location"], "columns": 2},
+    {"title": "Offset from centre", "fields": ["offset-h", "offset-v"], "columns": 2},
+    {"title": "Page Range Options", "fields": ["scope", "from", "to", "subset"], "columns": 4}
+  ]
+}

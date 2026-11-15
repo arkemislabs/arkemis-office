@@ -1,0 +1,1125 @@
+{
+ "controls": {
+  "insert.text.wordart": {
+   "args": {
+    "style": "<index>"
+   }
+  },
+  "insert.illustrations.icons": {
+   "args": {
+    "name": "<icon>"
+   }
+  },
+  "insert.images.pictures": {
+   "command": "insert.picture",
+   "note": "U:prism/insert: deckcraft app.insertPictureDialog is the front-end Open dialog for insert.picture; insert.picture run from the UI opens the system Open dialog itself (host.pickImage) and inserts the chosen file.",
+   "items": [
+    {
+     "label": "This Device…",
+     "command": "insert.picture",
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/insert.rs:61"
+    },
+    {
+     "label": "Stock Images…",
+     "command": null,
+     "source": "office",
+     "sourceRef": "office: Microsoft PowerPoint"
+    },
+    {
+     "label": "Online Pictures…",
+     "command": null,
+     "source": "office",
+     "sourceRef": "office: Microsoft PowerPoint"
+    }
+   ]
+  },
+  "insert.symbols.symbol": {
+   "command": "insert.symbol",
+   "params": null,
+   "note": "U:prism/insert: deckcraft app.dialog {id: symbol} opens the Symbol dialog, whose OK runs insert.symbol; the control runs insert.symbol, which opens dialog.symbol without params."
+  },
+  "insert.links.link": {
+   "command": "insert.hyperlink",
+   "params": null,
+   "note": "U:prism/insert: deckcraft app.dialog {id: hyperlink} opens the Insert Hyperlink dialog, whose OK runs insert.hyperlink; the control runs insert.hyperlink, which opens dialog.hyperlink without params."
+  },
+  "insert.symbols.equation": {
+   "command": null,
+   "params": null,
+   "dialog": "dialog.equation",
+   "note": "U:prism/insert: deckcraft ribbon insert.rs:126 runs app.dialog {id: equation}, the front-end request that opens the Equation dialog (body.rs:879); the control opens it directly. The built-in gallery and Ink Equation have no deckcraft equivalent and stay hidden."
+  }
+ },
+ "dialogs": {
+  "dialog.table": {
+   "tabs": [
+    {
+     "name": "General",
+     "fields": [
+      {
+       "id": "cols",
+       "label": "Number of columns:",
+       "kind": "number",
+       "min": 1,
+       "max": 75,
+       "step": 1,
+       "default": 5,
+       "param": "cols",
+       "source": "upstream",
+       "sourceRef": "deckcraft crates/ui-egui/src/dialogs/body.rs dlg_table"
+      },
+      {
+       "id": "rows",
+       "label": "Number of rows:",
+       "kind": "number",
+       "min": 1,
+       "max": 75,
+       "step": 1,
+       "default": 2,
+       "param": "rows",
+       "source": "upstream",
+       "sourceRef": "deckcraft crates/ui-egui/src/dialogs/body.rs dlg_table"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ]
+  },
+  "dialog.dateTime": {
+   "note": "U:prism/insert: deckcraft date_time.rs. Calendar type and Set As Default are not offered (no deckcraft equivalent). The list shows each format picture until dialogs take options from model values (design note U-prism-insert--integrator--dialog-dynamic-options).",
+   "tabs": [
+    {
+     "name": "Date and Time",
+     "fields": [
+      {
+       "id": "format",
+       "label": "Available formats:",
+       "kind": "list",
+       "options": [
+        {
+         "value": "datetime1",
+         "label": "M/d/yyyy"
+        },
+        {
+         "value": "datetime2",
+         "label": "dddd, MMMM d, yyyy"
+        },
+        {
+         "value": "datetime3",
+         "label": "d MMMM yyyy"
+        },
+        {
+         "value": "datetime4",
+         "label": "MMMM d, yyyy"
+        },
+        {
+         "value": "datetime5",
+         "label": "d-MMM-yy"
+        },
+        {
+         "value": "datetime6",
+         "label": "MMMM yy"
+        },
+        {
+         "value": "datetime7",
+         "label": "MMM-yy"
+        },
+        {
+         "value": "datetime8",
+         "label": "M/d/yyyy h:mm AM/PM"
+        },
+        {
+         "value": "datetime9",
+         "label": "M/d/yyyy h:mm:ss AM/PM"
+        },
+        {
+         "value": "datetime10",
+         "label": "H:mm"
+        },
+        {
+         "value": "datetime11",
+         "label": "H:mm:ss"
+        },
+        {
+         "value": "datetime12",
+         "label": "h:mm AM/PM"
+        },
+        {
+         "value": "datetime13",
+         "label": "h:mm:ss AM/PM"
+        }
+       ],
+       "param": "format",
+       "source": "upstream",
+       "sourceRef": "deckcraft crates/ui-egui/src/dialogs/date_time.rs"
+      },
+      {
+       "id": "language",
+       "label": "Language:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "en-US",
+         "label": "English (United States)"
+        },
+        {
+         "value": "en-GB",
+         "label": "English (United Kingdom)"
+        },
+        {
+         "value": "fr-FR",
+         "label": "French (France)"
+        },
+        {
+         "value": "ja-JP",
+         "label": "Japanese"
+        },
+        {
+         "value": "sv-SE",
+         "label": "Swedish"
+        }
+       ],
+       "param": "language",
+       "source": "upstream",
+       "sourceRef": "deckcraft crates/ui-egui/src/dialogs/date_time.rs"
+      },
+      {
+       "id": "update",
+       "label": "Update automatically",
+       "kind": "checkbox",
+       "default": true,
+       "param": "update",
+       "source": "upstream",
+       "sourceRef": "deckcraft crates/ui-egui/src/dialogs/date_time.rs"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ]
+  },
+  "dialog.symbol": {
+   "note": "U:prism/insert: deckcraft body.rs dlg_symbol groups. PowerPoint's font/subset browser, character codes and Special Characters are not offered.",
+   "tabs": [
+    {
+     "name": "Symbols",
+     "fields": [
+      {
+       "id": "help",
+       "label": "Click a symbol to insert it at the insertion point.",
+       "kind": "label",
+       "source": "upstream",
+       "sourceRef": "deckcraft crates/ui-egui/src/dialogs/body.rs dlg_symbol"
+      },
+      {
+       "id": "punctuation",
+       "label": "Punctuation",
+       "kind": "grid",
+       "options": [
+        {
+         "value": "–",
+         "label": "–"
+        },
+        {
+         "value": "—",
+         "label": "—"
+        },
+        {
+         "value": "‘",
+         "label": "‘"
+        },
+        {
+         "value": "’",
+         "label": "’"
+        },
+        {
+         "value": "“",
+         "label": "“"
+        },
+        {
+         "value": "”",
+         "label": "”"
+        },
+        {
+         "value": "…",
+         "label": "…"
+        },
+        {
+         "value": "•",
+         "label": "•"
+        },
+        {
+         "value": "·",
+         "label": "·"
+        },
+        {
+         "value": "§",
+         "label": "§"
+        },
+        {
+         "value": "¶",
+         "label": "¶"
+        },
+        {
+         "value": "†",
+         "label": "†"
+        },
+        {
+         "value": "‡",
+         "label": "‡"
+        },
+        {
+         "value": "‰",
+         "label": "‰"
+        },
+        {
+         "value": "′",
+         "label": "′"
+        },
+        {
+         "value": "″",
+         "label": "″"
+        },
+        {
+         "value": "‹",
+         "label": "‹"
+        },
+        {
+         "value": "›",
+         "label": "›"
+        },
+        {
+         "value": "«",
+         "label": "«"
+        },
+        {
+         "value": "»",
+         "label": "»"
+        },
+        {
+         "value": "¡",
+         "label": "¡"
+        },
+        {
+         "value": "¿",
+         "label": "¿"
+        }
+       ],
+       "param": "text",
+       "source": "upstream",
+       "sourceRef": "deckcraft crates/ui-egui/src/dialogs/body.rs dlg_symbol"
+      },
+      {
+       "id": "currency",
+       "label": "Currency",
+       "kind": "grid",
+       "options": [
+        {
+         "value": "$",
+         "label": "$"
+        },
+        {
+         "value": "€",
+         "label": "€"
+        },
+        {
+         "value": "£",
+         "label": "£"
+        },
+        {
+         "value": "¥",
+         "label": "¥"
+        },
+        {
+         "value": "¢",
+         "label": "¢"
+        },
+        {
+         "value": "₹",
+         "label": "₹"
+        },
+        {
+         "value": "₩",
+         "label": "₩"
+        },
+        {
+         "value": "₽",
+         "label": "₽"
+        },
+        {
+         "value": "₺",
+         "label": "₺"
+        },
+        {
+         "value": "₿",
+         "label": "₿"
+        }
+       ],
+       "param": "text",
+       "source": "upstream",
+       "sourceRef": "deckcraft crates/ui-egui/src/dialogs/body.rs dlg_symbol"
+      },
+      {
+       "id": "math",
+       "label": "Math",
+       "kind": "grid",
+       "options": [
+        {
+         "value": "±",
+         "label": "±"
+        },
+        {
+         "value": "×",
+         "label": "×"
+        },
+        {
+         "value": "÷",
+         "label": "÷"
+        },
+        {
+         "value": "≠",
+         "label": "≠"
+        },
+        {
+         "value": "≈",
+         "label": "≈"
+        },
+        {
+         "value": "≤",
+         "label": "≤"
+        },
+        {
+         "value": "≥",
+         "label": "≥"
+        },
+        {
+         "value": "∞",
+         "label": "∞"
+        },
+        {
+         "value": "√",
+         "label": "√"
+        },
+        {
+         "value": "∑",
+         "label": "∑"
+        },
+        {
+         "value": "∏",
+         "label": "∏"
+        },
+        {
+         "value": "∫",
+         "label": "∫"
+        },
+        {
+         "value": "∂",
+         "label": "∂"
+        },
+        {
+         "value": "∆",
+         "label": "∆"
+        },
+        {
+         "value": "∇",
+         "label": "∇"
+        },
+        {
+         "value": "∈",
+         "label": "∈"
+        },
+        {
+         "value": "∉",
+         "label": "∉"
+        },
+        {
+         "value": "∩",
+         "label": "∩"
+        },
+        {
+         "value": "∪",
+         "label": "∪"
+        },
+        {
+         "value": "⊂",
+         "label": "⊂"
+        },
+        {
+         "value": "⊃",
+         "label": "⊃"
+        },
+        {
+         "value": "∀",
+         "label": "∀"
+        },
+        {
+         "value": "∃",
+         "label": "∃"
+        },
+        {
+         "value": "¬",
+         "label": "¬"
+        },
+        {
+         "value": "∧",
+         "label": "∧"
+        },
+        {
+         "value": "∨",
+         "label": "∨"
+        },
+        {
+         "value": "⇒",
+         "label": "⇒"
+        },
+        {
+         "value": "⇔",
+         "label": "⇔"
+        },
+        {
+         "value": "°",
+         "label": "°"
+        },
+        {
+         "value": "′",
+         "label": "′"
+        }
+       ],
+       "param": "text",
+       "source": "upstream",
+       "sourceRef": "deckcraft crates/ui-egui/src/dialogs/body.rs dlg_symbol"
+      },
+      {
+       "id": "greek",
+       "label": "Greek",
+       "kind": "grid",
+       "options": [
+        {
+         "value": "α",
+         "label": "α"
+        },
+        {
+         "value": "β",
+         "label": "β"
+        },
+        {
+         "value": "γ",
+         "label": "γ"
+        },
+        {
+         "value": "δ",
+         "label": "δ"
+        },
+        {
+         "value": "ε",
+         "label": "ε"
+        },
+        {
+         "value": "ζ",
+         "label": "ζ"
+        },
+        {
+         "value": "η",
+         "label": "η"
+        },
+        {
+         "value": "θ",
+         "label": "θ"
+        },
+        {
+         "value": "ι",
+         "label": "ι"
+        },
+        {
+         "value": "κ",
+         "label": "κ"
+        },
+        {
+         "value": "λ",
+         "label": "λ"
+        },
+        {
+         "value": "μ",
+         "label": "μ"
+        },
+        {
+         "value": "ν",
+         "label": "ν"
+        },
+        {
+         "value": "ξ",
+         "label": "ξ"
+        },
+        {
+         "value": "ο",
+         "label": "ο"
+        },
+        {
+         "value": "π",
+         "label": "π"
+        },
+        {
+         "value": "ρ",
+         "label": "ρ"
+        },
+        {
+         "value": "σ",
+         "label": "σ"
+        },
+        {
+         "value": "τ",
+         "label": "τ"
+        },
+        {
+         "value": "υ",
+         "label": "υ"
+        },
+        {
+         "value": "φ",
+         "label": "φ"
+        },
+        {
+         "value": "χ",
+         "label": "χ"
+        },
+        {
+         "value": "ψ",
+         "label": "ψ"
+        },
+        {
+         "value": "ω",
+         "label": "ω"
+        },
+        {
+         "value": "Γ",
+         "label": "Γ"
+        },
+        {
+         "value": "Δ",
+         "label": "Δ"
+        },
+        {
+         "value": "Θ",
+         "label": "Θ"
+        },
+        {
+         "value": "Λ",
+         "label": "Λ"
+        },
+        {
+         "value": "Ξ",
+         "label": "Ξ"
+        },
+        {
+         "value": "Π",
+         "label": "Π"
+        },
+        {
+         "value": "Σ",
+         "label": "Σ"
+        },
+        {
+         "value": "Φ",
+         "label": "Φ"
+        },
+        {
+         "value": "Ψ",
+         "label": "Ψ"
+        },
+        {
+         "value": "Ω",
+         "label": "Ω"
+        }
+       ],
+       "param": "text",
+       "source": "upstream",
+       "sourceRef": "deckcraft crates/ui-egui/src/dialogs/body.rs dlg_symbol"
+      },
+      {
+       "id": "arrows",
+       "label": "Arrows",
+       "kind": "grid",
+       "options": [
+        {
+         "value": "←",
+         "label": "←"
+        },
+        {
+         "value": "↑",
+         "label": "↑"
+        },
+        {
+         "value": "→",
+         "label": "→"
+        },
+        {
+         "value": "↓",
+         "label": "↓"
+        },
+        {
+         "value": "↔",
+         "label": "↔"
+        },
+        {
+         "value": "↕",
+         "label": "↕"
+        },
+        {
+         "value": "⇐",
+         "label": "⇐"
+        },
+        {
+         "value": "⇑",
+         "label": "⇑"
+        },
+        {
+         "value": "⇒",
+         "label": "⇒"
+        },
+        {
+         "value": "⇓",
+         "label": "⇓"
+        },
+        {
+         "value": "↖",
+         "label": "↖"
+        },
+        {
+         "value": "↗",
+         "label": "↗"
+        },
+        {
+         "value": "↘",
+         "label": "↘"
+        },
+        {
+         "value": "↙",
+         "label": "↙"
+        },
+        {
+         "value": "⟵",
+         "label": "⟵"
+        },
+        {
+         "value": "⟶",
+         "label": "⟶"
+        }
+       ],
+       "param": "text",
+       "source": "upstream",
+       "sourceRef": "deckcraft crates/ui-egui/src/dialogs/body.rs dlg_symbol"
+      },
+      {
+       "id": "shapes",
+       "label": "Shapes",
+       "kind": "grid",
+       "options": [
+        {
+         "value": "■",
+         "label": "■"
+        },
+        {
+         "value": "□",
+         "label": "□"
+        },
+        {
+         "value": "▪",
+         "label": "▪"
+        },
+        {
+         "value": "▫",
+         "label": "▫"
+        },
+        {
+         "value": "▲",
+         "label": "▲"
+        },
+        {
+         "value": "△",
+         "label": "△"
+        },
+        {
+         "value": "▶",
+         "label": "▶"
+        },
+        {
+         "value": "▷",
+         "label": "▷"
+        },
+        {
+         "value": "▼",
+         "label": "▼"
+        },
+        {
+         "value": "▽",
+         "label": "▽"
+        },
+        {
+         "value": "◀",
+         "label": "◀"
+        },
+        {
+         "value": "◁",
+         "label": "◁"
+        },
+        {
+         "value": "◆",
+         "label": "◆"
+        },
+        {
+         "value": "◇",
+         "label": "◇"
+        },
+        {
+         "value": "○",
+         "label": "○"
+        },
+        {
+         "value": "●",
+         "label": "●"
+        },
+        {
+         "value": "◎",
+         "label": "◎"
+        },
+        {
+         "value": "★",
+         "label": "★"
+        },
+        {
+         "value": "☆",
+         "label": "☆"
+        },
+        {
+         "value": "✓",
+         "label": "✓"
+        },
+        {
+         "value": "✔",
+         "label": "✔"
+        },
+        {
+         "value": "✗",
+         "label": "✗"
+        },
+        {
+         "value": "✘",
+         "label": "✘"
+        },
+        {
+         "value": "♠",
+         "label": "♠"
+        },
+        {
+         "value": "♣",
+         "label": "♣"
+        },
+        {
+         "value": "♥",
+         "label": "♥"
+        },
+        {
+         "value": "♦",
+         "label": "♦"
+        }
+       ],
+       "param": "text",
+       "source": "upstream",
+       "sourceRef": "deckcraft crates/ui-egui/src/dialogs/body.rs dlg_symbol"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "Insert",
+    "Close"
+   ]
+  },
+  "dialog.hyperlink": {
+   "note": "U:prism/insert: deckcraft hyperlink.rs (Web Page, This Document, Email Address; ScreenTip). Place in This Document lists First, Last, Next and Previous Slide and every slide by title; Browse next to the address picks a file (the file's name is the address). Hidden: Create New Document, Subject, Bookmark and Target Frame (a click opens a web page or mail in the default app, or goes to a slide; there is no frame to target).",
+   "tabs": [
+    {
+     "name": "Link to",
+     "fields": [
+      {
+       "id": "mode",
+       "label": "Link to:",
+       "kind": "radio",
+       "options": [
+        {
+         "value": "url",
+         "label": "Existing Web Page"
+        },
+        {
+         "value": "slide",
+         "label": "Place in This Document"
+        },
+        {
+         "value": "email",
+         "label": "Email Address"
+        }
+       ],
+       "source": "upstream",
+       "sourceRef": "deckcraft crates/ui-egui/src/dialogs/hyperlink.rs"
+      },
+      {
+       "id": "display",
+       "label": "Text to display:",
+       "kind": "text",
+       "visibleWhen": "!hasText",
+       "param": "text",
+       "source": "upstream",
+       "sourceRef": "deckcraft crates/ui-egui/src/dialogs/hyperlink.rs"
+      },
+      {
+       "id": "url",
+       "label": "Address:",
+       "kind": "text",
+       "visibleWhen": "mode==url",
+       "param": "url",
+       "source": "upstream",
+       "sourceRef": "deckcraft crates/ui-egui/src/dialogs/hyperlink.rs"
+      },
+      {
+       "id": "slide",
+       "label": "Place in this document:",
+       "kind": "select",
+       "visibleWhen": "mode==slide",
+       "param": "slide | jump",
+       "source": "upstream",
+       "sourceRef": "deckcraft crates/ui-egui/src/dialogs/hyperlink.rs",
+       "itemsFrom": "slideTargets",
+       "options": []
+      },
+      {
+       "id": "email",
+       "label": "Email address:",
+       "kind": "text",
+       "visibleWhen": "mode==email",
+       "param": "url (mailto:)",
+       "source": "upstream",
+       "sourceRef": "deckcraft crates/ui-egui/src/dialogs/hyperlink.rs"
+      },
+      {
+       "id": "tip",
+       "label": "ScreenTip:",
+       "kind": "text",
+       "param": "tooltip",
+       "source": "upstream",
+       "sourceRef": "deckcraft crates/ui-egui/src/dialogs/hyperlink.rs"
+      }
+     ]
+    }
+   ]
+  },
+  "dialog.action": {
+   "note": "U:prism/insert: deckcraft action settings over shape.action. Run macro, Object action and Play sound are not offered.",
+   "tabs": [
+    {
+     "name": "Mouse Click",
+     "fields": [
+      {
+       "id": "clickKind",
+       "label": "Action on click",
+       "kind": "radio",
+       "options": [
+        {
+         "value": "none",
+         "label": "None"
+        },
+        {
+         "value": "hyperlink",
+         "label": "Hyperlink to:"
+        },
+        {
+         "value": "program",
+         "label": "Run program:"
+        },
+        {
+         "value": "playMedia",
+         "label": "Play the shape's media"
+        }
+       ],
+       "source": "upstream",
+       "sourceRef": "deckcraft crates/ui-egui/src/dialogs/body.rs action dialog"
+      },
+      {
+       "id": "clickTarget",
+       "label": "Hyperlink to:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "next",
+         "label": "Next Slide"
+        },
+        {
+         "value": "previous",
+         "label": "Previous Slide"
+        },
+        {
+         "value": "first",
+         "label": "First Slide"
+        },
+        {
+         "value": "last",
+         "label": "Last Slide"
+        },
+        {
+         "value": "lastViewed",
+         "label": "Last Slide Viewed"
+        },
+        {
+         "value": "endShow",
+         "label": "End Show"
+        },
+        {
+         "value": "customShow",
+         "label": "Custom Show…"
+        },
+        {
+         "value": "slide",
+         "label": "Slide…"
+        },
+        {
+         "value": "url",
+         "label": "URL…"
+        }
+       ],
+       "visibleWhen": "clickKind==hyperlink",
+       "source": "upstream",
+       "sourceRef": "deckcraft crates/ui-egui/src/dialogs/body.rs action dialog"
+      },
+      {
+       "id": "clickArg",
+       "label": "Address, slide number or custom show:",
+       "kind": "text",
+       "visibleWhen": "clickTarget in url|slide|customShow",
+       "source": "upstream",
+       "sourceRef": "deckcraft crates/ui-egui/src/dialogs/body.rs action dialog"
+      },
+      {
+       "id": "clickProgram",
+       "label": "Program:",
+       "kind": "text",
+       "visibleWhen": "clickKind==program",
+       "source": "upstream",
+       "sourceRef": "deckcraft crates/ui-egui/src/dialogs/body.rs action dialog"
+      },
+      {
+       "id": "clickHighlight",
+       "label": "Highlight click",
+       "kind": "checkbox",
+       "source": "upstream",
+       "sourceRef": "deckcraft crates/ui-egui/src/dialogs/body.rs action dialog"
+      }
+     ]
+    },
+    {
+     "name": "Mouse Over",
+     "fields": [
+      {
+       "id": "hoverKind",
+       "label": "Action on mouse over",
+       "kind": "radio",
+       "options": [
+        {
+         "value": "none",
+         "label": "None"
+        },
+        {
+         "value": "hyperlink",
+         "label": "Hyperlink to:"
+        },
+        {
+         "value": "program",
+         "label": "Run program:"
+        },
+        {
+         "value": "playMedia",
+         "label": "Play the shape's media"
+        }
+       ],
+       "source": "upstream",
+       "sourceRef": "deckcraft crates/ui-egui/src/dialogs/body.rs action dialog"
+      },
+      {
+       "id": "hoverTarget",
+       "label": "Hyperlink to:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "next",
+         "label": "Next Slide"
+        },
+        {
+         "value": "previous",
+         "label": "Previous Slide"
+        },
+        {
+         "value": "first",
+         "label": "First Slide"
+        },
+        {
+         "value": "last",
+         "label": "Last Slide"
+        },
+        {
+         "value": "lastViewed",
+         "label": "Last Slide Viewed"
+        },
+        {
+         "value": "endShow",
+         "label": "End Show"
+        },
+        {
+         "value": "customShow",
+         "label": "Custom Show…"
+        },
+        {
+         "value": "slide",
+         "label": "Slide…"
+        },
+        {
+         "value": "url",
+         "label": "URL…"
+        }
+       ],
+       "visibleWhen": "hoverKind==hyperlink",
+       "source": "upstream",
+       "sourceRef": "deckcraft crates/ui-egui/src/dialogs/body.rs action dialog"
+      },
+      {
+       "id": "hoverArg",
+       "label": "Address, slide number or custom show:",
+       "kind": "text",
+       "visibleWhen": "hoverTarget in url|slide|customShow",
+       "source": "upstream",
+       "sourceRef": "deckcraft crates/ui-egui/src/dialogs/body.rs action dialog"
+      },
+      {
+       "id": "hoverProgram",
+       "label": "Program:",
+       "kind": "text",
+       "visibleWhen": "hoverKind==program",
+       "source": "upstream",
+       "sourceRef": "deckcraft crates/ui-egui/src/dialogs/body.rs action dialog"
+      },
+      {
+       "id": "hoverHighlight",
+       "label": "Highlight click",
+       "kind": "checkbox",
+       "source": "upstream",
+       "sourceRef": "deckcraft crates/ui-egui/src/dialogs/body.rs action dialog"
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

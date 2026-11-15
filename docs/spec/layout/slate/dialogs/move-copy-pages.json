@@ -1,0 +1,22 @@
+{
+  "source": "OneNote Move or Copy Pages: Search, Recent picks, All Notebooks tree, Move / Copy / Cancel",
+  "width": 420,
+  "height": 380,
+  "sections": [
+    {
+      "fields": [
+        "search"
+      ]
+    },
+    {
+      "fields": [
+        "recentPicks"
+      ]
+    },
+    {
+      "fields": [
+        "target"
+      ]
+    }
+  ]
+}

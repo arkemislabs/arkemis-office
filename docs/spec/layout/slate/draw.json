@@ -1,0 +1,116 @@
+{
+  "tab": "draw",
+  "keytip": "D",
+  "source": "office: OneNote for Microsoft 365, Draw tab (Slate has no ArtCraft upstream; architecture section 1)",
+  "groups": {
+    "tools": {
+      "collapseOrder": 4,
+      "collapsedIcon": "cursor-text",
+      "layout": [
+        {
+          "large": "draw.tools.type"
+        },
+        {
+          "large": "draw.tools.lasso-select"
+        },
+        {
+          "large": "draw.tools.eraser"
+        },
+        {
+          "large": "draw.tools.panning-hand"
+        }
+      ]
+    },
+    "pens": {
+      "collapseOrder": 2,
+      "collapsedIcon": "pen-tray",
+      "layout": [
+        {
+          "gallery": "draw.pens.pens",
+          "inline": true,
+          "columns": 5
+        },
+        {
+          "large": "draw.pens.add-pen"
+        },
+        {
+          "stack": [
+            "draw.pens.draw-with-touch",
+            "draw.pens.ruler"
+          ]
+        }
+      ]
+    },
+    "shapes": {
+      "collapseOrder": 1,
+      "collapsedIcon": "shapes",
+      "layout": [
+        {
+          "gallery": "draw.shapes.shapes",
+          "inline": true,
+          "columns": 5
+        },
+        {
+          "stack": [
+            "draw.shapes.lock-drawing-mode"
+          ]
+        }
+      ]
+    },
+    "edit": {
+      "collapseOrder": 3,
+      "collapsedIcon": "insert-space-arrows",
+      "layout": [
+        {
+          "large": "draw.edit.insert-space"
+        },
+        {
+          "large": "draw.edit.delete"
+        },
+        {
+          "large": "draw.edit.arrange"
+        },
+        {
+          "large": "draw.edit.rotate"
+        }
+      ]
+    },
+    "convert": {
+      "collapseOrder": 5,
+      "collapsedIcon": "ink-shape",
+      "layout": [
+        {
+          "large": "draw.convert.ink-to-shape"
+        },
+        {
+          "large": "draw.convert.ink-to-text"
+        },
+        {
+          "large": "draw.convert.math"
+        },
+        {
+          "large": "draw.convert.ink-replay"
+        },
+        {
+          "large": "draw.convert.ink-editor"
+        }
+      ]
+    }
+  },
+  "keytips": {
+    "draw.tools.type": "T",
+    "draw.tools.lasso-select": "L",
+    "draw.tools.eraser": "E",
+    "draw.tools.panning-hand": "PH",
+    "draw.pens.add-pen": "AP",
+    "draw.pens.ruler": "R",
+    "draw.edit.insert-space": "SP",
+    "draw.edit.delete": "D",
+    "draw.edit.arrange": "AR",
+    "draw.edit.rotate": "O",
+    "draw.convert.ink-to-shape": "IS",
+    "draw.convert.ink-to-text": "IT",
+    "draw.convert.math": "M",
+    "draw.convert.ink-replay": "IR"
+  }
+}

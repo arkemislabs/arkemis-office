@@ -1,0 +1,81 @@
+{
+  "tab": "data",
+  "keytip": "A",
+  "source": "gridcraft 146161b4b450a56e5e59a083ba0478582d1e602b crates/ui-egui/src/ribbon/data.rs (data: Get Data large; Sort A-Z/Z-A icon column, Sort and Filter large, Clear/Reapply/Advanced column; Text to Columns, Flash Fill, Remove Duplicates, Data Validation large; What-If and Forecast Sheet large; Group/Ungroup/Subtotal and Show/Hide Detail/Settings columns; Data Analysis and Solver large); keytips from crates/ui-egui/src/keytips/keytips.json; the other Get & Transform buttons, Queries & Connections, Data Types, Consolidate/Relationships/Manage Data Model and Analyze Data placed as in Excel for Windows",
+  "groups": {
+    "get-and-transform-data": {
+      "collapseOrder": 3,
+      "layout": [
+        {"large": "data.getTransform.getData"},
+        {"stack": ["data.getTransform.fromTextCsv", "data.getTransform.fromWeb", "data.getTransform.fromTableRange"]},
+        {"stack": ["data.getTransform.fromPicture", "data.getTransform.recentSources", "data.getTransform.existingConnections"]}
+      ]
+    },
+    "queries-and-connections": {
+      "collapseOrder": 2,
+      "layout": [
+        {"large": "data.queries.refreshAll"},
+        {"stack": ["data.queries.queriesConnections", "data.queries.properties", "data.queries.workbookLinks"]}
+      ]
+    },
+    "data-types": {
+      "collapseOrder": 1,
+      "layout": [
+        {"large": "data.dataTypes.stocks"},
+        {"large": "data.dataTypes.geography"}
+      ]
+    },
+    "sort-and-filter": {
+      "collapseOrder": 8,
+      "layout": [
+        {"rows": [["data.sortFilter.sortAscending"], ["data.sortFilter.sortDescending"]]},
+        {"large": "data.sortFilter.sort"},
+        {"large": "data.sortFilter.filter"},
+        {"stack": ["data.sortFilter.clear", "data.sortFilter.reapply", "data.sortFilter.advanced"]}
+      ]
+    },
+    "data-tools": {
+      "collapseOrder": 7,
+      "layout": [
+        {"large": "data.tools.textToColumns"},
+        {"large": "data.tools.flashFill"},
+        {"large": "data.tools.removeDuplicates"},
+        {"large": "data.tools.dataValidation"},
+        {"stack": ["data.tools.consolidate", "data.tools.relationships", "data.tools.manageDataModel"]}
+      ]
+    },
+    "forecast": {
+      "collapseOrder": 6,
+      "layout": [
+        {"large": "data.forecast.whatIf"},
+        {"large": "data.forecast.forecastSheet"}
+      ]
+    },
+    "outline": {
+      "collapseOrder": 5,
+      "layout": [
+        {"stack": ["data.outline.group", "data.outline.ungroup", "data.outline.subtotal"]},
+        {"stack": ["data.outline.showDetail", "data.outline.hideDetail", "data.outline.settings"]}
+      ]
+    },
+    "analysis": {
+      "collapseOrder": 4,
+      "layout": [
+        {"large": "data.analysis.dataAnalysis"},
+        {"large": "data.analysis.solver"},
+        {"large": "data.analysis.analyzeData"}
+      ]
+    }
+  },
+  "keytips": {
+    "data.getTransform.getData": "PN", "data.getTransform.fromWeb": "FW", "data.getTransform.fromPicture": "F1", "data.getTransform.recentSources": "PR",
+    "data.getTransform.existingConnections": "X",
+    "data.queries.refreshAll": "R", "data.queries.queriesConnections": "O", "data.queries.properties": "P1", "data.queries.workbookLinks": "K",
+    "data.sortFilter.sortAscending": "SA", "data.sortFilter.sortDescending": "SD", "data.sortFilter.sort": "SS", "data.sortFilter.filter": "T",
+    "data.sortFilter.clear": "C", "data.sortFilter.reapply": "Y", "data.sortFilter.advanced": "Q",
+    "data.tools.textToColumns": "E", "data.tools.flashFill": "FF", "data.tools.removeDuplicates": "M", "data.tools.dataValidation": "V", "data.tools.consolidate": "D",
+    "data.forecast.whatIf": "W", "data.forecast.forecastSheet": "FC",
+    "data.outline.group": "G", "data.outline.ungroup": "U", "data.outline.subtotal": "B", "data.outline.showDetail": "J", "data.outline.hideDetail": "H",
+    "data.analysis.analyzeData": "FE"
+  }
+}

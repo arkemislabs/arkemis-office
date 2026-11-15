@@ -1,0 +1,30 @@
+/* Field Properties (field-properties.tsx). Arkemis dark glass; the structure is Acrobat's tabbed dialog. */
+.ffp { display: flex; flex-direction: column; gap: 10px; min-height: 360px; }
+.ffp-tab { display: flex; flex-direction: column; gap: 10px; margin: 0; padding: 0; border: 0; min-width: 0; flex: 1; }
+.ffp-tab:disabled { opacity: .55; }
+.ffp-title { margin: 8px 0 0; font-size: 11.5px; font-weight: 600; color: #c1c2c9; letter-spacing: .01em; }
+.ffp-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 16px; align-items: start; }
+.ffp-row .sf-control { flex-wrap: wrap; }
+.ffp-row .sf-select, .ffp-row .sf-text { min-width: 0; }
+.ffp .ffp-num, .ffp-row .sf-text.ffp-num { width: 92px; flex: none; }
+.ffp-unit { color: #9d9ea6; font-size: 11.5px; white-space: nowrap; }
+.ffp-inline { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.ffp-indent { display: flex; flex-direction: column; gap: 8px; margin-left: 24px; }
+.ffp-area { min-height: 64px; font-family: ui-monospace, Consolas, monospace; font-size: 12px; }
+.ffp-radio { display: inline-flex; align-items: center; gap: 9px; color: #e8e8ec; position: relative; min-height: 22px; }
+.ffp-radio input { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
+.ffp-radio input:checked + .sf-radio-dot { box-shadow: inset 0 0 0 1px #f2f2f3; }
+.ffp-radio input:checked + .sf-radio-dot::after { content: ''; position: absolute; inset: 4px; border-radius: 50%; background: #f2f2f3; }
+.ffp-btn { min-width: 64px; height: 28px; padding: 0 12px; }
+.ffp-colour { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; width: 100%; }
+.ffp-row.is-wide .sf-control { align-items: flex-start; }
+.ffp-swatches { display: flex; flex-wrap: wrap; gap: 5px; }
+.ffp-swatch { width: 20px; height: 20px; padding: 0; border: 0; border-radius: 6px; box-shadow: inset 0 0 0 1px rgba(255,255,255,.3); cursor: default; }
+.ffp-swatch.is-selected { box-shadow: 0 0 0 2px #14141a, 0 0 0 4px #f2f2f3; }
+.ffp-items, .ffp-fields { max-height: 150px; min-height: 64px; overflow: auto; }
+.ffp-item { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.ffp-item-tools { display: inline-flex; gap: 10px; }
+.ffp-link { padding: 0; border: 0; background: transparent; color: #b9bac1; font-size: 11.5px; text-decoration: underline; cursor: default; }
+.ffp-link:hover:not(:disabled) { color: #fff; }
+.ffp-link:disabled { opacity: .35; text-decoration: none; }
+.ffp-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: auto; padding-top: 6px; border-top: 1px solid rgba(255,255,255,.07); }

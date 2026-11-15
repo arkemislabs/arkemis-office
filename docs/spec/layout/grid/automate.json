@@ -1,0 +1,42 @@
+{
+  "tab": "automate",
+  "source": "gridcraft 146161b4b450a56e5e59a083ba0478582d1e602b crates/ui-egui/src/ribbon/automate.rs (automate: Macros, Command Palette, Agent Control, Action Journal, Check for Updates, About GridCraft, every one large); Office Scripts and Power Automate placed as in Excel for Windows",
+  "groups": {
+    "office-scripts": {
+      "collapseOrder": 4,
+      "layout": [
+        {"large": "automate.scripts.newScript"},
+        {"large": "automate.scripts.allScripts"},
+        {"large": "automate.scripts.recordActions"},
+        {"stack": ["automate.scripts.trustScripts"]}
+      ]
+    },
+    "scripts": {
+      "collapseOrder": 5,
+      "layout": [
+        {"large": "automate.macros.macros"}
+      ]
+    },
+    "agents": {
+      "collapseOrder": 3,
+      "layout": [
+        {"large": "automate.agents.commandPalette"},
+        {"large": "automate.agents.agentControl"},
+        {"large": "automate.agents.actionJournal"}
+      ]
+    },
+    "about": {
+      "collapseOrder": 2,
+      "layout": [
+        {"large": "automate.about.checkForUpdates"},
+        {"large": "automate.about.about"}
+      ]
+    },
+    "power-automate": {
+      "collapseOrder": 1,
+      "layout": [
+        {"large": "automate.powerAutomate.automateWork"}
+      ]
+    }
+  }
+}

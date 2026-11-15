@@ -1,0 +1,144 @@
+{
+  "controls": {
+    "view.workbookViews.pageLayout": {
+      "command": "view.pageLayout",
+      "args": null,
+      "note": "U:grid/view: checked against gridcraft (view.pageLayout, crates/ui-egui/src/paper_view.rs): the printed pages on a desk with margins, headers, footers and rulers; cells, selection and editing work on the pages as in Normal view; a header or footer is edited by clicking it (the Header & Footer tab). A file saved in it keeps it."
+    },
+    "view.workbookViews.customViews": {
+      "command": "view.customViews",
+      "dialog": "dialog.customViews",
+      "note": "U:grid/view: checked against gridcraft (view.customViews {save, show, delete}); kept on the workbook, not as a hidden defined name, and not written to the .xlsx file."
+    },
+    "view.show.ruler": {
+      "command": "view.ruler",
+      "args": {
+        "on": "<bool>"
+      },
+      "kind": "checkbox",
+      "note": "U:grid/view: checked against gridcraft (view.ruler, a ribbon check box): the rulers of Page Layout view, which also set the margins when their edges are dragged; disabled outside Page Layout view."
+    },
+    "view.show.gridlines": {
+      "kind": "checkbox",
+      "note": "U:grid/view: a ribbon check box, as Excel draws it (gridcraft ribbon/view.rs checkbox)."
+    },
+    "view.show.formulaBar": {
+      "kind": "checkbox",
+      "note": "U:grid/view: a ribbon check box; an application option (prefs.formulaBar), not saved with the workbook."
+    },
+    "view.show.headings": {
+      "kind": "checkbox",
+      "note": "U:grid/view: a ribbon check box, as Excel draws it."
+    },
+    "view.zoom.zoom100": {
+      "note": "U:grid/view: checked against gridcraft (view.zoom {percent: 100}); runs the shared zoom command."
+    },
+    "view.zoom.zoomToSelection": {
+      "args": null,
+      "note": "U:grid/view: gridcraft sends the grid size; without it the command fits 1200 x 700 px as gridcraft does."
+    },
+    "view.window.newWindow": {
+      "command": "view.newWindow",
+      "args": null,
+      "note": "U:grid/view: checked against gridcraft (view.newWindow, windows.rs): another window on the same workbook, named Name:1 and Name:2; an edit in either shows in both, with one undo history. A window is an operating-system window of the application (the window service), as Excel and Word do."
+    },
+    "view.window.arrangeAll": {
+      "command": "view.arrangeAll",
+      "args": null,
+      "dialog": "dialog.arrangeAll",
+      "note": "U:grid/view: checked against gridcraft (view.arrangeAll and the Arrange Windows dialog: Tiled, Horizontal, Vertical, Cascade, Windows of active workbook); the main process moves the windows, as gridcraft's interface does."
+    },
+    "view.window.hide": {
+      "command": "view.hideWindow",
+      "args": null,
+      "note": "U:grid/view: checked against gridcraft (view.hideWindow): the window goes out of sight and the workbook stays open; the most recent visible window comes forward. Disabled while it is the only visible window."
+    },
+    "view.window.unhide": {
+      "command": "view.unhideWindow",
+      "args": null,
+      "dialog": "dialog.unhideWindow",
+      "note": "U:grid/view: checked against gridcraft (view.unhideWindow): Excel's \"Unhide workbook:\" list of the hidden windows; disabled when none is hidden."
+    },
+    "view.window.sideBySide": {
+      "command": "view.sideBySide",
+      "args": null,
+      "note": "U:grid/view: not in gridcraft (not checked against upstream); Excel's View Side by Side: this window and another next to each other (with more than two open, Compare Side by Side asks which), turned off by the same button."
+    },
+    "view.window.syncScrolling": {
+      "command": "view.syncScroll",
+      "args": null,
+      "note": "U:grid/view: not in gridcraft (not checked against upstream); Excel's Synchronous Scrolling: while two windows are side by side, scrolling one scrolls the other."
+    },
+    "view.window.resetPosition": {
+      "command": "view.resetWindowPosition",
+      "args": null,
+      "note": "U:grid/view: not in gridcraft (not checked against upstream); Excel's Reset Window Position: the two windows viewed side by side share the screen equally again."
+    },
+    "view.window.switchWindows": {
+      "command": "view.switchWindows",
+      "args": null,
+      "note": "U:grid/view: checked against gridcraft (view.switchWindows lists the open windows, the active one checked): the list is numbered as Excel numbers it (\"1 Book1:1\") and choosing one brings that window forward.",
+      "items": [
+        {
+          "id": "view.window.switchWindows.windows",
+          "label": "Windows",
+          "kind": "list",
+          "command": "view.switchWindows",
+          "args": {
+            "value": "<n>"
+          },
+          "dynamic": true,
+          "source": "upstream"
+        }
+      ]
+    },
+    "view.window.split": {
+      "note": "U:grid/view: checked against gridcraft: Split toggles frozen panes at the active cell (shown as frozen panes in that version)."
+    },
+    "view.sheetView.select": {"kind": "dropdown", "command": "view.sheetViewSelect", "args": null, "note": "U:grid/main: View > Sheet View, built locally (not checked against upstream): named views of the sheet that each keep its AutoFilter and hidden rows and columns; Excel needs a shared workbook on OneDrive or SharePoint. The views are kept in the workbook, not written to .xlsx.", "items": [{"id": "view.sheetView.select.views", "label": "Sheet View", "kind": "list", "command": "view.sheetViewSelect", "args": {"name": "<name>"}, "dynamic": true, "source": "office"}]},
+    "view.sheetView.keep": {"command": "view.sheetViewKeep", "args": null, "note": "U:grid/main: saves the sheet's AutoFilter and hidden rows and columns into the view being viewed (see Sheet View)."},
+    "view.sheetView.exit": {"command": "view.sheetViewExit", "args": null, "note": "U:grid/main: leaves the view and shows the sheet as it is in Default; what was not kept is dropped (see Sheet View)."},
+    "view.sheetView.new": {"command": "view.sheetViewNew", "args": null, "note": "U:grid/main: a new view (View1, View2...) from the sheet as it is now, shown at once (see Sheet View)."},
+    "view.sheetView.options": {"kind": "dropdown", "command": null, "args": null, "note": "U:grid/main: Rename, Duplicate and Delete the view being viewed (see Sheet View).", "items": [{"id": "view.sheetView.options.rename", "label": "Rename…", "kind": "button", "command": "view.sheetViewOptions", "args": {"action": "rename"}, "dialog": "dialog.renameSheetView", "source": "office"}, {"id": "view.sheetView.options.duplicate", "label": "Duplicate", "kind": "button", "command": "view.sheetViewOptions", "args": {"action": "duplicate"}, "source": "office"}, {"id": "view.sheetView.options.delete", "label": "Delete", "kind": "button", "command": "view.sheetViewOptions", "args": {"action": "delete"}, "source": "office"}]},
+    "view.appearance.displayTheme": {
+      "note": "U:grid/view: the application's own appearance (view.theme) is set in the app's settings, not per workbook; hidden here."
+    },
+    "view.appearance.animations": {
+      "note": "U:grid/view: the application's own animation setting (view.animations); hidden here."
+    },
+    "view.interface.size": {
+      "note": "U:grid/view: interface size (view.interfaceScale) belongs to the application's settings; hidden here."
+    },
+    "view.interface.language": {
+      "note": "U:grid/view: interface language (app.language.set) belongs to the application's settings; hidden here."
+    },
+    "view.macros.macros.view-macros": {
+      "note": "U:grid/main: hidden. View Macros lists and runs the VBA macros and scripts stored in a workbook; the application never runs code that came inside a document (a file's VBA project is kept as it is, not executed)."
+    },
+    "view.macros.macros.record-macro": {
+      "note": "U:grid/main: hidden. Record Macro writes VBA that the application would then have to run; it never runs workbook code. The Automate tab's actions are the application's own way to repeat steps."
+    },
+    "view.macros.macros.use-relative-references": {
+      "note": "U:grid/main: hidden with Record Macro: it only changes how a recorded macro refers to cells, and there is no macro recorder."
+    },
+    "view.macros.macros": {
+      "command": null,
+      "dialog": null,
+      "note": "U:grid/view: macros are VBA or scripts stored in a workbook; the application never executes workbook code, so Macros is hidden."
+    }
+  },
+  "dialogs": {
+    "dialog.renameSheetView": {"id": "dialog.renameSheetView", "title": "Rename View", "command": "view.sheetViewOptions", "source": "office", "note": "U:grid/main: not checked against upstream.", "tabs": [{"name": "", "fields": [{"id": "name", "label": "Name:", "kind": "text", "options": []}]}], "buttons": ["OK", "Cancel"]},
+    "dialog.customViews": {
+      "note": "U:grid/view: Add… opens Add View (dialog.addView) for the name, as Excel does, and saves the view under it.",
+      "buttons": [
+        "Show",
+        "Close"
+      ]
+    },
+    "dialog.compareSideBySide": {
+      "command": "view.sideBySide",
+      "note": "U:grid/view: not in gridcraft (not checked against upstream); Excel's Compare Side by Side, asked with more than two windows open."
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "tab": "immersive-reader",
+  "position": "afterFile",
+  "source": "Microsoft Word for Windows › Immersive Reader (the contextual tab while View › Immersive Reader is on), reading controls from wordcraft aadb077e072b7de05f724e359d8db82e151f125c crates/ui-egui/src/ribbon/tabs.rs reading_toolbar: Column Width, Page Color, Line Focus, Text Spacing, Syllables, Read Aloud, then Close",
+  "groups": {
+    "immersive-reader": {
+      "collapseOrder": 2,
+      "layout": [
+        {"large": "immersive-reader.immersive-reader.column-width"},
+        {"large": "immersive-reader.immersive-reader.page-color"},
+        {"large": "immersive-reader.immersive-reader.line-focus"},
+        {"large": "immersive-reader.immersive-reader.text-spacing"},
+        {"large": "immersive-reader.immersive-reader.syllables"},
+        {"large": "immersive-reader.immersive-reader.read-aloud"}
+      ]
+    },
+    "close": {
+      "collapseOrder": 1,
+      "layout": [
+        {"large": "immersive-reader.close.close-immersive-reader"}
+      ]
+    }
+  },
+  "keytips": {
+    "immersive-reader.immersive-reader.column-width": "W", "immersive-reader.immersive-reader.page-color": "P",
+    "immersive-reader.immersive-reader.text-spacing": "S", "immersive-reader.close.close-immersive-reader": "C"
+  }
+}

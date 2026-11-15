@@ -1,0 +1,57 @@
+{
+  "tab": "page-layout",
+  "keytip": "P",
+  "source": "gridcraft 146161b4b450a56e5e59a083ba0478582d1e602b crates/ui-egui/src/ribbon/page_layout.rs (page_layout: Themes large; Margins, Orientation, Size, Print Area, Breaks, Background, Print Titles large; Sheet Options as two checkbox columns under Gridlines and Headings, then Sheet Right-to-Left large); keytips from crates/ui-egui/src/keytips/keytips.json; theme Colors/Fonts/Effects, Scale to Fit and Arrange placed as in Excel for Windows",
+  "groups": {
+    "themes": {
+      "collapseOrder": 3,
+      "layout": [
+        {"large": "pageLayout.themes.themes"},
+        {"stack": ["pageLayout.themes.colors", "pageLayout.themes.fonts", "pageLayout.themes.effects"]}
+      ]
+    },
+    "page-setup": {
+      "keytip": "SP", "collapseOrder": 5,
+      "layout": [
+        {"large": "pageLayout.pageSetup.margins"},
+        {"large": "pageLayout.pageSetup.orientation"},
+        {"large": "pageLayout.pageSetup.size"},
+        {"large": "pageLayout.pageSetup.printArea"},
+        {"large": "pageLayout.pageSetup.breaks"},
+        {"large": "pageLayout.pageSetup.background"},
+        {"large": "pageLayout.pageSetup.printTitles"}
+      ]
+    },
+    "scale-to-fit": {
+      "collapseOrder": 2,
+      "layout": [
+        {"stack": ["pageLayout.scaleToFit.width", "pageLayout.scaleToFit.height", "pageLayout.scaleToFit.scale"]}
+      ]
+    },
+    "sheet-options": {
+      "collapseOrder": 4,
+      "layout": [
+        {"stack": ["pageLayout.sheetOptions.gridlinesView", "pageLayout.sheetOptions.gridlinesPrint"]},
+        {"stack": ["pageLayout.sheetOptions.headingsView", "pageLayout.sheetOptions.headingsPrint"]},
+        {"large": "pageLayout.sheetOptions.rightToLeft"}
+      ]
+    },
+    "arrange": {
+      "collapseOrder": 1,
+      "layout": [
+        {"large": "pageLayout.arrange.bringForward"},
+        {"large": "pageLayout.arrange.sendBackward"},
+        {"large": "pageLayout.arrange.selectionPane"},
+        {"rows": [["pageLayout.arrange.align"], ["pageLayout.arrange.group"], ["pageLayout.arrange.rotate"]]}
+      ]
+    }
+  },
+  "keytips": {
+    "pageLayout.themes.themes": "TH", "pageLayout.themes.colors": "TC", "pageLayout.themes.fonts": "TF", "pageLayout.themes.effects": "TE",
+    "pageLayout.pageSetup.margins": "M", "pageLayout.pageSetup.orientation": "O", "pageLayout.pageSetup.size": "SZ", "pageLayout.pageSetup.printArea": "R",
+    "pageLayout.pageSetup.breaks": "B", "pageLayout.pageSetup.background": "GB", "pageLayout.pageSetup.printTitles": "I",
+    "pageLayout.sheetOptions.gridlinesView": "VG", "pageLayout.sheetOptions.gridlinesPrint": "PG",
+    "pageLayout.sheetOptions.headingsView": "VH", "pageLayout.sheetOptions.headingsPrint": "PH",
+    "pageLayout.arrange.bringForward": "AF", "pageLayout.arrange.sendBackward": "AE"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "controls": {
+    "home.clipboard.paste.keep-source-formatting": {
+      "style": "tile",
+      "section": "Paste Options:"
+    },
+    "home.clipboard.paste.merge-formatting": {
+      "style": "tile"
+    },
+    "home.clipboard.paste.keep-text-only": {
+      "style": "tile"
+    }
+  },
+  "dialogs": {
+    "dialog.paper-size": {
+      "presentation": "modal",
+      "note": "Round 4: Paper Size opens as a dialog over the page, not a docked side panel.",
+      "buttons": [
+        "OK",
+        "Cancel"
+      ]
+    },
+    "dialog.symbol": {
+      "note": "Round 4: Shortcut key and AutoCorrect (Office's two buttons) are hidden: the app has no user-assigned shortcuts or AutoCorrect engine for Slate to attach a symbol to. Symbols and Special Characters pages are drawn (src/apps/slate/dialogs/symbol.tsx)."
+    }
+  }
+}

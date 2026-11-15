@@ -1,0 +1,20 @@
+{
+  "source": "U:quill/mailings: wordcraft dialogs_layout/print.rs labels_ui",
+  "width": 520,
+  "sections": [
+    {
+      "fields": [
+        "recipients",
+        "text",
+        "product"
+      ]
+    },
+    {
+      "fields": [
+        "single",
+        "row",
+        "col"
+      ]
+    }
+  ]
+}

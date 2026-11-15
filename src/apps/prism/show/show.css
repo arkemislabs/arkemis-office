@@ -1,0 +1,39 @@
+/* The slide show and the previews (src/apps/prism/show/ShowStage.tsx): black, the slide centred and letterboxed. */
+.show-stage { position: fixed; inset: 0; z-index: 9000; background: #000; color: #fff; outline: 0; user-select: none; overflow: hidden; cursor: default; }
+.show-stage.is-embedded { position: absolute; z-index: 20; }
+.show-slide { position: absolute; overflow: hidden; background: #fff; }
+.show-slide.is-hidden { visibility: hidden; }
+.show-svg { position: absolute; inset: 0; display: block; width: 100%; height: 100%; }
+.show-svg.is-over { pointer-events: none; }
+.show-glass { position: absolute; display: none; }
+.show-glass.is-on { display: block; }
+.show-blank { position: absolute; inset: 0; z-index: 3; }
+.show-blank.is-black { background: #000; }
+.show-blank.is-white { background: #fff; }
+.show-end { position: absolute; inset: 0; z-index: 4; display: grid; place-items: center; background: #000; color: #8a8a90; font: 400 18px/1.3 var(--ark-font, system-ui); }
+.show-goto { position: absolute; left: 18px; bottom: 18px; z-index: 6; min-width: 44px; padding: 6px 12px; border-radius: 8px; background: rgba(0,0,0,.72); color: #fff; font: 600 20px/1 var(--ark-font, system-ui); font-variant-numeric: tabular-nums; text-align: center; }
+.show-toolbar { position: absolute; left: 14px; bottom: 14px; z-index: 6; display: flex; gap: 2px; padding: 3px; border-radius: 9px; background: rgba(30,30,34,.82); backdrop-filter: blur(8px); }
+.show-toolbar button { display: grid; place-items: center; width: 30px; height: 28px; padding: 0; border: 0; border-radius: 7px; background: transparent; color: #e8e8ec; cursor: pointer; }
+.show-toolbar button:hover { background: rgba(255,255,255,.14); }
+.show-toolbar { transition: opacity .25s; }
+.show-toolbar.is-idle { opacity: .35; }
+.show-toolbar:hover { opacity: 1; }
+
+/* The pen, highlighter and laser pointer, the pointer menu and the keep-ink question of a running show. */
+.show-ink { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 2; }
+.show-laser { position: absolute; z-index: 7; width: 0; height: 0; pointer-events: none; }
+.show-laser i { position: absolute; left: -16px; top: -16px; width: 32px; height: 32px; border-radius: 50%; }
+.show-laser b { position: absolute; left: -5.5px; top: -5.5px; width: 11px; height: 11px; border-radius: 50%; }
+.show-toolbar button.is-on { background: rgba(255,255,255,.2); }
+.show-pmenu { position: absolute; z-index: 8; min-width: 210px; padding: 5px; border-radius: 9px; background: rgba(34,34,38,.96); box-shadow: 0 8px 28px rgba(0,0,0,.5); backdrop-filter: blur(10px); font: 13px/1 var(--ark-font, system-ui); }
+.show-pmenu button { display: flex; align-items: center; gap: 8px; width: 100%; height: 28px; padding: 0 10px 0 4px; border: 0; border-radius: 6px; background: transparent; color: #ececf0; text-align: left; cursor: pointer; font: inherit; }
+.show-pmenu button:hover:not(:disabled) { background: rgba(255,255,255,.12); }
+.show-pmenu button:disabled { color: #77777f; cursor: default; }
+.show-pmenu button i { width: 18px; text-align: center; font-style: normal; }
+.show-pmenu hr { margin: 4px 6px; border: 0; border-top: 1px solid rgba(255,255,255,.14); }
+.show-keep { position: absolute; inset: 0; z-index: 9; display: grid; place-items: center; background: rgba(0,0,0,.45); }
+.show-keep > div { padding: 22px 26px 18px; border-radius: 12px; background: #2a2a2e; color: #f2f2f4; box-shadow: 0 12px 40px rgba(0,0,0,.55); font: 14px/1.4 var(--ark-font, system-ui); }
+.show-keep p { margin: 0 0 16px; }
+.show-keep span { display: flex; justify-content: flex-end; gap: 8px; }
+.show-keep button { min-width: 84px; height: 30px; border: 0; border-radius: 7px; background: #3c3c42; color: #f2f2f4; font: inherit; cursor: pointer; }
+.show-keep button[data-keep=keep] { background: var(--prism-accent, #e8774e); color: #fff; }

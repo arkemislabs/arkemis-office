@@ -1,0 +1,10 @@
+{
+  "dialogs": {
+    "dialog.close": {
+      "title": "Prism",
+      "note": "Office: PowerPoint's message box with the detail line \"Your changes will be lost if you don't save them.\" (deckcraft body.rs:323); text from core/common/commands/file.mjs saveChangesText.",
+      "tabs": [{"name": "", "fields": [{"id": "message", "label": "Do you want to save the changes you made to “{name}”?", "kind": "message", "source": "upstream"}]}],
+      "buttons": ["Save", "Don't Save", "Cancel"]
+    }
+  }
+}

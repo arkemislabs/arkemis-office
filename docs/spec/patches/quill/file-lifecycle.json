@@ -1,0 +1,11 @@
+{
+  "dialogs": {
+    "dialog.saveChanges": {
+      "title": "Quill",
+      "command": "file.close",
+      "note": "Office: Word's message box \"Do you want to save changes to <name>?\" with Save / Don't Save / Cancel (wordcraft dispatch.rs:1132 draws the same three); the text comes from core/common/commands/file.mjs saveChangesText.",
+      "tabs": [{"name": "", "fields": [{"id": "message", "label": "Do you want to save changes to {name}?", "kind": "message", "source": "upstream"}]}],
+      "buttons": ["Save", "Don't Save", "Cancel"]
+    }
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "controls": {},
+  "contextMenus": {
+    "audio-video": {
+      "items": [
+        {
+          "label": "Play",
+          "command": "media.play",
+          "icon": "play"
+        },
+        {
+          "label": "Pause",
+          "command": "media.pause",
+          "icon": "pause"
+        },
+        {
+          "label": "Stop",
+          "command": "media.stop",
+          "icon": "stop"
+        },
+        "-",
+        {
+          "label": "Cut",
+          "command": "clipboard.cut",
+          "icon": "cut"
+        },
+        {
+          "label": "Copy",
+          "command": "clipboard.copy",
+          "icon": "copy"
+        },
+        {
+          "label": "Paste",
+          "command": "clipboard.paste",
+          "icon": "paste"
+        },
+        "-",
+        {
+          "label": "Order",
+          "icon": "align-objects",
+          "items": [
+            {
+              "label": "Bring Forward",
+              "command": "object.order",
+              "icon": "move-up",
+              "args": {
+                "to": "forward"
+              }
+            },
+            {
+              "label": "Bring to Front",
+              "command": "object.order",
+              "icon": "move-up",
+              "args": {
+                "to": "front"
+              }
+            },
+            {
+              "label": "Send Backward",
+              "command": "object.order",
+              "icon": "move-down",
+              "args": {
+                "to": "backward"
+              }
+            },
+            {
+              "label": "Send to Back",
+              "command": "object.order",
+              "icon": "move-down",
+              "args": {
+                "to": "back"
+              }
+            }
+          ]
+        },
+        {
+          "label": "See Playback",
+          "command": "media.seePlayback",
+          "icon": "eye-play"
+        },
+        "-",
+        {
+          "label": "Delete",
+          "command": "edit.delete",
+          "icon": "trash"
+        }
+      ]
+    }
+  }
+}

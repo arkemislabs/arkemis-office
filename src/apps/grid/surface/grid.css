@@ -1,0 +1,159 @@
+/* Grid surface (F:grid): Excel's formula bar, worksheet and sheet tabs in the Arkemis skin.
+   Chrome follows the shell's graphite tokens and gridcraft's dark-theme tokens; the sheet stays
+   white (cells are content, their colours belong to the workbook). */
+
+.grid-surface {
+  position: absolute; inset: 0; display: flex; flex-direction: column; min-width: 0; min-height: 0;
+  background: #1b1b1d; color: var(--sh-text-1, #f2f2f3); user-select: none;
+  --grid-chrome: #232325; --grid-line: #3a3a3d; --grid-accent: #5cc587; --grid-sel: #107c41;
+}
+
+/* Formula bar */
+.grid-formula-bar {
+  flex: none; display: flex; align-items: stretch; min-height: 30px; padding: 4px 6px; background: var(--grid-chrome);
+  border-bottom: 1px solid var(--grid-line);
+}
+.grid-name-box {
+  flex: none; width: 104px; height: 24px; padding: 0 8px; border: 1px solid var(--sh-field-border, rgba(255,255,255,.14)); border-radius: 6px;
+  background: var(--sh-field, rgba(0,0,0,.24)); color: var(--sh-text-1, #f2f2f3); font: 400 12.5px/22px "Segoe UI", var(--ark-font, system-ui);
+  outline: none;
+}
+.grid-name-box:focus { border-color: var(--grid-accent); box-shadow: 0 0 0 1px var(--grid-accent); }
+.grid-bar-grip { flex: none; width: 9px; margin: 3px 2px; background: radial-gradient(circle, #6b6b70 1px, transparent 1.5px) center / 3px 4px repeat-y; }
+.grid-bar-buttons { flex: none; display: flex; align-items: center; gap: 2px; padding: 0 6px 0 2px; min-width: 6px; }
+.grid-bar-buttons button {
+  display: grid; place-items: center; width: 24px; height: 24px; padding: 0; border: 0; border-radius: 6px; background: transparent;
+  color: var(--sh-text-2, #b4b4ba);
+}
+.grid-bar-buttons button:hover { background: var(--sh-hover, rgba(255,255,255,.075)); color: var(--sh-text-1, #f2f2f3); }
+.grid-bar-buttons svg { width: 15px; height: 15px; }
+.grid-fx i { font: italic 600 13px/1 Georgia, "Times New Roman", serif; }
+.grid-bar-text, .grid-formula-input.is-bar {
+  flex: 1; min-width: 0; min-height: 24px; max-height: 120px; padding: 0 6px; border: 1px solid var(--sh-field-border, rgba(255,255,255,.14));
+  border-radius: 6px; background: #ffffff; color: #1b1b1c; font: 400 13px/22px Calibri, Carlito, "Segoe UI", system-ui, sans-serif;
+  white-space: pre; overflow: hidden; text-overflow: ellipsis; cursor: text; user-select: text;
+}
+.grid-bar-text.is-readonly { cursor: default; background: #f1f1f1; }
+
+/* Formula input (cell editor and bar) */
+.grid-formula-input { position: relative; }
+.grid-formula-input.is-cell {
+  position: absolute; z-index: 5; padding: 0 1px; border: 2px solid var(--grid-sel); background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,.25);
+  width: max-content; color: #000;
+}
+.grid-formula-backdrop, .grid-formula-text {
+  margin: 0; padding: 0 2px; border: 0; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere; letter-spacing: normal;
+}
+.grid-formula-input.is-cell .grid-formula-backdrop, .grid-formula-input.is-cell .grid-formula-text { white-space: pre; }
+.grid-formula-backdrop { color: #000; pointer-events: none; min-height: 1.25em; }
+.grid-formula-text {
+  position: absolute; inset: 0; width: 100%; height: 100%; resize: none; outline: none; background: transparent;
+  color: transparent; caret-color: #000; overflow: hidden;
+}
+.grid-formula-input.is-bar .grid-formula-backdrop, .grid-formula-input.is-bar .grid-formula-text { line-height: 22px; }
+.grid-formula-input.is-bar { overflow: visible; }
+.grid-autocomplete {
+  position: absolute; top: 100%; left: 0; z-index: 20; min-width: 200px; max-width: 420px; margin: 3px 0 0; padding: 4px; list-style: none;
+  background: #26262a; border: 1px solid var(--sh-panel-border, rgba(255,255,255,.085)); border-radius: 8px; box-shadow: 0 10px 28px rgba(0,0,0,.45);
+  color: var(--sh-text-1, #f2f2f3); font: 400 12px/1.3 "Segoe UI", var(--ark-font, system-ui);
+}
+.grid-autocomplete li { display: flex; flex-direction: column; gap: 2px; padding: 4px 8px; border-radius: 5px; cursor: default; }
+.grid-autocomplete li.is-on { background: color-mix(in srgb, var(--grid-sel) 55%, #26262a); }
+.grid-autocomplete li span { font-weight: 600; }
+.grid-autocomplete li small { color: var(--sh-text-2, #b4b4ba); white-space: normal; }
+.grid-arg-hint {
+  position: absolute; top: 100%; left: 0; z-index: 20; margin-top: 3px; padding: 3px 8px; border-radius: 6px; white-space: nowrap;
+  background: #26262a; border: 1px solid var(--sh-panel-border, rgba(255,255,255,.085)); color: var(--sh-text-1, #f2f2f3);
+  font: 400 11.5px/1.4 "Segoe UI", var(--ark-font, system-ui);
+}
+
+/* Worksheet */
+.grid-body { position: relative; flex: 1; min-height: 0; }
+.grid-canvas-host { position: absolute; inset: 0; overflow: hidden; }
+.grid-canvas { position: absolute; left: 0; top: 0; display: block; touch-action: none; outline: none; }
+.grid-keys { position: absolute; left: -9999px; top: 0; width: 1px; height: 1px; opacity: 0; resize: none; border: 0; padding: 0; }
+.grid-vbar { position: absolute; top: 0; right: 0; bottom: 0; width: 14px; overflow-x: hidden; overflow-y: scroll; background: #1f1f21; }
+.grid-vbar > div { width: 1px; }
+.grid-hbar { flex: 0 0 38%; min-width: 120px; height: 14px; margin-left: auto; align-self: center; overflow-x: scroll; overflow-y: hidden; }
+.grid-hbar > div { height: 1px; }
+.grid-vbar::-webkit-scrollbar, .grid-hbar::-webkit-scrollbar { width: 12px; height: 12px; }
+.grid-vbar::-webkit-scrollbar-thumb, .grid-hbar::-webkit-scrollbar-thumb { background: #4a4a4f; border-radius: 6px; border: 3px solid #1f1f21; }
+.grid-vbar::-webkit-scrollbar-track, .grid-hbar::-webkit-scrollbar-track { background: #1f1f21; }
+
+/* Sheet tabs */
+.grid-sheet-bar {
+  flex: none; display: flex; align-items: stretch; height: 30px; padding: 0 6px; gap: 6px; background: var(--grid-chrome);
+  border-top: 1px solid var(--grid-line);
+}
+.grid-tab-nav { display: flex; align-items: center; gap: 1px; }
+.grid-tab-nav button { display: grid; place-items: center; width: 22px; height: 22px; padding: 0; border: 0; border-radius: 5px; background: transparent; color: var(--sh-text-2, #b4b4ba); }
+.grid-tab-nav button:hover:not(:disabled) { background: var(--sh-hover, rgba(255,255,255,.075)); }
+.grid-tab-nav button:disabled { opacity: .35; }
+.grid-tab-nav svg { width: 14px; height: 14px; }
+.grid-tabs { display: flex; align-items: stretch; min-width: 0; overflow: hidden; }
+.grid-tab {
+  --tab: transparent;
+  position: relative; display: flex; align-items: center; max-width: 180px; padding: 0 14px; border: 0; border-radius: 0 0 6px 6px; margin-top: -1px;
+  background: transparent; color: var(--sh-text-2, #b4b4ba); font: 400 12.5px/1 "Segoe UI", var(--ark-font, system-ui); white-space: nowrap; cursor: default;
+  box-shadow: inset 0 -2px 0 var(--tab);
+}
+.grid-tab span { overflow: hidden; text-overflow: ellipsis; }
+.grid-tab:hover { background: var(--sh-hover, rgba(255,255,255,.075)); color: var(--sh-text-1, #f2f2f3); }
+.grid-tab.is-current { background: #ffffff; color: var(--grid-sel); font-weight: 600; box-shadow: inset 0 -2px 0 var(--grid-sel); }
+.grid-tab.is-drop { box-shadow: inset 2px 0 0 var(--grid-accent); }
+.grid-tab.is-renaming { width: 120px; padding: 0 8px; background: #fff; color: #000; outline: 2px solid var(--grid-sel); border-radius: 0; }
+.grid-tab-add { display: grid; place-items: center; width: 28px; padding: 0; border: 0; background: transparent; color: var(--sh-text-2, #b4b4ba); border-radius: 6px; }
+.grid-tab-add:hover { background: var(--sh-hover, rgba(255,255,255,.075)); color: var(--sh-text-1, #f2f2f3); }
+.grid-tab-add svg { width: 16px; height: 16px; }
+
+/* Messages */
+.grid-message {
+  position: absolute; left: 50%; top: 30%; z-index: 30; transform: translateX(-50%); min-width: 300px; max-width: 460px; padding: 16px 18px 14px;
+  background: #232326; border: 1px solid var(--sh-panel-border, rgba(255,255,255,.085)); border-radius: 12px; box-shadow: 0 18px 50px rgba(0,0,0,.5);
+  font: 400 13px/1.45 var(--ark-font, system-ui);
+}
+.grid-message p { margin: 0 0 14px; }
+.grid-message button { float: right; min-width: 72px; height: 28px; border: 0; border-radius: 7px; background: var(--grid-sel); color: #fff; font-weight: 600; }
+
+/* Data popups: the AutoFilter drop-down, a validation list and its input message. */
+.grid-popup {
+  position: absolute; z-index: 25; display: flex; flex-direction: column; padding: 4px; box-sizing: border-box; border-radius: 8px;
+  background: #26262a; border: 1px solid var(--sh-panel-border, rgba(255,255,255,.12)); box-shadow: 0 12px 32px rgba(0,0,0,.5);
+  color: var(--sh-text-1, #f2f2f3); font: 400 12.5px/1.3 "Segoe UI", var(--ark-font, system-ui); user-select: none;
+}
+.grid-popup hr { margin: 4px 2px; border: 0; border-top: 1px solid rgba(255,255,255,.1); }
+.grid-menu-item {
+  display: flex; align-items: center; gap: 8px; width: 100%; padding: 5px 8px; border: 0; border-radius: 5px; background: transparent; color: inherit; font: inherit; text-align: left; cursor: default;
+}
+.grid-menu-item:hover:not(:disabled), .grid-menu-item:focus-visible { background: rgba(255,255,255,.09); outline: none; }
+.grid-menu-item:disabled { opacity: .4; }
+.grid-menu-item.is-on { background: color-mix(in srgb, var(--grid-sel) 55%, #26262a); }
+.grid-menu-icon { display: inline-block; width: 18px; text-align: center; color: var(--sh-text-2, #b4b4ba); font-size: 11px; font-weight: 600; }
+.grid-menu-arrow { margin-left: auto; color: var(--sh-text-2, #b4b4ba); }
+.grid-menu-sub { position: relative; }
+.grid-submenu { min-width: 210px; }
+.grid-menu-search {
+  margin: 2px 2px 4px; padding: 4px 8px; border: 1px solid rgba(255,255,255,.16); border-radius: 6px; background: rgba(0,0,0,.28); color: inherit; font: inherit; outline: none;
+}
+.grid-menu-search:focus { border-color: var(--grid-accent); }
+.grid-menu-list { display: flex; flex-direction: column; gap: 1px; max-height: 190px; overflow-y: auto; margin: 0 2px; padding: 3px 4px; border: 1px solid rgba(255,255,255,.12); border-radius: 6px; background: rgba(0,0,0,.2); }
+.grid-menu-check { display: flex; align-items: center; gap: 7px; padding: 2px 3px; border-radius: 4px; cursor: default; }
+.grid-menu-check:hover { background: rgba(255,255,255,.07); }
+.grid-menu-check input { accent-color: var(--grid-sel); margin: 0; }
+.grid-menu-check span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.grid-menu-buttons { display: flex; justify-content: flex-end; gap: 8px; padding: 8px 4px 4px; }
+.grid-menu-buttons button { min-width: 70px; height: 26px; border: 1px solid rgba(255,255,255,.16); border-radius: 6px; background: rgba(255,255,255,.06); color: inherit; font: inherit; }
+.grid-menu-buttons button.is-primary { background: var(--grid-sel); border-color: var(--grid-sel); color: #fff; font-weight: 600; }
+.grid-menu-buttons button:disabled { opacity: .45; }
+.grid-list-picker { overflow-y: auto; padding: 2px; }
+.grid-menu-empty { padding: 6px 10px; color: var(--sh-text-2, #b4b4ba); }
+.grid-input-message {
+  position: absolute; z-index: 20; display: flex; flex-direction: column; gap: 2px; max-width: 260px; padding: 5px 8px; background: #ffffe1; color: #000; border: 1px solid #7d7d7d;
+  box-shadow: 2px 2px 4px rgba(0,0,0,.3); font: 400 12px/1.35 "Segoe UI", system-ui, sans-serif; pointer-events: none; white-space: pre-wrap;
+}
+
+/* Selected text is Excel's light blue with dark text everywhere in Grid. The editors' text is transparent over a colouring backdrop, so their
+   highlight is translucent and lets the backdrop's dark text show through (the shell's opaque graphite highlight hid it: black on black). */
+.grid-surface ::selection, .grid-surface input::selection, .gd-fields ::selection, .gd-fields input::selection, .gd-fields textarea::selection { background: #b3d4f7; color: #1b1b1c; }
+.grid-formula-text::selection { background: rgba(0, 120, 215, .3); color: transparent; }
+.grid-bar-text::selection, .grid-bar-text *::selection { background: #b3d4f7; color: #1b1b1c; }

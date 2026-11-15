@@ -1,0 +1,419 @@
+{
+ "controls": {
+  "insert.illustrations.chart": {
+   "note": null,
+   "dialog": "dialog.insertChart"
+  },
+  "chart-design.chart-layouts.add-chart-element": {
+   "note": "U:quill/chart: the elements the chart renderer draws (chart.addElement: chart title, axis titles, data labels, gridlines, legend); Axes, Data Table, Error Bars, Lines, Trendline and Up/Down Bars are not drawn and stay out.",
+   "items": [
+    {
+     "id": "chart-design.chart-layouts.add-chart-element.axis-titles",
+     "label": "Axis Titles",
+     "kind": "dropdown",
+     "command": null,
+     "source": "office",
+     "items": [
+      {
+       "id": "chart-design.chart-layouts.add-chart-element.axis-titles.none",
+       "label": "None",
+       "kind": "button",
+       "command": "chart.addElement",
+       "args": {
+        "element": "axisTitles",
+        "on": false
+       },
+       "source": "office"
+      },
+      {
+       "id": "chart-design.chart-layouts.add-chart-element.axis-titles.both",
+       "label": "Both Axis Titles",
+       "kind": "button",
+       "command": "chart.addElement",
+       "args": {
+        "element": "axisTitles",
+        "on": true
+       },
+       "source": "office"
+      }
+     ]
+    },
+    {
+     "id": "chart-design.chart-layouts.add-chart-element.chart-title",
+     "label": "Chart Title",
+     "kind": "dropdown",
+     "command": null,
+     "source": "office",
+     "items": [
+      {
+       "id": "chart-design.chart-layouts.add-chart-element.chart-title.none",
+       "label": "None",
+       "kind": "button",
+       "command": "chart.addElement",
+       "args": {
+        "element": "title",
+        "on": false
+       },
+       "source": "office"
+      },
+      {
+       "id": "chart-design.chart-layouts.add-chart-element.chart-title.above",
+       "label": "Above Chart",
+       "kind": "button",
+       "command": "chart.addElement",
+       "args": {
+        "element": "title",
+        "on": true
+       },
+       "source": "office"
+      }
+     ]
+    },
+    {
+     "id": "chart-design.chart-layouts.add-chart-element.data-labels",
+     "label": "Data Labels",
+     "kind": "dropdown",
+     "command": null,
+     "source": "office",
+     "items": [
+      {
+       "id": "chart-design.chart-layouts.add-chart-element.data-labels.none",
+       "label": "None",
+       "kind": "button",
+       "command": "chart.addElement",
+       "args": {
+        "element": "dataLabels",
+        "on": false
+       },
+       "source": "office"
+      },
+      {
+       "id": "chart-design.chart-layouts.add-chart-element.data-labels.show",
+       "label": "Show",
+       "kind": "button",
+       "command": "chart.addElement",
+       "args": {
+        "element": "dataLabels",
+        "on": true
+       },
+       "source": "office"
+      }
+     ]
+    },
+    {
+     "id": "chart-design.chart-layouts.add-chart-element.gridlines",
+     "label": "Gridlines",
+     "kind": "dropdown",
+     "command": null,
+     "source": "office",
+     "items": [
+      {
+       "id": "chart-design.chart-layouts.add-chart-element.gridlines.none",
+       "label": "None",
+       "kind": "button",
+       "command": "chart.addElement",
+       "args": {
+        "element": "gridlines",
+        "on": false
+       },
+       "source": "office"
+      },
+      {
+       "id": "chart-design.chart-layouts.add-chart-element.gridlines.major",
+       "label": "Primary Major Horizontal",
+       "kind": "button",
+       "command": "chart.addElement",
+       "args": {
+        "element": "gridlines",
+        "on": true
+       },
+       "source": "office"
+      }
+     ]
+    },
+    {
+     "id": "chart-design.chart-layouts.add-chart-element.legend",
+     "label": "Legend",
+     "kind": "dropdown",
+     "command": null,
+     "source": "office",
+     "items": [
+      {
+       "id": "chart-design.chart-layouts.add-chart-element.legend.none",
+       "label": "None",
+       "kind": "button",
+       "command": "chart.addElement",
+       "args": {
+        "element": "legend",
+        "on": false
+       },
+       "source": "office"
+      },
+      {
+       "id": "chart-design.chart-layouts.add-chart-element.legend.right",
+       "label": "Right",
+       "kind": "button",
+       "command": "chart.addElement",
+       "args": {
+        "element": "legend",
+        "on": true,
+        "position": "right"
+       },
+       "source": "office"
+      },
+      {
+       "id": "chart-design.chart-layouts.add-chart-element.legend.top",
+       "label": "Top",
+       "kind": "button",
+       "command": "chart.addElement",
+       "args": {
+        "element": "legend",
+        "on": true,
+        "position": "top"
+       },
+       "source": "office"
+      },
+      {
+       "id": "chart-design.chart-layouts.add-chart-element.legend.left",
+       "label": "Left",
+       "kind": "button",
+       "command": "chart.addElement",
+       "args": {
+        "element": "legend",
+        "on": true,
+        "position": "left"
+       },
+       "source": "office"
+      },
+      {
+       "id": "chart-design.chart-layouts.add-chart-element.legend.bottom",
+       "label": "Bottom",
+       "kind": "button",
+       "command": "chart.addElement",
+       "args": {
+        "element": "legend",
+        "on": true,
+        "position": "bottom"
+       },
+       "source": "office"
+      }
+     ]
+    }
+   ]
+  },
+  "chart-design.chart-layouts.chart-title": {
+   "items": [
+    {
+     "id": "chart-design.chart-layouts.chart-title.none",
+     "label": "None",
+     "kind": "button",
+     "command": "chart.title",
+     "args": {
+      "text": null
+     },
+     "source": "upstream",
+     "checkable": true
+    },
+    {
+     "id": "chart-design.chart-layouts.chart-title.above",
+     "label": "Above Chart",
+     "kind": "button",
+     "command": "chart.title",
+     "args": {
+      "text": "Chart Title"
+     },
+     "source": "upstream",
+     "checkable": true
+    }
+   ]
+  },
+  "chart-design.chart-layouts.quick-layout": {
+   "command": "chart.quickLayout",
+   "args": {
+    "layout": "<n>"
+   },
+   "note": "U:quill/chart: Grid's six Quick Layouts (chart.quickLayout: legend, data labels, gridlines and axis titles together), drawn as tiles."
+  },
+  "chart-design.chart-styles.change-colors": {
+   "kind": "gallery",
+   "command": "chart.changeColors",
+   "args": {
+    "palette": "<palette>"
+   },
+   "note": "U:quill/chart: Grid's Change Colors palettes (chart.changeColors: colorful, monochrome, accent1 to accent6), drawn as tiles."
+  },
+  "chart-design.chart-styles.chart-styles": {
+   "command": "chart.styleGallery",
+   "args": {
+    "style": "<n>"
+   },
+   "note": "U:quill/chart: Grid's sixteen chart styles (chart.styleGallery: a palette with its gridlines and data labels), drawn as tiles."
+  },
+  "chart-design.data.switch-row-column": {
+   "command": "chart.switchRowColumn",
+   "note": "U:quill/chart: the series become the categories and the categories the series (the embedded sheet is turned over)."
+  },
+  "chart-design.data.edit-data": {
+   "note": "U:quill/chart: Edit Data is the chart's embedded sheet in a small grid editor (Add Row, Add Series)."
+  },
+  "chart-design.data.refresh-data": {
+   "note": "U:quill/chart: the data is in the chart itself, so there is nothing to refresh; hidden."
+  },
+  "chart-design.size.h": {
+   "command": "chart.size",
+   "args": {
+    "height": "<pt>"
+   },
+   "note": "U:quill/chart: the chart's height in points (chart.size, 36 to 2000); the page view has no drag handles for objects yet, so the boxes are how a chart is resized."
+  },
+  "chart-design.size.w": {
+   "command": "chart.size",
+   "args": {
+    "width": "<pt>"
+   },
+   "note": "U:quill/chart: the chart's width in points (chart.size, 36 to 2000)."
+  },
+  "chart-format.size.h": {
+   "note": "U:quill/chart: Chart Format › Size, as Chart Design › Size."
+  }
+ },
+ "dialogs": {
+  "dialog.chartType": {
+   "title": "Change Chart Type",
+   "command": "chart.type",
+   "note": "U:quill/chart: the types Grid draws, with a preview drawn by the same renderer; drawn by src/apps/quill/dialogs/chartType.tsx.",
+   "tabs": [
+    {
+     "name": "All Charts",
+     "fields": [
+      {
+       "id": "type",
+       "label": "Chart type",
+       "kind": "list",
+       "options": [
+        "Clustered Column",
+        "Stacked Column",
+        "100% Stacked Column",
+        "Clustered Bar",
+        "Stacked Bar",
+        "100% Stacked Bar",
+        "Line",
+        "Line with Markers",
+        "Stacked Line",
+        "Pie",
+        "Doughnut",
+        "Area",
+        "Stacked Area",
+        "100% Stacked Area",
+        "Scatter",
+        "Scatter with Lines",
+        "Radar",
+        "Histogram",
+        "Waterfall",
+        "Funnel",
+        "Combo",
+        "Stock",
+        "Treemap",
+        "Sunburst",
+        "Box & Whisker"
+       ]
+      },
+      {
+       "id": "preview",
+       "label": "Preview",
+       "kind": "preview"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ]
+  },
+  "dialog.insertChart": {
+   "title": "Insert Chart",
+   "command": "insert.chart",
+   "note": "U:quill/chart: Word's Insert Chart (All Charts; no Recent or Templates tab); drawn by src/apps/quill/dialogs/insertChart.tsx.",
+   "tabs": [
+    {
+     "name": "All Charts",
+     "fields": [
+      {
+       "id": "type",
+       "label": "Chart type",
+       "kind": "list",
+       "options": [
+        "Clustered Column",
+        "Stacked Column",
+        "100% Stacked Column",
+        "Clustered Bar",
+        "Stacked Bar",
+        "100% Stacked Bar",
+        "Line",
+        "Line with Markers",
+        "Stacked Line",
+        "Pie",
+        "Doughnut",
+        "Area",
+        "Stacked Area",
+        "100% Stacked Area",
+        "Scatter",
+        "Scatter with Lines",
+        "Radar",
+        "Histogram",
+        "Waterfall",
+        "Funnel",
+        "Combo",
+        "Stock",
+        "Treemap",
+        "Sunburst",
+        "Box & Whisker"
+       ]
+      },
+      {
+       "id": "preview",
+       "label": "Preview",
+       "kind": "preview"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ]
+  },
+  "dialog.chartData": {
+   "title": "Edit Data",
+   "command": "chart.editData",
+   "note": "U:quill/chart: the chart's embedded sheet (a cell grid; Word opens a spreadsheet window); drawn by src/apps/quill/dialogs/chartData.tsx.",
+   "tabs": [
+    {
+     "name": "Data",
+     "fields": [
+      {
+       "id": "grid",
+       "label": "Chart data",
+       "kind": "list"
+      },
+      {
+       "id": "addRow",
+       "label": "Add Row",
+       "kind": "button"
+      },
+      {
+       "id": "addSeries",
+       "label": "Add Series",
+       "kind": "button"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ]
+  }
+ }
+}

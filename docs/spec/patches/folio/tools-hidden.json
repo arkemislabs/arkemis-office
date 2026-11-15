@@ -1,0 +1,192 @@
+{
+ "controls": {
+  "alltools.certificate.request-esign": {
+   "command": null,
+   "note": "Hidden: Request e-signatures, web forms and sending in bulk (Adobe Acrobat Sign: a cloud service). Acrobat has it; printcraft 8f16855 has no engine for it (not checked against upstream beyond its catalogue and commands list)."
+  },
+  "alltools.certificate.timestamp": {
+   "command": null,
+   "note": "Hidden: planned upstream (printcraft catalog.rs, M9) and has no engine at 8f16855."
+  },
+  "alltools.comment.print-summary": {
+   "command": null,
+   "note": "Hidden: this comment tool. Acrobat has it; printcraft 8f16855 has no engine for it (not checked against upstream beyond its catalogue and commands list)."
+  },
+  "alltools.comment.record-audio": {
+   "command": null,
+   "note": "Hidden: this comment tool. Acrobat has it; printcraft 8f16855 has no engine for it (not checked against upstream beyond its catalogue and commands list)."
+  },
+  "alltools.comment.spell-check": {
+   "command": null,
+   "note": "Hidden: this comment tool. Acrobat has it; printcraft 8f16855 has no engine for it (not checked against upstream beyond its catalogue and commands list)."
+  },
+  "alltools.comment.text-correction": {
+   "command": null,
+   "note": "Hidden: this comment tool. Acrobat has it; printcraft 8f16855 has no engine for it (not checked against upstream beyond its catalogue and commands list)."
+  },
+  "alltools.create.clipboard": {
+   "command": null,
+   "note": "Not translated yet (printcraft has it: create_ui.rs read_clipboard): the window does not read the system clipboard (the host exposes no clipboard reader, and tests never use the system clipboard). The control stays hidden until then."
+  },
+  "alltools.create.scanner": {
+   "command": null,
+   "note": "Hidden: scanning from a scanner (needs a scanner driver). Acrobat has it; printcraft 8f16855 has no engine for it (not checked against upstream beyond its catalogue and commands list)."
+  },
+  "alltools.create.web-page": {
+   "command": null,
+   "note": "Hidden: Create from a web page (needs the network and a page renderer). Acrobat has it; printcraft 8f16855 has no engine for it (not checked against upstream beyond its catalogue and commands list)."
+  },
+  "alltools.export.jpeg2000": {
+   "command": null,
+   "note": "Hidden: XML 1.0, Encapsulated PostScript and JPEG 2000 export. Acrobat has it; printcraft 8f16855 has no engine for it (not checked against upstream beyond its catalogue and commands list)."
+  },
+  "alltools.index_tools.full-text-index": {
+   "command": null,
+   "note": "Hidden: Full text index with catalog (Acrobat Catalog). Acrobat has it; printcraft 8f16855 has no engine for it (not checked against upstream beyond its catalogue and commands list)."
+  },
+  "alltools.javascript.console": {
+   "command": null,
+   "note": "Hidden: printcraft plans JavaScript (M6; its tools.js_console is a console that runs a document's scripts). This window never runs code embedded in a document, so there is no console, no Document JavaScripts and no Document actions to offer."
+  },
+  "alltools.javascript.document-actions": {
+   "command": null,
+   "note": "Hidden: printcraft plans JavaScript (M6; its tools.js_console is a console that runs a document's scripts). This window never runs code embedded in a document, so there is no console, no Document JavaScripts and no Document actions to offer."
+  },
+  "alltools.javascript.document-javascripts": {
+   "command": null,
+   "note": "Hidden: printcraft plans JavaScript (M6; its tools.js_console is a console that runs a document's scripts). This window never runs code embedded in a document, so there is no console, no Document JavaScripts and no Document actions to offer."
+  },
+  "alltools.organize.insert-clipboard": {
+   "command": null,
+   "note": "Not translated yet (printcraft has it: create_ui.rs read_clipboard): the window does not read the system clipboard (the host exposes no clipboard reader, and tests never use the system clipboard). The control stays hidden until then."
+  },
+  "alltools.organize.insert-scanner": {
+   "command": null,
+   "note": "Hidden: scanning from a scanner (needs a scanner driver). Acrobat has it; printcraft 8f16855 has no engine for it (not checked against upstream beyond its catalogue and commands list)."
+  },
+  "alltools.organize.page-templates": {
+   "command": null,
+   "note": "Hidden: Page templates. Acrobat has it; printcraft 8f16855 has no engine for it (not checked against upstream beyond its catalogue and commands list)."
+  },
+  "alltools.print_production.add-printer-marks": {
+   "command": null,
+   "note": "Hidden: planned upstream (printcraft catalog.rs, M11) and has no engine at 8f16855."
+  },
+  "alltools.print_production.convert-colors": {
+   "command": null,
+   "note": "Hidden: planned upstream (printcraft catalog.rs, M11) and has no engine at 8f16855."
+  },
+  "alltools.print_production.fix-hairlines": {
+   "command": null,
+   "note": "Hidden: planned upstream (printcraft catalog.rs, M11) and has no engine at 8f16855."
+  },
+  "alltools.rich_media.3d": {
+   "command": null,
+   "note": "Hidden: Add 3D, video and sound, Select object and Show/hide content. Acrobat has it; printcraft 8f16855 has no engine for it (not checked against upstream beyond its catalogue and commands list)."
+  },
+  "alltools.rich_media.select-object": {
+   "command": null,
+   "note": "Hidden: Add 3D, video and sound, Select object and Show/hide content. Acrobat has it; printcraft 8f16855 has no engine for it (not checked against upstream beyond its catalogue and commands list)."
+  },
+  "alltools.rich_media.show-hide": {
+   "command": null,
+   "note": "Hidden: Add 3D, video and sound, Select object and Show/hide content. Acrobat has it; printcraft 8f16855 has no engine for it (not checked against upstream beyond its catalogue and commands list)."
+  },
+  "alltools.rich_media.sound": {
+   "command": null,
+   "note": "Hidden: Add 3D, video and sound, Select object and Show/hide content. Acrobat has it; printcraft 8f16855 has no engine for it (not checked against upstream beyond its catalogue and commands list)."
+  },
+  "alltools.rich_media.video": {
+   "command": null,
+   "note": "Hidden: Add 3D, video and sound, Select object and Show/hide content. Acrobat has it; printcraft 8f16855 has no engine for it (not checked against upstream beyond its catalogue and commands list)."
+  },
+  "alltools.scan.correct-recognized-text": {
+   "command": null,
+   "note": "Hidden: planned upstream (printcraft catalog.rs, M10) and has no engine at 8f16855."
+  },
+  "alltools.scan.enhance-scanned-file": {
+   "command": null,
+   "note": "Hidden: planned upstream (printcraft catalog.rs, M10) and has no engine at 8f16855."
+  },
+  "alltools.scan.scan-to-pdf": {
+   "command": null,
+   "note": "Hidden: scanning from a scanner (needs a scanner driver). Acrobat has it; printcraft 8f16855 has no engine for it (not checked against upstream beyond its catalogue and commands list)."
+  },
+  "alltools.search_index.manage-embedded-index": {
+   "command": null,
+   "note": "Hidden: planned upstream (printcraft catalog.rs, M12) and has no engine at 8f16855."
+  },
+  "alltools.share.email": {
+   "command": null,
+   "note": "Hidden: Share a link, Email and Send for comments (Adobe cloud and mail services). Acrobat has it; printcraft 8f16855 has no engine for it (not checked against upstream beyond its catalogue and commands list)."
+  },
+  "alltools.share.send-comments": {
+   "command": null,
+   "note": "Hidden: Share a link, Email and Send for comments (Adobe cloud and mail services). Acrobat has it; printcraft 8f16855 has no engine for it (not checked against upstream beyond its catalogue and commands list)."
+  },
+  "alltools.share.share": {
+   "command": null,
+   "note": "Hidden: Share a link, Email and Send for comments (Adobe cloud and mail services). Acrobat has it; printcraft 8f16855 has no engine for it (not checked against upstream beyond its catalogue and commands list)."
+  },
+  "alltools.standards.pdfe": {
+   "command": null,
+   "note": "Hidden: Save as PDF/E (engineering PDF). Acrobat has it; printcraft 8f16855 has no engine for it (not checked against upstream beyond its catalogue and commands list)."
+  },
+  "chrome.tabs.close-window": {
+   "command": null,
+   "note": "Hidden: the window buttons belong to the operating system's title bar; the shell does not draw them."
+  },
+  "chrome.tabs.discord": {
+   "command": null,
+   "note": "Hidden: upstream's link to its own community chat (help.discord); there is no such place for this app."
+  },
+  "chrome.tabs.document-tab": {
+   "command": null,
+   "note": "Hidden: the tab strip of upstream's window (Home and a tab for each open document, with scroll arrows). Here each document has its own window and the title bar is the shell's, so there are no tabs to switch."
+  },
+  "chrome.tabs.home": {
+   "command": null,
+   "note": "Hidden: the tab strip of upstream's window (Home and a tab for each open document, with scroll arrows). Here each document has its own window and the title bar is the shell's, so there are no tabs to switch."
+  },
+  "chrome.tabs.maximize": {
+   "command": null,
+   "note": "Hidden: the window buttons belong to the operating system's title bar; the shell does not draw them."
+  },
+  "chrome.tabs.minimize": {
+   "command": null,
+   "note": "Hidden: the window buttons belong to the operating system's title bar; the shell does not draw them."
+  },
+  "chrome.tabs.scroll-left": {
+   "command": null,
+   "note": "Hidden: the tab strip of upstream's window (Home and a tab for each open document, with scroll arrows). Here each document has its own window and the title bar is the shell's, so there are no tabs to switch."
+  },
+  "chrome.tabs.scroll-right": {
+   "command": null,
+   "note": "Hidden: the tab strip of upstream's window (Home and a tab for each open document, with scroll arrows). Here each document has its own window and the title bar is the shell's, so there are no tabs to switch."
+  },
+  "convert.export.jpeg2000": {
+   "command": null,
+   "note": "Hidden: XML 1.0, Encapsulated PostScript and JPEG 2000 export. Acrobat has it; printcraft 8f16855 has no engine for it (not checked against upstream beyond its catalogue and commands list)."
+  },
+  "convert.other.pdfe": {
+   "command": null,
+   "note": "Hidden: Save as PDF/E (engineering PDF). Acrobat has it; printcraft 8f16855 has no engine for it (not checked against upstream beyond its catalogue and commands list)."
+  },
+  "esign.request.bulk": {
+   "command": null,
+   "note": "Hidden: Request e-signatures, web forms and sending in bulk (Adobe Acrobat Sign: a cloud service). Acrobat has it; printcraft 8f16855 has no engine for it (not checked against upstream beyond its catalogue and commands list)."
+  },
+  "esign.request.request": {
+   "command": null,
+   "note": "Hidden: Request e-signatures, web forms and sending in bulk (Adobe Acrobat Sign: a cloud service). Acrobat has it; printcraft 8f16855 has no engine for it (not checked against upstream beyond its catalogue and commands list)."
+  },
+  "esign.request.web-form": {
+   "command": null,
+   "note": "Hidden: Request e-signatures, web forms and sending in bulk (Adobe Acrobat Sign: a cloud service). Acrobat has it; printcraft 8f16855 has no engine for it (not checked against upstream beyond its catalogue and commands list)."
+  },
+  "find.replace": {
+   "command": null,
+   "note": "Hidden: Replace with is Acrobat's (Edit mode); printcraft's find has no replace."
+  }
+ }
+}

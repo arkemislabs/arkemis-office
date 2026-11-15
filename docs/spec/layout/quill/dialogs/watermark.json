@@ -1,0 +1,10 @@
+{
+  "source": "Word Printed Watermark (No watermark / Text watermark, Text, Font, Color, Semitransparent, Layout); wordcraft dispatch.rs watermark_dialog",
+  "width": 520,
+  "height": 420,
+  "sections": [
+    {"fields": ["kind"]},
+    {"fields": ["text", "font", "color"], "columns": 2},
+    {"fields": ["semitransparent", "layout"]}
+  ]
+}

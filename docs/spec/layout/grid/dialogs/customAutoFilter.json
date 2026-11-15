@@ -1,0 +1,9 @@
+{
+  "source": "Excel Custom AutoFilter (Show rows where: an operator and a value, And / Or, a second pair)",
+  "width": 520,
+  "sections": [
+    {"fields": ["op1", "val1"], "columns": 2},
+    {"fields": ["join"]},
+    {"fields": ["op2", "val2"], "columns": 2}
+  ]
+}

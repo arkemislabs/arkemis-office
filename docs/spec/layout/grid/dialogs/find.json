@@ -1,0 +1,16 @@
+{
+  "source": "gridcraft crates/ui-egui/src/dialogs/find.rs (find) at 146161b4b450a56e5e59a083ba0478582d1e602b; Excel Find and Replace with Options shown",
+  "width": 560,
+  "height": 380,
+  "fieldOrder": {
+    "Find": ["what", "within", "search", "lookIn", "matchCase", "wholeCell", "findAll", "findNext", "results"],
+    "Replace": ["what", "with", "within", "search", "matchCase", "wholeCell", "replaceAll", "replace", "findAll", "findNext", "results"]
+  },
+  "sections": [
+    {"fields": ["what", "with"], "columns": 1},
+    {"fields": ["within", "search", "lookIn"], "columns": 3},
+    {"fields": ["matchCase", "wholeCell"]},
+    {"fields": ["replaceAll", "replace", "findAll", "findNext"]},
+    {"fields": ["results"]}
+  ]
+}

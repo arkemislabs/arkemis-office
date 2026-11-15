@@ -1,0 +1,81 @@
+{
+  "tab": "combine-files",
+  "source": "printcraft crates/ui-egui/src/workflows/combine_ui/view.rs @ 3109bb2359759e24ef490e1cdbdba00722b20972",
+  "groups": {
+    "add": {
+      "collapseOrder": 4,
+      "collapsedIcon": "file-plus",
+      "layout": [
+        {
+          "large": "combine.add.files"
+        },
+        {
+          "large": "combine.add.open-docs"
+        }
+      ]
+    },
+    "arrange": {
+      "collapseOrder": 3,
+      "collapsedIcon": "trash-2",
+      "layout": [
+        {
+          "stack": [
+            "combine.arrange.remove",
+            "combine.arrange.up",
+            "combine.arrange.down"
+          ]
+        },
+        {
+          "stack": [
+            "combine.arrange.unlock",
+            "combine.arrange.undo",
+            "combine.arrange.redo"
+          ]
+        }
+      ]
+    },
+    "view": {
+      "collapseOrder": 2,
+      "collapsedIcon": "layout-grid",
+      "layout": [
+        {
+          "stack": [
+            "combine.view.grid-list",
+            "combine.view.expand-all",
+            "combine.view.collapse-all"
+          ]
+        },
+        {
+          "rows": [
+            [
+              "combine.view.smaller",
+              "combine.view.size",
+              "combine.view.larger"
+            ],
+            [
+              "combine.view.reset",
+              "combine.view.reset-columns"
+            ]
+          ]
+        }
+      ],
+      "widths": {
+        "combine.view.size": 56
+      }
+    },
+    "combine": {
+      "collapseOrder": 1,
+      "collapsedIcon": "files",
+      "layout": [
+        {
+          "large": "combine.go.combine"
+        },
+        {
+          "stack": [
+            "combine.go.options"
+          ]
+        }
+      ]
+    }
+  }
+}

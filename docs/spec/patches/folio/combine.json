@@ -1,0 +1,135 @@
+{
+ "dialogs": {
+  "dialog.combine-unlock": {
+   "note": "printcraft combine_ui/view.rs: the password of one file of the list. The password is kept in memory only.",
+   "tabs": [
+    {
+     "name": "General",
+     "fields": [
+      {
+       "id": "password",
+       "label": "Password",
+       "kind": "text",
+       "secret": true
+      },
+      {
+       "id": "show",
+       "label": "Show password",
+       "kind": "checkbox"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "Unlock",
+    "Cancel"
+   ],
+   "title": "Unlock file"
+  },
+  "dialog.combine-unreadable": {
+   "tabs": [
+    {
+     "name": "General",
+     "fields": [
+      {
+       "id": "message",
+       "label": "Files that can't be read",
+       "kind": "message"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "Combine the rest",
+    "Cancel"
+   ]
+  }
+ },
+ "controls": {
+  "combine.add.files": {
+   "command": "combine.add",
+   "note": "Add files... opens the system Open dialog with several files selectable."
+  },
+  "combine.add.open-docs": {
+   "command": null,
+   "note": "Hidden: Add open documents needs the other open documents of the window; not translated."
+  },
+  "combine.arrange.remove": {
+   "command": "combine.remove"
+  },
+  "combine.arrange.up": {
+   "command": "combine.move",
+   "args": {
+    "by": -1
+   }
+  },
+  "combine.arrange.down": {
+   "command": "combine.move",
+   "args": {
+    "by": 1
+   }
+  },
+  "combine.arrange.unlock": {
+   "command": "combine.unlock"
+  },
+  "combine.arrange.undo": {
+   "command": "combine.undo"
+  },
+  "combine.arrange.redo": {
+   "command": "combine.redo"
+  },
+  "combine.go.combine": {
+   "command": "combine.go",
+   "dialog": null
+  },
+  "combine.view.grid-list": {
+   "command": "combine.view",
+   "args": {
+    "mode": "toggle"
+   },
+   "note": "printcraft combine_ui/view.rs:155-200, 545-600 and combine_grid.rs. Grid view or List view."
+  },
+  "combine.view.expand-all": {
+   "command": "combine.view",
+   "args": {
+    "expand": "all"
+   },
+   "note": "printcraft combine_ui/view.rs:155-200, 545-600 and combine_grid.rs. Every file with more than one page as its pages."
+  },
+  "combine.view.collapse-all": {
+   "command": "combine.view",
+   "args": {
+    "expand": "none"
+   },
+   "note": "printcraft combine_ui/view.rs:155-200, 545-600 and combine_grid.rs. All files as cards again."
+  },
+  "combine.view.larger": {
+   "command": "combine.view",
+   "args": {
+    "zoom": "larger"
+   },
+   "note": "printcraft combine_ui/view.rs:155-200, 545-600 and combine_grid.rs. The next page size up (ZOOM_STEPS)."
+  },
+  "combine.view.smaller": {
+   "command": "combine.view",
+   "args": {
+    "zoom": "smaller"
+   },
+   "note": "printcraft combine_ui/view.rs:155-200, 545-600 and combine_grid.rs. The next page size down."
+  },
+  "combine.view.reset": {
+   "command": "combine.view",
+   "args": {
+    "zoom": "reset"
+   },
+   "note": "printcraft combine_ui/view.rs:155-200, 545-600 and combine_grid.rs. 100 %."
+  },
+  "combine.view.size": {
+   "command": "combine.view",
+   "args": {
+    "percent": "<percent>"
+   },
+   "note": "printcraft combine_ui/view.rs:155-200, 545-600 and combine_grid.rs. The page size slider, 60 to 500 %."
+  }
+ }
+}

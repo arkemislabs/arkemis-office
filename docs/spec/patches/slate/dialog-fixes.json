@@ -1,0 +1,447 @@
+{
+  "dialogs": {
+    "dialog.colors": {
+      "note": "Dialog fix: the Standard tab draws the hexagon palette (127 colours and 15 greys, the model keeps the rows in `comb`); the Custom tab draws the spectrum with a luminance bar (the `spectrum` field).",
+      "tabs": [
+        {
+          "name": "Standard",
+          "fields": [
+            {
+              "id": "palette",
+              "label": "Colors",
+              "kind": "swatches",
+              "options": [],
+              "itemsFrom": "comb"
+            },
+            {
+              "id": "preview",
+              "label": "New / Current",
+              "kind": "preview",
+              "options": []
+            }
+          ]
+        },
+        {
+          "name": "Custom",
+          "fields": [
+            {
+              "id": "colorModel",
+              "label": "Color model",
+              "kind": "select",
+              "options": [
+                "RGB",
+                "HSL"
+              ]
+            },
+            {
+              "id": "red",
+              "label": "Red",
+              "kind": "number",
+              "options": [],
+              "min": 0,
+              "max": 255
+            },
+            {
+              "id": "green",
+              "label": "Green",
+              "kind": "number",
+              "options": [],
+              "min": 0,
+              "max": 255
+            },
+            {
+              "id": "blue",
+              "label": "Blue",
+              "kind": "number",
+              "options": [],
+              "min": 0,
+              "max": 255
+            },
+            {
+              "id": "hue",
+              "label": "Hue",
+              "kind": "number",
+              "options": [],
+              "min": 0,
+              "max": 255
+            },
+            {
+              "id": "saturation",
+              "label": "Sat",
+              "kind": "number",
+              "options": [],
+              "min": 0,
+              "max": 255
+            },
+            {
+              "id": "luminance",
+              "label": "Lum",
+              "kind": "number",
+              "options": [],
+              "min": 0,
+              "max": 255
+            },
+            {
+              "id": "hex",
+              "label": "Hex",
+              "kind": "text",
+              "options": []
+            },
+            {
+              "id": "spectrum",
+              "label": "Colors",
+              "kind": "spectrum",
+              "options": []
+            },
+            {
+              "id": "preview",
+              "label": "New / Current",
+              "kind": "preview",
+              "options": []
+            }
+          ]
+        }
+      ]
+    },
+    "dialog.customize-tags": {
+      "note": "Dialog fix: All Tags lists the tag rows with their icons and Ctrl+1..9 (the model keeps them in `list`).",
+      "tabs": [
+        {
+          "name": "Customize Tags",
+          "fields": [
+            {
+              "id": "tags",
+              "label": "All Tags",
+              "kind": "list",
+              "options": [],
+              "itemsFrom": "list",
+              "height": 260
+            },
+            {
+              "id": "moveUp",
+              "label": "Move tag up",
+              "kind": "button",
+              "options": []
+            },
+            {
+              "id": "moveDown",
+              "label": "Move tag down",
+              "kind": "button",
+              "options": []
+            },
+            {
+              "id": "newTag",
+              "label": "New Tag...",
+              "kind": "button",
+              "options": [],
+              "dialog": "dialog.tag-editor"
+            },
+            {
+              "id": "modifyTag",
+              "label": "Modify Tag...",
+              "kind": "button",
+              "options": [],
+              "dialog": "dialog.tag-editor"
+            },
+            {
+              "id": "removeTag",
+              "label": "Remove tag",
+              "kind": "button",
+              "options": []
+            }
+          ]
+        }
+      ]
+    },
+    "dialog.tag-editor": {
+      "note": "Dialog fix: Symbol lists the tag symbols drawn with their icons (`symbols`); the title is New Tag or Modify Tag from the model. \"Customize for Outlook tasks\" is hidden: there is no Outlook to link to.",
+      "tabs": [
+        {
+          "name": "Format",
+          "fields": [
+            {
+              "id": "displayName",
+              "label": "Display name",
+              "kind": "text",
+              "options": []
+            },
+            {
+              "id": "symbol",
+              "label": "Symbol",
+              "kind": "list",
+              "options": [],
+              "itemsFrom": "symbols",
+              "height": 168
+            },
+            {
+              "id": "fontColor",
+              "label": "Font Color",
+              "kind": "color",
+              "options": []
+            },
+            {
+              "id": "highlightColor",
+              "label": "Highlight Color",
+              "kind": "color",
+              "options": []
+            },
+            {
+              "id": "preview",
+              "label": "Preview",
+              "kind": "preview",
+              "options": []
+            }
+          ]
+        }
+      ]
+    },
+    "dialog.merge-section": {
+      "note": "Dialog fix: the notebook > section group > section tree is drawn (`tree`).",
+      "tabs": [
+        {
+          "name": "Merge",
+          "fields": [
+            {
+              "id": "target",
+              "label": "Merge \"<section>\" into the selected section",
+              "kind": "tree",
+              "options": [],
+              "itemsFrom": "tree",
+              "height": 220
+            }
+          ]
+        }
+      ]
+    },
+    "dialog.move-copy-section": {
+      "note": "Dialog fix: the notebook > section group > section tree is drawn (`tree`).",
+      "tabs": [
+        {
+          "name": "Section",
+          "fields": [
+            {
+              "id": "target",
+              "label": "Move or copy \"<section>\" into the selected notebook or after the selected section",
+              "kind": "tree",
+              "options": [],
+              "itemsFrom": "tree",
+              "height": 220
+            }
+          ]
+        }
+      ]
+    },
+    "dialog.move-copy-pages": {
+      "note": "Dialog fix: All Notebooks is the drawn tree, filtered by Search; Recent picks lists the sections last used (`recentSections`).",
+      "tabs": [
+        {
+          "name": "Pages",
+          "fields": [
+            {
+              "id": "search",
+              "label": "Search",
+              "kind": "text",
+              "options": []
+            },
+            {
+              "id": "recentPicks",
+              "label": "Recent picks",
+              "kind": "list",
+              "options": [],
+              "itemsFrom": "recentSections",
+              "empty": "No recent picks",
+              "height": 72
+            },
+            {
+              "id": "target",
+              "label": "All Notebooks",
+              "kind": "tree",
+              "options": [],
+              "itemsFrom": "tree",
+              "filterBy": "search",
+              "height": 200
+            }
+          ]
+        }
+      ]
+    },
+    "dialog.notebook-properties": {
+      "note": "Dialog fix: Path and Default Format are read-only fields. Change Location and Convert to older format are hidden: the notebook folder is where the person put it and there is one format.",
+      "tabs": [
+        {
+          "name": "Properties",
+          "fields": [
+            {
+              "id": "displayName",
+              "label": "Display name",
+              "kind": "text",
+              "options": []
+            },
+            {
+              "id": "color",
+              "label": "Color",
+              "kind": "color",
+              "options": []
+            },
+            {
+              "id": "path",
+              "label": "Path",
+              "kind": "value",
+              "options": []
+            },
+            {
+              "id": "defaultFormat",
+              "label": "Default Format",
+              "kind": "value",
+              "options": [],
+              "note": "Arkemis native notebook format"
+            }
+          ]
+        }
+      ]
+    },
+    "dialog.page-templates": {
+      "note": "Dialog fix: the lists draw the categories and templates the model keeps; Add Page and Set as Default run its handlers. Only My Templates exists (the templates the person saved): OneNote's installed categories (Academic, Blank, Business, Decorative, Planners) have no template pages here, so they are not listed, and Templates online is hidden (no web).",
+      "tabs": [
+        {
+          "name": "Add a page",
+          "fields": [
+            {
+              "id": "category",
+              "label": "Category",
+              "kind": "list",
+              "options": [],
+              "itemsFrom": "categories",
+              "height": 72
+            },
+            {
+              "id": "template",
+              "label": "Template",
+              "kind": "list",
+              "options": [],
+              "itemsFrom": "templateItems",
+              "empty": "No templates yet: save a page as a template.",
+              "height": 150
+            },
+            {
+              "id": "addPage",
+              "label": "Add Page",
+              "kind": "button",
+              "options": []
+            },
+            {
+              "id": "defaultTemplate",
+              "label": "Choose default template",
+              "kind": "select",
+              "options": [],
+              "itemsFrom": "defaultOptions"
+            },
+            {
+              "id": "setDefault",
+              "label": "Set as Default",
+              "kind": "button",
+              "options": []
+            },
+            {
+              "id": "saveCurrentPage",
+              "label": "Save current page as a template",
+              "kind": "button",
+              "options": [],
+              "dialog": "dialog.save-as-template"
+            }
+          ]
+        }
+      ],
+      "presentation": "modal"
+    },
+    "dialog.new-notebook": {
+      "note": "Dialog fix: the choice is Browse... (the system dialog asks for the folder) or In this folder (typed, then the Folder box shows); the model had no \"This Computer\" place of its own.",
+      "tabs": [
+        {
+          "name": "New",
+          "fields": [
+            {
+              "id": "location",
+              "label": "Where to create it",
+              "kind": "radio",
+              "options": [
+                "Browse...",
+                "In this folder"
+              ]
+            },
+            {
+              "id": "name",
+              "label": "Notebook Name",
+              "kind": "text",
+              "options": []
+            },
+            {
+              "id": "folder",
+              "label": "Folder",
+              "kind": "text",
+              "options": [],
+              "input": "folder-picker",
+              "visibleWhen": "location!=Browse..."
+            }
+          ]
+        }
+      ]
+    },
+    "dialog.customize-numbering": {
+      "presentation": "modal",
+      "note": "Dialog fix: Customize Numbering is a dialog in OneNote (Define New Number Format), not a task pane."
+    },
+    "dialog.language": {
+      "presentation": "modal",
+      "note": "Dialog fix: Set Proofing Language is a dialog in OneNote; its list shows whole rows.",
+      "tabs": [
+        {
+          "name": "Language",
+          "fields": [
+            {
+              "id": "language",
+              "label": "Mark selected text as",
+              "kind": "list",
+              "options": [
+                "English (United States)",
+                "English (United Kingdom)",
+                "French (France)",
+                "German (Germany)",
+                "Spanish (Spain)",
+                "Spanish (Mexico)",
+                "Italian (Italy)",
+                "Portuguese (Brazil)",
+                "Dutch (Netherlands)",
+                "Japanese",
+                "Chinese (Simplified)",
+                "Chinese (Traditional)",
+                "Korean",
+                "Arabic",
+                "Hebrew",
+                "Hindi",
+                "Russian",
+                "Polish",
+                "Swedish",
+                "Turkish"
+              ],
+              "height": 198
+            },
+            {
+              "id": "doNotCheck",
+              "label": "Do not check spelling or grammar",
+              "kind": "checkbox",
+              "options": []
+            },
+            {
+              "id": "preferences",
+              "label": "Language Preferences...",
+              "kind": "button",
+              "options": [],
+              "dialog": "dialog.options"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

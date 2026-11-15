@@ -1,0 +1,346 @@
+{
+  "controls": {
+    "review.proofing.workbookStatistics": {
+      "note": "U:grid/review: checked against gridcraft (review.workbookStatistics); the dialog lists the numbers where gridcraft shows the JSON."
+    },
+    "review.accessibility.check": {
+      "note": "U:grid/review: checked against gridcraft (review.checkAccessibility): pictures without alternative text, merged cells and default sheet names."
+    },
+    "review.insights.smartLookup": {
+      "command": null,
+      "dialog": null,
+      "note": "U:grid/review: not in gridcraft; it would send the selected text to a web search; hidden."
+    },
+    "review.language.translate": {
+      "command": null,
+      "dialog": null,
+      "note": "U:grid/review: not in gridcraft; it would send the cell text to a translation service; hidden."
+    },
+    "review.changes.showChanges": {
+      "command": null,
+      "note": "U:grid/review: not in gridcraft (no shared-workbook change history); hidden."
+    },
+    "review.comments.new": {
+      "note": "U:grid/review: checked against gridcraft (review.newComment with the comment dialog)."
+    },
+    "review.comments.delete": {
+      "note": "U:grid/review: checked against gridcraft (review.deleteComment)."
+    },
+    "review.comments.previous": {
+      "note": "U:grid/review: checked against gridcraft (review.previousComment: reading order across the visible sheets, wrapping; disabled without comments)."
+    },
+    "review.comments.next": {
+      "note": "U:grid/review: checked against gridcraft (review.nextComment)."
+    },
+    "review.comments.show": {
+      "args": {
+        "on": "<bool>"
+      },
+      "note": "U:grid/review: checked against gridcraft (review.showComments toggles the Comments pane, panes/comments.tsx)."
+    },
+    "review.notes.notes": {
+      "note": "U:grid/review: checked against gridcraft (the Notes menu: New Note, Show/Hide Note, Show All Notes, Convert to Comments); Edit Note, Previous Note and Next Note are Excel's and use the same note commands."
+    },
+    "review.protect.protectSheet": {
+      "kind": "toggle",
+      "checkedLabel": "Unprotect Sheet",
+      "dialog": "dialog.protectSheet",
+      "note": "U:grid/review: checked against gridcraft (review.protectSheet and review.unprotectSheet; the button reads Unprotect Sheet on a protected sheet and asks for the password). Excel's extra permissions (hyperlinks, PivotTables, objects, scenarios) are not in gridcraft and not enforced here, so the dialog leaves them out."
+    },
+    "review.protect.protectWorkbook": {
+      "checkedLabel": "Unprotect Workbook",
+      "note": "U:grid/review: checked against gridcraft (review.protectWorkbook: structure only; there are no windows to protect)."
+    },
+    "review.protect.allowEditRanges": {
+      "note": "U:grid/review: checked against gridcraft (review.allowEditRanges: add, modify, delete, unlock with the range password)."
+    },
+    "review.protect.unshareWorkbook": {
+      "command": null,
+      "note": "U:grid/review: not in gridcraft (no shared workbooks); hidden."
+    }
+  },
+  "dialogs": {
+    "dialog.protectSheet": {
+      "note": "U:grid/review: Excel's layout over gridcraft's form (dialogs.rs protectSheet): Protect worksheet and contents of locked cells, the password, and one check list of what is allowed; a password is confirmed in a second box. Edit objects, Edit scenarios and Insert hyperlinks are enforced; Use PivotTable & PivotChart shows where PivotTables exist.",
+      "buttons": [
+        "OK",
+        "Cancel"
+      ],
+      "tabs": [
+        {
+          "name": "",
+          "fields": [
+            {
+              "id": "protectContents",
+              "label": "Protect worksheet and contents of locked cells",
+              "kind": "checkbox",
+              "options": []
+            },
+            {
+              "id": "password",
+              "label": "Password to unprotect sheet:",
+              "kind": "text",
+              "options": [],
+              "masked": true
+            },
+            {
+              "id": "selectLockedCells",
+              "label": "Select locked cells",
+              "kind": "checkbox",
+              "options": []
+            },
+            {
+              "id": "selectUnlockedCells",
+              "label": "Select unlocked cells",
+              "kind": "checkbox",
+              "options": []
+            },
+            {
+              "id": "formatCells",
+              "label": "Format cells",
+              "kind": "checkbox",
+              "options": []
+            },
+            {
+              "id": "formatColumns",
+              "label": "Format columns",
+              "kind": "checkbox",
+              "options": []
+            },
+            {
+              "id": "formatRows",
+              "label": "Format rows",
+              "kind": "checkbox",
+              "options": []
+            },
+            {
+              "id": "insertColumns",
+              "label": "Insert columns",
+              "kind": "checkbox",
+              "options": []
+            },
+            {
+              "id": "insertRows",
+              "label": "Insert rows",
+              "kind": "checkbox",
+              "options": []
+            },
+            {
+              "id": "insertHyperlinks",
+              "label": "Insert hyperlinks",
+              "kind": "checkbox",
+              "options": []
+            },
+            {
+              "id": "deleteColumns",
+              "label": "Delete columns",
+              "kind": "checkbox",
+              "options": []
+            },
+            {
+              "id": "deleteRows",
+              "label": "Delete rows",
+              "kind": "checkbox",
+              "options": []
+            },
+            {
+              "id": "sort",
+              "label": "Sort",
+              "kind": "checkbox",
+              "options": []
+            },
+            {
+              "id": "autofilter",
+              "label": "Use AutoFilter",
+              "kind": "checkbox",
+              "options": []
+            },
+            {
+              "id": "pivotTables",
+              "label": "Use PivotTable & PivotChart",
+              "kind": "checkbox",
+              "options": []
+            },
+            {
+              "id": "objects",
+              "label": "Edit objects",
+              "kind": "checkbox",
+              "options": []
+            },
+            {
+              "id": "scenarios",
+              "label": "Edit scenarios",
+              "kind": "checkbox",
+              "options": []
+            },
+            {
+              "id": "unprotectPassword",
+              "label": "Password:",
+              "kind": "text",
+              "options": [],
+              "masked": true
+            }
+          ]
+        }
+      ]
+    },
+    "dialog.unprotectSheet": {
+      "note": "U:grid/review: checked against gridcraft (dialogs.rs unprotectSheet).",
+      "tabs": [
+        {
+          "name": "",
+          "fields": [
+            {
+              "id": "password",
+              "label": "Password:",
+              "kind": "text",
+              "options": [],
+              "masked": true
+            }
+          ]
+        }
+      ]
+    },
+    "dialog.protectWorkbook": {
+      "title": "Protect Structure",
+      "note": "U:grid/review: checked against gridcraft (dialogs.rs protectWorkbook: a password and the structure); on a protected workbook the same dialog is Unprotect Workbook.",
+      "buttons": [
+        "OK",
+        "Cancel"
+      ],
+      "tabs": [
+        {
+          "name": "",
+          "fields": [
+            {
+              "id": "password",
+              "label": "Password (optional):",
+              "kind": "text",
+              "options": [],
+              "masked": true,
+              "visibleWhen": "mode==protect"
+            },
+            {
+              "id": "structure",
+              "label": "Structure",
+              "kind": "checkbox",
+              "options": [],
+              "visibleWhen": "mode==protect"
+            },
+            {
+              "id": "unprotectPassword",
+              "label": "Password:",
+              "kind": "text",
+              "options": [],
+              "masked": true,
+              "visibleWhen": "mode==unprotect"
+            }
+          ]
+        }
+      ]
+    },
+    "dialog.unprotectWorkbook": {
+      "note": "U:grid/review: checked against gridcraft (dialogs.rs unprotectWorkbook).",
+      "tabs": [
+        {
+          "name": "",
+          "fields": [
+            {
+              "id": "unprotectPassword",
+              "label": "Password:",
+              "kind": "text",
+              "options": [],
+              "masked": true
+            }
+          ]
+        }
+      ]
+    },
+    "dialog.allowEditRanges": {
+      "note": "U:grid/review: checked against gridcraft (dialogs.rs allowEditRanges); the body lists the ranges with New, Modify, Delete, Unlock and Protect Sheet.",
+      "buttons": [
+        "OK",
+        "Cancel"
+      ],
+      "tabs": [
+        {
+          "name": "",
+          "fields": [
+            {
+              "id": "ranges",
+              "label": "Ranges:",
+              "kind": "list",
+              "options": []
+            }
+          ]
+        }
+      ]
+    },
+    "dialog.statistics": {
+      "note": "U:grid/review: checked against gridcraft (review.workbookStatistics).",
+      "buttons": [
+        "OK"
+      ],
+      "tabs": [
+        {
+          "name": "",
+          "fields": [
+            {
+              "id": "currentSheet",
+              "label": "Current sheet",
+              "kind": "list",
+              "options": []
+            },
+            {
+              "id": "workbook",
+              "label": "Workbook",
+              "kind": "list",
+              "options": []
+            }
+          ]
+        }
+      ]
+    },
+    "dialog.accessibility": {
+      "note": "U:grid/review: checked against gridcraft (review.checkAccessibility).",
+      "buttons": [
+        "Close"
+      ],
+      "tabs": [
+        {
+          "name": "",
+          "fields": [
+            {
+              "id": "results",
+              "label": "Inspection Results",
+              "kind": "list",
+              "options": []
+            }
+          ]
+        }
+      ]
+    },
+    "dialog.confirmPassword": {
+      "title": "Confirm Password",
+      "note": "U:grid/review: the second box of Protect Sheet and Protect Workbook: Reenter password to proceed.",
+      "buttons": [
+        "OK",
+        "Cancel"
+      ],
+      "tabs": [
+        {
+          "name": "",
+          "fields": [
+            {
+              "id": "confirm",
+              "label": "Reenter password to proceed:",
+              "kind": "text",
+              "options": [],
+              "masked": true
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

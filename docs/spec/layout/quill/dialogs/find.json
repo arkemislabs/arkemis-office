@@ -1,0 +1,10 @@
+{
+  "source": "wordcraft crates/ui-egui/src/dialogs/dispatch.rs find_dialog + dialogs/find.rs goto_body (240 px Find what, 228 px Replace with, 220 px Go To boxes); Word's Find and Replace is about 540 x 300 at 100%",
+  "width": 560,
+  "height": 380,
+  "fieldOrder": {
+    "Find": ["findWhat", "matchCase", "wholeWords", "wildcards", "more", "prefix", "suffix", "ignorePunct", "ignoreSpace", "regex", "special", "status", "readingHighlight", "findNext"],
+    "Replace": ["findWhat", "replaceWith", "matchCase", "wholeWords", "wildcards", "more", "prefix", "suffix", "ignorePunct", "ignoreSpace", "regex", "special", "status", "replaceAll", "replace", "findNext"],
+    "Go To": ["goToWhat", "pageNumber", "bookmarkName", "status", "previous", "goTo"]
+  }
+}

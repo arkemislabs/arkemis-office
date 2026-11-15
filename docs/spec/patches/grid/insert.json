@@ -1,0 +1,491 @@
+{
+  "controls": {
+    "insert.charts.columnBar": {
+      "kind": "gallery",
+      "args": {
+        "menu": "columnBar",
+        "kind": "<kind>"
+      },
+      "note": "U:grid/insert: the Column menu is drawn tiles under Excel's group headings; each tile inserts that exact kind (insert.chart {kind}). 3-D, Pie of Pie and the like are not drawn by gridcraft."
+    },
+    "insert.charts.lineArea": {
+      "kind": "gallery",
+      "args": {
+        "menu": "lineArea",
+        "kind": "<kind>"
+      },
+      "note": "U:grid/insert: the Line menu is drawn tiles under Excel's group headings; each tile inserts that exact kind (insert.chart {kind}). 3-D, Pie of Pie and the like are not drawn by gridcraft."
+    },
+    "insert.charts.pieDoughnut": {
+      "kind": "gallery",
+      "args": {
+        "menu": "pieDoughnut",
+        "kind": "<kind>"
+      },
+      "note": "U:grid/insert: the Pie menu is drawn tiles under Excel's group headings; each tile inserts that exact kind (insert.chart {kind}). 3-D, Pie of Pie and the like are not drawn by gridcraft."
+    },
+    "insert.charts.scatterBubble": {
+      "kind": "gallery",
+      "args": {
+        "menu": "scatterBubble",
+        "kind": "<kind>"
+      },
+      "note": "U:grid/insert: the Scatter menu is drawn tiles under Excel's group headings; each tile inserts that exact kind (insert.chart {kind}). 3-D, Pie of Pie and the like are not drawn by gridcraft."
+    },
+    "insert.charts.statistic": {
+      "kind": "gallery",
+      "args": {
+        "menu": "statistic",
+        "kind": "<kind>"
+      },
+      "note": "U:grid/insert: the Statistic menu is drawn tiles under Excel's group headings; each tile inserts that exact kind (insert.chart {kind}). 3-D, Pie of Pie and the like are not drawn by gridcraft."
+    },
+    "insert.charts.hierarchy": {
+      "kind": "gallery",
+      "args": {
+        "menu": "hierarchy",
+        "kind": "<kind>"
+      },
+      "note": "U:grid/insert: the Hierarchy menu is drawn tiles under Excel's group headings; each tile inserts that exact kind (insert.chart {kind}). 3-D, Pie of Pie and the like are not drawn by gridcraft."
+    },
+    "insert.tables.pivotTable": {
+      "note": "U:grid/pivot: translated from gridcraft cmd/pivot (insert.pivotTable); From Table/Range opens Excel's Create PivotTable (the table or range, New Worksheet or Existing Worksheet)."
+    },
+    "insert.tables.recommendedPivotTables": {
+      "command": "insert.recommendedPivotTables",
+      "dialog": "dialog.recommendedPivotTables",
+      "note": "U:grid/insert: translated from gridcraft cmd/pivot/charts.rs (`recommended`, `suggestions`): up to five layouts that suit the data (sum by a category, by two, by quarters, two values, count, average) with a preview; OK creates the one picked as a new PivotTable. Blank PivotTable and Change Source Data are Create PivotTable's."
+    },
+    "insert.illustrations.icons": {
+      "args": {
+        "name": "<which>"
+      },
+      "note": "U:grid/insert: gridcraft's icon library (30 icons, six per row) drawn as tiles; each tile inserts that icon (insert.icons {name})."
+    },
+    "insert.illustrations.3dModels": {
+      "note": "U:grid/insert: 3D Models opens .glb or .fbx models and the online stock library; there is no 3-D model renderer here; hidden. Not checked against upstream."
+    },
+    "insert.illustrations.smartArt": {
+      "note": "U:grid/insert: SmartArt lives in PowerPoint's presentation engine and has no counterpart in the sheet's drawing layer; hidden. Not checked against upstream."
+    },
+    "insert.illustrations.screenshot": {
+      "note": "U:grid/insert: Screenshot captures other windows or a clipped part of the screen through the operating system; the app never captures the screen; hidden. Not checked against upstream."
+    },
+    "insert.addins.get": {
+      "note": "U:grid/insert: Get Add-ins needs the Office add-in store, an online service; hidden."
+    },
+    "insert.addins.my": {
+      "note": "U:grid/insert: My Add-ins lists store add-ins, which are not run here; hidden."
+    },
+    "insert.charts.maps": {
+      "note": "U:grid/insert: Maps (Filled Map) draw from an online mapping service (Bing); no service is used here, so they stay hidden. Not checked against upstream."
+    },
+    "insert.charts.pivotChart": {
+      "command": "insert.pivotChart",
+      "dialog": "dialog.createPivotChart",
+      "note": "U:grid/insert: translated from gridcraft cmd/pivot/charts.rs (`insert_pivot_chart`): a chart of the PivotTable under the selection, rebuilt whenever the report changes and saved with its pivotSource. Without a PivotTable under the selection Excel's Create PivotChart asks for the data and makes a blank PivotTable with its chart."
+    },
+    "insert.tours.3dMap": {
+      "note": "U:grid/insert: 3D Maps needs an online mapping service and a 3-D globe renderer; hidden. Not checked against upstream."
+    },
+    "insert.filters.slicer": {
+      "dialog": "dialog.insertSlicers",
+      "note": "U:grid/slicer: translated from gridcraft cmd/slicer.rs (insert.slicer): Excel's Insert Slicers check list of the table's columns; gridcraft's slicers filter tables."
+    },
+    "insert.filters.timeline": {
+      "note": "U:grid/insert: Timeline filters a PivotTable by a date field through a drawn timeline; it needs the PivotTable date grouping and a timeline object that gridcraft does not have; hidden. Not checked against upstream."
+    },
+    "insert.links.link.recent-items": {
+      "note": "U:grid/insert: Recent Items lists recently used files and pages from the system and browser history, which the app never reads; hidden."
+    },
+    "insert.comments.comment": {
+      "note": "U:grid/insert: New Comment starts a threaded comment on the active cell (gridcraft review.newComment {threaded: true})."
+    },
+    "insert.text.headerFooter": {
+      "note": "U:grid/insert: gridcraft starts editing the header in Page Layout view; the Page Layout pass supplies it (Page Setup > Header/Footer)."
+    },
+    "insert.text.wordArt": {
+      "kind": "gallery",
+      "args": {
+        "style": "<style>"
+      },
+      "note": "U:grid/insert: not in gridcraft; built after Excel's WordArt gallery (core/grid/lib/wordart.mjs, fifteen styles in the workbook's theme colours): a text box whose letters take the style, \"Your text here\" to start. Not checked against upstream."
+    },
+    "insert.text.signatureLine": {
+      "note": "U:grid/insert: not in gridcraft; Excel's Signature Setup (signer, title, e-mail, instructions, comments, show date) puts a signature line (an X, the line, the signer and title) on the sheet. No digital signature is made. Not checked against upstream."
+    },
+    "insert.text.object": {
+      "note": "U:grid/insert: Insert Object embeds OLE objects (other applications' documents); OLE is not run here; hidden. Not checked against upstream."
+    },
+    "insert.symbols.equation": {
+      "kind": "gallery",
+      "args": {
+        "builtIn": "<name>"
+      },
+      "items": [
+        {
+          "label": "Insert New Equation",
+          "command": "insert.equation"
+        },
+        {
+          "label": "Ink Equation"
+        }
+      ],
+      "note": "U:grid/insert: not in gridcraft; Equation puts a text box holding an equation in Excel's linear form, drawn in the maths font; the gallery draws each one, set as MathML, Excel's built-in equations. Ink Equation reads handwriting and stays hidden. Not checked against upstream."
+    },
+    "insert.symbols.equation.insert-new-equation": {
+      "note": "U:grid/insert: an empty equation text box (\"Type equation here.\"); not checked against upstream."
+    },
+    "insert.symbols.symbol": {
+      "args": {
+        "char": "<char>"
+      },
+      "items": [
+        {
+          "label": "More Symbols…",
+          "dialog": "dialog.symbol"
+        }
+      ],
+      "note": "U:grid/insert: gridcraft's thirty symbols drawn as tiles (insert.symbol {char}); More Symbols… opens the Symbol dialog."
+    }
+  },
+  "commands": {
+    "insert.chart3d": {
+      "args": [],
+      "sourceRef": "office:Excel Insert > Charts > 3-D",
+      "summary": "Insert a 3-D chart."
+    },
+    "insert.chartOfPie": {
+      "args": [],
+      "sourceRef": "office:Excel Insert > Charts > Pie of Pie",
+      "summary": "Insert a Pie of Pie or Bar of Pie chart."
+    },
+    "insert.chartScatterVariant": {
+      "args": [],
+      "sourceRef": "office:Excel Insert > Charts > Scatter",
+      "summary": "Insert a smoothed or marker scatter chart."
+    },
+    "insert.chartPareto": {
+      "args": [],
+      "sourceRef": "office:Excel Insert > Charts > Pareto",
+      "summary": "Insert a Pareto chart."
+    },
+    "insert.chartCustomCombo": {
+      "args": [],
+      "sourceRef": "office:Excel Insert > Charts > Create Custom Combo Chart",
+      "summary": "Insert a combo chart with a type chosen per series."
+    }
+  },
+  "dialogs": {
+    "dialog.createTable": {
+      "note": "U:grid/insert: Excel's Create Table (Where is the data for your table?, My table has headers). gridcraft converts the current region with no dialog; the command takes the same range and header.",
+      "buttons": [
+        "OK",
+        "Cancel"
+      ]
+    },
+    "dialog.insertLink": {
+      "note": "U:grid/insert: Excel's Insert Hyperlink with Existing File or Web Page, Place in This Document and E-mail Address pages, drawn by src/apps/grid/dialogs/insertLink.tsx. Create New Document is not offered (gridcraft cannot create files from a link).",
+      "buttons": [
+        "Remove Link",
+        "OK",
+        "Cancel"
+      ],
+      "tabs": [
+        {
+          "name": "",
+          "fields": [
+            {
+              "id": "linkTo",
+              "label": "Link to:",
+              "kind": "radio",
+              "options": [
+                {
+                  "value": "web",
+                  "label": "Existing File or Web Page"
+                },
+                {
+                  "value": "place",
+                  "label": "Place in This Document"
+                },
+                {
+                  "value": "email",
+                  "label": "E-mail Address"
+                }
+              ]
+            },
+            {
+              "id": "text",
+              "label": "Text to display:",
+              "kind": "text",
+              "options": []
+            },
+            {
+              "id": "target",
+              "label": "Address:",
+              "kind": "text",
+              "options": []
+            },
+            {
+              "id": "tooltip",
+              "label": "ScreenTip:",
+              "kind": "text",
+              "options": []
+            },
+            {
+              "id": "cellReference",
+              "label": "Type the cell reference:",
+              "kind": "text",
+              "options": []
+            },
+            {
+              "id": "place",
+              "label": "Or select a place in this document:",
+              "kind": "text",
+              "options": []
+            },
+            {
+              "id": "emailSubject",
+              "label": "Subject:",
+              "kind": "text",
+              "options": []
+            }
+          ]
+        }
+      ]
+    },
+    "dialog.insertPicture": {
+      "title": "Insert Picture",
+      "note": "U:grid/insert: Excel's This Device picker. Browse… asks the system Open dialog for a PNG or JPEG; Place in Cell or Place over Cells is the menu item that opened it.",
+      "buttons": [
+        "OK",
+        "Cancel"
+      ],
+      "tabs": [
+        {
+          "name": "",
+          "fields": [
+            {
+              "id": "path",
+              "label": "Picture (PNG or JPEG):",
+              "kind": "text",
+              "options": []
+            },
+            {
+              "id": "alt",
+              "label": "Description (optional):",
+              "kind": "text",
+              "options": []
+            }
+          ]
+        }
+      ]
+    },
+    "dialog.recommendedCharts": {
+      "note": "U:grid/insert: Recommended Charts lists the types insert.chartRecommendations returns with a preview of the chart on the selected data; All Charts lists every type gridcraft draws. Templates, Surface and Map are not in gridcraft.",
+      "tabs": [
+        {
+          "name": "Recommended Charts",
+          "fields": [
+            {
+              "id": "recommendations",
+              "label": "Recommended charts",
+              "kind": "list",
+              "options": []
+            },
+            {
+              "id": "preview",
+              "label": "Chart preview",
+              "kind": "preview",
+              "options": []
+            }
+          ]
+        },
+        {
+          "name": "All Charts",
+          "fields": [
+            {
+              "id": "types",
+              "label": "Chart types",
+              "kind": "list",
+              "options": [
+                "Clustered Column",
+                "Stacked Column",
+                "100% Stacked Column",
+                "Clustered Bar",
+                "Stacked Bar",
+                "100% Stacked Bar",
+                "Line",
+                "Line with Markers",
+                "Stacked Line",
+                "Pie",
+                "Doughnut",
+                "Area",
+                "Stacked Area",
+                "100% Stacked Area",
+                "Scatter",
+                "Scatter with Lines",
+                "Bubble",
+                "Radar",
+                "Histogram",
+                "Waterfall",
+                "Funnel",
+                "Combo",
+                "Stock",
+                "Treemap",
+                "Sunburst",
+                "Box & Whisker"
+              ]
+            },
+            {
+              "id": "preview",
+              "label": "Chart preview",
+              "kind": "preview",
+              "options": []
+            }
+          ]
+        }
+      ]
+    },
+    "dialog.symbol": {
+      "note": "U:grid/insert: Excel's Symbol dialog (Symbols by subset, Special Characters), drawn by src/apps/grid/dialogs/symbol.tsx; Insert puts the character at the end of the active cell's text (gridcraft insert.symbol). The font box is left out (cells have one font).",
+      "buttons": [
+        "Insert",
+        "Cancel"
+      ],
+      "tabs": [
+        {
+          "name": "",
+          "fields": [
+            {
+              "id": "char",
+              "label": "Character",
+              "kind": "text",
+              "options": []
+            }
+          ]
+        }
+      ]
+    },
+    "dialog.sparkline": {
+      "note": "U:grid/insert: Excel's Create Sparklines. The type (Line, Column, Win/Loss) is the menu item that opened it."
+    },
+    "dialog.comment": {
+      "buttons": ["Post", "Cancel"], "note": "U:grid/insert: gridcraft opens a dialog for the comment text (Excel shows a card in the cell); it starts with the cell's existing comment."
+    },
+    "dialog.recommendedPivotTables": {
+      "title": "Recommended PivotTables",
+      "note": "U:grid/insert: Excel's Recommended PivotTables over gridcraft's `suggestions`: the layouts that suit the data in a list, a preview of the one picked (drawn by src/apps/grid/dialogs/recommendedPivotTables.tsx). Blank PivotTable and Change Source Data are Create PivotTable's.",
+      "buttons": [
+        "OK",
+        "Cancel"
+      ]
+    },
+    "dialog.createPivotChart": {
+      "title": "Create PivotChart",
+      "note": "U:grid/insert: Excel's Create PivotChart (Table/Range, New Worksheet or Existing Worksheet with its Location); the answer is a blank PivotTable and its chart.",
+      "buttons": [
+        "OK",
+        "Cancel"
+      ],
+      "tabs": [
+        {
+          "name": "",
+          "fields": [
+            {
+              "id": "source",
+              "label": "Table/Range:",
+              "kind": "text",
+              "options": []
+            },
+            {
+              "id": "destination",
+              "label": "Choose where you want the PivotTable report and PivotChart to be placed",
+              "kind": "radio",
+              "options": [
+                {
+                  "value": "new",
+                  "label": "New Worksheet"
+                },
+                {
+                  "value": "existing",
+                  "label": "Existing Worksheet"
+                }
+              ]
+            },
+            {
+              "id": "location",
+              "label": "Location:",
+              "kind": "text",
+              "options": [],
+              "visibleWhen": "destination==existing"
+            }
+          ]
+        }
+      ]
+    },
+    "dialog.customCombo": {
+      "title": "Insert Chart",
+      "note": "U:grid/insert: Excel's Custom Combination (a chart type and a Secondary Axis box for each series, with a preview), drawn by src/apps/grid/dialogs/customCombo.tsx. Not checked against upstream.",
+      "buttons": [
+        "OK",
+        "Cancel"
+      ]
+    },
+    "dialog.signatureSetup": {
+      "id": "dialog.signatureSetup",
+      "title": "Signature Setup",
+      "command": "insert.signatureLine",
+      "source": "office",
+      "buttons": [
+        "OK",
+        "Cancel"
+      ],
+      "note": "U:grid/insert: Excel's Signature Setup: the suggested signer, title and e-mail, instructions for the signer, whether the signer may add comments and whether the sign date shows. Not checked against upstream.",
+      "tabs": [
+        {
+          "name": "",
+          "fields": [
+            {
+              "id": "signer",
+              "label": "Suggested signer:",
+              "kind": "text",
+              "options": []
+            },
+            {
+              "id": "title",
+              "label": "Suggested signer's title:",
+              "kind": "text",
+              "options": []
+            },
+            {
+              "id": "email",
+              "label": "Suggested signer's e-mail address:",
+              "kind": "text",
+              "options": []
+            },
+            {
+              "id": "instructions",
+              "label": "Instructions to the signer:",
+              "kind": "text",
+              "multiline": true,
+              "options": []
+            },
+            {
+              "id": "comments",
+              "label": "Allow the signer to add comments in the Sign dialog",
+              "kind": "checkbox",
+              "options": []
+            },
+            {
+              "id": "showDate",
+              "label": "Show sign date in signature line",
+              "kind": "checkbox",
+              "options": []
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

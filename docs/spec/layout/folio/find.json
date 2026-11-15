@@ -1,0 +1,33 @@
+{
+  "tab": "find",
+  "source": "printcraft crates/ui-egui/src/canvas/find.rs @ 3109bb2359759e24ef490e1cdbdba00722b20972",
+  "note": "The find bar: the query with its count and arrows, the options, then the replace field.",
+  "groups": {
+    "find-text": {
+      "collapseOrder": 1,
+      "collapsedIcon": "search",
+      "layout": [
+        {
+          "rows": [
+            [
+              "find.query",
+              "find.count",
+              "find.previous",
+              "find.next",
+              "find.options"
+            ],
+            [
+              "find.replace",
+              "find.advanced",
+              "find.close"
+            ]
+          ]
+        }
+      ],
+      "widths": {
+        "find.query": 220,
+        "find.replace": 220
+      }
+    }
+  }
+}

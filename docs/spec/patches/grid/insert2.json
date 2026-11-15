@@ -1,0 +1,155 @@
+{
+  "controls": {
+    "insert.charts.columnBar.clustered-column": {
+      "icon": "insert-chart-column-clustered"
+    },
+    "insert.charts.columnBar.stacked-column": {
+      "icon": "insert-chart-column-stacked"
+    },
+    "insert.charts.columnBar.100-stacked-column": {
+      "icon": "insert-chart-column-100"
+    },
+    "insert.charts.columnBar.clustered-bar": {
+      "icon": "insert-chart-bar-clustered"
+    },
+    "insert.charts.columnBar.stacked-bar": {
+      "icon": "insert-chart-bar-stacked"
+    },
+    "insert.charts.columnBar.100-stacked-bar": {
+      "icon": "insert-chart-bar-100"
+    },
+    "insert.charts.lineArea.line": {
+      "icon": "insert-chart-line"
+    },
+    "insert.charts.lineArea.line-with-markers": {
+      "icon": "insert-chart-line-markers"
+    },
+    "insert.charts.lineArea.stacked-line": {
+      "icon": "insert-chart-line-stacked"
+    },
+    "insert.charts.lineArea.area": {
+      "icon": "insert-chart-area"
+    },
+    "insert.charts.lineArea.stacked-area": {
+      "icon": "insert-chart-area-stacked"
+    },
+    "insert.charts.lineArea.100-stacked-area": {
+      "icon": "insert-chart-area-100"
+    },
+    "insert.charts.pieDoughnut.pie": {
+      "icon": "insert-chart-pie"
+    },
+    "insert.charts.pieDoughnut.doughnut": {
+      "icon": "insert-chart-doughnut"
+    },
+    "insert.charts.pieDoughnut.3-d-pie": {
+      "command": "insert.chart",
+      "args": {
+        "kind": "pie3d"
+      },
+      "note": "U:grid/insert: not in gridcraft (no 3-D charts); drawn after Excel (core/grid/lib/chart-render-extra.mjs): the pie from above and in front, a wall under the front half. Not checked against upstream."
+    },
+    "insert.charts.pieDoughnut.pie-of-pie": {
+      "command": "insert.chart",
+      "args": {
+        "kind": "pieOfPie"
+      },
+      "note": "U:grid/insert: not in gridcraft; the last three values join into an Other slice that a second pie breaks down, as Excel splits by position. Not checked against upstream."
+    },
+    "insert.charts.pieDoughnut.bar-of-pie": {
+      "command": "insert.chart",
+      "args": {
+        "kind": "barOfPie"
+      },
+      "note": "U:grid/insert: not in gridcraft; as Pie of Pie with a stacked bar for the second plot. Not checked against upstream."
+    },
+    "insert.charts.scatterBubble.scatter": {
+      "icon": "insert-chart-scatter"
+    },
+    "insert.charts.scatterBubble.scatter-with-lines": {
+      "icon": "insert-chart-scatter-lines"
+    },
+    "insert.charts.scatterBubble.bubble": {
+      "icon": "insert-chart-bubble"
+    },
+    "insert.charts.scatterBubble.scatter-with-smooth-lines-and-markers": {
+      "command": "insert.chart",
+      "args": {
+        "kind": "scatterSmooth"
+      },
+      "note": "U:grid/insert: gridcraft has Scatter and Scatter with Lines only; this is its scatter-with-lines chart with every series smoothed (the chart renderer interpolates a spline)."
+    },
+    "insert.charts.scatterBubble.scatter-with-straight-lines-and-markers": {
+      "command": "insert.chart",
+      "args": {
+        "kind": "scatterStraight"
+      },
+      "note": "U:grid/insert: gridcraft's Scatter with Lines draws straight lines with markers; this is that chart."
+    },
+    "insert.charts.scatterBubble.3-d-bubble": {
+      "command": "insert.chart",
+      "args": {
+        "kind": "bubble3d"
+      },
+      "note": "U:grid/insert: not in gridcraft; the bubble chart with each bubble shaded as a sphere. Not checked against upstream."
+    },
+    "insert.charts.statistic.histogram": {
+      "icon": "insert-chart-histogram"
+    },
+    "insert.charts.statistic.box-and-whisker": {
+      "icon": "insert-chart-box-whisker"
+    },
+    "insert.charts.statistic.pareto": {
+      "command": "insert.chart",
+      "args": {
+        "kind": "pareto"
+      },
+      "note": "U:grid/insert: not in gridcraft; the first series sorted from the largest, columns with a cumulative percent line on a 0-100% axis. Saved as a column chart with an Arkemis kind mark (Excel draws Pareto in its extension format). Not checked against upstream."
+    },
+    "insert.charts.hierarchy.treemap": {
+      "icon": "insert-chart-treemap"
+    },
+    "insert.charts.hierarchy.sunburst": {
+      "icon": "insert-chart-sunburst"
+    },
+    "insert.charts.hierarchy.waterfall": {
+      "icon": "insert-chart-waterfall"
+    },
+    "insert.charts.hierarchy.funnel": {
+      "icon": "insert-chart-funnel"
+    },
+    "insert.charts.hierarchy.radar": {
+      "icon": "insert-chart-radar"
+    },
+    "insert.charts.hierarchy.stock": {
+      "icon": "insert-chart-stock"
+    },
+    "insert.charts.hierarchy.combo": {
+      "icon": "insert-chart-combo"
+    },
+    "insert.charts.hierarchy.create-custom-combo-chart": {
+      "command": "insert.chartCustomCombo",
+      "args": {},
+      "dialog": "dialog.customCombo",
+      "note": "U:grid/insert: Excel's Custom Combination: a chart type and a Secondary Axis box for each series, with a preview. Not checked against upstream (gridcraft's Combo has no per-series choice)."
+    },
+    "insert.charts.columnBar.more-charts": {
+      "label": "More Column Charts…"
+    },
+    "insert.charts.lineArea.more-charts": {
+      "label": "More Line Charts…"
+    },
+    "insert.charts.pieDoughnut.more-charts": {
+      "label": "More Pie Charts…"
+    },
+    "insert.charts.scatterBubble.more-charts": {
+      "label": "More Scatter Charts…"
+    },
+    "insert.charts.statistic.more-charts": {
+      "label": "More Statistic Charts…"
+    },
+    "insert.charts.hierarchy.more-charts": {
+      "label": "More Hierarchy Charts…"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "source": "gridcraft crates/ui-egui/src/dialogs/find.rs (go_to) at 146161b4b450a56e5e59a083ba0478582d1e602b; Excel Go To (F5)",
+  "width": 360,
+  "height": 360,
+  "sections": [
+    {"fields": ["entries"]},
+    {"fields": ["reference"], "columns": 1},
+    {"fields": ["special"]}
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "source": "printcraft crates/ui-egui/src/dialogs/marks_ui.rs:339 (Background body) at 3109bb2359759e24ef490e1cdbdba00722b20972; Acrobat Add Background: Source (From color / File), Appearance (opacity), Page Range Options, preview",
+  "width": 560,
+  "height": 520,
+  "sections": [
+    {"title": "Source", "fields": ["source", "color", "file", "file-page", "scale"]},
+    {"title": "Appearance", "fields": ["opacity"]},
+    {"title": "Page Range Options", "fields": ["scope", "from", "to", "subset"], "columns": 4}
+  ]
+}

@@ -1,0 +1,4 @@
+{
+  "source": "The report dialogs draw their own body (src/apps/folio/dialogs/action-wizard.tsx): the width is theirs",
+  "width": 660
+}

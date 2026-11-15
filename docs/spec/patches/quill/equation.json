@@ -1,0 +1,218 @@
+{
+ "controls": {
+  "insert.symbols.equation": {
+   "kind": "gallery",
+   "note": "U:quill/equation: built on Slate's equation model, layout and galleries (core/slate/lib/equation*.mjs; the page is drawn by core/quill/lib/math-layout.mjs, OMML by core/quill/lib/omml.mjs); the tiles are drawn from MathML as in OneNote. Where Slate's rendering differs from wordcraft's: (1) Slate typesets with MathML in the browser and has no page, so the page view draws the equation itself from Slate's tree (core/quill/lib/math-layout.mjs: TeX-style boxes, a reduced spacing table, brackets as scaled glyphs where Word builds them from pieces); wordcraft lays out its own math tree (layout/src/math). (2) An equation is its linear text and is edited as text (the Edit Equation box); wordcraft edits a tree with a caret, so equation.type, move, backspace, delete and enter are not offered. (3) Slate has no inline or display, no m:jc and no OMML: those are Quill's (equation.display, equation.justify, core/quill/lib/omml.mjs); what Word wrote in a file is kept as it was until the equation is changed here. (4) The gallery is Office's nine built-in equations, not wordcraft's ten. (5) Number is not offered. Not checked against Word's own spacing. Ink Equation stays hidden: the app has no handwriting recogniser.",
+   "items": [
+    {
+     "label": "Insert New Equation",
+     "command": "insert.equation",
+     "shortcut": "Alt+=",
+     "source": "office"
+    }
+   ]
+  },
+  "equation.tools.equation": {
+   "kind": "gallery",
+   "note": "U:quill/equation: the same built-in equations as Insert › Equation.",
+   "items": [
+    {
+     "label": "Insert New Equation",
+     "command": "insert.equation",
+     "shortcut": "Alt+=",
+     "source": "office"
+    }
+   ]
+  },
+  "equation.tools.ink-equation": {
+   "note": "U:quill/equation: hidden. Ink Equation recognises handwriting with Microsoft's math input recogniser; the app has no handwriting engine. Type the equation in the linear format (or LaTeX with the LaTeX button) in the Edit Equation box."
+  },
+  "equation.symbols.symbols": {
+   "note": "U:quill/equation: Slate's eight symbol sets; the tile row shows every set, the menu lists each set.",
+   "items": [
+    {
+     "id": "equation.symbols.symbols.basic-math",
+     "label": "Basic Math",
+     "kind": "gallery",
+     "command": "equation.insertSymbol",
+     "args": {
+      "category": "basic-math"
+     },
+     "icon": "eq-sym-basic-math",
+     "source": "office"
+    },
+    {
+     "id": "equation.symbols.symbols.greek-letters",
+     "label": "Greek Letters",
+     "kind": "gallery",
+     "command": "equation.insertSymbol",
+     "args": {
+      "category": "greek-letters"
+     },
+     "icon": "eq-sym-greek-letters",
+     "source": "office"
+    },
+    {
+     "id": "equation.symbols.symbols.letter-like-symbols",
+     "label": "Letter-Like Symbols",
+     "kind": "gallery",
+     "command": "equation.insertSymbol",
+     "args": {
+      "category": "letter-like-symbols"
+     },
+     "icon": "eq-sym-letter-like-symbols",
+     "source": "office"
+    },
+    {
+     "id": "equation.symbols.symbols.operators",
+     "label": "Operators",
+     "kind": "gallery",
+     "command": "equation.insertSymbol",
+     "args": {
+      "category": "operators"
+     },
+     "icon": "eq-sym-operators",
+     "source": "office"
+    },
+    {
+     "id": "equation.symbols.symbols.arrows",
+     "label": "Arrows",
+     "kind": "gallery",
+     "command": "equation.insertSymbol",
+     "args": {
+      "category": "arrows"
+     },
+     "icon": "eq-sym-arrows",
+     "source": "office"
+    },
+    {
+     "id": "equation.symbols.symbols.negated-relations",
+     "label": "Negated Relations",
+     "kind": "gallery",
+     "command": "equation.insertSymbol",
+     "args": {
+      "category": "negated-relations"
+     },
+     "icon": "eq-sym-negated-relations",
+     "source": "office"
+    },
+    {
+     "id": "equation.symbols.symbols.scripts",
+     "label": "Scripts",
+     "kind": "gallery",
+     "command": "equation.insertSymbol",
+     "args": {
+      "category": "scripts"
+     },
+     "icon": "eq-sym-scripts",
+     "source": "office"
+    },
+    {
+     "id": "equation.symbols.symbols.geometry",
+     "label": "Geometry",
+     "kind": "gallery",
+     "command": "equation.insertSymbol",
+     "args": {
+      "category": "geometry"
+     },
+     "icon": "eq-sym-geometry",
+     "source": "office"
+    }
+   ]
+  },
+  "equation.structures.fraction": {
+   "args": {
+    "structure": "fraction"
+   },
+   "note": "U:quill/equation: Slate's Fraction gallery (core/slate/lib/equation-catalog.mjs); a structure goes into the first empty slot of the equation being edited, or makes a new equation."
+  },
+  "equation.structures.script": {
+   "args": {
+    "structure": "script"
+   },
+   "note": "U:quill/equation: Slate's Script gallery (core/slate/lib/equation-catalog.mjs); a structure goes into the first empty slot of the equation being edited, or makes a new equation."
+  },
+  "equation.structures.radical": {
+   "args": {
+    "structure": "radical"
+   },
+   "note": "U:quill/equation: Slate's Radical gallery (core/slate/lib/equation-catalog.mjs); a structure goes into the first empty slot of the equation being edited, or makes a new equation."
+  },
+  "equation.structures.integral": {
+   "args": {
+    "structure": "integral"
+   },
+   "note": "U:quill/equation: Slate's Integral gallery (core/slate/lib/equation-catalog.mjs); a structure goes into the first empty slot of the equation being edited, or makes a new equation."
+  },
+  "equation.structures.large-operator": {
+   "args": {
+    "structure": "large-operator"
+   },
+   "note": "U:quill/equation: Slate's Large Operator gallery (core/slate/lib/equation-catalog.mjs); a structure goes into the first empty slot of the equation being edited, or makes a new equation."
+  },
+  "equation.structures.bracket": {
+   "args": {
+    "structure": "bracket"
+   },
+   "note": "U:quill/equation: Slate's Bracket gallery (core/slate/lib/equation-catalog.mjs); a structure goes into the first empty slot of the equation being edited, or makes a new equation."
+  },
+  "equation.structures.function": {
+   "args": {
+    "structure": "function"
+   },
+   "note": "U:quill/equation: Slate's Function gallery (core/slate/lib/equation-catalog.mjs); a structure goes into the first empty slot of the equation being edited, or makes a new equation."
+  },
+  "equation.structures.accent": {
+   "args": {
+    "structure": "accent"
+   },
+   "note": "U:quill/equation: Slate's Accent gallery (core/slate/lib/equation-catalog.mjs); a structure goes into the first empty slot of the equation being edited, or makes a new equation."
+  },
+  "equation.structures.limit-and-log": {
+   "args": {
+    "structure": "limit-and-log"
+   },
+   "note": "U:quill/equation: Slate's Limit and Log gallery (core/slate/lib/equation-catalog.mjs); a structure goes into the first empty slot of the equation being edited, or makes a new equation."
+  },
+  "equation.structures.operator": {
+   "args": {
+    "structure": "operator"
+   },
+   "note": "U:quill/equation: Slate's Operator gallery (core/slate/lib/equation-catalog.mjs); a structure goes into the first empty slot of the equation being edited, or makes a new equation."
+  },
+  "equation.structures.matrix": {
+   "args": {
+    "structure": "matrix"
+   },
+   "note": "U:quill/equation: Slate's Matrix gallery (core/slate/lib/equation-catalog.mjs); a structure goes into the first empty slot of the equation being edited, or makes a new equation."
+  },
+  "equation.equation-options.number": {
+   "note": "U:quill/equation: hidden. Equation numbering (a `#` field after the equation) is not translated; the app has no equation numbers."
+  },
+  "equation.equation-options.display": {
+   "note": "U:quill/equation: Display puts the equation on a line of its own (m:oMathPara); Inline keeps it in the text (m:oMath)."
+  },
+  "equation.equation-options.justification": {
+   "note": "U:quill/equation: Left, Right, Centered and Centered as Group (m:jc) for a display equation."
+  },
+  "equation.equation-options.close-equation": {
+   "note": "U:quill/equation: puts the caret after the equation."
+  },
+  "equation.tools.convert": {
+   "note": "U:quill/equation: Professional shows the typeset equation, Linear its text as typed; Current is the selected equation, All every equation in the document."
+  },
+  "equation.tools.normal-text": {
+   "note": "U:quill/equation: shows the equation as plain, non-math text (m:nor)."
+  }
+ },
+ "dialogs": {
+  "dialog.equation": {
+   "command": null,
+   "note": "U:quill/equation: replaced by editing the equation in place (the page view's editor and the Equation tab; equation.edit takes the text); Equation Options is the only equation box. The old Edit Equation box has no model, so nothing reaches it."
+  },
+  "dialog.insertEquation": {
+   "command": null,
+   "note": "U:quill/equation: replaced by Insert New Equation putting an empty equation in the line, typed in place; the old Insert Equation box has no model, so nothing reaches it."
+  }
+ }
+}

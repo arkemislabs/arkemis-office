@@ -1,0 +1,58 @@
+{
+  "source": "wordcraft dialogs_lists.rs track_options (Show, Balloons, Comments, Advanced, Moves); Word Advanced Track Changes Options",
+  "width": 620,
+  "height": 640,
+  "sections": [
+    {
+      "title": "Show",
+      "fields": [
+        "comments",
+        "ink",
+        "insertionsDeletions",
+        "formatting"
+      ],
+      "columns": 2
+    },
+    {
+      "title": "Balloons",
+      "fields": [
+        "balloons"
+      ]
+    },
+    {
+      "title": "Comments",
+      "fields": [
+        "commentDisplay"
+      ]
+    },
+    {
+      "title": "Markup",
+      "fields": [
+        "insertMark",
+        "insertColor",
+        "deleteMark",
+        "deleteColor",
+        "changedLines",
+        "changedLinesColor"
+      ],
+      "columns": 2
+    },
+    {
+      "title": "Moves",
+      "fields": [
+        "moveFromMark",
+        "moveFromColor",
+        "moveToMark",
+        "moveToColor",
+        "trackMoves"
+      ],
+      "columns": 2
+    },
+    {
+      "title": "Formatting",
+      "fields": [
+        "trackFormatting"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,195 @@
+{
+  "controls": {
+    "data.outline.group.group": {
+      "command": null, "args": null, "dialog": "dialog.group",
+      "note": "U:grid/data: Excel's Group… opens the Rows / Columns dialog, which runs gridcraft's data.group {by: rows|cols} (a block of cells groups rows by default)."
+    },
+    "data.outline.ungroup.ungroup": {
+      "command": null, "args": null, "dialog": "dialog.ungroup",
+      "note": "U:grid/data: Excel's Ungroup… opens the Rows / Columns dialog, which runs gridcraft's data.ungroup {by: rows|cols}."
+    },
+    "data.forecast.whatIf.goal-seek": {
+      "command": "data.goalSeek", "args": null, "dialog": "dialog.goalSeek",
+      "note": "U:grid/data: Goal Seek… opens its dialog (gridcraft ribbon/data.rs:93); after OK Excel's Goal Seek Status shows the result (gridcraft shows a toast)."
+    },
+    "data.getTransform.fromWeb": {"note": "U:grid/data: not in gridcraft (the app does no web use); hidden."},
+    "data.getTransform.fromPicture": {"note": "U:grid/data: not in gridcraft; hidden."},
+    "data.getTransform.recentSources": {"note": "U:grid/data: not in gridcraft (no Power Query sources); hidden."},
+    "data.getTransform.existingConnections": {"note": "U:grid/data: not in gridcraft (no connections are modelled); hidden."},
+    "data.queries.queriesConnections": {"note": "U:grid/data: gridcraft's data.queriesConnections lists imported tables (U:grid/extra); hidden until translated."},
+    "data.queries.properties": {"note": "U:grid/data: not in gridcraft (no connections are modelled); hidden."},
+    "data.queries.workbookLinks": {"note": "U:grid/data: not in gridcraft; hidden."},
+    "data.dataTypes.stocks": {"note": "U:grid/data: not in gridcraft (data types need an online service); hidden."},
+    "data.dataTypes.geography": {"note": "U:grid/data: not in gridcraft (data types need an online service); hidden."},
+    "data.tools.relationships": {"note": "U:grid/data: not in gridcraft (no data model); hidden."},
+    "data.tools.manageDataModel": {"note": "U:grid/data: not in gridcraft (no data model); hidden."},
+    "data.analysis.analyzeData": {"note": "U:grid/data: not in gridcraft (an online service); hidden."}
+  },
+  "commands": {
+  },
+  "dialogs": {
+    "dialog.sort": {
+      "buttons": ["OK", "Cancel"],
+      "note": "U:grid/data: levels with Add, Delete, Copy, Move Up/Down and Options (case sensitive, top to bottom or left to right) are drawn by src/apps/grid/dialogs/sort.tsx; Order lists A to Z, Z to A and the built-in and workbook custom lists.",
+      "tabs": [{"name": "", "fields": [
+        {"id": "header", "label": "My data has headers", "kind": "checkbox", "options": []},
+        {"id": "levels", "label": "Levels", "kind": "list", "options": []},
+        {"id": "options", "label": "Options", "kind": "list", "options": []}
+      ]}]
+    },
+    "dialog.sortOptions": {
+      "id": "dialog.sortOptions", "title": "Sort Options", "command": null, "source": "office", "buttons": ["OK", "Cancel"],
+      "note": "U:grid/data: Excel's Sort Options; gridcraft keeps both as parameters of data.sort (matchCase, orientation).",
+      "tabs": [{"name": "", "fields": [
+        {"id": "caseSensitive", "label": "Case sensitive", "kind": "checkbox", "options": []},
+        {"id": "orientation", "label": "Orientation", "kind": "radio", "options": [{"value": "rows", "label": "Sort top to bottom"}, {"value": "columns", "label": "Sort left to right"}]}
+      ]}]
+    },
+    "dialog.advancedFilter": {
+      "tabs": [{"name": "", "fields": [
+        {"id": "action", "label": "Action", "kind": "radio", "options": [{"value": "inPlace", "label": "Filter the list, in-place"}, {"value": "copy", "label": "Copy to another location"}]},
+        {"id": "range", "label": "List range:", "kind": "text", "options": []},
+        {"id": "criteria", "label": "Criteria range:", "kind": "text", "options": []},
+        {"id": "copyTo", "label": "Copy to:", "kind": "text", "options": [], "visibleWhen": "action==copy"},
+        {"id": "unique", "label": "Unique records only", "kind": "checkbox", "options": []}
+      ]}]
+    },
+    "dialog.textToColumns": {
+      "buttons": ["Finish", "Cancel"],
+      "note": "U:grid/data: the three steps and the Back / Next buttons are drawn by src/apps/grid/dialogs/textToColumns.tsx. Start import at row, File origin and My data has headers belong to the Text Import Wizard and are left out; the Date: MDY and Advanced… options are left out (a date is read as typed).",
+      "tabs": [{"name": "Step 1 of 3", "fields": [
+        {"id": "dataType", "label": "Original data type", "kind": "radio", "options": [{"value": "delimited", "label": "Delimited"}, {"value": "fixed", "label": "Fixed width"}]}
+      ]}, {"name": "Step 2 of 3", "fields": [
+        {"id": "tab", "label": "Tab", "kind": "checkbox", "options": []},
+        {"id": "semicolon", "label": "Semicolon", "kind": "checkbox", "options": []},
+        {"id": "comma", "label": "Comma", "kind": "checkbox", "options": []},
+        {"id": "space", "label": "Space", "kind": "checkbox", "options": []},
+        {"id": "other", "label": "Other:", "kind": "text", "options": []},
+        {"id": "treatConsecutive", "label": "Treat consecutive delimiters as one", "kind": "checkbox", "options": []},
+        {"id": "textQualifier", "label": "Text qualifier:", "kind": "select", "options": [{"value": "\"", "label": "\""}, {"value": "'", "label": "'"}, {"value": "{none}", "label": "{none}"}]}
+      ]}, {"name": "Step 3 of 3", "fields": [
+        {"id": "format", "label": "Column data format", "kind": "radio", "options": [{"value": "general", "label": "General"}, {"value": "text", "label": "Text"}, {"value": "skip", "label": "Do not import column (skip)"}]},
+        {"id": "destination", "label": "Destination:", "kind": "text", "options": []}
+      ]}]
+    },
+    "dialog.removeDuplicates": {
+      "note": "U:grid/data: Excel's column check list with Select All and Unselect All (gridcraft takes a comma list of columns), drawn by src/apps/grid/dialogs/removeDuplicates.tsx.",
+      "buttons": ["OK", "Cancel"],
+      "tabs": [{"name": "", "fields": [
+        {"id": "header", "label": "My data has headers", "kind": "checkbox", "options": []},
+        {"id": "columns", "label": "Columns", "kind": "list", "options": []}
+      ]}]
+    },
+    "dialog.dataValidation": {
+      "note": "U:grid/data: the three tabs are drawn by src/apps/grid/dialogs/dataValidation.tsx (the box labels follow Allow and Data as gridcraft's data_validation_fields does). Apply these changes to all other cells with the same settings is left out.",
+      "tabs": [
+        {"name": "Settings", "fields": [
+          {"id": "type", "label": "Allow", "kind": "select", "options": [{"value": "any", "label": "Any value"}, {"value": "whole", "label": "Whole number"}, {"value": "decimal", "label": "Decimal"}, {"value": "list", "label": "List"}, {"value": "date", "label": "Date"}, {"value": "time", "label": "Time"}, {"value": "textLength", "label": "Text length"}, {"value": "custom", "label": "Custom"}]},
+          {"id": "operator", "label": "Data", "kind": "select", "options": [{"value": "between", "label": "between"}, {"value": "notBetween", "label": "not between"}, {"value": "equal", "label": "equal to"}, {"value": "notEqual", "label": "not equal to"}, {"value": "greaterThan", "label": "greater than"}, {"value": "lessThan", "label": "less than"}, {"value": "greaterThanOrEqual", "label": "greater than or equal to"}, {"value": "lessThanOrEqual", "label": "less than or equal to"}]},
+          {"id": "formula1", "label": "Minimum:", "kind": "text", "options": []},
+          {"id": "formula2", "label": "Maximum:", "kind": "text", "options": []},
+          {"id": "ignoreBlank", "label": "Ignore blank", "kind": "checkbox", "options": []},
+          {"id": "dropdown", "label": "In-cell dropdown", "kind": "checkbox", "options": []}
+        ]},
+        {"name": "Input Message", "fields": [
+          {"id": "showInput", "label": "Show input message when cell is selected", "kind": "checkbox", "options": []},
+          {"id": "inputTitle", "label": "Title:", "kind": "text", "options": []},
+          {"id": "inputMessage", "label": "Input message:", "kind": "text", "options": [], "multiline": true}
+        ]},
+        {"name": "Error Alert", "fields": [
+          {"id": "showError", "label": "Show error alert after invalid data is entered", "kind": "checkbox", "options": []},
+          {"id": "errorStyle", "label": "Style:", "kind": "select", "options": [{"value": "stop", "label": "Stop"}, {"value": "warning", "label": "Warning"}, {"value": "information", "label": "Information"}]},
+          {"id": "errorTitle", "label": "Title:", "kind": "text", "options": []},
+          {"id": "errorMessage", "label": "Error message:", "kind": "text", "options": [], "multiline": true}
+        ]}
+      ],
+      "buttons": ["Clear All", "OK", "Cancel"]
+    },
+    "dialog.consolidate": {
+      "note": "U:grid/data: Browse… and Create links to source data are left out (no linked consolidation upstream); Add and Delete are drawn in the body by src/apps/grid/dialogs/consolidate.tsx.",
+      "buttons": ["OK", "Close"],
+      "tabs": [{"name": "", "fields": [
+        {"id": "function", "label": "Function:", "kind": "select", "options": [{"value": "sum", "label": "Sum"}, {"value": "count", "label": "Count"}, {"value": "average", "label": "Average"}, {"value": "max", "label": "Max"}, {"value": "min", "label": "Min"}, {"value": "product", "label": "Product"}, {"value": "countNums", "label": "Count Numbers"}]},
+        {"id": "reference", "label": "Reference:", "kind": "text", "options": []},
+        {"id": "references", "label": "All references:", "kind": "list", "options": []},
+        {"id": "topRow", "label": "Top row", "kind": "checkbox", "options": []},
+        {"id": "leftColumn", "label": "Left column", "kind": "checkbox", "options": []}
+      ]}]
+    },
+    "dialog.scenarioManager": {
+      "note": "U:grid/data: Merge… is left out (upstream has no scenario merge); the buttons act through the scenario commands.",
+      "buttons": ["Close"],
+      "tabs": [{"name": "", "fields": [{"id": "scenarios", "label": "Scenarios:", "kind": "list", "options": []}]}]
+    },
+    "dialog.addScenario": {
+      "note": "U:grid/data: Prevent changes and Hide are left out (upstream scenarios carry only name, cells, values and a comment); the Scenario Values step is the list under the fields.",
+      "tabs": [{"name": "", "fields": [
+        {"id": "name", "label": "Scenario name:", "kind": "text", "options": []},
+        {"id": "changing", "label": "Changing cells:", "kind": "text", "options": []},
+        {"id": "comment", "label": "Comment:", "kind": "text", "options": [], "multiline": true},
+        {"id": "vals", "label": "Scenario Values", "kind": "list", "options": []}
+      ]}]
+    },
+    "dialog.scenarioSummary": {
+      "note": "U:grid/data: the Scenario PivotTable report type is left out (upstream has only the summary sheet).",
+      "tabs": [{"name": "", "fields": [{"id": "resultCells", "label": "Result cells:", "kind": "text", "options": []}]}]
+    },
+    "dialog.goalSeek": {
+      "tabs": [{"name": "", "fields": [
+        {"id": "set", "label": "Set cell:", "kind": "text", "options": []},
+        {"id": "to", "label": "To value:", "kind": "text", "options": []},
+        {"id": "changing", "label": "By changing cell:", "kind": "text", "options": []}
+      ]}]
+    },
+    "dialog.dataTable": {
+      "tabs": [{"name": "", "fields": [
+        {"id": "rowInput", "label": "Row input cell:", "kind": "text", "options": []},
+        {"id": "columnInput", "label": "Column input cell:", "kind": "text", "options": []}
+      ]}]
+    },
+    "dialog.subtotal": {
+      "note": "U:grid/data: Replace current subtotals, Page break between groups, Summary below data, Remove All and the StdDev, Var and Count Numbers functions are left out (upstream's six functions; the summary rows always go below).",
+      "buttons": ["OK", "Cancel"],
+      "tabs": [{"name": "", "fields": [
+        {"id": "groupBy", "label": "At each change in:", "kind": "select", "options": []},
+        {"id": "function", "label": "Use function:", "kind": "select", "options": [{"value": "sum", "label": "Sum"}, {"value": "count", "label": "Count"}, {"value": "average", "label": "Average"}, {"value": "max", "label": "Max"}, {"value": "min", "label": "Min"}, {"value": "product", "label": "Product"}]},
+        {"id": "columns", "label": "Add subtotal to:", "kind": "list", "options": []}
+      ]}]
+    },
+    "dialog.outlineSettings": {
+      "note": "U:grid/data: Automatic styles, Create and Apply Styles are left out (upstream has no outline styles).",
+      "buttons": ["OK", "Cancel"],
+      "tabs": [{"name": "", "fields": [
+        {"id": "summaryBelow", "label": "Summary rows below detail", "kind": "checkbox", "options": []},
+        {"id": "summaryRight", "label": "Summary columns to right of detail", "kind": "checkbox", "options": []}
+      ]}]
+    },
+    "dialog.group": {
+      "id": "dialog.group", "title": "Group", "command": "data.group", "source": "office", "buttons": ["OK", "Cancel"],
+      "tabs": [{"name": "", "fields": [{"id": "by", "label": "Group", "kind": "radio", "options": [{"value": "rows", "label": "Rows"}, {"value": "cols", "label": "Columns"}]}]}]
+    },
+    "dialog.ungroup": {
+      "id": "dialog.ungroup", "title": "Ungroup", "command": "data.ungroup", "source": "office", "buttons": ["OK", "Cancel"],
+      "tabs": [{"name": "", "fields": [{"id": "by", "label": "Ungroup", "kind": "radio", "options": [{"value": "rows", "label": "Rows"}, {"value": "cols", "label": "Columns"}]}]}]
+    },
+    "dialog.customAutoFilter": {
+      "id": "dialog.customAutoFilter", "title": "Custom AutoFilter", "command": "data.filterBy", "source": "office", "buttons": ["OK", "Cancel"],
+      "note": "U:grid/data: gridcraft's FilterCriterion::Custom (two comparisons joined by And or Or); does not begin with and does not end with are left out (not in custom_ok).",
+      "tabs": [{"name": "", "fields": [
+        {"id": "op1", "label": "Show rows where:", "kind": "select", "options": [{"value": "=", "label": "equals"}, {"value": "<>", "label": "does not equal"}, {"value": ">", "label": "is greater than"}, {"value": ">=", "label": "is greater than or equal to"}, {"value": "<", "label": "is less than"}, {"value": "<=", "label": "is less than or equal to"}, {"value": "beginsWith", "label": "begins with"}, {"value": "endsWith", "label": "ends with"}, {"value": "contains", "label": "contains"}, {"value": "notContains", "label": "does not contain"}]},
+        {"id": "val1", "label": "Value:", "kind": "text", "options": []},
+        {"id": "join", "label": "Join", "kind": "radio", "options": [{"value": "and", "label": "And"}, {"value": "or", "label": "Or"}]},
+        {"id": "op2", "label": "Second comparison:", "kind": "select", "options": [{"value": "", "label": "(none)"}, {"value": "=", "label": "equals"}, {"value": "<>", "label": "does not equal"}, {"value": ">", "label": "is greater than"}, {"value": ">=", "label": "is greater than or equal to"}, {"value": "<", "label": "is less than"}, {"value": "<=", "label": "is less than or equal to"}, {"value": "beginsWith", "label": "begins with"}, {"value": "endsWith", "label": "ends with"}, {"value": "contains", "label": "contains"}, {"value": "notContains", "label": "does not contain"}]},
+        {"id": "val2", "label": "Value:", "kind": "text", "options": []}
+      ]}]
+    },
+    "dialog.top10AutoFilter": {
+      "id": "dialog.top10AutoFilter", "title": "Top 10 AutoFilter", "command": "data.filterBy", "source": "office", "buttons": ["OK", "Cancel"],
+      "tabs": [{"name": "", "fields": [
+        {"id": "side", "label": "Show", "kind": "select", "options": [{"value": "top", "label": "Top"}, {"value": "bottom", "label": "Bottom"}]},
+        {"id": "count", "label": "Number", "kind": "number", "options": [], "min": 1, "max": 500, "step": 1},
+        {"id": "unit", "label": "Of", "kind": "select", "options": [{"value": "items", "label": "Items"}, {"value": "percent", "label": "Percent"}]}
+      ]}]
+    }
+  }
+}

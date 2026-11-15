@@ -1,0 +1,31 @@
+{
+  "tab": "compare",
+  "source": "printcraft crates/ui-egui/src/workflows/compare_ui.rs @ 3109bb2359759e24ef490e1cdbdba00722b20972",
+  "groups": {
+    "results": {
+      "collapseOrder": 1,
+      "collapsedIcon": "eye",
+      "layout": [
+        {
+          "stack": [
+            "compare.show",
+            "compare.filter"
+          ]
+        },
+        {
+          "stack": [
+            "compare.side-by-side",
+            "compare.new-only"
+          ]
+        },
+        {
+          "stack": [
+            "compare.mark",
+            "compare.report",
+            "compare.clear"
+          ]
+        }
+      ]
+    }
+  }
+}

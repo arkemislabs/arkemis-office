@@ -1,0 +1,13 @@
+/* The Search panel (panes/search.tsx): Arkemis glass tokens, Acrobat's list. */
+.sp-pane { display: flex; flex-direction: column; gap: 8px; height: 100%; min-height: 0; font-size: 12px; color: var(--sh-text-1); }
+.sp-ask { color: var(--sh-text-3); }
+.sp-input { width: 100%; box-sizing: border-box; height: 30px; padding: 0 10px; border: 1px solid var(--sh-field-border); border-radius: 8px; background: var(--sh-field); color: inherit; font: inherit; }
+.sp-options { display: flex; gap: 14px; flex-wrap: wrap; }
+.sp-options label { display: flex; align-items: center; gap: 6px; }
+.sp-status { font-weight: 600; font-size: 12.5px; min-height: 16px; }
+.sp-list { flex: 1; min-height: 0; overflow: auto; display: flex; flex-direction: column; gap: 2px; }
+.sp-page { margin: 8px 0 3px; color: var(--sh-text-3); font-size: 11px; }
+.sp-hit { display: block; width: 100%; text-align: left; padding: 6px 8px; border: 1px solid transparent; border-radius: 8px; background: transparent; color: var(--sh-text-2); font: inherit; line-height: 1.35; cursor: pointer; }
+.sp-hit:hover { background: var(--sh-hover); }
+.sp-hit.is-current { background: var(--sh-hover); border-color: var(--sh-focus); }
+.sp-hit mark { background: rgba(255, 214, 0, .35); color: var(--sh-text-1); font-weight: 600; padding: 0 1px; border-radius: 2px; }

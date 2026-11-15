@@ -1,0 +1,34 @@
+{
+  "tab": "draw",
+  "keytip": "JI",
+  "source": "gridcraft 146161b4b450a56e5e59a083ba0478582d1e602b crates/ui-egui/src/ribbon/insert.rs (draw: Select Objects, four pen buttons, Eraser and Ink to Shape, every one large); Lasso Select, Add Pen, Draw with Touch, Ink to Math and Replay placed as in Excel for Windows",
+  "groups": {
+    "drawing-tools": {
+      "collapseOrder": 3,
+      "layout": [
+        {"large": "draw.tools.select"},
+        {"large": "draw.tools.lasso"},
+        {"large": "draw.tools.penBlue"},
+        {"large": "draw.tools.penBlack"},
+        {"large": "draw.tools.penRed"},
+        {"large": "draw.tools.penHighlighter"},
+        {"large": "draw.tools.eraser"},
+        {"large": "draw.tools.addPen"},
+        {"large": "draw.tools.drawWithTouch"}
+      ]
+    },
+    "convert": {
+      "collapseOrder": 2,
+      "layout": [
+        {"large": "draw.convert.inkToShape"},
+        {"large": "draw.convert.inkToMath"}
+      ]
+    },
+    "replay": {
+      "collapseOrder": 1,
+      "layout": [
+        {"large": "draw.replay.inkReplay"}
+      ]
+    }
+  }
+}

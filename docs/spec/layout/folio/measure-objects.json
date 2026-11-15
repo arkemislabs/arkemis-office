@@ -1,0 +1,108 @@
+{
+  "tab": "measure-objects",
+  "source": "printcraft crates/ui-egui/src/tools/measure_ui.rs @ 3109bb2359759e24ef490e1cdbdba00722b20972",
+  "groups": {
+    "measure": {
+      "collapseOrder": 5,
+      "collapsedIcon": "measure-distance",
+      "layout": [
+        {
+          "large": "measure.tools.distance"
+        },
+        {
+          "large": "measure.tools.perimeter"
+        },
+        {
+          "large": "measure.tools.area"
+        },
+        {
+          "large": "measure.tools.geo"
+        }
+      ]
+    },
+    "measurement-information": {
+      "collapseOrder": 3,
+      "collapsedIcon": "measure-angle",
+      "layout": [
+        {
+          "stack": [
+            "measure.info.angle",
+            "measure.info.label"
+          ]
+        }
+      ],
+      "widths": {
+        "measure.info.label": 140
+      }
+    },
+    "snap-to-drawing": {
+      "collapseOrder": 2,
+      "collapsedIcon": "magnet",
+      "layout": [
+        {
+          "stack": [
+            "measure.snap.enable",
+            "measure.snap.endpoints",
+            "measure.snap.midpoints"
+          ]
+        },
+        {
+          "stack": [
+            "measure.snap.intersections",
+            "measure.snap.paths",
+            "measure.snap.sensitivity"
+          ]
+        }
+      ],
+      "widths": {
+        "measure.snap.sensitivity": 56
+      }
+    },
+    "drawing-scale": {
+      "collapseOrder": 4,
+      "collapsedIcon": "ruler",
+      "layout": [
+        {
+          "stack": [
+            "measure.scale.scale",
+            "measure.scale.common",
+            "measure.scale.page-distance"
+          ]
+        },
+        {
+          "stack": [
+            "measure.scale.page-unit",
+            "measure.scale.real-distance",
+            "measure.scale.unit"
+          ]
+        },
+        {
+          "stack": [
+            "measure.scale.decimals",
+            "measure.scale.calibrate",
+            "measure.scale.entire-page"
+          ]
+        },
+        {
+          "large": "measure.scale.apply"
+        }
+      ],
+      "widths": {
+        "measure.scale.scale": 120,
+        "measure.scale.page-distance": 80,
+        "measure.scale.page-unit": 56,
+        "measure.scale.real-distance": 80,
+        "measure.scale.decimals": 56
+      }
+    },
+    "saved-measurements": {
+      "collapseOrder": 1,
+      "collapsedIcon": "file-output",
+      "layout": [
+        {
+          "large": "measure.saved.export"
+        }
+      ]
+    }
+  }
+}

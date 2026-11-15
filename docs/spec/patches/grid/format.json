@@ -1,0 +1,1196 @@
+{
+ "dialogs": {
+  "dialog.formatCells": {
+   "buttons": [
+    "OK",
+    "Cancel"
+   ],
+   "note": "OK runs home.formatCells {style} with only the settings changed on the pages (Excel leaves untouched settings of a mixed selection alone), the Border page as home.borders presets on the outline and inside of the selection, and Merge cells as home.mergeCells, as one undo step. Clear sits on the Border and Fill pages, as Excel shows it there only. Fill Effects (gradients), Locale and Text direction are not translated and stay hidden.",
+   "tabs": [
+    {
+     "name": "Number",
+     "fields": [
+      {
+       "id": "category",
+       "label": "Category:",
+       "kind": "list",
+       "options": [
+        {
+         "value": "General",
+         "label": "General"
+        },
+        {
+         "value": "Number",
+         "label": "Number"
+        },
+        {
+         "value": "Currency",
+         "label": "Currency"
+        },
+        {
+         "value": "Accounting",
+         "label": "Accounting"
+        },
+        {
+         "value": "Date",
+         "label": "Date"
+        },
+        {
+         "value": "Time",
+         "label": "Time"
+        },
+        {
+         "value": "Percentage",
+         "label": "Percentage"
+        },
+        {
+         "value": "Fraction",
+         "label": "Fraction"
+        },
+        {
+         "value": "Scientific",
+         "label": "Scientific"
+        },
+        {
+         "value": "Text",
+         "label": "Text"
+        },
+        {
+         "value": "Special",
+         "label": "Special"
+        },
+        {
+         "value": "Custom",
+         "label": "Custom"
+        }
+       ],
+       "source": "office",
+       "note": "Upstream lists General, Number, Currency, Accounting, Short Date, Long Date, Time, Percentage, Fraction, Scientific, Text; Excel folds the two dates into Date with a Type list."
+      },
+      {
+       "id": "sample",
+       "label": "Sample",
+       "kind": "preview",
+       "options": []
+      },
+      {
+       "id": "decimalPlaces",
+       "label": "Decimal places:",
+       "kind": "number",
+       "options": [],
+       "min": 0,
+       "max": 30,
+       "source": "office"
+      },
+      {
+       "id": "useSeparator",
+       "label": "Use 1000 Separator (,)",
+       "kind": "checkbox",
+       "options": [],
+       "source": "office"
+      },
+      {
+       "id": "symbol",
+       "label": "Symbol:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "None",
+         "label": "None"
+        },
+        {
+         "value": "$",
+         "label": "$"
+        },
+        {
+         "value": "£",
+         "label": "£"
+        },
+        {
+         "value": "€",
+         "label": "€"
+        },
+        {
+         "value": "¥",
+         "label": "¥"
+        },
+        {
+         "value": "₹",
+         "label": "₹"
+        },
+        {
+         "value": "CHF",
+         "label": "CHF"
+        },
+        {
+         "value": "R$",
+         "label": "R$"
+        },
+        {
+         "value": "₩",
+         "label": "₩"
+        },
+        {
+         "value": "₽",
+         "label": "₽"
+        }
+       ],
+       "source": "office"
+      },
+      {
+       "id": "negativeNumbers",
+       "label": "Negative numbers:",
+       "kind": "list",
+       "options": [
+        {
+         "value": 0,
+         "label": "-1234.10"
+        },
+        {
+         "value": 1,
+         "label": "1234.10 (red)"
+        },
+        {
+         "value": 2,
+         "label": "(1234.10)"
+        },
+        {
+         "value": 3,
+         "label": "(1234.10) (red)"
+        }
+       ],
+       "source": "office"
+      },
+      {
+       "id": "type",
+       "label": "Type:",
+       "kind": "list",
+       "options": [
+        {
+         "value": "<types of the category>",
+         "label": "<types of the category>"
+        }
+       ],
+       "source": "office"
+      },
+      {
+       "id": "code",
+       "label": "Type (custom format code):",
+       "kind": "text",
+       "options": []
+      }
+     ]
+    },
+    {
+     "name": "Alignment",
+     "fields": [
+      {
+       "id": "horizontal",
+       "label": "Horizontal:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "general",
+         "label": "General"
+        },
+        {
+         "value": "left",
+         "label": "Left (Indent)"
+        },
+        {
+         "value": "center",
+         "label": "Center"
+        },
+        {
+         "value": "right",
+         "label": "Right (Indent)"
+        },
+        {
+         "value": "fill",
+         "label": "Fill"
+        },
+        {
+         "value": "justify",
+         "label": "Justify"
+        },
+        {
+         "value": "centerAcross",
+         "label": "Center Across Selection"
+        },
+        {
+         "value": "distributed",
+         "label": "Distributed (Indent)"
+        }
+       ]
+      },
+      {
+       "id": "indent",
+       "label": "Indent:",
+       "kind": "number",
+       "options": [],
+       "min": 0,
+       "max": 250
+      },
+      {
+       "id": "vertical",
+       "label": "Vertical:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "top",
+         "label": "Top"
+        },
+        {
+         "value": "center",
+         "label": "Center"
+        },
+        {
+         "value": "bottom",
+         "label": "Bottom"
+        },
+        {
+         "value": "justify",
+         "label": "Justify"
+        },
+        {
+         "value": "distributed",
+         "label": "Distributed"
+        }
+       ]
+      },
+      {
+       "id": "wrap",
+       "label": "Wrap text",
+       "kind": "checkbox",
+       "options": []
+      },
+      {
+       "id": "shrink",
+       "label": "Shrink to fit",
+       "kind": "checkbox",
+       "options": []
+      },
+      {
+       "id": "merge",
+       "label": "Merge cells",
+       "kind": "checkbox",
+       "options": [],
+       "source": "office"
+      },
+      {
+       "id": "verticalText",
+       "label": "Vertical text",
+       "kind": "checkbox",
+       "options": [],
+       "source": "office"
+      },
+      {
+       "id": "rotation",
+       "label": "Degrees",
+       "kind": "number",
+       "options": [],
+       "min": -90,
+       "max": 90,
+       "note": "Slider upstream; Excel has a dial plus the vertical-text box."
+      }
+     ]
+    },
+    {
+     "name": "Font",
+     "fields": [
+      {
+       "id": "font",
+       "label": "Font:",
+       "kind": "combo",
+       "options": [
+        {
+         "value": "<crate::fonts::families()>",
+         "label": "<crate::fonts::families()>"
+        }
+       ]
+      },
+      {
+       "id": "fontStyle",
+       "label": "Font style:",
+       "kind": "list",
+       "options": [
+        {
+         "value": "Regular",
+         "label": "Regular"
+        },
+        {
+         "value": "Italic",
+         "label": "Italic"
+        },
+        {
+         "value": "Bold",
+         "label": "Bold"
+        },
+        {
+         "value": "Bold Italic",
+         "label": "Bold Italic"
+        }
+       ],
+       "source": "office"
+      },
+      {
+       "id": "size",
+       "label": "Size:",
+       "kind": "number",
+       "options": [],
+       "min": 1,
+       "max": 409,
+       "note": "Excel size list 1-409 (upstream slider 6-72)."
+      },
+      {
+       "id": "bold",
+       "label": "Bold",
+       "kind": "checkbox",
+       "options": []
+      },
+      {
+       "id": "italic",
+       "label": "Italic",
+       "kind": "checkbox",
+       "options": []
+      },
+      {
+       "id": "underline",
+       "label": "Underline:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "none",
+         "label": "None"
+        },
+        {
+         "value": "single",
+         "label": "Single"
+        },
+        {
+         "value": "double",
+         "label": "Double"
+        },
+        {
+         "value": "singleAccounting",
+         "label": "Single Accounting"
+        },
+        {
+         "value": "doubleAccounting",
+         "label": "Double Accounting"
+        }
+       ]
+      },
+      {
+       "id": "color",
+       "label": "Color:",
+       "kind": "color",
+       "options": [
+        {
+         "value": "Automatic",
+         "label": "Automatic"
+        },
+        {
+         "value": "<theme palette>",
+         "label": "<theme palette>"
+        }
+       ]
+      },
+      {
+       "id": "normalFont",
+       "label": "Normal font",
+       "kind": "checkbox",
+       "options": [],
+       "source": "office"
+      },
+      {
+       "id": "strike",
+       "label": "Strikethrough",
+       "kind": "checkbox",
+       "options": []
+      },
+      {
+       "id": "vert",
+       "label": "Effects",
+       "kind": "radio",
+       "options": [
+        {
+         "value": "baseline",
+         "label": "Normal"
+        },
+        {
+         "value": "superscript",
+         "label": "Superscript"
+        },
+        {
+         "value": "subscript",
+         "label": "Subscript"
+        }
+       ]
+      },
+      {
+       "id": "preview",
+       "label": "Preview",
+       "kind": "preview",
+       "options": [],
+       "source": "office"
+      }
+     ]
+    },
+    {
+     "name": "Border",
+     "fields": [
+      {
+       "id": "lineStyle",
+       "label": "Style:",
+       "kind": "list",
+       "options": [
+        {
+         "value": "none",
+         "label": "none"
+        },
+        {
+         "value": "hair",
+         "label": "hair"
+        },
+        {
+         "value": "dotted",
+         "label": "dotted"
+        },
+        {
+         "value": "dashDotDot",
+         "label": "dashDotDot"
+        },
+        {
+         "value": "dashDot",
+         "label": "dashDot"
+        },
+        {
+         "value": "dashed",
+         "label": "dashed"
+        },
+        {
+         "value": "thin",
+         "label": "thin"
+        },
+        {
+         "value": "mediumDashDotDot",
+         "label": "mediumDashDotDot"
+        },
+        {
+         "value": "slantDashDot",
+         "label": "slantDashDot"
+        },
+        {
+         "value": "mediumDashDot",
+         "label": "mediumDashDot"
+        },
+        {
+         "value": "mediumDashed",
+         "label": "mediumDashed"
+        },
+        {
+         "value": "medium",
+         "label": "medium"
+        },
+        {
+         "value": "thick",
+         "label": "thick"
+        },
+        {
+         "value": "double",
+         "label": "double"
+        }
+       ],
+       "source": "office"
+      },
+      {
+       "id": "lineColor",
+       "label": "Color:",
+       "kind": "color",
+       "options": [
+        {
+         "value": "Automatic",
+         "label": "Automatic"
+        }
+       ],
+       "source": "office"
+      },
+      {
+       "id": "presets",
+       "label": "Presets",
+       "kind": "radio",
+       "options": [
+        {
+         "value": "none",
+         "label": "None"
+        },
+        {
+         "value": "outline",
+         "label": "Outline"
+        },
+        {
+         "value": "inside",
+         "label": "Inside",
+         "source": "office"
+        }
+       ]
+      },
+      {
+       "id": "top",
+       "label": "Top:",
+       "kind": "radio",
+       "options": [
+        {
+         "value": "none",
+         "label": "none"
+        },
+        {
+         "value": "hair",
+         "label": "hair"
+        },
+        {
+         "value": "dotted",
+         "label": "dotted"
+        },
+        {
+         "value": "dashDotDot",
+         "label": "dashDotDot"
+        },
+        {
+         "value": "dashDot",
+         "label": "dashDot"
+        },
+        {
+         "value": "dashed",
+         "label": "dashed"
+        },
+        {
+         "value": "thin",
+         "label": "thin"
+        },
+        {
+         "value": "mediumDashDotDot",
+         "label": "mediumDashDotDot"
+        },
+        {
+         "value": "slantDashDot",
+         "label": "slantDashDot"
+        },
+        {
+         "value": "mediumDashDot",
+         "label": "mediumDashDot"
+        },
+        {
+         "value": "mediumDashed",
+         "label": "mediumDashed"
+        },
+        {
+         "value": "medium",
+         "label": "medium"
+        },
+        {
+         "value": "thick",
+         "label": "thick"
+        },
+        {
+         "value": "double",
+         "label": "double"
+        }
+       ]
+      },
+      {
+       "id": "bottom",
+       "label": "Bottom:",
+       "kind": "radio",
+       "options": [
+        {
+         "value": "none",
+         "label": "none"
+        },
+        {
+         "value": "hair",
+         "label": "hair"
+        },
+        {
+         "value": "dotted",
+         "label": "dotted"
+        },
+        {
+         "value": "dashDotDot",
+         "label": "dashDotDot"
+        },
+        {
+         "value": "dashDot",
+         "label": "dashDot"
+        },
+        {
+         "value": "dashed",
+         "label": "dashed"
+        },
+        {
+         "value": "thin",
+         "label": "thin"
+        },
+        {
+         "value": "mediumDashDotDot",
+         "label": "mediumDashDotDot"
+        },
+        {
+         "value": "slantDashDot",
+         "label": "slantDashDot"
+        },
+        {
+         "value": "mediumDashDot",
+         "label": "mediumDashDot"
+        },
+        {
+         "value": "mediumDashed",
+         "label": "mediumDashed"
+        },
+        {
+         "value": "medium",
+         "label": "medium"
+        },
+        {
+         "value": "thick",
+         "label": "thick"
+        },
+        {
+         "value": "double",
+         "label": "double"
+        }
+       ]
+      },
+      {
+       "id": "left",
+       "label": "Left:",
+       "kind": "radio",
+       "options": [
+        {
+         "value": "none",
+         "label": "none"
+        },
+        {
+         "value": "hair",
+         "label": "hair"
+        },
+        {
+         "value": "dotted",
+         "label": "dotted"
+        },
+        {
+         "value": "dashDotDot",
+         "label": "dashDotDot"
+        },
+        {
+         "value": "dashDot",
+         "label": "dashDot"
+        },
+        {
+         "value": "dashed",
+         "label": "dashed"
+        },
+        {
+         "value": "thin",
+         "label": "thin"
+        },
+        {
+         "value": "mediumDashDotDot",
+         "label": "mediumDashDotDot"
+        },
+        {
+         "value": "slantDashDot",
+         "label": "slantDashDot"
+        },
+        {
+         "value": "mediumDashDot",
+         "label": "mediumDashDot"
+        },
+        {
+         "value": "mediumDashed",
+         "label": "mediumDashed"
+        },
+        {
+         "value": "medium",
+         "label": "medium"
+        },
+        {
+         "value": "thick",
+         "label": "thick"
+        },
+        {
+         "value": "double",
+         "label": "double"
+        }
+       ]
+      },
+      {
+       "id": "right",
+       "label": "Right:",
+       "kind": "radio",
+       "options": [
+        {
+         "value": "none",
+         "label": "none"
+        },
+        {
+         "value": "hair",
+         "label": "hair"
+        },
+        {
+         "value": "dotted",
+         "label": "dotted"
+        },
+        {
+         "value": "dashDotDot",
+         "label": "dashDotDot"
+        },
+        {
+         "value": "dashDot",
+         "label": "dashDot"
+        },
+        {
+         "value": "dashed",
+         "label": "dashed"
+        },
+        {
+         "value": "thin",
+         "label": "thin"
+        },
+        {
+         "value": "mediumDashDotDot",
+         "label": "mediumDashDotDot"
+        },
+        {
+         "value": "slantDashDot",
+         "label": "slantDashDot"
+        },
+        {
+         "value": "mediumDashDot",
+         "label": "mediumDashDot"
+        },
+        {
+         "value": "mediumDashed",
+         "label": "mediumDashed"
+        },
+        {
+         "value": "medium",
+         "label": "medium"
+        },
+        {
+         "value": "thick",
+         "label": "thick"
+        },
+        {
+         "value": "double",
+         "label": "double"
+        }
+       ]
+      },
+      {
+       "id": "insideHorizontal",
+       "label": "Inside horizontal:",
+       "kind": "radio",
+       "options": [
+        {
+         "value": "none",
+         "label": "none"
+        },
+        {
+         "value": "hair",
+         "label": "hair"
+        },
+        {
+         "value": "dotted",
+         "label": "dotted"
+        },
+        {
+         "value": "dashDotDot",
+         "label": "dashDotDot"
+        },
+        {
+         "value": "dashDot",
+         "label": "dashDot"
+        },
+        {
+         "value": "dashed",
+         "label": "dashed"
+        },
+        {
+         "value": "thin",
+         "label": "thin"
+        },
+        {
+         "value": "mediumDashDotDot",
+         "label": "mediumDashDotDot"
+        },
+        {
+         "value": "slantDashDot",
+         "label": "slantDashDot"
+        },
+        {
+         "value": "mediumDashDot",
+         "label": "mediumDashDot"
+        },
+        {
+         "value": "mediumDashed",
+         "label": "mediumDashed"
+        },
+        {
+         "value": "medium",
+         "label": "medium"
+        },
+        {
+         "value": "thick",
+         "label": "thick"
+        },
+        {
+         "value": "double",
+         "label": "double"
+        }
+       ]
+      },
+      {
+       "id": "insideVertical",
+       "label": "Inside vertical:",
+       "kind": "radio",
+       "options": [
+        {
+         "value": "none",
+         "label": "none"
+        },
+        {
+         "value": "hair",
+         "label": "hair"
+        },
+        {
+         "value": "dotted",
+         "label": "dotted"
+        },
+        {
+         "value": "dashDotDot",
+         "label": "dashDotDot"
+        },
+        {
+         "value": "dashDot",
+         "label": "dashDot"
+        },
+        {
+         "value": "dashed",
+         "label": "dashed"
+        },
+        {
+         "value": "thin",
+         "label": "thin"
+        },
+        {
+         "value": "mediumDashDotDot",
+         "label": "mediumDashDotDot"
+        },
+        {
+         "value": "slantDashDot",
+         "label": "slantDashDot"
+        },
+        {
+         "value": "mediumDashDot",
+         "label": "mediumDashDot"
+        },
+        {
+         "value": "mediumDashed",
+         "label": "mediumDashed"
+        },
+        {
+         "value": "medium",
+         "label": "medium"
+        },
+        {
+         "value": "thick",
+         "label": "thick"
+        },
+        {
+         "value": "double",
+         "label": "double"
+        }
+       ]
+      },
+      {
+       "id": "diagDown",
+       "label": "Diagonal ↘:",
+       "kind": "radio",
+       "options": [
+        {
+         "value": "none",
+         "label": "none"
+        },
+        {
+         "value": "hair",
+         "label": "hair"
+        },
+        {
+         "value": "dotted",
+         "label": "dotted"
+        },
+        {
+         "value": "dashDotDot",
+         "label": "dashDotDot"
+        },
+        {
+         "value": "dashDot",
+         "label": "dashDot"
+        },
+        {
+         "value": "dashed",
+         "label": "dashed"
+        },
+        {
+         "value": "thin",
+         "label": "thin"
+        },
+        {
+         "value": "mediumDashDotDot",
+         "label": "mediumDashDotDot"
+        },
+        {
+         "value": "slantDashDot",
+         "label": "slantDashDot"
+        },
+        {
+         "value": "mediumDashDot",
+         "label": "mediumDashDot"
+        },
+        {
+         "value": "mediumDashed",
+         "label": "mediumDashed"
+        },
+        {
+         "value": "medium",
+         "label": "medium"
+        },
+        {
+         "value": "thick",
+         "label": "thick"
+        },
+        {
+         "value": "double",
+         "label": "double"
+        }
+       ]
+      },
+      {
+       "id": "diagUp",
+       "label": "Diagonal ↗:",
+       "kind": "radio",
+       "options": [
+        {
+         "value": "none",
+         "label": "none"
+        },
+        {
+         "value": "hair",
+         "label": "hair"
+        },
+        {
+         "value": "dotted",
+         "label": "dotted"
+        },
+        {
+         "value": "dashDotDot",
+         "label": "dashDotDot"
+        },
+        {
+         "value": "dashDot",
+         "label": "dashDot"
+        },
+        {
+         "value": "dashed",
+         "label": "dashed"
+        },
+        {
+         "value": "thin",
+         "label": "thin"
+        },
+        {
+         "value": "mediumDashDotDot",
+         "label": "mediumDashDotDot"
+        },
+        {
+         "value": "slantDashDot",
+         "label": "slantDashDot"
+        },
+        {
+         "value": "mediumDashDot",
+         "label": "mediumDashDot"
+        },
+        {
+         "value": "mediumDashed",
+         "label": "mediumDashed"
+        },
+        {
+         "value": "medium",
+         "label": "medium"
+        },
+        {
+         "value": "thick",
+         "label": "thick"
+        },
+        {
+         "value": "double",
+         "label": "double"
+        }
+       ]
+      },
+      {
+       "id": "preview",
+       "label": "Border preview (border_preview::sample)",
+       "kind": "preview",
+       "options": []
+      }
+     ]
+    },
+    {
+     "name": "Fill",
+     "fields": [
+      {
+       "id": "background",
+       "label": "Background Color:",
+       "kind": "color",
+       "options": [
+        {
+         "value": "No Color",
+         "label": "No Color"
+        },
+        {
+         "value": "<theme palette>",
+         "label": "<theme palette>"
+        }
+       ]
+      },
+      {
+       "id": "patternColor",
+       "label": "Pattern Color:",
+       "kind": "color",
+       "options": [
+        {
+         "value": "Automatic",
+         "label": "Automatic"
+        }
+       ],
+       "source": "office"
+      },
+      {
+       "id": "patternStyle",
+       "label": "Pattern Style:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "none",
+         "label": "None"
+        },
+        {
+         "value": "gray0625",
+         "label": "6.25% Gray"
+        },
+        {
+         "value": "gray125",
+         "label": "12.5% Gray"
+        },
+        {
+         "value": "lightGray",
+         "label": "25% Gray"
+        },
+        {
+         "value": "mediumGray",
+         "label": "50% Gray"
+        },
+        {
+         "value": "darkGray",
+         "label": "75% Gray"
+        },
+        {
+         "value": "lightHorizontal",
+         "label": "Thin Horizontal Stripe"
+        },
+        {
+         "value": "lightVertical",
+         "label": "Thin Vertical Stripe"
+        },
+        {
+         "value": "lightDown",
+         "label": "Thin Reverse Diagonal Stripe"
+        },
+        {
+         "value": "lightUp",
+         "label": "Thin Diagonal Stripe"
+        },
+        {
+         "value": "lightGrid",
+         "label": "Thin Horizontal Crosshatch"
+        },
+        {
+         "value": "lightTrellis",
+         "label": "Thin Diagonal Crosshatch"
+        },
+        {
+         "value": "darkHorizontal",
+         "label": "Horizontal Stripe"
+        },
+        {
+         "value": "darkVertical",
+         "label": "Vertical Stripe"
+        },
+        {
+         "value": "darkDown",
+         "label": "Reverse Diagonal Stripe"
+        },
+        {
+         "value": "darkUp",
+         "label": "Diagonal Stripe"
+        },
+        {
+         "value": "darkGrid",
+         "label": "Diagonal Crosshatch"
+        },
+        {
+         "value": "darkTrellis",
+         "label": "Thick Diagonal Crosshatch"
+        }
+       ],
+       "source": "office"
+      },
+      {
+       "id": "sample",
+       "label": "Sample",
+       "kind": "preview",
+       "options": [],
+       "source": "office"
+      }
+     ]
+    },
+    {
+     "name": "Protection",
+     "fields": [
+      {
+       "id": "locked",
+       "label": "Locked",
+       "kind": "checkbox",
+       "options": []
+      },
+      {
+       "id": "hidden",
+       "label": "Hidden",
+       "kind": "checkbox",
+       "options": []
+      },
+      {
+       "id": "note",
+       "label": "Locking cells or hiding formulas has no effect until you protect the worksheet (Review › Protect Sheet).",
+       "kind": "preview",
+       "options": []
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

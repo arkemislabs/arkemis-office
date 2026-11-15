@@ -1,0 +1,4 @@
+{
+  "source": "Excel Custom Views: Show is disabled while no view is saved",
+  "buttonsDisabledWhen": {"show": {"hasViews": [true]}}
+}

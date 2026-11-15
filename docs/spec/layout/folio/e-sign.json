@@ -1,0 +1,51 @@
+{
+  "tab": "e-sign",
+  "source": "printcraft crates/engine/src/catalog.rs (fill_sign), crates/ui-egui/src/panels/organize_panel.rs @ 3109bb2359759e24ef490e1cdbdba00722b20972",
+  "groups": {
+    "fill": {
+      "collapseOrder": 3,
+      "collapsedIcon": "type",
+      "layout": [
+        {
+          "stack": [
+            "esign.fill.add-text",
+            "esign.fill.checkmark",
+            "esign.fill.cross"
+          ]
+        },
+        {
+          "stack": [
+            "esign.fill.dot",
+            "esign.fill.line",
+            "esign.fill.date"
+          ]
+        }
+      ]
+    },
+    "sign-yourself": {
+      "collapseOrder": 2,
+      "collapsedIcon": "signature",
+      "layout": [
+        {
+          "stack": [
+            "esign.sign.signature",
+            "esign.sign.initials"
+          ]
+        }
+      ]
+    },
+    "request-signatures": {
+      "collapseOrder": 1,
+      "collapsedIcon": "send",
+      "layout": [
+        {
+          "stack": [
+            "esign.request.request",
+            "esign.request.web-form",
+            "esign.request.bulk"
+          ]
+        }
+      ]
+    }
+  }
+}

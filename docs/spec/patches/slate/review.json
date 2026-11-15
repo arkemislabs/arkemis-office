@@ -1,0 +1,136 @@
+{
+  "controls": {
+    "review.proofing.spelling": {
+      "note": "U:slate/spelling: opens the Spelling pane (F7) on the first misspelt word of the page at or after the caret and selects it: Ignore, Ignore All, Add (to the dictionary), the suggestions, Change and Change All. The misspelt words of the page are squiggled and the right-click menu on one offers its suggestions, Ignore All and Add to Dictionary. Words are checked against the bundled US English dictionary (nspell over dictionary-en, core/common/lib/spelling.mjs); text marked Do not check spelling, in another language, or in a link is left out. Not checked against upstream (there is none)."
+    },
+    "review.language.translate": {
+      "note": "U:slate/review: hidden. Translate sends text to Microsoft Translator, an online service the app does not have; there is no offline translation engine."
+    },
+    "review.language.translate.translate-selection": {
+      "note": "U:slate/review: hidden with Translate (no offline translation engine, no online service)."
+    },
+    "review.language.translate.translate-page": {
+      "note": "U:slate/review: hidden with Translate (no offline translation engine, no online service)."
+    },
+    "review.language.translate.choose-translation-language": {
+      "note": "U:slate/review: hidden with Translate (no offline translation engine, no online service)."
+    }
+  },
+  "dialogs": {
+    "dialog.password-protection": {
+      "note": "U:slate/review: Password Options opens the app's own Password Options dialog (the three auto-lock settings of OneNote's Options > Advanced), because the full Options dialog is not part of this app.",
+      "tabs": [
+        {
+          "name": "Current Section",
+          "fields": [
+            {
+              "id": "currentSection",
+              "label": "Current section",
+              "kind": "preview",
+              "options": []
+            },
+            {
+              "id": "setPassword",
+              "label": "Set Password...",
+              "kind": "button",
+              "options": [],
+              "dialog": "dialog.password-set"
+            },
+            {
+              "id": "changePassword",
+              "label": "Change Password...",
+              "kind": "button",
+              "options": [],
+              "dialog": "dialog.password-change"
+            },
+            {
+              "id": "removePassword",
+              "label": "Remove Password...",
+              "kind": "button",
+              "options": [],
+              "dialog": "dialog.password-remove"
+            },
+            {
+              "id": "lockAll",
+              "label": "Lock All",
+              "kind": "button",
+              "options": []
+            },
+            {
+              "id": "notes",
+              "label": "Notes on Passwords",
+              "kind": "preview",
+              "options": []
+            },
+            {
+              "id": "passwordOptions",
+              "label": "Password Options...",
+              "kind": "button",
+              "options": [],
+              "dialog": "dialog.password-options"
+            }
+          ]
+        }
+      ]
+    },
+    "dialog.password-options": {
+      "title": "Password Options",
+      "tabs": [
+        {
+          "name": "Password Options",
+          "fields": [
+            {
+              "id": "lockAfter",
+              "label": "Lock password-protected sections after I have not worked in them for the following amount of time",
+              "kind": "checkbox",
+              "options": [],
+              "default": true
+            },
+            {
+              "id": "lockAfterTime",
+              "label": "Lock after",
+              "kind": "select",
+              "options": [
+                "1 minute",
+                "5 minutes",
+                "10 minutes",
+                "15 minutes",
+                "30 minutes",
+                "1 hour",
+                "2 hours",
+                "6 hours",
+                "12 hours",
+                "1 day"
+              ],
+              "default": "10 minutes"
+            },
+            {
+              "id": "lockOnNavigate",
+              "label": "Lock password-protected sections as soon as I navigate away from them",
+              "kind": "checkbox",
+              "options": []
+            }
+          ]
+        }
+      ],
+      "buttons": [
+        "OK",
+        "Cancel"
+      ],
+      "sourceRef": "office:OneNote/Password Protection > Password Options",
+      "command": "review.passwordOptions"
+    }
+  },
+  "commands": {
+    "review.passwordOptions": {
+      "id": "review.passwordOptions",
+      "args": [
+        "lockAfter?: boolean",
+        "minutes?: number",
+        "onNavigate?: boolean"
+      ],
+      "sourceRef": "office:OneNote/Password Protection > Password Options",
+      "summary": "Set when protected sections lock by themselves (after idle time, on navigating away)"
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "tab": "chart-design",
+  "source": "wordcraft aadb077e072b7de05f724e359d8db82e151f125c crates/ui-egui/src/ribbon/charts.rs (chart_design: Chart Title/Legend/Data Labels large menus, Edit Data large, Change Chart Type large), common.rs graphic_size (H then W); Add Chart Element, Quick Layout, Chart Styles and the other Data buttons placed as in Word for Windows",
+  "groups": {
+    "chart-layouts": {
+      "collapseOrder": 4,
+      "layout": [
+        {"large": "chart-design.chart-layouts.add-chart-element"},
+        {"large": "chart-design.chart-layouts.chart-title"},
+        {"large": "chart-design.chart-layouts.legend"},
+        {"large": "chart-design.chart-layouts.data-labels"},
+        {"large": "chart-design.chart-layouts.quick-layout"}
+      ]
+    },
+    "chart-styles": {
+      "collapseOrder": 1,
+      "layout": [
+        {"large": "chart-design.chart-styles.change-colors"},
+        {"gallery": "chart-design.chart-styles.chart-styles", "inline": true, "columns": 6}
+      ]
+    },
+    "data": {
+      "collapseOrder": 3,
+      "layout": [
+        {"large": "chart-design.data.switch-row-column"},
+        {"large": "chart-design.data.select-data"},
+        {"large": "chart-design.data.edit-data"},
+        {"large": "chart-design.data.refresh-data"}
+      ]
+    },
+    "type": {
+      "collapseOrder": 2,
+      "layout": [
+        {"large": "chart-design.type.change-chart-type"}
+      ]
+    },
+    "size": {
+      "collapseOrder": 5,
+      "layout": [
+        {"stack": ["chart-design.size.h", "chart-design.size.w"]}
+      ]
+    }
+  }
+}

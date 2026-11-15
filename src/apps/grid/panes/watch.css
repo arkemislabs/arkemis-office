@@ -1,0 +1,9 @@
+/* The Watch Window of Grid. */
+.wt { display: flex; flex-direction: column; gap: 8px; font: 12px var(--ark-font, system-ui); color: var(--sh-text-1, #f2f2f3); height: 100%; min-height: 0; }
+.wt-bar { display: flex; gap: 8px; }
+.wt-table { display: flex; flex-direction: column; overflow: auto; border-radius: 9px; background: rgba(255,255,255,.04); box-shadow: inset 0 0 0 1px rgba(255,255,255,.08); min-height: 90px; }
+.wt-row { display: grid; grid-template-columns: minmax(60px, 1.1fr) minmax(50px, .9fr) minmax(50px, .9fr) 52px minmax(50px, 1fr) minmax(70px, 1.3fr); gap: 8px; padding: 5px 10px; align-items: center; cursor: default; }
+.wt-row span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.wt-head { position: sticky; top: 0; font-weight: 600; color: var(--sh-text-2, #b4b4ba); background: rgba(40,40,46,.96); }
+.wt-row.is-picked { background: rgba(123,176,255,.16); }
+.wt-empty { padding: 14px 10px; color: var(--sh-text-3, #85858c); line-height: 1.45; }

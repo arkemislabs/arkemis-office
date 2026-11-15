@@ -1,0 +1,44 @@
+{
+  "controls": {
+    "data.getTransform.getData": {
+      "command": "data.getData",
+      "dialog": "dialog.fromTextCsv",
+      "note": "U:grid/data: checked against gridcraft (data.getData: CSV or TSV text, or a JSON array of objects, loaded into a new sheet as a table); the dialog is Excel's import preview with the file chosen by the app's own picker."
+    },
+    "data.getTransform.fromTextCsv": {
+      "command": "data.fromTextCsv",
+      "dialog": "dialog.fromTextCsv",
+      "note": "U:grid/data: checked against gridcraft (data.fromTextCsv: a text file loaded into a new sheet as a table, each field read as typed input). Excel's Transform Data (the Power Query editor) and Data Type Detection are not built."
+    },
+    "data.getTransform.fromTableRange": {
+      "command": null,
+      "dialog": null,
+      "note": "U:grid/data: hidden. From Table/Range opens the Power Query editor on the table, which this app does not have; a table is already a list you can sort, filter and summarise."
+    },
+    "data.outline.group.auto-outline": {
+      "command": "data.autoOutline",
+      "params": null,
+      "note": "U:grid/data: not in gridcraft; Excel's Auto Outline groups the rows and columns that the sheet's formulas add up (not checked against upstream)."
+    },
+    "data.outline.ungroup.clear-outline": {
+      "command": "data.clearOutline",
+      "params": null,
+      "note": "U:grid/data: not in gridcraft; Excel's Clear Outline removes every outline level of the sheet (not checked against upstream)."
+    }
+  },
+  "dialogs": {
+    "dialog.fromTextCsv": {
+      "title": "Import Data",
+      "buttons": ["Load", "Cancel"],
+      "tabs": [{"name": "", "fields": [
+        {"id": "name", "label": "File", "kind": "text", "options": []},
+        {"id": "delimiter", "label": "Delimiter", "kind": "select", "options": [
+          {"value": "", "label": "Detect"}, {"value": "comma", "label": "Comma"}, {"value": "semicolon", "label": "Semicolon"}, {"value": "tab", "label": "Tab"},
+          {"value": "space", "label": "Space"}, {"value": "colon", "label": "Colon"}, {"value": "pipe", "label": "Pipe"}]},
+        {"id": "text", "label": "Preview", "kind": "preview", "options": []}
+      ]}],
+      "note": "U:grid/data: Excel's import preview drawn by src/apps/grid/dialogs/fromTextCsv.tsx; Load runs gridcraft's data.fromTextCsv."
+    }
+  },
+  "commands": {}
+}

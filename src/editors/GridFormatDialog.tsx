@@ -1,0 +1,21 @@
+import {useState} from 'react';
+import type {Cell} from '../types';
+export default function GridFormatDialog({cell,onApply,onClose}:{cell:Cell;onApply:(style:Partial<Cell>,borderPatch?:{style?:string;color?:string})=>void;onClose:()=>void}){
+ const [draft,setDraft]=useState<Partial<Cell>>({numFmt:cell.numFmt??'General',verticalAlign:cell.verticalAlign??'bottom',rotation:cell.rotation??0,indent:cell.indent??0,wrap:!!cell.wrap,underline:cell.underline??'none',strike:!!cell.strike});
+ const [changed,setChanged]=useState<Partial<Cell>>({}),[borderStyle,setBorderStyle]=useState('thin'),[borderColor,setBorderColor]=useState('#000000');
+ const [borderPatch,setBorderPatch]=useState<{style?:string;color?:string}>({});
+ const change=(patch:Partial<Cell>)=>{setDraft(value=>({...value,...patch}));setChanged(value=>({...value,...patch}));};
+ return <div className="grid-pivot-backdrop"><form className="grid-pivot-dialog grid-format-dialog" role="dialog" aria-modal="true" aria-label="Format Cells" onSubmit={e=>{e.preventDefault();onApply(changed,borderPatch);}} onKeyDown={e=>{if(e.key==='Escape'){e.preventDefault();onClose();}if(e.key==='Tab'){const controls=Array.from(e.currentTarget.querySelectorAll<HTMLElement>('button,input,select'));const first=controls[0],last=controls.at(-1);if(e.shiftKey&&document.activeElement===first){e.preventDefault();last?.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first?.focus();}}}}>
+ <header><h2>Format Cells</h2><button type="button" aria-label="Close Format Cells" onClick={onClose}>×</button></header>
+ <label>Number format code<input autoFocus aria-label="Custom number format" maxLength={255} value={draft.numFmt} onChange={e=>change({numFmt:e.target.value})}/></label><p>Examples: 0.00 · #,##0 · 0% · yyyy-mm-dd · @</p>
+ <label>Vertical alignment<select aria-label="Cell vertical alignment" value={draft.verticalAlign} onChange={e=>change({verticalAlign:e.target.value as Cell['verticalAlign']})}><option value="top">Top</option><option value="middle">Middle</option><option value="bottom">Bottom</option></select></label>
+ <label>Text rotation<input aria-label="Cell text rotation" type="number" min={-90} max={90} value={draft.rotation} onChange={e=>change({rotation:Number(e.target.value)})}/></label>
+ <label>Indent<input aria-label="Cell indent" type="number" min={0} max={250} value={draft.indent} onChange={e=>change({indent:Number(e.target.value)})}/></label>
+ <label>Underline<select aria-label="Cell underline style" value={draft.underline} onChange={e=>change({underline:e.target.value as Cell['underline']})}><option value="none">None</option><option value="single">Single</option><option value="double">Double</option><option value="singleAccounting">Single accounting</option><option value="doubleAccounting">Double accounting</option></select></label>
+ <label>Borders<select aria-label="Cell border preset" defaultValue="unchanged" onChange={e=>{const edges=e.target.value==='all'?['top','bottom','left','right']:e.target.value==='bottom'?['bottom']:[];change({borders:Object.fromEntries(edges.map(edge=>[edge,{style:borderStyle,color:borderColor}]))});}}><option value="unchanged" disabled>Keep existing borders</option><option value="all">All borders</option><option value="bottom">Bottom border</option><option value="none">No borders</option></select></label>
+ <label>Border style<select aria-label="Cell border style" value={borderStyle} onChange={e=>{setBorderStyle(e.target.value);setBorderPatch(p=>({...p,style:e.target.value}));}}>{['thin','medium','thick','double','dotted','dashed'].map(value=><option key={value}>{value}</option>)}</select></label>
+ <label>Border color<input aria-label="Cell border color" type="color" value={borderColor} onChange={e=>{setBorderColor(e.target.value);setBorderPatch(p=>({...p,color:e.target.value}));}}/></label>
+ <label><input type="checkbox" checked={draft.wrap} onChange={e=>change({wrap:e.target.checked})}/>Wrap text</label><label><input type="checkbox" checked={draft.strike} onChange={e=>change({strike:e.target.checked})}/>Strikethrough</label>
+ <footer><button type="button" onClick={onClose}>Cancel</button><button type="submit">Apply formatting</button></footer>
+ </form></div>;
+}

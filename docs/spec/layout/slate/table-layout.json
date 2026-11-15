@@ -1,0 +1,127 @@
+{
+  "tab": "table-layout",
+  "keytip": "JL",
+  "source": "office: OneNote for Microsoft 365, Table Tools > Layout tab (Slate has no ArtCraft upstream; architecture section 1)",
+  "groups": {
+    "select": {
+      "collapseOrder": 7,
+      "collapsedIcon": "table-select",
+      "layout": [
+        {
+          "large": "table.select.select-table"
+        },
+        {
+          "large": "table.select.select-columns"
+        },
+        {
+          "large": "table.select.select-rows"
+        },
+        {
+          "large": "table.select.select-cell"
+        }
+      ]
+    },
+    "delete": {
+      "collapseOrder": 6,
+      "collapsedIcon": "table-delete",
+      "layout": [
+        {
+          "large": "table.delete.delete-table"
+        },
+        {
+          "large": "table.delete.delete-columns"
+        },
+        {
+          "large": "table.delete.delete-rows"
+        }
+      ]
+    },
+    "insert": {
+      "collapseOrder": 5,
+      "collapsedIcon": "table-row-above",
+      "layout": [
+        {
+          "large": "table.insert.insert-above"
+        },
+        {
+          "large": "table.insert.insert-below"
+        },
+        {
+          "large": "table.insert.insert-left"
+        },
+        {
+          "large": "table.insert.insert-right"
+        }
+      ]
+    },
+    "format": {
+      "collapseOrder": 4,
+      "collapsedIcon": "table-borders-off",
+      "layout": [
+        {
+          "large": "table.format.hide-borders"
+        },
+        {
+          "large": "table.format.shading"
+        },
+        {
+          "large": "table.format.header-row"
+        }
+      ]
+    },
+    "alignment": {
+      "collapseOrder": 3,
+      "collapsedIcon": "align-left",
+      "layout": [
+        {
+          "large": "table.alignment.align-left"
+        },
+        {
+          "large": "table.alignment.center"
+        },
+        {
+          "large": "table.alignment.align-right"
+        }
+      ]
+    },
+    "data": {
+      "collapseOrder": 2,
+      "collapsedIcon": "sort-az",
+      "layout": [
+        {
+          "large": "table.data.sort"
+        }
+      ]
+    },
+    "convert": {
+      "collapseOrder": 1,
+      "collapsedIcon": "table-to-spreadsheet",
+      "layout": [
+        {
+          "large": "table.convert.convert-to-spreadsheet"
+        }
+      ]
+    }
+  },
+  "keytips": {
+    "table.select.select-table": "K",
+    "table.select.select-columns": "C",
+    "table.select.select-rows": "R",
+    "table.select.select-cell": "L",
+    "table.delete.delete-table": "DT",
+    "table.delete.delete-columns": "DC",
+    "table.delete.delete-rows": "DR",
+    "table.insert.insert-above": "IA",
+    "table.insert.insert-below": "IB",
+    "table.insert.insert-left": "IL",
+    "table.insert.insert-right": "IR",
+    "table.format.hide-borders": "H",
+    "table.format.shading": "S",
+    "table.format.header-row": "W",
+    "table.alignment.align-left": "AL",
+    "table.alignment.center": "AC",
+    "table.alignment.align-right": "AR",
+    "table.data.sort": "O",
+    "table.convert.convert-to-spreadsheet": "X"
+  }
+}

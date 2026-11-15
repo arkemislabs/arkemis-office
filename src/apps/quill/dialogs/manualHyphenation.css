@@ -1,0 +1,4 @@
+/* Manual Hyphenation: the hyphen buttons between the parts of the word. */
+.mh-hyphen { min-width: 14px; padding: 0 3px; margin: 0 1px; border: 1px solid transparent; border-radius: 4px; background: none; color: inherit; font: inherit; cursor: pointer; opacity: .55; }
+.mh-hyphen:hover { opacity: 1; background: rgba(255,255,255,.08); }
+.mh-hyphen.is-on { opacity: 1; background: var(--sh-checked, rgba(91,141,239,.28)); border-color: var(--ark-accent, #5b8def); }

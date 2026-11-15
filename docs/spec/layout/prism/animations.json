@@ -1,0 +1,91 @@
+{
+  "tab": "animations",
+  "keytip": "A",
+  "source": "deckcraft crates/ui-egui/src/ribbon/animations.rs (animations) @ f893f6af7d36a5409fd804e81a34fd895cfefedf; Move Earlier/Later placed as PowerPoint Reorder Animation",
+  "groups": {
+    "preview": {
+      "collapseOrder": 1,
+      "collapsedIcon": "play-star",
+      "layout": [
+        {
+          "large": "animations.preview.preview"
+        }
+      ]
+    },
+    "animation": {
+      "collapseOrder": 4,
+      "collapsedIcon": "animation",
+      "layout": [
+        {
+          "gallery": "animations.gallery",
+          "inline": true,
+          "columns": 8
+        },
+        {
+          "large": "animations.effect-options"
+        }
+      ]
+    },
+    "advanced-animation": {
+      "collapseOrder": 3,
+      "collapsedIcon": "animation-plus",
+      "layout": [
+        {
+          "large": "animations.advanced.add"
+        },
+        {
+          "large": "animations.advanced.pane"
+        },
+        {
+          "large": "animations.advanced.trigger"
+        },
+        {
+          "large": "animations.advanced.painter"
+        }
+      ]
+    },
+    "timing": {
+      "collapseOrder": 2,
+      "collapsedIcon": "arrow-up",
+      "layout": [
+        {
+          "rows": [
+            [
+              "animations.timing.start"
+            ],
+            [
+              "animations.timing.duration"
+            ],
+            [
+              "animations.timing.delay"
+            ]
+          ]
+        },
+        {
+          "stack": [
+            "animations.timing.earlier",
+            "animations.timing.later"
+          ]
+        }
+      ],
+      "widths": {
+        "animations.timing.start": 112,
+        "animations.timing.duration": 52,
+        "animations.timing.delay": 52
+      }
+    }
+  },
+  "keytips": {
+    "animations.preview.preview": "P",
+    "animations.effect-options": "EO",
+    "animations.advanced.add": "AA",
+    "animations.advanced.pane": "C",
+    "animations.advanced.trigger": "TR",
+    "animations.advanced.painter": "AP",
+    "animations.timing.start": "ST",
+    "animations.timing.duration": "U",
+    "animations.timing.delay": "D",
+    "animations.timing.earlier": "ME",
+    "animations.timing.later": "ML"
+  }
+}

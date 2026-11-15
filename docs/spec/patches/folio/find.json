@@ -1,0 +1,10 @@
+{
+ "controls": {
+  "find.query": {"args": {"query": "<value>"}, "note": "The find bar (canvas/find.rs find_bar). The Search is of page text only: printcraft has no bookmarks or comments option and no Replace, so none is shown."},
+  "find.count": {"command": null, "note": "Hidden as a control: the match count (c of n) is drawn in the find bar itself."},
+  "find.previous": {"command": "find.step", "args": {"forward": false}},
+  "find.next": {"command": "find.step", "args": {"forward": true}},
+  "find.options": {"command": "find.option", "args": {"option": "<value>"}},
+  "find.close": {"command": "find.close"}
+ }
+}

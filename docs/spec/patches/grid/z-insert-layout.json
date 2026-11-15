@@ -1,0 +1,168 @@
+{
+  "controls": {
+    "pageLayout.themes.colors.customize-colors": {
+      "command": null,
+      "args": null,
+      "dialog": "dialog.createThemeColors",
+      "note": "U:grid/page-layout: checked against gridcraft (theme_colors takes twelve hex colours); Excel's Create New Theme Colors dialog sets them, in Excel's order, under a name."
+    },
+    "pageLayout.themes.fonts.customize-fonts": {
+      "command": null,
+      "args": null,
+      "dialog": "dialog.createThemeFonts",
+      "note": "U:grid/page-layout: checked against gridcraft (theme_fonts takes a major and a minor font); Excel's Create New Theme Fonts dialog sets them."
+    }
+  },
+  "dialogs": {
+    "dialog.createThemeColors": {
+      "id": "dialog.createThemeColors",
+      "title": "Create New Theme Colors",
+      "command": "pageLayout.themeColors",
+      "source": "office",
+      "buttons": [
+        "Save",
+        "Cancel"
+      ],
+      "note": "U:grid/page-layout: Excel's dialog over gridcraft's theme_colors; Reset and the Sample are left out.",
+      "tabs": [
+        {
+          "name": "",
+          "fields": [
+            {
+              "id": "color0",
+              "label": "Text/Background - Dark 1:",
+              "kind": "color",
+              "options": []
+            },
+            {
+              "id": "color1",
+              "label": "Text/Background - Light 1:",
+              "kind": "color",
+              "options": []
+            },
+            {
+              "id": "color2",
+              "label": "Text/Background - Dark 2:",
+              "kind": "color",
+              "options": []
+            },
+            {
+              "id": "color3",
+              "label": "Text/Background - Light 2:",
+              "kind": "color",
+              "options": []
+            },
+            {
+              "id": "color4",
+              "label": "Accent 1:",
+              "kind": "color",
+              "options": []
+            },
+            {
+              "id": "color5",
+              "label": "Accent 2:",
+              "kind": "color",
+              "options": []
+            },
+            {
+              "id": "color6",
+              "label": "Accent 3:",
+              "kind": "color",
+              "options": []
+            },
+            {
+              "id": "color7",
+              "label": "Accent 4:",
+              "kind": "color",
+              "options": []
+            },
+            {
+              "id": "color8",
+              "label": "Accent 5:",
+              "kind": "color",
+              "options": []
+            },
+            {
+              "id": "color9",
+              "label": "Accent 6:",
+              "kind": "color",
+              "options": []
+            },
+            {
+              "id": "color10",
+              "label": "Hyperlink:",
+              "kind": "color",
+              "options": []
+            },
+            {
+              "id": "color11",
+              "label": "Followed Hyperlink:",
+              "kind": "color",
+              "options": []
+            },
+            {
+              "id": "name",
+              "label": "Name:",
+              "kind": "text",
+              "options": []
+            }
+          ]
+        }
+      ]
+    },
+    "dialog.createThemeFonts": {
+      "id": "dialog.createThemeFonts",
+      "title": "Create New Theme Fonts",
+      "command": "pageLayout.themeFonts",
+      "source": "office",
+      "buttons": [
+        "Save",
+        "Cancel"
+      ],
+      "note": "U:grid/page-layout: Excel's dialog over gridcraft's theme_fonts; the Sample and the name are left out (a font pair is not stored under a name).",
+      "tabs": [
+        {
+          "name": "",
+          "fields": [
+            {
+              "id": "headingFont",
+              "label": "Heading font:",
+              "kind": "select",
+              "options": []
+            },
+            {
+              "id": "bodyFont",
+              "label": "Body font:",
+              "kind": "select",
+              "options": []
+            }
+          ]
+        }
+      ]
+    },
+    "dialog.sheetBackground": {
+      "id": "dialog.sheetBackground",
+      "title": "Sheet Background",
+      "command": "pageLayout.background",
+      "source": "office",
+      "buttons": [
+        "OK",
+        "Cancel"
+      ],
+      "note": "U:grid/page-layout: Excel's Sheet Background picker over gridcraft's background command.",
+      "tabs": [
+        {
+          "name": "",
+          "fields": [
+            {
+              "id": "path",
+              "label": "Picture file path (PNG or JPEG):",
+              "kind": "text",
+              "options": []
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

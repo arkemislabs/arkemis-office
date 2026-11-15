@@ -1,0 +1,9 @@
+{
+ "controls": {
+  "alltools.compress.audit-space-usage": {
+   "note": "printcraft optimize/audit.rs and optimize_ui.rs audit_table (commands/optimize_audit.mjs): bytes and share of the file by kind of content; sizes are close to, not byte for byte, upstream's.",
+   "command": null,
+   "dialog": "dialog.audit-space"
+  }
+ }
+}

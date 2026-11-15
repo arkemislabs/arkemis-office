@@ -1,0 +1,44 @@
+{
+  "tab": "picture-format",
+  "source": "Microsoft Excel for Windows › Picture Format; gridcraft draws no Picture Format tab, the spec takes it from Excel",
+  "groups": {
+    "adjust": {
+      "collapseOrder": 3,
+      "layout": [
+        {"large": "pictureFormat.adjust.removeBackground"},
+        {"large": "pictureFormat.adjust.corrections"},
+        {"large": "pictureFormat.adjust.color"},
+        {"large": "pictureFormat.adjust.artisticEffects"},
+        {"large": "pictureFormat.adjust.transparency"},
+        {"rows": [["pictureFormat.adjust.compress"], ["pictureFormat.adjust.change"], ["pictureFormat.adjust.reset"]]}
+      ]
+    },
+    "picture-styles": {
+      "collapseOrder": 1,
+      "layout": [
+        {"gallery": "pictureFormat.styles.gallery", "inline": true, "columns": 6},
+        {"stack": ["pictureFormat.styles.border", "pictureFormat.styles.effects", "pictureFormat.styles.layout"]}
+      ]
+    },
+    "accessibility": {
+      "collapseOrder": 2,
+      "layout": [
+        {"large": "pictureFormat.accessibility.altText"}
+      ]
+    },
+    "arrange": {
+      "collapseOrder": 4,
+      "layout": [
+        {"stack": ["pictureFormat.arrange.bringForward", "pictureFormat.arrange.sendBackward", "pictureFormat.arrange.selectionPane"]},
+        {"rows": [["pictureFormat.arrange.align"], ["pictureFormat.arrange.group"], ["pictureFormat.arrange.rotate"]]}
+      ]
+    },
+    "size": {
+      "collapseOrder": 5,
+      "layout": [
+        {"large": "pictureFormat.size.crop"},
+        {"stack": ["pictureFormat.size.height", "pictureFormat.size.width"]}
+      ]
+    }
+  }
+}

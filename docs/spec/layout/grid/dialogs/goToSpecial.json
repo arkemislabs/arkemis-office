@@ -1,0 +1,11 @@
+{
+  "source": "gridcraft crates/ui-egui/src/dialogs.rs (Go To Special) at 146161b4b450a56e5e59a083ba0478582d1e602b; Excel Go To Special: two columns of kinds, the type checkboxes under Formulas, levels under Dependents",
+  "width": 480,
+  "height": 420,
+  "sections": [
+    {"fields": ["kind"], "columns": 2},
+    {"fields": ["typeNumbers", "typeText", "typeLogicals", "typeErrors"]},
+    {"fields": ["levels"]},
+    {"fields": ["dvScope"]}
+  ]
+}

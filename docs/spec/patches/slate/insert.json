@@ -1,0 +1,85 @@
+{
+  "controls": {
+    "insert.tables.table.grid-picker": {
+      "args": null,
+      "note": "U:slate/insert: OneNote's grid picker (hover sizes the table, a click inserts it) is drawn by the shell (src/shell/ribbon/TableGridPicker.tsx) and runs insert.table with the hovered rows and columns; the spec's placeholder args are not command args."
+    },
+    "insert.images.online-pictures": {
+      "note": "U:slate/insert: hidden. Online Pictures searches Bing's image catalogue, a Microsoft online service the app does not have."
+    },
+    "insert.media.online-video": {
+      "note": "U:slate/insert: hidden. Embeds a web video player from a link; the app has no web views on a page."
+    },
+    "insert.loop-components.loop-components": {
+      "note": "U:slate/insert: hidden. Loop components are live shared objects of Microsoft 365; the app has no Loop service."
+    },
+    "insert.forms.forms": {
+      "note": "U:slate/insert: hidden. Forms creates a Microsoft Forms survey online; the app has no Forms service."
+    },
+    "insert.symbols.equation.ink-equation": {
+      "note": "U:slate/insert: hidden. Ink Equation recognises handwriting with Microsoft's math input recogniser; the app has none. Type equations in linear format instead."
+    }
+  },
+  "dialogs": {
+    "dialog.link": {
+      "note": "U:slate/insert: the location list is this notebook (sections in their groups with their pages), filtered by the search box; the label says so instead of naming OneNote.",
+      "tabs": [
+        {
+          "name": "Link",
+          "fields": [
+            {
+              "id": "textToDisplay",
+              "label": "Text to display",
+              "kind": "text",
+              "options": []
+            },
+            {
+              "id": "address",
+              "label": "Address",
+              "kind": "text",
+              "options": []
+            },
+            {
+              "id": "search",
+              "label": "Or pick a location in this notebook",
+              "kind": "text",
+              "options": []
+            },
+            {
+              "id": "location",
+              "label": "All Notebooks",
+              "kind": "list",
+              "options": [
+                "notebook > section group > section > page tree"
+              ]
+            },
+            {
+              "id": "createNewPage",
+              "label": "Create a new page with this title",
+              "kind": "checkbox",
+              "options": []
+            }
+          ]
+        }
+      ]
+    },
+    "dialog.insert-picture": {
+      "command": null,
+      "note": "U:slate/insert: OneNote opens the system Open dialog straight from Insert > Pictures (studio:image, PNG and JPEG up to 5 MB); there is no dialog of the app's own."
+    },
+    "dialog.insert-file": {
+      "command": null,
+      "note": "U:slate/insert: File Attachment and File Printout open the system Open dialog (studio:pick-document, any file up to 30 MB, 25 MB on a page); the upload-to-cloud choice needs OneDrive, which the app does not have."
+    }
+  },
+  "commands": {
+    "text.insert": {
+      "label": "Type Text",
+      "summary": "Write text on the page at the caret or over the selection; with no caret, after the last paragraph of the page's last note container (a new one when there is none). Used by automation and tests to enter text.",
+      "args": [
+        "text: string",
+        "html?: string"
+      ]
+    }
+  }
+}

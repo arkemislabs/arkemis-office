@@ -1,0 +1,56 @@
+/* The conditional-format dialogs: New Formatting Rule, the Highlight Cells boxes, the Rules Manager. */
+.cf-root { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.cf-lead { font-size: 12.5px; color: var(--sh-text-1, #f2f2f3); margin: 0; }
+.cf-note { font-size: 11.5px; color: var(--sh-text-2, #b4b4ba); margin: 0; }
+.cf-row { display: flex; align-items: flex-end; gap: 10px; flex-wrap: wrap; }
+.cf-row > .sf { flex: 1 1 140px; min-width: 0; }
+.cf-row > .sf.is-narrow { flex: 0 0 110px; }
+.cf-row .cf-word { font-size: 12.5px; padding-bottom: 7px; color: var(--sh-text-1, #f2f2f3); }
+.cf-types { height: 132px; }
+.cf-desc { display: flex; flex-direction: column; gap: 10px; padding: 10px 12px 12px; border-radius: 9px; border: 1px solid rgba(255, 255, 255, .12); }
+.cf-desc-title { font-size: 12.5px; color: var(--sh-text-1, #f2f2f3); margin: 0 0 2px; }
+.cf-three { display: grid; grid-template-columns: 62px repeat(3, minmax(0, 1fr)); gap: 6px 8px; align-items: end; }
+.cf-two { display: grid; grid-template-columns: 62px repeat(2, minmax(0, 1fr)); gap: 6px 8px; align-items: end; }
+.cf-three .cf-head, .cf-two .cf-head { font-size: 12px; color: var(--sh-text-2, #b4b4ba); }
+.cf-three .cf-rowlabel, .cf-two .cf-rowlabel { font-size: 12px; color: var(--sh-text-2, #b4b4ba); padding-bottom: 8px; }
+.cf-scale-bar { height: 18px; border-radius: 4px; border: 1px solid rgba(128, 128, 128, .5); }
+.cf-bar-preview { height: 22px; border-radius: 4px; border: 1px solid rgba(128, 128, 128, .5); background: #fff; padding: 3px; box-sizing: border-box; }
+.cf-bar-preview i { display: block; height: 100%; border-radius: 1px; width: 70%; }
+.cf-format { display: flex; align-items: center; gap: 10px; }
+.cf-format-label { font-size: 12.5px; color: var(--sh-text-1, #f2f2f3); }
+.cf-format-sample { flex: 1; min-height: 28px; display: grid; place-items: center; border-radius: 4px; border: 1px solid rgba(128, 128, 128, .5); background: #fff; color: #000; font: 14px "Calibri", "Segoe UI", sans-serif; box-sizing: border-box; padding: 0 8px; }
+.cf-format-none { color: #777; font-size: 12px; }
+.cf-icon-rule { display: grid; grid-template-columns: 22px 78px 88px minmax(0, 1fr) 118px; gap: 6px 8px; align-items: end; }
+.cf-icon-rule .cf-icon { display: block; align-self: center; margin-bottom: 4px; }
+.cf-icon-rule .cf-word { font-size: 12px; padding-bottom: 8px; color: var(--sh-text-1, #f2f2f3); }
+.cf-icon-rule .cf-cond { font-size: 12px; padding-bottom: 8px; color: var(--sh-text-2, #b4b4ba); white-space: nowrap; }
+
+.cf-manager { display: flex; flex-direction: column; gap: 8px; }
+.cf-manager-top { display: flex; align-items: flex-end; gap: 10px; }
+.cf-manager-top > .sf { flex: 1; }
+.cf-manager-bar { display: flex; gap: 6px; align-items: center; }
+.cf-manager-bar .cf-spacer { flex: 1; }
+.cf-rules { border-radius: 8px; border: 1px solid rgba(255, 255, 255, .12); background: rgba(0, 0, 0, .18); height: 214px; overflow: auto; }
+.cf-rule-head, .cf-rule { display: grid; grid-template-columns: minmax(0, 1.5fr) 118px minmax(0, 1.1fr) 62px; gap: 8px; align-items: center; padding: 4px 8px; }
+.cf-rule-head { position: sticky; top: 0; z-index: 1; font-size: 11.5px; color: var(--sh-text-2, #b4b4ba); background: rgba(34, 34, 38, .96); border-bottom: 1px solid rgba(255, 255, 255, .1); }
+.cf-rule { font-size: 12.5px; border-bottom: 1px solid rgba(255, 255, 255, .06); cursor: default; }
+.cf-rule.is-selected { background: rgba(138, 180, 255, .14); }
+.cf-rule-text { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.cf-rule-sample { height: 22px; border-radius: 3px; border: 1px solid rgba(128, 128, 128, .5); background: #fff; color: #000; display: grid; place-items: center; font: 12px "Calibri", "Segoe UI", sans-serif; overflow: hidden; }
+.cf-rule-applies { width: 100%; min-width: 0; box-sizing: border-box; height: 26px; padding: 0 8px; border-radius: 6px; border: 1px solid rgba(255, 255, 255, .16); background: rgba(255, 255, 255, .06); color: inherit; font: inherit; }
+.cf-rule-stop { display: grid; place-items: center; }
+.cf-empty { padding: 18px; text-align: center; font-size: 12.5px; color: var(--sh-text-2, #b4b4ba); }
+
+.cf-style-parts { display: flex; flex-direction: column; gap: 6px; }
+.cf-style-part { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 10px; align-items: center; }
+
+/* Colors */
+.co-honey { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.co-honey svg polygon { cursor: pointer; }
+.co-greys { display: flex; gap: 2px; }
+.co-greys button { width: 20px; height: 18px; border: 1px solid rgba(128, 128, 128, .5); padding: 0; cursor: pointer; }
+.co-greys button.is-selected { outline: 2px solid var(--sh-accent, #e8794a); outline-offset: 1px; }
+.co-compare { display: flex; gap: 14px; justify-content: flex-end; }
+.co-compare div { display: flex; flex-direction: column; align-items: center; gap: 3px; font-size: 11.5px; color: var(--sh-text-2, #b4b4ba); }
+.co-compare i { display: block; width: 62px; height: 26px; border: 1px solid rgba(128, 128, 128, .6); border-radius: 3px; }
+.co-compare i.is-none { background: repeating-linear-gradient(45deg, #888 0 2px, transparent 2px 6px); }

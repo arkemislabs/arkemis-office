@@ -1,0 +1,80 @@
+{
+  "tab": "review",
+  "keytip": "R",
+  "source": "gridcraft 146161b4b450a56e5e59a083ba0478582d1e602b crates/ui-egui/src/ribbon/review.rs (review: Spelling, Workbook Statistics, Check Accessibility large; New Comment and Delete large + Previous/Next column + Show Comments large; Notes large menu; Protect Sheet, Protect Workbook, Allow Edit Ranges large); keytips from crates/ui-egui/src/keytips/keytips.json; Thesaurus, Performance, Insights, Language, Changes, Unshare Workbook and Ink placed as in Excel for Windows",
+  "groups": {
+    "proofing": {
+      "collapseOrder": 10,
+      "layout": [
+        {"large": "review.proofing.spelling"},
+        {"stack": ["review.proofing.thesaurus"]},
+        {"large": "review.proofing.workbookStatistics"}
+      ]
+    },
+    "performance": {
+      "collapseOrder": 2,
+      "layout": [
+        {"large": "review.performance.check"}
+      ]
+    },
+    "accessibility": {
+      "collapseOrder": 9,
+      "layout": [
+        {"large": "review.accessibility.check"}
+      ]
+    },
+    "insights": {
+      "collapseOrder": 3,
+      "layout": [
+        {"large": "review.insights.smartLookup"}
+      ]
+    },
+    "language": {
+      "collapseOrder": 4,
+      "layout": [
+        {"large": "review.language.translate"}
+      ]
+    },
+    "changes": {
+      "collapseOrder": 5,
+      "layout": [
+        {"large": "review.changes.showChanges"}
+      ]
+    },
+    "comments": {
+      "collapseOrder": 8,
+      "layout": [
+        {"large": "review.comments.new"},
+        {"large": "review.comments.delete"},
+        {"stack": ["review.comments.previous", "review.comments.next"]},
+        {"large": "review.comments.show"}
+      ]
+    },
+    "notes": {
+      "collapseOrder": 7,
+      "layout": [
+        {"large": "review.notes.notes"}
+      ]
+    },
+    "protect": {
+      "collapseOrder": 6,
+      "layout": [
+        {"large": "review.protect.protectSheet"},
+        {"large": "review.protect.protectWorkbook"},
+        {"large": "review.protect.allowEditRanges"},
+        {"stack": ["review.protect.unshareWorkbook"]}
+      ]
+    },
+    "ink": {
+      "collapseOrder": 1,
+      "layout": [
+        {"large": "review.ink.hideInk"}
+      ]
+    }
+  },
+  "keytips": {
+    "review.proofing.spelling": "S", "review.accessibility.check": "A1", "review.insights.smartLookup": "RS", "review.language.translate": "L",
+    "review.changes.showChanges": "G", "review.comments.new": "C", "review.comments.delete": "D", "review.comments.previous": "V", "review.comments.next": "N",
+    "review.comments.show": "A2", "review.protect.protectSheet": "PS", "review.protect.protectWorkbook": "PW"
+  }
+}

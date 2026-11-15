@@ -1,0 +1,28 @@
+{
+  "tab": "zotero",
+  "source": "wordcraft aadb077e072b7de05f724e359d8db82e151f125c crates/ui-egui/src/ribbon/references.rs (zotero: every control a large button)",
+  "groups": {
+    "citations": {
+      "collapseOrder": 3,
+      "layout": [
+        {"large": "zotero.citations.add-edit-citation"},
+        {"large": "zotero.citations.add-note"},
+        {"large": "zotero.citations.move-past-citation"}
+      ]
+    },
+    "bibliography": {
+      "collapseOrder": 2,
+      "layout": [
+        {"large": "zotero.bibliography.add-edit-bibliography"}
+      ]
+    },
+    "document": {
+      "collapseOrder": 1,
+      "layout": [
+        {"large": "zotero.document.refresh"},
+        {"large": "zotero.document.document-preferences"},
+        {"large": "zotero.document.unlink-citations"}
+      ]
+    }
+  }
+}

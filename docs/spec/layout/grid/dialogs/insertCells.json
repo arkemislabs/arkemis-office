@@ -1,0 +1,12 @@
+{
+  "source": "gridcraft crates/ui-egui/src/dialogs.rs:217 at 146161b4b450a56e5e59a083ba0478582d1e602b; Excel Insert: four options in one column",
+  "width": 260,
+  "height": 230,
+  "sections": [
+    {
+      "fields": [
+        "shift"
+      ]
+    }
+  ]
+}

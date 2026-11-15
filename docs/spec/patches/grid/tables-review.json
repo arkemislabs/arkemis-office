@@ -1,0 +1,85 @@
+{
+  "controls": {
+    "review.proofing.spelling": {
+      "command": "review.spelling",
+      "dialog": "dialog.spelling",
+      "note": "U:grid/review: checked against gridcraft (review.spelling: the text cells without formulas, Ignore, Add to Dictionary, Change, Change All) with Excel's Spelling dialog; the words are checked against the bundled en_US dictionary by the shared spelling service (core/common/lib/spelling.mjs). Ignore Once, Ignore All and Undo Last are Excel's (not checked against upstream). AutoCorrect and Options are not drawn."
+    },
+    "review.proofing.thesaurus": {
+      "command": "review.thesaurus",
+      "dialog": "dialog.thesaurus",
+      "note": "U:grid/review: gridcraft's review.thesaurus lists words that share a stem in the system word list; here the synonyms come from the built-in word list of the Prism thesaurus (looked up offline), shown by meaning as Excel's Thesaurus does, and Replace puts the synonym in the active cell (not checked against upstream)."
+    },
+    "review.performance.check": {
+      "command": "review.checkPerformance",
+      "dialog": "dialog.checkPerformance",
+      "note": "U:grid/review: not in gridcraft; Excel's Check Performance lists unused cell formatting (Clean up removes it), volatile functions and whole column or row references (not checked against upstream)."
+    },
+    "review.accessibility.check.alt-text": {
+      "command": "object.setAlt",
+      "dialog": "dialog.altText",
+      "note": "U:grid/review: not in gridcraft; Excel's Alt Text for the selected picture, chart or shape is the Alt Text of the Format tabs (object.setAlt, commands/insert/objformat.mjs); this is the same command."
+    },
+    "review.ink.hideInk": {
+      "command": "review.hideInk",
+      "args": null,
+      "note": "U:grid/review: not in gridcraft; Excel's Hide Ink hides the strokes the Draw tab's pens left (they stay in the workbook; not checked against upstream)."
+    }
+  },
+  "dialogs": {
+    "dialog.spelling": {
+      "buttons": [
+        "Cancel"
+      ],
+      "note": "U:grid/review: Excel's Spelling dialog drawn by src/apps/grid/dialogs/spelling.tsx: Not in Dictionary (the cell's text, the word in red), Suggestions, Ignore Once, Ignore All, Add to Dictionary, Change, Change All, Undo Last and the Dictionary language. Only text cells are checked. AutoCorrect and Options are not drawn."
+    },
+    "dialog.thesaurus": {
+      "title": "Thesaurus",
+      "buttons": [
+        "Replace",
+        "Cancel"
+      ],
+      "tabs": [
+        {
+          "name": "",
+          "fields": [
+            {
+              "id": "word",
+              "label": "Looked up:",
+              "kind": "text",
+              "options": []
+            },
+            {
+              "id": "picked",
+              "label": "Synonyms:",
+              "kind": "list",
+              "options": []
+            }
+          ]
+        }
+      ],
+      "note": "U:grid/review: drawn by src/apps/grid/dialogs/thesaurus.tsx: the word looked up, its meanings with their synonyms; Replace puts the picked synonym in the active cell."
+    },
+    "dialog.checkPerformance": {
+      "title": "Check Performance",
+      "buttons": [
+        "Close"
+      ],
+      "tabs": [
+        {
+          "name": "",
+          "fields": [
+            {
+              "id": "findings",
+              "label": "Issues",
+              "kind": "list",
+              "options": []
+            }
+          ]
+        }
+      ],
+      "note": "U:grid/review: drawn by src/apps/grid/dialogs/checkPerformance.tsx; Excel's Check Performance pane as a dialog."
+    }
+  },
+  "commands": {}
+}

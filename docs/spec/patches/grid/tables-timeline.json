@@ -1,0 +1,16 @@
+{
+  "controls": {
+    "pivotAnalyze.filter.insertTimeline": {
+      "command": "insert.timeline",
+      "dialog": "dialog.insertTimelines",
+      "commandStatus": null,
+      "note": "U:grid/pivot: not in gridcraft; Excel's PivotTable timeline: a bar of the periods of a date field (years, quarters, months or days) in which a click picks a period (Shift extends) and filters every PivotTable connected to it. Styles are the TimeSlicerStyle names. Not checked against upstream."
+    }
+  },
+  "dialogs": {
+    "dialog.insertTimelines": {
+      "note": "U:grid/pivot: the date fields of the PivotTable with a check box each, drawn by src/apps/grid/dialogs/insertTimelines.tsx. Not checked against upstream."
+    }
+  },
+  "commands": {}
+}

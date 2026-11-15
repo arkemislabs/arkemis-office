@@ -1,0 +1,92 @@
+{
+  "tab": "chart-design",
+  "keytip": "JC",
+  "source": "deckcraft crates/ui-egui/src/ribbon/chart.rs (chart_design), arrange.rs (arrange_group) @ f893f6af7d36a5409fd804e81a34fd895cfefedf; Chart Layouts, Chart Styles and Data placed as PowerPoint",
+  "groups": {
+    "chart-layouts": {
+      "collapseOrder": 3,
+      "layout": [
+        {
+          "large": "chartdesign.layouts.add-element"
+        },
+        {
+          "large": "chartdesign.layouts.quick-layout"
+        }
+      ]
+    },
+    "chart-styles": {
+      "collapseOrder": 4,
+      "layout": [
+        {
+          "large": "chartdesign.styles.colors"
+        },
+        {
+          "gallery": "chartdesign.styles.gallery",
+          "inline": true,
+          "columns": 5
+        }
+      ]
+    },
+    "data": {
+      "collapseOrder": 2,
+      "collapsedIcon": "table-edit",
+      "layout": [
+        {
+          "large": "chartdesign.data.switch"
+        },
+        {
+          "large": "chartdesign.data.select"
+        },
+        {
+          "large": "chartdesign.data.edit"
+        },
+        {
+          "large": "chartdesign.data.refresh"
+        }
+      ]
+    },
+    "type": {
+      "collapseOrder": 1,
+      "collapsedIcon": "chart-switch",
+      "layout": [
+        {
+          "large": "chartdesign.type.change"
+        }
+      ]
+    },
+    "arrange": {
+      "collapseOrder": 5,
+      "collapsedIcon": "bring-forward",
+      "layout": [
+        {
+          "large": "chartdesign.arrange.bring-forward"
+        },
+        {
+          "large": "chartdesign.arrange.send-backward"
+        },
+        {
+          "large": "chartdesign.arrange.selection-pane"
+        },
+        {
+          "large": "chartdesign.arrange.align"
+        },
+        {
+          "stack": [
+            "chartdesign.arrange.group",
+            "chartdesign.arrange.rotate"
+          ]
+        }
+      ]
+    }
+  },
+  "keytips": {
+    "chartdesign.layouts.add-element": "A",
+    "chartdesign.layouts.quick-layout": "L",
+    "chartdesign.styles.colors": "H",
+    "chartdesign.data.switch": "W",
+    "chartdesign.data.select": "E",
+    "chartdesign.data.edit": "D",
+    "chartdesign.data.refresh": "R",
+    "chartdesign.type.change": "C"
+  }
+}

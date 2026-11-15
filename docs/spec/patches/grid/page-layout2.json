@@ -1,0 +1,135 @@
+{
+  "controls": {
+    "pageLayout.arrange.rotate.flip-vertical": {
+      "command": "arrange.rotate",
+      "args": {
+        "flip": "vertical"
+      },
+      "note": "U:grid/page-layout: mirrors the picked pictures and shapes top to bottom."
+    },
+    "pageLayout.arrange.rotate.flip-horizontal": {
+      "command": "arrange.rotate",
+      "args": {
+        "flip": "horizontal"
+      },
+      "note": "U:grid/page-layout: mirrors the picked pictures and shapes left to right."
+    },
+    "pageLayout.arrange.rotate.more-rotation-options": {
+      "command": null,
+      "note": "U:grid/page-layout: More Rotation Options opens Excel's Format Shape pane on its Size tab, which this sheet does not have; `arrange.rotate {angle}` sets an exact angle. Hidden."
+    },
+    "pageLayout.arrange.align.align-left": {
+      "command": "arrange.align",
+      "args": {
+        "to": "left"
+      },
+      "note": "U:grid/page-layout: aligns the picked objects to their common left edge; needs two or more objects picked together."
+    },
+    "pageLayout.arrange.align.align-center": {
+      "command": "arrange.align",
+      "args": {
+        "to": "center"
+      },
+      "note": "U:grid/page-layout: aligns the picked objects on their common vertical centre line; needs two or more objects picked together."
+    },
+    "pageLayout.arrange.align.align-right": {
+      "command": "arrange.align",
+      "args": {
+        "to": "right"
+      },
+      "note": "U:grid/page-layout: aligns the picked objects to their common right edge; needs two or more objects picked together."
+    },
+    "pageLayout.arrange.align.align-top": {
+      "command": "arrange.align",
+      "args": {
+        "to": "top"
+      },
+      "note": "U:grid/page-layout: aligns the picked objects to their common top edge; needs two or more objects picked together."
+    },
+    "pageLayout.arrange.align.align-middle": {
+      "command": "arrange.align",
+      "args": {
+        "to": "middle"
+      },
+      "note": "U:grid/page-layout: aligns the picked objects on their common horizontal centre line; needs two or more objects picked together."
+    },
+    "pageLayout.arrange.align.align-bottom": {
+      "command": "arrange.align",
+      "args": {
+        "to": "bottom"
+      },
+      "note": "U:grid/page-layout: aligns the picked objects to their common bottom edge; needs two or more objects picked together."
+    },
+    "pageLayout.arrange.align.distribute-horizontally": {
+      "command": "arrange.align",
+      "args": {
+        "to": "distributeH"
+      },
+      "note": "U:grid/page-layout: spaces the picked objects evenly between the outermost two, left to right; needs three or more objects picked together."
+    },
+    "pageLayout.arrange.align.distribute-vertically": {
+      "command": "arrange.align",
+      "args": {
+        "to": "distributeV"
+      },
+      "note": "U:grid/page-layout: spaces the picked objects evenly between the outermost two, top to bottom; needs three or more objects picked together."
+    },
+    "pageLayout.arrange.align.snap-to-grid": {
+      "command": "arrange.snap",
+      "args": {
+        "mode": "grid"
+      },
+      "kind": "toggle",
+      "note": "U:grid/page-layout: Snap to Grid: dragged and sized objects line up with the cell borders (a window setting)."
+    },
+    "pageLayout.arrange.align.snap-to-shape": {
+      "command": "arrange.snap",
+      "args": {
+        "mode": "shape"
+      },
+      "kind": "toggle",
+      "note": "U:grid/page-layout: Snap to Shape: dragged and sized objects line up with the edges of the other objects (a window setting)."
+    },
+    "pageLayout.arrange.align.view-gridlines": {
+      "command": "view.gridlines",
+      "args": {
+        "on": "<bool>"
+      },
+      "kind": "toggle",
+      "note": "U:grid/page-layout: View Gridlines shows or hides the sheet's gridlines (view.gridlines)."
+    },
+    "pageLayout.arrange.group.group": {
+      "command": "arrange.group",
+      "args": {},
+      "note": "U:grid/page-layout: groups the picked objects (two or more)."
+    },
+    "pageLayout.arrange.group.regroup": {
+      "command": "arrange.group",
+      "args": {
+        "regroup": true
+      },
+      "note": "U:grid/page-layout: puts the last group of the picked objects back."
+    },
+    "pageLayout.arrange.group.ungroup": {
+      "command": "arrange.group",
+      "args": {
+        "ungroup": true
+      },
+      "note": "U:grid/page-layout: splits the picked group."
+    },
+    "pageLayout.arrange.rotate.rotate-right-90": {
+      "command": "arrange.rotate",
+      "args": {
+        "degrees": 90
+      },
+      "note": "U:grid/page-layout: turns the picked pictures and shapes 90 degrees clockwise."
+    },
+    "pageLayout.arrange.rotate.rotate-left-90": {
+      "command": "arrange.rotate",
+      "args": {
+        "degrees": -90
+      },
+      "note": "U:grid/page-layout: turns the picked pictures and shapes 90 degrees anticlockwise."
+    }
+  }
+}

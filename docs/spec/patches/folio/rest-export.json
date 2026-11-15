@@ -1,0 +1,28 @@
+{
+ "controls": {
+  "alltools.export.spreadsheet-xlsx": {
+   "note": "Not checked against upstream (printcraft plans Spreadsheet, M10): each table the page text lays out is a sheet, numbers stay numbers, spans merge cells; a document with no table is its paragraphs in one sheet (commands/export_more.mjs)."
+  },
+  "alltools.export.xml": {
+   "note": "Not checked against upstream (printcraft has no XML export): the text with its structure as XML 1.0 (commands/export_more.mjs)."
+  },
+  "alltools.export.postscript-eps": {
+   "note": "Not checked against upstream (printcraft plans PostScript / EPS, M10): a PostScript Level 2 file with each page drawn as a picture; the text is not kept as text and fonts are not embedded (ui-commands/export-postscript.ts)."
+  },
+  "alltools.export.eps": {
+   "note": "Not checked against upstream (printcraft plans PostScript / EPS, M10): one page as Encapsulated PostScript, drawn as a picture (ui-commands/export-postscript.ts)."
+  },
+  "convert.export.spreadsheet-xlsx": {
+   "note": "Not checked against upstream (printcraft plans Spreadsheet, M10): each table the page text lays out is a sheet, numbers stay numbers, spans merge cells; a document with no table is its paragraphs in one sheet (commands/export_more.mjs)."
+  },
+  "convert.export.xml": {
+   "note": "Not checked against upstream (printcraft has no XML export): the text with its structure as XML 1.0 (commands/export_more.mjs)."
+  },
+  "convert.export.postscript-eps": {
+   "note": "Not checked against upstream (printcraft plans PostScript / EPS, M10): a PostScript Level 2 file with each page drawn as a picture; the text is not kept as text and fonts are not embedded (ui-commands/export-postscript.ts)."
+  },
+  "convert.export.eps": {
+   "note": "Not checked against upstream (printcraft plans PostScript / EPS, M10): one page as Encapsulated PostScript, drawn as a picture (ui-commands/export-postscript.ts)."
+  }
+ }
+}

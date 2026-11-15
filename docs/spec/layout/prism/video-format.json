@@ -1,0 +1,59 @@
+{
+  "tab": "video-format",
+  "keytip": "JM",
+  "source": "office: PowerPoint Video Tools > Video Format (deckcraft has no Video Format ribbon)",
+  "groups": {
+    "preview": {
+      "collapseOrder": 1,
+      "layout": [
+        {
+          "large": "videoformat.preview.play"
+        }
+      ]
+    },
+    "adjust": {
+      "collapseOrder": 2,
+      "layout": [
+        {
+          "large": "videoformat.adjust.corrections"
+        },
+        {
+          "large": "videoformat.adjust.color"
+        },
+        {
+          "stack": [
+            "videoformat.adjust.poster",
+            "videoformat.adjust.reset"
+          ]
+        }
+      ]
+    },
+    "video-styles": {
+      "collapseOrder": 3,
+      "layout": [
+        {
+          "gallery": "videoformat.styles.gallery",
+          "inline": true,
+          "columns": 4
+        },
+        {
+          "stack": [
+            "videoformat.styles.shape",
+            "videoformat.styles.border",
+            "videoformat.styles.effects"
+          ]
+        }
+      ]
+    }
+  },
+  "keytips": {
+    "videoformat.preview.play": "V",
+    "videoformat.adjust.corrections": "R",
+    "videoformat.adjust.color": "I",
+    "videoformat.adjust.poster": "PF",
+    "videoformat.adjust.reset": "Q",
+    "videoformat.styles.shape": "SH",
+    "videoformat.styles.border": "SO",
+    "videoformat.styles.effects": "SE"
+  }
+}

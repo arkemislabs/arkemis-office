@@ -1,0 +1,25 @@
+{
+  "dialogs": {
+    "dialog.equationOptions": {
+      "id": "dialog.equationOptions",
+      "title": "Equation Options",
+      "command": "equation.inputFormat",
+      "note": "U:quill/equation: how equation text is typed (Unicode math in the linear format, or LaTeX); the Equation tab's Tools launcher opens it. Word's box also lists Math AutoCorrect rules: not offered, not checked against upstream.",
+      "tabs": [{"name": "Equation Options", "fields": [
+        {"id": "format", "label": "Type equations in:", "kind": "radio", "options": [{"value": "unicode", "label": "Unicode math (linear format)"}, {"value": "latex", "label": "LaTeX"}]}
+      ]}],
+      "buttons": ["OK", "Cancel"],
+      "openedBy": ["equation.tools launcher"],
+      "applies": "equation.inputFormat"
+    }
+  },
+  "controls": {
+    "insert.illustrations.shapes": {
+      "args": {"preset": "<preset>"},
+      "note": "U:quill/shapes-gallery: all 180 preset shapes of the catalogue (core/prism/model/geom/preset, translated from deckcraft crates/geom) in Office's groups: Recently Used, Lines, Rectangles, Basic Shapes, Block Arrows, Equation Shapes, Flowchart, Stars and Banners, Callouts, each drawn from its own geometry; the shape is saved to .docx under its own preset name. wordcraft's gallery has a dozen. Action Buttons are PowerPoint's and are not offered.",
+      "items": [
+        {"label": "New Drawing Canvas", "command": "insert.canvas", "source": "upstream"}
+      ]
+    }
+  }
+}

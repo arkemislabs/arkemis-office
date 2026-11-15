@@ -1,0 +1,23 @@
+{
+  "source": "OneNote Notebook Properties: Display name, Color, Path, Default Format",
+  "width": 440,
+  "height": 260,
+  "sections": [
+    {
+      "fields": [
+        "displayName",
+        "color"
+      ]
+    },
+    {
+      "fields": [
+        "path"
+      ]
+    },
+    {
+      "fields": [
+        "defaultFormat"
+      ]
+    }
+  ]
+}

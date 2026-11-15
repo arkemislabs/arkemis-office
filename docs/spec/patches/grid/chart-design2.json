@@ -1,0 +1,74 @@
+{
+  "controls": {
+    "chartDesign.layouts.addElement.trendline": {
+      "kind": "dropdown",
+      "command": null,
+      "items": [
+        {
+          "id": "chartDesign.layouts.addElement.trendline.none",
+          "label": "None",
+          "command": "chart.addElement",
+          "params": {
+            "element": "trendline",
+            "on": false
+          }
+        },
+        {
+          "id": "chartDesign.layouts.addElement.trendline.linear",
+          "label": "Linear",
+          "command": "chart.addElement",
+          "params": {
+            "element": "trendline",
+            "type": "linear"
+          }
+        },
+        {
+          "id": "chartDesign.layouts.addElement.trendline.exponential",
+          "label": "Exponential",
+          "command": "chart.addElement",
+          "params": {
+            "element": "trendline",
+            "type": "exponential"
+          }
+        },
+        {
+          "id": "chartDesign.layouts.addElement.trendline.linear-forecast",
+          "label": "Linear Forecast",
+          "command": "chart.addElement",
+          "params": {
+            "element": "trendline",
+            "type": "linearForecast"
+          }
+        },
+        {
+          "id": "chartDesign.layouts.addElement.trendline.moving-average",
+          "label": "Two Period Moving Average",
+          "command": "chart.addElement",
+          "params": {
+            "element": "trendline",
+            "type": "movingAverage",
+            "period": 2
+          }
+        }
+      ],
+      "note": "U:grid/data: checked against gridcraft (chart.addElement trendline: linear, exponential, linear forecast, moving average; logarithmic, power and polynomial are in the command). The chart renderer draws the fits (chart-trend.mjs, translated from chart/src/trend.rs).",
+      "icon": "chart-trendline"
+    },
+    "chartDesign.layouts.addElement.axis-titles": {
+      "command": "chart.addElement",
+      "args": {
+        "element": "axisTitles"
+      },
+      "note": "U:grid/chart-design: checked against gridcraft (chart.addElement axisTitles).",
+      "icon": "ce-axis-titles"
+    },
+    "chartDesign.layouts.addElement.chart-title": {
+      "command": "chart.addElement",
+      "args": {
+        "element": "title"
+      },
+      "note": "U:grid/chart-design: checked against gridcraft (chart.addElement title).",
+      "icon": "chart-title"
+    }
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "source": "Word Font dialog (two pages, Font / Font style / Size across the top, All text, Effects, Preview); wordcraft ui-egui/src/dialogs/dispatch.rs font_dialog. Drawn by src/apps/quill/dialogs/font.tsx",
+  "width": 580,
+  "height": 600
+}

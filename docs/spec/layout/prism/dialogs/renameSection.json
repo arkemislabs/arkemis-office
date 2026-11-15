@@ -1,0 +1,13 @@
+{
+  "source": "deckcraft crates/ui-egui/src/dialogs/body.rs:692 (dlg_rename_section: Name:, Rename / Cancel) at f893f6af7d36a5409fd804e81a34fd895cfefedf; PowerPoint Rename Section",
+  "width": 360,
+  "height": 170,
+  "sections": [
+    {
+      "fields": [
+        "name"
+      ],
+      "columns": 1
+    }
+  ]
+}

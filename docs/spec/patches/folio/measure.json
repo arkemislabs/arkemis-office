@@ -1,0 +1,307 @@
+{
+ "controls": {
+  "alltools.measure.distance": {
+   "note": "printcraft commands.rs:333 measure_ui::command: picks the Distance tool and opens the Measure panel."
+  },
+  "alltools.measure.drawing-scale": {
+   "command": "measure.panel",
+   "note": "printcraft commands.rs:333: every measure.* command opens the Measure panel; the scale is applied from the panel's Drawing scale group."
+  },
+  "alltools.measure.measurement-information": {
+   "command": "measure.panel",
+   "note": "printcraft commands.rs:333: opens the Measure panel, whose Measurement information group shows the live reading."
+  },
+  "alltools.measure.snapping": {
+   "command": "measure.panel",
+   "note": "printcraft commands.rs:333: opens the Measure panel, whose Snap to drawing group holds the options."
+  },
+  "alltools.measure.export-measurements": {
+   "dialog": null,
+   "note": "printcraft measure_ui.rs export_csv: the system Save dialog (measurements.csv)."
+  },
+  "alltools.measure.geospatial-location": {
+   "command": null,
+   "note": "Hidden: geospatial location is planned upstream (M12) and not implemented there."
+  },
+  "measure.tools.geo": {
+   "command": null,
+   "note": "Hidden: geospatial location is planned upstream (M12) and not implemented there."
+  },
+  "measure.info.angle": {
+   "valueLabel": true,
+   "note": "Read-only readout: the angle of the measurement being drawn (measure_ui.rs panel_body shows it with X and Y under Measurement information).",
+   "icon": "measure-angle"
+  },
+  "measure.info.label": {
+   "command": "measure.options",
+   "args": {
+    "field": "label",
+    "value": "<value>"
+   },
+   "note": "The label the next measurement is saved with (up to 128 characters)."
+  },
+  "measure.snap.enable": {
+   "icon": "magnet",
+   "kind": "checkbox",
+   "command": "measure.snap",
+   "args": {
+    "target": "snap"
+   },
+   "icon": "magnet"
+  },
+  "measure.snap.endpoints": {
+   "kind": "checkbox",
+   "command": "measure.snap",
+   "args": {
+    "target": "endpoints"
+   },
+   "icon": "snap-endpoints"
+  },
+  "measure.snap.midpoints": {
+   "kind": "checkbox",
+   "command": "measure.snap",
+   "args": {
+    "target": "midpoints"
+   },
+   "icon": "snap-midpoints"
+  },
+  "measure.snap.intersections": {
+   "kind": "checkbox",
+   "command": "measure.snap",
+   "args": {
+    "target": "intersections"
+   },
+   "icon": "snap-intersections"
+  },
+  "measure.snap.paths": {
+   "kind": "checkbox",
+   "command": "measure.snap",
+   "args": {
+    "target": "paths"
+   },
+   "icon": "snap-paths"
+  },
+  "measure.snap.sensitivity": {
+   "command": "measure.snap",
+   "args": {
+    "sensitivity": "<value>"
+   },
+   "min": 1,
+   "max": 20,
+   "step": 1,
+   "noLabel": true,
+   "unit": "px",
+   "note": "How near, in pixels, the pointer must be to snap (1 to 20)."
+  },
+  "measure.scale.scale": {
+   "command": "measure.scale",
+   "args": {
+    "ratio": "<value>"
+   },
+   "note": "Type 1:50, 1/200 or 200 and press Enter: the fields fill in (1 mm on the page is N mm, shown in metres) and the scale applies at once. Applying a scale switches units to m / mm.",
+   "icon": "scaling"
+  },
+  "measure.scale.common": {
+   "kind": "dropdown",
+   "label": "Common scales",
+   "items": [
+    {
+     "id": "measure.scale.common.1",
+     "label": "1:1",
+     "command": "measure.scale",
+     "args": {
+      "ratio": 1
+     }
+    },
+    {
+     "id": "measure.scale.common.5",
+     "label": "1:5",
+     "command": "measure.scale",
+     "args": {
+      "ratio": 5
+     }
+    },
+    {
+     "id": "measure.scale.common.10",
+     "label": "1:10",
+     "command": "measure.scale",
+     "args": {
+      "ratio": 10
+     }
+    },
+    {
+     "id": "measure.scale.common.20",
+     "label": "1:20",
+     "command": "measure.scale",
+     "args": {
+      "ratio": 20
+     }
+    },
+    {
+     "id": "measure.scale.common.25",
+     "label": "1:25",
+     "command": "measure.scale",
+     "args": {
+      "ratio": 25
+     }
+    },
+    {
+     "id": "measure.scale.common.50",
+     "label": "1:50",
+     "command": "measure.scale",
+     "args": {
+      "ratio": 50
+     }
+    },
+    {
+     "id": "measure.scale.common.100",
+     "label": "1:100",
+     "command": "measure.scale",
+     "args": {
+      "ratio": 100
+     }
+    },
+    {
+     "id": "measure.scale.common.200",
+     "label": "1:200",
+     "command": "measure.scale",
+     "args": {
+      "ratio": 200
+     }
+    },
+    {
+     "id": "measure.scale.common.500",
+     "label": "1:500",
+     "command": "measure.scale",
+     "args": {
+      "ratio": 500
+     }
+    },
+    {
+     "id": "measure.scale.common.1000",
+     "label": "1:1000",
+     "command": "measure.scale",
+     "args": {
+      "ratio": 1000
+     }
+    }
+   ],
+   "note": "printcraft measure_ui.rs RATIOS: picking one fills the fields and applies at once."
+  },
+  "measure.scale.unit": {
+   "kind": "combo",
+   "command": "measure.options",
+   "args": {
+    "field": "unit",
+    "value": "<value>"
+   },
+   "options": [
+    "m",
+    "mm",
+    "cm",
+    "km",
+    "in",
+    "ft",
+    "yd",
+    "pt"
+   ],
+   "note": "The unit the real distance is in (up to 12 characters; type any)."
+  },
+  "measure.scale.decimals": {
+   "command": "measure.options",
+   "args": {
+    "field": "precision",
+    "value": "<value>"
+   },
+   "min": 0,
+   "max": 6,
+   "step": 1,
+   "noLabel": true
+  },
+  "measure.scale.calibrate": {
+   "command": "measure.calibrate",
+   "note": "Click two points a known distance apart: the drawing distance field then holds it."
+  },
+  "measure.scale.entire-page": {
+   "kind": "checkbox",
+   "command": "measure.options",
+   "args": {
+    "toggle": "wholePage"
+   },
+   "note": "Off: the viewport is the rectangle (x, y, width, height in page points) and name under the list."
+  },
+  "measure.scale.apply": {
+   "command": "measure.scale",
+   "args": null,
+   "icon": "check"
+  },
+  "measure.saved.export": {
+   "dialog": null
+  },
+  "measure.tools.distance": {
+   "icon": "measure-distance"
+  },
+  "measure.tools.perimeter": {
+   "icon": "measure-perimeter"
+  },
+  "measure.tools.area": {
+   "icon": "measure-area"
+  }
+ },
+ "insertAfter": {
+  "measure.scale.common": [
+   {
+    "id": "measure.scale.page-distance",
+    "label": "Page distance",
+    "kind": "spinner",
+    "command": "measure.options",
+    "args": {
+     "field": "pageDistance",
+     "value": "<value>"
+    },
+    "min": 0.000001,
+    "max": 1000000000,
+    "noLabel": true,
+    "icon": "ruler",
+    "source": "upstream",
+    "sourceRef": "crates/ui-egui/src/tools/measure_ui.rs:464",
+    "note": "How much the page shows (in the page unit) of the real distance: 1 in = 1 in is true size."
+   },
+   {
+    "id": "measure.scale.page-unit",
+    "label": "Page unit",
+    "kind": "combo",
+    "command": "measure.options",
+    "args": {
+     "field": "pageUnit",
+     "value": "<value>"
+    },
+    "options": [
+     "pt",
+     "in",
+     "mm",
+     "cm"
+    ],
+    "icon": "ruler",
+    "source": "upstream",
+    "sourceRef": "crates/ui-egui/src/tools/measure_ui.rs:466"
+   },
+   {
+    "id": "measure.scale.real-distance",
+    "label": "Real distance",
+    "kind": "spinner",
+    "command": "measure.options",
+    "args": {
+     "field": "realDistance",
+     "value": "<value>"
+    },
+    "min": 0.000001,
+    "max": 1000000000000,
+    "noLabel": true,
+    "icon": "ruler",
+    "source": "upstream",
+    "sourceRef": "crates/ui-egui/src/tools/measure_ui.rs:474"
+   }
+  ]
+ }
+}

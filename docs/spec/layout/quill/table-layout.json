@@ -1,0 +1,62 @@
+{
+  "tab": "table-layout",
+  "keytip": "JL",
+  "source": "wordcraft aadb077e072b7de05f724e359d8db82e151f125c crates/ui-egui/src/ribbon/table.rs (table_layout, cell_size_boxes: Height/Width fields 72 px; Alignment grid of 3 x 3 icon buttons)",
+  "groups": {
+    "table": {
+      "collapseOrder": 3,
+      "layout": [
+        {"stack": ["table-layout.table.select", "table-layout.table.view-gridlines", "table-layout.table.properties"]}
+      ]
+    },
+    "draw": {
+      "collapseOrder": 1,
+      "layout": [
+        {"large": "table-layout.draw.draw-table"},
+        {"large": "table-layout.draw.eraser"}
+      ]
+    },
+    "rows-and-columns": {
+      "collapseOrder": 7,
+      "layout": [
+        {"large": "table-layout.rows-columns.delete"},
+        {"large": "table-layout.rows-columns.insert-above"},
+        {"stack": ["table-layout.rows-columns.insert-below", "table-layout.rows-columns.insert-left", "table-layout.rows-columns.insert-right"]}
+      ]
+    },
+    "merge": {
+      "collapseOrder": 4,
+      "layout": [
+        {"stack": ["table-layout.merge.merge-cells", "table-layout.merge.split-cells", "table-layout.merge.split-table"]}
+      ]
+    },
+    "cell-size": {
+      "collapseOrder": 6,
+      "layout": [
+        {"large": "table-layout.cell-size.autofit"},
+        {"stack": ["table-layout.cell-size.height", "table-layout.cell-size.width"]},
+        {"stack": ["table-layout.cell-size.distribute-rows", "table-layout.cell-size.distribute-columns"]}
+      ],
+      "widths": {"table-layout.cell-size.height": 72, "table-layout.cell-size.width": 72}
+    },
+    "alignment": {
+      "collapseOrder": 5,
+      "layout": [
+        {"rows": [
+          ["table-layout.alignment.align-top-left", "table-layout.alignment.align-top-center", "table-layout.alignment.align-top-right"],
+          ["table-layout.alignment.align-center-left", "table-layout.alignment.align-center", "table-layout.alignment.align-center-right"],
+          ["table-layout.alignment.align-bottom-left", "table-layout.alignment.align-bottom-center", "table-layout.alignment.align-bottom-right"]
+        ]},
+        {"large": "table-layout.alignment.text-direction"},
+        {"large": "table-layout.alignment.cell-margins"}
+      ]
+    },
+    "data": {
+      "collapseOrder": 2,
+      "layout": [
+        {"large": "table-layout.data.sort"},
+        {"stack": ["table-layout.data.repeat-header-rows", "table-layout.data.convert-to-text", "table-layout.data.formula"]}
+      ]
+    }
+  }
+}

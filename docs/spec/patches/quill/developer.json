@@ -1,0 +1,315 @@
+{
+ "controls": {
+  "developer.code.visual-basic": {
+   "note": "U:quill/developer: no engine upstream and none here: a .docx's VBA project is never read, run or kept. Hidden."
+  },
+  "developer.code.macros": {
+   "dialog": "dialog.macros",
+   "note": "U:quill/developer: tools.macros (wordcraft tools/actions.rs): Quill's macros are lists of document-editing commands kept in the person's settings, never code and never in the document; the dialog lists them, Run plays one (one undo step), Delete removes one. Checked against wordcraft 0.13.1 (f2dfa0d). Deviations: macros are kept in the person's settings (upstream keeps them in the session), a step may only be a document-editing or caret command, and the Macros dialog is Quill's (upstream has none)."
+  },
+  "developer.code.record-macro": {
+   "note": "U:quill/developer: tools.recordMacro (wordcraft tools/specs.rs, session/run.rs): records every command that changes the document or moves the caret or selection until it is turned off, and keeps them as a macro (Macro1 unless named). Checked against wordcraft 0.13.1 (f2dfa0d)."
+  },
+  "developer.code.pause-recording": {
+   "note": "U:quill/developer: upstream's recorder has no pause; hidden."
+  },
+  "developer.code.macro-security": {
+   "note": "U:quill/developer: there is no code to trust (a macro is a list of editing commands, a document's VBA project is never run), so there is no Macro Security setting; hidden."
+  },
+  "developer.add-ins.add-ins": {
+   "note": "U:quill/developer: Quill has no add-in store or host (wordcraft catalogues Get Add-ins with no engine); hidden."
+  },
+  "developer.add-ins.word-add-ins": {
+   "command": null,
+   "dialog": null,
+   "note": "U:quill/developer: there are no Word add-ins to manage (no add-in host); the document template is under Templates › Document Template. Hidden."
+  },
+  "developer.add-ins.com-add-ins": {
+   "note": "U:quill/developer: COM add-ins are Windows code Quill never loads; hidden."
+  },
+  "developer.controls.group": {
+   "note": "U:quill/developer: grouping content controls (and their locks) is not upstream (no engine); hidden."
+  },
+  "developer.controls.design-mode": {
+   "note": "U:quill/developer: developer.designMode (view state): the page shows where each content control starts and ends and its title. Checked against wordcraft 0.13.1 (f2dfa0d)."
+  },
+  "developer.controls.properties": {
+   "note": "U:quill/developer: developer.properties and dialog.controlProperties for the control at the selection. Checked against wordcraft 0.13.1 (f2dfa0d)."
+  },
+  "developer.mapping.xml-mapping-pane": {
+   "note": "U:quill/developer: the XML Mapping pane (custom XML parts and data binding) is Word's, not upstream; hidden. Controls keep any data binding a file had, unchanged."
+  },
+  "developer.protect.block-authors": {
+   "note": "U:quill/developer: Block Authors (co-authoring locks) needs a shared document service; hidden."
+  },
+  "developer.protect.restrict-editing": {
+   "note": "U:quill/developer: review.restrict: the Restrict Editing pane (formatting and editing restrictions, exceptions, Start Enforcing Protection with an optional password hashed the way Word stores it). Checked against wordcraft 0.13.1 (f2dfa0d)."
+  },
+  "developer.templates.document-template": {
+   "note": "U:quill/developer: tools.templates and dialog.templates: the document's template (Attach…) and Automatically update document styles. Checked against wordcraft 0.13.1 (f2dfa0d). Deviation: Attach… attaches the picked file at once (upstream fills the box and OK attaches); the dialog's Organizer… button is hidden until the Organizer dialog is built (styles.organizer, styles.copyFrom and styles.rename are there)."
+  },
+  "developer.controls.rich-text-content-control": {
+   "note": "U:quill/developer: developer.richText: wraps the selection (rich and plain text) or stands at the caret with its placeholder showing; saved as w:sdt. Checked against wordcraft 0.13.1 (f2dfa0d)."
+  },
+  "developer.controls.plain-text-content-control": {
+   "note": "U:quill/developer: developer.plainText: wraps the selection (rich and plain text) or stands at the caret with its placeholder showing; saved as w:sdt. Checked against wordcraft 0.13.1 (f2dfa0d)."
+  },
+  "developer.controls.picture-content-control": {
+   "note": "U:quill/developer: developer.picture: wraps the selection (rich and plain text) or stands at the caret with its placeholder showing; saved as w:sdt. Checked against wordcraft 0.13.1 (f2dfa0d)."
+  },
+  "developer.controls.building-block-gallery-content-control": {
+   "note": "U:quill/developer: developer.buildingBlock: wraps the selection (rich and plain text) or stands at the caret with its placeholder showing; saved as w:sdt. Checked against wordcraft 0.13.1 (f2dfa0d)."
+  },
+  "developer.controls.check-box-content-control": {
+   "note": "U:quill/developer: developer.checkBox: wraps the selection (rich and plain text) or stands at the caret with its placeholder showing; saved as w:sdt. Checked against wordcraft 0.13.1 (f2dfa0d)."
+  },
+  "developer.controls.combo-box-content-control": {
+   "note": "U:quill/developer: developer.comboBox: wraps the selection (rich and plain text) or stands at the caret with its placeholder showing; saved as w:sdt. Checked against wordcraft 0.13.1 (f2dfa0d)."
+  },
+  "developer.controls.drop-down-list-content-control": {
+   "note": "U:quill/developer: developer.dropDown: wraps the selection (rich and plain text) or stands at the caret with its placeholder showing; saved as w:sdt. Checked against wordcraft 0.13.1 (f2dfa0d)."
+  },
+  "developer.controls.date-picker-content-control": {
+   "note": "U:quill/developer: developer.datePicker: wraps the selection (rich and plain text) or stands at the caret with its placeholder showing; saved as w:sdt. Checked against wordcraft 0.13.1 (f2dfa0d)."
+  },
+  "developer.controls.repeating-section-content-control": {
+   "note": "U:quill/developer: developer.repeatingSection: wraps the selection (rich and plain text) or stands at the caret with its placeholder showing; saved as w:sdt. Checked against wordcraft 0.13.1 (f2dfa0d)."
+  }
+ },
+ "dialogs": {
+  "dialog.controlProperties": {
+   "note": "U:quill/developer: Word's Content Control Properties laid out as Word's dialog is (General, Locking, and the properties of the control's type); dialogs_controls.rs control_properties has Title, Tag, Placeholder text, the locks, Remove the control once edited, the entries, the date format, the symbols and Allow line breaks (the placeholder text is edited in the document, as in Word). Show as, Color, Use a style, Locale, Calendar type and Store XML contents as are Word's, not upstream: they are kept as w15:appearance, w15:color, the run style of w:sdtPr, w:lid, w:calendar and w:storeMappedDataAs. Checked against wordcraft 0.13.1 (f2dfa0d). Deviation: the locks are sent only when changed. Drawn by src/apps/quill/dialogs/controlProperties.tsx.",
+   "tabs": [
+    {
+     "name": "Content Control Properties",
+     "fields": [
+      {
+       "id": "title",
+       "label": "Title:",
+       "kind": "text"
+      },
+      {
+       "id": "tag",
+       "label": "Tag:",
+       "kind": "text"
+      },
+      {
+       "id": "appearance",
+       "label": "Show as:",
+       "kind": "select",
+       "options": [
+        "Bounding Box",
+        "Start/End Tag",
+        "None"
+       ]
+      },
+      {
+       "id": "color",
+       "label": "Color:",
+       "kind": "color",
+       "options": [
+        "Automatic"
+       ]
+      },
+      {
+       "id": "useStyle",
+       "label": "Use a style to format text typed into the empty control",
+       "kind": "checkbox"
+      },
+      {
+       "id": "style",
+       "label": "Style:",
+       "kind": "select",
+       "options": [
+        "Default Paragraph Font"
+       ]
+      },
+      {
+       "id": "temporary",
+       "label": "Remove content control when contents are edited",
+       "kind": "checkbox"
+      },
+      {
+       "id": "lockDelete",
+       "label": "Content control cannot be deleted",
+       "kind": "checkbox"
+      },
+      {
+       "id": "lockEdit",
+       "label": "Contents cannot be edited",
+       "kind": "checkbox"
+      },
+      {
+       "id": "multiLine",
+       "label": "Allow carriage returns (multiple paragraphs)",
+       "kind": "checkbox"
+      },
+      {
+       "id": "dateFormat",
+       "label": "Display the date like this:",
+       "kind": "list",
+       "options": [
+        "M/d/yyyy"
+       ]
+      },
+      {
+       "id": "locale",
+       "label": "Locale:",
+       "kind": "select",
+       "options": [
+        "English (United States)"
+       ]
+      },
+      {
+       "id": "calendar",
+       "label": "Calendar type:",
+       "kind": "select",
+       "options": [
+        "Gregorian"
+       ]
+      },
+      {
+       "id": "storeAs",
+       "label": "Store XML contents as:",
+       "kind": "select",
+       "options": [
+        "Date and Time"
+       ]
+      },
+      {
+       "id": "checkedSymbol",
+       "label": "Checked symbol:",
+       "kind": "text"
+      },
+      {
+       "id": "uncheckedSymbol",
+       "label": "Unchecked symbol:",
+       "kind": "text"
+      },
+      {
+       "id": "entries",
+       "label": "Choices:",
+       "kind": "list"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ]
+  },
+  "dialog.templates": {
+   "note": "U:quill/developer: dialogs_templates.rs templates (the Templates page): the document template and Attach…, Automatically update document styles. Word's e-mail attachment option, global templates and add-ins, XML schemas, XML expansion packs and linked CSS are not upstream and are not offered; the Organizer… button waits for the Organizer dialog. Checked against wordcraft 0.13.1 (f2dfa0d).",
+   "tabs": [
+    {
+     "name": "Templates",
+     "fields": [
+      {
+       "id": "template",
+       "label": "Document template:",
+       "kind": "text",
+       "readOnly": true
+      },
+      {
+       "id": "attach",
+       "label": "Attach…",
+       "kind": "button",
+       "command": "ui.attachTemplate"
+      },
+      {
+       "id": "linkStyles",
+       "label": "Automatically update document styles",
+       "kind": "checkbox"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ]
+  },
+  "dialog.macros": {
+   "title": "Macros",
+   "command": "tools.macros",
+   "note": "U:quill/developer: the Macros list (tools.macros): Run (OK) plays the chosen macro, Delete removes it; drawn by src/apps/quill/dialogs/macros.tsx. Checked against wordcraft 0.13.1 (f2dfa0d).",
+   "tabs": [
+    {
+     "name": "Macros",
+     "fields": [
+      {
+       "id": "name",
+       "label": "Macro name:",
+       "kind": "text"
+      },
+      {
+       "id": "list",
+       "label": "Macros:",
+       "kind": "list"
+      },
+      {
+       "id": "delete",
+       "label": "Delete",
+       "kind": "button"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "Run",
+    "Cancel"
+   ]
+  },
+  "dialog.addChoice": {
+   "title": "Add Choice",
+   "note": "U:quill/developer: Word's Add Choice (Display Name and Value; the value follows the name until it is typed), asked for by the Content Control Properties list.",
+   "tabs": [
+    {
+     "name": "Add Choice",
+     "fields": [
+      {
+       "id": "display",
+       "label": "Display Name:",
+       "kind": "text"
+      },
+      {
+       "id": "value",
+       "label": "Value:",
+       "kind": "text"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ]
+  },
+  "dialog.modifyChoice": {
+   "title": "Modify Choice",
+   "note": "U:quill/developer: Word's Modify Choice (the same two boxes as Add Choice), asked for by the Content Control Properties list.",
+   "tabs": [
+    {
+     "name": "Modify Choice",
+     "fields": [
+      {
+       "id": "display",
+       "label": "Display Name:",
+       "kind": "text"
+      },
+      {
+       "id": "value",
+       "label": "Value:",
+       "kind": "text"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ]
+  }
+ }
+}

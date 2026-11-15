@@ -1,0 +1,88 @@
+{
+  "tab": "review",
+  "keytip": "R",
+  "source": "wordcraft aadb077e072b7de05f724e359d8db82e151f125c crates/ui-egui/src/ribbon/review.rs (review); Show Markup and the OneNote group placed as in Word for Windows; keytips from Word for Windows",
+  "groups": {
+    "proofing": {
+      "collapseOrder": 10,
+      "layout": [
+        {"large": "review.proofing.spelling-grammar"},
+        {"stack": ["review.proofing.thesaurus", "review.proofing.word-count"]}
+      ]
+    },
+    "speech": {
+      "collapseOrder": 9,
+      "layout": [
+        {"large": "review.speech.read-aloud"}
+      ]
+    },
+    "accessibility": {
+      "collapseOrder": 8,
+      "layout": [
+        {"large": "review.accessibility.check-accessibility"}
+      ]
+    },
+    "language": {
+      "collapseOrder": 7,
+      "layout": [
+        {"large": "review.language.translate"},
+        {"large": "review.language.language"}
+      ]
+    },
+    "comments": {
+      "collapseOrder": 6,
+      "layout": [
+        {"large": "review.comments.new-comment"},
+        {"stack": ["review.comments.delete", "review.comments.previous", "review.comments.next"]},
+        {"large": "review.comments.show-comments"}
+      ]
+    },
+    "tracking": {
+      "collapseOrder": 5,
+      "launcher": {"dialog": "dialog.trackChangesOptions"},
+      "layout": [
+        {"large": "review.tracking.track-changes"},
+        {"stack": ["review.tracking.display-for-review", "review.tracking.show-markup", "review.tracking.reviewing-pane"]}
+      ]
+    },
+    "changes": {
+      "collapseOrder": 4,
+      "layout": [
+        {"large": "review.changes.accept"},
+        {"large": "review.changes.reject"},
+        {"stack": ["review.changes.previous", "review.changes.next"]}
+      ]
+    },
+    "compare": {
+      "collapseOrder": 3,
+      "layout": [
+        {"large": "review.compare.compare"}
+      ]
+    },
+    "protect": {
+      "collapseOrder": 2,
+      "layout": [
+        {"large": "review.protect.block-authors"},
+        {"large": "review.protect.restrict-editing"}
+      ]
+    },
+    "ink": {
+      "collapseOrder": 1,
+      "layout": [
+        {"large": "review.ink.hide-ink"}
+      ]
+    },
+    "one-note": {
+      "collapseOrder": 0,
+      "layout": [
+        {"large": "review.onenote.linked-notes"}
+      ]
+    }
+  },
+  "keytips": {
+    "review.proofing.thesaurus": "E", "review.proofing.word-count": "W",
+    "review.comments.new-comment": "C", "review.comments.delete": "D", "review.comments.previous": "V", "review.comments.next": "N",
+    "review.tracking.track-changes": "G", "review.changes.reject": "J", "review.changes.previous": "F", "review.changes.next": "H",
+    "review.compare.compare": "M", "review.protect.restrict-editing": "PE"
+  }
+}

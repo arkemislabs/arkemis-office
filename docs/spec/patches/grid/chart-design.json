@@ -1,0 +1,265 @@
+{
+  "controls": {
+    "chartDesign.layouts.addElement": {
+      "note": "U:grid/chart-design: checked against gridcraft (the Add Chart Element menu: legend positions, data labels and gridlines through chart.set; Chart Title and Axis Titles through chart.addElement)."
+    },
+    "chartDesign.layouts.quickLayout": {
+      "args": {
+        "layout": "<n>"
+      },
+      "note": "U:grid/chart-design: checked against gridcraft (chart.quickLayout 1 to 6: legend, data labels, gridlines and axis titles); the layouts are drawn as tiles."
+    },
+    "chartDesign.styles.changeColors": {
+      "args": {
+        "palette": "<palette>"
+      },
+      "note": "U:grid/chart-design: checked against gridcraft (chart.changeColors: colorful, monochrome, accent1 to accent6); the palettes are drawn as tiles."
+    },
+    "chartDesign.styles.gallery": {
+      "args": {
+        "style": "<n>"
+      },
+      "note": "U:grid/chart-design: gridcraft stores a style number 1 to 16 and draws no difference; here each style is a palette with its gridlines and data labels, drawn as a tile.",
+      "command": "chart.styleGallery"
+    },
+    "chartDesign.data.selectData": {
+      "note": "U:grid/chart-design: checked against gridcraft (chart.selectData: range, categories, removeSeries)."
+    },
+    "chartDesign.location.moveChart": {
+      "note": "U:grid/chart-design: checked against gridcraft (chart.move: another sheet and a top-left cell)."
+    },
+    "chartDesign.format.formatPane": {
+      "kind": "toggle",
+      "note": "U:grid/chart-design: checked against gridcraft (the Format Chart Area pane, panes/formatChart.tsx)."
+    },
+    "chartDesign.type.changeChartType": {
+      "note": "U:grid/chart-design: checked against gridcraft (the Change Chart Type menu runs chart.set; Change Chart Type opens the All Charts list)."
+    },
+    "chartFormat.selection.formatSelection": {
+      "kind": "toggle",
+      "note": "U:grid/chart-design: checked against gridcraft (chart.formatSelection: the Format Chart Area pane, or a series colour)."
+    },
+    "chartFormat.shapeStyles.fill": {
+      "note": "U:grid/chart-design: checked against gridcraft (chart.shapeFill: on a chart it fills a series, `series` default the first).",
+      "args": {
+        "color": "#RRGGBB"
+      }
+    },
+    "shapeFormat.styles.fill": {
+      "note": "U:grid/chart-design: checked against gridcraft (chart.shapeFill with kind shape).",
+      "args": {
+        "color": "#RRGGBB"
+      }
+    },
+    "shapeFormat.styles.outline": {
+      "note": "U:grid/chart-design: checked against gridcraft (chart.shapeOutline).",
+      "args": {
+        "color": "#RRGGBB"
+      }
+    },
+    "shapeFormat.arrange.rotate": {
+      "kind": "dropdown",
+      "command": null,
+      "note": "U:grid/insert-layout: Rotate Right and Left 90 and Flip turn and mirror the picked pictures and shapes (arrange.rotate degrees, flip), as Page Layout > Rotate.",
+      "items": [
+        {
+          "id": "shapeFormat.arrange.rotate.rotate-right-90",
+          "label": "Rotate Right 90°",
+          "command": "arrange.rotate",
+          "params": {
+            "degrees": 90
+          }
+        },
+        {
+          "id": "shapeFormat.arrange.rotate.rotate-left-90",
+          "label": "Rotate Left 90°",
+          "command": "arrange.rotate",
+          "params": {
+            "degrees": -90
+          }
+        },
+        {
+          "id": "shapeFormat.arrange.rotate.flip-vertical",
+          "label": "Flip Vertical",
+          "command": "arrange.rotate",
+          "params": {
+            "flip": "vertical"
+          }
+        },
+        {
+          "id": "shapeFormat.arrange.rotate.flip-horizontal",
+          "label": "Flip Horizontal",
+          "command": "arrange.rotate",
+          "params": {
+            "flip": "horizontal"
+          }
+        }
+      ]
+    }
+  },
+  "dialogs": {
+    "dialog.selectData": {
+      "note": "U:grid/chart-design: checked against gridcraft (dialogs/charts.rs select_data: the data range, the series and the horizontal axis labels).",
+      "buttons": [
+        "OK",
+        "Cancel"
+      ],
+      "tabs": [
+        {
+          "name": "",
+          "fields": [
+            {
+              "id": "range",
+              "label": "Chart data range:",
+              "kind": "text",
+              "options": []
+            },
+            {
+              "id": "categories",
+              "label": "Horizontal (Category) Axis Labels:",
+              "kind": "text",
+              "options": []
+            },
+            {
+              "id": "remove",
+              "label": "Remove series numbers (for example 2, 3):",
+              "kind": "text",
+              "options": []
+            }
+          ]
+        }
+      ]
+    },
+    "dialog.moveChart": {
+      "note": "U:grid/chart-design: checked against gridcraft (chart.move: a sheet and a top-left cell).",
+      "buttons": [
+        "OK",
+        "Cancel"
+      ],
+      "tabs": [
+        {
+          "name": "",
+          "fields": [
+            {
+              "id": "toSheet",
+              "label": "Object in (sheet name):",
+              "kind": "text",
+              "options": []
+            },
+            {
+              "id": "at",
+              "label": "Top-left cell:",
+              "kind": "text",
+              "options": []
+            }
+          ]
+        }
+      ]
+    },
+    "dialog.changeChartType": {
+      "note": "U:grid/chart-design: checked against gridcraft (the All Charts list of the Insert Chart dialog).",
+      "buttons": [
+        "OK",
+        "Cancel"
+      ],
+      "tabs": [
+        {
+          "name": "",
+          "fields": [
+            {
+              "id": "choice",
+              "label": "Chart type:",
+              "kind": "select",
+              "options": [
+                {
+                  "value": "column|",
+                  "label": "Clustered Column"
+                },
+                {
+                  "value": "column|stacked",
+                  "label": "Stacked Column"
+                },
+                {
+                  "value": "column|stacked100",
+                  "label": "100% Stacked Column"
+                },
+                {
+                  "value": "bar|",
+                  "label": "Clustered Bar"
+                },
+                {
+                  "value": "bar|stacked",
+                  "label": "Stacked Bar"
+                },
+                {
+                  "value": "bar|stacked100",
+                  "label": "100% Stacked Bar"
+                },
+                {
+                  "value": "line|",
+                  "label": "Line"
+                },
+                {
+                  "value": "line|markers",
+                  "label": "Line with Markers"
+                },
+                {
+                  "value": "line|stacked",
+                  "label": "Stacked Line"
+                },
+                {
+                  "value": "pie|",
+                  "label": "Pie"
+                },
+                {
+                  "value": "doughnut|",
+                  "label": "Doughnut"
+                },
+                {
+                  "value": "area|",
+                  "label": "Area"
+                },
+                {
+                  "value": "area|stacked",
+                  "label": "Stacked Area"
+                },
+                {
+                  "value": "area|stacked100",
+                  "label": "100% Stacked Area"
+                },
+                {
+                  "value": "scatter|",
+                  "label": "Scatter"
+                },
+                {
+                  "value": "scatter|lines",
+                  "label": "Scatter with Lines"
+                },
+                {
+                  "value": "radar|",
+                  "label": "Radar"
+                },
+                {
+                  "value": "histogram|",
+                  "label": "Histogram"
+                },
+                {
+                  "value": "waterfall|",
+                  "label": "Waterfall"
+                },
+                {
+                  "value": "funnel|",
+                  "label": "Funnel"
+                },
+                {
+                  "value": "combo|",
+                  "label": "Combo"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

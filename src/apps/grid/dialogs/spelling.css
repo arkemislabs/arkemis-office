@@ -1,0 +1,16 @@
+/* Review: Spelling and Thesaurus. */
+.spell-main { display: grid; grid-template-columns: minmax(0, 1fr) 128px; gap: 14px; align-items: start; }
+.spell-col { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.spell-text { min-height: 74px; max-height: 120px; overflow-y: auto; padding: 8px 10px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, .16); background: rgba(0, 0, 0, .22); color: var(--sh-text-1, #f2f2f3); font: 13px/1.45 "Segoe UI", system-ui, sans-serif; white-space: pre-wrap; overflow-wrap: anywhere; resize: none; width: 100%; box-sizing: border-box; }
+.spell-bad { color: #ff7b7b; text-decoration: underline wavy #e02020; text-underline-offset: 3px; }
+.spell-edit { align-self: flex-start; background: none; border: none; padding: 0; color: var(--sh-text-2, #b4b4ba); font-size: 11.5px; text-decoration: underline; cursor: pointer; }
+.spell-buttons { flex-direction: column; align-items: stretch; margin: 0; gap: 6px; }
+.spell-gap { height: 6px; }
+.spell-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 6px; }
+.spell-lang { display: flex; align-items: center; gap: 8px; font-size: 12.5px; }
+.spell-lang select { min-width: 190px; }
+.spell-done { align-items: flex-start; gap: 10px; }
+.thes-main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: 14px; align-items: start; }
+.thes-look { display: flex; gap: 8px; align-items: center; margin-bottom: 8px; }
+.thes-look input { flex: 1; min-width: 0; }
+.thes-head { font-weight: 600; font-size: 12.5px; padding: 4px 8px; color: var(--sh-text-2, #b4b4ba); }

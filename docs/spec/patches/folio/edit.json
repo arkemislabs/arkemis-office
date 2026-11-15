@@ -1,0 +1,127 @@
+{
+  "dialogs": {
+    "dialog.header-footer": {
+      "title": "Add Header and Footer",
+      "note": "printcraft marks_ui.rs body (HeaderFooter); Update and Bates numbering open the same dialog (Update replaces). Office-only Saved settings and Appearance Options are not in printcraft and are not shown; the Bates token is typed into a box (Bates numbering puts <<Bates Number#6#1##>> in the bottom-right one).",
+      "tabs": [{"name": "Header and Footer", "fields": [
+        {"id": "font", "label": "Font:", "kind": "select", "options": ["Helvetica", "Times", "Courier"]},
+        {"id": "size", "label": "Size", "kind": "number", "unit": "pt", "min": 4, "max": 72, "step": 0.5},
+        {"id": "underline", "label": "Underline", "kind": "checkbox"},
+        {"id": "color", "label": "Color", "kind": "color"},
+        {"id": "margin-top", "label": "Top", "kind": "number", "unit": "pt", "min": 0, "max": 720},
+        {"id": "margin-bottom", "label": "Bottom", "kind": "number", "unit": "pt", "min": 0, "max": 720},
+        {"id": "margin-left", "label": "Left", "kind": "number", "unit": "pt", "min": 0, "max": 720},
+        {"id": "margin-right", "label": "Right", "kind": "number", "unit": "pt", "min": 0, "max": 720},
+        {"id": "left-header-text", "label": "Left Header Text", "kind": "text", "multiline": true},
+        {"id": "center-header-text", "label": "Center Header Text", "kind": "text", "multiline": true},
+        {"id": "right-header-text", "label": "Right Header Text", "kind": "text", "multiline": true},
+        {"id": "left-footer-text", "label": "Left Footer Text", "kind": "text", "multiline": true},
+        {"id": "center-footer-text", "label": "Center Footer Text", "kind": "text", "multiline": true},
+        {"id": "right-footer-text", "label": "Right Footer Text", "kind": "text", "multiline": true},
+        {"id": "page-format", "label": "Page number format", "kind": "select", "options": ["1", "1 of n", "1/n", "Page 1", "Page 1 of n"]},
+        {"id": "insert-page", "label": "Insert Page Number", "kind": "button"},
+        {"id": "date-format", "label": "Date format", "kind": "select", "options": ["m/d/yyyy", "mm/dd/yyyy", "d/m/yyyy", "yyyy-mm-dd", "m/d/yy", "mmmm d, yyyy", "yyyy/mm/dd", "yyyy/m/d", "dd.mm.yyyy", "d.m.yyyy", "dd.mm.yy"]},
+        {"id": "insert-date", "label": "Insert Date", "kind": "button"},
+        {"id": "start", "label": "Start page number", "kind": "number", "min": 1, "max": 999999},
+        {"id": "shrink", "label": "Shrink the page content to make room for the header and footer", "kind": "checkbox"},
+        {"id": "scope", "label": "Pages", "kind": "radio", "options": ["All pages", "Pages from"]},
+        {"id": "from", "label": "From", "kind": "number", "min": 1, "visibleWhen": "scope == Pages from"},
+        {"id": "to", "label": "to", "kind": "number", "min": 1, "visibleWhen": "scope == Pages from"},
+        {"id": "subset", "label": "Subset", "kind": "select", "options": ["All pages in range", "Even pages only", "Odd pages only"]},
+        {"id": "preview", "label": "Preview", "kind": "preview"}
+      ]}],
+      "buttons": ["OK", "Cancel"]
+    },
+    "dialog.watermark": {
+      "title": "Add Watermark",
+      "note": "printcraft marks_ui.rs body (Watermark). Source > File takes a PNG or JPEG picture from the picture picker (the bridge also takes a PDF page as base64). Office-only font, alignment, distances and show-when-printing are not in printcraft and are not shown.",
+      "tabs": [{"name": "Watermark", "fields": [
+        {"id": "source", "label": "Source", "kind": "radio", "options": ["Text", "File"]},
+        {"id": "file", "label": "File", "kind": "text", "input": "file-picker", "accept": ["png", "jpg", "jpeg"], "visibleWhen": "source == File"},
+        {"id": "file-page", "label": "Page number", "kind": "number", "min": 1, "max": 9999, "visibleWhen": "source == File"},
+        {"id": "scale", "label": "Scale relative to target page", "kind": "slider", "unit": "%", "min": 5, "max": 100, "visibleWhen": "source == File"},
+        {"id": "text", "label": "Text", "kind": "text", "multiline": true, "visibleWhen": "source == Text"},
+        {"id": "fit", "label": "Fit to page", "kind": "checkbox", "visibleWhen": "source == Text"},
+        {"id": "size", "label": "Size", "kind": "number", "unit": "pt", "min": 6, "max": 300, "visibleWhen": "source == Text"},
+        {"id": "color", "label": "Color", "kind": "color"},
+        {"id": "rotation", "label": "Rotation", "kind": "radio", "options": ["-45°", "None", "45°"]},
+        {"id": "degrees", "label": "Angle (°)", "kind": "number", "min": -180, "max": 180},
+        {"id": "opacity", "label": "Opacity", "kind": "slider", "unit": "%", "min": 0, "max": 100},
+        {"id": "location", "label": "Location", "kind": "radio", "options": ["Appear behind page", "Appear on top of page"]},
+        {"id": "offset-h", "label": "Offset from centre: Horizontal", "kind": "number", "unit": "pt", "min": -20000, "max": 20000},
+        {"id": "offset-v", "label": "Vertical", "kind": "number", "unit": "pt", "min": -20000, "max": 20000},
+        {"id": "scope", "label": "Pages", "kind": "radio", "options": ["All pages", "Pages from"]},
+        {"id": "from", "label": "From", "kind": "number", "min": 1, "visibleWhen": "scope == Pages from"},
+        {"id": "to", "label": "to", "kind": "number", "min": 1, "visibleWhen": "scope == Pages from"},
+        {"id": "subset", "label": "Subset", "kind": "select", "options": ["All pages in range", "Even pages only", "Odd pages only"]},
+        {"id": "preview", "label": "Preview", "kind": "preview"}
+      ]}],
+      "buttons": ["OK", "Cancel"]
+    },
+    "dialog.background": {
+      "title": "Add Background",
+      "note": "printcraft marks_ui.rs body (Background). Office-only rotation and distances are not in printcraft and are not shown.",
+      "tabs": [{"name": "Background", "fields": [
+        {"id": "source", "label": "Source", "kind": "radio", "options": ["From color", "File"]},
+        {"id": "color", "label": "Color", "kind": "color", "visibleWhen": "source == From color"},
+        {"id": "file", "label": "File", "kind": "text", "input": "file-picker", "accept": ["png", "jpg", "jpeg"], "visibleWhen": "source == File"},
+        {"id": "file-page", "label": "Page number", "kind": "number", "min": 1, "max": 9999, "visibleWhen": "source == File"},
+        {"id": "scale", "label": "Scale relative to target page", "kind": "slider", "unit": "%", "min": 5, "max": 100, "visibleWhen": "source == File"},
+        {"id": "opacity", "label": "Opacity", "kind": "slider", "unit": "%", "min": 0, "max": 100},
+        {"id": "scope", "label": "Pages", "kind": "radio", "options": ["All pages", "Pages from"]},
+        {"id": "from", "label": "From", "kind": "number", "min": 1, "visibleWhen": "scope == Pages from"},
+        {"id": "to", "label": "to", "kind": "number", "min": 1, "visibleWhen": "scope == Pages from"},
+        {"id": "subset", "label": "Subset", "kind": "select", "options": ["All pages in range", "Even pages only", "Odd pages only"]},
+        {"id": "preview", "label": "Preview", "kind": "preview"}
+      ]}],
+      "buttons": ["OK", "Cancel"]
+    }
+  },
+  "controls": {
+    "edit.image.rotate-ccw": {"command":"edit.image_change","args":{"change":"rotate_ccw"},"note":"content_ui.rs: a quarter turn counterclockwise about the centre of the image as the page shows it (the placement matrix is turned; the pixels are not resampled)."},
+    "edit.image.rotate-cw": {"command":"edit.image_change","args":{"change":"rotate_cw"},"note":"A quarter turn clockwise about the centre of the image as the page shows it."},
+    "edit.image.flip-h": {"command":"edit.image_change","args":{"change":"flip_h"},"note":"Mirrored left to right as the page shows it."},
+    "edit.image.flip-v": {"command":"edit.image_change","args":{"change":"flip_v"},"note":"Mirrored top to bottom as the page shows it."},
+    "edit.image.replace": {"command":"edit.image_replace","dialog":"system.open-file","note":"content_ui.rs: draws another picture (PNG or JPEG) in the same place, stretched to the old box (images.rs ImageChange::Replace). Grouped artwork cannot be replaced."},
+    "edit.image.crop": {"command":"edit.image_change","args":{"change":"crop","percent":"<value>"},"min":0,"max":49,"step":1,"unit":"%","noLabel":true,"note":"content_ui.rs: the percentage trimmed from each side (images.rs ImageChange::Crop): a clipping path inside the image's own scope, so a later move or resize carries it; the pixels are kept. Grouped artwork cannot be cropped."},
+    "edit.format.font": {"command":"edit.format","args":{"field":"font","value":"<value>"},"options":["Keep source fonts","Helvetica","Times","Courier"],"note":"printcraft format_text_ui.rs: the font across the panel. Keep source fonts, the standard families (Helvetica, Times, Courier) and the fonts the page already uses (edit.format with the face, or edit.text_replace resource). Load font… and Installed fonts… (embedding a font file) are not translated and are not shown."},
+    "edit.format.size": {"command":"edit.format","args":{"field":"size","value":"<value>"},"note":"Font size in points (a paragraph is rewritten at that size; its line spacing scales with it)."},
+    "edit.format.colour": {"command":"edit.format","args":{"field":"color","value":"<value>"},"note":"Text colour of the open paragraph (format_text_ui.rs colour_button)."},
+    "edit.format.bold": {"command":"edit.format","args":{"toggle":"bold"},"note":"Bold chooses the bold face of the paragraph's family (Helvetica-Bold, Times-Bold, Courier-Bold); the paragraph's own glyphs are not reused then (rewrite.rs source_font: reuse needs no family or bold choice)."},
+    "edit.format.italic": {"command":"edit.format","args":{"toggle":"italic"},"note":"Italic chooses the oblique face of the paragraph's family."},
+    "edit.format.underline": {"command":"edit.format","args":{"toggle":"underline"},"note":"Underline each line of the open paragraph (rewrite.rs underline_ops: a line 0.06 em thick under the text, in its colour)."},
+    "edit.format.line-spacing": {"command":"edit.format","args":{"field":"lineSpacing","value":"<value>"},"note":"Auto keeps the paragraph's own leading; a number is a multiple of the size (rewrite.rs line_lead: clamped to 0.5-5)."},
+    "edit.format.horizontal-scale": {"command":"edit.format","args":{"field":"scale","value":"<value>"},"note":"Horizontal scale in percent (Tz), 10 to 400."},
+    "edit.format.char-spacing": {"command":"edit.format","args":{"field":"charSpacing","value":"<value>"},"note":"Character spacing in points (Tc), -5 to 50."},
+    "edit.format.align": {"kind":"dropdown","label":"Alignment","items":[{"id":"edit.format.align.left","label":"Align left","command":"edit.format","args":{"field":"align","value":"left"}},{"id":"edit.format.align.center","label":"Centre","command":"edit.format","args":{"field":"align","value":"center"}},{"id":"edit.format.align.right","label":"Align right","command":"edit.format","args":{"field":"align","value":"right"}},{"id":"edit.format.align.justify","label":"Justify","command":"edit.format","args":{"field":"align","value":"justify"}}],"note":"format_text_ui.rs alignment: the whole paragraph (selected-row alignment of existing paragraphs is refused upstream too: rewrite.rs rewrite_block_from). Justify stretches every line but the last with word spacing."},
+    "alltools.edit.bates-numbering": {"dialog": null},
+    "edit.add.bates-numbering": {"dialog": null},
+    "organize.page.bates": {"dialog": null}
+  },
+ "commands": {
+  "edit.image_change": {
+   "note": "Translated from printcraft 8f16855 crates/edit/src/images.rs (page_images, change_image: transform folded into the `q cm Do Q` the image sits in, crop as a clip in its own scope, delete) and ui-egui tools/content_ui.rs. NOT translated: the path-clip hit test (an image is hit by its whole box), images inside form XObjects and inline images (not listed), a Form's crop, image_transform_scope's search of outer scopes for an image under a shared clip."
+  },
+  "edit.image_replace": {
+   "note": "ImageChange::Replace: the other picture is drawn by `Do` in the same place and stretched to the old box (upstream does not fit it). PNG and JPEG only here (the picture is embedded with pdf-lib)."
+  },
+  "edit.images": {
+   "note": "page_images, for the surface: the page's own images and artwork, not the headers, footers, watermarks and backgrounds this app added."
+  },
+  "edit.edit_text": {
+   "note": "Translated from printcraft 8f16855 (crates/edit/src/text/{interp,lines,blocks,rewrite,fallback}.rs, text_regions/grouping.rs, crates/fonts/src/pdf.rs, ui-egui edit_text_ui.rs and format_text_ui.rs) into core/folio/lib/text-*.mjs. Paragraphs are the page's text runs joined on baselines (interpreter), rows and blocks (grouping), written back as a new content stream (rewrite); the page's other streams are untouched. NOT translated, and said so where it matters: (1) the styled path is translated in part (see the end of this note); (2) Type 3 / Japanese / Hebrew fallback faces, bidi and Indic reordering, vertical writing: text in those is listed as not editable with the reason, never rewritten wrongly; (3) text drawn by form XObjects is not listed (upstream lists it for reading only); an operator split between two content streams is not read; (4) the embedded font program is not read: a subset font is taken to have a glyph where /Widths or /W lists one, and a character it lacks is set in Helvetica, Times or Courier with a notice (never a wrong glyph); embedding a font file (Load font…, Installed fonts…) is not translated; (5) source_space searches only the paragraph's own font for a space width (0.33 em otherwise); (6) selected-row alignment of an existing paragraph is refused, as upstream refuses it; (7) the lists, superscript, subscript and paragraph spacing controls are shown disabled, as upstream shows them (\"planned\"). Nothing in the document is executed: its content is only parsed (JavaScript actions are never run). Reading and rewriting are async (needs: worker) and read the page in slices of 20,000 operators with the event loop in between, so a large page does not freeze the window; they run on the session's thread, not in electron/format-worker.cjs (which has no folio text operation; the pdfium inspect_pdf_text and replace_pdf_text of the earlier path stay as they were: upstream does not use pdfium, so none of it is reused). Dragging a paragraph box moves it (translate_blocks) and typing rewrites it. Add link and Attach file (content_ui.rs) are not translated yet: their controls stay marked as not translated. Styled path: a paragraph of several fonts, sizes or colours keeps each run's style when its words change (core/folio/lib/text-styled.mjs: edited_spans aligns the old and new words so untouched words keep their runs, inserted text takes the run before it; a character its run's font lacks is shown in the run's standard family). NOT translated: formatting a selected part of a paragraph (BlockStyle.ranges), shaping and fallback faces, the /P marker bookkeeping, runs drawn at different scales or turned (set in the first run's style). Reading and rewriting run in a folio worker of its own (src/workers/folio-text.ts, core/folio/lib/text-ops.mjs) and, when no worker can start, in the calling thread in slices. Images, added items and the other commands still run on the session's thread. The rewrap handles on a paragraph's left and right edges are in the page view (edit_text_ui.rs Grip::Left and Grip::Right: upright pages only), and the open box shows a blinking caret."
+  },
+  "edit.text_replace": {
+   "note": "Edit::EditTextBlock (rewrite_block): the paragraph is rewrapped to its own width and keeps its font when that font can show every character; Helvetica, Times or Courier stand in otherwise and `notice` says so. See edit.edit_text for what is not translated."
+  },
+  "edit.text_move": {
+   "note": "Edit::MoveObjects for text (translate_blocks): each show operator moves by a TJ offset and the text rise, restored after it, so glyphs, fonts, breaks and the text after it are untouched."
+  },
+  "edit.format": {
+   "note": "format_text_ui.rs: Font (Keep source fonts, Helvetica, Times, Courier, or a face the page uses), size, colour, alignment, bold, italic, underline, line spacing, horizontal scale, character spacing; each choice rewrites the open paragraph at once (BlockStyle)."
+  },
+  "edit.background": {
+   "note": "Checked against printcraft 8f16855: the Background gained a default of light yellow (1, 0.95, 0.7), which is followed, and replace_backdrop (backdrop.rs: a white backdrop the page paints itself is replaced so the background shows through). The backdrop replacement is not translated: a page that paints its own white page fill hides the background here."
+  }
+ }
+}

@@ -1,0 +1,128 @@
+{
+ "commands": {
+  "edit.text": {
+   "note": "Translated from printcraft 8f16855 (crates/edit/src/added.rs and added/{types,layout,draw,store}.rs, ui-egui tools/content_ui.rs and commands.rs:534) into core/folio/lib/added.mjs. An added text is its own content stream tagged /PCMark /Added with its parameters in /PCAdded, in a standard family (Helvetica, Times, Courier), size 1 to 500, colour, alignment, bold, italic and character spacing; a click puts a 200 point box with its top left at the click, a drag draws one. NOT translated: text shaped with the craft-fonts faces (Arabic, Hebrew, Thai: refused with the standard-fonts message), per-paragraph alignments (aligns), pasting and isolate_content. Line spacing, horizontal scale and underline are not offered for added text (upstream shows them disabled for it too). Not checked against upstream beyond what is listed: the exact look of the box while it is open."
+  },
+  "edit.image": {
+   "note": "AddImage (run.rs): a PNG or JPEG picked in the system Open dialog, centred and never enlarged beyond 80 % of the page when no box is given. Added pictures are items of their own (AddedImage): move, resize by the corners (proportions kept), turn, flip, crop (up to 47.5 % from each side) and replace go through edit.added_change. Pictures other than PNG and JPEG (upstream also reads other formats it can decode) are refused."
+  },
+  "edit.added": {
+   "note": "list_added, for the surface: the page's added text and pictures with their boxes in page view points."
+  },
+  "edit.added_select": {
+   "note": "Selects an added item so Format text and the Image controls act on it."
+  },
+  "edit.added_change": {
+   "note": "Edit::UpdateContent, DeleteContent and ReplaceImage: retype, format, move, resize, turn, flip, crop, replace or delete an added item; an emptied text is deleted (content_ui.rs finish). A turned picture's box swaps its sides about its centre so the picture is not stretched (not checked against content_ui.rs)."
+  },
+  "edit.link": {
+   "note": "Link tool (link_ui.rs, annot/links.rs AddLink): a drag draws the rectangle (at least 4 px each way) and opens Link Properties; the link is a Link annotation with a /URI action and its border and highlight. Existing links show outlines in the tool, a click selects one and Delete removes it. NOT translated: a link that goes to a page of the document and the double-click edit of an existing link in the window (edit.link_change takes the new address, rectangle and look); not checked against upstream: the outline colours."
+  },
+  "edit.links": {
+   "note": "The links of a page for the Link tool: address, box."
+  },
+  "edit.link_select": {
+   "note": "Selects a link for Delete."
+  },
+  "edit.link_change": {
+   "note": "SetLink and DeleteLink."
+  },
+  "edit.attach": {
+   "note": "Edit::AddAttachment (organize/attachments.rs add_attachment): a document-level attachment in /Names /EmbeddedFiles under the file name (made unique with \" (2)\"), with /Size, /ModDate and the type when the name says one. There is no Attachments panel in this app yet (the rail toggle stays pending); edit.attachments lists them."
+  },
+  "edit.attachments": {
+   "note": "attachment_keys with size, type and description, until the Attachments panel exists."
+  }
+ },
+ "dialogs": {
+  "dialog.link-properties": {
+   "title": "Link Properties",
+   "note": "printcraft link_ui.rs LinkDraft: the link action (open a web page, or go to a page of this document) and its look. The page link names the model page, which writing the file turns into the page object (model/pdf-write.mjs); a link with another action is kept as it is. Go to a page view with a zoom is not offered: the destination is the whole page (Fit).",
+   "tabs": [
+    {
+     "name": "Appearance",
+     "fields": [
+      {
+       "id": "visible",
+       "label": "Show the link rectangle",
+       "kind": "checkbox"
+      },
+      {
+       "id": "color",
+       "label": "Color",
+       "kind": "color"
+      },
+      {
+       "id": "width",
+       "label": "Line width",
+       "kind": "number",
+       "unit": "pt",
+       "min": 0.5,
+       "max": 12,
+       "step": 0.5
+      },
+      {
+       "id": "line",
+       "label": "Line style",
+       "kind": "select",
+       "options": [
+        "Solid",
+        "Dashed",
+        "Underline"
+       ]
+      },
+      {
+       "id": "highlight",
+       "label": "Highlight",
+       "kind": "select",
+       "options": [
+        "None",
+        "Invert",
+        "Outline",
+        "Inset"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Actions",
+     "fields": [
+      {
+       "id": "action",
+       "label": "Link action",
+       "kind": "radio",
+       "options": [
+        "Open a web page",
+        "Go to a page"
+       ]
+      },
+      {
+       "id": "url",
+       "label": "Open a web page",
+       "kind": "text",
+       "hint": "https://",
+       "visibleWhen": "action == Open a web page"
+      },
+      {
+       "id": "page",
+       "label": "Go to page",
+       "kind": "number",
+       "min": 1,
+       "visibleWhen": "action == Go to a page"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ]
+  }
+ },
+ "controls": {
+  "edit.header.edit-text-images": {
+   "command": null,
+   "note": "Hidden: upstream puts Edit text & images on the floating toolbar, on from the moment Edit opens (edit.rs); the panel header is only the title, Preferences and Close. The toolbar button (quick.bar.edit-text) runs edit.edit_text."
+  }
+ }
+}

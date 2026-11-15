@@ -1,0 +1,375 @@
+{
+  "controls": {
+    "insert.illustrations.smartart": {
+      "command": "insert.smartArt",
+      "dialog": "dialog.smartart",
+      "params": null,
+      "note": "U:prism/smartart: opens Choose a SmartArt Graphic (all 45 of deckcraft's layouts drawn as thumbnails, by category); the graphic is a group of real shapes with its outline, edited in the Text Pane, and fills the slide's empty content placeholder or the space below the title. Saved to .pptx as PowerPoint's diagram parts (data, layout, quick style, colours and the drawing of its shapes), so PowerPoint opens it as SmartArt; opened again it is the graphic with its outline. Text typed into a diagram shape is read back into the outline."
+    },
+    "home.paragraph.smartart": {
+      "command": "smartArt.fromText",
+      "params": {
+        "kind": "<layout>"
+      },
+      "note": "U:prism/smartart: Convert to SmartArt: the selected text box becomes a graphic of the chosen layout, one node per paragraph with its indent level."
+    },
+    "pictureformat.styles.layout": {
+      "command": "smartArt.fromText",
+      "params": {
+        "kind": "<layout>"
+      },
+      "note": "U:prism/smartart: Picture Layout: the selected text box becomes a graphic of the chosen layout (the picture layouts hold the pictures of the nodes)."
+    },
+    "smartart.create.insert-picture": {
+      "command": "smartArt.picture",
+      "params": null,
+      "note": "U:prism/smartart: adds a picture to the picture placeholder of the graphic's last node (the system Open dialog picks the file); Text Pane commands pick the node by index."
+    },
+    "smartart.create.text-pane": {
+      "command": "pane.toggle",
+      "params": {
+        "pane": "smartart",
+        "toggle": null
+      },
+      "kind": "toggle",
+      "note": "U:prism/smartart: shows or hides the Text Pane (panes/smartart.tsx): the outline as bullet rows; Enter adds after, Tab and Shift+Tab demote and promote, Backspace on an empty row removes it."
+    },
+    "smartart.create.rtl": {
+      "command": "smartArt.rtl",
+      "params": null,
+      "note": "U:prism/smartart: Right to Left: the graphic is mirrored across its middle; saved in the diagram as its direction (not in deckcraft, not checked against upstream: done as PowerPoint reverses a graphic)."
+    },
+    "smartart.create.move-up": {
+      "command": "smartArt.moveUp",
+      "params": null,
+      "note": "U:prism/smartart: Move Up: the node (the last one, or index) and its sub-points swap places with the sibling above, at the same level (not in deckcraft, not checked against upstream)."
+    },
+    "smartart.create.move-down": {
+      "command": "smartArt.moveDown",
+      "params": null,
+      "note": "U:prism/smartart: Move Down: the node and its sub-points swap places with the sibling below (not in deckcraft, not checked against upstream)."
+    },
+    "smartart.create.layout": {
+      "command": null,
+      "params": null,
+      "options": [
+        "Standard",
+        "Both",
+        "Left Hanging",
+        "Right Hanging"
+      ],
+      "items": [
+        {
+          "label": "Standard",
+          "command": "smartArt.branch",
+          "params": {
+            "branch": "standard"
+          },
+          "source": "office",
+          "sourceRef": "office: Microsoft PowerPoint"
+        },
+        {
+          "label": "Both",
+          "command": "smartArt.branch",
+          "params": {
+            "branch": "both"
+          },
+          "source": "office",
+          "sourceRef": "office: Microsoft PowerPoint"
+        },
+        {
+          "label": "Left Hanging",
+          "command": "smartArt.branch",
+          "params": {
+            "branch": "left"
+          },
+          "source": "office",
+          "sourceRef": "office: Microsoft PowerPoint"
+        },
+        {
+          "label": "Right Hanging",
+          "command": "smartArt.branch",
+          "params": {
+            "branch": "right"
+          },
+          "source": "office",
+          "sourceRef": "office: Microsoft PowerPoint"
+        }
+      ],
+      "note": "U:prism/smartart: Layout (organization charts only): Standard, Both, Left Hanging, Right Hanging; saved as the branch layout of the diagram (not in deckcraft, not checked against upstream). Disabled for other layouts."
+    },
+    "smartart.styles.gallery": {
+      "command": "smartArt.style",
+      "params": {
+        "style": "<style>"
+      },
+      "note": "U:prism/smartart: the nine SmartArt Styles, drawn on the graphic itself: Simple Fill, Subtle Effect, Intense Effect, White Outline, and the bevelled Polished, Inset, Cartoon, Powder and Brick Scene (its bevel is kept; its 3-D camera is not drawn)."
+    },
+    "smartart.reset.reset": {
+      "command": "smartArt.reset",
+      "params": null,
+      "note": "U:prism/smartart: Reset Graphic: colours, style, direction and branch layout go back to the defaults and the shapes are drawn again from the outline; text, levels and pictures stay (not in deckcraft, not checked against upstream)."
+    },
+    "smartart.layouts.gallery": {
+      "note": "U:prism/smartart: all 45 layouts, each drawn from the sample outline in the graphic's own colours and style."
+    },
+    "smartart.styles.colors": {
+      "note": "U:prism/smartart: Colorful, the four Colorful Ranges, one accent for every shape, and the six Gradient Ranges, each drawn as swatches of the theme."
+    }
+  },
+  "dialogs": {
+    "dialog.smartart": {
+      "tabs": [
+        {
+          "name": "Graphic",
+          "fields": [
+            {
+              "id": "category",
+              "label": "Category",
+              "kind": "list",
+              "options": [
+                {
+                  "value": "All",
+                  "label": "All"
+                },
+                {
+                  "value": "List",
+                  "label": "List"
+                },
+                {
+                  "value": "Process",
+                  "label": "Process"
+                },
+                {
+                  "value": "Cycle",
+                  "label": "Cycle"
+                },
+                {
+                  "value": "Hierarchy",
+                  "label": "Hierarchy"
+                },
+                {
+                  "value": "Relationship",
+                  "label": "Relationship"
+                },
+                {
+                  "value": "Matrix",
+                  "label": "Matrix"
+                },
+                {
+                  "value": "Pyramid",
+                  "label": "Pyramid"
+                },
+                {
+                  "value": "Picture",
+                  "label": "Picture"
+                }
+              ],
+              "source": "office"
+            },
+            {
+              "id": "kind",
+              "label": "Pick a graphic",
+              "kind": "list",
+              "options": [
+                {
+                  "value": "list",
+                  "label": "Vertical Bullet List"
+                },
+                {
+                  "value": "blockList",
+                  "label": "Basic Block List"
+                },
+                {
+                  "value": "hBulletList",
+                  "label": "Horizontal Bullet List"
+                },
+                {
+                  "value": "process",
+                  "label": "Basic Process"
+                },
+                {
+                  "value": "chevron",
+                  "label": "Basic Chevron Process"
+                },
+                {
+                  "value": "verticalProcess",
+                  "label": "Vertical Process"
+                },
+                {
+                  "value": "stepUp",
+                  "label": "Step Up Process"
+                },
+                {
+                  "value": "cycle",
+                  "label": "Basic Cycle"
+                },
+                {
+                  "value": "blockCycle",
+                  "label": "Block Cycle"
+                },
+                {
+                  "value": "radial",
+                  "label": "Basic Radial"
+                },
+                {
+                  "value": "hierarchy",
+                  "label": "Hierarchy"
+                },
+                {
+                  "value": "pyramid",
+                  "label": "Basic Pyramid"
+                },
+                {
+                  "value": "invertedPyramid",
+                  "label": "Inverted Pyramid"
+                },
+                {
+                  "value": "matrix",
+                  "label": "Basic Matrix"
+                },
+                {
+                  "value": "titledMatrix",
+                  "label": "Titled Matrix"
+                },
+                {
+                  "value": "pictureList",
+                  "label": "Vertical Picture List"
+                },
+                {
+                  "value": "pictureCaption",
+                  "label": "Picture Caption List"
+                },
+                {
+                  "value": "pictureProcess",
+                  "label": "Picture Accent Process"
+                },
+                {
+                  "value": "pictureHList",
+                  "label": "Horizontal Picture List"
+                },
+                {
+                  "value": "timeline",
+                  "label": "Basic Timeline"
+                },
+                {
+                  "value": "venn",
+                  "label": "Basic Venn"
+                },
+                {
+                  "value": "target",
+                  "label": "Basic Target"
+                },
+                {
+                  "value": "textCycle",
+                  "label": "Text Cycle"
+                },
+                {
+                  "value": "continuousCycle",
+                  "label": "Continuous Cycle"
+                },
+                {
+                  "value": "horizontalHierarchy",
+                  "label": "Horizontal Hierarchy"
+                },
+                {
+                  "value": "gridMatrix",
+                  "label": "Grid Matrix"
+                },
+                {
+                  "value": "gear",
+                  "label": "Gear"
+                },
+                {
+                  "value": "funnel",
+                  "label": "Funnel"
+                },
+                {
+                  "value": "segmentedCycle",
+                  "label": "Segmented Cycle"
+                },
+                {
+                  "value": "multidirectionalCycle",
+                  "label": "Multidirectional Cycle"
+                },
+                {
+                  "value": "orgChart",
+                  "label": "Organization Chart"
+                },
+                {
+                  "value": "halfCircleOrgChart",
+                  "label": "Half Circle Organization Chart"
+                },
+                {
+                  "value": "cycleMatrix",
+                  "label": "Cycle Matrix"
+                },
+                {
+                  "value": "segmentedPyramid",
+                  "label": "Segmented Pyramid"
+                },
+                {
+                  "value": "pie",
+                  "label": "Basic Pie"
+                },
+                {
+                  "value": "nameTitleOrgChart",
+                  "label": "Name and Title Organization Chart"
+                },
+                {
+                  "value": "verticalBoxList",
+                  "label": "Vertical Box List"
+                },
+                {
+                  "value": "trapezoidList",
+                  "label": "Trapezoid List"
+                },
+                {
+                  "value": "tableList",
+                  "label": "Table List"
+                },
+                {
+                  "value": "accentProcess",
+                  "label": "Accent Process"
+                },
+                {
+                  "value": "continuousBlockProcess",
+                  "label": "Continuous Block Process"
+                },
+                {
+                  "value": "bendingProcess",
+                  "label": "Basic Bending Process"
+                },
+                {
+                  "value": "linearVenn",
+                  "label": "Linear Venn"
+                },
+                {
+                  "value": "stackedVenn",
+                  "label": "Stacked Venn"
+                },
+                {
+                  "value": "nestedTarget",
+                  "label": "Nested Target"
+                }
+              ],
+              "default": "process",
+              "param": "kind",
+              "note": "drawn as thumbnails (src/apps/prism/surface/SmartArtGallery.tsx)",
+              "source": "upstream",
+              "sourceRef": "crates/ui-egui/src/dialogs/body.rs:1247"
+            },
+            {
+              "id": "preview",
+              "label": "Preview and name",
+              "kind": "preview",
+              "options": [],
+              "source": "office"
+            }
+          ]
+        }
+      ],
+      "note": "U:prism/smartart: deckcraft's SmartArt items box is not offered: as in PowerPoint the text is typed in the Text Pane after inserting."
+    }
+  }
+}

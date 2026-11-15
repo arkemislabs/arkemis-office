@@ -1,0 +1,39 @@
+{
+  "tab": "notice-bars",
+  "source": "printcraft crates/ui-egui/src/canvas/bars.rs (notice bars) @ 3109bb2359759e24ef490e1cdbdba00722b20972",
+  "note": "Notice bars over the document; each bar shows only its own buttons, listed here in bar order.",
+  "groups": {
+    "notices": {
+      "collapseOrder": 1,
+      "collapsedIcon": "x",
+      "layout": [
+        {
+          "stack": [
+            "notice.dismiss",
+            "notice.reload",
+            "notice.close-revision"
+          ]
+        },
+        {
+          "stack": [
+            "notice.signature-panel",
+            "notice.highlight-fields",
+            "notice.js-console"
+          ]
+        },
+        {
+          "stack": [
+            "notice.security",
+            "notice.unlock",
+            "notice.dont-show"
+          ]
+        },
+        {
+          "stack": [
+            "notice.details"
+          ]
+        }
+      ]
+    }
+  }
+}

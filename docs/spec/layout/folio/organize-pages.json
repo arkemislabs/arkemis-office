@@ -1,0 +1,94 @@
+{
+  "tab": "organize-pages",
+  "source": "printcraft crates/ui-egui/src/panels/organize_panel.rs, panels/page_selection_ui.rs @ 3109bb2359759e24ef490e1cdbdba00722b20972",
+  "groups": {
+    "pages-selected": {
+      "collapseOrder": 1,
+      "collapsedIcon": "chevron-down",
+      "layout": [
+        {
+          "stack": [
+            "organize.select.filter"
+          ]
+        }
+      ]
+    },
+    "page-options": {
+      "collapseOrder": 4,
+      "collapsedIcon": "rotate-ccw",
+      "layout": [
+        {
+          "stack": [
+            "organize.page.rotate-ccw",
+            "organize.page.rotate-cw",
+            "organize.page.delete"
+          ]
+        },
+        {
+          "stack": [
+            "organize.page.extract",
+            "organize.page.insert",
+            "organize.page.replace"
+          ]
+        },
+        {
+          "stack": [
+            "organize.page.split",
+            "organize.page.bates",
+            "organize.page.reverse"
+          ]
+        }
+      ]
+    },
+    "more": {
+      "collapseOrder": 2,
+      "collapsedIcon": "square-dashed-mouse-pointer",
+      "layout": [
+        {
+          "stack": [
+            "organize.more.boxes",
+            "organize.more.crop",
+            "organize.more.transitions"
+          ]
+        },
+        {
+          "stack": [
+            "organize.more.templates",
+            "organize.more.print",
+            "organize.more.labels"
+          ]
+        },
+        {
+          "stack": [
+            "organize.more.properties"
+          ]
+        }
+      ]
+    },
+    "grid-toolbar": {
+      "collapseOrder": 3,
+      "collapsedIcon": "arrow-left",
+      "layout": [
+        {
+          "rows": [
+            [
+              "organize.grid.move-earlier",
+              "organize.grid.move-later",
+              "organize.grid.insert-before",
+              "organize.grid.delete-page"
+            ],
+            [
+              "organize.grid.smaller",
+              "organize.grid.reset-size",
+              "organize.grid.larger"
+            ],
+            [
+              "organize.grid.save-pages",
+              "organize.grid.close"
+            ]
+          ]
+        }
+      ]
+    }
+  }
+}

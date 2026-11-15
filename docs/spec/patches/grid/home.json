@@ -1,0 +1,2387 @@
+{
+ "controls": {
+  "home.styles.conditionalFormatting": {
+   "note": "Excel's menu: Highlight Cells Rules, Top/Bottom Rules, Data Bars, Color Scales, Icon Sets, New Rule, Clear Rules, Manage Rules. The boxes (Greater Than... Below Average) are dialog.cfQuick, More Rules and New Rule are dialog.cfNewRule, Manage Rules is the Rules Manager; the Data Bars, Color Scales and Icon Sets menus are drawn pictures of the rule (twelve bars, twelve scales, twenty icon sets) taken from the command state. Rules are the xlsx shape and round-trip. Not translated, and hidden: negative-value bar settings, borders on data bars, picking each icon of an icon set separately, number format codes beyond the rule format's Number page.",
+   "items": [
+    {
+     "id": "home.styles.conditionalFormatting.highlight-cells-rules",
+     "label": "Highlight Cells Rules",
+     "icon": "cf-highlight",
+     "source": "office",
+     "items": [
+      {
+       "id": "home.styles.conditionalFormatting.highlight-cells-rules.greater-than",
+       "label": "Greater Than…",
+       "source": "upstream",
+       "dialog": "dialog.cfQuick",
+       "params": {
+        "type": "cellIs",
+        "operator": "greater"
+       },
+       "icon": "cf-greater",
+       "sourceRef": "crates/engine/src/cmd/insert/cond_format.rs add_cf"
+      },
+      {
+       "id": "home.styles.conditionalFormatting.highlight-cells-rules.less-than",
+       "label": "Less Than…",
+       "source": "upstream",
+       "dialog": "dialog.cfQuick",
+       "params": {
+        "type": "cellIs",
+        "operator": "less"
+       },
+       "icon": "cf-less",
+       "sourceRef": "crates/engine/src/cmd/insert/cond_format.rs add_cf"
+      },
+      {
+       "id": "home.styles.conditionalFormatting.highlight-cells-rules.between",
+       "label": "Between…",
+       "source": "upstream",
+       "dialog": "dialog.cfQuick",
+       "params": {
+        "type": "cellIs",
+        "operator": "between"
+       },
+       "icon": "cf-between",
+       "sourceRef": "crates/engine/src/cmd/insert/cond_format.rs add_cf"
+      },
+      {
+       "id": "home.styles.conditionalFormatting.highlight-cells-rules.equal-to",
+       "label": "Equal To…",
+       "source": "upstream",
+       "dialog": "dialog.cfQuick",
+       "params": {
+        "type": "cellIs",
+        "operator": "equal"
+       },
+       "icon": "cf-equal",
+       "sourceRef": "crates/engine/src/cmd/insert/cond_format.rs add_cf"
+      },
+      {
+       "id": "home.styles.conditionalFormatting.highlight-cells-rules.text-that-contains",
+       "label": "Text that Contains…",
+       "source": "upstream",
+       "dialog": "dialog.cfQuick",
+       "params": {
+        "type": "containsText"
+       },
+       "icon": "cf-text",
+       "sourceRef": "crates/engine/src/cmd/insert/cond_format.rs add_cf"
+      },
+      {
+       "id": "home.styles.conditionalFormatting.highlight-cells-rules.a-date-occurring",
+       "label": "A Date Occurring…",
+       "source": "upstream",
+       "dialog": "dialog.cfQuick",
+       "params": {
+        "type": "timePeriod"
+       },
+       "icon": "calendar-today",
+       "sourceRef": "crates/engine/src/cmd/insert/cond_format.rs add_cf"
+      },
+      {
+       "id": "home.styles.conditionalFormatting.highlight-cells-rules.duplicate-values",
+       "label": "Duplicate Values…",
+       "source": "upstream",
+       "dialog": "dialog.cfQuick",
+       "params": {
+        "type": "duplicate"
+       },
+       "icon": "cf-duplicate",
+       "sourceRef": "crates/engine/src/cmd/insert/cond_format.rs add_cf"
+      },
+      {
+       "separator": true
+      },
+      {
+       "id": "home.styles.conditionalFormatting.highlight-cells-rules.more-rules",
+       "label": "More Rules…",
+       "source": "office",
+       "dialog": "dialog.cfNewRule",
+       "icon": "cf-more"
+      }
+     ]
+    },
+    {
+     "id": "home.styles.conditionalFormatting.top-bottom-rules",
+     "label": "Top/Bottom Rules",
+     "icon": "cf-topbottom",
+     "source": "office",
+     "items": [
+      {
+       "id": "home.styles.conditionalFormatting.top-bottom-rules.top-10-items",
+       "label": "Top 10 Items…",
+       "source": "upstream",
+       "dialog": "dialog.cfQuick",
+       "params": {
+        "type": "top10",
+        "rank": 10
+       },
+       "icon": "cf-top10",
+       "sourceRef": "crates/engine/src/cmd/insert/cond_format.rs add_cf"
+      },
+      {
+       "id": "home.styles.conditionalFormatting.top-bottom-rules.top-10",
+       "label": "Top 10%…",
+       "source": "upstream",
+       "dialog": "dialog.cfQuick",
+       "params": {
+        "type": "top10",
+        "rank": 10,
+        "percent": true
+       },
+       "icon": "cf-top-pct",
+       "sourceRef": "crates/engine/src/cmd/insert/cond_format.rs add_cf"
+      },
+      {
+       "id": "home.styles.conditionalFormatting.top-bottom-rules.bottom-10-items",
+       "label": "Bottom 10 Items…",
+       "source": "upstream",
+       "dialog": "dialog.cfQuick",
+       "params": {
+        "type": "top10",
+        "rank": 10,
+        "bottom": true
+       },
+       "icon": "cf-bottom10",
+       "sourceRef": "crates/engine/src/cmd/insert/cond_format.rs add_cf"
+      },
+      {
+       "id": "home.styles.conditionalFormatting.top-bottom-rules.bottom-10",
+       "label": "Bottom 10%…",
+       "source": "upstream",
+       "dialog": "dialog.cfQuick",
+       "params": {
+        "type": "top10",
+        "rank": 10,
+        "bottom": true,
+        "percent": true
+       },
+       "icon": "cf-bottom-pct",
+       "sourceRef": "crates/engine/src/cmd/insert/cond_format.rs add_cf"
+      },
+      {
+       "id": "home.styles.conditionalFormatting.top-bottom-rules.above-average",
+       "label": "Above Average…",
+       "source": "upstream",
+       "dialog": "dialog.cfQuick",
+       "params": {
+        "type": "aboveAverage"
+       },
+       "icon": "cf-above",
+       "sourceRef": "crates/engine/src/cmd/insert/cond_format.rs add_cf"
+      },
+      {
+       "id": "home.styles.conditionalFormatting.top-bottom-rules.below-average",
+       "label": "Below Average…",
+       "source": "upstream",
+       "dialog": "dialog.cfQuick",
+       "params": {
+        "type": "aboveAverage",
+        "below": true
+       },
+       "icon": "cf-below",
+       "sourceRef": "crates/engine/src/cmd/insert/cond_format.rs add_cf"
+      },
+      {
+       "separator": true
+      },
+      {
+       "id": "home.styles.conditionalFormatting.top-bottom-rules.more-rules",
+       "label": "More Rules…",
+       "source": "office",
+       "dialog": "dialog.cfNewRule",
+       "icon": "cf-more"
+      }
+     ]
+    },
+    {
+     "id": "home.styles.conditionalFormatting.data-bars",
+     "label": "Data Bars",
+     "icon": "cf-data-bars",
+     "source": "office",
+     "items": [
+      {
+       "id": "home.styles.conditionalFormatting.data-bars.gallery",
+       "label": "Data bars",
+       "kind": "list",
+       "dynamic": true,
+       "tiles": 3,
+       "command": "home.conditionalFormat",
+       "params": {
+        "gallery": "dataBars",
+        "preset": "<preset>"
+       },
+       "source": "office",
+       "icon": "cf-data-bars"
+      },
+      {
+       "separator": true
+      },
+      {
+       "id": "home.styles.conditionalFormatting.data-bars.more-rules",
+       "label": "More Rules…",
+       "source": "office",
+       "dialog": "dialog.cfNewRule",
+       "icon": "cf-more"
+      }
+     ]
+    },
+    {
+     "id": "home.styles.conditionalFormatting.color-scales",
+     "label": "Color Scales",
+     "icon": "cf-color-scales",
+     "source": "office",
+     "items": [
+      {
+       "id": "home.styles.conditionalFormatting.color-scales.gallery",
+       "label": "Color scales",
+       "kind": "list",
+       "dynamic": true,
+       "tiles": 4,
+       "command": "home.conditionalFormat",
+       "params": {
+        "gallery": "colorScales",
+        "preset": "<preset>"
+       },
+       "source": "office",
+       "icon": "cf-color-scales"
+      },
+      {
+       "separator": true
+      },
+      {
+       "id": "home.styles.conditionalFormatting.color-scales.more-rules",
+       "label": "More Rules…",
+       "source": "office",
+       "dialog": "dialog.cfNewRule",
+       "icon": "cf-more"
+      }
+     ]
+    },
+    {
+     "id": "home.styles.conditionalFormatting.icon-sets",
+     "label": "Icon Sets",
+     "icon": "cf-icon-sets",
+     "source": "office",
+     "items": [
+      {
+       "id": "home.styles.conditionalFormatting.icon-sets.gallery",
+       "label": "Icon sets",
+       "kind": "list",
+       "dynamic": true,
+       "tiles": 3,
+       "command": "home.conditionalFormat",
+       "params": {
+        "gallery": "iconSets",
+        "preset": "<preset>"
+       },
+       "source": "office",
+       "icon": "cf-icon-sets"
+      },
+      {
+       "separator": true
+      },
+      {
+       "id": "home.styles.conditionalFormatting.icon-sets.more-rules",
+       "label": "More Rules…",
+       "source": "office",
+       "dialog": "dialog.cfNewRule",
+       "icon": "cf-more"
+      }
+     ]
+    },
+    {
+     "separator": true
+    },
+    {
+     "id": "home.styles.conditionalFormatting.new-rule",
+     "label": "New Rule…",
+     "dialog": "dialog.cfNewRule",
+     "icon": "cf-new-rule",
+     "source": "office"
+    },
+    {
+     "id": "home.styles.conditionalFormatting.clear-rules",
+     "label": "Clear Rules",
+     "icon": "cf-clear-rules",
+     "source": "office",
+     "items": [
+      {
+       "id": "home.styles.conditionalFormatting.clear-rules.clear-rules-from-selected-cells",
+       "label": "Clear Rules from Selected Cells",
+       "command": "home.clearRules",
+       "params": {},
+       "icon": "cf-clear-rules",
+       "source": "upstream",
+       "sourceRef": "crates/engine/src/cmd/insert/cond_format.rs clear_cf"
+      },
+      {
+       "id": "home.styles.conditionalFormatting.clear-rules.clear-rules-from-entire-sheet",
+       "label": "Clear Rules from Entire Sheet",
+       "command": "home.clearRules",
+       "params": {
+        "sheet": true
+       },
+       "icon": "cf-clear-rules",
+       "source": "upstream",
+       "sourceRef": "crates/engine/src/cmd/insert/cond_format.rs clear_cf"
+      },
+      {
+       "id": "home.styles.conditionalFormatting.clear-rules.clear-rules-from-this-table",
+       "label": "Clear Rules from This Table",
+       "command": "home.clearRules",
+       "params": {
+        "table": true
+       },
+       "icon": "cf-clear-rules",
+       "source": "office"
+      },
+      {
+       "id": "home.styles.conditionalFormatting.clear-rules.clear-rules-from-this-pivot-table",
+       "label": "Clear Rules from This PivotTable",
+       "command": "home.clearRules",
+       "params": {
+        "pivot": true
+       },
+       "icon": "cf-clear-rules",
+       "source": "office"
+      }
+     ]
+    },
+    {
+     "id": "home.styles.conditionalFormatting.manage-rules",
+     "label": "Manage Rules…",
+     "dialog": "dialog.manageRules",
+     "command": "home.manageRules",
+     "icon": "cf-manage",
+     "source": "upstream",
+     "sourceRef": "crates/engine/src/cmd/insert/cond_format.rs manage_cf"
+    }
+   ]
+  },
+  "home.font.fillColor": {
+   "items": [
+    {
+     "label": "Theme/standard color palette",
+     "command": "home.fillColor",
+     "params": {
+      "color": "#RRGGBB"
+     },
+     "kind": "color",
+     "source": "upstream"
+    },
+    {
+     "label": "No Fill",
+     "command": "home.fillColor",
+     "params": {
+      "color": "none"
+     },
+     "source": "upstream"
+    },
+    {
+     "label": "More Colors…",
+     "dialog": "dialog.colors",
+     "source": "office",
+     "id": "home.font.fillColor.more-colors",
+     "params": {
+      "target": "fill"
+     }
+    }
+   ],
+   "note": "The palette's More Colors… button opens the Colors dialog (Standard honeycomb and Custom), which applies to the fill."
+  },
+  "home.font.fontColor": {
+   "items": [
+    {
+     "label": "Theme/standard color palette",
+     "command": "home.fontColor",
+     "params": {
+      "color": "#RRGGBB"
+     },
+     "kind": "color",
+     "source": "upstream"
+    },
+    {
+     "label": "Automatic",
+     "command": "home.fontColor",
+     "params": {
+      "color": "auto"
+     },
+     "source": "upstream"
+    },
+    {
+     "label": "More Colors…",
+     "dialog": "dialog.colors",
+     "source": "office",
+     "id": "home.font.fontColor.more-colors",
+     "params": {
+      "target": "font"
+     }
+    }
+   ],
+   "note": "The palette's More Colors… button opens the Colors dialog (Standard honeycomb and Custom), which applies to the font colour."
+  },
+  "home.font.borders": {
+   "items": [
+    {
+     "label": "Bottom Border",
+     "command": "home.borders",
+     "params": {
+      "preset": "bottom"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/home.rs:163"
+    },
+    {
+     "label": "Top Border",
+     "command": "home.borders",
+     "params": {
+      "preset": "top"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/home.rs:164"
+    },
+    {
+     "label": "Left Border",
+     "command": "home.borders",
+     "params": {
+      "preset": "left"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/home.rs:165"
+    },
+    {
+     "label": "Right Border",
+     "command": "home.borders",
+     "params": {
+      "preset": "right"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/home.rs:166"
+    },
+    {
+     "label": "No Border",
+     "command": "home.borders",
+     "params": {
+      "preset": "none"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/home.rs:167"
+    },
+    {
+     "label": "All Borders",
+     "command": "home.borders",
+     "params": {
+      "preset": "all"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/home.rs:168"
+    },
+    {
+     "label": "Outside Borders",
+     "command": "home.borders",
+     "params": {
+      "preset": "outside"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/home.rs:169"
+    },
+    {
+     "label": "Thick Outside Borders",
+     "command": "home.borders",
+     "params": {
+      "preset": "thickOutside"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/home.rs:170"
+    },
+    {
+     "label": "Bottom Double Border",
+     "command": "home.borders",
+     "params": {
+      "preset": "doubleBottom"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/home.rs:171"
+    },
+    {
+     "label": "Thick Bottom Border",
+     "command": "home.borders",
+     "params": {
+      "preset": "thickBottom"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/home.rs:172"
+    },
+    {
+     "label": "Top and Bottom Border",
+     "command": "home.borders",
+     "params": {
+      "preset": "topBottom"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/home.rs:173"
+    },
+    {
+     "label": "Top and Thick Bottom Border",
+     "command": "home.borders",
+     "params": {
+      "preset": "topThickBottom"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/home.rs:174"
+    },
+    {
+     "label": "Top and Double Bottom Border",
+     "command": "home.borders",
+     "params": {
+      "preset": "topDoubleBottom"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/home.rs:175"
+    },
+    {
+     "label": "Inside Borders",
+     "command": "home.borders",
+     "params": {
+      "preset": "inside"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/home.rs:176"
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "Draw Border",
+     "command": "home.drawBorder",
+     "params": {
+      "mode": "border"
+     },
+     "source": "office",
+     "id": "home.font.borders.draw-border",
+     "kind": "toggle",
+     "icon": "border-draw"
+    },
+    {
+     "label": "Draw Border Grid",
+     "command": "home.drawBorder",
+     "params": {
+      "mode": "grid"
+     },
+     "source": "office",
+     "id": "home.font.borders.draw-border-grid",
+     "kind": "toggle",
+     "icon": "border-draw-grid"
+    },
+    {
+     "label": "Erase Border",
+     "command": "home.drawBorder",
+     "params": {
+      "mode": "erase"
+     },
+     "source": "office",
+     "id": "home.font.borders.erase-border",
+     "kind": "toggle",
+     "icon": "border-erase"
+    },
+    {
+     "id": "home.font.borders.line-color",
+     "label": "Line Color",
+     "icon": "color-swatches",
+     "source": "office",
+     "items": [
+      {
+       "id": "home.font.borders.line-color.palette",
+       "label": "Line color palette",
+       "kind": "color",
+       "command": "home.drawBorder",
+       "params": {
+        "color": "<color>"
+       },
+       "source": "office"
+      }
+     ]
+    },
+    {
+     "id": "home.font.borders.line-style",
+     "label": "Line Style",
+     "icon": "border-thick-bottom",
+     "source": "office",
+     "items": [
+      {
+       "id": "home.font.borders.line-style.styles",
+       "label": "Line styles",
+       "kind": "list",
+       "dynamic": true,
+       "command": "home.drawBorder",
+       "params": {
+        "gallery": "lineStyles",
+        "style": "<style>"
+       },
+       "source": "office"
+      }
+     ]
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "More Borders…",
+     "params": {
+      "tab": "Border"
+     },
+     "dialog": "dialog.formatCells",
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/home.rs:184"
+    }
+   ],
+   "note": "Draw Border, Draw Border Grid and Erase Border turn a pen on (one at a time, a second click turns it off); Line Color and Line Style set the pen's colour and line. With the pen on, the cells you drag over take the border: the outline of the area, its grid, or nothing (erase). The pen keeps to the document view and is not saved."
+  },
+  "home.styles.formatAsTable": {
+   "items": [
+    {
+     "label": "Light: TableStyleLight1-21",
+     "command": "home.formatAsTable",
+     "params": {
+      "style": "TableStyleLight<n>"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/galleries.rs:8"
+    },
+    {
+     "label": "Medium: TableStyleMedium1-28",
+     "command": "home.formatAsTable",
+     "params": {
+      "style": "TableStyleMedium<n>"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/galleries.rs:8"
+    },
+    {
+     "label": "Dark: TableStyleDark1-11",
+     "command": "home.formatAsTable",
+     "params": {
+      "style": "TableStyleDark<n>"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/galleries.rs:8"
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "New Table Style…",
+     "dialog": "dialog.newTableStyle",
+     "source": "office",
+     "id": "home.styles.formatAsTable.new-table-style",
+     "note": "Hidden: gridcraft has no custom table styles (no stored element formats, no painting of them); not translated."
+    },
+    {
+     "label": "New PivotTable Style…",
+     "params": {
+      "pivot": true
+     },
+     "dialog": "dialog.newTableStyle",
+     "source": "office",
+     "id": "home.styles.formatAsTable.new-pivot-table-style",
+     "note": "Hidden: gridcraft has no custom PivotTable styles; not translated."
+    }
+   ],
+   "note": "The tiles are the sixty built-in styles (Light 1-21, Medium 1-28, Dark 1-11) drawn with their header, line and band colours, read from the command state; a style formats the block around the active cell as a table, or restyles the table the cell is in, at once (Excel asks for the range in Create Table first: Insert > Table does). New Table Style… and New PivotTable Style… are hidden: gridcraft keeps no custom table styles."
+  },
+  "home.styles.cellStyles": {
+   "items": [
+    {
+     "label": "Good, Bad and Neutral: Normal, Bad, Good, Neutral",
+     "command": "home.cellStyle",
+     "params": {
+      "name": "<style>"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/galleries.rs:67"
+    },
+    {
+     "label": "Data and Model: Calculation, Check Cell, Explanatory Text, Input, Linked Cell, Note, Output, Warning Text",
+     "command": "home.cellStyle",
+     "params": {
+      "name": "<style>"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/galleries.rs:68"
+    },
+    {
+     "label": "Titles and Headings: Heading 1-4, Title, Total",
+     "command": "home.cellStyle",
+     "params": {
+      "name": "<style>"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/galleries.rs:69"
+    },
+    {
+     "label": "Themed Cell Styles: 20%/40%/60% - Accent1-6, Accent1-6",
+     "command": "home.cellStyle",
+     "params": {
+      "name": "<style>"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/galleries.rs:71"
+    },
+    {
+     "label": "Number Format: Comma, Comma [0], Currency, Currency [0], Percent",
+     "command": "home.cellStyle",
+     "params": {
+      "name": "<style>"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/galleries.rs:99"
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "New Cell Style…",
+     "command": "home.newCellStyle",
+     "dialog": "dialog.style",
+     "source": "office",
+     "id": "home.styles.cellStyles.new-cell-style"
+    },
+    {
+     "label": "Merge Styles…",
+     "command": "home.mergeStyles",
+     "dialog": "dialog.mergeStyles",
+     "source": "office",
+     "id": "home.styles.cellStyles.merge-styles",
+     "note": "U:grid/main: Merge Styles… brings the custom cell styles of another workbook the application holds into this one (the list is the application's own store, asked of the main process); not in gridcraft, not checked against upstream. A workbook picked through the Open dialog is not offered: custom cell styles are not saved in .xlsx files here, so such a file carries none."
+    }
+   ]
+  },
+  "home.editing.fill": {
+   "items": [
+    {
+     "label": "Down",
+     "command": "edit.fillDown",
+     "params": {},
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/home.rs:486"
+    },
+    {
+     "label": "Right",
+     "command": "edit.fillRight",
+     "params": {},
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/home.rs:487"
+    },
+    {
+     "label": "Up",
+     "command": "edit.fillUp",
+     "params": {},
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/home.rs:488"
+    },
+    {
+     "label": "Left",
+     "command": "edit.fillLeft",
+     "params": {},
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/home.rs:489"
+    },
+    {
+     "label": "Across Worksheets…",
+     "command": "edit.fillAcrossSheets",
+     "dialog": "dialog.fillAcrossWorksheets",
+     "source": "office",
+     "id": "home.editing.fill.across-worksheets",
+     "note": "Hidden: Fill Across Worksheets fills the sheets that are grouped (tabs selected together), and Grid has no sheet grouping; gridcraft has no such command either."
+    },
+    {
+     "label": "Series…",
+     "dialog": "dialog.series",
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/home.rs:490"
+    },
+    {
+     "label": "Justify",
+     "command": "edit.fillJustify",
+     "source": "office",
+     "id": "home.editing.fill.justify",
+     "note": "Excel behaviour (not checked against upstream): the text of the first column of the selection is re-wrapped into the width of the whole selection, going down the column; text only, and the lines may not run into filled cells below."
+    },
+    {
+     "label": "Flash Fill",
+     "command": "edit.flashFill",
+     "params": {},
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/home.rs:491"
+    }
+   ]
+  },
+  "home.editing.findSelect": {
+   "items": [
+    {
+     "label": "Find…",
+     "dialog": "dialog.find",
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/home.rs:550"
+    },
+    {
+     "label": "Replace…",
+     "params": {
+      "replace": true
+     },
+     "dialog": "dialog.find",
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/home.rs:551"
+    },
+    {
+     "label": "Go To…",
+     "dialog": "dialog.goTo",
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/home.rs:552"
+    },
+    {
+     "label": "Go To Special…",
+     "dialog": "dialog.goToSpecial",
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/home.rs:553"
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "Formulas",
+     "command": "edit.goToSpecial",
+     "params": {
+      "kind": "formulas"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/home.rs:555"
+    },
+    {
+     "label": "Notes",
+     "command": "edit.goToSpecial",
+     "params": {
+      "kind": "notes"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/home.rs:556"
+    },
+    {
+     "label": "Conditional Formatting",
+     "command": "edit.goToSpecial",
+     "params": {
+      "kind": "conditionalFormats"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/home.rs:557"
+    },
+    {
+     "label": "Constants",
+     "command": "edit.goToSpecial",
+     "params": {
+      "kind": "constants"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/home.rs:558"
+    },
+    {
+     "label": "Data Validation",
+     "command": "edit.goToSpecial",
+     "params": {
+      "kind": "dataValidation"
+     },
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/home.rs:559"
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "Select Objects",
+     "command": "draw.lasso",
+     "params": {},
+     "source": "office",
+     "id": "home.editing.findSelect.select-objects",
+     "note": "Hidden: Select Objects is the Draw tab's lasso (draw.lasso), which Grid has not translated (gridcraft answers it with a no-op)."
+    },
+    {
+     "label": "Selection Pane…",
+     "command": "arrange.selectionPane",
+     "params": {},
+     "source": "office"
+    }
+   ]
+  },
+  "home.addins.addIns": {
+   "note": "Hidden: gridcraft has no add-ins (it answers that it extends through MCP and scripts); Grid has no add-in model to list or install from."
+  },
+  "home.analysis.analyzeData": {
+   "note": "Hidden: Analyze Data is an online AI service with no gridcraft counterpart (commandStatus not-registered-upstream); not translated."
+  }
+ },
+ "dialogs": {
+  "dialog.cfQuick": {
+   "title": "Greater Than",
+   "command": "home.conditionalFormat",
+   "buttons": [
+    "OK",
+    "Cancel"
+   ],
+   "source": "upstream",
+   "sourceRef": "crates/ui-egui/src/dialogs.rs:763",
+   "note": "Opened by Highlight Cells Rules and Top/Bottom Rules with args {type, operator, rank, percent, bottom, below}; the title and the sentence before the box follow the rule (Excel's wording), \"with\" lists the six formats and Custom Format… (the conditional Format Cells, dialog.cfFormatCells). The value box starts with the active cell's absolute address.",
+   "tabs": [
+    {
+     "name": "",
+     "fields": [
+      {
+       "id": "value",
+       "label": "Format cells that are GREATER THAN:",
+       "kind": "text",
+       "options": [],
+       "refPicker": true
+      },
+      {
+       "id": "value2",
+       "label": "and",
+       "kind": "text",
+       "options": [],
+       "refPicker": true
+      },
+      {
+       "id": "text",
+       "label": "Format cells that contain the text:",
+       "kind": "text",
+       "options": []
+      },
+      {
+       "id": "period",
+       "label": "Format cells that contain a date occurring:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "yesterday",
+         "label": "Yesterday"
+        },
+        {
+         "value": "today",
+         "label": "Today"
+        },
+        {
+         "value": "tomorrow",
+         "label": "Tomorrow"
+        },
+        {
+         "value": "last7Days",
+         "label": "In the last 7 days"
+        },
+        {
+         "value": "lastWeek",
+         "label": "Last week"
+        },
+        {
+         "value": "thisWeek",
+         "label": "This week"
+        },
+        {
+         "value": "nextWeek",
+         "label": "Next week"
+        },
+        {
+         "value": "lastMonth",
+         "label": "Last month"
+        },
+        {
+         "value": "thisMonth",
+         "label": "This month"
+        },
+        {
+         "value": "nextMonth",
+         "label": "Next month"
+        }
+       ]
+      },
+      {
+       "id": "dupKind",
+       "label": "Format cells that contain:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "duplicate",
+         "label": "duplicate"
+        },
+        {
+         "value": "unique",
+         "label": "unique"
+        }
+       ]
+      },
+      {
+       "id": "rank",
+       "label": "Format cells that rank in the TOP:",
+       "kind": "number",
+       "options": [],
+       "min": 1,
+       "max": 1000,
+       "step": 1
+      },
+      {
+       "id": "avgDir",
+       "label": "Format cells that are",
+       "kind": "select",
+       "options": [
+        {
+         "value": "above",
+         "label": "above"
+        },
+        {
+         "value": "below",
+         "label": "below"
+        }
+       ]
+      },
+      {
+       "id": "preset",
+       "label": "with",
+       "kind": "select",
+       "options": [
+        {
+         "value": "lightRedFillDarkRedText",
+         "label": "Light Red Fill with Dark Red Text"
+        },
+        {
+         "value": "yellowFillDarkYellowText",
+         "label": "Yellow Fill with Dark Yellow Text"
+        },
+        {
+         "value": "greenFillDarkGreenText",
+         "label": "Green Fill with Dark Green Text"
+        },
+        {
+         "value": "lightRedFill",
+         "label": "Light Red Fill"
+        },
+        {
+         "value": "redText",
+         "label": "Red Text"
+        },
+        {
+         "value": "redBorder",
+         "label": "Red Border"
+        },
+        {
+         "value": "custom",
+         "label": "Custom Format…"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "defaults": {
+    "preset": "lightRedFillDarkRedText",
+    "period": "today"
+   }
+  },
+  "dialog.cfNewRule": {
+   "title": "New Formatting Rule",
+   "command": "home.conditionalFormat",
+   "buttons": [
+    "OK",
+    "Cancel"
+   ],
+   "source": "office",
+   "sourceRef": "office:Microsoft Excel 365 dialog",
+   "note": "Excel's New Formatting Rule (also Edit Formatting Rule from the Rules Manager): the six rule types, and the rule description each one has (2- and 3-color scales, data bar, icon sets with each icon's threshold; cell value, specific text, dates, blanks, errors; top or bottom; above or below average; unique or duplicate; formula). Format… opens dialog.cfFormatCells. Data bar border and negative values, and picking each icon of a set separately, are not translated and not shown.",
+   "tabs": [
+    {
+     "name": "",
+     "fields": [
+      {
+       "id": "ruleType",
+       "label": "Select a Rule Type:",
+       "kind": "list",
+       "options": [
+        {
+         "value": "scale",
+         "label": "Format all cells based on their values"
+        },
+        {
+         "value": "cells",
+         "label": "Format only cells that contain"
+        },
+        {
+         "value": "rank",
+         "label": "Format only top or bottom ranked values"
+        },
+        {
+         "value": "average",
+         "label": "Format only values that are above or below average"
+        },
+        {
+         "value": "duplicates",
+         "label": "Format only unique or duplicate values"
+        },
+        {
+         "value": "formula",
+         "label": "Use a formula to determine which cells to format"
+        }
+       ]
+      },
+      {
+       "id": "formatStyle",
+       "label": "Format Style:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "2color",
+         "label": "2-Color Scale"
+        },
+        {
+         "value": "3color",
+         "label": "3-Color Scale"
+        },
+        {
+         "value": "dataBar",
+         "label": "Data Bar"
+        },
+        {
+         "value": "iconSet",
+         "label": "Icon Sets"
+        }
+       ]
+      },
+      {
+       "id": "formula",
+       "label": "Format values where this formula is true:",
+       "kind": "text",
+       "options": [],
+       "refPicker": true
+      },
+      {
+       "id": "preview",
+       "label": "Preview",
+       "kind": "preview",
+       "options": []
+      }
+     ]
+    }
+   ]
+  },
+  "dialog.manageRules": {
+   "title": "Conditional Formatting Rules Manager",
+   "command": "home.manageRules",
+   "buttons": [
+    "OK",
+    "Cancel",
+    "Apply"
+   ],
+   "source": "office",
+   "sourceRef": "crates/ui-egui/src/dialogs/cond_format_rules.rs",
+   "note": "Excel's Rules Manager: Show formatting rules for (Current Selection, This Worksheet, each other sheet), the rules in the order they apply with their format, the cells each applies to (editable) and Stop If True; New Rule…, Edit Rule…, Delete Rule and the move buttons. OK and Apply send the sheets that changed to home.manageRules.",
+   "tabs": [
+    {
+     "name": "",
+     "fields": [
+      {
+       "id": "showFor",
+       "label": "Show formatting rules for:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "selection",
+         "label": "Current Selection"
+        },
+        {
+         "value": "sheet",
+         "label": "This Worksheet"
+        }
+       ]
+      },
+      {
+       "id": "rules",
+       "label": "Rules (applied in order shown)",
+       "kind": "list",
+       "options": []
+      }
+     ]
+    }
+   ]
+  },
+  "dialog.cfFormatCells": {
+   "title": "Format Cells",
+   "command": "home.conditionalFormat",
+   "buttons": [
+    "OK",
+    "Cancel"
+   ],
+   "source": "office",
+   "sourceRef": "office:Microsoft Excel 365 dialog",
+   "note": "Format Cells as a conditional-format rule has it: Number, Font, Border and Fill, nothing set until a page sets it, OK gives the rule's differential format back to the rule dialog that opened it.",
+   "tabs": [
+    {
+     "name": "Number",
+     "fields": [
+      {
+       "id": "category",
+       "label": "Category:",
+       "kind": "list",
+       "options": [
+        {
+         "value": "General",
+         "label": "General"
+        },
+        {
+         "value": "Number",
+         "label": "Number"
+        },
+        {
+         "value": "Currency",
+         "label": "Currency"
+        },
+        {
+         "value": "Accounting",
+         "label": "Accounting"
+        },
+        {
+         "value": "Date",
+         "label": "Date"
+        },
+        {
+         "value": "Time",
+         "label": "Time"
+        },
+        {
+         "value": "Percentage",
+         "label": "Percentage"
+        },
+        {
+         "value": "Fraction",
+         "label": "Fraction"
+        },
+        {
+         "value": "Scientific",
+         "label": "Scientific"
+        },
+        {
+         "value": "Text",
+         "label": "Text"
+        },
+        {
+         "value": "Special",
+         "label": "Special"
+        },
+        {
+         "value": "Custom",
+         "label": "Custom"
+        }
+       ],
+       "source": "office",
+       "note": "Upstream lists General, Number, Currency, Accounting, Short Date, Long Date, Time, Percentage, Fraction, Scientific, Text; Excel folds the two dates into Date with a Type list."
+      },
+      {
+       "id": "sample",
+       "label": "Sample",
+       "kind": "preview",
+       "options": []
+      },
+      {
+       "id": "decimalPlaces",
+       "label": "Decimal places:",
+       "kind": "number",
+       "options": [],
+       "min": 0,
+       "max": 30,
+       "source": "office"
+      },
+      {
+       "id": "useSeparator",
+       "label": "Use 1000 Separator (,)",
+       "kind": "checkbox",
+       "options": [],
+       "source": "office"
+      },
+      {
+       "id": "symbol",
+       "label": "Symbol:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "None",
+         "label": "None"
+        },
+        {
+         "value": "$",
+         "label": "$"
+        },
+        {
+         "value": "£",
+         "label": "£"
+        },
+        {
+         "value": "€",
+         "label": "€"
+        },
+        {
+         "value": "¥",
+         "label": "¥"
+        },
+        {
+         "value": "₹",
+         "label": "₹"
+        },
+        {
+         "value": "CHF",
+         "label": "CHF"
+        },
+        {
+         "value": "R$",
+         "label": "R$"
+        },
+        {
+         "value": "₩",
+         "label": "₩"
+        },
+        {
+         "value": "₽",
+         "label": "₽"
+        }
+       ],
+       "source": "office"
+      },
+      {
+       "id": "negativeNumbers",
+       "label": "Negative numbers:",
+       "kind": "list",
+       "options": [
+        {
+         "value": 0,
+         "label": "-1234.10"
+        },
+        {
+         "value": 1,
+         "label": "1234.10 (red)"
+        },
+        {
+         "value": 2,
+         "label": "(1234.10)"
+        },
+        {
+         "value": 3,
+         "label": "(1234.10) (red)"
+        }
+       ],
+       "source": "office"
+      },
+      {
+       "id": "type",
+       "label": "Type:",
+       "kind": "list",
+       "options": [
+        {
+         "value": "<types of the category>",
+         "label": "<types of the category>"
+        }
+       ],
+       "source": "office"
+      },
+      {
+       "id": "code",
+       "label": "Type (custom format code):",
+       "kind": "text",
+       "options": []
+      }
+     ]
+    },
+    {
+     "name": "Font",
+     "fields": [
+      {
+       "id": "font",
+       "label": "Font:",
+       "kind": "combo",
+       "options": [
+        {
+         "value": "<crate::fonts::families()>",
+         "label": "<crate::fonts::families()>"
+        }
+       ]
+      },
+      {
+       "id": "fontStyle",
+       "label": "Font style:",
+       "kind": "list",
+       "options": [
+        {
+         "value": "Regular",
+         "label": "Regular"
+        },
+        {
+         "value": "Italic",
+         "label": "Italic"
+        },
+        {
+         "value": "Bold",
+         "label": "Bold"
+        },
+        {
+         "value": "Bold Italic",
+         "label": "Bold Italic"
+        }
+       ],
+       "source": "office"
+      },
+      {
+       "id": "size",
+       "label": "Size:",
+       "kind": "number",
+       "options": [],
+       "min": 1,
+       "max": 409,
+       "note": "Excel size list 1-409 (upstream slider 6-72)."
+      },
+      {
+       "id": "bold",
+       "label": "Bold",
+       "kind": "checkbox",
+       "options": []
+      },
+      {
+       "id": "italic",
+       "label": "Italic",
+       "kind": "checkbox",
+       "options": []
+      },
+      {
+       "id": "underline",
+       "label": "Underline:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "none",
+         "label": "None"
+        },
+        {
+         "value": "single",
+         "label": "Single"
+        },
+        {
+         "value": "double",
+         "label": "Double"
+        },
+        {
+         "value": "singleAccounting",
+         "label": "Single Accounting"
+        },
+        {
+         "value": "doubleAccounting",
+         "label": "Double Accounting"
+        }
+       ]
+      },
+      {
+       "id": "color",
+       "label": "Color:",
+       "kind": "color",
+       "options": [
+        {
+         "value": "Automatic",
+         "label": "Automatic"
+        },
+        {
+         "value": "<theme palette>",
+         "label": "<theme palette>"
+        }
+       ]
+      },
+      {
+       "id": "normalFont",
+       "label": "Normal font",
+       "kind": "checkbox",
+       "options": [],
+       "source": "office"
+      },
+      {
+       "id": "strike",
+       "label": "Strikethrough",
+       "kind": "checkbox",
+       "options": []
+      },
+      {
+       "id": "vert",
+       "label": "Effects",
+       "kind": "radio",
+       "options": [
+        {
+         "value": "baseline",
+         "label": "Normal"
+        },
+        {
+         "value": "superscript",
+         "label": "Superscript"
+        },
+        {
+         "value": "subscript",
+         "label": "Subscript"
+        }
+       ]
+      },
+      {
+       "id": "preview",
+       "label": "Preview",
+       "kind": "preview",
+       "options": [],
+       "source": "office"
+      }
+     ]
+    },
+    {
+     "name": "Border",
+     "fields": [
+      {
+       "id": "lineStyle",
+       "label": "Style:",
+       "kind": "list",
+       "options": [
+        {
+         "value": "none",
+         "label": "none"
+        },
+        {
+         "value": "hair",
+         "label": "hair"
+        },
+        {
+         "value": "dotted",
+         "label": "dotted"
+        },
+        {
+         "value": "dashDotDot",
+         "label": "dashDotDot"
+        },
+        {
+         "value": "dashDot",
+         "label": "dashDot"
+        },
+        {
+         "value": "dashed",
+         "label": "dashed"
+        },
+        {
+         "value": "thin",
+         "label": "thin"
+        },
+        {
+         "value": "mediumDashDotDot",
+         "label": "mediumDashDotDot"
+        },
+        {
+         "value": "slantDashDot",
+         "label": "slantDashDot"
+        },
+        {
+         "value": "mediumDashDot",
+         "label": "mediumDashDot"
+        },
+        {
+         "value": "mediumDashed",
+         "label": "mediumDashed"
+        },
+        {
+         "value": "medium",
+         "label": "medium"
+        },
+        {
+         "value": "thick",
+         "label": "thick"
+        },
+        {
+         "value": "double",
+         "label": "double"
+        }
+       ],
+       "source": "office"
+      },
+      {
+       "id": "lineColor",
+       "label": "Color:",
+       "kind": "color",
+       "options": [
+        {
+         "value": "Automatic",
+         "label": "Automatic"
+        }
+       ],
+       "source": "office"
+      },
+      {
+       "id": "presets",
+       "label": "Presets",
+       "kind": "radio",
+       "options": [
+        {
+         "value": "none",
+         "label": "None"
+        },
+        {
+         "value": "outline",
+         "label": "Outline"
+        },
+        {
+         "value": "inside",
+         "label": "Inside",
+         "source": "office"
+        }
+       ]
+      },
+      {
+       "id": "top",
+       "label": "Top:",
+       "kind": "radio",
+       "options": [
+        {
+         "value": "none",
+         "label": "none"
+        },
+        {
+         "value": "hair",
+         "label": "hair"
+        },
+        {
+         "value": "dotted",
+         "label": "dotted"
+        },
+        {
+         "value": "dashDotDot",
+         "label": "dashDotDot"
+        },
+        {
+         "value": "dashDot",
+         "label": "dashDot"
+        },
+        {
+         "value": "dashed",
+         "label": "dashed"
+        },
+        {
+         "value": "thin",
+         "label": "thin"
+        },
+        {
+         "value": "mediumDashDotDot",
+         "label": "mediumDashDotDot"
+        },
+        {
+         "value": "slantDashDot",
+         "label": "slantDashDot"
+        },
+        {
+         "value": "mediumDashDot",
+         "label": "mediumDashDot"
+        },
+        {
+         "value": "mediumDashed",
+         "label": "mediumDashed"
+        },
+        {
+         "value": "medium",
+         "label": "medium"
+        },
+        {
+         "value": "thick",
+         "label": "thick"
+        },
+        {
+         "value": "double",
+         "label": "double"
+        }
+       ]
+      },
+      {
+       "id": "bottom",
+       "label": "Bottom:",
+       "kind": "radio",
+       "options": [
+        {
+         "value": "none",
+         "label": "none"
+        },
+        {
+         "value": "hair",
+         "label": "hair"
+        },
+        {
+         "value": "dotted",
+         "label": "dotted"
+        },
+        {
+         "value": "dashDotDot",
+         "label": "dashDotDot"
+        },
+        {
+         "value": "dashDot",
+         "label": "dashDot"
+        },
+        {
+         "value": "dashed",
+         "label": "dashed"
+        },
+        {
+         "value": "thin",
+         "label": "thin"
+        },
+        {
+         "value": "mediumDashDotDot",
+         "label": "mediumDashDotDot"
+        },
+        {
+         "value": "slantDashDot",
+         "label": "slantDashDot"
+        },
+        {
+         "value": "mediumDashDot",
+         "label": "mediumDashDot"
+        },
+        {
+         "value": "mediumDashed",
+         "label": "mediumDashed"
+        },
+        {
+         "value": "medium",
+         "label": "medium"
+        },
+        {
+         "value": "thick",
+         "label": "thick"
+        },
+        {
+         "value": "double",
+         "label": "double"
+        }
+       ]
+      },
+      {
+       "id": "left",
+       "label": "Left:",
+       "kind": "radio",
+       "options": [
+        {
+         "value": "none",
+         "label": "none"
+        },
+        {
+         "value": "hair",
+         "label": "hair"
+        },
+        {
+         "value": "dotted",
+         "label": "dotted"
+        },
+        {
+         "value": "dashDotDot",
+         "label": "dashDotDot"
+        },
+        {
+         "value": "dashDot",
+         "label": "dashDot"
+        },
+        {
+         "value": "dashed",
+         "label": "dashed"
+        },
+        {
+         "value": "thin",
+         "label": "thin"
+        },
+        {
+         "value": "mediumDashDotDot",
+         "label": "mediumDashDotDot"
+        },
+        {
+         "value": "slantDashDot",
+         "label": "slantDashDot"
+        },
+        {
+         "value": "mediumDashDot",
+         "label": "mediumDashDot"
+        },
+        {
+         "value": "mediumDashed",
+         "label": "mediumDashed"
+        },
+        {
+         "value": "medium",
+         "label": "medium"
+        },
+        {
+         "value": "thick",
+         "label": "thick"
+        },
+        {
+         "value": "double",
+         "label": "double"
+        }
+       ]
+      },
+      {
+       "id": "right",
+       "label": "Right:",
+       "kind": "radio",
+       "options": [
+        {
+         "value": "none",
+         "label": "none"
+        },
+        {
+         "value": "hair",
+         "label": "hair"
+        },
+        {
+         "value": "dotted",
+         "label": "dotted"
+        },
+        {
+         "value": "dashDotDot",
+         "label": "dashDotDot"
+        },
+        {
+         "value": "dashDot",
+         "label": "dashDot"
+        },
+        {
+         "value": "dashed",
+         "label": "dashed"
+        },
+        {
+         "value": "thin",
+         "label": "thin"
+        },
+        {
+         "value": "mediumDashDotDot",
+         "label": "mediumDashDotDot"
+        },
+        {
+         "value": "slantDashDot",
+         "label": "slantDashDot"
+        },
+        {
+         "value": "mediumDashDot",
+         "label": "mediumDashDot"
+        },
+        {
+         "value": "mediumDashed",
+         "label": "mediumDashed"
+        },
+        {
+         "value": "medium",
+         "label": "medium"
+        },
+        {
+         "value": "thick",
+         "label": "thick"
+        },
+        {
+         "value": "double",
+         "label": "double"
+        }
+       ]
+      },
+      {
+       "id": "insideHorizontal",
+       "label": "Inside horizontal:",
+       "kind": "radio",
+       "options": [
+        {
+         "value": "none",
+         "label": "none"
+        },
+        {
+         "value": "hair",
+         "label": "hair"
+        },
+        {
+         "value": "dotted",
+         "label": "dotted"
+        },
+        {
+         "value": "dashDotDot",
+         "label": "dashDotDot"
+        },
+        {
+         "value": "dashDot",
+         "label": "dashDot"
+        },
+        {
+         "value": "dashed",
+         "label": "dashed"
+        },
+        {
+         "value": "thin",
+         "label": "thin"
+        },
+        {
+         "value": "mediumDashDotDot",
+         "label": "mediumDashDotDot"
+        },
+        {
+         "value": "slantDashDot",
+         "label": "slantDashDot"
+        },
+        {
+         "value": "mediumDashDot",
+         "label": "mediumDashDot"
+        },
+        {
+         "value": "mediumDashed",
+         "label": "mediumDashed"
+        },
+        {
+         "value": "medium",
+         "label": "medium"
+        },
+        {
+         "value": "thick",
+         "label": "thick"
+        },
+        {
+         "value": "double",
+         "label": "double"
+        }
+       ]
+      },
+      {
+       "id": "insideVertical",
+       "label": "Inside vertical:",
+       "kind": "radio",
+       "options": [
+        {
+         "value": "none",
+         "label": "none"
+        },
+        {
+         "value": "hair",
+         "label": "hair"
+        },
+        {
+         "value": "dotted",
+         "label": "dotted"
+        },
+        {
+         "value": "dashDotDot",
+         "label": "dashDotDot"
+        },
+        {
+         "value": "dashDot",
+         "label": "dashDot"
+        },
+        {
+         "value": "dashed",
+         "label": "dashed"
+        },
+        {
+         "value": "thin",
+         "label": "thin"
+        },
+        {
+         "value": "mediumDashDotDot",
+         "label": "mediumDashDotDot"
+        },
+        {
+         "value": "slantDashDot",
+         "label": "slantDashDot"
+        },
+        {
+         "value": "mediumDashDot",
+         "label": "mediumDashDot"
+        },
+        {
+         "value": "mediumDashed",
+         "label": "mediumDashed"
+        },
+        {
+         "value": "medium",
+         "label": "medium"
+        },
+        {
+         "value": "thick",
+         "label": "thick"
+        },
+        {
+         "value": "double",
+         "label": "double"
+        }
+       ]
+      },
+      {
+       "id": "diagDown",
+       "label": "Diagonal ↘:",
+       "kind": "radio",
+       "options": [
+        {
+         "value": "none",
+         "label": "none"
+        },
+        {
+         "value": "hair",
+         "label": "hair"
+        },
+        {
+         "value": "dotted",
+         "label": "dotted"
+        },
+        {
+         "value": "dashDotDot",
+         "label": "dashDotDot"
+        },
+        {
+         "value": "dashDot",
+         "label": "dashDot"
+        },
+        {
+         "value": "dashed",
+         "label": "dashed"
+        },
+        {
+         "value": "thin",
+         "label": "thin"
+        },
+        {
+         "value": "mediumDashDotDot",
+         "label": "mediumDashDotDot"
+        },
+        {
+         "value": "slantDashDot",
+         "label": "slantDashDot"
+        },
+        {
+         "value": "mediumDashDot",
+         "label": "mediumDashDot"
+        },
+        {
+         "value": "mediumDashed",
+         "label": "mediumDashed"
+        },
+        {
+         "value": "medium",
+         "label": "medium"
+        },
+        {
+         "value": "thick",
+         "label": "thick"
+        },
+        {
+         "value": "double",
+         "label": "double"
+        }
+       ]
+      },
+      {
+       "id": "diagUp",
+       "label": "Diagonal ↗:",
+       "kind": "radio",
+       "options": [
+        {
+         "value": "none",
+         "label": "none"
+        },
+        {
+         "value": "hair",
+         "label": "hair"
+        },
+        {
+         "value": "dotted",
+         "label": "dotted"
+        },
+        {
+         "value": "dashDotDot",
+         "label": "dashDotDot"
+        },
+        {
+         "value": "dashDot",
+         "label": "dashDot"
+        },
+        {
+         "value": "dashed",
+         "label": "dashed"
+        },
+        {
+         "value": "thin",
+         "label": "thin"
+        },
+        {
+         "value": "mediumDashDotDot",
+         "label": "mediumDashDotDot"
+        },
+        {
+         "value": "slantDashDot",
+         "label": "slantDashDot"
+        },
+        {
+         "value": "mediumDashDot",
+         "label": "mediumDashDot"
+        },
+        {
+         "value": "mediumDashed",
+         "label": "mediumDashed"
+        },
+        {
+         "value": "medium",
+         "label": "medium"
+        },
+        {
+         "value": "thick",
+         "label": "thick"
+        },
+        {
+         "value": "double",
+         "label": "double"
+        }
+       ]
+      },
+      {
+       "id": "preview",
+       "label": "Border preview (border_preview::sample)",
+       "kind": "preview",
+       "options": []
+      }
+     ]
+    },
+    {
+     "name": "Fill",
+     "fields": [
+      {
+       "id": "background",
+       "label": "Background Color:",
+       "kind": "color",
+       "options": [
+        {
+         "value": "No Color",
+         "label": "No Color"
+        },
+        {
+         "value": "<theme palette>",
+         "label": "<theme palette>"
+        }
+       ]
+      },
+      {
+       "id": "patternColor",
+       "label": "Pattern Color:",
+       "kind": "color",
+       "options": [
+        {
+         "value": "Automatic",
+         "label": "Automatic"
+        }
+       ],
+       "source": "office"
+      },
+      {
+       "id": "patternStyle",
+       "label": "Pattern Style:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "none",
+         "label": "None"
+        },
+        {
+         "value": "gray0625",
+         "label": "6.25% Gray"
+        },
+        {
+         "value": "gray125",
+         "label": "12.5% Gray"
+        },
+        {
+         "value": "lightGray",
+         "label": "25% Gray"
+        },
+        {
+         "value": "mediumGray",
+         "label": "50% Gray"
+        },
+        {
+         "value": "darkGray",
+         "label": "75% Gray"
+        },
+        {
+         "value": "lightHorizontal",
+         "label": "Thin Horizontal Stripe"
+        },
+        {
+         "value": "lightVertical",
+         "label": "Thin Vertical Stripe"
+        },
+        {
+         "value": "lightDown",
+         "label": "Thin Reverse Diagonal Stripe"
+        },
+        {
+         "value": "lightUp",
+         "label": "Thin Diagonal Stripe"
+        },
+        {
+         "value": "lightGrid",
+         "label": "Thin Horizontal Crosshatch"
+        },
+        {
+         "value": "lightTrellis",
+         "label": "Thin Diagonal Crosshatch"
+        },
+        {
+         "value": "darkHorizontal",
+         "label": "Horizontal Stripe"
+        },
+        {
+         "value": "darkVertical",
+         "label": "Vertical Stripe"
+        },
+        {
+         "value": "darkDown",
+         "label": "Reverse Diagonal Stripe"
+        },
+        {
+         "value": "darkUp",
+         "label": "Diagonal Stripe"
+        },
+        {
+         "value": "darkGrid",
+         "label": "Diagonal Crosshatch"
+        },
+        {
+         "value": "darkTrellis",
+         "label": "Thick Diagonal Crosshatch"
+        }
+       ],
+       "source": "office"
+      },
+      {
+       "id": "sample",
+       "label": "Sample",
+       "kind": "preview",
+       "options": [],
+       "source": "office"
+      }
+     ]
+    }
+   ]
+  },
+  "dialog.colors": {
+   "command": null,
+   "buttons": [
+    "OK",
+    "Cancel"
+   ],
+   "source": "office",
+   "sourceRef": "office:Microsoft Excel 365 dialog",
+   "note": "Excel's Colors: the Standard honeycomb of 127 colours with the strip of 15 greys, the Custom colour square with Hex and RGB, New and Current side by side; OK applies the colour as the fill or the font colour, by the menu that opened it.",
+   "tabs": [
+    {
+     "name": "Standard",
+     "fields": [
+      {
+       "id": "color",
+       "label": "Colors:",
+       "kind": "color",
+       "options": []
+      }
+     ]
+    },
+    {
+     "name": "Custom",
+     "fields": [
+      {
+       "id": "hex",
+       "label": "Hex:",
+       "kind": "text",
+       "options": []
+      },
+      {
+       "id": "preview",
+       "label": "New / Current",
+       "kind": "preview",
+       "options": []
+      }
+     ]
+    }
+   ]
+  },
+  "dialog.style": {
+   "command": "home.newCellStyle",
+   "buttons": [
+    "OK",
+    "Cancel"
+   ],
+   "source": "office",
+   "sourceRef": "crates/engine/src/cmd/extra/cells.rs",
+   "note": "Excel's Style box: the name and Style Includes (By Example): Number, Alignment, Font, Border, Fill, Protection, each with the formatting the active cell has. The Format… button (changing the style from the box) is not shown: format the cell first, then make the style.",
+   "tabs": [
+    {
+     "name": "",
+     "fields": [
+      {
+       "id": "name",
+       "label": "Style name:",
+       "kind": "text",
+       "options": []
+      },
+      {
+       "id": "numFmt",
+       "label": "Number",
+       "kind": "checkbox",
+       "options": []
+      },
+      {
+       "id": "align",
+       "label": "Alignment",
+       "kind": "checkbox",
+       "options": []
+      },
+      {
+       "id": "font",
+       "label": "Font",
+       "kind": "checkbox",
+       "options": []
+      },
+      {
+       "id": "borders",
+       "label": "Border",
+       "kind": "checkbox",
+       "options": []
+      },
+      {
+       "id": "fill",
+       "label": "Fill",
+       "kind": "checkbox",
+       "options": []
+      },
+      {
+       "id": "protection",
+       "label": "Protection",
+       "kind": "checkbox",
+       "options": []
+      }
+     ]
+    }
+   ]
+  },
+  "dialog.newTableStyle": {
+   "note": "Hidden: no custom table styles in gridcraft (see Format as Table); the dialog is not translated."
+  },
+  "dialog.mergeStyles": {
+   "note": "U:grid/main: not checked against upstream. Merge styles from: the other workbooks the application holds; the check box replaces styles that have the same name.",
+   "command": "home.mergeStyles",
+   "tabs": [{"name": "", "fields": [
+    {"id": "from", "label": "Merge styles from:", "kind": "list", "options": []},
+    {"id": "replace", "label": "Replace styles that have the same name", "kind": "checkbox", "options": []}
+   ]}],
+   "buttons": ["OK", "Cancel"]
+  },
+  "dialog.fillAcrossWorksheets": {
+   "note": "Hidden: Grid has no grouped sheets to fill across (see Fill > Across Worksheets)."
+  }
+ }
+}

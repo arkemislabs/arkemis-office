@@ -1,0 +1,1249 @@
+{
+  "controls": {
+    "insert.illustrations.chart": {
+      "options": [
+        "Column",
+        "Bar",
+        "Line",
+        "Area",
+        "Pie",
+        "Doughnut",
+        "Scatter",
+        "Radar",
+        "Waterfall",
+        "Funnel",
+        "Histogram",
+        "Treemap",
+        "-",
+        "BoxWhisker",
+        "Sunburst"
+      ],
+      "items": [
+        {
+          "label": "Column",
+          "command": "insert.chart",
+          "params": {
+            "type": "column"
+          },
+          "icon": "insert-chart-column-clustered",
+          "source": "office",
+          "sourceRef": "office: Microsoft PowerPoint"
+        },
+        {
+          "label": "Bar",
+          "command": "insert.chart",
+          "params": {
+            "type": "bar"
+          },
+          "icon": "insert-chart-bar-clustered",
+          "source": "office",
+          "sourceRef": "office: Microsoft PowerPoint"
+        },
+        {
+          "label": "Line",
+          "command": "insert.chart",
+          "params": {
+            "type": "line"
+          },
+          "icon": "insert-chart-line",
+          "source": "office",
+          "sourceRef": "office: Microsoft PowerPoint"
+        },
+        {
+          "label": "Area",
+          "command": "insert.chart",
+          "params": {
+            "type": "area"
+          },
+          "icon": "insert-chart-area",
+          "source": "office",
+          "sourceRef": "office: Microsoft PowerPoint"
+        },
+        {
+          "label": "Pie",
+          "command": "insert.chart",
+          "params": {
+            "type": "pie"
+          },
+          "icon": "insert-chart-pie",
+          "source": "office",
+          "sourceRef": "office: Microsoft PowerPoint"
+        },
+        {
+          "label": "Doughnut",
+          "command": "insert.chart",
+          "params": {
+            "type": "doughnut"
+          },
+          "icon": "insert-chart-doughnut",
+          "source": "office",
+          "sourceRef": "office: Microsoft PowerPoint"
+        },
+        {
+          "label": "Scatter",
+          "command": "insert.chart",
+          "params": {
+            "type": "scatter"
+          },
+          "icon": "insert-chart-scatter",
+          "source": "office",
+          "sourceRef": "office: Microsoft PowerPoint"
+        },
+        {
+          "label": "Radar",
+          "command": "insert.chart",
+          "params": {
+            "type": "radar"
+          },
+          "icon": "insert-chart-radar",
+          "source": "office",
+          "sourceRef": "office: Microsoft PowerPoint"
+        },
+        {
+          "label": "Waterfall",
+          "command": "insert.chart",
+          "params": {
+            "type": "waterfall"
+          },
+          "icon": "insert-chart-waterfall",
+          "source": "office",
+          "sourceRef": "office: Microsoft PowerPoint"
+        },
+        {
+          "label": "Funnel",
+          "command": "insert.chart",
+          "params": {
+            "type": "funnel"
+          },
+          "icon": "insert-chart-funnel",
+          "source": "office",
+          "sourceRef": "office: Microsoft PowerPoint"
+        },
+        {
+          "label": "Histogram",
+          "command": "insert.chart",
+          "params": {
+            "type": "histogram"
+          },
+          "icon": "insert-chart-histogram",
+          "source": "office",
+          "sourceRef": "office: Microsoft PowerPoint"
+        },
+        {
+          "label": "Treemap",
+          "command": "insert.chart",
+          "params": {
+            "type": "treemap"
+          },
+          "icon": "insert-chart-treemap",
+          "source": "office",
+          "sourceRef": "office: Microsoft PowerPoint"
+        },
+        {
+          "separator": true
+        },
+        {
+          "label": "Box and Whisker",
+          "command": "insert.chart",
+          "params": {
+            "type": "boxWhisker"
+          },
+          "icon": "insert-chart-box-whisker",
+          "source": "office",
+          "sourceRef": "office: Microsoft PowerPoint"
+        },
+        {
+          "label": "Sunburst",
+          "command": "insert.chart",
+          "params": {
+            "type": "sunburst"
+          },
+          "icon": "insert-chart-sunburst",
+          "source": "office",
+          "sourceRef": "office: Microsoft PowerPoint"
+        },
+        {
+          "separator": true
+        },
+        {
+          "label": "Insert Chart…",
+          "command": "insert.chart",
+          "dialog": "dialog.insertChart",
+          "source": "office",
+          "sourceRef": "office: Microsoft PowerPoint"
+        }
+      ],
+      "note": "U:prism/chart: the types the chart engine draws, then Insert Chart… with the chooser of drawn thumbnails. Pareto and Map are not offered: deckcraft has them, the shared chart engine (core/grid) does not draw them."
+    },
+    "chartdesign.layouts.add-element": {
+      "command": "chart.options",
+      "items": [
+        {
+          "label": "Axes",
+          "kind": "submenu",
+          "command": null,
+          "items": [
+            {
+              "label": "Primary Horizontal",
+              "command": "chart.element",
+              "params": {
+                "axesH": "<bool>",
+                "field": "axesH"
+              },
+              "kind": "toggle",
+              "source": "office",
+              "sourceRef": "office: Microsoft PowerPoint"
+            },
+            {
+              "label": "Primary Vertical",
+              "command": "chart.element",
+              "params": {
+                "axesV": "<bool>",
+                "field": "axesV"
+              },
+              "kind": "toggle",
+              "source": "office",
+              "sourceRef": "office: Microsoft PowerPoint"
+            }
+          ],
+          "source": "office",
+          "sourceRef": "office: Microsoft PowerPoint"
+        },
+        {
+          "label": "Axis Titles",
+          "kind": "submenu",
+          "command": null,
+          "items": [
+            {
+              "label": "Primary Horizontal",
+              "command": "chart.options",
+              "kind": "toggle",
+              "params": {
+                "showXTitle": "<bool>",
+                "field": "showXTitle"
+              },
+              "source": "office",
+              "sourceRef": "office: Microsoft PowerPoint"
+            },
+            {
+              "label": "Primary Vertical",
+              "command": "chart.options",
+              "kind": "toggle",
+              "params": {
+                "showYTitle": "<bool>",
+                "field": "showYTitle"
+              },
+              "source": "office",
+              "sourceRef": "office: Microsoft PowerPoint"
+            }
+          ],
+          "source": "office",
+          "sourceRef": "office: Microsoft PowerPoint"
+        },
+        {
+          "label": "Chart Title",
+          "kind": "submenu",
+          "command": null,
+          "items": [
+            {
+              "label": "None",
+              "command": "chart.options",
+              "params": {
+                "showTitle": false
+              },
+              "source": "office",
+              "sourceRef": "office: Microsoft PowerPoint"
+            },
+            {
+              "label": "Above Chart",
+              "command": "chart.options",
+              "params": {
+                "showTitle": true
+              },
+              "source": "office",
+              "sourceRef": "office: Microsoft PowerPoint"
+            }
+          ],
+          "source": "office",
+          "sourceRef": "office: Microsoft PowerPoint"
+        },
+        {
+          "label": "Data Labels",
+          "kind": "submenu",
+          "command": null,
+          "items": [
+            {
+              "label": "None",
+              "command": "chart.options",
+              "params": {
+                "dataLabels": false
+              },
+              "source": "office",
+              "sourceRef": "office: Microsoft PowerPoint"
+            },
+            {
+              "label": "Show",
+              "command": "chart.options",
+              "params": {
+                "dataLabels": true
+              },
+              "source": "office",
+              "sourceRef": "office: Microsoft PowerPoint"
+            }
+          ],
+          "source": "office",
+          "sourceRef": "office: Microsoft PowerPoint"
+        },
+        {
+          "label": "Data Table",
+          "kind": "submenu",
+          "command": null,
+          "items": [
+            {
+              "label": "None",
+              "command": "chart.element",
+              "params": {
+                "dataTable": false
+              },
+              "source": "office",
+              "sourceRef": "office: Microsoft PowerPoint"
+            },
+            {
+              "label": "Show Data Table",
+              "command": "chart.element",
+              "params": {
+                "dataTable": true
+              },
+              "source": "office",
+              "sourceRef": "office: Microsoft PowerPoint"
+            }
+          ],
+          "source": "office",
+          "sourceRef": "office: Microsoft PowerPoint"
+        },
+        {
+          "label": "Error Bars",
+          "kind": "submenu",
+          "command": null,
+          "items": [
+            {
+              "label": "None",
+              "command": "chart.element",
+              "params": {
+                "errorBars": "none"
+              },
+              "source": "office",
+              "sourceRef": "office: Microsoft PowerPoint"
+            },
+            {
+              "label": "Standard Error",
+              "command": "chart.element",
+              "params": {
+                "errorBars": "standardError"
+              },
+              "source": "office",
+              "sourceRef": "office: Microsoft PowerPoint"
+            },
+            {
+              "label": "Percentage",
+              "command": "chart.element",
+              "params": {
+                "errorBars": "percentage"
+              },
+              "source": "office",
+              "sourceRef": "office: Microsoft PowerPoint"
+            },
+            {
+              "label": "Standard Deviation",
+              "command": "chart.element",
+              "params": {
+                "errorBars": "standardDeviation"
+              },
+              "source": "office",
+              "sourceRef": "office: Microsoft PowerPoint"
+            }
+          ],
+          "source": "office",
+          "sourceRef": "office: Microsoft PowerPoint"
+        },
+        {
+          "label": "Gridlines",
+          "kind": "submenu",
+          "command": null,
+          "items": [
+            {
+              "label": "Primary Major Horizontal",
+              "command": "chart.options",
+              "kind": "toggle",
+              "params": {
+                "gridlines": "<bool>",
+                "field": "gridlines"
+              },
+              "source": "office",
+              "sourceRef": "office: Microsoft PowerPoint"
+            }
+          ],
+          "source": "office",
+          "sourceRef": "office: Microsoft PowerPoint"
+        },
+        {
+          "label": "Legend",
+          "kind": "submenu",
+          "command": null,
+          "items": [
+            {
+              "label": "None",
+              "command": "chart.options",
+              "params": {
+                "legend": "none"
+              },
+              "source": "office",
+              "sourceRef": "office: Microsoft PowerPoint"
+            },
+            {
+              "label": "Right",
+              "command": "chart.options",
+              "params": {
+                "legend": "right"
+              },
+              "source": "office",
+              "sourceRef": "office: Microsoft PowerPoint"
+            },
+            {
+              "label": "Top",
+              "command": "chart.options",
+              "params": {
+                "legend": "top"
+              },
+              "source": "office",
+              "sourceRef": "office: Microsoft PowerPoint"
+            },
+            {
+              "label": "Left",
+              "command": "chart.options",
+              "params": {
+                "legend": "left"
+              },
+              "source": "office",
+              "sourceRef": "office: Microsoft PowerPoint"
+            },
+            {
+              "label": "Bottom",
+              "command": "chart.options",
+              "params": {
+                "legend": "bottom"
+              },
+              "source": "office",
+              "sourceRef": "office: Microsoft PowerPoint"
+            }
+          ],
+          "source": "office",
+          "sourceRef": "office: Microsoft PowerPoint"
+        },
+        {
+          "label": "Lines",
+          "kind": "submenu",
+          "command": null,
+          "items": [
+            {
+              "label": "None",
+              "command": "chart.element",
+              "params": {
+                "lines": "none"
+              },
+              "source": "office",
+              "sourceRef": "office: Microsoft PowerPoint"
+            },
+            {
+              "label": "Drop Lines",
+              "command": "chart.element",
+              "params": {
+                "lines": "drop"
+              },
+              "source": "office",
+              "sourceRef": "office: Microsoft PowerPoint"
+            },
+            {
+              "label": "High-Low Lines",
+              "command": "chart.element",
+              "params": {
+                "lines": "highLow"
+              },
+              "source": "office",
+              "sourceRef": "office: Microsoft PowerPoint"
+            }
+          ],
+          "source": "office",
+          "sourceRef": "office: Microsoft PowerPoint"
+        },
+        {
+          "label": "Trendline",
+          "kind": "submenu",
+          "command": null,
+          "items": [
+            {
+              "label": "None",
+              "command": "chart.element",
+              "params": {
+                "trendline": "none"
+              },
+              "source": "office",
+              "sourceRef": "office: Microsoft PowerPoint"
+            },
+            {
+              "label": "Linear",
+              "command": "chart.element",
+              "params": {
+                "trendline": "linear"
+              },
+              "source": "office",
+              "sourceRef": "office: Microsoft PowerPoint"
+            },
+            {
+              "label": "Exponential",
+              "command": "chart.element",
+              "params": {
+                "trendline": "exponential"
+              },
+              "source": "office",
+              "sourceRef": "office: Microsoft PowerPoint"
+            },
+            {
+              "label": "Linear Forecast",
+              "command": "chart.element",
+              "params": {
+                "trendline": "linearForecast"
+              },
+              "source": "office",
+              "sourceRef": "office: Microsoft PowerPoint"
+            },
+            {
+              "label": "Moving Average",
+              "command": "chart.element",
+              "params": {
+                "trendline": "movingAverage"
+              },
+              "source": "office",
+              "sourceRef": "office: Microsoft PowerPoint"
+            }
+          ],
+          "source": "office",
+          "sourceRef": "office: Microsoft PowerPoint"
+        },
+        {
+          "label": "Up/Down Bars",
+          "kind": "submenu",
+          "command": null,
+          "items": [
+            {
+              "label": "None",
+              "command": "chart.element",
+              "params": {
+                "upDownBars": false
+              },
+              "source": "office",
+              "sourceRef": "office: Microsoft PowerPoint"
+            },
+            {
+              "label": "Up/Down Bars",
+              "command": "chart.element",
+              "params": {
+                "upDownBars": true
+              },
+              "source": "office",
+              "sourceRef": "office: Microsoft PowerPoint"
+            }
+          ],
+          "source": "office",
+          "sourceRef": "office: Microsoft PowerPoint"
+        }
+      ],
+      "note": "U:prism/chart + chartextra: Axes, Axis Titles, Chart Title, Data Labels, Data Table, Error Bars, Gridlines, Legend, Lines, Trendline and Up/Down Bars. Axes, Data Table, Error Bars, Lines, Trendline and Up/Down Bars are PowerPoint's behaviour, not checked against upstream (core/prism/lib/chart-extra.mjs draws them); a chart type they do not suit (a pie has no axes) leaves them unavailable."
+    },
+    "chartdesign.layouts.quick-layout": {
+      "command": "chart.quickLayout",
+      "params": {
+        "layout": "<layout>"
+      },
+      "note": "U:prism/chart: the six quick layouts the Excel chart tabs share (legend, data labels, gridlines and axis titles together), drawn from the own palette of the chart (imported from core/grid/lib/chart-styles.mjs)."
+    },
+    "chartdesign.styles.colors": {
+      "command": "chart.options",
+      "items": [
+        {
+          "label": "Colorful",
+          "command": "chart.options",
+          "params": {
+            "palette": "colorful1"
+          },
+          "source": "upstream",
+          "sourceRef": "crates/model/src/chart.rs (palette colorful1)"
+        },
+        {
+          "label": "Monochromatic",
+          "command": "chart.options",
+          "params": {
+            "palette": "monochrome1"
+          },
+          "source": "upstream",
+          "sourceRef": "crates/render/src/chart.rs (series_color)"
+        }
+      ],
+      "note": "U:prism/chart: Change Colors: the Colorful palette (the theme accents in turn) or one Monochromatic palette (shades of accent 1). deckcraft draws no other palettes."
+    },
+    "chartdesign.styles.gallery": {
+      "command": "chart.styleGallery",
+      "params": {
+        "style": "<style>"
+      },
+      "note": "U:prism/chart: the sixteen looks the Excel Chart Styles share: a palette with its gridlines and data labels, drawn. deckcraft keeps only a style number; the number is kept and the look is what the palette, gridlines and labels give."
+    },
+    "chartdesign.data.switch": {
+      "params": {
+        "switchRowColumn": true
+      },
+      "note": "U:prism/chart: swaps the series and the categories (not checked against upstream)."
+    },
+    "chartdesign.data.select": {
+      "command": "chart.selectData",
+      "dialog": "dialog.selectData",
+      "params": null,
+      "note": "U:prism/chart: Select Data Source: the range of the chart worksheet (headers included) the series are read from, and Switch Row/Column; the worksheet is the one Edit Data shows and the embedded workbook PowerPoint opens."
+    },
+    "chartdesign.data.edit": {
+      "params": null,
+      "note": "U:prism/chart: opens the Chart Data grid (dialog.chartData): first row series names, first column categories, add a row or a series. PowerPoint opens an embedded workbook; Arkemis saves the values in the chart part."
+    },
+    "chartdesign.data.refresh": {
+      "command": null,
+      "dialog": null,
+      "params": null,
+      "note": "Hidden: deckcraft has no Refresh Data, and a chart here keeps its data in its own saved workbook (Edit Data, Select Data), with no external file to read it again from."
+    },
+    "chartdesign.type.change": {
+      "params": null,
+      "options": [
+        "Column",
+        "Bar",
+        "Line",
+        "Area",
+        "Pie",
+        "Doughnut",
+        "Scatter",
+        "Radar",
+        "Waterfall",
+        "Funnel",
+        "Histogram",
+        "Treemap",
+        "-",
+        "BoxWhisker",
+        "Sunburst"
+      ],
+      "items": [
+        {
+          "label": "Column",
+          "command": "chart.type",
+          "params": {
+            "type": "column"
+          },
+          "icon": "insert-chart-column-clustered",
+          "source": "office",
+          "sourceRef": "office: Microsoft PowerPoint"
+        },
+        {
+          "label": "Bar",
+          "command": "chart.type",
+          "params": {
+            "type": "bar"
+          },
+          "icon": "insert-chart-bar-clustered",
+          "source": "office",
+          "sourceRef": "office: Microsoft PowerPoint"
+        },
+        {
+          "label": "Line",
+          "command": "chart.type",
+          "params": {
+            "type": "line"
+          },
+          "icon": "insert-chart-line",
+          "source": "office",
+          "sourceRef": "office: Microsoft PowerPoint"
+        },
+        {
+          "label": "Area",
+          "command": "chart.type",
+          "params": {
+            "type": "area"
+          },
+          "icon": "insert-chart-area",
+          "source": "office",
+          "sourceRef": "office: Microsoft PowerPoint"
+        },
+        {
+          "label": "Pie",
+          "command": "chart.type",
+          "params": {
+            "type": "pie"
+          },
+          "icon": "insert-chart-pie",
+          "source": "office",
+          "sourceRef": "office: Microsoft PowerPoint"
+        },
+        {
+          "label": "Doughnut",
+          "command": "chart.type",
+          "params": {
+            "type": "doughnut"
+          },
+          "icon": "insert-chart-doughnut",
+          "source": "office",
+          "sourceRef": "office: Microsoft PowerPoint"
+        },
+        {
+          "label": "Scatter",
+          "command": "chart.type",
+          "params": {
+            "type": "scatter"
+          },
+          "icon": "insert-chart-scatter",
+          "source": "office",
+          "sourceRef": "office: Microsoft PowerPoint"
+        },
+        {
+          "label": "Radar",
+          "command": "chart.type",
+          "params": {
+            "type": "radar"
+          },
+          "icon": "insert-chart-radar",
+          "source": "office",
+          "sourceRef": "office: Microsoft PowerPoint"
+        },
+        {
+          "label": "Waterfall",
+          "command": "chart.type",
+          "params": {
+            "type": "waterfall"
+          },
+          "icon": "insert-chart-waterfall",
+          "source": "office",
+          "sourceRef": "office: Microsoft PowerPoint"
+        },
+        {
+          "label": "Funnel",
+          "command": "chart.type",
+          "params": {
+            "type": "funnel"
+          },
+          "icon": "insert-chart-funnel",
+          "source": "office",
+          "sourceRef": "office: Microsoft PowerPoint"
+        },
+        {
+          "label": "Histogram",
+          "command": "chart.type",
+          "params": {
+            "type": "histogram"
+          },
+          "icon": "insert-chart-histogram",
+          "source": "office",
+          "sourceRef": "office: Microsoft PowerPoint"
+        },
+        {
+          "label": "Treemap",
+          "command": "chart.type",
+          "params": {
+            "type": "treemap"
+          },
+          "icon": "insert-chart-treemap",
+          "source": "office",
+          "sourceRef": "office: Microsoft PowerPoint"
+        },
+        {
+          "separator": true
+        },
+        {
+          "label": "Box and Whisker",
+          "command": "chart.type",
+          "params": {
+            "type": "boxWhisker"
+          },
+          "icon": "insert-chart-box-whisker",
+          "source": "office",
+          "sourceRef": "office: Microsoft PowerPoint"
+        },
+        {
+          "label": "Sunburst",
+          "command": "chart.type",
+          "params": {
+            "type": "sunburst"
+          },
+          "icon": "insert-chart-sunburst",
+          "source": "office",
+          "sourceRef": "office: Microsoft PowerPoint"
+        },
+        {
+          "separator": true
+        },
+        {
+          "label": "Change Chart Type…",
+          "command": "chart.type",
+          "dialog": "dialog.changeChartType",
+          "source": "office",
+          "sourceRef": "office: Microsoft PowerPoint"
+        }
+      ],
+      "note": "U:prism/chart: the same types as Insert > Chart, and the chooser of drawn thumbnails."
+    },
+    "chartformat.selection.elements": {
+      "command": null,
+      "dialog": null,
+      "params": null,
+      "note": "Hidden: deckcraft has no Chart Elements list on the Format tab (its Chart Elements is the Add Chart Element menu of Chart Design, which is offered); a chart is formatted as a whole (Shape Fill, Outline, Effects and Font Color), its parts are not selectable on their own."
+    },
+    "chartformat.styles.fill": {
+      "note": "U:prism/chart: fills the chart area."
+    },
+    "chartformat.styles.outline": {
+      "note": "U:prism/chart: outlines the chart area."
+    },
+    "chartformat.selection.reset": {
+      "command": "chart.resetStyle",
+      "note": "U:prism/chartextra: Reset to Match Style: the series' own colours, the text colour and the chart elements go, back to the look of the chart style. Not checked against upstream."
+    }
+  },
+  "dialogs": {
+    "dialog.insertChart": {
+      "tabs": [
+        {
+          "name": "All Charts",
+          "fields": [
+            {
+              "id": "category",
+              "label": "Chart category",
+              "kind": "list",
+              "options": [
+                {
+                  "value": "Column",
+                  "label": "Column"
+                },
+                {
+                  "value": "Line",
+                  "label": "Line"
+                },
+                {
+                  "value": "Pie",
+                  "label": "Pie"
+                },
+                {
+                  "value": "Bar",
+                  "label": "Bar"
+                },
+                {
+                  "value": "Area",
+                  "label": "Area"
+                },
+                {
+                  "value": "X Y (Scatter)",
+                  "label": "X Y (Scatter)"
+                },
+                {
+                  "value": "Stock",
+                  "label": "Stock"
+                },
+                {
+                  "value": "Radar",
+                  "label": "Radar"
+                },
+                {
+                  "value": "Treemap",
+                  "label": "Treemap"
+                },
+                {
+                  "value": "Sunburst",
+                  "label": "Sunburst"
+                },
+                {
+                  "value": "Histogram",
+                  "label": "Histogram"
+                },
+                {
+                  "value": "Box & Whisker",
+                  "label": "Box & Whisker"
+                },
+                {
+                  "value": "Waterfall",
+                  "label": "Waterfall"
+                },
+                {
+                  "value": "Funnel",
+                  "label": "Funnel"
+                },
+                {
+                  "value": "Combo",
+                  "label": "Combo"
+                }
+              ],
+              "source": "office"
+            },
+            {
+              "id": "type",
+              "label": "Chart type",
+              "kind": "list",
+              "options": [
+                {
+                  "value": "column",
+                  "label": "Clustered Column"
+                },
+                {
+                  "value": "stackedColumn",
+                  "label": "Stacked Column"
+                },
+                {
+                  "value": "percentColumn",
+                  "label": "100% Stacked Column"
+                },
+                {
+                  "value": "line",
+                  "label": "Line"
+                },
+                {
+                  "value": "stackedLine",
+                  "label": "Stacked Line"
+                },
+                {
+                  "value": "lineMarkers",
+                  "label": "Line with Markers"
+                },
+                {
+                  "value": "pie",
+                  "label": "Pie"
+                },
+                {
+                  "value": "doughnut",
+                  "label": "Doughnut"
+                },
+                {
+                  "value": "bar",
+                  "label": "Clustered Bar"
+                },
+                {
+                  "value": "stackedBar",
+                  "label": "Stacked Bar"
+                },
+                {
+                  "value": "percentBar",
+                  "label": "100% Stacked Bar"
+                },
+                {
+                  "value": "area",
+                  "label": "Area"
+                },
+                {
+                  "value": "stackedArea",
+                  "label": "Stacked Area"
+                },
+                {
+                  "value": "scatter",
+                  "label": "Scatter"
+                },
+                {
+                  "value": "bubble",
+                  "label": "Bubble"
+                },
+                {
+                  "value": "stock",
+                  "label": "Stock"
+                },
+                {
+                  "value": "radar",
+                  "label": "Radar"
+                },
+                {
+                  "value": "treemap",
+                  "label": "Treemap"
+                },
+                {
+                  "value": "sunburst",
+                  "label": "Sunburst"
+                },
+                {
+                  "value": "histogram",
+                  "label": "Histogram"
+                },
+                {
+                  "value": "boxWhisker",
+                  "label": "Box and Whisker"
+                },
+                {
+                  "value": "waterfall",
+                  "label": "Waterfall"
+                },
+                {
+                  "value": "funnel",
+                  "label": "Funnel"
+                },
+                {
+                  "value": "combo",
+                  "label": "Combo"
+                }
+              ],
+              "param": "type",
+              "note": "drawn as thumbnails (src/apps/prism/surface/ChartChooser.tsx)",
+              "source": "office"
+            },
+            {
+              "id": "preview",
+              "label": "Preview",
+              "kind": "preview",
+              "options": [],
+              "source": "office"
+            }
+          ]
+        }
+      ],
+      "note": "U:prism/chart: Recent, Templates, Map and Surface are not offered; Pareto and Filled Radar neither (the chart engine does not draw them)."
+    },
+    "dialog.changeChartType": {
+      "tabs": [
+        {
+          "name": "All Charts",
+          "fields": [
+            {
+              "id": "category",
+              "label": "Chart category",
+              "kind": "list",
+              "options": [
+                {
+                  "value": "Column",
+                  "label": "Column"
+                },
+                {
+                  "value": "Line",
+                  "label": "Line"
+                },
+                {
+                  "value": "Pie",
+                  "label": "Pie"
+                },
+                {
+                  "value": "Bar",
+                  "label": "Bar"
+                },
+                {
+                  "value": "Area",
+                  "label": "Area"
+                },
+                {
+                  "value": "X Y (Scatter)",
+                  "label": "X Y (Scatter)"
+                },
+                {
+                  "value": "Stock",
+                  "label": "Stock"
+                },
+                {
+                  "value": "Radar",
+                  "label": "Radar"
+                },
+                {
+                  "value": "Treemap",
+                  "label": "Treemap"
+                },
+                {
+                  "value": "Sunburst",
+                  "label": "Sunburst"
+                },
+                {
+                  "value": "Histogram",
+                  "label": "Histogram"
+                },
+                {
+                  "value": "Box & Whisker",
+                  "label": "Box & Whisker"
+                },
+                {
+                  "value": "Waterfall",
+                  "label": "Waterfall"
+                },
+                {
+                  "value": "Funnel",
+                  "label": "Funnel"
+                },
+                {
+                  "value": "Combo",
+                  "label": "Combo"
+                }
+              ],
+              "source": "office"
+            },
+            {
+              "id": "type",
+              "label": "Chart type",
+              "kind": "list",
+              "options": [
+                {
+                  "value": "column",
+                  "label": "Clustered Column"
+                },
+                {
+                  "value": "stackedColumn",
+                  "label": "Stacked Column"
+                },
+                {
+                  "value": "percentColumn",
+                  "label": "100% Stacked Column"
+                },
+                {
+                  "value": "line",
+                  "label": "Line"
+                },
+                {
+                  "value": "stackedLine",
+                  "label": "Stacked Line"
+                },
+                {
+                  "value": "lineMarkers",
+                  "label": "Line with Markers"
+                },
+                {
+                  "value": "pie",
+                  "label": "Pie"
+                },
+                {
+                  "value": "doughnut",
+                  "label": "Doughnut"
+                },
+                {
+                  "value": "bar",
+                  "label": "Clustered Bar"
+                },
+                {
+                  "value": "stackedBar",
+                  "label": "Stacked Bar"
+                },
+                {
+                  "value": "percentBar",
+                  "label": "100% Stacked Bar"
+                },
+                {
+                  "value": "area",
+                  "label": "Area"
+                },
+                {
+                  "value": "stackedArea",
+                  "label": "Stacked Area"
+                },
+                {
+                  "value": "scatter",
+                  "label": "Scatter"
+                },
+                {
+                  "value": "bubble",
+                  "label": "Bubble"
+                },
+                {
+                  "value": "stock",
+                  "label": "Stock"
+                },
+                {
+                  "value": "radar",
+                  "label": "Radar"
+                },
+                {
+                  "value": "treemap",
+                  "label": "Treemap"
+                },
+                {
+                  "value": "sunburst",
+                  "label": "Sunburst"
+                },
+                {
+                  "value": "histogram",
+                  "label": "Histogram"
+                },
+                {
+                  "value": "boxWhisker",
+                  "label": "Box and Whisker"
+                },
+                {
+                  "value": "waterfall",
+                  "label": "Waterfall"
+                },
+                {
+                  "value": "funnel",
+                  "label": "Funnel"
+                },
+                {
+                  "value": "combo",
+                  "label": "Combo"
+                }
+              ],
+              "param": "type",
+              "note": "drawn as thumbnails (src/apps/prism/surface/ChartChooser.tsx)",
+              "source": "office"
+            },
+            {
+              "id": "preview",
+              "label": "Preview",
+              "kind": "preview",
+              "options": [],
+              "source": "office"
+            }
+          ]
+        }
+      ]
+    },
+    "dialog.selectData": {
+      "title": "Select Data Source",
+      "command": "chart.selectData",
+      "buttons": [
+        "OK",
+        "Cancel"
+      ],
+      "note": "U:prism/chart: the range is typed (A1 is the top left cell of the Edit Data worksheet).",
+      "tabs": [
+        {
+          "name": "Data",
+          "fields": [
+            {
+              "id": "range",
+              "label": "Chart data range:",
+              "kind": "text",
+              "options": [],
+              "param": "range",
+              "source": "office"
+            },
+            {
+              "id": "switchRowColumn",
+              "label": "Switch Row/Column",
+              "kind": "checkbox",
+              "options": [],
+              "source": "office"
+            }
+          ]
+        }
+      ]
+    },
+    "dialog.chartData": {
+      "tabs": [
+        {
+          "name": "Data",
+          "fields": [
+            {
+              "id": "table",
+              "label": "Chart cells",
+              "kind": "grid",
+              "options": [],
+              "param": "table",
+              "note": "first row series names, first column categories; the add-row and add-series buttons are in the grid (src/apps/prism/dialogs/chartData.tsx)",
+              "source": "upstream",
+              "sourceRef": "crates/ui-egui/src/dialogs/body.rs:1193"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

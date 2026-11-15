@@ -1,0 +1,84 @@
+{
+  "tab": "draw",
+  "keytip": "JI",
+  "source": "deckcraft crates/ui-egui/src/ribbon/draw.rs (draw) @ f893f6af7d36a5409fd804e81a34fd895cfefedf; Lasso Select, Add Pen, Stencils and Replay placed as PowerPoint",
+  "groups": {
+    "drawing-tools": {
+      "collapseOrder": 5,
+      "collapsedIcon": "cursor",
+      "layout": [
+        {
+          "large": "draw.tools.select"
+        },
+        {
+          "large": "draw.tools.lasso"
+        },
+        {
+          "large": "draw.tools.eraser"
+        }
+      ]
+    },
+    "pens": {
+      "collapseOrder": 4,
+      "collapsedIcon": "pen",
+      "layout": [
+        {
+          "large": "draw.pens.black"
+        },
+        {
+          "large": "draw.pens.red"
+        },
+        {
+          "large": "draw.pens.blue"
+        },
+        {
+          "large": "draw.pens.pencil"
+        },
+        {
+          "large": "draw.pens.highlighter"
+        },
+        {
+          "gallery": "draw.pens.gallery",
+          "inline": true,
+          "columns": 3
+        },
+        {
+          "large": "draw.pens.add-pen"
+        }
+      ]
+    },
+    "stencils": {
+      "collapseOrder": 3,
+      "collapsedIcon": "ruler",
+      "layout": [
+        {
+          "large": "draw.stencils.ruler"
+        }
+      ]
+    },
+    "convert": {
+      "collapseOrder": 2,
+      "collapsedIcon": "ink-to-shape",
+      "layout": [
+        {
+          "large": "draw.convert.ink-to-shape"
+        },
+        {
+          "large": "draw.convert.ink-to-text"
+        },
+        {
+          "large": "draw.convert.ink-to-math"
+        }
+      ]
+    },
+    "replay": {
+      "collapseOrder": 1,
+      "collapsedIcon": "replay",
+      "layout": [
+        {
+          "large": "draw.replay.ink-replay"
+        }
+      ]
+    }
+  }
+}

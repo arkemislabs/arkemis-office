@@ -1,0 +1,22 @@
+{
+  "source": "PowerPoint Export > Create a Video (video quality, use recorded timings, seconds spent on each slide)",
+  "width": 420,
+  "height": 300,
+  "sections": [
+    {
+      "fields": [
+        "quality"
+      ]
+    },
+    {
+      "fields": [
+        "timings"
+      ]
+    },
+    {
+      "fields": [
+        "seconds"
+      ]
+    }
+  ]
+}

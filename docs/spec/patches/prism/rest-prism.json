@@ -1,0 +1,775 @@
+{
+ "controls": {
+  "view.color.black-white": {
+   "command": "view.blackWhite",
+   "note": "U:prism/viewextra: Black and White (View > Color/Grayscale): the slides drawn in pure black and white; one of Color, Grayscale and Black and White. Not checked against upstream (deckcraft has none)."
+  },
+  "view.window.cascade": {
+   "command": "view.cascade",
+   "note": "U:prism/viewextra: Cascade (View > Window): the open windows overlapped, each a little down and right of the one before (host windows, as Arrange All). Not checked against upstream."
+  },
+  "view.window.move-split": {
+   "command": "view.moveSplit",
+   "note": "U:prism/viewextra: Move Split (View > Window): the arrow keys move the split bars between the slide pane, the slide and the notes; Enter or Esc ends it. Not checked against upstream."
+  },
+  "draw.pens.add-pen": {
+   "items": [
+    {
+     "id": "draw.pens.add-pen.pen",
+     "label": "Pen",
+     "command": "draw.addPen",
+     "args": {
+      "kind": "pen",
+      "current": true
+     },
+     "icon": "pen",
+     "source": "office",
+     "sourceRef": "office: PowerPoint Draw › Pens › Add Pen"
+    },
+    {
+     "id": "draw.pens.add-pen.pencil",
+     "label": "Pencil",
+     "command": "draw.addPen",
+     "args": {
+      "kind": "pencil",
+      "current": true
+     },
+     "icon": "pencil",
+     "source": "office",
+     "sourceRef": "office: PowerPoint Draw › Pens › Add Pen"
+    },
+    {
+     "id": "draw.pens.add-pen.highlighter",
+     "label": "Highlighter",
+     "command": "draw.addPen",
+     "args": {
+      "kind": "highlighter",
+      "current": true
+     },
+     "icon": "highlight",
+     "source": "office",
+     "sourceRef": "office: PowerPoint Draw › Pens › Add Pen"
+    }
+   ],
+   "note": "U:prism/drawextra: Add Pen adds a pen of that kind, in the colour and thickness in use, to the gallery beside the five pens and picks it up; a click on a gallery pen picks it up, a right click offers Remove Pen. Kept per profile. Not checked against upstream."
+  },
+  "draw.stencils.ruler": {
+   "command": "draw.ruler",
+   "note": "U:prism/drawextra: the Ruler stencil: a ruler on the slide; drag it to move it, the wheel turns it, ink drawn along its edge runs straight. Not checked against upstream."
+  },
+  "home.drawing.effects.preset": {
+   "kind": "gallery",
+   "command": "shape.effectPreset",
+   "args": {
+    "index": "<index>"
+   },
+   "items": null,
+   "note": "U:prism/effects3d: Preset: a gallery of tiles, each a sample shape with the preset drawn on it (No Presets and the twelve presets: a shadow, reflection or glow, a bevel and, from 8, a 3-D rotation with a depth). Not checked against upstream."
+  },
+  "home.drawing.effects.3-d-rotation": {
+   "kind": "gallery",
+   "command": "shape.rotation3d",
+   "args": {
+    "camera": "<camera>"
+   },
+   "items": null,
+   "note": "U:prism/effects3d: 3-D Rotation: a gallery of tiles, each a sample shape turned by its camera preset under Parallel, Perspective and Oblique (an orthographic projection; perspective is not foreshortened); with a depth the back is drawn behind the shape. The selection box stays flat. Not checked against upstream."
+  },
+  "shapeformat.styles.effects.preset": {
+   "kind": "gallery",
+   "command": "shape.effectPreset",
+   "args": {
+    "index": "<index>"
+   },
+   "items": null,
+   "note": "U:prism/effects3d: Preset: a gallery of tiles, each a sample shape with the preset drawn on it (No Presets and the twelve presets: a shadow, reflection or glow, a bevel and, from 8, a 3-D rotation with a depth). Not checked against upstream."
+  },
+  "shapeformat.styles.effects.3-d-rotation": {
+   "kind": "gallery",
+   "command": "shape.rotation3d",
+   "args": {
+    "camera": "<camera>"
+   },
+   "items": null,
+   "note": "U:prism/effects3d: 3-D Rotation: a gallery of tiles, each a sample shape turned by its camera preset under Parallel, Perspective and Oblique (an orthographic projection; perspective is not foreshortened); with a depth the back is drawn behind the shape. The selection box stays flat. Not checked against upstream."
+  },
+  "pictureformat.styles.effects.preset": {
+   "kind": "gallery",
+   "command": "shape.effectPreset",
+   "args": {
+    "index": "<index>"
+   },
+   "items": null,
+   "note": "U:prism/effects3d: Preset: a gallery of tiles, each a sample shape with the preset drawn on it (No Presets and the twelve presets: a shadow, reflection or glow, a bevel and, from 8, a 3-D rotation with a depth). Not checked against upstream."
+  },
+  "pictureformat.styles.effects.3-d-rotation": {
+   "kind": "gallery",
+   "command": "shape.rotation3d",
+   "args": {
+    "camera": "<camera>"
+   },
+   "items": null,
+   "note": "U:prism/effects3d: 3-D Rotation: a gallery of tiles, each a sample shape turned by its camera preset under Parallel, Perspective and Oblique (an orthographic projection; perspective is not foreshortened); with a depth the back is drawn behind the shape. The selection box stays flat. Not checked against upstream."
+  },
+  "shapeformat.wordart.text-effects.reflection": {
+   "items": [
+    {
+     "label": "No Reflection",
+     "command": "format.textEffects",
+     "args": {
+      "reflection": "none"
+     },
+     "source": "office",
+     "sourceRef": "office: PowerPoint Shape Format › Text Effects"
+    },
+    {
+     "label": "Tight Reflection",
+     "command": "format.textEffects",
+     "args": {
+      "reflection": "tight"
+     },
+     "source": "office",
+     "sourceRef": "office: PowerPoint Shape Format › Text Effects"
+    },
+    {
+     "label": "Half Reflection",
+     "command": "format.textEffects",
+     "args": {
+      "reflection": "half"
+     },
+     "source": "office",
+     "sourceRef": "office: PowerPoint Shape Format › Text Effects"
+    },
+    {
+     "label": "Full Reflection",
+     "command": "format.textEffects",
+     "args": {
+      "reflection": "full"
+     },
+     "source": "office",
+     "sourceRef": "office: PowerPoint Shape Format › Text Effects"
+    }
+   ],
+   "note": "U:prism/effects3d: Text Effects › Reflection: a faded mirror image of the text below it (a property of the runs, kept in the file). Not checked against upstream."
+  },
+  "shapeformat.wordart.text-effects.glow": {
+   "items": [
+    {
+     "label": "No Glow",
+     "command": "format.textEffects",
+     "args": {
+      "glow": null
+     },
+     "source": "office",
+     "sourceRef": "office: PowerPoint Shape Format › Text Effects"
+    },
+    {
+     "label": "5 pt glow",
+     "command": "format.textEffects",
+     "args": {
+      "glow": 5
+     },
+     "source": "office",
+     "sourceRef": "office: PowerPoint Shape Format › Text Effects"
+    },
+    {
+     "label": "8 pt glow",
+     "command": "format.textEffects",
+     "args": {
+      "glow": 8
+     },
+     "source": "office",
+     "sourceRef": "office: PowerPoint Shape Format › Text Effects"
+    },
+    {
+     "label": "11 pt glow",
+     "command": "format.textEffects",
+     "args": {
+      "glow": 11
+     },
+     "source": "office",
+     "sourceRef": "office: PowerPoint Shape Format › Text Effects"
+    },
+    {
+     "label": "18 pt glow",
+     "command": "format.textEffects",
+     "args": {
+      "glow": 18
+     },
+     "source": "office",
+     "sourceRef": "office: PowerPoint Shape Format › Text Effects"
+    }
+   ],
+   "note": "U:prism/effects3d: Text Effects › Glow: a soft halo in the accent colour round the letters (a property of the runs, kept in the file). Not checked against upstream."
+  },
+  "shapeformat.wordart.text-effects.bevel": {
+   "items": [
+    {
+     "label": "No Bevel",
+     "command": "format.textEffects",
+     "args": {
+      "bevel": "none"
+     },
+     "source": "office",
+     "sourceRef": "office: PowerPoint Shape Format › Text Effects"
+    },
+    {
+     "label": "Circle",
+     "command": "format.textEffects",
+     "args": {
+      "bevel": "circle"
+     },
+     "source": "office",
+     "sourceRef": "office: PowerPoint Shape Format › Text Effects"
+    },
+    {
+     "label": "Relaxed Inset",
+     "command": "format.textEffects",
+     "args": {
+      "bevel": "relaxedInset"
+     },
+     "source": "office",
+     "sourceRef": "office: PowerPoint Shape Format › Text Effects"
+    },
+    {
+     "label": "Cross",
+     "command": "format.textEffects",
+     "args": {
+      "bevel": "cross"
+     },
+     "source": "office",
+     "sourceRef": "office: PowerPoint Shape Format › Text Effects"
+    },
+    {
+     "label": "Cool Slant",
+     "command": "format.textEffects",
+     "args": {
+      "bevel": "coolSlant"
+     },
+     "source": "office",
+     "sourceRef": "office: PowerPoint Shape Format › Text Effects"
+    },
+    {
+     "label": "Angle",
+     "command": "format.textEffects",
+     "args": {
+      "bevel": "angle"
+     },
+     "source": "office",
+     "sourceRef": "office: PowerPoint Shape Format › Text Effects"
+    },
+    {
+     "label": "Soft Round",
+     "command": "format.textEffects",
+     "args": {
+      "bevel": "softRound"
+     },
+     "source": "office",
+     "sourceRef": "office: PowerPoint Shape Format › Text Effects"
+    },
+    {
+     "label": "Convex",
+     "command": "format.textEffects",
+     "args": {
+      "bevel": "convex"
+     },
+     "source": "office",
+     "sourceRef": "office: PowerPoint Shape Format › Text Effects"
+    },
+    {
+     "label": "Slope",
+     "command": "format.textEffects",
+     "args": {
+      "bevel": "slope"
+     },
+     "source": "office",
+     "sourceRef": "office: PowerPoint Shape Format › Text Effects"
+    },
+    {
+     "label": "Divot",
+     "command": "format.textEffects",
+     "args": {
+      "bevel": "divot"
+     },
+     "source": "office",
+     "sourceRef": "office: PowerPoint Shape Format › Text Effects"
+    },
+    {
+     "label": "Riblet",
+     "command": "format.textEffects",
+     "args": {
+      "bevel": "riblet"
+     },
+     "source": "office",
+     "sourceRef": "office: PowerPoint Shape Format › Text Effects"
+    },
+    {
+     "label": "Hard Edge",
+     "command": "format.textEffects",
+     "args": {
+      "bevel": "hardEdge"
+     },
+     "source": "office",
+     "sourceRef": "office: PowerPoint Shape Format › Text Effects"
+    },
+    {
+     "label": "Art Deco",
+     "command": "format.textEffects",
+     "args": {
+      "bevel": "artDeco"
+     },
+     "source": "office",
+     "sourceRef": "office: PowerPoint Shape Format › Text Effects"
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "3-D Options…",
+     "command": "pane.toggle",
+     "args": {
+      "pane": "format",
+      "tab": "effects"
+     },
+     "source": "office",
+     "sourceRef": "office: PowerPoint Shape Format › Text Effects › Bevel"
+    }
+   ],
+   "note": "U:prism/effects3d: Text Effects › Bevel: the text lit from the upper left as if raised (the text body's `a:sp3d`, kept in the file). Not checked against upstream."
+  },
+  "shapeformat.wordart.text-effects.3-d-rotation": {
+   "kind": "gallery",
+   "command": "format.textRotation3d",
+   "args": {
+    "camera": "<camera>"
+   },
+   "items": null,
+   "note": "U:prism/effects3d: Text Effects > 3-D Rotation: the same tiles; the text turned about the middle of its box (the text body's a:scene3d, kept in the file). Not checked against upstream."
+  },
+  "home.font.color.eyedropper": {
+   "command": "tool.eyedropper",
+   "args": {
+    "target": "text"
+   },
+   "note": "U:prism/colorpick: Eyedropper: the next click on the slide picks the colour of the slide as the app draws it (never the screen) and makes it the font colour. deckcraft eyedropper.rs: target text."
+  },
+  "pictureformat.adjust.color.set-transparent-color": {
+   "command": "tool.transparentColor",
+   "note": "U:prism/colorpick: Set Transparent Color: the next click on the slide picks the colour of the slide as the app draws it and makes that colour of the selected picture transparent. Not checked against upstream."
+  },
+  "tablelayout.arrange.selection-pane": {
+   "command": "pane.toggle",
+   "args": {
+    "pane": "selection"
+   },
+   "kind": "toggle",
+   "note": "U:prism/format-tabs: shows or hides the Selection Pane (panes/selection.tsx); on while it is open."
+  },
+  "chartdesign.arrange.selection-pane": {
+   "command": "pane.toggle",
+   "args": {
+    "pane": "selection"
+   },
+   "kind": "toggle",
+   "note": "U:prism/format-tabs: shows or hides the Selection Pane (panes/selection.tsx); on while it is open."
+  },
+  "smartart.arrange.selection-pane": {
+   "command": "pane.toggle",
+   "args": {
+    "pane": "selection"
+   },
+   "kind": "toggle",
+   "note": "U:prism/format-tabs: shows or hides the Selection Pane (panes/selection.tsx); on while it is open."
+  },
+  "chartformat.selection.format": {
+   "command": "pane.toggle",
+   "args": {
+    "pane": "format"
+   },
+   "note": "U:prism/format-tabs: opens the Format pane for the selected chart."
+  },
+  "chartdesign.arrange.align.align-to-slide": {
+   "command": "arrange.alignTo",
+   "args": {
+    "slide": true
+   },
+   "kind": "toggle",
+   "source": "upstream",
+   "sourceRef": "deckcraft crates/ui-egui/src/ribbon/arrange.rs align_menu"
+  },
+  "chartdesign.arrange.align.align-selected-objects": {
+   "command": "arrange.alignTo",
+   "args": {
+    "slide": false
+   },
+   "kind": "toggle",
+   "source": "upstream",
+   "sourceRef": "deckcraft crates/ui-egui/src/ribbon/arrange.rs align_menu"
+  },
+  "smartart.arrange.align.align-to-slide": {
+   "command": "arrange.alignTo",
+   "args": {
+    "slide": true
+   },
+   "kind": "toggle",
+   "source": "upstream",
+   "sourceRef": "deckcraft crates/ui-egui/src/ribbon/arrange.rs align_menu"
+  },
+  "smartart.arrange.align.align-selected-objects": {
+   "command": "arrange.alignTo",
+   "args": {
+    "slide": false
+   },
+   "kind": "toggle",
+   "source": "upstream",
+   "sourceRef": "deckcraft crates/ui-egui/src/ribbon/arrange.rs align_menu"
+  },
+  "record.save.export-video": {
+   "command": "file.exportVideo",
+   "args": null,
+   "dialog": "dialog.exportVideo",
+   "note": "U:prism/exportvideo: Export to Video: the slides recorded as one WebM video (MP4 only where WebM is not offered) from a canvas the app draws itself, each slide held for its seconds. Transitions and animations are not played. PowerPoint's behaviour, not checked against upstream (deckcraft writes an animated GIF).",
+   "params": null
+  },
+  "home.drawing.fill.texture": {
+   "kind": "gallery",
+   "command": "shape.texture",
+   "args": {
+    "name": "<texture>"
+   },
+   "items": null,
+   "note": "U:prism/fillstyle: Texture: a gallery of the suite's 24 textures drawn as swatches (seamless tiles drawn by the app), put on the shape as a tiled picture fill. Not checked against upstream."
+  },
+  "shapeformat.styles.fill.texture": {
+   "kind": "gallery",
+   "command": "shape.texture",
+   "args": {
+    "name": "<texture>"
+   },
+   "items": null,
+   "note": "U:prism/fillstyle: Texture: a gallery of the suite's 24 textures drawn as swatches (seamless tiles drawn by the app), put on the shape as a tiled picture fill. Not checked against upstream."
+  },
+  "home.drawing.outline.sketched": {
+   "items": [
+    {
+     "label": "None",
+     "command": "shape.sketch",
+     "args": {
+      "style": "none"
+     },
+     "source": "office",
+     "sourceRef": "office: PowerPoint Shape Format › Shape Outline › Sketched"
+    },
+    {
+     "label": "Curved",
+     "command": "shape.sketch",
+     "args": {
+      "style": "curved"
+     },
+     "source": "office",
+     "sourceRef": "office: PowerPoint Shape Format › Shape Outline › Sketched"
+    },
+    {
+     "label": "Freehand",
+     "command": "shape.sketch",
+     "args": {
+      "style": "freehand"
+     },
+     "source": "office",
+     "sourceRef": "office: PowerPoint Shape Format › Shape Outline › Sketched"
+    },
+    {
+     "label": "Scribble",
+     "command": "shape.sketch",
+     "args": {
+      "style": "scribble"
+     },
+     "source": "office",
+     "sourceRef": "office: PowerPoint Shape Format › Shape Outline › Sketched"
+    }
+   ],
+   "note": "U:prism/fillstyle: Sketched: the outline drawn as if by hand (Curved, Freehand, Scribble); the line is the same line, kept in the file in the line's extension list. Not checked against upstream."
+  },
+  "shapeformat.styles.outline.sketched": {
+   "items": [
+    {
+     "label": "None",
+     "command": "shape.sketch",
+     "args": {
+      "style": "none"
+     },
+     "source": "office",
+     "sourceRef": "office: PowerPoint Shape Format › Shape Outline › Sketched"
+    },
+    {
+     "label": "Curved",
+     "command": "shape.sketch",
+     "args": {
+      "style": "curved"
+     },
+     "source": "office",
+     "sourceRef": "office: PowerPoint Shape Format › Shape Outline › Sketched"
+    },
+    {
+     "label": "Freehand",
+     "command": "shape.sketch",
+     "args": {
+      "style": "freehand"
+     },
+     "source": "office",
+     "sourceRef": "office: PowerPoint Shape Format › Shape Outline › Sketched"
+    },
+    {
+     "label": "Scribble",
+     "command": "shape.sketch",
+     "args": {
+      "style": "scribble"
+     },
+     "source": "office",
+     "sourceRef": "office: PowerPoint Shape Format › Shape Outline › Sketched"
+    }
+   ],
+   "note": "U:prism/fillstyle: Sketched: the outline drawn as if by hand (Curved, Freehand, Scribble); the line is the same line, kept in the file in the line's extension list. Not checked against upstream."
+  },
+  "review.language.language.language-preferences": {
+   "command": "review.languagePreferences",
+   "dialog": "dialog.languagePreferences",
+   "note": "U:prism/langprefs: Language Preferences: the preferred editing language from the local list the Language dialog offers (kept in the settings; the Language dialog starts on it for text with no language). Not checked against upstream."
+  }
+ },
+ "insertAfter": {
+  "draw.pens.highlighter": [
+   {
+    "id": "draw.pens.gallery",
+    "label": "Added pens",
+    "kind": "gallery",
+    "command": "draw.usePen",
+    "args": {
+     "index": "<n>"
+    },
+    "icon": "pen",
+    "source": "office",
+    "sourceRef": "office: PowerPoint Draw › Pens",
+    "note": "U:prism/drawextra: the pens added with Add Pen: each tile is its kind of pen in its colour over a bar of its thickness; a click picks it up (draw.usePen {index}), right-click offers Remove Pen (draw.removePen {index})."
+   }
+  ]
+ },
+ "dialogs": {
+  "dialog.exportVideo": {
+   "title": "Export to Video",
+   "command": "file.exportVideo",
+   "buttons": [
+    "Export",
+    "Cancel"
+   ],
+   "note": "U:prism/exportvideo: the video size, whether a slide's own Advance Slide After time is kept, and the seconds spent on each slide that has none. Not checked against upstream.",
+   "tabs": [
+    {
+     "name": "Export to Video",
+     "fields": [
+      {
+       "id": "quality",
+       "label": "Video quality",
+       "kind": "select",
+       "options": [
+        {
+         "value": "2160",
+         "label": "Ultra HD (2160p)"
+        },
+        {
+         "value": "1080",
+         "label": "Full HD (1080p)"
+        },
+        {
+         "value": "720",
+         "label": "HD (720p)"
+        },
+        {
+         "value": "480",
+         "label": "Standard (480p)"
+        }
+       ],
+       "param": "quality",
+       "source": "office",
+       "sourceRef": "office: PowerPoint Export > Create a Video"
+      },
+      {
+       "id": "timings",
+       "label": "Timings and narrations",
+       "kind": "select",
+       "options": [
+        {
+         "value": "use",
+         "label": "Use Recorded Timings and Narrations"
+        },
+        {
+         "value": "dont",
+         "label": "Don't Use Recorded Timings and Narrations"
+        }
+       ],
+       "param": "useTimings",
+       "source": "office",
+       "sourceRef": "office: PowerPoint Export > Create a Video"
+      },
+      {
+       "id": "seconds",
+       "label": "Seconds spent on each slide",
+       "kind": "number",
+       "options": [],
+       "param": "seconds",
+       "source": "office",
+       "sourceRef": "office: PowerPoint Export > Create a Video"
+      }
+     ]
+    }
+   ]
+  },
+  "dialog.languagePreferences": {
+   "title": "Language Preferences",
+   "command": "review.languagePreferences",
+   "buttons": [
+    "OK",
+    "Cancel"
+   ],
+   "note": "U:prism/langprefs: the preferred editing language. Not checked against upstream.",
+   "tabs": [
+    {
+     "name": "Language Preferences",
+     "fields": [
+      {
+       "id": "language",
+       "label": "Preferred editing language:",
+       "kind": "list",
+       "options": [
+        {
+         "value": "en-US",
+         "label": "English (United States)"
+        },
+        {
+         "value": "en-GB",
+         "label": "English (United Kingdom)"
+        },
+        {
+         "value": "en-AU",
+         "label": "English (Australia)"
+        },
+        {
+         "value": "en-CA",
+         "label": "English (Canada)"
+        },
+        {
+         "value": "es-ES",
+         "label": "Español (España)"
+        },
+        {
+         "value": "es-MX",
+         "label": "Español (México)"
+        },
+        {
+         "value": "fr-FR",
+         "label": "Français (France)"
+        },
+        {
+         "value": "fr-CA",
+         "label": "Français (Canada)"
+        },
+        {
+         "value": "de-DE",
+         "label": "Deutsch (Deutschland)"
+        },
+        {
+         "value": "de-CH",
+         "label": "Deutsch (Schweiz)"
+        },
+        {
+         "value": "it-IT",
+         "label": "Italiano"
+        },
+        {
+         "value": "nl-NL",
+         "label": "Nederlands"
+        },
+        {
+         "value": "pt-BR",
+         "label": "Português (Brasil)"
+        },
+        {
+         "value": "pt-PT",
+         "label": "Português (Portugal)"
+        },
+        {
+         "value": "pl-PL",
+         "label": "Polski"
+        },
+        {
+         "value": "sv-SE",
+         "label": "Svenska"
+        },
+        {
+         "value": "da-DK",
+         "label": "Dansk"
+        },
+        {
+         "value": "nb-NO",
+         "label": "Norsk bokmål"
+        },
+        {
+         "value": "fi-FI",
+         "label": "Suomi"
+        },
+        {
+         "value": "cs-CZ",
+         "label": "Čeština"
+        },
+        {
+         "value": "uk-UA",
+         "label": "Українська"
+        },
+        {
+         "value": "ru-RU",
+         "label": "Русский"
+        },
+        {
+         "value": "be-BY",
+         "label": "Беларуская"
+        },
+        {
+         "value": "tr-TR",
+         "label": "Türkçe"
+        },
+        {
+         "value": "el-GR",
+         "label": "Ελληνικά"
+        },
+        {
+         "value": "ja-JP",
+         "label": "日本語"
+        },
+        {
+         "value": "zh-CN",
+         "label": "中文(中国)"
+        },
+        {
+         "value": "ko-KR",
+         "label": "한국어"
+        },
+        {
+         "value": "ar-SA",
+         "label": "العربية"
+        },
+        {
+         "value": "he-IL",
+         "label": "עברית"
+        }
+       ],
+       "param": "language",
+       "source": "office",
+       "sourceRef": "office: PowerPoint Review > Language > Language Preferences",
+       "height": 174
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

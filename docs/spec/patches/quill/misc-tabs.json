@@ -1,0 +1,395 @@
+{
+  "controls": {
+    "table-design.table-styles.styles.clear": {
+      "command": "table.clearStyle",
+      "note": "U:quill/table_misc: takes the table's style off (table.clearStyle). Word's, not in wordcraft: not checked against upstream."
+    },
+    "table-design.borders.line-style": {
+      "note": "U:quill/table_misc: table.pen: the line the Borders menu and the Border Painter draw with (None, single, double, dotted, dashed, dot-dash, thick, triple, wave). Word's, not in wordcraft (it sets a line style only in Modify Table Style): not checked against upstream.",
+      "items": [
+        {
+          "id": "table-design.borders.line-style.none",
+          "label": "No Border",
+          "kind": "button",
+          "command": "table.pen",
+          "args": {
+            "style": "none"
+          },
+          "source": "office"
+        },
+        {
+          "id": "table-design.borders.line-style.single",
+          "label": "Single",
+          "kind": "button",
+          "command": "table.pen",
+          "args": {
+            "style": "single"
+          },
+          "source": "office"
+        },
+        {
+          "id": "table-design.borders.line-style.double",
+          "label": "Double",
+          "kind": "button",
+          "command": "table.pen",
+          "args": {
+            "style": "double"
+          },
+          "source": "office"
+        },
+        {
+          "id": "table-design.borders.line-style.dotted",
+          "label": "Dotted",
+          "kind": "button",
+          "command": "table.pen",
+          "args": {
+            "style": "dotted"
+          },
+          "source": "office"
+        },
+        {
+          "id": "table-design.borders.line-style.dashed",
+          "label": "Dashed",
+          "kind": "button",
+          "command": "table.pen",
+          "args": {
+            "style": "dashed"
+          },
+          "source": "office"
+        },
+        {
+          "id": "table-design.borders.line-style.dot-dash",
+          "label": "Dot-Dash",
+          "kind": "button",
+          "command": "table.pen",
+          "args": {
+            "style": "dotDash"
+          },
+          "source": "office"
+        },
+        {
+          "id": "table-design.borders.line-style.thick",
+          "label": "Thick",
+          "kind": "button",
+          "command": "table.pen",
+          "args": {
+            "style": "thick"
+          },
+          "source": "office"
+        },
+        {
+          "id": "table-design.borders.line-style.triple",
+          "label": "Triple",
+          "kind": "button",
+          "command": "table.pen",
+          "args": {
+            "style": "triple"
+          },
+          "source": "office"
+        },
+        {
+          "id": "table-design.borders.line-style.wave",
+          "label": "Wave",
+          "kind": "button",
+          "command": "table.pen",
+          "args": {
+            "style": "wave"
+          },
+          "source": "office"
+        }
+      ]
+    },
+    "table-design.borders.line-weight": {
+      "note": "U:quill/table_misc: table.pen: the weight the Borders menu and the Border Painter draw with (1/4 pt to 6 pt). Word's, not in wordcraft: not checked against upstream.",
+      "items": [
+        {
+          "id": "table-design.borders.line-weight.w025",
+          "label": "1/4 pt",
+          "kind": "button",
+          "command": "table.pen",
+          "args": {
+            "width": 0.25
+          },
+          "source": "office"
+        },
+        {
+          "id": "table-design.borders.line-weight.w05",
+          "label": "1/2 pt",
+          "kind": "button",
+          "command": "table.pen",
+          "args": {
+            "width": 0.5
+          },
+          "source": "office"
+        },
+        {
+          "id": "table-design.borders.line-weight.w075",
+          "label": "3/4 pt",
+          "kind": "button",
+          "command": "table.pen",
+          "args": {
+            "width": 0.75
+          },
+          "source": "office"
+        },
+        {
+          "id": "table-design.borders.line-weight.w1",
+          "label": "1 pt",
+          "kind": "button",
+          "command": "table.pen",
+          "args": {
+            "width": 1
+          },
+          "source": "office"
+        },
+        {
+          "id": "table-design.borders.line-weight.w15",
+          "label": "1 1/2 pt",
+          "kind": "button",
+          "command": "table.pen",
+          "args": {
+            "width": 1.5
+          },
+          "source": "office"
+        },
+        {
+          "id": "table-design.borders.line-weight.w225",
+          "label": "2 1/4 pt",
+          "kind": "button",
+          "command": "table.pen",
+          "args": {
+            "width": 2.25
+          },
+          "source": "office"
+        },
+        {
+          "id": "table-design.borders.line-weight.w3",
+          "label": "3 pt",
+          "kind": "button",
+          "command": "table.pen",
+          "args": {
+            "width": 3
+          },
+          "source": "office"
+        },
+        {
+          "id": "table-design.borders.line-weight.w45",
+          "label": "4 1/2 pt",
+          "kind": "button",
+          "command": "table.pen",
+          "args": {
+            "width": 4.5
+          },
+          "source": "office"
+        },
+        {
+          "id": "table-design.borders.line-weight.w6",
+          "label": "6 pt",
+          "kind": "button",
+          "command": "table.pen",
+          "args": {
+            "width": 6
+          },
+          "source": "office"
+        }
+      ]
+    },
+    "table-design.borders.pen-color": {
+      "kind": "split",
+      "command": "table.pen",
+      "args": {
+        "color": "<last>"
+      },
+      "note": "U:quill/table_misc: table.pen: the colour the Borders menu and the Border Painter draw with. Word's, not in wordcraft: not checked against upstream.",
+      "items": [
+        {
+          "label": "Automatic",
+          "command": "table.pen",
+          "args": {
+            "color": null
+          },
+          "source": "office"
+        },
+        {
+          "label": "Theme Colors / Standard Colors / Recent Colors palette",
+          "command": "table.pen",
+          "kind": "palette",
+          "source": "office"
+        },
+        {
+          "label": "More Colors…",
+          "command": "table.pen",
+          "kind": "moreColors",
+          "source": "office"
+        }
+      ]
+    },
+    "table-design.borders.border-painter": {
+      "note": "U:quill/table_misc: table.borderPainter (wordcraft specs.rs): the table's borders drawn with the pen (a table.borders call), as wordcraft's does; Word turns a painting cursor on instead."
+    },
+    "table-design.borders.borders.view-gridlines": {
+      "note": "U:quill/table_misc: table.viewGridlines (wordcraft cmd/view.rs): the outlines of table cells, dashed and light, on screen only (the display list, never print or export)."
+    },
+    "table-layout.table.view-gridlines": {
+      "note": "U:quill/table_misc: table.viewGridlines (wordcraft cmd/view.rs): the outlines of table cells, dashed and light, on screen only (the display list, never print or export)."
+    },
+    "table-layout.alignment.cell-margins": {
+      "note": "U:quill/table_misc: table.cellMargins and dialog.tableCellMargins (wordcraft specs.rs, forms.rs): the table's default cell margins in points. Not offered: Allow spacing between cells and Automatically resize to fit contents (no engine upstream)."
+    },
+    "references.research.search": {
+      "note": "U:quill/references: hidden: Search (the Researcher's web search) needs an online service and has no engine upstream."
+    },
+    "references.research.researcher": {
+      "note": "U:quill/references: hidden: references.researcher is catalogued upstream with no engine (it needs an online research service)."
+    },
+    "mailings.start-mail-merge.start-mail-merge.step-by-step-mail-merge-wizard": {
+      "note": "U:quill/mailings: hidden: the Step-by-Step Mail Merge Wizard pane has no upstream engine; the Mailings ribbon does each step (Start Mail Merge, Select Recipients, Insert Merge Field, Preview Results, Finish & Merge)."
+    },
+    "mailings.finish.finish-merge.print-documents": {
+      "dialog": "dialog.printRecords",
+      "note": "U:quill/mailings: mailings.printDocuments (wordcraft cmd/mailings.rs): the merge into a new document, as Finish & Merge makes it, and the Print page opened for it; dialog.printRecords asks which records (All, Current record, From and To)."
+    },
+    "mailings.finish.finish-merge.send-email-messages": {
+      "note": "U:quill/mailings: hidden: Send Email Messages needs a mail account and has no upstream engine (the merge makes documents, never mail)."
+    },
+    "view.dark-mode.switch-modes": {
+      "note": "U:quill/view: view.darkMode (wordcraft cmd/view.rs): the pages drawn dark with light text, on screen only; never printed or exported."
+    },
+    "view.window.full-screen": {
+      "note": "U:quill/view: view.fullScreen (wordcraft cmd/view.rs, F11): the window fills the screen through the window service (never in test runs); Esc leaves it."
+    },
+    "view.macros.macros.pause-recording": {
+      "note": "U:quill/view: upstream's recorder has no pause; hidden."
+    },
+    "developer.controls.group.group": {
+      "note": "U:quill/developer: hidden with Group: grouping content controls is not upstream (no engine)."
+    },
+    "developer.controls.group.ungroup": {
+      "note": "U:quill/developer: hidden with Group: grouping content controls is not upstream (no engine)."
+    },
+    "outlining.master-document.show-document": {
+      "note": "U:quill/outlining: hidden: master documents and subdocuments have no upstream engine (a document is one story here)."
+    },
+    "outlining.master-document.collapse-subdocuments": {
+      "note": "U:quill/outlining: hidden: master documents and subdocuments have no upstream engine (a document is one story here)."
+    },
+    "chart-format.arrange.wrap-text.edit-wrap-points": {
+      "note": "U:quill/chart: hidden: wrap points are not translated (Tight and Through use the object's rectangle)."
+    },
+    "chart-format.arrange.wrap-text.move-with-text": {
+      "note": "U:quill/chart: hidden: arrange.moveWithText needs the laid-out anchor offsets (see core/quill/commands/objects/arrange.mjs)."
+    },
+    "chart-format.arrange.wrap-text.fix-position-on-page": {
+      "note": "U:quill/chart: hidden: arrange.moveWithText needs the laid-out anchor offsets (see core/quill/commands/objects/arrange.mjs)."
+    },
+    "chart-format.arrange.align.use-alignment-guides": {
+      "note": "U:quill/chart: hidden: alignment guides are a drag aid of the page view, which does not draw them."
+    }
+  },
+  "dialogs": {
+    "dialog.printRecords": {
+      "id": "dialog.printRecords",
+      "title": "Merge to Printer",
+      "command": "mailings.printDocuments",
+      "tabs": [
+        {
+          "name": "Merge records",
+          "fields": [
+            {
+              "id": "choice",
+              "label": "Merge records",
+              "kind": "radio",
+              "options": [
+                {
+                  "value": "all",
+                  "label": "All"
+                },
+                {
+                  "value": "current",
+                  "label": "Current record"
+                },
+                {
+                  "value": "range",
+                  "label": "From:"
+                }
+              ]
+            },
+            {
+              "id": "from",
+              "label": "From:",
+              "kind": "text",
+              "visibleWhen": "choice==range"
+            },
+            {
+              "id": "to",
+              "label": "To:",
+              "kind": "text",
+              "visibleWhen": "choice==range"
+            }
+          ]
+        }
+      ],
+      "buttons": [
+        "OK",
+        "Cancel"
+      ],
+      "source": "upstream",
+      "sourceRef": "crates/ui-egui/src/dialogs/dispatch.rs:1383",
+      "openedBy": [
+        "mailings.printDocuments"
+      ],
+      "applies": "mailings.printDocuments"
+    },
+    "dialog.tableCellMargins": {
+      "tabs": [
+        {
+          "name": "Default cell margins",
+          "fields": [
+            {
+              "id": "top",
+              "label": "Top (pt):",
+              "kind": "number"
+            },
+            {
+              "id": "left",
+              "label": "Left (pt):",
+              "kind": "number"
+            },
+            {
+              "id": "bottom",
+              "label": "Bottom (pt):",
+              "kind": "number"
+            },
+            {
+              "id": "right",
+              "label": "Right (pt):",
+              "kind": "number"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "commands": {
+    "table.pen": {
+      "id": "table.pen",
+      "label": "Table Pen",
+      "location": "Table Design › Borders",
+      "args": [
+        "style",
+        "width",
+        "color"
+      ],
+      "paramsDoc": "{\"style\"?: none|single|double|dotted|dashed|dotDash|thick|triple|wave, \"width\"?: pt, \"color\"?: \"#RRGGBB\"|null}",
+      "summary": "Line Style, Line Weight, Pen Color (Table Design › Borders)"
+    },
+    "table.clearStyle": {
+      "id": "table.clearStyle",
+      "label": "Clear",
+      "location": "Table Design › Table Styles",
+      "args": [],
+      "paramsDoc": "{}",
+      "summary": "Clear (Table Design › Table Styles)"
+    }
+  }
+}

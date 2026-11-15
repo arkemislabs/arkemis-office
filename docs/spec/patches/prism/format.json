@@ -1,0 +1,1107 @@
+{
+ "controls": {
+  "home.paragraph.bullets": {
+   "items": [
+    {
+     "label": "None",
+     "command": "format.bullets",
+     "params": {
+      "on": false
+     },
+     "source": "upstream"
+    },
+    {
+     "label": "•  Bullet",
+     "command": "format.bullets",
+     "params": {
+      "on": true,
+      "char": "•"
+     },
+     "source": "upstream"
+    },
+    {
+     "label": "○  Bullet",
+     "command": "format.bullets",
+     "params": {
+      "on": true,
+      "char": "○"
+     },
+     "source": "upstream"
+    },
+    {
+     "label": "■  Bullet",
+     "command": "format.bullets",
+     "params": {
+      "on": true,
+      "char": "■"
+     },
+     "source": "upstream"
+    },
+    {
+     "label": "□  Bullet",
+     "command": "format.bullets",
+     "params": {
+      "on": true,
+      "char": "□"
+     },
+     "source": "upstream"
+    },
+    {
+     "label": "◆  Bullet",
+     "command": "format.bullets",
+     "params": {
+      "on": true,
+      "char": "◆"
+     },
+     "source": "upstream"
+    },
+    {
+     "label": "➢  Bullet",
+     "command": "format.bullets",
+     "params": {
+      "on": true,
+      "char": "➢"
+     },
+     "source": "upstream"
+    },
+    {
+     "label": "✓  Bullet",
+     "command": "format.bullets",
+     "params": {
+      "on": true,
+      "char": "✓"
+     },
+     "source": "upstream"
+    },
+    {
+     "label": "–  Bullet",
+     "command": "format.bullets",
+     "params": {
+      "on": true,
+      "char": "–"
+     },
+     "source": "upstream"
+    },
+    {
+     "label": "★  Bullet",
+     "command": "format.bullets",
+     "params": {
+      "on": true,
+      "char": "★"
+     },
+     "source": "upstream"
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "Bullets and Numbering…",
+     "command": null,
+     "params": null,
+     "dialog": "dialog.bullets",
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/home.rs:293",
+     "args": null
+    }
+   ],
+   "note": "U:prism/format: deckcraft opens dlg_bullets on the page this menu names ({tab}); dialog models do not receive the opener's args yet (design note U-prism-find--integrator--dialog-init-args) and the shell merges them into the submitted command, so the page comes from the current paragraph's list until then."
+  },
+  "home.paragraph.numbering": {
+   "items": [
+    {
+     "label": "None",
+     "command": "format.numbering",
+     "params": {
+      "on": false
+     },
+     "source": "upstream"
+    },
+    {
+     "label": "1. 2. 3.",
+     "command": "format.numbering",
+     "params": {
+      "on": true,
+      "scheme": "arabicPeriod"
+     },
+     "source": "upstream"
+    },
+    {
+     "label": "1) 2) 3)",
+     "command": "format.numbering",
+     "params": {
+      "on": true,
+      "scheme": "arabicParenR"
+     },
+     "source": "upstream"
+    },
+    {
+     "label": "I. II. III.",
+     "command": "format.numbering",
+     "params": {
+      "on": true,
+      "scheme": "romanUcPeriod"
+     },
+     "source": "upstream"
+    },
+    {
+     "label": "i. ii. iii.",
+     "command": "format.numbering",
+     "params": {
+      "on": true,
+      "scheme": "romanLcPeriod"
+     },
+     "source": "upstream"
+    },
+    {
+     "label": "A. B. C.",
+     "command": "format.numbering",
+     "params": {
+      "on": true,
+      "scheme": "alphaUcPeriod"
+     },
+     "source": "upstream"
+    },
+    {
+     "label": "a) b) c)",
+     "command": "format.numbering",
+     "params": {
+      "on": true,
+      "scheme": "alphaLcParenR"
+     },
+     "source": "upstream"
+    },
+    {
+     "label": "a. b. c.",
+     "command": "format.numbering",
+     "params": {
+      "on": true,
+      "scheme": "alphaLcPeriod"
+     },
+     "source": "upstream"
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "Bullets and Numbering…",
+     "command": null,
+     "params": null,
+     "dialog": "dialog.bullets",
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/home.rs:323",
+     "args": null
+    }
+   ],
+   "note": "U:prism/format: deckcraft opens dlg_bullets on the page this menu names ({tab}); dialog models do not receive the opener's args yet (design note U-prism-find--integrator--dialog-init-args) and the shell merges them into the submitted command, so the page comes from the current paragraph's list until then."
+  }
+ },
+ "dialogs": {
+  "dialog.font": {
+   "note": "U:prism/format: deckcraft dialogs/font.rs font_dialog (family, size, bold/italic, underline, color, strikethrough, baseline, caps, spacing with its presets, the AaBbCcDd sample; one OK = one undo step through format.fontDialog), laid out on PowerPoint's two pages. PowerPoint's Font style list sets Bold and Italic together; Offset is the baseline fraction format.fontDialog takes. Underline color, Equalize Character Height and Kerning are not offered: format.fontDialog has no such fields.",
+   "tabs": [
+    {
+     "name": "Font",
+     "fields": [
+      {
+       "id": "family",
+       "label": "Latin text font:",
+       "kind": "select",
+       "options": [],
+       "param": "family",
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/dialogs/font.rs:29"
+      },
+      {
+       "id": "style",
+       "label": "Font style:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "regular",
+         "label": "Regular"
+        },
+        {
+         "value": "bold",
+         "label": "Bold"
+        },
+        {
+         "value": "italic",
+         "label": "Italic"
+        },
+        {
+         "value": "boldItalic",
+         "label": "Bold Italic"
+        }
+       ],
+       "param": "bold, italic",
+       "source": "office",
+       "sourceRef": "office: Microsoft PowerPoint Font dialog; deckcraft font.rs:46 Bold / Italic"
+      },
+      {
+       "id": "size",
+       "label": "Size:",
+       "kind": "number",
+       "options": [],
+       "default": 18,
+       "min": 1,
+       "max": 4000,
+       "step": 1,
+       "unit": "pt",
+       "param": "size",
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/dialogs/font.rs:44"
+      },
+      {
+       "id": "color",
+       "label": "Font color",
+       "kind": "color",
+       "options": [
+        {
+         "value": "auto",
+         "label": "Automatic"
+        }
+       ],
+       "param": "color",
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/dialogs/font.rs:60"
+      },
+      {
+       "id": "underline",
+       "label": "Underline style",
+       "kind": "select",
+       "options": [
+        {
+         "value": "none",
+         "label": "(none)"
+        },
+        {
+         "value": "sng",
+         "label": "Single"
+        },
+        {
+         "value": "dbl",
+         "label": "Double"
+        },
+        {
+         "value": "heavy",
+         "label": "Heavy"
+        },
+        {
+         "value": "dotted",
+         "label": "Dotted"
+        },
+        {
+         "value": "dash",
+         "label": "Dash"
+        },
+        {
+         "value": "wavy",
+         "label": "Wavy"
+        }
+       ],
+       "param": "underline",
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/dialogs/font.rs:54"
+      },
+      {
+       "id": "strikeSingle",
+       "label": "Strikethrough",
+       "kind": "checkbox",
+       "options": [],
+       "source": "office",
+       "sourceRef": "office: Microsoft PowerPoint Font dialog › Effects"
+      },
+      {
+       "id": "strikeDouble",
+       "label": "Double Strikethrough",
+       "kind": "checkbox",
+       "options": [],
+       "source": "office",
+       "sourceRef": "office: Microsoft PowerPoint Font dialog › Effects"
+      },
+      {
+       "id": "superscript",
+       "label": "Superscript",
+       "kind": "checkbox",
+       "options": [],
+       "source": "office",
+       "sourceRef": "office: Microsoft PowerPoint Font dialog › Effects"
+      },
+      {
+       "id": "subscript",
+       "label": "Subscript",
+       "kind": "checkbox",
+       "options": [],
+       "source": "office",
+       "sourceRef": "office: Microsoft PowerPoint Font dialog › Effects"
+      },
+      {
+       "id": "smallCaps",
+       "label": "Small Caps",
+       "kind": "checkbox",
+       "options": [],
+       "source": "office",
+       "sourceRef": "office: Microsoft PowerPoint Font dialog › Effects"
+      },
+      {
+       "id": "allCaps",
+       "label": "All Caps",
+       "kind": "checkbox",
+       "options": [],
+       "source": "office",
+       "sourceRef": "office: Microsoft PowerPoint Font dialog › Effects"
+      },
+      {
+       "id": "offset",
+       "label": "Offset:",
+       "kind": "number",
+       "options": [],
+       "min": -100,
+       "max": 100,
+       "step": 1,
+       "unit": "%",
+       "param": "baseline (fraction)",
+       "visibleWhen": "baseline != none",
+       "source": "office",
+       "sourceRef": "office: Microsoft PowerPoint Font dialog (Offset); format.rs baseline fraction"
+      },
+      {
+       "id": "preview",
+       "label": "",
+       "kind": "preview",
+       "options": [],
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/dialogs/font.rs:108"
+      }
+     ]
+    },
+    {
+     "name": "Character Spacing",
+     "fields": [
+      {
+       "id": "spacingPreset",
+       "label": "Spacing:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "-3",
+         "label": "Very Tight"
+        },
+        {
+         "value": "-1.5",
+         "label": "Tight"
+        },
+        {
+         "value": "0",
+         "label": "Normal"
+        },
+        {
+         "value": "3",
+         "label": "Loose"
+        },
+        {
+         "value": "6",
+         "label": "Very Loose"
+        },
+        {
+         "value": "custom",
+         "label": "Custom"
+        }
+       ],
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/dialogs/font.rs:78"
+      },
+      {
+       "id": "spacing",
+       "label": "By:",
+       "kind": "number",
+       "options": [],
+       "min": -100,
+       "max": 400,
+       "step": 0.1,
+       "unit": "pt",
+       "param": "spacing",
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/dialogs/font.rs:76"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ]
+  },
+  "dialog.paragraph": {
+   "note": "U:prism/format: deckcraft dialogs/paragraph.rs (Alignment; Indentation before text, special and by in inches; Spacing before/after in pt; Line spacing presets Single / 1.5 lines / Double / Multiple / Exactly with At; Tabs…), one OK = format.paragraphDialog. PowerPoint's Asian Typography page is not offered: format.paragraphDialog has no such fields.",
+   "tabs": [
+    {
+     "name": "Indents and Spacing",
+     "fields": [
+      {
+       "id": "align",
+       "label": "Alignment:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "left",
+         "label": "Left"
+        },
+        {
+         "value": "center",
+         "label": "Centered"
+        },
+        {
+         "value": "right",
+         "label": "Right"
+        },
+        {
+         "value": "justify",
+         "label": "Justified"
+        },
+        {
+         "value": "justLow",
+         "label": "Justify Low"
+        },
+        {
+         "value": "distributed",
+         "label": "Distributed"
+        }
+       ],
+       "param": "align",
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/dialogs/paragraph.rs:65"
+      },
+      {
+       "id": "before",
+       "label": "Before text:",
+       "kind": "number",
+       "options": [],
+       "min": 0,
+       "max": 22,
+       "step": 0.1,
+       "unit": "in",
+       "param": "indentLeft (pt)",
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/dialogs/paragraph.rs:80"
+      },
+      {
+       "id": "after",
+       "label": "After text:",
+       "kind": "number",
+       "options": [],
+       "min": 0,
+       "max": 22,
+       "step": 0.1,
+       "unit": "in",
+       "param": "indentRight (pt)",
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/dialogs/paragraph.rs:83"
+      },
+      {
+       "id": "special",
+       "label": "Special:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "none",
+         "label": "(none)"
+        },
+        {
+         "value": "first",
+         "label": "First line"
+        },
+        {
+         "value": "hanging",
+         "label": "Hanging"
+        }
+       ],
+       "param": "special",
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/dialogs/paragraph.rs:88"
+      },
+      {
+       "id": "by",
+       "label": "By:",
+       "kind": "number",
+       "options": [],
+       "min": 0,
+       "max": 22,
+       "step": 0.1,
+       "unit": "in",
+       "param": "specialBy (pt)",
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/dialogs/paragraph.rs:90"
+      },
+      {
+       "id": "spaceBefore",
+       "label": "Spacing before:",
+       "kind": "number",
+       "options": [],
+       "min": 0,
+       "max": 1584,
+       "step": 6,
+       "unit": "pt",
+       "param": "spaceBefore",
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/dialogs/paragraph.rs:95"
+      },
+      {
+       "id": "spaceAfter",
+       "label": "After:",
+       "kind": "number",
+       "options": [],
+       "min": 0,
+       "max": 1584,
+       "step": 6,
+       "unit": "pt",
+       "param": "spaceAfter",
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/dialogs/paragraph.rs:98"
+      },
+      {
+       "id": "lineKind",
+       "label": "Line Spacing:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "single",
+         "label": "Single"
+        },
+        {
+         "value": "onePointFive",
+         "label": "1.5 lines"
+        },
+        {
+         "value": "double",
+         "label": "Double"
+        },
+        {
+         "value": "multiple",
+         "label": "Multiple"
+        },
+        {
+         "value": "exactly",
+         "label": "Exactly"
+        }
+       ],
+       "param": "lineSpacing | lineSpacingPt",
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/dialogs/paragraph.rs:107"
+      },
+      {
+       "id": "lineValue",
+       "label": "At:",
+       "kind": "number",
+       "options": [],
+       "min": 0,
+       "max": 1584,
+       "step": 0.1,
+       "param": "lineSpacing / lineSpacingPt",
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/dialogs/paragraph.rs:122"
+      },
+      {
+       "id": "tabs",
+       "label": "Tabs…",
+       "kind": "button",
+       "options": [],
+       "dialog": "dialog.tabs",
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/dialogs/paragraph.rs:136"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ]
+  },
+  "dialog.tabs": {
+   "note": "U:prism/format: deckcraft dialogs/tabs.rs (Default tab stops; the stops list with each stop's alignment and Clear; Tab stop position and Alignment with Set; Clear All), OK = format.tabs {set, defaultTab}. Positions in inches.",
+   "tabs": [
+    {
+     "name": "Tabs",
+     "fields": [
+      {
+       "id": "stops",
+       "label": "Tab stop position:",
+       "kind": "list",
+       "options": [],
+       "param": "set: [{pos, align}]",
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/dialogs/tabs.rs:29"
+      },
+      {
+       "id": "defaultTab",
+       "label": "Default tab stops:",
+       "kind": "number",
+       "options": [],
+       "default": 1,
+       "min": 0.02,
+       "max": 22,
+       "step": 0.1,
+       "unit": "in",
+       "param": "defaultTab (pt)",
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/dialogs/tabs.rs:27"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ]
+  },
+  "dialog.bullets": {
+   "note": "U:prism/format: deckcraft dialogs/body.rs:367 dlg_bullets (Bulleted: nine characters and a custom one; Numbered: seven schemes and Start at; Size % of text and Color on both; the None tile, first in the style grid as in PowerPoint, removes the list). PowerPoint's Picture… and Customize… (picture bullets, any symbol) are not offered: format.bullets takes a character only; the Custom character field takes any symbol.",
+   "tabs": [
+    {
+     "name": "Bulleted",
+     "fields": [
+      {
+       "id": "char",
+       "label": "Bullet style",
+       "kind": "radio",
+       "options": [
+        {
+         "value": "•",
+         "label": "•"
+        },
+        {
+         "value": "○",
+         "label": "○"
+        },
+        {
+         "value": "■",
+         "label": "■"
+        },
+        {
+         "value": "□",
+         "label": "□"
+        },
+        {
+         "value": "◆",
+         "label": "◆"
+        },
+        {
+         "value": "➢",
+         "label": "➢"
+        },
+        {
+         "value": "✓",
+         "label": "✓"
+        },
+        {
+         "value": "–",
+         "label": "–"
+        },
+        {
+         "value": "★",
+         "label": "★"
+        }
+       ],
+       "param": "char",
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/dialogs/body.rs:393"
+      },
+      {
+       "id": "custom",
+       "label": "Custom character:",
+       "kind": "text",
+       "options": [],
+       "param": "char",
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/dialogs/body.rs:410"
+      },
+      {
+       "id": "size",
+       "label": "Size:",
+       "kind": "number",
+       "options": [],
+       "default": 100,
+       "min": 25,
+       "max": 400,
+       "step": 5,
+       "unit": "% of text",
+       "param": "size",
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/dialogs/body.rs:414"
+      },
+      {
+       "id": "color",
+       "label": "Color:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "",
+         "label": "Automatic"
+        },
+        {
+         "value": "tx1",
+         "label": "Text"
+        },
+        {
+         "value": "accent1",
+         "label": "Accent 1"
+        },
+        {
+         "value": "accent2",
+         "label": "Accent 2"
+        },
+        {
+         "value": "accent3",
+         "label": "Accent 3"
+        },
+        {
+         "value": "accent4",
+         "label": "Accent 4"
+        },
+        {
+         "value": "accent5",
+         "label": "Accent 5"
+        },
+        {
+         "value": "accent6",
+         "label": "Accent 6"
+        }
+       ],
+       "param": "color",
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/dialogs/body.rs:428"
+      }
+     ]
+    },
+    {
+     "name": "Numbered",
+     "fields": [
+      {
+       "id": "scheme",
+       "label": "Numbering style",
+       "kind": "radio",
+       "options": [
+        {
+         "value": "arabicPeriod",
+         "label": "1. 2. 3."
+        },
+        {
+         "value": "arabicParenR",
+         "label": "1) 2) 3)"
+        },
+        {
+         "value": "romanUcPeriod",
+         "label": "I. II. III."
+        },
+        {
+         "value": "romanLcPeriod",
+         "label": "i. ii. iii."
+        },
+        {
+         "value": "alphaUcPeriod",
+         "label": "A. B. C."
+        },
+        {
+         "value": "alphaLcParenR",
+         "label": "a) b) c)"
+        },
+        {
+         "value": "alphaLcPeriod",
+         "label": "a. b. c."
+        }
+       ],
+       "param": "scheme",
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/dialogs/body.rs:384"
+      },
+      {
+       "id": "start",
+       "label": "Start at:",
+       "kind": "number",
+       "options": [],
+       "default": 1,
+       "min": 1,
+       "max": 32767,
+       "step": 1,
+       "param": "start",
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/dialogs/body.rs:412"
+      },
+      {
+       "id": "size",
+       "label": "Size:",
+       "kind": "number",
+       "options": [],
+       "default": 100,
+       "min": 25,
+       "max": 400,
+       "step": 5,
+       "unit": "% of text",
+       "param": "size",
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/dialogs/body.rs:414"
+      },
+      {
+       "id": "color",
+       "label": "Color:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "",
+         "label": "Automatic"
+        },
+        {
+         "value": "tx1",
+         "label": "Text"
+        },
+        {
+         "value": "accent1",
+         "label": "Accent 1"
+        },
+        {
+         "value": "accent2",
+         "label": "Accent 2"
+        },
+        {
+         "value": "accent3",
+         "label": "Accent 3"
+        },
+        {
+         "value": "accent4",
+         "label": "Accent 4"
+        },
+        {
+         "value": "accent5",
+         "label": "Accent 5"
+        },
+        {
+         "value": "accent6",
+         "label": "Accent 6"
+        }
+       ],
+       "param": "color",
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/dialogs/body.rs:428"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ]
+  },
+  "dialog.columns": {
+   "note": "U:prism/format: deckcraft dialogs/columns.rs (Number 1–16, Spacing in inches 0–22), OK = format.columns {count, spacing}.",
+   "tabs": [
+    {
+     "name": "Columns",
+     "fields": [
+      {
+       "id": "count",
+       "label": "Number:",
+       "kind": "number",
+       "options": [],
+       "default": 1,
+       "min": 1,
+       "max": 16,
+       "step": 1,
+       "param": "count",
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/dialogs/columns.rs:35"
+      },
+      {
+       "id": "spacing",
+       "label": "Spacing:",
+       "kind": "number",
+       "options": [],
+       "default": 0,
+       "min": 0,
+       "max": 22,
+       "step": 0.1,
+       "unit": "in",
+       "param": "spacing (pt)",
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/dialogs/columns.rs:36"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ]
+  },
+  "dialog.language": {
+   "note": "U:prism/format: deckcraft dialogs/body.rs:1090 dlg_language (Apply to: Selected text / Whole presentation; the language list of canvas/squiggles.rs LANGS; Do not check spelling or grammar), OK = format.language or format.languageAll. PowerPoint's Default… (default language for new presentations, an Office setting) is not offered.",
+   "tabs": [
+    {
+     "name": "Language",
+     "fields": [
+      {
+       "id": "scope",
+       "label": "Apply to:",
+       "kind": "radio",
+       "options": [
+        {
+         "value": "sel",
+         "label": "Selected text"
+        },
+        {
+         "value": "all",
+         "label": "Whole presentation"
+        }
+       ],
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/dialogs/body.rs:1099"
+      },
+      {
+       "id": "lang",
+       "label": "Mark selected text as:",
+       "kind": "list",
+       "options": [
+        {
+         "value": "en-US",
+         "label": "English (United States)"
+        },
+        {
+         "value": "en-GB",
+         "label": "English (United Kingdom)"
+        },
+        {
+         "value": "en-AU",
+         "label": "English (Australia)"
+        },
+        {
+         "value": "en-CA",
+         "label": "English (Canada)"
+        },
+        {
+         "value": "es-ES",
+         "label": "Español (España)"
+        },
+        {
+         "value": "es-MX",
+         "label": "Español (México)"
+        },
+        {
+         "value": "fr-FR",
+         "label": "Français (France)"
+        },
+        {
+         "value": "fr-CA",
+         "label": "Français (Canada)"
+        },
+        {
+         "value": "de-DE",
+         "label": "Deutsch (Deutschland)"
+        },
+        {
+         "value": "de-CH",
+         "label": "Deutsch (Schweiz)"
+        },
+        {
+         "value": "it-IT",
+         "label": "Italiano"
+        },
+        {
+         "value": "nl-NL",
+         "label": "Nederlands"
+        },
+        {
+         "value": "pt-BR",
+         "label": "Português (Brasil)"
+        },
+        {
+         "value": "pt-PT",
+         "label": "Português (Portugal)"
+        },
+        {
+         "value": "pl-PL",
+         "label": "Polski"
+        },
+        {
+         "value": "sv-SE",
+         "label": "Svenska"
+        },
+        {
+         "value": "da-DK",
+         "label": "Dansk"
+        },
+        {
+         "value": "nb-NO",
+         "label": "Norsk bokmål"
+        },
+        {
+         "value": "fi-FI",
+         "label": "Suomi"
+        },
+        {
+         "value": "cs-CZ",
+         "label": "Čeština"
+        },
+        {
+         "value": "uk-UA",
+         "label": "Українська"
+        },
+        {
+         "value": "ru-RU",
+         "label": "Русский"
+        },
+        {
+         "value": "be-BY",
+         "label": "Беларуская"
+        },
+        {
+         "value": "tr-TR",
+         "label": "Türkçe"
+        },
+        {
+         "value": "el-GR",
+         "label": "Ελληνικά"
+        },
+        {
+         "value": "ja-JP",
+         "label": "日本語"
+        },
+        {
+         "value": "zh-CN",
+         "label": "中文(中国)"
+        },
+        {
+         "value": "ko-KR",
+         "label": "한국어"
+        },
+        {
+         "value": "ar-SA",
+         "label": "العربية"
+        },
+        {
+         "value": "he-IL",
+         "label": "עברית"
+        }
+       ],
+       "param": "lang",
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/canvas/squiggles.rs:209"
+      },
+      {
+       "id": "noProof",
+       "label": "Do not check spelling or grammar",
+       "kind": "checkbox",
+       "options": [],
+       "param": "noProof",
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/dialogs/body.rs:1127"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ]
+  }
+ }
+}

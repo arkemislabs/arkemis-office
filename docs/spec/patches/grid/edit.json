@@ -1,0 +1,133 @@
+{
+  "controls": {
+    "home.clipboard.paste.picture": {
+      "command": "edit.pastePicture",
+      "params": null,
+      "note": "U:grid/main: Paste > Picture puts what was copied on the sheet as a floating picture: the picture made by Copy as Picture, else a picture of the copied cells (drawn by the worksheet's own painter through the host's renderRange). Not in gridcraft, which copies cell data and HTML (not checked against upstream)."
+    },
+    "home.clipboard.paste.linked-picture": {
+      "command": "edit.pasteLinkedPicture",
+      "params": null,
+      "note": "U:grid/main: Paste > Linked Picture puts a picture of the copied cells on the sheet that the sheet draws live from them, so it follows the cells as they change. Not in gridcraft (not checked against upstream). Limit: a file keeps only a still picture, so a linked picture saved to .xlsx and reopened is a plain picture."
+    },
+    "home.clipboard.copy.copy-as-picture": {
+      "command": "edit.copyPicture",
+      "params": null,
+      "note": "U:grid/main: Copy as Picture draws the cells as shown on screen to a PNG (fonts, fills, borders, number formats, merges, conditional formats, pictures) that Paste > Picture puts on the sheet; the clipboard also carries the cells' text and the picture as <img> for other applications. Excel's Copy Picture box (As shown when printed, Bitmap) is not built: the picture is always as shown on screen. Not in gridcraft (not checked against upstream)."
+    },
+    "home.clipboard.formatPainter": {
+      "params": null,
+      "note": "A click runs edit.formatPainter {} (on, or off when on); a double-click runs {sticky: true} (gridcraft ribbon/home.rs:94)."
+    }
+  },
+  "commands": {
+    "edit.pastePicture": {"args": [], "sourceRef": "office:Excel Paste > Picture", "summary": "Paste the copied cells as a picture object."},
+    "edit.pasteLinkedPicture": {"args": [], "sourceRef": "office:Excel Paste > Linked Picture", "summary": "Paste the copied cells as a picture that follows them."},
+    "edit.copyPicture": {"args": [], "sourceRef": "office:Excel Copy > Copy as Picture", "summary": "Copy the selection as a picture."}
+  },
+  "dialogs": {
+    "dialog.find": {
+      "buttons": ["Close"],
+      "note": "Upstream (gridcraft dialogs/find.rs) shows the options inline (so Excel's Options >> toggle is left out) and the action buttons in a row under them: Replace All and Replace on the Replace tab, Find All and Find Next on both; the dialog stays open while they run. Format… (search by format) is not translated.",
+      "tabs": [
+        {"name": "Find", "fields": [
+          {"id": "what", "label": "Find what:", "kind": "text", "options": []},
+          {"id": "within", "label": "Within:", "kind": "select", "options": [{"value": "sheet", "label": "Sheet"}, {"value": "workbook", "label": "Workbook"}]},
+          {"id": "search", "label": "Search:", "kind": "select", "options": [{"value": "rows", "label": "By Rows"}, {"value": "columns", "label": "By Columns"}], "source": "office"},
+          {"id": "lookIn", "label": "Look in:", "kind": "select", "options": [{"value": "formulas", "label": "Formulas"}, {"value": "values", "label": "Values"}, {"value": "notes", "label": "Notes"}, {"value": "comments", "label": "Comments"}], "source": "office"},
+          {"id": "matchCase", "label": "Match case", "kind": "checkbox", "options": []},
+          {"id": "wholeCell", "label": "Match entire cell contents", "kind": "checkbox", "options": []},
+          {"id": "findAll", "label": "Find All", "kind": "button", "options": []},
+          {"id": "findNext", "label": "Find Next", "kind": "button", "options": []},
+          {"id": "results", "label": "Found", "kind": "list", "options": []}
+        ]},
+        {"name": "Replace", "fields": [
+          {"id": "what", "label": "Find what:", "kind": "text", "options": []},
+          {"id": "with", "label": "Replace with:", "kind": "text", "options": []},
+          {"id": "within", "label": "Within:", "kind": "select", "options": [{"value": "sheet", "label": "Sheet"}, {"value": "workbook", "label": "Workbook"}]},
+          {"id": "search", "label": "Search:", "kind": "select", "options": [{"value": "rows", "label": "By Rows"}, {"value": "columns", "label": "By Columns"}], "source": "office"},
+          {"id": "matchCase", "label": "Match case", "kind": "checkbox", "options": []},
+          {"id": "wholeCell", "label": "Match entire cell contents", "kind": "checkbox", "options": []},
+          {"id": "replaceAll", "label": "Replace All", "kind": "button", "options": []},
+          {"id": "replace", "label": "Replace", "kind": "button", "options": []},
+          {"id": "findAll", "label": "Find All", "kind": "button", "options": []},
+          {"id": "findNext", "label": "Find Next", "kind": "button", "options": []},
+          {"id": "results", "label": "Found", "kind": "list", "options": []}
+        ]}
+      ]
+    },
+    "dialog.goTo": {
+      "buttons": ["OK", "Cancel"],
+      "note": "gridcraft dialogs/find.rs `go_to`: the names and recent references, Reference, Special… (opens Go To Special), OK / Cancel.",
+      "tabs": [{"name": "", "fields": [
+        {"id": "entries", "label": "Go to:", "kind": "list", "options": []},
+        {"id": "reference", "label": "Reference:", "kind": "text", "options": []},
+        {"id": "special", "label": "Special…", "kind": "button", "options": [], "dialog": "dialog.goToSpecial"}
+      ]}]
+    },
+    "dialog.goToSpecial": {
+      "note": "Excel's layout: two columns of kinds; Numbers / Text / Logicals / Errors under Constants and Formulas; Direct only / All levels under Precedents and Dependents; All / Same under Data validation. Objects is left out (the grid selection holds cells).",
+      "tabs": [
+        {"name": "", "fields": [
+          {"id": "kind", "label": "Select", "kind": "radio", "options": [
+            {"value": "notes", "label": "Notes"},
+            {"value": "constants", "label": "Constants"},
+            {"value": "formulas", "label": "Formulas"},
+            {"value": "blanks", "label": "Blanks"},
+            {"value": "currentRegion", "label": "Current region"},
+            {"value": "currentArray", "label": "Current array", "source": "office"},
+            {"value": "rowDifferences", "label": "Row differences", "source": "office"},
+            {"value": "columnDifferences", "label": "Column differences", "source": "office"},
+            {"value": "precedents", "label": "Precedents", "source": "office"},
+            {"value": "dependents", "label": "Dependents", "source": "office"},
+            {"value": "lastCell", "label": "Last cell"},
+            {"value": "visible", "label": "Visible cells only"},
+            {"value": "conditionalFormats", "label": "Conditional formats"},
+            {"value": "dataValidation", "label": "Data validation"},
+            {"value": "errors", "label": "Errors"},
+            {"value": "numbers", "label": "Numbers"},
+            {"value": "text", "label": "Text"}
+          ]},
+          {"id": "typeNumbers", "label": "Numbers", "kind": "checkbox", "options": [], "source": "office", "visibleWhen": "kind in constants|formulas"},
+          {"id": "typeText", "label": "Text", "kind": "checkbox", "options": [], "source": "office", "visibleWhen": "kind in constants|formulas"},
+          {"id": "typeLogicals", "label": "Logicals", "kind": "checkbox", "options": [], "source": "office", "visibleWhen": "kind in constants|formulas"},
+          {"id": "typeErrors", "label": "Errors", "kind": "checkbox", "options": [], "source": "office", "visibleWhen": "kind in constants|formulas"},
+          {"id": "levels", "label": "Levels", "kind": "radio", "options": [{"value": "direct", "label": "Direct only"}, {"value": "all", "label": "All levels"}], "source": "office", "visibleWhen": "kind in precedents|dependents"},
+          {"id": "dvScope", "label": "Data validation", "kind": "radio", "options": [{"value": "all", "label": "All"}, {"value": "same", "label": "Same"}], "source": "office", "visibleWhen": "kind == dataValidation"}
+        ]}
+      ]
+    },
+    "dialog.pasteSpecial": {
+      "note": "gridcraft dialogs/paste.rs: Paste and Operation radio groups, Skip blanks, Transpose, Paste Link. Excel's All using Source theme and All merging conditional formats are translated too.",
+      "tabs": [
+        {"name": "", "fields": [
+          {"id": "what", "label": "Paste", "kind": "radio", "options": [
+            {"value": "all", "label": "All"},
+            {"value": "formulas", "label": "Formulas"},
+            {"value": "values", "label": "Values"},
+            {"value": "formats", "label": "Formats"},
+            {"value": "comments", "label": "Comments and notes"},
+            {"value": "validation", "label": "Validation"},
+            {"value": "allUsingSourceTheme", "label": "All using Source theme", "source": "office"},
+            {"value": "allExceptBorders", "label": "All except borders"},
+            {"value": "columnWidths", "label": "Column widths"},
+            {"value": "formulasAndNumberFormats", "label": "Formulas and number formats"},
+            {"value": "valuesAndNumberFormats", "label": "Values and number formats"},
+            {"value": "allMergingConditionalFormats", "label": "All merging conditional formats", "source": "office"}
+          ]},
+          {"id": "operation", "label": "Operation", "kind": "radio", "options": [
+            {"value": "none", "label": "None"}, {"value": "add", "label": "Add"}, {"value": "subtract", "label": "Subtract"},
+            {"value": "multiply", "label": "Multiply"}, {"value": "divide", "label": "Divide"}
+          ]},
+          {"id": "skipBlanks", "label": "Skip blanks", "kind": "checkbox", "options": []},
+          {"id": "transpose", "label": "Transpose", "kind": "checkbox", "options": []}
+        ]}
+      ]
+    },
+    "dialog.pickList": {
+      "buttons": ["OK", "Cancel"],
+      "note": "Excel shows the list under the cell (Alt+Down); here the same list in a small dialog: pick a value, OK enters it (cell.set). Double-clicking an entry enters it too.",
+      "tabs": [{"name": "", "fields": [{"id": "value", "label": "Pick from the column", "kind": "list", "options": []}]}]
+    }
+  }
+}

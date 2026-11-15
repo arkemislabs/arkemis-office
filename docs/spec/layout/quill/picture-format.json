@@ -1,0 +1,54 @@
+{
+  "tab": "picture-format",
+  "source": "wordcraft aadb077e072b7de05f724e359d8db82e151f125c crates/ui-egui/src/ribbon/picture.rs (picture_format: Adjust large menus + Change/Reset stack, Picture Styles large Styles/Border, Arrange Position/Wrap + Rotate/Align/Group stack, Size rows W/H/rotation, Crop + L/T/R/B + Reset, Alt), shape.rs alt_text_group; Remove Background, Artistic Effects, Compress, Picture Effects/Layout, Bring Forward/Send Backward/Selection Pane placed as in Word for Windows",
+  "groups": {
+    "adjust": {
+      "collapseOrder": 3,
+      "layout": [
+        {"large": "picture-format.adjust.remove-background"},
+        {"large": "picture-format.adjust.corrections"},
+        {"large": "picture-format.adjust.color"},
+        {"large": "picture-format.adjust.icon-color"},
+        {"large": "picture-format.adjust.artistic-effects"},
+        {"large": "picture-format.adjust.transparency"},
+        {"stack": ["picture-format.adjust.compress-pictures", "picture-format.adjust.change-picture", "picture-format.adjust.reset-picture"]}
+      ]
+    },
+    "picture-styles": {
+      "collapseOrder": 1,
+      "layout": [
+        {"large": "picture-format.picture-styles.styles"},
+        {"large": "picture-format.picture-styles.picture-border"},
+        {"large": "picture-format.picture-styles.picture-effects"},
+        {"large": "picture-format.picture-styles.picture-layout"}
+      ]
+    },
+    "accessibility": {
+      "collapseOrder": 2,
+      "layout": [
+        {"large": "picture-format.accessibility.alt-text"}
+      ]
+    },
+    "arrange": {
+      "collapseOrder": 4,
+      "layout": [
+        {"large": "picture-format.arrange.position"},
+        {"large": "picture-format.arrange.wrap-text"},
+        {"stack": ["picture-format.arrange.bring-forward", "picture-format.arrange.send-backward", "picture-format.arrange.selection-pane"]},
+        {"stack": ["picture-format.arrange.rotate", "picture-format.arrange.align", "picture-format.arrange.group"]}
+      ]
+    },
+    "size": {
+      "collapseOrder": 5,
+      "launcher": {"dialog": "dialog.pictureSize", "args": {"tab": "Size"}},
+      "layout": [
+        {"rows": [
+          ["picture-format.size.width", "picture-format.size.height", "picture-format.size.rotation"],
+          ["picture-format.size.crop", "picture-format.size.crop-l-t-r-b", "picture-format.size.reset-crop"],
+          ["picture-format.size.alt"]
+        ]}
+      ],
+      "widths": {"picture-format.size.width": 56, "picture-format.size.height": 56, "picture-format.size.rotation": 48, "picture-format.size.crop-l-t-r-b": 48, "picture-format.size.alt": 120}
+    }
+  }
+}

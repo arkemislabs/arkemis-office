@@ -1,0 +1,3594 @@
+{
+  "controls": {
+    "chartDesign.layouts.addElement.axes": {
+      "kind": "dropdown",
+      "command": null,
+      "items": [
+        {
+          "id": "chartDesign.layouts.addElement.axes.primary-horizontal",
+          "label": "Primary Horizontal",
+          "command": "chart.addElement",
+          "params": {
+            "element": "axes",
+            "axis": "horizontal"
+          }
+        },
+        {
+          "id": "chartDesign.layouts.addElement.axes.primary-vertical",
+          "label": "Primary Vertical",
+          "command": "chart.addElement",
+          "params": {
+            "element": "axes",
+            "axis": "vertical"
+          }
+        }
+      ],
+      "note": "U:grid/charts-objects: Axes: shows or hides the labels of the horizontal and vertical axis (the horizontal axis of a bar chart is its value axis); Excel's More Axis Options and the secondary axes are not offered. Not in gridcraft; not checked against upstream.",
+      "icon": "ce-axes"
+    },
+    "chartDesign.layouts.addElement.data-table": {
+      "kind": "dropdown",
+      "command": null,
+      "items": [
+        {
+          "id": "chartDesign.layouts.addElement.data-table.none",
+          "label": "None",
+          "command": "chart.addElement",
+          "params": {
+            "element": "dataTable",
+            "on": false
+          }
+        },
+        {
+          "id": "chartDesign.layouts.addElement.data-table.with-legend-keys",
+          "label": "With Legend Keys",
+          "command": "chart.addElement",
+          "params": {
+            "element": "dataTable",
+            "keys": true
+          }
+        },
+        {
+          "id": "chartDesign.layouts.addElement.data-table.no-legend-keys",
+          "label": "No Legend Keys",
+          "command": "chart.addElement",
+          "params": {
+            "element": "dataTable",
+            "keys": false
+          }
+        }
+      ],
+      "note": "U:grid/charts-objects: Data Table: the series values in a table under a column, line or area chart, with or without legend keys. Not in gridcraft; not checked against upstream.",
+      "icon": "ce-data-table"
+    },
+    "chartDesign.layouts.addElement.error-bars": {
+      "kind": "dropdown",
+      "command": null,
+      "items": [
+        {
+          "id": "chartDesign.layouts.addElement.error-bars.none",
+          "label": "None",
+          "command": "chart.addElement",
+          "params": {
+            "element": "errorBars",
+            "on": false
+          }
+        },
+        {
+          "id": "chartDesign.layouts.addElement.error-bars.standard-error",
+          "label": "Standard Error",
+          "command": "chart.addElement",
+          "params": {
+            "element": "errorBars",
+            "type": "standardError"
+          }
+        },
+        {
+          "id": "chartDesign.layouts.addElement.error-bars.percentage",
+          "label": "Percentage",
+          "command": "chart.addElement",
+          "params": {
+            "element": "errorBars",
+            "type": "percentage"
+          }
+        },
+        {
+          "id": "chartDesign.layouts.addElement.error-bars.standard-deviation",
+          "label": "Standard Deviation",
+          "command": "chart.addElement",
+          "params": {
+            "element": "errorBars",
+            "type": "standardDeviation"
+          }
+        }
+      ],
+      "note": "U:grid/charts-objects: Error Bars: Standard Error, Percentage (5%) and Standard Deviation (one) on every series of a column, bar, line, area, scatter or bubble chart, both directions with end caps; Excel's More Error Bars Options is not offered. Not in gridcraft; not checked against upstream.",
+      "icon": "ce-error-bars"
+    },
+    "chartDesign.layouts.addElement.lines": {
+      "kind": "dropdown",
+      "command": null,
+      "items": [
+        {
+          "id": "chartDesign.layouts.addElement.lines.none",
+          "label": "None",
+          "command": "chart.addElement",
+          "params": {
+            "element": "lines",
+            "on": false
+          }
+        },
+        {
+          "id": "chartDesign.layouts.addElement.lines.drop-lines",
+          "label": "Drop Lines",
+          "command": "chart.addElement",
+          "params": {
+            "element": "lines",
+            "type": "drop"
+          }
+        },
+        {
+          "id": "chartDesign.layouts.addElement.lines.high-low-lines",
+          "label": "High-Low Lines",
+          "command": "chart.addElement",
+          "params": {
+            "element": "lines",
+            "type": "highLow"
+          }
+        },
+        {
+          "id": "chartDesign.layouts.addElement.lines.series-lines",
+          "label": "Series Lines",
+          "command": "chart.addElement",
+          "params": {
+            "element": "lines",
+            "type": "series"
+          }
+        }
+      ],
+      "note": "U:grid/charts-objects: Lines: Drop Lines (line and area charts), High-Low Lines (line charts) and Series Lines (stacked column and bar charts); each is offered for the charts Excel offers it for. Not in gridcraft; not checked against upstream.",
+      "icon": "ce-lines"
+    },
+    "chartDesign.layouts.addElement.up-down-bars": {
+      "kind": "dropdown",
+      "command": null,
+      "items": [
+        {
+          "id": "chartDesign.layouts.addElement.up-down-bars.none",
+          "label": "None",
+          "command": "chart.addElement",
+          "params": {
+            "element": "upDownBars",
+            "on": false
+          }
+        },
+        {
+          "id": "chartDesign.layouts.addElement.up-down-bars.up-down-bars",
+          "label": "Up/Down Bars",
+          "command": "chart.addElement",
+          "params": {
+            "element": "upDownBars"
+          }
+        }
+      ],
+      "note": "U:grid/charts-objects: Up/Down Bars: bars between the first and the last series of a line chart (white when the last is higher, dark when lower). Not in gridcraft; not checked against upstream.",
+      "icon": "ce-up-down-bars"
+    },
+    "chartFormat.selection.elements": {
+      "kind": "combo",
+      "command": "chart.selectElement",
+      "args": {
+        "element": "<value>"
+      },
+      "options": [
+        {
+          "label": "Chart Area"
+        },
+        {
+          "label": "Plot Area"
+        },
+        {
+          "label": "Series 1"
+        },
+        {
+          "label": "Series 2"
+        },
+        {
+          "label": "Series 3"
+        },
+        {
+          "label": "Series 4"
+        },
+        {
+          "label": "Series 5"
+        },
+        {
+          "label": "Series 6"
+        },
+        {
+          "label": "Series 7"
+        },
+        {
+          "label": "Series 8"
+        },
+        {
+          "label": "Series 9"
+        },
+        {
+          "label": "Series 10"
+        }
+      ],
+      "note": "U:grid/charts-objects: Chart Elements: picks the part of the selected chart the Format commands change (Chart Area, Plot Area or a series); the other tools on the tab then act on it. Not in gridcraft; not checked against upstream."
+    },
+    "chartFormat.selection.resetToMatchStyle": {
+      "kind": "button",
+      "command": "chart.resetStyle",
+      "note": "U:grid/charts-objects: Reset to Match Style: takes off the formatting of the chart (area, plot area, series colours, effects, text). Not in gridcraft; not checked against upstream."
+    },
+    "chartFormat.insertShapes.changeShape": {
+      "command": null,
+      "note": "U:grid/charts-objects: Change Shape works on a shape drawn inside a chart; a shape drawn from this tab is a shape of the sheet (Shape Format > Edit Shape > Change Shape), so there is none to change here; hidden."
+    },
+    "chartFormat.shapeStyles.gallery": {
+      "kind": "gallery",
+      "command": "shape.quickStyle",
+      "args": {
+        "index": "<index>"
+      },
+      "note": "U:grid/charts-objects: Shape Styles: the 42 styles in the theme colours; the chart area takes the fill, outline and effect of the style. Not in gridcraft; not checked against upstream."
+    },
+    "chartFormat.shapeStyles.outline": {
+      "kind": "dropdown",
+      "command": null,
+      "note": "U:grid/charts-objects: Shape Outline of the part Chart Elements picked (the chart area or the plot area): a colour, none, and a weight; a series has no drawn outline. Not in gridcraft; not checked against upstream.",
+      "items": [
+        {
+          "id": "chartFormat.shapeStyles.outline.none",
+          "label": "No Outline",
+          "command": "chart.shapeOutline",
+          "params": {
+            "kind": "chart",
+            "color": "none"
+          }
+        },
+        {
+          "id": "chartFormat.shapeStyles.outline.colors",
+          "label": "Theme Colors / Standard Colors / Recent Colors",
+          "kind": "color",
+          "command": "chart.shapeOutline",
+          "params": {
+            "kind": "chart",
+            "color": "<color>"
+          }
+        },
+        {
+          "separator": true
+        },
+        {
+          "id": "chartFormat.shapeStyles.outline.weight",
+          "label": "Weight",
+          "kind": "dropdown",
+          "command": null,
+          "items": [
+            {
+              "id": "chartFormat.shapeStyles.outline.weight.0-25-pt",
+              "label": "0.25 pt",
+              "command": "chart.shapeOutline",
+              "params": {
+                "kind": "chart",
+                "width": 0.3333333333333333
+              }
+            },
+            {
+              "id": "chartFormat.shapeStyles.outline.weight.0-5-pt",
+              "label": "0.5 pt",
+              "command": "chart.shapeOutline",
+              "params": {
+                "kind": "chart",
+                "width": 0.6666666666666666
+              }
+            },
+            {
+              "id": "chartFormat.shapeStyles.outline.weight.0-75-pt",
+              "label": "0.75 pt",
+              "command": "chart.shapeOutline",
+              "params": {
+                "kind": "chart",
+                "width": 1
+              }
+            },
+            {
+              "id": "chartFormat.shapeStyles.outline.weight.1-pt",
+              "label": "1 pt",
+              "command": "chart.shapeOutline",
+              "params": {
+                "kind": "chart",
+                "width": 1.3333333333333333
+              }
+            },
+            {
+              "id": "chartFormat.shapeStyles.outline.weight.1-5-pt",
+              "label": "1.5 pt",
+              "command": "chart.shapeOutline",
+              "params": {
+                "kind": "chart",
+                "width": 2
+              }
+            },
+            {
+              "id": "chartFormat.shapeStyles.outline.weight.2-25-pt",
+              "label": "2.25 pt",
+              "command": "chart.shapeOutline",
+              "params": {
+                "kind": "chart",
+                "width": 3
+              }
+            },
+            {
+              "id": "chartFormat.shapeStyles.outline.weight.3-pt",
+              "label": "3 pt",
+              "command": "chart.shapeOutline",
+              "params": {
+                "kind": "chart",
+                "width": 4
+              }
+            },
+            {
+              "id": "chartFormat.shapeStyles.outline.weight.4-5-pt",
+              "label": "4.5 pt",
+              "command": "chart.shapeOutline",
+              "params": {
+                "kind": "chart",
+                "width": 6
+              }
+            },
+            {
+              "id": "chartFormat.shapeStyles.outline.weight.6-pt",
+              "label": "6 pt",
+              "command": "chart.shapeOutline",
+              "params": {
+                "kind": "chart",
+                "width": 8
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "chartFormat.shapeStyles.effects": {
+      "kind": "dropdown",
+      "command": null,
+      "items": [
+        {
+          "id": "chartFormat.shapeStyles.effects.shadow",
+          "label": "Shadow",
+          "kind": "dropdown",
+          "command": null,
+          "items": [
+            {
+              "id": "chartFormat.shapeStyles.effects.shadow.none",
+              "label": "No Shadow",
+              "command": "shape.effects",
+              "params": {
+                "shadow": null
+              }
+            },
+            {
+              "separator": true
+            },
+            {
+              "id": "chartFormat.shapeStyles.effects.shadow.offset-bottom-right",
+              "label": "Offset: Bottom Right",
+              "command": "shape.effects",
+              "params": {
+                "shadow": "offsetBottomRight"
+              }
+            },
+            {
+              "id": "chartFormat.shapeStyles.effects.shadow.offset-bottom",
+              "label": "Offset: Bottom",
+              "command": "shape.effects",
+              "params": {
+                "shadow": "offsetBottom"
+              }
+            },
+            {
+              "id": "chartFormat.shapeStyles.effects.shadow.offset-bottom-left",
+              "label": "Offset: Bottom Left",
+              "command": "shape.effects",
+              "params": {
+                "shadow": "offsetBottomLeft"
+              }
+            },
+            {
+              "id": "chartFormat.shapeStyles.effects.shadow.offset-right",
+              "label": "Offset: Right",
+              "command": "shape.effects",
+              "params": {
+                "shadow": "offsetRight"
+              }
+            },
+            {
+              "id": "chartFormat.shapeStyles.effects.shadow.offset-center",
+              "label": "Offset: Center",
+              "command": "shape.effects",
+              "params": {
+                "shadow": "offsetCenter"
+              }
+            },
+            {
+              "id": "chartFormat.shapeStyles.effects.shadow.offset-left",
+              "label": "Offset: Left",
+              "command": "shape.effects",
+              "params": {
+                "shadow": "offsetLeft"
+              }
+            },
+            {
+              "id": "chartFormat.shapeStyles.effects.shadow.offset-top-right",
+              "label": "Offset: Top Right",
+              "command": "shape.effects",
+              "params": {
+                "shadow": "offsetTopRight"
+              }
+            },
+            {
+              "id": "chartFormat.shapeStyles.effects.shadow.offset-top",
+              "label": "Offset: Top",
+              "command": "shape.effects",
+              "params": {
+                "shadow": "offsetTop"
+              }
+            },
+            {
+              "id": "chartFormat.shapeStyles.effects.shadow.offset-top-left",
+              "label": "Offset: Top Left",
+              "command": "shape.effects",
+              "params": {
+                "shadow": "offsetTopLeft"
+              }
+            }
+          ],
+          "icon": "effect-shadow"
+        },
+        {
+          "id": "chartFormat.shapeStyles.effects.reflection",
+          "label": "Reflection",
+          "kind": "dropdown",
+          "command": null,
+          "items": [
+            {
+              "id": "chartFormat.shapeStyles.effects.reflection.none",
+              "label": "No Reflection",
+              "command": "shape.effects",
+              "params": {
+                "reflection": null
+              }
+            },
+            {
+              "separator": true
+            },
+            {
+              "id": "chartFormat.shapeStyles.effects.reflection.tight",
+              "label": "Tight Reflection",
+              "command": "shape.effects",
+              "params": {
+                "reflection": "tight"
+              }
+            },
+            {
+              "id": "chartFormat.shapeStyles.effects.reflection.half",
+              "label": "Half Reflection",
+              "command": "shape.effects",
+              "params": {
+                "reflection": "half"
+              }
+            },
+            {
+              "id": "chartFormat.shapeStyles.effects.reflection.full",
+              "label": "Full Reflection",
+              "command": "shape.effects",
+              "params": {
+                "reflection": "full"
+              }
+            }
+          ],
+          "icon": "effect-reflection"
+        },
+        {
+          "id": "chartFormat.shapeStyles.effects.glow",
+          "label": "Glow",
+          "kind": "dropdown",
+          "command": null,
+          "items": [
+            {
+              "id": "chartFormat.shapeStyles.effects.glow.none",
+              "label": "No Glow",
+              "command": "shape.effects",
+              "params": {
+                "glow": null
+              }
+            },
+            {
+              "separator": true
+            },
+            {
+              "id": "chartFormat.shapeStyles.effects.glow.5-pt",
+              "label": "5 pt",
+              "command": "shape.effects",
+              "params": {
+                "glow": 5
+              }
+            },
+            {
+              "id": "chartFormat.shapeStyles.effects.glow.8-pt",
+              "label": "8 pt",
+              "command": "shape.effects",
+              "params": {
+                "glow": 8
+              }
+            },
+            {
+              "id": "chartFormat.shapeStyles.effects.glow.11-pt",
+              "label": "11 pt",
+              "command": "shape.effects",
+              "params": {
+                "glow": 11
+              }
+            },
+            {
+              "id": "chartFormat.shapeStyles.effects.glow.18-pt",
+              "label": "18 pt",
+              "command": "shape.effects",
+              "params": {
+                "glow": 18
+              }
+            }
+          ],
+          "icon": "effect-glow"
+        },
+        {
+          "id": "chartFormat.shapeStyles.effects.soft-edges",
+          "label": "Soft Edges",
+          "kind": "dropdown",
+          "command": null,
+          "items": [
+            {
+              "id": "chartFormat.shapeStyles.effects.soft-edges.none",
+              "label": "No Soft Edges",
+              "command": "shape.effects",
+              "params": {
+                "softEdge": null
+              }
+            },
+            {
+              "separator": true
+            },
+            {
+              "id": "chartFormat.shapeStyles.effects.soft-edges.1-pt",
+              "label": "1 pt",
+              "command": "shape.effects",
+              "params": {
+                "softEdge": 1
+              }
+            },
+            {
+              "id": "chartFormat.shapeStyles.effects.soft-edges.2-5-pt",
+              "label": "2.5 pt",
+              "command": "shape.effects",
+              "params": {
+                "softEdge": 2.5
+              }
+            },
+            {
+              "id": "chartFormat.shapeStyles.effects.soft-edges.5-pt",
+              "label": "5 pt",
+              "command": "shape.effects",
+              "params": {
+                "softEdge": 5
+              }
+            },
+            {
+              "id": "chartFormat.shapeStyles.effects.soft-edges.10-pt",
+              "label": "10 pt",
+              "command": "shape.effects",
+              "params": {
+                "softEdge": 10
+              }
+            },
+            {
+              "id": "chartFormat.shapeStyles.effects.soft-edges.25-pt",
+              "label": "25 pt",
+              "command": "shape.effects",
+              "params": {
+                "softEdge": 25
+              }
+            },
+            {
+              "id": "chartFormat.shapeStyles.effects.soft-edges.50-pt",
+              "label": "50 pt",
+              "command": "shape.effects",
+              "params": {
+                "softEdge": 50
+              }
+            }
+          ],
+          "icon": "effect-soft-edges"
+        },
+        {
+          "id": "chartFormat.shapeStyles.effects.bevel",
+          "label": "Bevel",
+          "kind": "dropdown",
+          "command": null,
+          "items": [
+            {
+              "id": "chartFormat.shapeStyles.effects.bevel.none",
+              "label": "No Bevel",
+              "command": "shape.effects",
+              "params": {
+                "bevel": null
+              }
+            },
+            {
+              "separator": true
+            },
+            {
+              "id": "chartFormat.shapeStyles.effects.bevel.relaxed-inset",
+              "label": "Relaxed Inset",
+              "command": "shape.effects",
+              "params": {
+                "bevel": "relaxedInset"
+              }
+            },
+            {
+              "id": "chartFormat.shapeStyles.effects.bevel.circle",
+              "label": "Circle",
+              "command": "shape.effects",
+              "params": {
+                "bevel": "circle"
+              }
+            },
+            {
+              "id": "chartFormat.shapeStyles.effects.bevel.slope",
+              "label": "Slope",
+              "command": "shape.effects",
+              "params": {
+                "bevel": "slope"
+              }
+            },
+            {
+              "id": "chartFormat.shapeStyles.effects.bevel.cross",
+              "label": "Cross",
+              "command": "shape.effects",
+              "params": {
+                "bevel": "cross"
+              }
+            },
+            {
+              "id": "chartFormat.shapeStyles.effects.bevel.angle",
+              "label": "Angle",
+              "command": "shape.effects",
+              "params": {
+                "bevel": "angle"
+              }
+            },
+            {
+              "id": "chartFormat.shapeStyles.effects.bevel.soft-round",
+              "label": "Soft Round",
+              "command": "shape.effects",
+              "params": {
+                "bevel": "softRound"
+              }
+            },
+            {
+              "id": "chartFormat.shapeStyles.effects.bevel.convex",
+              "label": "Convex",
+              "command": "shape.effects",
+              "params": {
+                "bevel": "convex"
+              }
+            },
+            {
+              "id": "chartFormat.shapeStyles.effects.bevel.cool-slant",
+              "label": "Cool Slant",
+              "command": "shape.effects",
+              "params": {
+                "bevel": "coolSlant"
+              }
+            },
+            {
+              "id": "chartFormat.shapeStyles.effects.bevel.divot",
+              "label": "Divot",
+              "command": "shape.effects",
+              "params": {
+                "bevel": "divot"
+              }
+            },
+            {
+              "id": "chartFormat.shapeStyles.effects.bevel.riblet",
+              "label": "Riblet",
+              "command": "shape.effects",
+              "params": {
+                "bevel": "riblet"
+              }
+            },
+            {
+              "id": "chartFormat.shapeStyles.effects.bevel.hard-edge",
+              "label": "Hard Edge",
+              "command": "shape.effects",
+              "params": {
+                "bevel": "hardEdge"
+              }
+            },
+            {
+              "id": "chartFormat.shapeStyles.effects.bevel.art-deco",
+              "label": "Art Deco",
+              "command": "shape.effects",
+              "params": {
+                "bevel": "artDeco"
+              }
+            }
+          ],
+          "icon": "effect-bevel"
+        }
+      ],
+      "note": "U:grid/charts-objects: Shape Effects: shadow (nine offsets), reflection, glow, soft edges and bevel, drawn by the sheet and saved as DrawingML effects; Preset and 3-D Rotation have no engine and are not offered. Quill's effect model (translated from wordcraft). Not in gridcraft; not checked against upstream."
+    },
+    "chartFormat.wordArt.gallery": {
+      "kind": "gallery",
+      "command": "wordArt.style",
+      "args": {
+        "style": "<style>"
+      },
+      "note": "U:grid/charts-objects: WordArt Styles: the eight styles of Quill (translated from wordcraft wordart.rs) in the theme colours, set on the text of the shape (or of every text of the chart). Not in gridcraft; not checked against upstream."
+    },
+    "chartFormat.wordArt.textFill": {
+      "kind": "dropdown",
+      "command": null,
+      "note": "U:grid/charts-objects: Text Fill of the shape's text (the chart's text): automatic, none, a colour or a gradient. Not in gridcraft; not checked against upstream.",
+      "items": [
+        {
+          "id": "chartFormat.wordArt.textFill.automatic",
+          "label": "Automatic",
+          "command": "wordArt.textFill",
+          "params": {
+            "fill": null
+          }
+        },
+        {
+          "id": "chartFormat.wordArt.textFill.no-fill",
+          "label": "No Fill",
+          "command": "wordArt.textFill",
+          "params": {
+            "fill": "none"
+          }
+        },
+        {
+          "id": "chartFormat.wordArt.textFill.colors",
+          "label": "Theme Colors / Standard Colors / Recent Colors",
+          "kind": "color",
+          "command": "wordArt.textFill",
+          "params": {
+            "fill": "<color>"
+          }
+        },
+        {
+          "separator": true
+        },
+        {
+          "id": "chartFormat.wordArt.textFill.gradient",
+          "label": "Gradient",
+          "kind": "dropdown",
+          "command": null,
+          "items": [
+            {
+              "id": "chartFormat.wordArt.textFill.gradient.1",
+              "label": "Accent 1 to Accent 4",
+              "command": "wordArt.textFill",
+              "params": {
+                "fill": {
+                  "gradient": [
+                    "156082",
+                    "0F9ED5"
+                  ],
+                  "angle": 90
+                }
+              }
+            },
+            {
+              "id": "chartFormat.wordArt.textFill.gradient.2",
+              "label": "Accent 2 to Accent 5",
+              "command": "wordArt.textFill",
+              "params": {
+                "fill": {
+                  "gradient": [
+                    "E97132",
+                    "A02B93"
+                  ],
+                  "angle": 90
+                }
+              }
+            },
+            {
+              "id": "chartFormat.wordArt.textFill.gradient.3",
+              "label": "Light to Accent 1",
+              "command": "wordArt.textFill",
+              "params": {
+                "fill": {
+                  "gradient": [
+                    "FFFFFF",
+                    "156082"
+                  ],
+                  "angle": 90
+                }
+              }
+            },
+            {
+              "id": "chartFormat.wordArt.textFill.gradient.4",
+              "label": "Dark to Accent 6",
+              "command": "wordArt.textFill",
+              "params": {
+                "fill": {
+                  "gradient": [
+                    "0E2841",
+                    "4EA72E"
+                  ],
+                  "angle": 90
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "chartFormat.wordArt.textOutline": {
+      "kind": "dropdown",
+      "command": null,
+      "note": "U:grid/charts-objects: Text Outline of the shape's text (the chart's text): automatic, none, a colour and a weight (a weight keeps the colour). Not in gridcraft; not checked against upstream.",
+      "items": [
+        {
+          "id": "chartFormat.wordArt.textOutline.automatic",
+          "label": "Automatic",
+          "command": "wordArt.textOutline",
+          "params": {
+            "outline": null
+          }
+        },
+        {
+          "id": "chartFormat.wordArt.textOutline.no-outline",
+          "label": "No Outline",
+          "command": "wordArt.textOutline",
+          "params": {
+            "outline": "none"
+          }
+        },
+        {
+          "id": "chartFormat.wordArt.textOutline.colors",
+          "label": "Theme Colors / Standard Colors / Recent Colors",
+          "kind": "color",
+          "command": "wordArt.textOutline",
+          "params": {
+            "outline": "<color>"
+          }
+        },
+        {
+          "separator": true
+        },
+        {
+          "id": "chartFormat.wordArt.textOutline.weight",
+          "label": "Weight",
+          "kind": "dropdown",
+          "command": null,
+          "items": [
+            {
+              "id": "chartFormat.wordArt.textOutline.weight.0-25-pt",
+              "label": "0.25 pt",
+              "command": "wordArt.textOutline",
+              "params": {
+                "outline": {
+                  "width": 0.25
+                }
+              }
+            },
+            {
+              "id": "chartFormat.wordArt.textOutline.weight.0-5-pt",
+              "label": "0.5 pt",
+              "command": "wordArt.textOutline",
+              "params": {
+                "outline": {
+                  "width": 0.5
+                }
+              }
+            },
+            {
+              "id": "chartFormat.wordArt.textOutline.weight.0-75-pt",
+              "label": "0.75 pt",
+              "command": "wordArt.textOutline",
+              "params": {
+                "outline": {
+                  "width": 0.75
+                }
+              }
+            },
+            {
+              "id": "chartFormat.wordArt.textOutline.weight.1-pt",
+              "label": "1 pt",
+              "command": "wordArt.textOutline",
+              "params": {
+                "outline": {
+                  "width": 1
+                }
+              }
+            },
+            {
+              "id": "chartFormat.wordArt.textOutline.weight.1-5-pt",
+              "label": "1.5 pt",
+              "command": "wordArt.textOutline",
+              "params": {
+                "outline": {
+                  "width": 1.5
+                }
+              }
+            },
+            {
+              "id": "chartFormat.wordArt.textOutline.weight.2-25-pt",
+              "label": "2.25 pt",
+              "command": "wordArt.textOutline",
+              "params": {
+                "outline": {
+                  "width": 2.25
+                }
+              }
+            },
+            {
+              "id": "chartFormat.wordArt.textOutline.weight.3-pt",
+              "label": "3 pt",
+              "command": "wordArt.textOutline",
+              "params": {
+                "outline": {
+                  "width": 3
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "chartFormat.wordArt.textEffects": {
+      "kind": "dropdown",
+      "command": null,
+      "note": "U:grid/charts-objects: Text Effects of the shape's text (the chart's text): Shadow, Glow and Reflection. Transform (text warps), Bevel and 3-D Rotation have no engine here and are not offered. Not in gridcraft; not checked against upstream.",
+      "items": [
+        {
+          "id": "chartFormat.wordArt.textEffects.shadow",
+          "label": "Shadow",
+          "kind": "dropdown",
+          "command": null,
+          "items": [
+            {
+              "id": "chartFormat.wordArt.textEffects.shadow.none",
+              "label": "No Shadow",
+              "command": "wordArt.textEffect",
+              "params": {
+                "shadow": null
+              }
+            },
+            {
+              "separator": true
+            },
+            {
+              "id": "chartFormat.wordArt.textEffects.shadow.offset-bottom-right",
+              "label": "Offset: Bottom Right",
+              "command": "wordArt.textEffect",
+              "params": {
+                "shadow": "offsetBottomRight"
+              }
+            },
+            {
+              "id": "chartFormat.wordArt.textEffects.shadow.offset-bottom",
+              "label": "Offset: Bottom",
+              "command": "wordArt.textEffect",
+              "params": {
+                "shadow": "offsetBottom"
+              }
+            },
+            {
+              "id": "chartFormat.wordArt.textEffects.shadow.offset-bottom-left",
+              "label": "Offset: Bottom Left",
+              "command": "wordArt.textEffect",
+              "params": {
+                "shadow": "offsetBottomLeft"
+              }
+            },
+            {
+              "id": "chartFormat.wordArt.textEffects.shadow.offset-right",
+              "label": "Offset: Right",
+              "command": "wordArt.textEffect",
+              "params": {
+                "shadow": "offsetRight"
+              }
+            },
+            {
+              "id": "chartFormat.wordArt.textEffects.shadow.offset-center",
+              "label": "Offset: Center",
+              "command": "wordArt.textEffect",
+              "params": {
+                "shadow": "offsetCenter"
+              }
+            },
+            {
+              "id": "chartFormat.wordArt.textEffects.shadow.offset-left",
+              "label": "Offset: Left",
+              "command": "wordArt.textEffect",
+              "params": {
+                "shadow": "offsetLeft"
+              }
+            },
+            {
+              "id": "chartFormat.wordArt.textEffects.shadow.offset-top-right",
+              "label": "Offset: Top Right",
+              "command": "wordArt.textEffect",
+              "params": {
+                "shadow": "offsetTopRight"
+              }
+            },
+            {
+              "id": "chartFormat.wordArt.textEffects.shadow.offset-top",
+              "label": "Offset: Top",
+              "command": "wordArt.textEffect",
+              "params": {
+                "shadow": "offsetTop"
+              }
+            },
+            {
+              "id": "chartFormat.wordArt.textEffects.shadow.offset-top-left",
+              "label": "Offset: Top Left",
+              "command": "wordArt.textEffect",
+              "params": {
+                "shadow": "offsetTopLeft"
+              }
+            }
+          ]
+        },
+        {
+          "id": "chartFormat.wordArt.textEffects.glow",
+          "label": "Glow",
+          "kind": "dropdown",
+          "command": null,
+          "items": [
+            {
+              "id": "chartFormat.wordArt.textEffects.glow.none",
+              "label": "No Glow",
+              "command": "wordArt.textEffect",
+              "params": {
+                "glow": null
+              }
+            },
+            {
+              "separator": true
+            },
+            {
+              "id": "chartFormat.wordArt.textEffects.glow.3-pt",
+              "label": "3 pt",
+              "command": "wordArt.textEffect",
+              "params": {
+                "glow": 3
+              }
+            },
+            {
+              "id": "chartFormat.wordArt.textEffects.glow.5-pt",
+              "label": "5 pt",
+              "command": "wordArt.textEffect",
+              "params": {
+                "glow": 5
+              }
+            },
+            {
+              "id": "chartFormat.wordArt.textEffects.glow.8-pt",
+              "label": "8 pt",
+              "command": "wordArt.textEffect",
+              "params": {
+                "glow": 8
+              }
+            },
+            {
+              "id": "chartFormat.wordArt.textEffects.glow.11-pt",
+              "label": "11 pt",
+              "command": "wordArt.textEffect",
+              "params": {
+                "glow": 11
+              }
+            }
+          ]
+        },
+        {
+          "id": "chartFormat.wordArt.textEffects.reflection",
+          "label": "Reflection",
+          "kind": "dropdown",
+          "command": null,
+          "items": [
+            {
+              "id": "chartFormat.wordArt.textEffects.reflection.none",
+              "label": "No Reflection",
+              "command": "wordArt.textEffect",
+              "params": {
+                "reflection": null
+              }
+            },
+            {
+              "separator": true
+            },
+            {
+              "id": "chartFormat.wordArt.textEffects.reflection.25",
+              "label": "25%",
+              "command": "wordArt.textEffect",
+              "params": {
+                "reflection": {
+                  "size": 25
+                }
+              }
+            },
+            {
+              "id": "chartFormat.wordArt.textEffects.reflection.50",
+              "label": "50%",
+              "command": "wordArt.textEffect",
+              "params": {
+                "reflection": {
+                  "size": 50
+                }
+              }
+            },
+            {
+              "id": "chartFormat.wordArt.textEffects.reflection.90",
+              "label": "90%",
+              "command": "wordArt.textEffect",
+              "params": {
+                "reflection": {
+                  "size": 90
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "chartFormat.accessibility.altText": {
+      "kind": "button",
+      "command": "object.setAlt",
+      "dialog": "dialog.altText",
+      "note": "U:grid/charts-objects: Alt Text on the selected object (its description, saved in .xlsx); Excel shows a pane, here it is a dialog with the same description box and Mark as decorative. Not in gridcraft for charts and shapes; not checked against upstream."
+    },
+    "chartFormat.arrange.selectionPane": {
+      "kind": "toggle",
+      "command": "arrange.selectionPane",
+      "note": "U:grid/charts-objects: Selection Pane: the pane that lists the sheet's objects (Page Layout > Selection Pane's command)."
+    },
+    "chartFormat.arrange.align": {
+      "kind": "dropdown",
+      "command": null,
+      "note": "U:grid/charts-objects: Align the objects picked together: Page Layout > Align's command (arrange.align). Distribute needs three objects picked together.",
+      "items": [
+        {
+          "id": "chartFormat.arrange.align.align-left",
+          "label": "Align Left",
+          "command": "arrange.align",
+          "params": {
+            "align": "left"
+          }
+        },
+        {
+          "id": "chartFormat.arrange.align.align-center",
+          "label": "Align Center",
+          "command": "arrange.align",
+          "params": {
+            "align": "center"
+          }
+        },
+        {
+          "id": "chartFormat.arrange.align.align-right",
+          "label": "Align Right",
+          "command": "arrange.align",
+          "params": {
+            "align": "right"
+          }
+        },
+        {
+          "id": "chartFormat.arrange.align.align-top",
+          "label": "Align Top",
+          "command": "arrange.align",
+          "params": {
+            "align": "top"
+          }
+        },
+        {
+          "id": "chartFormat.arrange.align.align-middle",
+          "label": "Align Middle",
+          "command": "arrange.align",
+          "params": {
+            "align": "middle"
+          }
+        },
+        {
+          "id": "chartFormat.arrange.align.align-bottom",
+          "label": "Align Bottom",
+          "command": "arrange.align",
+          "params": {
+            "align": "bottom"
+          }
+        },
+        {
+          "id": "chartFormat.arrange.align.distribute-horizontally",
+          "label": "Distribute Horizontally",
+          "command": "arrange.align",
+          "params": {
+            "align": "distributeH"
+          }
+        },
+        {
+          "id": "chartFormat.arrange.align.distribute-vertically",
+          "label": "Distribute Vertically",
+          "command": "arrange.align",
+          "params": {
+            "align": "distributeV"
+          }
+        }
+      ]
+    },
+    "chartFormat.arrange.group": {
+      "kind": "dropdown",
+      "command": null,
+      "note": "U:grid/charts-objects: Group the objects picked together: Page Layout > Group's command (arrange.group). Regroup and Ungroup put the last group back and split it.",
+      "items": [
+        {
+          "id": "chartFormat.arrange.group.group",
+          "label": "Group",
+          "command": "arrange.group",
+          "params": {}
+        },
+        {
+          "id": "chartFormat.arrange.group.regroup",
+          "label": "Regroup",
+          "command": "arrange.group",
+          "params": {
+            "regroup": true
+          }
+        },
+        {
+          "id": "chartFormat.arrange.group.ungroup",
+          "label": "Ungroup",
+          "command": "arrange.group",
+          "params": {
+            "ungroup": true
+          }
+        }
+      ]
+    },
+    "chartFormat.arrange.rotate": {
+      "command": null,
+      "note": "U:grid/insert-layout: a chart cannot be rotated or flipped (Excel's chart has no Rotate); hidden."
+    },
+    "shapeFormat.insertShapes.editShape": {
+      "kind": "dropdown",
+      "command": null,
+      "note": "U:grid/charts-objects: Edit Shape > Change Shape: turns the selected shape into one of the shapes the sheet draws; Edit Points and Reroute Connectors need a path editor the sheet does not have and are not offered. Not in gridcraft; not checked against upstream.",
+      "items": [
+        {
+          "id": "shapeFormat.insertShapes.editShape.change-shape",
+          "label": "Change Shape",
+          "kind": "dropdown",
+          "command": null,
+          "items": [
+            {
+              "id": "shapeFormat.insertShapes.editShape.change-shape.rectangle",
+              "label": "Rectangle",
+              "command": "shape.change",
+              "params": {
+                "shape": "rectangle"
+              }
+            },
+            {
+              "id": "shapeFormat.insertShapes.editShape.change-shape.rounded-rectangle",
+              "label": "Rounded Rectangle",
+              "command": "shape.change",
+              "params": {
+                "shape": "roundedRectangle"
+              }
+            },
+            {
+              "id": "shapeFormat.insertShapes.editShape.change-shape.ellipse",
+              "label": "Oval",
+              "command": "shape.change",
+              "params": {
+                "shape": "ellipse"
+              }
+            },
+            {
+              "id": "shapeFormat.insertShapes.editShape.change-shape.triangle",
+              "label": "Triangle",
+              "command": "shape.change",
+              "params": {
+                "shape": "triangle"
+              }
+            },
+            {
+              "id": "shapeFormat.insertShapes.editShape.change-shape.line",
+              "label": "Line",
+              "command": "shape.change",
+              "params": {
+                "shape": "line"
+              }
+            },
+            {
+              "id": "shapeFormat.insertShapes.editShape.change-shape.arrow",
+              "label": "Arrow",
+              "command": "shape.change",
+              "params": {
+                "shape": "arrow"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "shapeFormat.styles.gallery": {
+      "kind": "gallery",
+      "command": "shape.quickStyle",
+      "args": {
+        "index": "<index>"
+      },
+      "note": "U:grid/charts-objects: Shape Styles: the 42 styles in the theme colours (Colored Outline, Colored Fill, Light 1 Outline Colored Fill, Subtle, Moderate and Intense Effect), each setting the shape's fill, outline and effect. Not in gridcraft; not checked against upstream."
+    },
+    "shapeFormat.styles.effects": {
+      "kind": "dropdown",
+      "command": null,
+      "items": [
+        {
+          "id": "shapeFormat.styles.effects.shadow",
+          "label": "Shadow",
+          "kind": "dropdown",
+          "command": null,
+          "items": [
+            {
+              "id": "shapeFormat.styles.effects.shadow.none",
+              "label": "No Shadow",
+              "command": "shape.effects",
+              "params": {
+                "shadow": null
+              }
+            },
+            {
+              "separator": true
+            },
+            {
+              "id": "shapeFormat.styles.effects.shadow.offset-bottom-right",
+              "label": "Offset: Bottom Right",
+              "command": "shape.effects",
+              "params": {
+                "shadow": "offsetBottomRight"
+              }
+            },
+            {
+              "id": "shapeFormat.styles.effects.shadow.offset-bottom",
+              "label": "Offset: Bottom",
+              "command": "shape.effects",
+              "params": {
+                "shadow": "offsetBottom"
+              }
+            },
+            {
+              "id": "shapeFormat.styles.effects.shadow.offset-bottom-left",
+              "label": "Offset: Bottom Left",
+              "command": "shape.effects",
+              "params": {
+                "shadow": "offsetBottomLeft"
+              }
+            },
+            {
+              "id": "shapeFormat.styles.effects.shadow.offset-right",
+              "label": "Offset: Right",
+              "command": "shape.effects",
+              "params": {
+                "shadow": "offsetRight"
+              }
+            },
+            {
+              "id": "shapeFormat.styles.effects.shadow.offset-center",
+              "label": "Offset: Center",
+              "command": "shape.effects",
+              "params": {
+                "shadow": "offsetCenter"
+              }
+            },
+            {
+              "id": "shapeFormat.styles.effects.shadow.offset-left",
+              "label": "Offset: Left",
+              "command": "shape.effects",
+              "params": {
+                "shadow": "offsetLeft"
+              }
+            },
+            {
+              "id": "shapeFormat.styles.effects.shadow.offset-top-right",
+              "label": "Offset: Top Right",
+              "command": "shape.effects",
+              "params": {
+                "shadow": "offsetTopRight"
+              }
+            },
+            {
+              "id": "shapeFormat.styles.effects.shadow.offset-top",
+              "label": "Offset: Top",
+              "command": "shape.effects",
+              "params": {
+                "shadow": "offsetTop"
+              }
+            },
+            {
+              "id": "shapeFormat.styles.effects.shadow.offset-top-left",
+              "label": "Offset: Top Left",
+              "command": "shape.effects",
+              "params": {
+                "shadow": "offsetTopLeft"
+              }
+            }
+          ],
+          "icon": "effect-shadow"
+        },
+        {
+          "id": "shapeFormat.styles.effects.reflection",
+          "label": "Reflection",
+          "kind": "dropdown",
+          "command": null,
+          "items": [
+            {
+              "id": "shapeFormat.styles.effects.reflection.none",
+              "label": "No Reflection",
+              "command": "shape.effects",
+              "params": {
+                "reflection": null
+              }
+            },
+            {
+              "separator": true
+            },
+            {
+              "id": "shapeFormat.styles.effects.reflection.tight",
+              "label": "Tight Reflection",
+              "command": "shape.effects",
+              "params": {
+                "reflection": "tight"
+              }
+            },
+            {
+              "id": "shapeFormat.styles.effects.reflection.half",
+              "label": "Half Reflection",
+              "command": "shape.effects",
+              "params": {
+                "reflection": "half"
+              }
+            },
+            {
+              "id": "shapeFormat.styles.effects.reflection.full",
+              "label": "Full Reflection",
+              "command": "shape.effects",
+              "params": {
+                "reflection": "full"
+              }
+            }
+          ],
+          "icon": "effect-reflection"
+        },
+        {
+          "id": "shapeFormat.styles.effects.glow",
+          "label": "Glow",
+          "kind": "dropdown",
+          "command": null,
+          "items": [
+            {
+              "id": "shapeFormat.styles.effects.glow.none",
+              "label": "No Glow",
+              "command": "shape.effects",
+              "params": {
+                "glow": null
+              }
+            },
+            {
+              "separator": true
+            },
+            {
+              "id": "shapeFormat.styles.effects.glow.5-pt",
+              "label": "5 pt",
+              "command": "shape.effects",
+              "params": {
+                "glow": 5
+              }
+            },
+            {
+              "id": "shapeFormat.styles.effects.glow.8-pt",
+              "label": "8 pt",
+              "command": "shape.effects",
+              "params": {
+                "glow": 8
+              }
+            },
+            {
+              "id": "shapeFormat.styles.effects.glow.11-pt",
+              "label": "11 pt",
+              "command": "shape.effects",
+              "params": {
+                "glow": 11
+              }
+            },
+            {
+              "id": "shapeFormat.styles.effects.glow.18-pt",
+              "label": "18 pt",
+              "command": "shape.effects",
+              "params": {
+                "glow": 18
+              }
+            }
+          ],
+          "icon": "effect-glow"
+        },
+        {
+          "id": "shapeFormat.styles.effects.soft-edges",
+          "label": "Soft Edges",
+          "kind": "dropdown",
+          "command": null,
+          "items": [
+            {
+              "id": "shapeFormat.styles.effects.soft-edges.none",
+              "label": "No Soft Edges",
+              "command": "shape.effects",
+              "params": {
+                "softEdge": null
+              }
+            },
+            {
+              "separator": true
+            },
+            {
+              "id": "shapeFormat.styles.effects.soft-edges.1-pt",
+              "label": "1 pt",
+              "command": "shape.effects",
+              "params": {
+                "softEdge": 1
+              }
+            },
+            {
+              "id": "shapeFormat.styles.effects.soft-edges.2-5-pt",
+              "label": "2.5 pt",
+              "command": "shape.effects",
+              "params": {
+                "softEdge": 2.5
+              }
+            },
+            {
+              "id": "shapeFormat.styles.effects.soft-edges.5-pt",
+              "label": "5 pt",
+              "command": "shape.effects",
+              "params": {
+                "softEdge": 5
+              }
+            },
+            {
+              "id": "shapeFormat.styles.effects.soft-edges.10-pt",
+              "label": "10 pt",
+              "command": "shape.effects",
+              "params": {
+                "softEdge": 10
+              }
+            },
+            {
+              "id": "shapeFormat.styles.effects.soft-edges.25-pt",
+              "label": "25 pt",
+              "command": "shape.effects",
+              "params": {
+                "softEdge": 25
+              }
+            },
+            {
+              "id": "shapeFormat.styles.effects.soft-edges.50-pt",
+              "label": "50 pt",
+              "command": "shape.effects",
+              "params": {
+                "softEdge": 50
+              }
+            }
+          ],
+          "icon": "effect-soft-edges"
+        },
+        {
+          "id": "shapeFormat.styles.effects.bevel",
+          "label": "Bevel",
+          "kind": "dropdown",
+          "command": null,
+          "items": [
+            {
+              "id": "shapeFormat.styles.effects.bevel.none",
+              "label": "No Bevel",
+              "command": "shape.effects",
+              "params": {
+                "bevel": null
+              }
+            },
+            {
+              "separator": true
+            },
+            {
+              "id": "shapeFormat.styles.effects.bevel.relaxed-inset",
+              "label": "Relaxed Inset",
+              "command": "shape.effects",
+              "params": {
+                "bevel": "relaxedInset"
+              }
+            },
+            {
+              "id": "shapeFormat.styles.effects.bevel.circle",
+              "label": "Circle",
+              "command": "shape.effects",
+              "params": {
+                "bevel": "circle"
+              }
+            },
+            {
+              "id": "shapeFormat.styles.effects.bevel.slope",
+              "label": "Slope",
+              "command": "shape.effects",
+              "params": {
+                "bevel": "slope"
+              }
+            },
+            {
+              "id": "shapeFormat.styles.effects.bevel.cross",
+              "label": "Cross",
+              "command": "shape.effects",
+              "params": {
+                "bevel": "cross"
+              }
+            },
+            {
+              "id": "shapeFormat.styles.effects.bevel.angle",
+              "label": "Angle",
+              "command": "shape.effects",
+              "params": {
+                "bevel": "angle"
+              }
+            },
+            {
+              "id": "shapeFormat.styles.effects.bevel.soft-round",
+              "label": "Soft Round",
+              "command": "shape.effects",
+              "params": {
+                "bevel": "softRound"
+              }
+            },
+            {
+              "id": "shapeFormat.styles.effects.bevel.convex",
+              "label": "Convex",
+              "command": "shape.effects",
+              "params": {
+                "bevel": "convex"
+              }
+            },
+            {
+              "id": "shapeFormat.styles.effects.bevel.cool-slant",
+              "label": "Cool Slant",
+              "command": "shape.effects",
+              "params": {
+                "bevel": "coolSlant"
+              }
+            },
+            {
+              "id": "shapeFormat.styles.effects.bevel.divot",
+              "label": "Divot",
+              "command": "shape.effects",
+              "params": {
+                "bevel": "divot"
+              }
+            },
+            {
+              "id": "shapeFormat.styles.effects.bevel.riblet",
+              "label": "Riblet",
+              "command": "shape.effects",
+              "params": {
+                "bevel": "riblet"
+              }
+            },
+            {
+              "id": "shapeFormat.styles.effects.bevel.hard-edge",
+              "label": "Hard Edge",
+              "command": "shape.effects",
+              "params": {
+                "bevel": "hardEdge"
+              }
+            },
+            {
+              "id": "shapeFormat.styles.effects.bevel.art-deco",
+              "label": "Art Deco",
+              "command": "shape.effects",
+              "params": {
+                "bevel": "artDeco"
+              }
+            }
+          ],
+          "icon": "effect-bevel"
+        }
+      ],
+      "note": "U:grid/charts-objects: Shape Effects: shadow (nine offsets), reflection, glow, soft edges and bevel, drawn by the sheet and saved as DrawingML effects; Preset and 3-D Rotation have no engine and are not offered. Quill's effect model (translated from wordcraft). Not in gridcraft; not checked against upstream."
+    },
+    "shapeFormat.wordArt.gallery": {
+      "kind": "gallery",
+      "command": "wordArt.style",
+      "args": {
+        "style": "<style>"
+      },
+      "note": "U:grid/charts-objects: WordArt Styles: the eight styles of Quill (translated from wordcraft wordart.rs) in the theme colours, set on the text of the shape (or of every text of the chart). Not in gridcraft; not checked against upstream."
+    },
+    "shapeFormat.wordArt.textFill": {
+      "kind": "dropdown",
+      "command": null,
+      "note": "U:grid/charts-objects: Text Fill of the shape's text (the chart's text): automatic, none, a colour or a gradient. Not in gridcraft; not checked against upstream.",
+      "items": [
+        {
+          "id": "shapeFormat.wordArt.textFill.automatic",
+          "label": "Automatic",
+          "command": "wordArt.textFill",
+          "params": {
+            "fill": null
+          }
+        },
+        {
+          "id": "shapeFormat.wordArt.textFill.no-fill",
+          "label": "No Fill",
+          "command": "wordArt.textFill",
+          "params": {
+            "fill": "none"
+          }
+        },
+        {
+          "id": "shapeFormat.wordArt.textFill.colors",
+          "label": "Theme Colors / Standard Colors / Recent Colors",
+          "kind": "color",
+          "command": "wordArt.textFill",
+          "params": {
+            "fill": "<color>"
+          }
+        },
+        {
+          "separator": true
+        },
+        {
+          "id": "shapeFormat.wordArt.textFill.gradient",
+          "label": "Gradient",
+          "kind": "dropdown",
+          "command": null,
+          "items": [
+            {
+              "id": "shapeFormat.wordArt.textFill.gradient.1",
+              "label": "Accent 1 to Accent 4",
+              "command": "wordArt.textFill",
+              "params": {
+                "fill": {
+                  "gradient": [
+                    "156082",
+                    "0F9ED5"
+                  ],
+                  "angle": 90
+                }
+              }
+            },
+            {
+              "id": "shapeFormat.wordArt.textFill.gradient.2",
+              "label": "Accent 2 to Accent 5",
+              "command": "wordArt.textFill",
+              "params": {
+                "fill": {
+                  "gradient": [
+                    "E97132",
+                    "A02B93"
+                  ],
+                  "angle": 90
+                }
+              }
+            },
+            {
+              "id": "shapeFormat.wordArt.textFill.gradient.3",
+              "label": "Light to Accent 1",
+              "command": "wordArt.textFill",
+              "params": {
+                "fill": {
+                  "gradient": [
+                    "FFFFFF",
+                    "156082"
+                  ],
+                  "angle": 90
+                }
+              }
+            },
+            {
+              "id": "shapeFormat.wordArt.textFill.gradient.4",
+              "label": "Dark to Accent 6",
+              "command": "wordArt.textFill",
+              "params": {
+                "fill": {
+                  "gradient": [
+                    "0E2841",
+                    "4EA72E"
+                  ],
+                  "angle": 90
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "shapeFormat.wordArt.textOutline": {
+      "kind": "dropdown",
+      "command": null,
+      "note": "U:grid/charts-objects: Text Outline of the shape's text (the chart's text): automatic, none, a colour and a weight (a weight keeps the colour). Not in gridcraft; not checked against upstream.",
+      "items": [
+        {
+          "id": "shapeFormat.wordArt.textOutline.automatic",
+          "label": "Automatic",
+          "command": "wordArt.textOutline",
+          "params": {
+            "outline": null
+          }
+        },
+        {
+          "id": "shapeFormat.wordArt.textOutline.no-outline",
+          "label": "No Outline",
+          "command": "wordArt.textOutline",
+          "params": {
+            "outline": "none"
+          }
+        },
+        {
+          "id": "shapeFormat.wordArt.textOutline.colors",
+          "label": "Theme Colors / Standard Colors / Recent Colors",
+          "kind": "color",
+          "command": "wordArt.textOutline",
+          "params": {
+            "outline": "<color>"
+          }
+        },
+        {
+          "separator": true
+        },
+        {
+          "id": "shapeFormat.wordArt.textOutline.weight",
+          "label": "Weight",
+          "kind": "dropdown",
+          "command": null,
+          "items": [
+            {
+              "id": "shapeFormat.wordArt.textOutline.weight.0-25-pt",
+              "label": "0.25 pt",
+              "command": "wordArt.textOutline",
+              "params": {
+                "outline": {
+                  "width": 0.25
+                }
+              }
+            },
+            {
+              "id": "shapeFormat.wordArt.textOutline.weight.0-5-pt",
+              "label": "0.5 pt",
+              "command": "wordArt.textOutline",
+              "params": {
+                "outline": {
+                  "width": 0.5
+                }
+              }
+            },
+            {
+              "id": "shapeFormat.wordArt.textOutline.weight.0-75-pt",
+              "label": "0.75 pt",
+              "command": "wordArt.textOutline",
+              "params": {
+                "outline": {
+                  "width": 0.75
+                }
+              }
+            },
+            {
+              "id": "shapeFormat.wordArt.textOutline.weight.1-pt",
+              "label": "1 pt",
+              "command": "wordArt.textOutline",
+              "params": {
+                "outline": {
+                  "width": 1
+                }
+              }
+            },
+            {
+              "id": "shapeFormat.wordArt.textOutline.weight.1-5-pt",
+              "label": "1.5 pt",
+              "command": "wordArt.textOutline",
+              "params": {
+                "outline": {
+                  "width": 1.5
+                }
+              }
+            },
+            {
+              "id": "shapeFormat.wordArt.textOutline.weight.2-25-pt",
+              "label": "2.25 pt",
+              "command": "wordArt.textOutline",
+              "params": {
+                "outline": {
+                  "width": 2.25
+                }
+              }
+            },
+            {
+              "id": "shapeFormat.wordArt.textOutline.weight.3-pt",
+              "label": "3 pt",
+              "command": "wordArt.textOutline",
+              "params": {
+                "outline": {
+                  "width": 3
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "shapeFormat.wordArt.textEffects": {
+      "kind": "dropdown",
+      "command": null,
+      "note": "U:grid/charts-objects: Text Effects of the shape's text (the chart's text): Shadow, Glow and Reflection. Transform (text warps), Bevel and 3-D Rotation have no engine here and are not offered. Not in gridcraft; not checked against upstream.",
+      "items": [
+        {
+          "id": "shapeFormat.wordArt.textEffects.shadow",
+          "label": "Shadow",
+          "kind": "dropdown",
+          "command": null,
+          "items": [
+            {
+              "id": "shapeFormat.wordArt.textEffects.shadow.none",
+              "label": "No Shadow",
+              "command": "wordArt.textEffect",
+              "params": {
+                "shadow": null
+              }
+            },
+            {
+              "separator": true
+            },
+            {
+              "id": "shapeFormat.wordArt.textEffects.shadow.offset-bottom-right",
+              "label": "Offset: Bottom Right",
+              "command": "wordArt.textEffect",
+              "params": {
+                "shadow": "offsetBottomRight"
+              }
+            },
+            {
+              "id": "shapeFormat.wordArt.textEffects.shadow.offset-bottom",
+              "label": "Offset: Bottom",
+              "command": "wordArt.textEffect",
+              "params": {
+                "shadow": "offsetBottom"
+              }
+            },
+            {
+              "id": "shapeFormat.wordArt.textEffects.shadow.offset-bottom-left",
+              "label": "Offset: Bottom Left",
+              "command": "wordArt.textEffect",
+              "params": {
+                "shadow": "offsetBottomLeft"
+              }
+            },
+            {
+              "id": "shapeFormat.wordArt.textEffects.shadow.offset-right",
+              "label": "Offset: Right",
+              "command": "wordArt.textEffect",
+              "params": {
+                "shadow": "offsetRight"
+              }
+            },
+            {
+              "id": "shapeFormat.wordArt.textEffects.shadow.offset-center",
+              "label": "Offset: Center",
+              "command": "wordArt.textEffect",
+              "params": {
+                "shadow": "offsetCenter"
+              }
+            },
+            {
+              "id": "shapeFormat.wordArt.textEffects.shadow.offset-left",
+              "label": "Offset: Left",
+              "command": "wordArt.textEffect",
+              "params": {
+                "shadow": "offsetLeft"
+              }
+            },
+            {
+              "id": "shapeFormat.wordArt.textEffects.shadow.offset-top-right",
+              "label": "Offset: Top Right",
+              "command": "wordArt.textEffect",
+              "params": {
+                "shadow": "offsetTopRight"
+              }
+            },
+            {
+              "id": "shapeFormat.wordArt.textEffects.shadow.offset-top",
+              "label": "Offset: Top",
+              "command": "wordArt.textEffect",
+              "params": {
+                "shadow": "offsetTop"
+              }
+            },
+            {
+              "id": "shapeFormat.wordArt.textEffects.shadow.offset-top-left",
+              "label": "Offset: Top Left",
+              "command": "wordArt.textEffect",
+              "params": {
+                "shadow": "offsetTopLeft"
+              }
+            }
+          ]
+        },
+        {
+          "id": "shapeFormat.wordArt.textEffects.glow",
+          "label": "Glow",
+          "kind": "dropdown",
+          "command": null,
+          "items": [
+            {
+              "id": "shapeFormat.wordArt.textEffects.glow.none",
+              "label": "No Glow",
+              "command": "wordArt.textEffect",
+              "params": {
+                "glow": null
+              }
+            },
+            {
+              "separator": true
+            },
+            {
+              "id": "shapeFormat.wordArt.textEffects.glow.3-pt",
+              "label": "3 pt",
+              "command": "wordArt.textEffect",
+              "params": {
+                "glow": 3
+              }
+            },
+            {
+              "id": "shapeFormat.wordArt.textEffects.glow.5-pt",
+              "label": "5 pt",
+              "command": "wordArt.textEffect",
+              "params": {
+                "glow": 5
+              }
+            },
+            {
+              "id": "shapeFormat.wordArt.textEffects.glow.8-pt",
+              "label": "8 pt",
+              "command": "wordArt.textEffect",
+              "params": {
+                "glow": 8
+              }
+            },
+            {
+              "id": "shapeFormat.wordArt.textEffects.glow.11-pt",
+              "label": "11 pt",
+              "command": "wordArt.textEffect",
+              "params": {
+                "glow": 11
+              }
+            }
+          ]
+        },
+        {
+          "id": "shapeFormat.wordArt.textEffects.reflection",
+          "label": "Reflection",
+          "kind": "dropdown",
+          "command": null,
+          "items": [
+            {
+              "id": "shapeFormat.wordArt.textEffects.reflection.none",
+              "label": "No Reflection",
+              "command": "wordArt.textEffect",
+              "params": {
+                "reflection": null
+              }
+            },
+            {
+              "separator": true
+            },
+            {
+              "id": "shapeFormat.wordArt.textEffects.reflection.25",
+              "label": "25%",
+              "command": "wordArt.textEffect",
+              "params": {
+                "reflection": {
+                  "size": 25
+                }
+              }
+            },
+            {
+              "id": "shapeFormat.wordArt.textEffects.reflection.50",
+              "label": "50%",
+              "command": "wordArt.textEffect",
+              "params": {
+                "reflection": {
+                  "size": 50
+                }
+              }
+            },
+            {
+              "id": "shapeFormat.wordArt.textEffects.reflection.90",
+              "label": "90%",
+              "command": "wordArt.textEffect",
+              "params": {
+                "reflection": {
+                  "size": 90
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "shapeFormat.accessibility.altText": {
+      "kind": "button",
+      "command": "object.setAlt",
+      "dialog": "dialog.altText",
+      "note": "U:grid/charts-objects: Alt Text on the selected object (its description, saved in .xlsx); Excel shows a pane, here it is a dialog with the same description box and Mark as decorative. Not in gridcraft for charts and shapes; not checked against upstream."
+    },
+    "shapeFormat.arrange.selectionPane": {
+      "kind": "toggle",
+      "command": "arrange.selectionPane",
+      "note": "U:grid/charts-objects: Selection Pane: the pane that lists the sheet's objects (Page Layout > Selection Pane's command)."
+    },
+    "shapeFormat.arrange.align": {
+      "kind": "dropdown",
+      "command": null,
+      "note": "U:grid/charts-objects: Align the objects picked together: Page Layout > Align's command (arrange.align). Distribute needs three objects picked together.",
+      "items": [
+        {
+          "id": "shapeFormat.arrange.align.align-left",
+          "label": "Align Left",
+          "command": "arrange.align",
+          "params": {
+            "align": "left"
+          }
+        },
+        {
+          "id": "shapeFormat.arrange.align.align-center",
+          "label": "Align Center",
+          "command": "arrange.align",
+          "params": {
+            "align": "center"
+          }
+        },
+        {
+          "id": "shapeFormat.arrange.align.align-right",
+          "label": "Align Right",
+          "command": "arrange.align",
+          "params": {
+            "align": "right"
+          }
+        },
+        {
+          "id": "shapeFormat.arrange.align.align-top",
+          "label": "Align Top",
+          "command": "arrange.align",
+          "params": {
+            "align": "top"
+          }
+        },
+        {
+          "id": "shapeFormat.arrange.align.align-middle",
+          "label": "Align Middle",
+          "command": "arrange.align",
+          "params": {
+            "align": "middle"
+          }
+        },
+        {
+          "id": "shapeFormat.arrange.align.align-bottom",
+          "label": "Align Bottom",
+          "command": "arrange.align",
+          "params": {
+            "align": "bottom"
+          }
+        },
+        {
+          "id": "shapeFormat.arrange.align.distribute-horizontally",
+          "label": "Distribute Horizontally",
+          "command": "arrange.align",
+          "params": {
+            "align": "distributeH"
+          }
+        },
+        {
+          "id": "shapeFormat.arrange.align.distribute-vertically",
+          "label": "Distribute Vertically",
+          "command": "arrange.align",
+          "params": {
+            "align": "distributeV"
+          }
+        }
+      ]
+    },
+    "shapeFormat.arrange.group": {
+      "kind": "dropdown",
+      "command": null,
+      "note": "U:grid/charts-objects: Group the objects picked together: Page Layout > Group's command (arrange.group). Regroup and Ungroup put the last group back and split it.",
+      "items": [
+        {
+          "id": "shapeFormat.arrange.group.group",
+          "label": "Group",
+          "command": "arrange.group",
+          "params": {}
+        },
+        {
+          "id": "shapeFormat.arrange.group.regroup",
+          "label": "Regroup",
+          "command": "arrange.group",
+          "params": {
+            "regroup": true
+          }
+        },
+        {
+          "id": "shapeFormat.arrange.group.ungroup",
+          "label": "Ungroup",
+          "command": "arrange.group",
+          "params": {
+            "ungroup": true
+          }
+        }
+      ]
+    },
+    "pictureFormat.adjust.removeBackground": {
+      "kind": "button",
+      "command": "picture.removeBackground",
+      "note": "U:grid/charts-objects: Remove Background: the area connected to the picture's edge that is close to its corner colour becomes transparent (Quill's function, translated from wordcraft); there is no marking tool. Reset Picture brings it back. Not in gridcraft; not checked against upstream."
+    },
+    "pictureFormat.adjust.corrections": {
+      "kind": "gallery",
+      "command": "picture.adjust",
+      "args": {
+        "menu": "corrections",
+        "preset": "<preset>"
+      },
+      "note": "U:grid/charts-objects: Corrections: Brightness/Contrast, 5 x 5 tiles drawn on a sample picture (stored with the picture and drawn with a filter); Sharpen/Soften is not offered. Not in gridcraft; not checked against upstream."
+    },
+    "pictureFormat.adjust.color": {
+      "kind": "gallery",
+      "command": "picture.adjust",
+      "args": {
+        "menu": "color",
+        "preset": "<preset>"
+      },
+      "note": "U:grid/charts-objects: Color: Saturation, Tone (Temperature) and Recolor (grayscale, sepia, washout, black and white), drawn on a sample picture. Not in gridcraft; not checked against upstream."
+    },
+    "pictureFormat.adjust.artisticEffects": {
+      "kind": "gallery",
+      "command": "picture.effects",
+      "args": {
+        "effect": "<effect>"
+      },
+      "note": "U:grid/charts-objects: Artistic Effects: blur, sharpen, invert, posterize and pixelate (Quill's functions, translated from wordcraft), one at a time; None takes it off. Not in gridcraft; not checked against upstream."
+    },
+    "pictureFormat.adjust.transparency": {
+      "kind": "gallery",
+      "command": "picture.adjust",
+      "args": {
+        "menu": "transparency",
+        "preset": "<preset>"
+      },
+      "note": "U:grid/charts-objects: Transparency: 0 to 95 percent presets. Not in gridcraft; not checked against upstream."
+    },
+    "pictureFormat.adjust.compress": {
+      "kind": "button",
+      "command": "picture.compress",
+      "note": "U:grid/charts-objects: Compress Pictures: the picture resampled so its longer side is at most 1600 pixels (Quill's function, box filter); Excel's options dialog (resolution, delete cropped areas) is not offered. Not in gridcraft; not checked against upstream."
+    },
+    "pictureFormat.adjust.change": {
+      "kind": "button",
+      "command": "picture.change",
+      "dialog": "dialog.changePicture",
+      "note": "U:grid/charts-objects: Change Picture > From a File: the system Open dialog; the new picture takes the old one's place with its size and formatting. Stock Images, Online Pictures and Icons need online services and are not offered. Not in gridcraft; not checked against upstream."
+    },
+    "pictureFormat.adjust.reset": {
+      "kind": "dropdown",
+      "command": null,
+      "note": "U:grid/charts-objects: Reset Picture takes off the pixel edits, corrections, colour, crop, border, style and effects; Reset Picture & Size also puts the size back to the picture's own. Not in gridcraft; not checked against upstream.",
+      "items": [
+        {
+          "id": "pictureFormat.adjust.reset.reset-picture",
+          "label": "Reset Picture",
+          "command": "picture.reset",
+          "params": {}
+        },
+        {
+          "id": "pictureFormat.adjust.reset.reset-picture-and-size",
+          "label": "Reset Picture & Size",
+          "command": "picture.reset",
+          "params": {
+            "size": true
+          }
+        }
+      ]
+    },
+    "pictureFormat.styles.gallery": {
+      "kind": "gallery",
+      "command": "picture.style",
+      "args": {
+        "menu": "styles",
+        "style": "<style>"
+      },
+      "note": "U:grid/charts-objects: Picture Styles: twenty styles the sheet can draw (a border, a frame shape and a shadow, reflection, glow, soft edge or bevel). Not in gridcraft; not checked against upstream."
+    },
+    "pictureFormat.styles.border": {
+      "kind": "dropdown",
+      "command": null,
+      "note": "U:grid/charts-objects: Picture Border: a colour, none, and a weight (a weight keeps the colour). Dashes are not offered. Not in gridcraft; not checked against upstream.",
+      "items": [
+        {
+          "id": "pictureFormat.styles.border.no-outline",
+          "label": "No Outline",
+          "command": "picture.border",
+          "params": {
+            "color": "none"
+          }
+        },
+        {
+          "id": "pictureFormat.styles.border.colors",
+          "label": "Theme Colors / Standard Colors / Recent Colors",
+          "kind": "color",
+          "command": "picture.border",
+          "params": {
+            "color": "<color>"
+          }
+        },
+        {
+          "separator": true
+        },
+        {
+          "id": "pictureFormat.styles.border.weight",
+          "label": "Weight",
+          "kind": "dropdown",
+          "command": null,
+          "items": [
+            {
+              "id": "pictureFormat.styles.border.weight.0-25-pt",
+              "label": "0.25 pt",
+              "command": "picture.border",
+              "params": {
+                "width": 0.33
+              }
+            },
+            {
+              "id": "pictureFormat.styles.border.weight.0-5-pt",
+              "label": "0.5 pt",
+              "command": "picture.border",
+              "params": {
+                "width": 0.67
+              }
+            },
+            {
+              "id": "pictureFormat.styles.border.weight.0-75-pt",
+              "label": "0.75 pt",
+              "command": "picture.border",
+              "params": {
+                "width": 1
+              }
+            },
+            {
+              "id": "pictureFormat.styles.border.weight.1-pt",
+              "label": "1 pt",
+              "command": "picture.border",
+              "params": {
+                "width": 1.33
+              }
+            },
+            {
+              "id": "pictureFormat.styles.border.weight.1-5-pt",
+              "label": "1.5 pt",
+              "command": "picture.border",
+              "params": {
+                "width": 2
+              }
+            },
+            {
+              "id": "pictureFormat.styles.border.weight.2-25-pt",
+              "label": "2.25 pt",
+              "command": "picture.border",
+              "params": {
+                "width": 3
+              }
+            },
+            {
+              "id": "pictureFormat.styles.border.weight.3-pt",
+              "label": "3 pt",
+              "command": "picture.border",
+              "params": {
+                "width": 4
+              }
+            },
+            {
+              "id": "pictureFormat.styles.border.weight.4-5-pt",
+              "label": "4.5 pt",
+              "command": "picture.border",
+              "params": {
+                "width": 6
+              }
+            },
+            {
+              "id": "pictureFormat.styles.border.weight.6-pt",
+              "label": "6 pt",
+              "command": "picture.border",
+              "params": {
+                "width": 8
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "pictureFormat.styles.effects": {
+      "kind": "dropdown",
+      "command": null,
+      "items": [
+        {
+          "id": "pictureFormat.styles.effects.shadow",
+          "label": "Shadow",
+          "kind": "dropdown",
+          "command": null,
+          "items": [
+            {
+              "id": "pictureFormat.styles.effects.shadow.none",
+              "label": "No Shadow",
+              "command": "shape.effects",
+              "params": {
+                "shadow": null
+              }
+            },
+            {
+              "separator": true
+            },
+            {
+              "id": "pictureFormat.styles.effects.shadow.offset-bottom-right",
+              "label": "Offset: Bottom Right",
+              "command": "shape.effects",
+              "params": {
+                "shadow": "offsetBottomRight"
+              }
+            },
+            {
+              "id": "pictureFormat.styles.effects.shadow.offset-bottom",
+              "label": "Offset: Bottom",
+              "command": "shape.effects",
+              "params": {
+                "shadow": "offsetBottom"
+              }
+            },
+            {
+              "id": "pictureFormat.styles.effects.shadow.offset-bottom-left",
+              "label": "Offset: Bottom Left",
+              "command": "shape.effects",
+              "params": {
+                "shadow": "offsetBottomLeft"
+              }
+            },
+            {
+              "id": "pictureFormat.styles.effects.shadow.offset-right",
+              "label": "Offset: Right",
+              "command": "shape.effects",
+              "params": {
+                "shadow": "offsetRight"
+              }
+            },
+            {
+              "id": "pictureFormat.styles.effects.shadow.offset-center",
+              "label": "Offset: Center",
+              "command": "shape.effects",
+              "params": {
+                "shadow": "offsetCenter"
+              }
+            },
+            {
+              "id": "pictureFormat.styles.effects.shadow.offset-left",
+              "label": "Offset: Left",
+              "command": "shape.effects",
+              "params": {
+                "shadow": "offsetLeft"
+              }
+            },
+            {
+              "id": "pictureFormat.styles.effects.shadow.offset-top-right",
+              "label": "Offset: Top Right",
+              "command": "shape.effects",
+              "params": {
+                "shadow": "offsetTopRight"
+              }
+            },
+            {
+              "id": "pictureFormat.styles.effects.shadow.offset-top",
+              "label": "Offset: Top",
+              "command": "shape.effects",
+              "params": {
+                "shadow": "offsetTop"
+              }
+            },
+            {
+              "id": "pictureFormat.styles.effects.shadow.offset-top-left",
+              "label": "Offset: Top Left",
+              "command": "shape.effects",
+              "params": {
+                "shadow": "offsetTopLeft"
+              }
+            }
+          ],
+          "icon": "effect-shadow"
+        },
+        {
+          "id": "pictureFormat.styles.effects.reflection",
+          "label": "Reflection",
+          "kind": "dropdown",
+          "command": null,
+          "items": [
+            {
+              "id": "pictureFormat.styles.effects.reflection.none",
+              "label": "No Reflection",
+              "command": "shape.effects",
+              "params": {
+                "reflection": null
+              }
+            },
+            {
+              "separator": true
+            },
+            {
+              "id": "pictureFormat.styles.effects.reflection.tight",
+              "label": "Tight Reflection",
+              "command": "shape.effects",
+              "params": {
+                "reflection": "tight"
+              }
+            },
+            {
+              "id": "pictureFormat.styles.effects.reflection.half",
+              "label": "Half Reflection",
+              "command": "shape.effects",
+              "params": {
+                "reflection": "half"
+              }
+            },
+            {
+              "id": "pictureFormat.styles.effects.reflection.full",
+              "label": "Full Reflection",
+              "command": "shape.effects",
+              "params": {
+                "reflection": "full"
+              }
+            }
+          ],
+          "icon": "effect-reflection"
+        },
+        {
+          "id": "pictureFormat.styles.effects.glow",
+          "label": "Glow",
+          "kind": "dropdown",
+          "command": null,
+          "items": [
+            {
+              "id": "pictureFormat.styles.effects.glow.none",
+              "label": "No Glow",
+              "command": "shape.effects",
+              "params": {
+                "glow": null
+              }
+            },
+            {
+              "separator": true
+            },
+            {
+              "id": "pictureFormat.styles.effects.glow.5-pt",
+              "label": "5 pt",
+              "command": "shape.effects",
+              "params": {
+                "glow": 5
+              }
+            },
+            {
+              "id": "pictureFormat.styles.effects.glow.8-pt",
+              "label": "8 pt",
+              "command": "shape.effects",
+              "params": {
+                "glow": 8
+              }
+            },
+            {
+              "id": "pictureFormat.styles.effects.glow.11-pt",
+              "label": "11 pt",
+              "command": "shape.effects",
+              "params": {
+                "glow": 11
+              }
+            },
+            {
+              "id": "pictureFormat.styles.effects.glow.18-pt",
+              "label": "18 pt",
+              "command": "shape.effects",
+              "params": {
+                "glow": 18
+              }
+            }
+          ],
+          "icon": "effect-glow"
+        },
+        {
+          "id": "pictureFormat.styles.effects.soft-edges",
+          "label": "Soft Edges",
+          "kind": "dropdown",
+          "command": null,
+          "items": [
+            {
+              "id": "pictureFormat.styles.effects.soft-edges.none",
+              "label": "No Soft Edges",
+              "command": "shape.effects",
+              "params": {
+                "softEdge": null
+              }
+            },
+            {
+              "separator": true
+            },
+            {
+              "id": "pictureFormat.styles.effects.soft-edges.1-pt",
+              "label": "1 pt",
+              "command": "shape.effects",
+              "params": {
+                "softEdge": 1
+              }
+            },
+            {
+              "id": "pictureFormat.styles.effects.soft-edges.2-5-pt",
+              "label": "2.5 pt",
+              "command": "shape.effects",
+              "params": {
+                "softEdge": 2.5
+              }
+            },
+            {
+              "id": "pictureFormat.styles.effects.soft-edges.5-pt",
+              "label": "5 pt",
+              "command": "shape.effects",
+              "params": {
+                "softEdge": 5
+              }
+            },
+            {
+              "id": "pictureFormat.styles.effects.soft-edges.10-pt",
+              "label": "10 pt",
+              "command": "shape.effects",
+              "params": {
+                "softEdge": 10
+              }
+            },
+            {
+              "id": "pictureFormat.styles.effects.soft-edges.25-pt",
+              "label": "25 pt",
+              "command": "shape.effects",
+              "params": {
+                "softEdge": 25
+              }
+            },
+            {
+              "id": "pictureFormat.styles.effects.soft-edges.50-pt",
+              "label": "50 pt",
+              "command": "shape.effects",
+              "params": {
+                "softEdge": 50
+              }
+            }
+          ],
+          "icon": "effect-soft-edges"
+        },
+        {
+          "id": "pictureFormat.styles.effects.bevel",
+          "label": "Bevel",
+          "kind": "dropdown",
+          "command": null,
+          "items": [
+            {
+              "id": "pictureFormat.styles.effects.bevel.none",
+              "label": "No Bevel",
+              "command": "shape.effects",
+              "params": {
+                "bevel": null
+              }
+            },
+            {
+              "separator": true
+            },
+            {
+              "id": "pictureFormat.styles.effects.bevel.relaxed-inset",
+              "label": "Relaxed Inset",
+              "command": "shape.effects",
+              "params": {
+                "bevel": "relaxedInset"
+              }
+            },
+            {
+              "id": "pictureFormat.styles.effects.bevel.circle",
+              "label": "Circle",
+              "command": "shape.effects",
+              "params": {
+                "bevel": "circle"
+              }
+            },
+            {
+              "id": "pictureFormat.styles.effects.bevel.slope",
+              "label": "Slope",
+              "command": "shape.effects",
+              "params": {
+                "bevel": "slope"
+              }
+            },
+            {
+              "id": "pictureFormat.styles.effects.bevel.cross",
+              "label": "Cross",
+              "command": "shape.effects",
+              "params": {
+                "bevel": "cross"
+              }
+            },
+            {
+              "id": "pictureFormat.styles.effects.bevel.angle",
+              "label": "Angle",
+              "command": "shape.effects",
+              "params": {
+                "bevel": "angle"
+              }
+            },
+            {
+              "id": "pictureFormat.styles.effects.bevel.soft-round",
+              "label": "Soft Round",
+              "command": "shape.effects",
+              "params": {
+                "bevel": "softRound"
+              }
+            },
+            {
+              "id": "pictureFormat.styles.effects.bevel.convex",
+              "label": "Convex",
+              "command": "shape.effects",
+              "params": {
+                "bevel": "convex"
+              }
+            },
+            {
+              "id": "pictureFormat.styles.effects.bevel.cool-slant",
+              "label": "Cool Slant",
+              "command": "shape.effects",
+              "params": {
+                "bevel": "coolSlant"
+              }
+            },
+            {
+              "id": "pictureFormat.styles.effects.bevel.divot",
+              "label": "Divot",
+              "command": "shape.effects",
+              "params": {
+                "bevel": "divot"
+              }
+            },
+            {
+              "id": "pictureFormat.styles.effects.bevel.riblet",
+              "label": "Riblet",
+              "command": "shape.effects",
+              "params": {
+                "bevel": "riblet"
+              }
+            },
+            {
+              "id": "pictureFormat.styles.effects.bevel.hard-edge",
+              "label": "Hard Edge",
+              "command": "shape.effects",
+              "params": {
+                "bevel": "hardEdge"
+              }
+            },
+            {
+              "id": "pictureFormat.styles.effects.bevel.art-deco",
+              "label": "Art Deco",
+              "command": "shape.effects",
+              "params": {
+                "bevel": "artDeco"
+              }
+            }
+          ],
+          "icon": "effect-bevel"
+        }
+      ],
+      "note": "U:grid/charts-objects: Shape Effects: shadow (nine offsets), reflection, glow, soft edges and bevel, drawn by the sheet and saved as DrawingML effects; Preset and 3-D Rotation have no engine and are not offered. Quill's effect model (translated from wordcraft). Not in gridcraft; not checked against upstream."
+    },
+    "pictureFormat.styles.layout": {
+      "command": null,
+      "note": "U:grid/charts-objects: Picture Layout turns pictures into SmartArt; the sheet has no SmartArt; hidden."
+    },
+    "pictureFormat.accessibility.altText": {
+      "kind": "button",
+      "command": "object.setAlt",
+      "dialog": "dialog.altText",
+      "note": "U:grid/charts-objects: Alt Text on the selected object (its description, saved in .xlsx); Excel shows a pane, here it is a dialog with the same description box and Mark as decorative. Not in gridcraft for charts and shapes; not checked against upstream."
+    },
+    "pictureFormat.arrange.selectionPane": {
+      "kind": "toggle",
+      "command": "arrange.selectionPane",
+      "note": "U:grid/charts-objects: Selection Pane: the pane that lists the sheet's objects (Page Layout > Selection Pane's command)."
+    },
+    "pictureFormat.arrange.align": {
+      "kind": "dropdown",
+      "command": null,
+      "note": "U:grid/charts-objects: Align the objects picked together: Page Layout > Align's command (arrange.align). Distribute needs three objects picked together.",
+      "items": [
+        {
+          "id": "pictureFormat.arrange.align.align-left",
+          "label": "Align Left",
+          "command": "arrange.align",
+          "params": {
+            "align": "left"
+          }
+        },
+        {
+          "id": "pictureFormat.arrange.align.align-center",
+          "label": "Align Center",
+          "command": "arrange.align",
+          "params": {
+            "align": "center"
+          }
+        },
+        {
+          "id": "pictureFormat.arrange.align.align-right",
+          "label": "Align Right",
+          "command": "arrange.align",
+          "params": {
+            "align": "right"
+          }
+        },
+        {
+          "id": "pictureFormat.arrange.align.align-top",
+          "label": "Align Top",
+          "command": "arrange.align",
+          "params": {
+            "align": "top"
+          }
+        },
+        {
+          "id": "pictureFormat.arrange.align.align-middle",
+          "label": "Align Middle",
+          "command": "arrange.align",
+          "params": {
+            "align": "middle"
+          }
+        },
+        {
+          "id": "pictureFormat.arrange.align.align-bottom",
+          "label": "Align Bottom",
+          "command": "arrange.align",
+          "params": {
+            "align": "bottom"
+          }
+        },
+        {
+          "id": "pictureFormat.arrange.align.distribute-horizontally",
+          "label": "Distribute Horizontally",
+          "command": "arrange.align",
+          "params": {
+            "align": "distributeH"
+          }
+        },
+        {
+          "id": "pictureFormat.arrange.align.distribute-vertically",
+          "label": "Distribute Vertically",
+          "command": "arrange.align",
+          "params": {
+            "align": "distributeV"
+          }
+        }
+      ]
+    },
+    "pictureFormat.arrange.group": {
+      "kind": "dropdown",
+      "command": null,
+      "note": "U:grid/charts-objects: Group the objects picked together: Page Layout > Group's command (arrange.group). Regroup and Ungroup put the last group back and split it.",
+      "items": [
+        {
+          "id": "pictureFormat.arrange.group.group",
+          "label": "Group",
+          "command": "arrange.group",
+          "params": {}
+        },
+        {
+          "id": "pictureFormat.arrange.group.regroup",
+          "label": "Regroup",
+          "command": "arrange.group",
+          "params": {
+            "regroup": true
+          }
+        },
+        {
+          "id": "pictureFormat.arrange.group.ungroup",
+          "label": "Ungroup",
+          "command": "arrange.group",
+          "params": {
+            "ungroup": true
+          }
+        }
+      ]
+    },
+    "pictureFormat.arrange.rotate": {
+      "kind": "dropdown",
+      "command": null,
+      "note": "U:grid/insert-layout: Rotate Right and Left 90 and Flip turn and mirror the picked pictures and shapes (arrange.rotate degrees, flip), as Page Layout > Rotate.",
+      "items": [
+        {
+          "id": "pictureFormat.arrange.rotate.rotate-right-90",
+          "label": "Rotate Right 90°",
+          "command": "arrange.rotate",
+          "params": {
+            "degrees": 90
+          }
+        },
+        {
+          "id": "pictureFormat.arrange.rotate.rotate-left-90",
+          "label": "Rotate Left 90°",
+          "command": "arrange.rotate",
+          "params": {
+            "degrees": -90
+          }
+        },
+        {
+          "id": "pictureFormat.arrange.rotate.flip-vertical",
+          "label": "Flip Vertical",
+          "command": "arrange.rotate",
+          "params": {
+            "flip": "vertical"
+          }
+        },
+        {
+          "id": "pictureFormat.arrange.rotate.flip-horizontal",
+          "label": "Flip Horizontal",
+          "command": "arrange.rotate",
+          "params": {
+            "flip": "horizontal"
+          }
+        }
+      ]
+    },
+    "pictureFormat.size.crop": {
+      "kind": "split",
+      "command": "picture.cropMode",
+      "note": "U:grid/charts-objects: Crop: handles on the picture cut its sides; Crop to Shape, Aspect Ratio, Fill and Fit. Not in gridcraft; not checked against upstream.",
+      "items": [
+        {
+          "id": "pictureFormat.size.crop.crop",
+          "label": "Crop",
+          "command": "picture.cropMode",
+          "params": {},
+          "icon": "crop"
+        },
+        {
+          "id": "pictureFormat.size.crop.crop-to-shape",
+          "label": "Crop to Shape",
+          "kind": "dropdown",
+          "command": null,
+          "items": [
+            {
+              "id": "pictureFormat.size.crop.crop-to-shape.rect",
+              "label": "Rectangle",
+              "command": "picture.crop",
+              "params": {
+                "shape": "rect"
+              }
+            },
+            {
+              "id": "pictureFormat.size.crop.crop-to-shape.round-rect",
+              "label": "Rounded Rectangle",
+              "command": "picture.crop",
+              "params": {
+                "shape": "roundRect"
+              }
+            },
+            {
+              "id": "pictureFormat.size.crop.crop-to-shape.ellipse",
+              "label": "Oval",
+              "command": "picture.crop",
+              "params": {
+                "shape": "ellipse"
+              }
+            },
+            {
+              "id": "pictureFormat.size.crop.crop-to-shape.triangle",
+              "label": "Triangle",
+              "command": "picture.crop",
+              "params": {
+                "shape": "triangle"
+              }
+            },
+            {
+              "id": "pictureFormat.size.crop.crop-to-shape.diamond",
+              "label": "Diamond",
+              "command": "picture.crop",
+              "params": {
+                "shape": "diamond"
+              }
+            },
+            {
+              "id": "pictureFormat.size.crop.crop-to-shape.hexagon",
+              "label": "Hexagon",
+              "command": "picture.crop",
+              "params": {
+                "shape": "hexagon"
+              }
+            },
+            {
+              "id": "pictureFormat.size.crop.crop-to-shape.octagon",
+              "label": "Octagon",
+              "command": "picture.crop",
+              "params": {
+                "shape": "octagon"
+              }
+            }
+          ],
+          "icon": "image-frame"
+        },
+        {
+          "id": "pictureFormat.size.crop.aspect-ratio",
+          "label": "Aspect Ratio",
+          "kind": "dropdown",
+          "command": null,
+          "items": [
+            {
+              "id": "pictureFormat.size.crop.aspect-ratio.1-1",
+              "label": "1:1",
+              "command": "picture.crop",
+              "params": {
+                "aspect": "1:1"
+              }
+            },
+            {
+              "id": "pictureFormat.size.crop.aspect-ratio.2-3",
+              "label": "2:3",
+              "command": "picture.crop",
+              "params": {
+                "aspect": "2:3"
+              }
+            },
+            {
+              "id": "pictureFormat.size.crop.aspect-ratio.3-2",
+              "label": "3:2",
+              "command": "picture.crop",
+              "params": {
+                "aspect": "3:2"
+              }
+            },
+            {
+              "id": "pictureFormat.size.crop.aspect-ratio.3-4",
+              "label": "3:4",
+              "command": "picture.crop",
+              "params": {
+                "aspect": "3:4"
+              }
+            },
+            {
+              "id": "pictureFormat.size.crop.aspect-ratio.4-3",
+              "label": "4:3",
+              "command": "picture.crop",
+              "params": {
+                "aspect": "4:3"
+              }
+            },
+            {
+              "id": "pictureFormat.size.crop.aspect-ratio.4-5",
+              "label": "4:5",
+              "command": "picture.crop",
+              "params": {
+                "aspect": "4:5"
+              }
+            },
+            {
+              "id": "pictureFormat.size.crop.aspect-ratio.5-4",
+              "label": "5:4",
+              "command": "picture.crop",
+              "params": {
+                "aspect": "5:4"
+              }
+            },
+            {
+              "id": "pictureFormat.size.crop.aspect-ratio.9-16",
+              "label": "9:16",
+              "command": "picture.crop",
+              "params": {
+                "aspect": "9:16"
+              }
+            },
+            {
+              "id": "pictureFormat.size.crop.aspect-ratio.16-9",
+              "label": "16:9",
+              "command": "picture.crop",
+              "params": {
+                "aspect": "16:9"
+              }
+            }
+          ],
+          "icon": "crop-aspect"
+        },
+        {
+          "id": "pictureFormat.size.crop.fill",
+          "label": "Fill",
+          "command": "picture.crop",
+          "params": {
+            "mode": "fill"
+          },
+          "icon": "crop-fill"
+        },
+        {
+          "id": "pictureFormat.size.crop.fit",
+          "label": "Fit",
+          "command": "picture.crop",
+          "params": {
+            "mode": "fit"
+          },
+          "icon": "crop-fit"
+        }
+      ]
+    },
+    "sparkline.show.highPoint": {
+      "kind": "toggle",
+      "command": "sparkline.points",
+      "args": {
+        "point": "high"
+      },
+      "note": "U:grid/charts-objects: Marks the high point of the sparkline in the active cell and its group, in their own colour (Marker Color). Not in gridcraft; not checked against upstream."
+    },
+    "sparkline.show.lowPoint": {
+      "kind": "toggle",
+      "command": "sparkline.points",
+      "args": {
+        "point": "low"
+      },
+      "note": "U:grid/charts-objects: Marks the low point of the sparkline in the active cell and its group, in their own colour (Marker Color). Not in gridcraft; not checked against upstream."
+    },
+    "sparkline.show.negativePoints": {
+      "kind": "toggle",
+      "command": "sparkline.points",
+      "args": {
+        "point": "negative"
+      },
+      "note": "U:grid/charts-objects: Marks the negative points of the sparkline in the active cell and its group, in their own colour (Marker Color). Not in gridcraft; not checked against upstream."
+    },
+    "sparkline.show.firstPoint": {
+      "kind": "toggle",
+      "command": "sparkline.points",
+      "args": {
+        "point": "first"
+      },
+      "note": "U:grid/charts-objects: Marks the first point of the sparkline in the active cell and its group, in their own colour (Marker Color). Not in gridcraft; not checked against upstream."
+    },
+    "sparkline.show.lastPoint": {
+      "kind": "toggle",
+      "command": "sparkline.points",
+      "args": {
+        "point": "last"
+      },
+      "note": "U:grid/charts-objects: Marks the last point of the sparkline in the active cell and its group, in their own colour (Marker Color). Not in gridcraft; not checked against upstream."
+    },
+    "sparkline.style.gallery": {
+      "kind": "gallery",
+      "command": "sparkline.style",
+      "args": {
+        "style": "<style>"
+      },
+      "note": "U:grid/charts-objects: Sparkline Styles: 36 styles (Accent 1 to 6 as they are, darker and lighter, Colorful and Dark) setting the series colour and the colours of the marked points. Not in gridcraft; not checked against upstream."
+    },
+    "sparkline.style.markerColor": {
+      "kind": "dropdown",
+      "command": null,
+      "note": "U:grid/charts-objects: Marker Color: the colour of the negative points, the markers and the high, low, first and last point. Not in gridcraft; not checked against upstream.",
+      "items": [
+        {
+          "id": "sparkline.style.markerColor.negative",
+          "label": "Negative Points",
+          "kind": "dropdown",
+          "command": null,
+          "items": [
+            {
+              "id": "sparkline.style.markerColor.negative.colors",
+              "label": "Theme Colors / Standard Colors / Recent Colors",
+              "kind": "color",
+              "command": "sparkline.markerColor",
+              "params": {
+                "which": "negative",
+                "color": "<color>"
+              }
+            }
+          ]
+        },
+        {
+          "id": "sparkline.style.markerColor.markers",
+          "label": "Markers",
+          "kind": "dropdown",
+          "command": null,
+          "items": [
+            {
+              "id": "sparkline.style.markerColor.markers.colors",
+              "label": "Theme Colors / Standard Colors / Recent Colors",
+              "kind": "color",
+              "command": "sparkline.markerColor",
+              "params": {
+                "which": "markers",
+                "color": "<color>"
+              }
+            }
+          ]
+        },
+        {
+          "id": "sparkline.style.markerColor.high",
+          "label": "High Point",
+          "kind": "dropdown",
+          "command": null,
+          "items": [
+            {
+              "id": "sparkline.style.markerColor.high.colors",
+              "label": "Theme Colors / Standard Colors / Recent Colors",
+              "kind": "color",
+              "command": "sparkline.markerColor",
+              "params": {
+                "which": "high",
+                "color": "<color>"
+              }
+            }
+          ]
+        },
+        {
+          "id": "sparkline.style.markerColor.low",
+          "label": "Low Point",
+          "kind": "dropdown",
+          "command": null,
+          "items": [
+            {
+              "id": "sparkline.style.markerColor.low.colors",
+              "label": "Theme Colors / Standard Colors / Recent Colors",
+              "kind": "color",
+              "command": "sparkline.markerColor",
+              "params": {
+                "which": "low",
+                "color": "<color>"
+              }
+            }
+          ]
+        },
+        {
+          "id": "sparkline.style.markerColor.first",
+          "label": "First Point",
+          "kind": "dropdown",
+          "command": null,
+          "items": [
+            {
+              "id": "sparkline.style.markerColor.first.colors",
+              "label": "Theme Colors / Standard Colors / Recent Colors",
+              "kind": "color",
+              "command": "sparkline.markerColor",
+              "params": {
+                "which": "first",
+                "color": "<color>"
+              }
+            }
+          ]
+        },
+        {
+          "id": "sparkline.style.markerColor.last",
+          "label": "Last Point",
+          "kind": "dropdown",
+          "command": null,
+          "items": [
+            {
+              "id": "sparkline.style.markerColor.last.colors",
+              "label": "Theme Colors / Standard Colors / Recent Colors",
+              "kind": "color",
+              "command": "sparkline.markerColor",
+              "params": {
+                "which": "last",
+                "color": "<color>"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "sparkline.group.axis": {
+      "kind": "dropdown",
+      "command": null,
+      "note": "U:grid/charts-objects: Axis: Show Axis (a line at zero), Plot Data Right-to-Left, and the vertical axis minimum and maximum: automatic for each sparkline, the same for all of the group, or a custom value. Date Axis Type is not offered. Not in gridcraft; not checked against upstream.",
+      "items": [
+        {
+          "id": "sparkline.group.axis.show-axis",
+          "label": "Show Axis",
+          "command": "sparkline.axis",
+          "params": {
+            "toggle": "show"
+          }
+        },
+        {
+          "id": "sparkline.group.axis.right-to-left",
+          "label": "Plot Data Right-to-Left",
+          "command": "sparkline.axis",
+          "params": {
+            "toggle": "rtl"
+          }
+        },
+        {
+          "separator": true
+        },
+        {
+          "id": "sparkline.group.axis.min",
+          "label": "Vertical Axis Minimum Value Options",
+          "kind": "dropdown",
+          "command": null,
+          "items": [
+            {
+              "id": "sparkline.group.axis.min.automatic",
+              "label": "Automatic for Each Sparkline",
+              "command": "sparkline.axis",
+              "params": {
+                "minType": "auto"
+              }
+            },
+            {
+              "id": "sparkline.group.axis.min.same",
+              "label": "Same for All Sparklines",
+              "command": "sparkline.axis",
+              "params": {
+                "minType": "same"
+              }
+            },
+            {
+              "id": "sparkline.group.axis.min.custom",
+              "label": "Custom Value…",
+              "command": "sparkline.axis",
+              "params": {},
+              "dialog": "dialog.sparklineAxisMin"
+            }
+          ]
+        },
+        {
+          "id": "sparkline.group.axis.max",
+          "label": "Vertical Axis Maximum Value Options",
+          "kind": "dropdown",
+          "command": null,
+          "items": [
+            {
+              "id": "sparkline.group.axis.max.automatic",
+              "label": "Automatic for Each Sparkline",
+              "command": "sparkline.axis",
+              "params": {
+                "maxType": "auto"
+              }
+            },
+            {
+              "id": "sparkline.group.axis.max.same",
+              "label": "Same for All Sparklines",
+              "command": "sparkline.axis",
+              "params": {
+                "maxType": "same"
+              }
+            },
+            {
+              "id": "sparkline.group.axis.max.custom",
+              "label": "Custom Value…",
+              "command": "sparkline.axis",
+              "params": {},
+              "dialog": "dialog.sparklineAxisMax"
+            }
+          ]
+        }
+      ]
+    },
+    "sparkline.group.group": {
+      "kind": "button",
+      "command": "sparkline.group",
+      "note": "U:grid/charts-objects: Group: the sparklines of the selected cells share the first one's type, colours, points and axis and change together (saved as one x14 sparkline group). Not in gridcraft; not checked against upstream."
+    },
+    "sparkline.group.ungroup": {
+      "kind": "button",
+      "command": "sparkline.ungroup",
+      "note": "U:grid/charts-objects: Ungroup: the selected cells' sparkline group becomes single sparklines, each keeping its look. Not in gridcraft; not checked against upstream."
+    },
+    "chartFormat.size.height": {
+      "command": "object.size",
+      "args": {
+        "dim": "height",
+        "value": "<pt>"
+      },
+      "note": "U:grid/charts-objects: the selected object's size in points (object.size); typing resizes it, the other side following when Lock aspect ratio is on (pictures by default). Not in gridcraft; not checked against upstream."
+    },
+    "chartFormat.size.width": {
+      "command": "object.size",
+      "args": {
+        "dim": "width",
+        "value": "<pt>"
+      },
+      "note": "U:grid/charts-objects: the selected object's size in points (object.size); typing resizes it, the other side following when Lock aspect ratio is on (pictures by default). Not in gridcraft; not checked against upstream."
+    },
+    "shapeFormat.size.height": {
+      "command": "object.size",
+      "args": {
+        "dim": "height",
+        "value": "<pt>"
+      },
+      "note": "U:grid/charts-objects: the selected object's size in points (object.size); typing resizes it, the other side following when Lock aspect ratio is on (pictures by default). Not in gridcraft; not checked against upstream."
+    },
+    "shapeFormat.size.width": {
+      "command": "object.size",
+      "args": {
+        "dim": "width",
+        "value": "<pt>"
+      },
+      "note": "U:grid/charts-objects: the selected object's size in points (object.size); typing resizes it, the other side following when Lock aspect ratio is on (pictures by default). Not in gridcraft; not checked against upstream."
+    },
+    "pictureFormat.size.height": {
+      "command": "object.size",
+      "args": {
+        "dim": "height",
+        "value": "<pt>"
+      },
+      "note": "U:grid/charts-objects: the selected object's size in points (object.size); typing resizes it, the other side following when Lock aspect ratio is on (pictures by default). Not in gridcraft; not checked against upstream."
+    },
+    "pictureFormat.size.width": {
+      "command": "object.size",
+      "args": {
+        "dim": "width",
+        "value": "<pt>"
+      },
+      "note": "U:grid/charts-objects: the selected object's size in points (object.size); typing resizes it, the other side following when Lock aspect ratio is on (pictures by default). Not in gridcraft; not checked against upstream."
+    },
+    "chartDesign.layouts.addElement.legend-bottom": {
+      "icon": "legend",
+      "note": "U:grid/charts-objects: an icon on the Add Chart Element menu item, as Excel draws one for each."
+    },
+    "chartDesign.layouts.addElement.legend-right": {
+      "icon": "legend",
+      "note": "U:grid/charts-objects: an icon on the Add Chart Element menu item, as Excel draws one for each."
+    },
+    "chartDesign.layouts.addElement.legend-top": {
+      "icon": "legend",
+      "note": "U:grid/charts-objects: an icon on the Add Chart Element menu item, as Excel draws one for each."
+    },
+    "chartDesign.layouts.addElement.legend-none": {
+      "icon": "legend",
+      "note": "U:grid/charts-objects: an icon on the Add Chart Element menu item, as Excel draws one for each."
+    },
+    "chartDesign.layouts.addElement.data-labels-show": {
+      "icon": "dataLabels",
+      "note": "U:grid/charts-objects: an icon on the Add Chart Element menu item, as Excel draws one for each."
+    },
+    "chartDesign.layouts.addElement.data-labels-none": {
+      "icon": "dataLabels",
+      "note": "U:grid/charts-objects: an icon on the Add Chart Element menu item, as Excel draws one for each."
+    },
+    "chartDesign.layouts.addElement.gridlines-show": {
+      "icon": "ce-gridlines",
+      "note": "U:grid/charts-objects: an icon on the Add Chart Element menu item, as Excel draws one for each."
+    },
+    "chartDesign.layouts.addElement.gridlines-none": {
+      "icon": "ce-gridlines",
+      "note": "U:grid/charts-objects: an icon on the Add Chart Element menu item, as Excel draws one for each."
+    }
+  },
+  "dialogs": {
+    "dialog.sparklineAxisMin": {
+      "id": "dialog.sparklineAxisMin",
+      "title": "Sparkline Vertical Axis Settings",
+      "command": "sparkline.axis",
+      "source": "office",
+      "buttons": [
+        "OK",
+        "Cancel"
+      ],
+      "note": "U:grid/charts-objects: Excel's custom value for the sparkline axis; not in gridcraft; not checked against upstream.",
+      "tabs": [
+        {
+          "name": "",
+          "fields": [
+            {
+              "id": "value",
+              "label": "Enter the minimum value for the vertical axis:",
+              "kind": "text",
+              "options": []
+            }
+          ]
+        }
+      ]
+    },
+    "dialog.sparklineAxisMax": {
+      "id": "dialog.sparklineAxisMax",
+      "title": "Sparkline Vertical Axis Settings",
+      "command": "sparkline.axis",
+      "source": "office",
+      "buttons": [
+        "OK",
+        "Cancel"
+      ],
+      "note": "U:grid/charts-objects: Excel's custom value for the sparkline axis; not in gridcraft; not checked against upstream.",
+      "tabs": [
+        {
+          "name": "",
+          "fields": [
+            {
+              "id": "value",
+              "label": "Enter the maximum value for the vertical axis:",
+              "kind": "text",
+              "options": []
+            }
+          ]
+        }
+      ]
+    },
+    "dialog.altText": {
+      "id": "dialog.altText",
+      "title": "Alt Text",
+      "command": "object.setAlt",
+      "source": "office",
+      "buttons": [
+        "OK",
+        "Cancel"
+      ],
+      "note": "U:grid/charts-objects: Excel's Alt Text pane: how the object is described to people who cannot see it (a description box and Mark as decorative); a dialog here. Not in gridcraft for charts and shapes; not checked against upstream.",
+      "tabs": [
+        {
+          "name": "",
+          "fields": [
+            {
+              "id": "alt",
+              "label": "Alt Text:",
+              "kind": "textarea",
+              "options": []
+            },
+            {
+              "id": "decorative",
+              "label": "Mark as decorative",
+              "kind": "checkbox",
+              "options": []
+            }
+          ]
+        }
+      ]
+    },
+    "dialog.changePicture": {
+      "id": "dialog.changePicture",
+      "title": "Change Picture",
+      "command": "picture.change",
+      "source": "office",
+      "buttons": [
+        "Insert",
+        "Cancel"
+      ],
+      "note": "U:grid/charts-objects: Excel's Change Picture > From a File: Browse asks the system Open dialog for a PNG or JPEG. Not in gridcraft; not checked against upstream.",
+      "tabs": [
+        {
+          "name": "",
+          "fields": [
+            {
+              "id": "path",
+              "label": "Picture (PNG or JPEG):",
+              "kind": "text",
+              "options": []
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

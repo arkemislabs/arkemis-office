@@ -1,0 +1,258 @@
+{
+  "controls": {
+    "insert.images.photo-album": {
+      "items": [
+        {
+          "label": "New Photo Album…",
+          "command": "insert.photoAlbum",
+          "dialog": "dialog.photoAlbum",
+          "source": "upstream",
+          "sourceRef": "crates/ui-egui/src/ribbon/insert.rs:24"
+        },
+        {
+          "label": "Edit Photo Album…",
+          "command": "insert.photoAlbumEdit",
+          "dialog": "dialog.photoAlbumEdit",
+          "source": "upstream",
+          "sourceRef": "crates/ui-egui/src/ribbon/insert.rs:25"
+        }
+      ],
+      "note": "U:prism/album: the album goes into the open presentation after the current slide (one undo step); Edit Photo Album rebuilds the album under the selection. The Theme choice of the dialog is not offered: the album keeps the presentation's theme."
+    }
+  },
+  "dialogs": {
+    "dialog.photoAlbum": {
+      "title": "Photo Album",
+      "command": "insert.photoAlbum",
+      "buttons": [
+        "Create",
+        "Cancel"
+      ],
+      "note": "U:prism/album: one picture is added per click on Add (the system picker returns one file); the picture layout, frame, captions and black and white are as deckcraft's.",
+      "tabs": [
+        {
+          "name": "Album",
+          "fields": [
+            {
+              "id": "items",
+              "label": "Pictures in album",
+              "kind": "list",
+              "options": [],
+              "param": "pictures",
+              "note": "thumbnails with buttons to add a picture, add a text box, remove, move, rotate and correct (src/apps/prism/surface/PhotoAlbum.tsx)",
+              "source": "upstream",
+              "sourceRef": "crates/ui-egui/src/dialogs/photo_album.rs"
+            },
+            {
+              "id": "layout",
+              "label": "Picture layout",
+              "kind": "select",
+              "options": [
+                {
+                  "value": "fit",
+                  "label": "Fit to slide"
+                },
+                {
+                  "value": "1",
+                  "label": "1 picture"
+                },
+                {
+                  "value": "2",
+                  "label": "2 pictures"
+                },
+                {
+                  "value": "4",
+                  "label": "4 pictures"
+                },
+                {
+                  "value": "1title",
+                  "label": "1 picture with title"
+                },
+                {
+                  "value": "2title",
+                  "label": "2 pictures with title"
+                },
+                {
+                  "value": "4title",
+                  "label": "4 pictures with title"
+                }
+              ],
+              "param": "layout",
+              "source": "upstream",
+              "sourceRef": "crates/ui-egui/src/dialogs/photo_album.rs"
+            },
+            {
+              "id": "frame",
+              "label": "Frame shape",
+              "kind": "select",
+              "options": [
+                {
+                  "value": "none",
+                  "label": "None"
+                },
+                {
+                  "value": "rect",
+                  "label": "Rectangle"
+                },
+                {
+                  "value": "rounded",
+                  "label": "Rounded rectangle"
+                },
+                {
+                  "value": "simple",
+                  "label": "Simple frame, white"
+                }
+              ],
+              "param": "frame",
+              "source": "upstream",
+              "sourceRef": "crates/ui-egui/src/dialogs/photo_album.rs"
+            },
+            {
+              "id": "captions",
+              "label": "Captions below ALL pictures",
+              "kind": "checkbox",
+              "options": [],
+              "param": "captions",
+              "source": "upstream",
+              "sourceRef": "crates/ui-egui/src/dialogs/photo_album.rs"
+            },
+            {
+              "id": "grayscale",
+              "label": "ALL pictures black and white",
+              "kind": "checkbox",
+              "options": [],
+              "param": "grayscale",
+              "source": "upstream",
+              "sourceRef": "crates/ui-egui/src/dialogs/photo_album.rs"
+            },
+            {
+              "id": "preview",
+              "label": "Picture options summary",
+              "kind": "preview",
+              "options": [],
+              "source": "upstream",
+              "sourceRef": "crates/ui-egui/src/dialogs/photo_album.rs"
+            }
+          ]
+        }
+      ]
+    },
+    "dialog.photoAlbumEdit": {
+      "id": "dialog.photoAlbumEdit",
+      "title": "Edit Photo Album",
+      "command": "insert.photoAlbumEdit",
+      "buttons": [
+        "Update",
+        "Cancel"
+      ],
+      "note": "U:prism/album: the same dialog on the album under the selection; Update rebuilds it in place.",
+      "tabs": [
+        {
+          "name": "Album",
+          "fields": [
+            {
+              "id": "items",
+              "label": "Pictures in album",
+              "kind": "list",
+              "options": [],
+              "param": "pictures",
+              "note": "thumbnails with buttons to add a picture, add a text box, remove, move, rotate and correct (src/apps/prism/surface/PhotoAlbum.tsx)",
+              "source": "upstream",
+              "sourceRef": "crates/ui-egui/src/dialogs/photo_album.rs"
+            },
+            {
+              "id": "layout",
+              "label": "Picture layout",
+              "kind": "select",
+              "options": [
+                {
+                  "value": "fit",
+                  "label": "Fit to slide"
+                },
+                {
+                  "value": "1",
+                  "label": "1 picture"
+                },
+                {
+                  "value": "2",
+                  "label": "2 pictures"
+                },
+                {
+                  "value": "4",
+                  "label": "4 pictures"
+                },
+                {
+                  "value": "1title",
+                  "label": "1 picture with title"
+                },
+                {
+                  "value": "2title",
+                  "label": "2 pictures with title"
+                },
+                {
+                  "value": "4title",
+                  "label": "4 pictures with title"
+                }
+              ],
+              "param": "layout",
+              "source": "upstream",
+              "sourceRef": "crates/ui-egui/src/dialogs/photo_album.rs"
+            },
+            {
+              "id": "frame",
+              "label": "Frame shape",
+              "kind": "select",
+              "options": [
+                {
+                  "value": "none",
+                  "label": "None"
+                },
+                {
+                  "value": "rect",
+                  "label": "Rectangle"
+                },
+                {
+                  "value": "rounded",
+                  "label": "Rounded rectangle"
+                },
+                {
+                  "value": "simple",
+                  "label": "Simple frame, white"
+                }
+              ],
+              "param": "frame",
+              "source": "upstream",
+              "sourceRef": "crates/ui-egui/src/dialogs/photo_album.rs"
+            },
+            {
+              "id": "captions",
+              "label": "Captions below ALL pictures",
+              "kind": "checkbox",
+              "options": [],
+              "param": "captions",
+              "source": "upstream",
+              "sourceRef": "crates/ui-egui/src/dialogs/photo_album.rs"
+            },
+            {
+              "id": "grayscale",
+              "label": "ALL pictures black and white",
+              "kind": "checkbox",
+              "options": [],
+              "param": "grayscale",
+              "source": "upstream",
+              "sourceRef": "crates/ui-egui/src/dialogs/photo_album.rs"
+            },
+            {
+              "id": "preview",
+              "label": "Picture options summary",
+              "kind": "preview",
+              "options": [],
+              "source": "upstream",
+              "sourceRef": "crates/ui-egui/src/dialogs/photo_album.rs"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

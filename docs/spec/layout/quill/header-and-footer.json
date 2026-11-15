@@ -1,0 +1,50 @@
+{
+  "tab": "header-and-footer",
+  "source": "Microsoft Word for Windows › Header & Footer (no wordcraft ribbon file; the spec takes this tab from Word)",
+  "groups": {
+    "header-and-footer": {
+      "collapseOrder": 6,
+      "layout": [
+        {"large": "header-footer.header-footer.header"},
+        {"large": "header-footer.header-footer.footer"},
+        {"large": "header-footer.header-footer.page-number"}
+      ]
+    },
+    "insert": {
+      "collapseOrder": 5,
+      "layout": [
+        {"large": "header-footer.insert.date-time"},
+        {"large": "header-footer.insert.document-info"},
+        {"large": "header-footer.insert.quick-parts"},
+        {"large": "header-footer.insert.pictures"},
+        {"large": "header-footer.insert.online-pictures"}
+      ]
+    },
+    "navigation": {
+      "collapseOrder": 4,
+      "layout": [
+        {"large": "header-footer.navigation.go-to-header"},
+        {"large": "header-footer.navigation.go-to-footer"},
+        {"stack": ["header-footer.navigation.previous", "header-footer.navigation.next", "header-footer.navigation.link-to-previous"]}
+      ]
+    },
+    "options": {
+      "collapseOrder": 3,
+      "layout": [
+        {"stack": ["header-footer.options.different-first-page", "header-footer.options.different-odd-even-pages", "header-footer.options.show-document-text"]}
+      ]
+    },
+    "position": {
+      "collapseOrder": 2,
+      "layout": [
+        {"stack": ["header-footer.position.header-from-top", "header-footer.position.footer-from-bottom", "header-footer.position.insert-alignment-tab"]}
+      ]
+    },
+    "close": {
+      "collapseOrder": 1,
+      "layout": [
+        {"large": "header-footer.close.close-header-and-footer"}
+      ]
+    }
+  }
+}

@@ -1,0 +1,10 @@
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import {createFile} from '../core/model.mjs';
+import {exportDocument} from '../electron/formats.cjs';
+const out=path.resolve('artifacts/office');await fs.mkdir(out,{recursive:true});
+const word=createFile('quill','Arkemis compatibility test');word.content.doc={type:'doc',content:[{type:'heading',attrs:{level:1},content:[{type:'text',text:'Arkemis compatibility test'}]},{type:'paragraph',content:[{type:'text',text:'This document was written by Quill.',marks:[{type:'bold'}]}]}]};
+const grid=createFile('grid','Arkemis calculation test');grid.content.sheets[0].cells={A1:{value:'12'},A2:{value:'30'},A3:{value:'=SUM(A1:A2)'},A4:{value:'=IF(A3=42,7,1/0)'},A5:{value:'=ROUND(-1.5,0)'},A6:{value:'=-2^2'}};
+const slides=createFile('prism','Arkemis presentation test');
+for(const [file,format,name] of [[word,'docx','quill'],[grid,'xlsx','grid'],[slides,'pptx','prism']])await fs.writeFile(path.join(out,name+'.'+format),await exportDocument(file,format));
+console.log(out);

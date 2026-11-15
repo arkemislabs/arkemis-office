@@ -1,0 +1,72 @@
+{
+  "controls": {
+    "sparkline.sparkline.editData": {
+      "kind": "button",
+      "command": "sparkline.edit",
+      "dialog": "dialog.editSparklines",
+      "note": "U:grid/data: Excel's Edit Sparklines (Data Range, Location Range) for the sparkline in the active cell; gridcraft has single sparklines only (no groups), so Edit Group Location & Data and Hidden & Empty Cells are left out. Checked against gridcraft (insert_sparkline replaces by location)."
+    },
+    "sparkline.type.line": {
+      "command": "sparkline.type",
+      "note": "U:grid/data: changes the kind of the sparkline in the active cell (gridcraft Sparkline.kind)."
+    },
+    "sparkline.type.column": {
+      "command": "sparkline.type",
+      "note": "U:grid/data: changes the kind of the sparkline in the active cell (gridcraft Sparkline.kind)."
+    },
+    "sparkline.type.winLoss": {
+      "command": "sparkline.type",
+      "note": "U:grid/data: changes the kind of the sparkline in the active cell (gridcraft Sparkline.kind)."
+    },
+    "sparkline.show.markers": {
+      "command": "sparkline.markers",
+      "params": null,
+      "note": "U:grid/data: gridcraft Sparkline.markers."
+    },
+    "sparkline.style.color": {
+      "command": "sparkline.color",
+      "args": {
+        "color": "<hex>"
+      },
+      "note": "U:grid/data: gridcraft Sparkline.color."
+    },
+    "sparkline.group.clear": {
+      "command": "sparkline.clear",
+      "note": "U:grid/data: removes the sparkline in the active cell (gridcraft has no groups, so Clear Selected Sparklines and Clear Selected Sparkline Groups are one)."
+    }
+  },
+  "dialogs": {
+    "dialog.editSparklines": {
+      "id": "dialog.editSparklines",
+      "title": "Edit Sparklines",
+      "command": "sparkline.edit",
+      "source": "office",
+      "buttons": [
+        "OK",
+        "Cancel"
+      ],
+      "note": "U:grid/data: Excel's Edit Sparklines; gridcraft's sparkline is one cell with one data range.",
+      "tabs": [
+        {
+          "name": "",
+          "fields": [
+            {
+              "id": "range",
+              "label": "Data Range:",
+              "kind": "text",
+              "options": [],
+              "refPicker": true
+            },
+            {
+              "id": "location",
+              "label": "Location Range:",
+              "kind": "text",
+              "options": [],
+              "refPicker": true
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

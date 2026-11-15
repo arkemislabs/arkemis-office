@@ -1,0 +1,53 @@
+/* File pages that work with real files (src/shell/backstage/pages.tsx): Open (places + Recent),
+   Save As / Save a Copy (places), Recover Unsaved Documents, Info's path, Print's preview name. */
+.bs-subhead { margin: 22px 0 10px; color: var(--sh-text-2); font-size: 13px; font-weight: 600; }
+.bs-subhead:first-of-type { margin-top: 0; }
+.bs-path { margin: 0; overflow-wrap: anywhere; }
+.bs-card-mark { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 9px; background: rgba(255,255,255,.07); color: var(--sh-text-2); font-size: 15px; }
+
+/* Places: Recent / Browse / Recover (Open), This PC / Browse (Save As). */
+.bs-open { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 28px; align-items: start; }
+.bs-places { display: flex; flex-direction: column; gap: 4px; max-width: 420px; }
+.bs-place { display: flex; align-items: center; gap: 12px; min-height: 48px; padding: 8px 14px; border: 0; border-radius: 10px; background: transparent; color: var(--sh-text-1); text-align: left; }
+button.bs-place:hover:not(:disabled) { background: var(--sh-hover); }
+.bs-place.is-current { background: rgba(255,255,255,.1); box-shadow: var(--sh-checked-ring); }
+.bs-place:disabled { color: var(--sh-text-3); }
+.bs-place-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.bs-place-text strong { font-size: 13px; font-weight: 500; }
+.bs-place-text small { color: var(--sh-text-3); font-size: 11.5px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bs-open-list { min-width: 0; }
+
+/* Recent files (pinned first, missing ones dimmed). */
+.bs-recent { display: flex; flex-direction: column; gap: 14px; max-width: 760px; margin: 0; padding: 0; list-style: none; }
+.bs-recent-search { display: flex; align-items: center; gap: 8px; height: 30px; max-width: 320px; padding: 0 10px; border-radius: 8px; background: var(--sh-field); box-shadow: inset 0 0 0 1px var(--sh-field-border); color: var(--sh-text-3); }
+.bs-recent-search input { flex: 1; min-width: 0; height: 100%; border: 0; outline: 0; background: transparent; color: var(--sh-text-1); font: 12px var(--ark-font); }
+.bs-recent-group h3 { margin: 0 0 6px; color: var(--sh-text-3); font-size: 11.5px; font-weight: 600; letter-spacing: .02em; }
+.bs-recent-group ul { display: flex; flex-direction: column; gap: 2px; margin: 0; padding: 0; list-style: none; }
+.bs-recent-row { display: flex; align-items: center; gap: 4px; border-radius: 10px; }
+.bs-recent-row:hover, .bs-recent-row:focus-within { background: var(--sh-hover); }
+.bs-unsaved .bs-recent-row { gap: 8px; padding: 6px 10px; }
+.bs-recent-open { display: flex; flex: 1; align-items: center; gap: 12px; min-width: 0; padding: 7px 10px; border: 0; border-radius: 10px; background: transparent; color: var(--sh-text-1); text-align: left; }
+.bs-recent-text { display: flex; flex: 1; flex-direction: column; gap: 2px; min-width: 0; }
+.bs-recent-text strong { font-size: 12.5px; font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bs-recent-text small { color: var(--sh-text-3); font-size: 11px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bs-recent-row.is-missing .bs-recent-text strong, .bs-recent-row.is-missing .bs-format-ext { color: var(--sh-text-3); }
+.bs-recent-missing { color: var(--sh-text-3); font-size: 11px; font-style: normal; white-space: nowrap; }
+.bs-recent-pin, .bs-recent-remove { display: grid; place-items: center; flex: none; width: 28px; height: 28px; padding: 0; border: 0; border-radius: 7px; background: transparent; color: var(--sh-text-3); opacity: 0; }
+.bs-recent-row:hover .bs-recent-pin, .bs-recent-row:hover .bs-recent-remove, .bs-recent-row:focus-within .bs-recent-pin,
+.bs-recent-row:focus-within .bs-recent-remove, .bs-recent-pin.is-pinned { opacity: 1; }
+.bs-recent-pin:hover, .bs-recent-remove:hover { background: var(--sh-press); color: var(--sh-text-1); }
+.bs-recent-pin.is-pinned { color: var(--sh-text-1); }
+.bs-recent-remove { margin-right: 6px; }
+
+/* Print preview: the document's own page when its surface renders one, else its name on the sheet. */
+.bs-print-h { margin: 6px 0 -4px; color: var(--sh-text-2); font-size: 12.5px; font-weight: 600; }
+.bs-paper.is-landscape { aspect-ratio: 11 / 8.5; width: min(440px, 100%); }
+.bs-paper img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.bs-paper:has(img) { padding: 0; }
+.bs-paper-name { display: block; color: #6b6c72; font-size: 12px; text-align: center; }
+
+/* A primary button on a File page keeps its dark label (the page's own button colour rule would make it white on white); selects match the fields. */
+.bs .gd-button.gd-primary { color: #111112; }
+.bs .gd-button.gd-primary:disabled { color: rgba(17,17,18,.62); }
+.bs-section select { height: 30px; padding: 0 8px; border: 0; border-radius: 8px; background: rgba(255,255,255,.085); box-shadow: inset 0 0 0 1px rgba(255,255,255,.12); color: #f4f4f6; font: inherit; }
+.bs-section select option { background: #1b1b1d; color: #f4f4f6; }

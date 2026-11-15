@@ -1,0 +1,12 @@
+{
+  "source": "gridcraft crates/ui-egui/src/dialogs.rs:274 at 146161b4b450a56e5e59a083ba0478582d1e602b; Excel Standard Width",
+  "width": 280,
+  "height": 150,
+  "sections": [
+    {
+      "fields": [
+        "width"
+      ]
+    }
+  ]
+}

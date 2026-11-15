@@ -1,0 +1,173 @@
+/* The PDF window's Acrobat layout (AcrobatChrome.tsx) in the Arkemis skin: graphite greys, white
+   text, hairlines, the shell's line icons. Sizes follow printcraft: a 48 px mode bar, 34 px tool
+   rows, 32 px icon buttons in the quick bar and the rail, the quick bar 14 px in from the corner. */
+
+.shell.has-chrome[data-app="folio"] {
+  --fa-window: #1b1b1b; --fa-panel: #212121; --fa-raised: #2a2a2a; --fa-doc: #262626;
+  --fa-hover: rgba(255,255,255,.07); --fa-press: rgba(255,255,255,.11); --fa-on: #3a3a3a;
+  --fa-line: rgba(255,255,255,.09); --fa-line-strong: rgba(255,255,255,.16);
+  --fa-text: #ffffff; --fa-text-2: rgba(255,255,255,.72); --fa-text-3: rgba(255,255,255,.5);
+  background: var(--fa-window);
+}
+.shell.has-chrome[data-app="folio"] .shell-titlebar { background: var(--fa-window); border-bottom: 1px solid var(--fa-line); }
+
+.fa { flex: 1; min-height: 0; display: flex; flex-direction: column; color: var(--fa-text); background: var(--fa-window); }
+.fa .shell-icon { color: inherit; }
+.fa-fill { flex: 1; }
+.fa-vline { width: 1px; height: 22px; margin: 0 8px 0 6px; background: var(--fa-line-strong); flex: none; }
+
+/* Icon buttons the chrome draws itself (Menu, Back, Close). */
+.fa-iconbtn { display: grid; place-items: center; width: 32px; height: 32px; padding: 0; border: 0; border-radius: 8px; background: transparent; color: var(--fa-text-2); flex: none; }
+.fa-iconbtn.is-small { width: 28px; height: 28px; border-radius: 7px; }
+.fa-iconbtn:hover { background: var(--fa-hover); color: var(--fa-text); }
+.fa-iconbtn:active, .fa-iconbtn.is-on { background: var(--fa-press); color: var(--fa-text); }
+
+/* Mode bar: menus, the four mode tabs, then document actions on the right. */
+.fa-modebar { flex: none; display: flex; align-items: center; height: 48px; padding: 0 10px; gap: 2px; background: var(--fa-window); border-bottom: 1px solid var(--fa-line); }
+.fa-modes { display: flex; align-items: center; gap: 2px; }
+.fa-mode { position: relative; height: 32px; padding: 0 14px; border: 0; border-radius: 8px; background: transparent; color: var(--fa-text-2); font: 500 13px var(--ark-font); white-space: nowrap; }
+.fa-mode:hover { background: var(--fa-hover); color: var(--fa-text); }
+.fa-mode.is-active { background: var(--fa-on); color: var(--fa-text); font-weight: 600; box-shadow: inset 0 0 0 1px var(--fa-line-strong); }
+.fa-modebar-end { display: flex; align-items: center; gap: 4px; }
+
+/* The ribbon's controls restyled for the Acrobat bars. */
+.fa .rb { color: var(--fa-text); }
+.fa .rb-small { width: 32px; height: 32px; min-width: 32px; padding: 0; border-radius: 8px; }
+.fa .rb-small .shell-icon { width: 20px; height: 20px; }
+.fa .rb:hover, .fa .rb.is-open { background: var(--fa-hover); }
+.fa .rb:active { background: var(--fa-press); }
+.fa .rb.is-checked { background: var(--fa-on); box-shadow: inset 0 0 0 1px var(--fa-line-strong); }
+.fa .rb.is-disabled { color: var(--fa-text-3); }
+.fa .rb-split-small { position: relative; width: 32px; height: 32px; border-radius: 8px; }
+.fa .rb-split-small:hover { box-shadow: none; }
+.fa .rb-split-small .rb-split-main { width: 32px; height: 32px; padding: 0; justify-content: center; border-radius: 8px; }
+.fa .rb-split-small .rb-split-main .shell-icon { width: 20px; height: 20px; }
+/* The flyout mark: a small corner triangle, as printcraft quick_bar draws it. */
+.fa .rb-split-small .rb-split-arrow { position: absolute; right: 1px; bottom: 1px; width: 11px; height: 11px; padding: 0; border-radius: 0 0 7px 0; background: transparent; }
+.fa .rb-split-small .rb-split-arrow .shell-glyph { display: none; }
+.fa .rb-split-small .rb-split-arrow::after { content: ''; position: absolute; right: 3px; bottom: 3px; border-style: solid; border-width: 0 0 5px 5px; border-color: transparent transparent var(--fa-text-3) transparent; }
+.fa .rb-split-small .rb-split-arrow:hover::after, .fa .rb-split-small.is-open .rb-split-arrow::after { border-bottom-color: var(--fa-text); }
+.fa .rb-split-small.is-checked .rb-split-main { background: var(--fa-on); box-shadow: inset 0 0 0 1px var(--fa-line-strong); }
+.fa .rb-split-medium.is-checked .rb-split-main { background: var(--fa-on); box-shadow: none; }
+.fa .rb-menu.rb-small { width: auto; padding: 0 4px 0 6px; gap: 2px; }
+
+/* Body: left panel, the document, the right panes, the rail. */
+.fa-body { flex: 1; min-height: 0; display: flex; }
+
+/* Left tool panel (printcraft tools.rs: 14 px in, a title row, 34 px rows). */
+.fa-left { flex: none; width: 300px; min-height: 0; display: flex; flex-direction: column; background: var(--fa-panel); border-right: 1px solid var(--fa-line); }
+.fa-panel { flex: 1; min-height: 0; display: flex; flex-direction: column; }
+.fa-panel-head { flex: none; display: flex; align-items: center; gap: 4px; height: 50px; padding: 0 8px 0 14px; border-bottom: 1px solid var(--fa-line); }
+.fa-panel-head > .fa-iconbtn:first-child { margin-left: -8px; }
+.fa-panel-head h2 { flex: 1; min-width: 0; margin: 0; font: 600 15px/1.2 var(--ark-font); color: var(--fa-text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.fa-panel-tools { display: flex; align-items: center; gap: 2px; }
+.fa-panel-tools .rb-small { width: 28px; height: 28px; min-width: 28px; border-radius: 7px; }
+.fa-panel-tools .rb-small .shell-icon { width: 16px; height: 16px; }
+.fa-panel-search { padding: 10px 14px 2px; }
+.fa-panel-search .rb-combo { height: 30px; border-radius: 8px; }
+.fa-panel-body { flex: 1; min-height: 0; overflow: auto; padding: 8px 8px 16px; }
+.fa-empty { margin: 12px 8px; color: var(--fa-text-3); font-size: 12px; }
+
+.fa-tool-row { display: flex; align-items: center; gap: 12px; width: 100%; height: 36px; padding: 0 10px; border: 0; border-radius: 8px; background: transparent; color: var(--fa-text); font: 13.5px var(--ark-font); text-align: left; }
+.fa-tool-row:hover { background: var(--fa-hover); }
+.fa-tool-row:active { background: var(--fa-press); }
+.fa-tool-icon { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 7px; background: var(--fa-raised); box-shadow: inset 0 0 0 1px var(--fa-line); color: var(--fa-text); flex: none; }
+.fa-tool-icon .shell-icon { width: 18px; height: 18px; }
+.fa-tool-label { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.fa-link { margin: 6px 10px; padding: 4px 0; border: 0; background: transparent; color: var(--fa-text); font: 500 13px var(--ark-font); text-decoration: underline; text-decoration-color: var(--fa-line-strong); text-underline-offset: 3px; }
+.fa-link:hover { text-decoration-color: var(--fa-text); }
+
+.fa-section { padding: 6px 0 10px; }
+.fa-section + .fa-section { border-top: 1px solid var(--fa-line); }
+.fa-section h3 { margin: 6px 10px 6px; font: 600 12px var(--ark-font); color: var(--fa-text-2); letter-spacing: .01em; }
+.fa-icon-row { display: flex; flex-wrap: wrap; gap: 4px; padding: 2px 6px 6px; }
+.fa-icon-row .rb-small { width: 36px; height: 36px; background: var(--fa-raised); box-shadow: inset 0 0 0 1px var(--fa-line); }
+.fa-icon-row .rb-small:hover { background: var(--fa-on); }
+.fa-row { display: flex; align-items: center; gap: 8px; min-height: 36px; }
+.fa-row > .rb-medium, .fa-row > .rb-split-medium, .fa-row > .rb-menu { flex: 1; min-width: 0; }
+.fa-row .rb-medium { height: 36px; padding: 0 10px; gap: 12px; border-radius: 8px; font-size: 13.5px; justify-content: flex-start; }
+.fa-row .rb-medium .shell-icon { width: 18px; height: 18px; }
+.fa-row .rb-split-medium { height: 36px; border-radius: 8px; }
+.fa-row .rb-split-medium .rb-split-main { flex: 1; min-width: 0; overflow: hidden; gap: 12px; padding: 0 10px; font-size: 13.5px; border-radius: 8px 0 0 8px; }
+.fa-row .rb-split-medium .rb-split-main .shell-icon { width: 18px; height: 18px; }
+.fa-row .rb-split-medium .rb-split-arrow { width: 30px; border-radius: 0 8px 8px 0; }
+.fa-row .rb-split-medium:hover { box-shadow: inset 0 0 0 1px var(--fa-line); }
+.fa-row-label { flex: 1; padding-left: 10px; color: var(--fa-text-2); font-size: 12.5px; }
+.fa-pane-embed { margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--fa-line); }
+
+/* The document: contextual bars on top, the page view, the floating quick bar. */
+.fa-doc { position: relative; flex: 1; min-width: 0; display: flex; flex-direction: column; background: var(--fa-doc); }
+.fa-doc-main { position: relative; flex: 1; min-height: 0; display: flex; }
+.fa .shell-surface { border-radius: 0; box-shadow: none; background: var(--fa-doc); }
+.fa .folio-scroll { background: var(--fa-doc); }
+.fa .folio-side { background: var(--fa-panel); box-shadow: inset 1px 0 0 var(--fa-line); }
+.fa .folio-side-head { height: 50px; padding: 0 8px 0 16px; box-shadow: inset 1px -1px 0 var(--fa-line); }
+.fa .folio-side-head h2 { font: 600 15px/1.2 var(--ark-font); color: var(--fa-text); }
+.fa-docbars { flex: none; display: flex; flex-direction: column; }
+.fa-docbar { display: flex; align-items: center; gap: 4px; min-height: 46px; padding: 0 12px 0 16px; background: var(--fa-window); border-bottom: 1px solid var(--fa-line); }
+.fa-docbar-title { width: 150px; margin-right: 8px; color: var(--fa-text-2); font: 500 13px var(--ark-font); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex: none; }
+
+.fa-quickbar {
+  position: absolute; left: 14px; top: 14px; z-index: 6; display: flex; flex-direction: column; gap: 2px; padding: 6px;
+  border-radius: 12px; background: var(--fa-raised); box-shadow: 0 0 0 1px var(--fa-line-strong), 0 4px 16px rgba(0,0,0,.4);
+}
+.fa-quick-group { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+.fa-quick-group.is-props { padding-top: 4px; margin-top: 2px; border-top: 1px solid var(--fa-line); }
+
+/* Right rail: panel toggles on top, the page box and zoom at the foot. */
+.fa-rail { flex: none; width: 48px; display: flex; flex-direction: column; justify-content: space-between; padding: 8px 0; background: var(--fa-window); border-left: 1px solid var(--fa-line); }
+.fa-rail-panels, .fa-rail-nav { display: flex; flex-direction: column; align-items: center; gap: 2px; min-height: 0; }
+.fa-rail-panels { overflow: auto; }
+.fa-rail-nav { padding-top: 8px; }
+.fa-pagebox input { width: 36px; height: 26px; padding: 0 2px; border: 1px solid var(--fa-line-strong); border-radius: 5px; background: var(--fa-panel); color: var(--fa-text); font: 500 12px var(--ark-font); text-align: center; outline: 0; }
+.fa-pagebox input:focus { border-color: var(--sh-focus); }
+.fa-rail-position { margin: 2px 0 6px; color: var(--fa-text-3); font: 11px var(--ark-font); }
+.fa-rail-zoom .rb-combo { width: 42px !important; height: 24px; margin: 4px 0; background: transparent; box-shadow: none; }
+.fa-rail-zoom .rb-combo input { padding: 0; text-align: center; color: var(--fa-text-2); font-size: 11px; }
+.fa-rail-zoom .rb-combo button { display: none; }
+
+/* Panes the shell docks (Comments, Signatures) sit flush between the document and the rail. */
+.fa-body > .shell-panes { gap: 0; }
+.fa-body > .shell-panes .shell-pane { border-radius: 0; background: var(--fa-panel); box-shadow: inset 1px 0 0 var(--fa-line); }
+.fa-body > .shell-panes.is-left .shell-pane { box-shadow: inset -1px 0 0 var(--fa-line); }
+.fa-body > .shell-panes .shell-pane-head { height: 50px; border-bottom-color: var(--fa-line); }
+.fa-body > .shell-panes .shell-pane-head h2 { font-size: 15px; }
+.fa-row .rb-text { min-width: 0; }
+
+/* The calculation order list (AcrobatChrome CalcOrderList). */
+.fa-calc-list { display: flex; flex-direction: column; gap: 4px; }
+.fa-calc-row { display: flex; flex-direction: column; gap: 2px; padding: 6px 8px; border: 1px solid transparent; border-radius: 9px; cursor: default; }
+.fa-calc-row:hover { background: var(--sh-hover); }
+.fa-calc-row.is-selected { background: var(--sh-hover); border-color: var(--sh-focus); }
+.fa-calc-row b { display: flex; align-items: center; gap: 8px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.fa-calc-n { display: inline-grid; place-items: center; min-width: 18px; height: 18px; border-radius: 9px; background: rgba(255,255,255,.08); font-size: 10.5px; font-weight: 500; color: var(--sh-text-2); }
+.fa-calc-row small { padding-left: 26px; color: var(--sh-text-3); font-size: 10.5px; }
+.fa-calc-issue { color: #e3c27a !important; }
+
+.fa-hint { margin: 4px 10px; color: var(--sh-text-3); font-size: 11.5px; line-height: 1.4; }
+.fa-readout { display: flex; flex-direction: column; gap: 2px; margin: 8px 10px 2px; padding: 8px 10px; border-radius: 9px; background: rgba(255,255,255,.05); font-size: 12px; color: var(--sh-text-2); min-height: 34px; }
+.fa-readout b { font-size: 14px; color: var(--sh-text-1, #fff); font-weight: 600; }
+.fa-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 8px; margin: 0 10px 8px; }
+.fa-fields label, .fa-field-wide { display: flex; flex-direction: column; gap: 3px; font-size: 11px; color: var(--sh-text-3); }
+.fa-field-wide { margin: 0 10px; }
+.fa-fields input, .fa-field-wide input { height: 28px; padding: 0 8px; border-radius: 7px; border: 1px solid var(--fa-line); background: rgba(255,255,255,.05); color: var(--sh-text-1, #fff); font: 12.5px var(--ark-font); min-width: 0; }
+.fa-fields input:focus, .fa-field-wide input:focus { outline: none; border-color: var(--sh-focus); }
+.fa-saved-list { display: flex; flex-direction: column; gap: 2px; margin: 4px 6px 0; max-height: 160px; overflow: auto; }
+.fa-saved { text-align: left; padding: 6px 8px; border-radius: 8px; border: 0; background: transparent; color: var(--sh-text-2); font: 12.5px var(--ark-font); cursor: default; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.fa-saved:hover { background: var(--sh-hover); }
+
+.fa-compare-counts { display: flex; flex-wrap: wrap; gap: 4px 12px; margin: 6px 10px; font-size: 12px; color: var(--sh-text-2); }
+.fa-compare-counts i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 5px; vertical-align: -1px; }
+.fa-compare-list { display: flex; flex-direction: column; gap: 2px; margin: 4px 6px 0; }
+.fa-compare-row { display: flex; gap: 8px; text-align: left; padding: 6px 8px; border-radius: 8px; border: 1px solid transparent; background: transparent; color: var(--sh-text-1, #fff); font: 12.5px var(--ark-font); cursor: default; }
+.fa-compare-row:hover { background: var(--sh-hover); }
+.fa-compare-row.is-selected { background: var(--sh-hover); border-color: var(--sh-focus); }
+.fa-compare-row b { width: 4px; border-radius: 2px; flex: none; }
+.fa-compare-row span { display: flex; flex-direction: column; gap: 2px; min-width: 0; overflow-wrap: anywhere; }
+.fa-compare-row small { color: var(--sh-text-3); font-size: 10.5px; }
+
+/* A panel's sections fold under their titles (Acrobat's panels do): the title is the button. */
+.fa-section h3 { margin: 0; }
+.fa-fold { display: flex; align-items: center; gap: 6px; width: 100%; padding: 6px 10px; border: 0; background: transparent; color: inherit; font: inherit; text-align: left; cursor: pointer; }
+.fa-fold:hover { color: var(--fa-text); }
+.fa-panel-body { scroll-padding-bottom: 24px; padding-bottom: 28px; }

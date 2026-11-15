@@ -1,0 +1,74 @@
+{
+  "tab": "transitions",
+  "keytip": "K",
+  "source": "deckcraft crates/ui-egui/src/ribbon/transitions.rs (transitions) @ f893f6af7d36a5409fd804e81a34fd895cfefedf",
+  "groups": {
+    "preview": {
+      "collapseOrder": 1,
+      "collapsedIcon": "play-star",
+      "layout": [
+        {
+          "large": "transitions.preview.preview"
+        }
+      ]
+    },
+    "transition-to-this-slide": {
+      "collapseOrder": 3,
+      "collapsedIcon": "transition",
+      "layout": [
+        {
+          "gallery": "transitions.gallery",
+          "inline": true,
+          "columns": 8
+        },
+        {
+          "large": "transitions.effect-options"
+        }
+      ]
+    },
+    "timing": {
+      "collapseOrder": 2,
+      "collapsedIcon": "sound",
+      "layout": [
+        {
+          "rows": [
+            [
+              {
+                "medium": "transitions.timing.sound"
+              }
+            ],
+            [
+              "transitions.timing.duration"
+            ]
+          ]
+        },
+        {
+          "rows": [
+            [
+              "transitions.timing.on-click"
+            ],
+            [
+              "transitions.timing.after",
+              "transitions.timing.after-time"
+            ]
+          ]
+        },
+        {
+          "large": "transitions.timing.apply-all"
+        }
+      ],
+      "widths": {
+        "transitions.timing.sound": 150,
+        "transitions.timing.duration": 52,
+        "transitions.timing.after-time": 58
+      }
+    }
+  },
+  "keytips": {
+    "transitions.preview.preview": "P",
+    "transitions.effect-options": "EO",
+    "transitions.timing.sound": "U",
+    "transitions.timing.duration": "DU",
+    "transitions.timing.apply-all": "L"
+  }
+}

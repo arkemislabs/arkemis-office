@@ -1,0 +1,88 @@
+{
+  "tab": "insert",
+  "keytip": "N",
+  "source": "wordcraft aadb077e072b7de05f724e359d8db82e151f125c crates/ui-egui/src/ribbon/insert.rs (insert), equation_tab.rs insert_button; Add-ins and Media groups and keytips from Word for Windows",
+  "groups": {
+    "pages": {
+      "collapseOrder": 9,
+      "layout": [
+        {"stack": ["insert.pages.cover-page", "insert.pages.blank-page", "insert.pages.page-break"]}
+      ]
+    },
+    "tables": {
+      "collapseOrder": 11,
+      "layout": [
+        {"large": "insert.tables.table"}
+      ]
+    },
+    "illustrations": {
+      "collapseOrder": 10,
+      "layout": [
+        {"large": "insert.illustrations.pictures"},
+        {"large": "insert.illustrations.shapes"},
+        {"stack": ["insert.illustrations.icons", "insert.illustrations.smartart", "insert.illustrations.chart"]},
+        {"stack": ["insert.illustrations.3d-models", "insert.illustrations.screenshot"]}
+      ]
+    },
+    "add-ins": {
+      "collapseOrder": 1,
+      "layout": [
+        {"stack": ["insert.add-ins.get-add-ins", "insert.add-ins.my-add-ins"]},
+        {"large": "insert.add-ins.wikipedia"}
+      ]
+    },
+    "media": {
+      "collapseOrder": 2,
+      "layout": [
+        {"large": "insert.media.online-video"}
+      ]
+    },
+    "links": {
+      "collapseOrder": 3,
+      "layout": [
+        {"stack": ["insert.links.link", "insert.links.bookmark", "insert.links.cross-reference"]}
+      ]
+    },
+    "comments": {
+      "collapseOrder": 4,
+      "layout": [
+        {"large": "insert.comments.comment"}
+      ]
+    },
+    "header-and-footer": {
+      "collapseOrder": 5,
+      "layout": [
+        {"large": "insert.header-footer.header"},
+        {"large": "insert.header-footer.footer"},
+        {"large": "insert.header-footer.page-number"}
+      ]
+    },
+    "text": {
+      "collapseOrder": 7,
+      "layout": [
+        {"large": "insert.text.text-box"},
+        {"stack": ["insert.text.quick-parts", "insert.text.wordart", "insert.text.drop-cap"]},
+        {"stack": ["insert.text.signature-line", "insert.text.date-time", "insert.text.object"]}
+      ]
+    },
+    "symbols": {
+      "collapseOrder": 6,
+      "layout": [
+        {"large": "insert.symbols.equation"},
+        {"large": "insert.symbols.symbol"}
+      ]
+    }
+  },
+  "keytips": {
+    "insert.pages.cover-page": "NV", "insert.pages.blank-page": "NP", "insert.pages.page-break": "NB",
+    "insert.tables.table": "T",
+    "insert.illustrations.pictures": "P", "insert.illustrations.shapes": "SH", "insert.illustrations.smartart": "M",
+    "insert.illustrations.chart": "C", "insert.illustrations.screenshot": "SC",
+    "insert.links.link": "I", "insert.links.bookmark": "K", "insert.links.cross-reference": "RF",
+    "insert.comments.comment": "L",
+    "insert.header-footer.header": "H", "insert.header-footer.footer": "O", "insert.header-footer.page-number": "NU",
+    "insert.text.text-box": "X", "insert.text.quick-parts": "Q", "insert.text.wordart": "W", "insert.text.drop-cap": "RC",
+    "insert.text.signature-line": "G", "insert.text.date-time": "D", "insert.text.object": "J",
+    "insert.symbols.equation": "E", "insert.symbols.symbol": "U"
+  }
+}

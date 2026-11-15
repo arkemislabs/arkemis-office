@@ -1,0 +1,41 @@
+{
+  "tab": "smart-art-design",
+  "source": "wordcraft aadb077e072b7de05f724e359d8db82e151f125c crates/ui-egui/src/ribbon/charts.rs (smart_art_design: Add Shape large + Promote/Demote/Text Pane stack, Layouts gallery four tiles a row, Change Colors large, Reset Graphic large, common.rs graphic_size); Add Bullet, Right to Left, Move Up/Down, Layout, the SmartArt Styles gallery and Convert placed as in Word for Windows",
+  "groups": {
+    "create-graphic": {
+      "collapseOrder": 5,
+      "layout": [
+        {"large": "smartart-design.create-graphic.add-shape"},
+        {"stack": ["smartart-design.create-graphic.add-bullet", "smartart-design.create-graphic.text-pane"]},
+        {"stack": ["smartart-design.create-graphic.promote", "smartart-design.create-graphic.demote", "smartart-design.create-graphic.right-to-left"]},
+        {"stack": ["smartart-design.create-graphic.move-up", "smartart-design.create-graphic.move-down", "smartart-design.create-graphic.layout"]}
+      ]
+    },
+    "layouts": {
+      "collapseOrder": 1,
+      "layout": [
+        {"gallery": "smartart-design.layouts.layouts", "inline": true, "columns": 4}
+      ]
+    },
+    "smart-art-styles": {
+      "collapseOrder": 2,
+      "layout": [
+        {"large": "smartart-design.smartart-styles.change-colors"},
+        {"gallery": "smartart-design.smartart-styles.smartart-styles", "inline": true, "columns": 5}
+      ]
+    },
+    "reset": {
+      "collapseOrder": 3,
+      "layout": [
+        {"large": "smartart-design.reset.reset-graphic"},
+        {"large": "smartart-design.reset.convert"}
+      ]
+    },
+    "size": {
+      "collapseOrder": 4,
+      "layout": [
+        {"stack": ["smartart-design.size.h", "smartart-design.size.w"]}
+      ]
+    }
+  }
+}

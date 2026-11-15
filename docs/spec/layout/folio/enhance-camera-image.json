@@ -1,0 +1,40 @@
+{
+  "tab": "enhance-camera-image",
+  "source": "printcraft crates/ui-egui/src/tools/camera_ui.rs @ 3109bb2359759e24ef490e1cdbdba00722b20972",
+  "groups": {
+    "enhance": {
+      "collapseOrder": 1,
+      "collapsedIcon": "palette",
+      "layout": [
+        {
+          "stack": [
+            "camera.mode",
+            "camera.cleanup"
+          ]
+        },
+        {
+          "stack": [
+            "camera.rotate-ccw",
+            "camera.rotate-cw",
+            "camera.crop"
+          ]
+        },
+        {
+          "stack": [
+            "camera.organize",
+            "camera.enhance"
+          ]
+        },
+        {
+          "stack": [
+            "camera.done",
+            "camera.cancel"
+          ]
+        }
+      ],
+      "widths": {
+        "camera.cleanup": 56
+      }
+    }
+  }
+}

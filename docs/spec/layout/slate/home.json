@@ -1,0 +1,143 @@
+{
+  "tab": "home",
+  "keytip": "H",
+  "source": "office: OneNote for Microsoft 365, Home tab (Slate has no ArtCraft upstream; architecture section 1)",
+  "groups": {
+    "clipboard": {
+      "collapseOrder": 8,
+      "collapsedIcon": "clipboard-paste",
+      "layout": [
+        {
+          "large": "home.clipboard.paste"
+        },
+        {
+          "stack": [
+            "home.clipboard.cut",
+            "home.clipboard.copy",
+            "home.clipboard.format-painter"
+          ]
+        }
+      ]
+    },
+    "basic-text": {
+      "collapseOrder": 7,
+      "collapsedIcon": "font-family",
+      "layout": [
+        {
+          "rows": [
+            [
+              "home.basic-text.font",
+              "home.basic-text.font-size",
+              "home.basic-text.bullets",
+              "home.basic-text.numbering",
+              "home.basic-text.decrease-indent",
+              "home.basic-text.increase-indent",
+              "home.basic-text.clear-formatting"
+            ],
+            [
+              "home.basic-text.bold",
+              "home.basic-text.italic",
+              "home.basic-text.underline",
+              "home.basic-text.strikethrough",
+              "home.basic-text.subscript",
+              "home.basic-text.superscript",
+              "home.basic-text.highlight",
+              "home.basic-text.font-color",
+              "home.basic-text.paragraph-alignment",
+              "home.basic-text.delete"
+            ]
+          ]
+        }
+      ],
+      "widths": {
+        "home.basic-text.font": 140,
+        "home.basic-text.font-size": 46
+      }
+    },
+    "styles": {
+      "collapseOrder": 5,
+      "collapsedIcon": "styles-Aa",
+      "layout": [
+        {
+          "gallery": "home.styles.styles",
+          "inline": true,
+          "columns": 2
+        }
+      ]
+    },
+    "tags": {
+      "collapseOrder": 6,
+      "collapsedIcon": "tag-gallery",
+      "layout": [
+        {
+          "gallery": "home.tags.tags",
+          "inline": true,
+          "columns": 3
+        },
+        {
+          "stack": [
+            "home.tags.to-do-tag",
+            "home.tags.find-tags",
+            "home.tags.outlook-tasks"
+          ]
+        }
+      ]
+    },
+    "email": {
+      "collapseOrder": 4,
+      "collapsedIcon": "envelope-page",
+      "layout": [
+        {
+          "large": "home.email.email-page"
+        }
+      ]
+    },
+    "meetings": {
+      "collapseOrder": 3,
+      "collapsedIcon": "calendar-notes",
+      "layout": [
+        {
+          "large": "home.meetings.meeting-details"
+        }
+      ]
+    },
+    "voice": {
+      "collapseOrder": 2,
+      "collapsedIcon": "microphone",
+      "layout": [
+        {
+          "large": "home.voice.dictate"
+        }
+      ]
+    }
+  },
+  "keytips": {
+    "home.clipboard.paste": "V",
+    "home.clipboard.cut": "X",
+    "home.clipboard.copy": "C",
+    "home.clipboard.format-painter": "FP",
+    "home.basic-text.font": "FF",
+    "home.basic-text.font-size": "FS",
+    "home.basic-text.bullets": "U",
+    "home.basic-text.numbering": "N",
+    "home.basic-text.decrease-indent": "AO",
+    "home.basic-text.increase-indent": "AI",
+    "home.basic-text.clear-formatting": "E",
+    "home.basic-text.bold": "1",
+    "home.basic-text.italic": "2",
+    "home.basic-text.underline": "3",
+    "home.basic-text.strikethrough": "4",
+    "home.basic-text.highlight": "I",
+    "home.basic-text.font-color": "FC",
+    "home.basic-text.paragraph-alignment": "AL",
+    "home.basic-text.delete": "DE",
+    "home.styles.styles": "L",
+    "home.tags.tags": "G",
+    "home.tags.to-do-tag": "TD",
+    "home.tags.find-tags": "FT",
+    "home.tags.outlook-tasks": "TS",
+    "home.email.email-page": "PE",
+    "home.meetings.meeting-details": "MD",
+    "home.voice.dictate": "DI"
+  }
+}

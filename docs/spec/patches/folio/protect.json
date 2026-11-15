@@ -1,0 +1,190 @@
+{
+ "dialogs": {
+  "dialog.protect": {
+   "note": "printcraft dialogs/protect.rs: Viewing needs an open password; Editing sets a permissions password and the limits (printing, changes, copying, screen readers). Advanced Options holds the compatibility level and what to encrypt. Office-only 'Only file attachments' is not in printcraft and is not shown. The limits show for Editing (printcraft shows them under Advanced Options); the metadata choice is refused for the RC4 levels. The Apply button is labelled Protect: a spec button named Apply keeps its dialog open, and printcraft's Apply closes it.",
+   "tabs": [
+    {
+     "name": "General",
+     "fields": [
+      {
+       "id": "for",
+       "label": "Requires user to enter a password for:",
+       "kind": "radio",
+       "options": [
+        "Viewing",
+        "Editing"
+       ]
+      },
+      {
+       "id": "password",
+       "label": "Type Password",
+       "kind": "text",
+       "secret": true
+      },
+      {
+       "id": "confirm",
+       "label": "Re-type Password",
+       "kind": "text",
+       "secret": true
+      },
+      {
+       "id": "strength",
+       "label": "Strength",
+       "kind": "meter",
+       "itemsFrom": "strength-meter"
+      },
+      {
+       "id": "advanced",
+       "label": "Advanced Options",
+       "kind": "checkbox"
+      },
+      {
+       "id": "compatibility",
+       "label": "Compatibility",
+       "kind": "select",
+       "options": [
+        "Acrobat X and later (256-bit AES)",
+        "Acrobat 7.0 and later (128-bit AES)",
+        "Acrobat 5.0 and later (128-bit RC4)",
+        "Acrobat 3.0 and later (40-bit RC4)"
+       ],
+       "visibleWhen": "advanced"
+      },
+      {
+       "id": "encrypt",
+       "label": "Encrypt",
+       "kind": "radio",
+       "options": [
+        "All document contents",
+        "All document contents except metadata"
+       ],
+       "visibleWhen": "advanced"
+      },
+      {
+       "id": "printing",
+       "label": "Printing allowed",
+       "kind": "select",
+       "options": [
+        "None",
+        "Low Resolution (150 dpi)",
+        "High Resolution"
+       ],
+       "visibleWhen": "for==Editing"
+      },
+      {
+       "id": "changes",
+       "label": "Changes allowed",
+       "kind": "select",
+       "options": [
+        "None",
+        "Inserting, deleting, and rotating pages",
+        "Filling in form fields and signing existing signature fields",
+        "Commenting, filling in form fields, and signing existing signature fields",
+        "Any except extracting pages"
+       ],
+       "visibleWhen": "for==Editing"
+      },
+      {
+       "id": "copy",
+       "label": "Enable copying of text, images, and other content",
+       "kind": "checkbox",
+       "visibleWhen": "for==Editing"
+      },
+      {
+       "id": "screen-reader",
+       "label": "Enable text access for screen reader devices for the visually impaired",
+       "kind": "checkbox",
+       "visibleWhen": "for==Editing"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "Protect",
+    "Cancel"
+   ]
+  },
+  "dialog.security-properties": {
+   "title": "Security Properties",
+   "buttons": [
+    "Close"
+   ],
+   "sourceRef": "crates/engine/src/protection.rs:7",
+   "source": "upstream",
+   "note": "Document Properties > Security (printcraft PropsTab::Security): the method and what the permissions allow. Read only; Protect and Remove security change it.",
+   "tabs": [
+    {
+     "name": "Security",
+     "fields": [
+      {
+       "id": "method",
+       "label": "Security Method",
+       "kind": "text",
+       "readOnly": true
+      },
+      {
+       "id": "status",
+       "label": "Status",
+       "kind": "text",
+       "readOnly": true,
+       "multiline": true
+      },
+      {
+       "id": "printing",
+       "label": "Printing",
+       "kind": "text",
+       "readOnly": true
+      },
+      {
+       "id": "changes",
+       "label": "Changing the Document",
+       "kind": "text",
+       "readOnly": true
+      },
+      {
+       "id": "copying",
+       "label": "Content Copying",
+       "kind": "text",
+       "readOnly": true
+      },
+      {
+       "id": "accessibility",
+       "label": "Content Accessibility Enabled",
+       "kind": "text",
+       "readOnly": true
+      },
+      {
+       "id": "metadata",
+       "label": "Document metadata",
+       "kind": "text",
+       "readOnly": true
+      }
+     ]
+    }
+   ]
+  },
+  "prompt.password": {
+   "note": "printcraft dialogs/prompts.rs:351. A wrong password keeps the dialog open with the message; the password is a secret param and is never stored or logged."
+  },
+  "prompt.permissions-password": {
+   "note": "printcraft dialogs/prompts.rs:366 (request_unlock). Only the permissions (owner) password lifts the limits: the open password is refused."
+  }
+ },
+ "commands": {
+  "protect.remove": {
+   "dialog": null,
+   "note": "Removes at once when the document is unrestricted; a restricted one asks for the permissions password first (commands.rs:199)."
+  },
+  "protect.properties": {
+   "dialog": "dialog.security-properties"
+  }
+ },
+ "controls": {
+  "alltools.protect.encrypt-with-certificate": {
+   "note": "Hidden: printcraft lists Encrypt with certificate as planned:M8 with no command, so it is not translated."
+  },
+  "alltools.protect.remove-security": {
+   "dialog": null
+  }
+ }
+}

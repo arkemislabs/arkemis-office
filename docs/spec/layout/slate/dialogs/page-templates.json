@@ -1,0 +1,29 @@
+{
+  "source": "OneNote Templates task pane: Add a page (categories with templates), Choose default template, Save current page as a template",
+  "width": 400,
+  "height": 400,
+  "sections": [
+    {
+      "fields": [
+        "category"
+      ]
+    },
+    {
+      "fields": [
+        "template",
+        "addPage"
+      ]
+    },
+    {
+      "fields": [
+        "defaultTemplate",
+        "setDefault"
+      ]
+    },
+    {
+      "fields": [
+        "saveCurrentPage"
+      ]
+    }
+  ]
+}

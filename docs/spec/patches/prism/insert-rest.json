@@ -1,0 +1,266 @@
+{
+  "controls": {
+    "insert.text.header-footer": {
+      "command": "design.headerFooter",
+      "params": null,
+      "note": "U:prism/insert: opens the Header and Footer dialog (dialog.headerFooter): Date and time (update automatically with a format, or fixed), Slide number, Footer, Don't show on title slide; Apply to All or Apply to Slide."
+    },
+    "insert.comments.comment": {
+      "command": "comment.add",
+      "params": null,
+      "note": "U:prism/insert: the New Comment dialog (dialog.comment), the same as Review > New Comment."
+    },
+    "insert.media.video": {
+      "command": "insert.video",
+      "params": null,
+      "note": "U:prism/insert: the system Open dialog picks a video (insert.video); the clip is a real slide shape that round-trips through .pptx."
+    },
+    "insert.media.audio": {
+      "command": "insert.audio",
+      "params": null,
+      "note": "U:prism/insert: the system Open dialog picks an audio file (insert.audio)."
+    },
+    "insert.media.screen-recording": {
+      "note": "Hidden: deckcraft has no screen recording."
+    },
+    "insert.text.object": {
+      "note": "Hidden: deckcraft has no Insert Object (OLE) dialog."
+    },
+    "insert.images.screenshot": {
+      "note": "Hidden: deckcraft has no screenshot or screen clipping."
+    },
+    "insert.camera.cameo": {
+      "note": "Hidden: deckcraft has no Cameo."
+    },
+    "insert.illustrations.3d-models": {
+      "note": "Hidden: deckcraft has no 3D model insertion."
+    },
+    "insert.tables.table.excel-spreadsheet": {
+      "note": "Hidden: deckcraft has no embedded Excel spreadsheet."
+    },
+    "insert.addins.get": {
+      "note": "Hidden: no add-ins store."
+    }
+  },
+  "dialogs": {
+    "dialog.headerFooter": {
+      "tabs": [
+        {
+          "name": "Slide",
+          "fields": [
+            {
+              "id": "date",
+              "label": "Date and time",
+              "kind": "checkbox",
+              "options": [],
+              "param": "date",
+              "source": "upstream",
+              "sourceRef": "crates/ui-egui/src/dialogs/body.rs:140"
+            },
+            {
+              "id": "dateMode",
+              "label": "Date",
+              "kind": "radio",
+              "options": [
+                {
+                  "value": "auto",
+                  "label": "Update automatically"
+                },
+                {
+                  "value": "fixed",
+                  "label": "Fixed"
+                }
+              ],
+              "note": "deckcraft: an empty Fixed date means update automatically",
+              "source": "upstream",
+              "sourceRef": "crates/ui-egui/src/dialogs/body.rs:141"
+            },
+            {
+              "id": "dateFormat",
+              "label": "Format:",
+              "kind": "select",
+              "options": [
+                "datetime1",
+                "datetime2",
+                "datetime3",
+                "datetime4",
+                "datetime5",
+                "datetime6",
+                "datetime7",
+                "datetime8",
+                "datetime9",
+                "datetime10",
+                "datetime11",
+                "datetime12",
+                "datetime13"
+              ],
+              "param": "dateFormat",
+              "note": "rows show today's date or time in each format (src/apps/prism/dialogs/headerFooter.tsx)",
+              "source": "upstream",
+              "sourceRef": "crates/ui-egui/src/dialogs/body.rs:151"
+            },
+            {
+              "id": "dateText",
+              "label": "Fixed:",
+              "kind": "text",
+              "options": [],
+              "param": "dateText",
+              "source": "upstream",
+              "sourceRef": "crates/ui-egui/src/dialogs/body.rs:141"
+            },
+            {
+              "id": "num",
+              "label": "Slide number",
+              "kind": "checkbox",
+              "options": [],
+              "param": "slideNumber",
+              "source": "upstream",
+              "sourceRef": "crates/ui-egui/src/dialogs/body.rs:161"
+            },
+            {
+              "id": "footer",
+              "label": "Footer",
+              "kind": "checkbox",
+              "options": [],
+              "param": "footer",
+              "source": "upstream",
+              "sourceRef": "crates/ui-egui/src/dialogs/body.rs:162"
+            },
+            {
+              "id": "footerText",
+              "label": "Footer text:",
+              "kind": "text",
+              "options": [],
+              "param": "footerText",
+              "source": "upstream",
+              "sourceRef": "crates/ui-egui/src/dialogs/body.rs:163"
+            },
+            {
+              "id": "hide",
+              "label": "Don't show on title slide",
+              "kind": "checkbox",
+              "options": [],
+              "param": "hideOnTitle",
+              "source": "upstream",
+              "sourceRef": "crates/ui-egui/src/dialogs/body.rs:164"
+            },
+            {
+              "id": "preview",
+              "label": "Preview",
+              "kind": "preview",
+              "options": [],
+              "source": "office",
+              "sourceRef": "office: Microsoft PowerPoint Header and Footer"
+            }
+          ]
+        },
+        {
+          "name": "Notes and Handouts",
+          "fields": [
+            {
+              "id": "nDate",
+              "label": "Date and time",
+              "kind": "checkbox",
+              "options": [],
+              "source": "office",
+              "sourceRef": "office: Microsoft PowerPoint Header and Footer › Notes and Handouts"
+            },
+            {
+              "id": "nDateMode",
+              "label": "Date",
+              "kind": "radio",
+              "options": [
+                {
+                  "value": "auto",
+                  "label": "Update automatically"
+                },
+                {
+                  "value": "fixed",
+                  "label": "Fixed"
+                }
+              ],
+              "source": "office",
+              "sourceRef": "office: Microsoft PowerPoint Header and Footer › Notes and Handouts"
+            },
+            {
+              "id": "nDateFormat",
+              "label": "Format:",
+              "kind": "select",
+              "options": [
+                "datetime1",
+                "datetime2",
+                "datetime3",
+                "datetime4",
+                "datetime5",
+                "datetime6",
+                "datetime7",
+                "datetime8",
+                "datetime9",
+                "datetime10",
+                "datetime11",
+                "datetime12",
+                "datetime13"
+              ],
+              "source": "office",
+              "sourceRef": "office: Microsoft PowerPoint Header and Footer › Notes and Handouts"
+            },
+            {
+              "id": "nDateText",
+              "label": "Fixed:",
+              "kind": "text",
+              "options": [],
+              "source": "office",
+              "sourceRef": "office: Microsoft PowerPoint Header and Footer › Notes and Handouts"
+            },
+            {
+              "id": "nHeader",
+              "label": "Header",
+              "kind": "checkbox",
+              "options": [],
+              "source": "office",
+              "sourceRef": "office: Microsoft PowerPoint Header and Footer › Notes and Handouts"
+            },
+            {
+              "id": "nHeaderText",
+              "label": "Header text:",
+              "kind": "text",
+              "options": [],
+              "source": "office",
+              "sourceRef": "office: Microsoft PowerPoint Header and Footer › Notes and Handouts"
+            },
+            {
+              "id": "nPage",
+              "label": "Page number",
+              "kind": "checkbox",
+              "options": [],
+              "source": "office",
+              "sourceRef": "office: Microsoft PowerPoint Header and Footer › Notes and Handouts"
+            },
+            {
+              "id": "nFooter",
+              "label": "Footer",
+              "kind": "checkbox",
+              "options": [],
+              "source": "office",
+              "sourceRef": "office: Microsoft PowerPoint Header and Footer › Notes and Handouts"
+            },
+            {
+              "id": "nFooterText",
+              "label": "Footer text:",
+              "kind": "text",
+              "options": [],
+              "source": "office",
+              "sourceRef": "office: Microsoft PowerPoint Header and Footer › Notes and Handouts"
+            }
+          ]
+        }
+      ],
+      "buttons": [
+        "Apply to All",
+        "Apply to Slide",
+        "Cancel"
+      ],
+      "note": "U:prism/insert: Apply to All sets every slide (design.headerFooter all: true), Apply to Slide the current one. The Notes and Handouts page (design.notesHeaderFooter) sets the date, header, page number and footer of the notes master and the handout master together and is applied by either button once a field on it has changed. Not offered: Language and Calendar type."
+    }
+  }
+}

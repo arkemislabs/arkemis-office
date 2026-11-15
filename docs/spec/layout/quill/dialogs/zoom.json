@@ -1,0 +1,9 @@
+{
+  "source": "Word's Zoom dialog (Zoom to options in two columns, Percent, Preview with the page and sample text); wordcraft dispatch.rs:788",
+  "width": 540,
+  "height": 330,
+  "sections": [
+    {"title": "Zoom to", "fields": ["preset"]},
+    {"fields": ["percent", "preview"]}
+  ]
+}

@@ -1,0 +1,13 @@
+/* Office message boxes in the glass chrome (src/shell/dialogs/MessageBox.tsx). */
+.mb .gd-content { padding: 0; }
+.mb-body { display: grid; grid-template-columns: minmax(0, 1fr); gap: 4px; padding: 18px 20px 16px; }
+.mb-text { min-width: 0; }
+.mb-message { margin: 4px 0 6px; color: var(--sh-text-1); font-size: 13px; line-height: 1.45; overflow-wrap: anywhere; }
+.mb-detail { margin: 0 0 4px; color: var(--sh-text-3); font-size: 12px; line-height: 1.45; }
+.mb-buttons { display: flex; justify-content: flex-end; gap: 8px; margin-top: 14px; }
+.mb-buttons .gd-button { min-width: 84px; }
+.mb-buttons u { text-decoration-thickness: 1px; text-underline-offset: 2px; }
+/* `.gd button { color: inherit }` (shell.css) outranks `.gd-primary`: keep the default button's dark label readable
+   in message boxes (this file's and the registered Save Changes prompts, which DialogHost marks is-message). */
+.gd.is-message .gd-button.gd-primary, .mb .gd-button.gd-primary { color: #111112; }
+.gd.is-message .gd-button.gd-primary:disabled { color: rgba(17,17,18,.62); }

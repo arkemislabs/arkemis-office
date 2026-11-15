@@ -1,0 +1,104 @@
+{
+  "tab": "equation",
+  "keytip": "JE",
+  "source": "office: OneNote for Microsoft 365, Equation Tools > Equation (as in Word and OneNote) tab (Slate has no ArtCraft upstream; architecture section 1)",
+  "groups": {
+    "tools": {
+      "collapseOrder": 4,
+      "collapsedIcon": "pi-equation",
+      "layout": [
+        {
+          "large": "equation.tools.equation"
+        },
+        {
+          "large": "equation.tools.ink-equation"
+        }
+      ]
+    },
+    "conversions": {
+      "collapseOrder": 3,
+      "collapsedIcon": "eq-convert",
+      "layout": [
+        {
+          "large": "equation.conversions.convert"
+        },
+        {
+          "stack": [
+            "equation.conversions.unicode",
+            "equation.conversions.latex",
+            "equation.conversions.normal-text"
+          ]
+        }
+      ]
+    },
+    "symbols": {
+      "collapseOrder": 1,
+      "collapsedIcon": "sigma-plus",
+      "layout": [
+        {
+          "gallery": "equation.symbols.symbols",
+          "inline": true,
+          "columns": 8
+        }
+      ]
+    },
+    "structures": {
+      "collapseOrder": 2,
+      "collapsedIcon": "eq-struct-fraction",
+      "layout": [
+        {
+          "large": "equation.structures.fraction"
+        },
+        {
+          "large": "equation.structures.script"
+        },
+        {
+          "large": "equation.structures.radical"
+        },
+        {
+          "large": "equation.structures.integral"
+        },
+        {
+          "large": "equation.structures.large-operator"
+        },
+        {
+          "large": "equation.structures.bracket"
+        },
+        {
+          "large": "equation.structures.function"
+        },
+        {
+          "large": "equation.structures.accent"
+        },
+        {
+          "large": "equation.structures.limit-and-log"
+        },
+        {
+          "large": "equation.structures.operator"
+        },
+        {
+          "large": "equation.structures.matrix"
+        }
+      ]
+    }
+  },
+  "keytips": {
+    "equation.tools.equation": "E",
+    "equation.tools.ink-equation": "K",
+    "equation.conversions.convert": "C",
+    "equation.conversions.unicode": "U",
+    "equation.conversions.latex": "X",
+    "equation.conversions.normal-text": "T",
+    "equation.structures.fraction": "F",
+    "equation.structures.script": "S",
+    "equation.structures.radical": "R",
+    "equation.structures.integral": "I",
+    "equation.structures.large-operator": "O",
+    "equation.structures.bracket": "B",
+    "equation.structures.function": "N",
+    "equation.structures.accent": "A",
+    "equation.structures.limit-and-log": "L",
+    "equation.structures.operator": "P",
+    "equation.structures.matrix": "M"
+  }
+}

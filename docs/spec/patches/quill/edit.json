@@ -1,0 +1,435 @@
+{
+  "controls": {
+    "home.editing.replace": {
+      "command": null,
+      "note": "Upstream's ui.dialog {name: replace} is a front-end request: the control opens Find and Replace on its Replace tab (U:quill/edit)."
+    },
+    "home.editing.find.go-to": {
+      "command": null,
+      "note": "Upstream's ui.dialog {name: goto}: the control opens Find and Replace on its Go To tab (U:quill/edit)."
+    }
+  },
+  "dialogs": {
+    "dialog.find": {
+      "note": "Fields as upstream crates/ui-egui/src/dialogs/dispatch.rs find_dialog and find.rs goto_body draw them (U:quill/edit). Word's Sounds like, Find all word forms, Search: All/Down/Up, Format and No Formatting have no upstream engine support and stay hidden. Buttons live in each tab, as in Word: the footer keeps Close only.",
+      "tabs": [
+        {
+          "name": "Find",
+          "fields": [
+            {
+              "id": "findWhat",
+              "label": "Find what:",
+              "kind": "text"
+            },
+            {
+              "id": "matchCase",
+              "label": "Match case",
+              "kind": "checkbox"
+            },
+            {
+              "id": "wholeWords",
+              "label": "Whole words",
+              "kind": "checkbox"
+            },
+            {
+              "id": "wildcards",
+              "label": "Use wildcards",
+              "kind": "checkbox"
+            },
+            {
+              "id": "more",
+              "label": "Search Options",
+              "kind": "checkbox"
+            },
+            {
+              "id": "prefix",
+              "label": "Match prefix",
+              "kind": "checkbox",
+              "visibleWhen": "more"
+            },
+            {
+              "id": "suffix",
+              "label": "Match suffix",
+              "kind": "checkbox",
+              "visibleWhen": "more"
+            },
+            {
+              "id": "ignorePunct",
+              "label": "Ignore punctuation characters",
+              "kind": "checkbox",
+              "visibleWhen": "more"
+            },
+            {
+              "id": "ignoreSpace",
+              "label": "Ignore white-space characters",
+              "kind": "checkbox",
+              "visibleWhen": "more"
+            },
+            {
+              "id": "regex",
+              "label": "Regular expressions",
+              "kind": "checkbox",
+              "visibleWhen": "more"
+            },
+            {
+              "id": "special",
+              "label": "Special",
+              "kind": "select",
+              "visibleWhen": "more",
+              "options": [
+                {
+                  "value": "^p",
+                  "label": "Paragraph Mark   ^p"
+                },
+                {
+                  "value": "^t",
+                  "label": "Tab Character   ^t"
+                },
+                {
+                  "value": "^?",
+                  "label": "Any Character   ^?"
+                },
+                {
+                  "value": "^#",
+                  "label": "Any Digit   ^#"
+                },
+                {
+                  "value": "^$",
+                  "label": "Any Letter   ^$"
+                },
+                {
+                  "value": "^^",
+                  "label": "Caret Character   ^^"
+                },
+                {
+                  "value": "^%",
+                  "label": "Section Character   ^%"
+                },
+                {
+                  "value": "^v",
+                  "label": "Paragraph Character   ^v"
+                },
+                {
+                  "value": "^n",
+                  "label": "Column Break   ^n"
+                },
+                {
+                  "value": "^+",
+                  "label": "Em Dash   ^+"
+                },
+                {
+                  "value": "^=",
+                  "label": "En Dash   ^="
+                },
+                {
+                  "value": "^g",
+                  "label": "Graphic   ^g"
+                },
+                {
+                  "value": "^l",
+                  "label": "Manual Line Break   ^l"
+                },
+                {
+                  "value": "^m",
+                  "label": "Manual Page Break   ^m"
+                },
+                {
+                  "value": "^~",
+                  "label": "Nonbreaking Hyphen   ^~"
+                },
+                {
+                  "value": "^s",
+                  "label": "Nonbreaking Space   ^s"
+                },
+                {
+                  "value": "^-",
+                  "label": "Optional Hyphen   ^-"
+                },
+                {
+                  "value": "^b",
+                  "label": "Section Break   ^b"
+                },
+                {
+                  "value": "^w",
+                  "label": "White Space   ^w"
+                }
+              ]
+            },
+            {
+              "id": "status",
+              "label": "",
+              "kind": "label"
+            },
+            {
+              "id": "readingHighlight",
+              "label": "Reading Highlight",
+              "kind": "button",
+              "command": "edit.advancedFind"
+            },
+            {
+              "id": "findNext",
+              "label": "Find Next",
+              "kind": "button",
+              "command": "edit.findNext"
+            }
+          ]
+        },
+        {
+          "name": "Replace",
+          "fields": [
+            {
+              "id": "findWhat",
+              "label": "Find what:",
+              "kind": "text"
+            },
+            {
+              "id": "replaceWith",
+              "label": "Replace with:",
+              "kind": "text"
+            },
+            {
+              "id": "matchCase",
+              "label": "Match case",
+              "kind": "checkbox"
+            },
+            {
+              "id": "wholeWords",
+              "label": "Whole words",
+              "kind": "checkbox"
+            },
+            {
+              "id": "wildcards",
+              "label": "Use wildcards",
+              "kind": "checkbox"
+            },
+            {
+              "id": "more",
+              "label": "Search Options",
+              "kind": "checkbox"
+            },
+            {
+              "id": "prefix",
+              "label": "Match prefix",
+              "kind": "checkbox",
+              "visibleWhen": "more"
+            },
+            {
+              "id": "suffix",
+              "label": "Match suffix",
+              "kind": "checkbox",
+              "visibleWhen": "more"
+            },
+            {
+              "id": "ignorePunct",
+              "label": "Ignore punctuation characters",
+              "kind": "checkbox",
+              "visibleWhen": "more"
+            },
+            {
+              "id": "ignoreSpace",
+              "label": "Ignore white-space characters",
+              "kind": "checkbox",
+              "visibleWhen": "more"
+            },
+            {
+              "id": "regex",
+              "label": "Regular expressions",
+              "kind": "checkbox",
+              "visibleWhen": "more"
+            },
+            {
+              "id": "special",
+              "label": "Special",
+              "kind": "select",
+              "visibleWhen": "more",
+              "options": [
+                {
+                  "value": "^p",
+                  "label": "Paragraph Mark   ^p"
+                },
+                {
+                  "value": "^t",
+                  "label": "Tab Character   ^t"
+                },
+                {
+                  "value": "^^",
+                  "label": "Caret Character   ^^"
+                },
+                {
+                  "value": "^%",
+                  "label": "Section Character   ^%"
+                },
+                {
+                  "value": "^v",
+                  "label": "Paragraph Character   ^v"
+                },
+                {
+                  "value": "^c",
+                  "label": "Clipboard Contents   ^c"
+                },
+                {
+                  "value": "^n",
+                  "label": "Column Break   ^n"
+                },
+                {
+                  "value": "^+",
+                  "label": "Em Dash   ^+"
+                },
+                {
+                  "value": "^=",
+                  "label": "En Dash   ^="
+                },
+                {
+                  "value": "^&",
+                  "label": "Find What Text   ^&"
+                },
+                {
+                  "value": "^l",
+                  "label": "Manual Line Break   ^l"
+                },
+                {
+                  "value": "^m",
+                  "label": "Manual Page Break   ^m"
+                },
+                {
+                  "value": "^~",
+                  "label": "Nonbreaking Hyphen   ^~"
+                },
+                {
+                  "value": "^s",
+                  "label": "Nonbreaking Space   ^s"
+                },
+                {
+                  "value": "^-",
+                  "label": "Optional Hyphen   ^-"
+                }
+              ]
+            },
+            {
+              "id": "status",
+              "label": "",
+              "kind": "label"
+            },
+            {
+              "id": "replaceAll",
+              "label": "Replace All",
+              "kind": "button",
+              "command": "edit.replaceAll"
+            },
+            {
+              "id": "replace",
+              "label": "Replace",
+              "kind": "button",
+              "command": "edit.replace"
+            },
+            {
+              "id": "findNext",
+              "label": "Find Next",
+              "kind": "button",
+              "command": "edit.findNext"
+            }
+          ]
+        },
+        {
+          "name": "Go To",
+          "fields": [
+            {
+              "id": "goToWhat",
+              "label": "Go to what:",
+              "kind": "list",
+              "options": [
+                {
+                  "value": "page",
+                  "label": "Page"
+                },
+                {
+                  "value": "bookmark",
+                  "label": "Bookmark"
+                }
+              ]
+            },
+            {
+              "id": "pageNumber",
+              "label": "Enter page number:",
+              "kind": "text",
+              "visibleWhen": "goToWhat == page",
+              "hint": "Type +2 or -1 to move from the page you are on."
+            },
+            {
+              "id": "bookmarkName",
+              "label": "Enter bookmark name:",
+              "kind": "select",
+              "visibleWhen": "goToWhat == bookmark"
+            },
+            {
+              "id": "status",
+              "label": "",
+              "kind": "label"
+            },
+            {
+              "id": "previous",
+              "label": "Previous",
+              "kind": "button",
+              "command": "edit.goto"
+            },
+            {
+              "id": "goTo",
+              "label": "Go To",
+              "kind": "button",
+              "command": "edit.goto"
+            }
+          ]
+        }
+      ],
+      "buttons": [
+        "Close"
+      ]
+    },
+    "dialog.pasteSpecial": {
+      "note": "As upstream crates/ui-egui/src/dialogs/dispatch.rs paste_special_dialog (U:quill/paste): Paste as (the formats the clipboard holds) and the Result line. Word's Source, Paste link and Display as icon are OLE-object options neither upstream nor Quill has.",
+      "tabs": [
+        {
+          "name": "Paste Special",
+          "fields": [
+            {
+              "id": "as",
+              "label": "Paste as:",
+              "kind": "radio",
+              "options": [
+                {
+                  "value": "formatted",
+                  "label": "Formatted Text"
+                },
+                {
+                  "value": "rtf",
+                  "label": "Rich Text Format (RTF)"
+                },
+                {
+                  "value": "html",
+                  "label": "HTML Format"
+                },
+                {
+                  "value": "picture",
+                  "label": "Picture"
+                },
+                {
+                  "value": "text",
+                  "label": "Unformatted Text"
+                }
+              ]
+            },
+            {
+              "id": "result",
+              "label": "Result",
+              "kind": "preview"
+            }
+          ]
+        }
+      ],
+      "buttons": [
+        "OK",
+        "Cancel"
+      ]
+    }
+  }
+}

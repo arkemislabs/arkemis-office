@@ -1,0 +1,42 @@
+{
+  "tab": "layout",
+  "keytip": "P",
+  "source": "wordcraft aadb077e072b7de05f724e359d8db82e151f125c crates/ui-egui/src/ribbon/layout.rs (layout: Page Setup, Paragraph grid of 64 px fields, Arrange), arrange.rs (wrap_menu, align/group/rotate icon menus); keytips from Word for Windows",
+  "groups": {
+    "page-setup": {
+      "keytip": "SP", "collapseOrder": 3,
+      "layout": [
+        {"large": "layout.page-setup.text-direction"},
+        {"large": "layout.page-setup.margins"},
+        {"large": "layout.page-setup.orientation"},
+        {"large": "layout.page-setup.size"},
+        {"large": "layout.page-setup.columns"},
+        {"stack": ["layout.page-setup.breaks", "layout.page-setup.line-numbers", "layout.page-setup.hyphenation"]}
+      ]
+    },
+    "paragraph": {
+      "keytip": "PG", "collapseOrder": 2,
+      "layout": [
+        {"stack": ["layout.paragraph.indent-left", "layout.paragraph.indent-right"]},
+        {"stack": ["layout.paragraph.spacing-before", "layout.paragraph.spacing-after"]}
+      ],
+      "widths": {"layout.paragraph.indent-left": 64, "layout.paragraph.indent-right": 64, "layout.paragraph.spacing-before": 64, "layout.paragraph.spacing-after": 64}
+    },
+    "arrange": {
+      "collapseOrder": 1,
+      "layout": [
+        {"large": "layout.arrange.position"},
+        {"large": "layout.arrange.wrap-text"},
+        {"stack": ["layout.arrange.bring-forward", "layout.arrange.send-backward", "layout.arrange.selection-pane"]},
+        {"stack": ["layout.arrange.align", "layout.arrange.group", "layout.arrange.rotate"]}
+      ]
+    }
+  },
+  "keytips": {
+    "layout.page-setup.margins": "M", "layout.page-setup.orientation": "O", "layout.page-setup.size": "SZ", "layout.page-setup.columns": "J",
+    "layout.page-setup.breaks": "B", "layout.page-setup.line-numbers": "LN", "layout.page-setup.hyphenation": "H",
+    "layout.paragraph.indent-left": "IL", "layout.paragraph.indent-right": "IR", "layout.paragraph.spacing-before": "SB", "layout.paragraph.spacing-after": "SA",
+    "layout.arrange.position": "PO", "layout.arrange.wrap-text": "TW", "layout.arrange.bring-forward": "AF", "layout.arrange.send-backward": "AE",
+    "layout.arrange.selection-pane": "AP", "layout.arrange.align": "AA", "layout.arrange.rotate": "AY"
+  }
+}

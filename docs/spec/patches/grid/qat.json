@@ -1,0 +1,66 @@
+{
+  "controls": {
+    "qat.autoSave": {
+      "command": "file.autosave",
+      "args": null,
+      "note": "U:grid/qat: gridcraft's title bar AutoSave (app.toggle_autosave: saves the .xlsx after every change) is the shared file.autosave; the title bar draws it as Excel's AutoSave switch."
+    },
+    "qat.home": {
+      "command": null,
+      "dialog": null,
+      "note": "U:grid/qat: gridcraft's Home button opens its start dialog (templates and recent files); the application's File > Home page and start window do that, so the button is hidden."
+    },
+    "qat.undo.undo-list-history-list-edit-undo-steps-n": {
+      "label": "Undo list",
+      "kind": "list",
+      "command": "edit.undoTo",
+      "args": {"count": "<n>"},
+      "dynamic": true,
+      "source": "upstream",
+      "note": "U:grid/qat: checked against gridcraft (history.list and edit.undo {steps: n}): the Undo arrow lists the undo steps, newest first; choosing one undoes it and every step above it."
+    },
+    "qat.more.print-print-now": {
+      "label": "Print…",
+      "command": "file.print",
+      "args": null,
+      "note": "U:grid/qat: gridcraft's print_now is the shared file.print (the File > Print page)."
+    },
+    "qat.search": {
+      "command": null,
+      "dialog": null,
+      "note": "U:grid/qat: gridcraft's command palette (Alt+Q) is the search box of the title bar here, so the toolbar button is hidden."
+    },
+    "qat.share.export-as-pdf-file-export-pdf": {
+      "label": "Export as PDF…",
+      "command": "file.saveCopy",
+      "args": {"format": "pdf"},
+      "note": "U:grid/qat: Save a Copy as PDF (grid/formats/pdf-write.mjs): the pages of the print layout (paper, margins, scale, print area, breaks, titles, header and footer) with each cell's fill, borders, number format, font, colour and alignment. Not checked against upstream (gridcraft's PDF is its print crate). Pictures (PNG, JPEG), charts and plain shapes are drawn. Fonts: a system font read at export time and embedded as a subset (Segoe UI or Arial, with Nirmala, Microsoft YaHei, Yu Gothic and others for the scripts they lack), so Latin, Cyrillic, Greek, Indic and CJK text prints; only a character no installed font has prints as ?. Limits: icons, WordArt, ink, slicers and printed row and column headings are not drawn."
+    },
+    "qat.share.save-a-copy-as-excel-workbook-xlsx-dialog-save-copy-xlsx": {
+      "label": "Save a Copy as Excel Workbook (.xlsx)…",
+      "command": "file.saveCopy",
+      "args": {"format": "xlsx"},
+      "note": "U:grid/qat: gridcraft's dialog.saveCopy xlsx is the shared file.saveCopy with the Excel Workbook format."
+    },
+    "qat.share.export-as-csv-dialog-save-copy-csv": {
+      "label": "Export as CSV…",
+      "command": "file.saveCopy",
+      "args": {"format": "csv"},
+      "note": "U:grid/qat: gridcraft's dialog.saveCopy csv is the shared file.saveCopy with the CSV format."
+    },
+    "qat.share.export-as-web-page-html-dialog-save-copy-html": {
+      "label": "Export as Web Page…",
+      "command": "file.saveCopy",
+      "args": {"format": "html"},
+      "note": "U:grid/qat: Save a Copy as a web page (grid/formats/html-write.mjs): the active sheet's used range as an HTML table with its fonts, colours, fills, alignment and merges. Not checked against upstream (gridcraft's export is a Share menu item with no reader here)."
+    },
+    "qat.darkMode": {
+      "command": null,
+      "note": "U:grid/qat: gridcraft's Dark Mode is its own window theme (view.theme); the Office suite has one light look, so the toggle is hidden."
+    },
+    "qat.collapseRibbon": {
+      "command": null,
+      "note": "U:grid/qat: the ribbon's own display options (the fold button, Ctrl+F1 and double-clicking a tab, in the shell) do this, so the toolbar item is hidden (the shell already has the control, so none is added)."
+    }
+  }
+}

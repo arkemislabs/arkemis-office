@@ -1,0 +1,13 @@
+{
+  "controls": {
+    "view.window.send-to-onenote-tool": {
+      "note": "U:slate/view: hidden. Send to OneNote Tool is the Windows tray tool that clips screens and web pages into OneNote; this app has no tray helper. Insert > Screen Clipping covers the screen clip."
+    }
+  },
+  "dialogs": {
+    "dialog.immersive-reader": {
+      "command": null,
+      "note": "U:slate/view: no separate dialog. The reader draws its own toolbar for text size, spacing, theme, Line Focus and Read Aloud (view.immersiveReader sets them). Grammar Options (syllables and parts of speech), the Picture Dictionary and Translate need language-analysis and online services the app does not have, and the font is the page's."
+    }
+  }
+}

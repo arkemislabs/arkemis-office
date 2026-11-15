@@ -1,0 +1,34 @@
+/* The Animation Pane (panes/animation.tsx): rows of effects with timing bars, in the Arkemis dark skin. */
+.anim-pane { position: relative; display: flex; flex-direction: column; gap: 8px; height: 100%; min-height: 0; font: 12px var(--ark-font, system-ui); color: var(--sh-text-1, #f2f2f3); }
+.anim-toolbar { display: flex; gap: 6px; }
+.anim-play { display: inline-flex; align-items: center; gap: 7px; height: 26px; padding: 0 11px; font-size: 12px; }
+.anim-empty { color: var(--sh-text-3, #85858c); line-height: 1.45; }
+.anim-list { flex: 1; min-height: 0; overflow-x: hidden; overflow-y: auto; padding-right: 14px; display: flex; flex-direction: column; gap: 2px; scrollbar-width: thin; scrollbar-color: rgba(255,255,255,.18) transparent; }
+.anim-row { display: flex; align-items: center; gap: 6px; height: 30px; flex: none; padding: 0 6px; border-radius: 6px; cursor: default; box-shadow: inset 0 0 0 1px transparent; }
+.anim-row:hover { background: var(--sh-hover, rgba(255,255,255,.075)); }
+.anim-row.is-selected { background: var(--sh-checked, rgba(255,255,255,.12)); }
+.anim-row.is-picked { box-shadow: inset 0 0 0 1.5px var(--prism-accent, #e8774e); }
+.anim-num { flex: none; width: 14px; color: var(--sh-text-3, #85858c); font-variant-numeric: tabular-nums; text-align: right; }
+.anim-icon { flex: none; width: 20px; height: 20px; color: var(--sh-text-1, #f2f2f3); }
+.anim-icon.is-entrance { color: #7fd8a6; }
+.anim-icon.is-emphasis { color: #f0c65a; }
+.anim-icon.is-exit { color: #ef8da7; }
+.anim-icon.is-path { color: #8fb4f0; }
+.anim-name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.anim-track { position: relative; flex: none; height: 14px; }
+.anim-bar { position: absolute; top: 2px; height: 10px; border-radius: 3px; cursor: grab; touch-action: none; }
+.anim-bar:active { cursor: grabbing; }
+.anim-bar.is-entrance { background: #2ea36f; }
+.anim-bar.is-emphasis { background: #e3b21c; }
+.anim-bar.is-exit { background: #d83f6b; }
+.anim-bar.is-path, .anim-bar.is-media { background: #2e6fd8; }
+.anim-edge { position: absolute; right: -3px; top: -2px; bottom: -2px; width: 7px; cursor: ew-resize; }
+.anim-repeat { position: absolute; right: -11px; top: -2px; width: 8px; height: 12px; border: 1.5px solid var(--sh-text-3, #85858c); border-left-color: transparent; border-radius: 50%; }
+.anim-ruler { position: relative; height: 18px; flex: none; margin-top: 2px; border-top: 1px solid rgba(255,255,255,.3); }
+.anim-ruler span { position: absolute; top: 0; transform: translateX(-50%); color: var(--sh-text-3, #85858c); font-size: 10px; display: flex; flex-direction: column; align-items: center; }
+.anim-ruler i { display: block; width: 1px; height: 4px; background: rgba(255,255,255,.4); }
+.anim-menu { position: absolute; z-index: 30; min-width: 170px; padding: 4px; border-radius: 9px; background: #232326; box-shadow: 0 0 0 1px rgba(255,255,255,.1), 0 12px 32px rgba(0,0,0,.55); }
+.anim-menu button { display: block; width: 100%; height: 27px; padding: 0 10px; border: 0; border-radius: 6px; background: transparent; color: var(--sh-text-1, #f2f2f3); font: 12px var(--ark-font, system-ui); text-align: left; }
+.anim-menu button:hover:not(:disabled) { background: var(--sh-hover, rgba(255,255,255,.1)); }
+.anim-menu button:disabled { color: var(--sh-text-3, #85858c); }
+.anim-menu hr { margin: 4px 2px; border: 0; border-top: 1px solid rgba(255,255,255,.1); }

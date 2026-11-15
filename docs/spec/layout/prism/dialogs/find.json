@@ -1,0 +1,33 @@
+{
+  "source": "deckcraft crates/ui-egui/src/dialogs/find.rs (find_dialog: Find what and Replace with as labelled rows 120 pt wide labels, the two checkboxes, the buttons in one row, the status line under them) at f893f6af7d36a5409fd804e81a34fd895cfefedf; PowerPoint Find / Replace",
+  "width": 460,
+  "height": 300,
+  "sections": [
+    {
+      "fields": [
+        "text",
+        "with"
+      ],
+      "columns": 1
+    },
+    {
+      "fields": [
+        "matchCase",
+        "wholeWords"
+      ]
+    },
+    {
+      "fields": [
+        "findNext",
+        "replace",
+        "replaceAll",
+        "replaceMode"
+      ]
+    },
+    {
+      "fields": [
+        "status"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+// Source translation/adaptation: GridCraft text.rs TEXTSPLIT/ARRAYTOTEXT,
+// dynamic.rs SEQUENCE and lookup.rs TRANSPOSE at146161b4b450a56e5e59a083ba0478582d1e602b.
+// Full upstream MIT notice in gridcraft-text-family.mjs. Local output cap100000 cells.
+import {formulaNumber,dateFail as fail} from './gridcraft-calendar.mjs';
+export const arrayError=error=>Object.freeze({arrayError:error});
+export const isArrayError=v=>v&&typeof v==='object'&&typeof v.arrayError==='string';
+export function shapedArray(rows,columns,data){if(!Number.isInteger(rows)||!Number.isInteger(columns)||rows<1||columns<1||rows*columns>100000||data.length!==rows*columns)fail('#NUM!');const result=Array.from(data);Object.defineProperties(result,{rows:{value:rows},columns:{value:columns}});return result;}
+export const asArray=v=>Array.isArray(v)?v.rows?v:shapedArray(1,v.length||1,v.length?v:['']):shapedArray(1,1,[v]);
+export const dynamicArrayNames=new Set(['TEXTSPLIT','ARRAYTOTEXT','SEQUENCE','TRANSPOSE']);
+const text=v=>isArrayError(v)?fail(v.arrayError):Array.isArray(v)?fail():String(v??'');
+function split(source,delimiters,insensitive){const s=Array.from(source),ds=delimiters.filter(d=>d.length),fold=c=>insensitive?Array.from(c.toLowerCase())[0]:c;if(!ds.length)return [source];const t=s.map(fold),d=ds.map(a=>a.map(fold)),parts=[];let i=0,last=0,steps=0;while(i<t.length){let length=0;for(const a of d)if(a.length>length&&a.every((ch,j)=>{if(++steps>2000000)fail('#LIMIT!');return t[i+j]===ch;}))length=a.length;if(length){parts.push(s.slice(last,i).join(''));i+=length;last=i;}else i++;}parts.push(s.slice(last).join(''));return parts;}
+export function dynamicArrayFunction(name,args,context={}){
+ const arity=(min,max=min)=>{if(args.length<min||args.length>max)fail();},num=v=>formulaNumber(v,context.dateSystem),delims=v=>v===undefined?[]:asArray(v).map(x=>Array.from(text(x)));
+ if(name==='SEQUENCE'){arity(1,4);const r=Math.trunc(num(args[0]??1)),c=Math.trunc(num(args[1]??1));if(r<0||c<0)fail();if(!r||!c)fail('#CALC!');if(r>100000||c>1000||r*c>100000)fail('#NUM!');const start=num(args[2]??1),step=num(args[3]??1);return shapedArray(r,c,Array.from({length:r*c},(_,i)=>{const v=start+i*step;return Number.isFinite(v)?v:arrayError('#NUM!');}));}
+ if(name==='TRANSPOSE'){arity(1);if(!Array.isArray(args[0]))return args[0];const a=asArray(args[0]),out=[];for(let c=0;c<a.columns;c++)for(let r=0;r<a.rows;r++)out.push(a[r*a.columns+c]);return shapedArray(a.columns,a.rows,out);}
+ if(name==='ARRAYTOTEXT'){arity(1,2);const strict=Math.trunc(num(args[1]??0));if(strict!==0&&strict!==1)fail();const a=asArray(args[0]);let out=strict?'{':'';for(let r=0;r<a.rows;r++)for(let c=0;c<a.columns;c++){if(r||c)out+=strict?(c?',':';'):', ';const v=a[r*a.columns+c];out+=isArrayError(v)?v.arrayError:strict&&typeof v==='string'?'"'+v.replaceAll('"','""')+'"':text(v);if(out.length>32767)fail();}return out+(strict?'}':'');}
+ arity(2,6);const s=text(args[0]),cols=delims(args[1]),rows=delims(args[2]);if(!cols.some(d=>d.length)&&!rows.some(d=>d.length))fail();const ignore=num(args[3]??0)!==0,mode=Math.trunc(num(args[4]??0));if(mode!==0&&mode!==1)fail();const pad=args[5]===undefined?arrayError('#N/A'):asArray(args[5])[0],parts=[];for(const row of split(s,rows,mode===1)){if(ignore&&!row)continue;const cells=split(row,cols,mode===1).filter(c=>!ignore||c!=='');if(ignore&&!cells.length)continue;parts.push(cells);}if(!parts.length)fail('#CALC!');const width=Math.max(1,...parts.map(r=>r.length));if(width*parts.length>100000)fail('#NUM!');return shapedArray(parts.length,width,parts.flatMap(r=>[...r,...Array(width-r.length).fill(pad)]));
+}

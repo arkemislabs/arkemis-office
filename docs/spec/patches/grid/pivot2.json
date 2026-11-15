@@ -1,0 +1,53 @@
+{
+  "controls": {
+    "pivotAnalyze.actions.clear.clear-all": {
+      "command": "pivot.clear"
+    },
+    "pivotAnalyze.actions.clear.clear-filters": {
+      "command": "pivot.clearFilters",
+      "args": {}
+    },
+    "pivotDesign.layout.subtotals.do-not-show-subtotals": {
+      "command": "pivot.subtotals",
+      "args": {
+        "mode": "none"
+      }
+    },
+    "pivotDesign.layout.subtotals.show-all-subtotals-at-bottom-of-group": {
+      "command": "pivot.subtotals",
+      "args": {
+        "mode": "bottom"
+      }
+    },
+    "pivotDesign.layout.subtotals.show-all-subtotals-at-top-of-group": {
+      "command": "pivot.subtotals",
+      "args": {
+        "mode": "top"
+      }
+    },
+    "pivotDesign.layout.grandTotals.off-for-rows-and-columns": {
+      "command": "pivot.grandTotals",
+      "args": {
+        "mode": "off"
+      }
+    },
+    "pivotDesign.layout.grandTotals.on-for-rows-and-columns": {
+      "command": "pivot.grandTotals",
+      "args": {
+        "mode": "on"
+      }
+    },
+    "pivotDesign.layout.grandTotals.on-for-rows-only": {
+      "command": "pivot.grandTotals",
+      "args": {
+        "mode": "rows"
+      }
+    },
+    "pivotDesign.layout.grandTotals.on-for-columns-only": {
+      "command": "pivot.grandTotals",
+      "args": {
+        "mode": "columns"
+      }
+    }
+  }
+}

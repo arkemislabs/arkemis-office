@@ -1,0 +1,157 @@
+{
+  "controls": {
+    "layout.page-setup.margins": {
+      "note": "U:quill/page: wordcraft ribbon/layout.rs margins_items (the caret section's preset is checked, #1206), each with Word's margin preview; Custom Margins… opens Page Setup on Margins. Word's Last Custom Setting has no upstream counterpart and stays out.",
+      "items": [
+        {"id": "layout.page-setup.margins.normal", "label": "Normal", "kind": "toggle", "command": "layout.margins", "args": {"preset": "normal"}, "icon": "margins-normal", "source": "upstream"},
+        {"id": "layout.page-setup.margins.narrow", "label": "Narrow", "kind": "toggle", "command": "layout.margins", "args": {"preset": "narrow"}, "icon": "margins-narrow", "source": "upstream"},
+        {"id": "layout.page-setup.margins.moderate", "label": "Moderate", "kind": "toggle", "command": "layout.margins", "args": {"preset": "moderate"}, "icon": "margins-moderate", "source": "upstream"},
+        {"id": "layout.page-setup.margins.wide", "label": "Wide", "kind": "toggle", "command": "layout.margins", "args": {"preset": "wide"}, "icon": "margins-wide", "source": "upstream"},
+        {"id": "layout.page-setup.margins.mirrored", "label": "Mirrored", "kind": "toggle", "command": "layout.margins", "args": {"preset": "mirrored"}, "icon": "margins-mirrored", "source": "upstream"},
+        {"id": "layout.page-setup.margins.office-2003-default", "label": "Office 2003 Default", "kind": "toggle", "command": "layout.margins", "args": {"preset": "office2003"}, "icon": "margins-office2003", "source": "upstream"},
+        "-",
+        {"id": "layout.page-setup.margins.custom-margins", "label": "Custom Margins…", "command": null, "dialog": "dialog.pageSetup", "args": {"tab": "Margins"}, "icon": "margins", "source": "upstream"}
+      ]
+    },
+    "layout.page-setup.orientation": {
+      "items": [
+        {"id": "layout.page-setup.orientation.portrait", "label": "Portrait", "kind": "toggle", "command": "layout.orientation", "args": {"value": "portrait"}, "icon": "page-portrait", "source": "upstream"},
+        {"id": "layout.page-setup.orientation.landscape", "label": "Landscape", "kind": "toggle", "command": "layout.orientation", "args": {"value": "landscape"}, "icon": "page-landscape", "source": "upstream"}
+      ]
+    },
+    "layout.page-setup.size": {
+      "note": "U:quill/page: wordcraft ribbon/common.rs size_menu over wordcraft_geom::PAPER_SIZES (the section's paper is checked); More Paper Sizes… opens Page Setup on Paper.",
+      "items": [
+        {"id": "layout.page-setup.size.letter", "label": "Letter", "kind": "toggle", "command": "layout.size", "args": {"name": "Letter"}, "icon": "size", "source": "upstream"},
+        {"id": "layout.page-setup.size.legal", "label": "Legal", "kind": "toggle", "command": "layout.size", "args": {"name": "Legal"}, "icon": "size", "source": "upstream"},
+        {"id": "layout.page-setup.size.executive", "label": "Executive", "kind": "toggle", "command": "layout.size", "args": {"name": "Executive"}, "icon": "size", "source": "upstream"},
+        {"id": "layout.page-setup.size.a3", "label": "A3", "kind": "toggle", "command": "layout.size", "args": {"name": "A3"}, "icon": "size", "source": "upstream"},
+        {"id": "layout.page-setup.size.a4", "label": "A4", "kind": "toggle", "command": "layout.size", "args": {"name": "A4"}, "icon": "size", "source": "upstream"},
+        {"id": "layout.page-setup.size.a5", "label": "A5", "kind": "toggle", "command": "layout.size", "args": {"name": "A5"}, "icon": "size", "source": "upstream"},
+        {"id": "layout.page-setup.size.b4-jis", "label": "B4 (JIS)", "kind": "toggle", "command": "layout.size", "args": {"name": "B4 (JIS)"}, "icon": "size", "source": "upstream"},
+        {"id": "layout.page-setup.size.b5-jis", "label": "B5 (JIS)", "kind": "toggle", "command": "layout.size", "args": {"name": "B5 (JIS)"}, "icon": "size", "source": "upstream"},
+        {"id": "layout.page-setup.size.tabloid", "label": "Tabloid", "kind": "toggle", "command": "layout.size", "args": {"name": "Tabloid"}, "icon": "size", "source": "upstream"},
+        {"id": "layout.page-setup.size.statement", "label": "Statement", "kind": "toggle", "command": "layout.size", "args": {"name": "Statement"}, "icon": "size", "source": "upstream"},
+        {"id": "layout.page-setup.size.envelope-10", "label": "Envelope #10", "kind": "toggle", "command": "layout.size", "args": {"name": "Envelope #10"}, "icon": "size", "source": "upstream"},
+        {"id": "layout.page-setup.size.envelope-dl", "label": "Envelope DL", "kind": "toggle", "command": "layout.size", "args": {"name": "Envelope DL"}, "icon": "size", "source": "upstream"},
+        "-",
+        {"id": "layout.page-setup.size.more-paper-sizes", "label": "More Paper Sizes…", "command": null, "dialog": "dialog.pageSetup", "args": {"tab": "Paper"}, "icon": "size", "source": "upstream"}
+      ]
+    },
+    "layout.page-setup.columns": {
+      "items": [
+        {"id": "layout.page-setup.columns.one", "label": "One", "kind": "toggle", "command": "layout.columns", "args": {"count": 1}, "icon": "columns-1", "source": "upstream"},
+        {"id": "layout.page-setup.columns.two", "label": "Two", "kind": "toggle", "command": "layout.columns", "args": {"count": 2}, "icon": "columns-2", "source": "upstream"},
+        {"id": "layout.page-setup.columns.three", "label": "Three", "kind": "toggle", "command": "layout.columns", "args": {"count": 3}, "icon": "columns-3", "source": "upstream"},
+        {"id": "layout.page-setup.columns.left", "label": "Left", "kind": "toggle", "command": "layout.columns", "args": {"preset": "left"}, "icon": "columns-left", "source": "upstream"},
+        {"id": "layout.page-setup.columns.right", "label": "Right", "kind": "toggle", "command": "layout.columns", "args": {"preset": "right"}, "icon": "columns-right", "source": "upstream"},
+        "-",
+        {"id": "layout.page-setup.columns.more-columns", "label": "More Columns…", "command": null, "dialog": "dialog.columns", "icon": "columns", "source": "upstream"}
+      ]
+    },
+    "layout.page-setup.breaks": {
+      "items": [
+        {"header": "Page Breaks"},
+        {"id": "layout.page-setup.breaks.page", "label": "Page", "command": "layout.break", "args": {"kind": "page"}, "icon": "page-break", "source": "upstream"},
+        {"id": "layout.page-setup.breaks.column", "label": "Column", "command": "layout.break", "args": {"kind": "column"}, "icon": "break-column", "source": "upstream"},
+        {"id": "layout.page-setup.breaks.text-wrapping", "label": "Text Wrapping", "command": "layout.break", "args": {"kind": "textWrapping"}, "icon": "break-text-wrapping", "source": "upstream"},
+        {"header": "Section Breaks"},
+        {"id": "layout.page-setup.breaks.next-page", "label": "Next Page", "command": "layout.break", "args": {"kind": "nextPage"}, "icon": "break-next-page", "source": "upstream"},
+        {"id": "layout.page-setup.breaks.continuous", "label": "Continuous", "command": "layout.break", "args": {"kind": "continuous"}, "icon": "break-continuous", "source": "upstream"},
+        {"id": "layout.page-setup.breaks.even-page", "label": "Even Page", "command": "layout.break", "args": {"kind": "evenPage"}, "icon": "break-even-page", "source": "upstream"},
+        {"id": "layout.page-setup.breaks.odd-page", "label": "Odd Page", "command": "layout.break", "args": {"kind": "oddPage"}, "icon": "break-odd-page", "source": "upstream"}
+      ]
+    },
+    "layout.page-setup.line-numbers": {
+      "items": [
+        {"id": "layout.page-setup.line-numbers.none", "label": "None", "kind": "toggle", "command": "layout.lineNumbers", "args": {"value": "none"}, "icon": "line-numbers", "source": "upstream"},
+        {"id": "layout.page-setup.line-numbers.continuous", "label": "Continuous", "kind": "toggle", "command": "layout.lineNumbers", "args": {"value": "continuous"}, "icon": "line-numbers", "source": "upstream"},
+        {"id": "layout.page-setup.line-numbers.restart-each-page", "label": "Restart Each Page", "kind": "toggle", "command": "layout.lineNumbers", "args": {"value": "restartPage"}, "icon": "line-numbers", "source": "upstream"},
+        {"id": "layout.page-setup.line-numbers.restart-each-section", "label": "Restart Each Section", "kind": "toggle", "command": "layout.lineNumbers", "args": {"value": "restartSection"}, "icon": "line-numbers", "source": "upstream"},
+        {"id": "layout.page-setup.line-numbers.suppress-for-current-paragraph", "label": "Suppress for Current Paragraph", "command": "para.set", "args": {"props": {"suppressLineNumbers": true}}, "source": "office"},
+        "-",
+        {"id": "layout.page-setup.line-numbers.line-numbering-options", "label": "Line Numbering Options…", "command": null, "dialog": "dialog.lineNumbers", "icon": "line-numbers", "source": "upstream"}
+      ]
+    }
+  },
+  "dialogs": {
+    "dialog.pageSetup": {
+      "title": "Page Setup",
+      "command": "layout.pageSetup",
+      "note": "U:quill/page: wordcraft dispatch.rs page_setup_dialog + page_setup.rs (page_layout_commands, run_as_one_step, page_paper_group) in Word's four tabs; drawn by src/apps/quill/dialogs/pageSetup.tsx. OK is one undo step. Word's Gutter position, Apply to, paper trays, Section start, Header/Footer from edge, Borders…, text flow and Set As Default have no upstream engine counterpart here and stay out.",
+      "tabs": [
+        {"name": "Margins", "fields": [
+          {"id": "top", "label": "Top:", "kind": "number", "unit": "in", "min": 0, "max": 22, "step": 0.1},
+          {"id": "bottom", "label": "Bottom:", "kind": "number", "unit": "in", "min": 0, "max": 22, "step": 0.1},
+          {"id": "left", "label": "Left:", "kind": "number", "unit": "in", "min": 0, "max": 22, "step": 0.1},
+          {"id": "right", "label": "Right:", "kind": "number", "unit": "in", "min": 0, "max": 22, "step": 0.1},
+          {"id": "gutter", "label": "Gutter:", "kind": "number", "unit": "in", "min": 0, "max": 22, "step": 0.1},
+          {"id": "orientation", "label": "Orientation", "kind": "radio", "options": [{"value": "portrait", "label": "Portrait"}, {"value": "landscape", "label": "Landscape"}]},
+          {"id": "multiplePages", "label": "Multiple pages:", "kind": "select", "options": [{"value": "normal", "label": "Normal"}, {"value": "mirror", "label": "Mirror margins"}]},
+          {"id": "preview", "label": "Preview", "kind": "preview"}
+        ]},
+        {"name": "Paper", "fields": [
+          {"id": "paperSize", "label": "Paper size:", "kind": "select", "options": [
+            {"value": "Letter", "label": "Letter"}, {"value": "Legal", "label": "Legal"}, {"value": "Executive", "label": "Executive"}, {"value": "A3", "label": "A3"},
+            {"value": "A4", "label": "A4"}, {"value": "A5", "label": "A5"}, {"value": "B4 (JIS)", "label": "B4 (JIS)"}, {"value": "B5 (JIS)", "label": "B5 (JIS)"},
+            {"value": "Tabloid", "label": "Tabloid"}, {"value": "Statement", "label": "Statement"}, {"value": "Envelope #10", "label": "Envelope #10"},
+            {"value": "Envelope DL", "label": "Envelope DL"}, {"value": "custom", "label": "Custom size"}]},
+          {"id": "width", "label": "Width:", "kind": "number", "unit": "in", "min": 0.1, "max": 22, "step": 0.1},
+          {"id": "height", "label": "Height:", "kind": "number", "unit": "in", "min": 0.1, "max": 22, "step": 0.1},
+          {"id": "preview", "label": "Preview", "kind": "preview"}
+        ]},
+        {"name": "Layout", "fields": [
+          {"id": "oddEven", "label": "Different odd and even", "kind": "checkbox"},
+          {"id": "firstPage", "label": "Different first page", "kind": "checkbox"},
+          {"id": "verticalAlignment", "label": "Vertical alignment:", "kind": "select", "options": [
+            {"value": "top", "label": "Top"}, {"value": "center", "label": "Center"}, {"value": "justify", "label": "Justified"}, {"value": "bottom", "label": "Bottom"}]},
+          {"id": "lineNumbers", "label": "Line Numbers…", "kind": "button", "dialog": "dialog.lineNumbers"},
+          {"id": "preview", "label": "Preview", "kind": "preview"}
+        ]},
+        {"name": "Document Grid", "fields": [
+          {"id": "sectionDirection", "label": "Section direction:", "kind": "radio", "options": [{"value": "ltr", "label": "Left-to-right"}, {"value": "rtl", "label": "Right-to-left"}]},
+          {"id": "grid", "label": "Grid", "kind": "radio", "options": [
+            {"value": "none", "label": "No grid"}, {"value": "lines", "label": "Specify line grid only"},
+            {"value": "linesAndChars", "label": "Specify line and character grid"}, {"value": "snapToChars", "label": "Text snaps to character grid"}]},
+          {"id": "charsPerLine", "label": "Characters per line:", "kind": "number", "min": 1, "max": 1000, "step": 1, "visibleWhen": "grid in linesAndChars|snapToChars"},
+          {"id": "linesPerPage", "label": "Lines per page:", "kind": "number", "min": 1, "max": 1000, "step": 1, "visibleWhen": "grid!=none"}
+        ]}
+      ],
+      "buttons": ["OK", "Cancel"]
+    },
+    "dialog.columns": {
+      "title": "Columns",
+      "command": "layout.columns",
+      "note": "U:quill/page: wordcraft dialogs_insert/columns.rs ColumnsForm/columns_ui (presets, count 1-12, line between, width and spacing per column with rebalancing, equal width, preview, Apply to); drawn by src/apps/quill/dialogs/columns.tsx. Word's Start new column has no upstream counterpart and stays out.",
+      "tabs": [
+        {"name": "Columns", "fields": [
+          {"id": "presets", "label": "Presets", "kind": "list", "options": [{"value": "one", "label": "One"}, {"value": "two", "label": "Two"}, {"value": "three", "label": "Three"}, {"value": "left", "label": "Left"}, {"value": "right", "label": "Right"}]},
+          {"id": "count", "label": "Number of columns:", "kind": "number", "min": 1, "max": 12, "step": 1},
+          {"id": "separator", "label": "Line between", "kind": "checkbox"},
+          {"id": "cols", "label": "Width and spacing", "kind": "list"},
+          {"id": "equal", "label": "Equal column width", "kind": "checkbox"},
+          {"id": "preview", "label": "Preview", "kind": "preview"},
+          {"id": "applyTo", "label": "Apply to:", "kind": "select", "options": [{"value": "section", "label": "This section"}, {"value": "document", "label": "Whole document"}, {"value": "forward", "label": "This point forward"}, {"value": "selection", "label": "Selected text"}]}
+        ]}
+      ],
+      "buttons": ["OK", "Cancel"]
+    },
+    "dialog.lineNumbers": {
+      "title": "Line Numbers",
+      "command": "layout.lineNumbers",
+      "note": "U:quill/page: wordcraft dialogs_layout/text.rs LineNumbersForm/line_numbers_ui.",
+      "tabs": [
+        {"name": "Line Numbers", "fields": [
+          {"id": "on", "label": "Add line numbering", "kind": "checkbox"},
+          {"id": "start", "label": "Start at:", "kind": "number", "min": 1, "max": 32767, "step": 1, "enabledWhen": "on"},
+          {"id": "fromText", "label": "From text:", "kind": "number", "unit": "in", "min": 0, "max": 22, "step": 0.1, "enabledWhen": "on"},
+          {"id": "auto", "label": "Auto", "kind": "checkbox", "enabledWhen": "on"},
+          {"id": "countBy", "label": "Count by:", "kind": "number", "min": 1, "max": 100, "step": 1, "enabledWhen": "on"},
+          {"id": "restart", "label": "Numbering:", "kind": "radio", "enabledWhen": "on", "options": [
+            {"value": "restartPage", "label": "Restart each page"}, {"value": "restartSection", "label": "Restart each section"}, {"value": "continuous", "label": "Continuous"}]}
+        ]}
+      ],
+      "buttons": ["OK", "Cancel"]
+    }
+  }
+}

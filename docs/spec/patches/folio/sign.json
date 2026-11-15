@@ -1,0 +1,50 @@
+{
+ "dialogs": {
+  "dialog.signature-pad": {
+   "command": "sign.fill.signature.change",
+   "title": "Create signature"
+  },
+  "dialog.sign-digital-id": {
+   "command": "sign.digital",
+   "tabs": [
+    {
+     "name": "Sign with a Digital ID",
+     "fields": [
+      {
+       "id": "ids",
+       "label": "Digital IDs",
+       "kind": "list"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "Sign",
+    "Back",
+    "Continue",
+    "Cancel"
+   ],
+   "note": "printcraft sign_ui/dialog.rs: Choose ID, Configure and Sign as are steps drawn by the dialog; Back and Continue are footer buttons (with Sign and Cancel, one row) that ask the dialog to move."
+  },
+  "dialog.certificate-viewer": {
+   "command": "sign.certificate",
+   "tabs": [
+    {
+     "name": "Certificate",
+     "fields": [
+      {
+       "id": "chain",
+       "label": "Certificate chain",
+       "kind": "list"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "Export…",
+    "OK"
+   ],
+   "note": "printcraft sign_ui/panel.rs cert_viewer: the chain on the left, Summary, Details and Trust on the right, and Acrobat's Revocation, Policies and Legal Notice tabs saying what this viewer does not do; Export… is the dialog's own button."
+  }
+ }
+}

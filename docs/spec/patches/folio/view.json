@@ -1,0 +1,7 @@
+{
+ "controls": {
+  "chrome.tabs.theme": {"command": null, "note": "Hidden: Arkemis keeps one dark look; printcraft's light, dark and system themes (view.theme, view.theme.light, view.theme.dark, view.theme.system) are not translated. Checked against printcraft 8f16855: commands.rs:329-336 and engine commands.rs:251-254 only set the app's own light, dark or system preference, which Arkemis does not offer."},
+  "chrome.mode.find-tools": {"kind": "button", "command": "view.palette", "note": "printcraft chrome.rs:526 Find tools and commands (view.palette, Ctrl+K): puts the cursor in the title bar's search for tools and commands."},
+  "alltools.panel.search": {"command": "view.tools_search", "args": {"query": "<value>"}, "note": "printcraft panels/all_tools_ui.rs:66: the search of the expanded All tools view filters the tiles by tool name or item name. The title bar's search is view.palette."}
+ }
+}

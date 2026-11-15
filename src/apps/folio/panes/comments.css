@@ -1,0 +1,76 @@
+/* The Comments panel (panes/comments.tsx): Arkemis glass tokens, Acrobat's card list layout. */
+.fc-pane { display: flex; flex-direction: column; gap: 8px; font-size: 12px; color: var(--sh-text-1); position: relative; }
+.fc-head { display: flex; align-items: center; gap: 4px; }
+.fc-count { font-weight: 600; font-size: 13px; }
+.fc-count small { font-weight: 400; color: var(--sh-text-3); }
+.fc-spacer { flex: 1; }
+.fc-icon { display: grid; place-items: center; width: 26px; height: 26px; border: 0; border-radius: 7px; background: transparent; color: var(--sh-text-2); }
+.fc-icon:hover, .fc-icon.is-on { background: var(--sh-hover); color: var(--sh-text-1); }
+.fc-search, .fc-add, .fc-reply-box, .fc-edit textarea { width: 100%; box-sizing: border-box; border: 1px solid var(--sh-field-border); border-radius: 8px; background: var(--sh-field);
+  color: var(--sh-text-1); font: inherit; padding: 6px 9px; }
+.fc-search:focus, .fc-add:focus, .fc-reply-box:focus, .fc-edit textarea:focus { outline: none; box-shadow: var(--ark-glass-focus); }
+.fc-menu { position: absolute; right: 0; top: 30px; z-index: 5; display: flex; flex-direction: column; min-width: 190px; max-height: 420px; overflow: auto; padding: 6px;
+  border: 1px solid var(--sh-panel-border); border-radius: 10px; background: var(--sh-panel); box-shadow: var(--ark-glass-shadow); backdrop-filter: var(--ark-glass-blur); }
+.fc-menu button { text-align: left; border: 0; background: transparent; color: var(--sh-text-1); font: inherit; padding: 5px 8px; border-radius: 6px; }
+.fc-menu button:hover:not(:disabled) { background: var(--sh-hover); }
+.fc-menu button:disabled { color: var(--sh-text-3); }
+.fc-menu button[aria-checked="true"]::before { content: '✓ '; }
+.fc-menu hr { border: 0; border-top: 1px solid var(--sh-divider); margin: 4px 0; }
+.fc-menu-label { padding: 6px 8px 2px; font-size: 10.5px; text-transform: uppercase; letter-spacing: .04em; color: var(--sh-text-3); }
+.fc-filter label { display: flex; align-items: center; gap: 6px; padding: 3px 8px; }
+.fc-swatch { display: inline-block; width: 10px; height: 10px; border-radius: 3px; border: 1px solid var(--sh-divider); }
+.fc-empty { display: grid; justify-items: center; gap: 4px; padding: 28px 8px; color: var(--sh-text-3); text-align: center; }
+.fc-empty p { margin: 0; color: var(--sh-text-2); }
+.fc-list { display: flex; flex-direction: column; gap: 6px; }
+.fc-group { margin: 8px 2px 2px; font-size: 11px; font-weight: 600; color: var(--sh-text-2); }
+.fc-card { position: relative; padding: 8px 10px; border: 1px solid var(--sh-panel-border); border-radius: 10px; background: var(--sh-panel); cursor: default; }
+.fc-card:hover { border-color: var(--sh-field-border); }
+.fc-card.is-selected { border-color: var(--sh-focus); box-shadow: 0 0 0 1px var(--sh-focus) inset; }
+.fc-card header { display: flex; align-items: center; gap: 6px; }
+.fc-avatar { display: grid; place-items: center; flex: none; width: 22px; height: 22px; border-radius: 50%; color: #fff; font-size: 9.5px; font-weight: 600; }
+.fc-avatar .shell-icon { width: 12px; height: 12px; }
+.fc-avatar.is-small { width: 18px; height: 18px; background: var(--sh-text-3); }
+.fc-who { flex: 1; min-width: 0; display: flex; flex-direction: column; line-height: 1.25; }
+.fc-who b { font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.fc-who small, .fc-reply small { color: var(--sh-text-3); font-size: 10.5px; }
+.fc-badge { padding: 1px 6px; border-radius: 999px; font-size: 10px; background: var(--sh-hover); color: var(--sh-text-2); }
+.fc-badge.is-accepted, .fc-badge.is-completed { color: #1f7a3f; background: rgba(31, 122, 63, .12); }
+.fc-badge.is-rejected, .fc-badge.is-cancelled { color: #a3262b; background: rgba(163, 38, 43, .12); }
+.fc-check { display: grid; place-items: center; width: 20px; height: 20px; border: 1px solid var(--sh-field-border); border-radius: 50%; background: transparent; color: transparent; }
+.fc-check.is-on { background: var(--sh-checked); border-color: var(--sh-checked); color: #fff; }
+.fc-check:hover { color: var(--sh-text-2); }
+.fc-lock { color: var(--sh-text-3); display: grid; }
+.fc-text { margin: 6px 0 0 28px; white-space: pre-wrap; word-break: break-word; }
+.fc-replacement { color: var(--sh-text-2); font-style: italic; }
+.fc-reply { display: flex; gap: 6px; margin: 8px 0 0 28px; }
+.fc-reply p { margin: 2px 0 0; white-space: pre-wrap; }
+.fc-reply-box { margin: 8px 0 0 28px; width: calc(100% - 28px); }
+.fc-edit { margin: 6px 0 0 28px; display: grid; gap: 6px; }
+.fc-edit textarea { min-height: 60px; resize: vertical; }
+.fc-edit div { display: flex; justify-content: flex-end; gap: 6px; }
+.fc-edit button { border: 1px solid var(--sh-field-border); border-radius: 999px; background: transparent; color: var(--sh-text-1); padding: 3px 12px; font: inherit; }
+.fc-edit button.is-primary { background: var(--sh-checked); border-color: var(--sh-checked); color: #fff; }
+.fc-card-menu { top: 32px; right: 6px; }
+/* Signatures panel */
+.fs-pane { display: flex; flex-direction: column; gap: 8px; font-size: 12px; color: var(--sh-text-1); }
+.fs-banner { padding: 8px 10px; border-radius: 10px; background: var(--sh-hover); }
+.fs-banner.is-valid { background: rgba(31, 122, 63, .12); }
+.fs-banner.is-invalid { background: rgba(163, 38, 43, .12); }
+.fs-row { border: 1px solid var(--sh-panel-border); border-radius: 10px; background: var(--sh-panel); padding: 8px 10px; }
+.fs-row header { display: flex; align-items: center; gap: 8px; }
+.fs-dot { width: 10px; height: 10px; border-radius: 50%; flex: none; background: var(--sh-text-3); }
+.fs-dot.is-valid { background: #1f9d55; }
+.fs-dot.is-invalid { background: #d0343a; }
+.fs-dot.is-unknown { background: #d99a1e; }
+.fs-row ul { margin: 6px 0 0 18px; padding: 0; color: var(--sh-text-2); line-height: 1.5; }
+.fs-actions { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.fs-actions button, .fs-toolbar button { border: 1px solid var(--sh-field-border); border-radius: 999px; background: transparent; color: var(--sh-text-1); padding: 3px 10px; font: inherit; }
+.fs-actions button:hover, .fs-toolbar button:hover { background: var(--sh-hover); }
+.fs-toolbar { display: flex; gap: 6px; }
+/* Stamps palette */
+.fst-pane { display: flex; flex-direction: column; gap: 10px; font-size: 12px; }
+.fst-group h3 { margin: 4px 0 6px; font-size: 11px; font-weight: 600; color: var(--sh-text-2); }
+.fst-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.fst-stamp { display: grid; place-items: center; min-height: 36px; padding: 4px; border: 2px solid currentColor; border-radius: 6px; background: transparent; font: 700 10px/1.1 var(--ark-font); letter-spacing: .03em; }
+.fst-stamp.is-on { box-shadow: 0 0 0 2px var(--sh-focus); }
+.fst-custom { display: flex; align-items: center; gap: 6px; }

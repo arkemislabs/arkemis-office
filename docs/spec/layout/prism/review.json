@@ -1,0 +1,115 @@
+{
+  "tab": "review",
+  "keytip": "R",
+  "source": "deckcraft crates/ui-egui/src/ribbon/review.rs (review) @ f893f6af7d36a5409fd804e81a34fd895cfefedf; Insights, Reject, Previous/Next Change, Reviewing Pane and Ink placed as PowerPoint",
+  "groups": {
+    "proofing": {
+      "collapseOrder": 7,
+      "collapsedIcon": "spell-check",
+      "layout": [
+        {
+          "large": "review.proofing.spelling"
+        },
+        {
+          "large": "review.proofing.thesaurus"
+        }
+      ]
+    },
+    "accessibility": {
+      "collapseOrder": 6,
+      "collapsedIcon": "accessibility",
+      "layout": [
+        {
+          "large": "review.accessibility.check"
+        }
+      ]
+    },
+    "insights": {
+      "collapseOrder": 5,
+      "collapsedIcon": "search-insights",
+      "layout": [
+        {
+          "large": "review.insights.search"
+        }
+      ]
+    },
+    "language": {
+      "collapseOrder": 4,
+      "collapsedIcon": "translate",
+      "layout": [
+        {
+          "large": "review.language.translate"
+        },
+        {
+          "large": "review.language.language"
+        }
+      ]
+    },
+    "comments": {
+      "collapseOrder": 3,
+      "collapsedIcon": "comment-plus",
+      "layout": [
+        {
+          "large": "review.comments.new"
+        },
+        {
+          "stack": [
+            "review.comments.previous",
+            "review.comments.next"
+          ]
+        },
+        {
+          "large": "review.comments.delete"
+        },
+        {
+          "large": "review.comments.show"
+        }
+      ]
+    },
+    "compare": {
+      "collapseOrder": 2,
+      "collapsedIcon": "compare",
+      "layout": [
+        {
+          "large": "review.compare.compare"
+        },
+        {
+          "large": "review.compare.accept"
+        },
+        {
+          "large": "review.compare.reject"
+        },
+        {
+          "stack": [
+            "review.compare.previous",
+            "review.compare.next"
+          ]
+        },
+        {
+          "large": "review.compare.pane"
+        },
+        {
+          "large": "review.compare.end"
+        }
+      ]
+    },
+    "ink": {
+      "collapseOrder": 1,
+      "layout": [
+        {
+          "large": "review.ink.hide"
+        }
+      ]
+    }
+  },
+  "keytips": {
+    "review.proofing.spelling": "S",
+    "review.proofing.thesaurus": "E",
+    "review.language.translate": "L",
+    "review.comments.new": "C",
+    "review.comments.delete": "D",
+    "review.comments.previous": "V",
+    "review.comments.next": "N",
+    "review.compare.compare": "G"
+  }
+}

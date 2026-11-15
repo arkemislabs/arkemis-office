@@ -1,0 +1,179 @@
+{
+  "tab": "home",
+  "keytip": "H",
+  "source": "wordcraft aadb077e072b7de05f724e359d8db82e151f125c crates/ui-egui/src/ribbon/home.rs (home), previews.rs STYLE_TILES; keytips from Word for Windows (wordcraft keytips.rs mirrors its tab letters); Transcribe and Add-ins placed as in Word",
+  "groups": {
+    "clipboard": {
+      "keytip": "FO",
+      "collapseOrder": 6,
+      "layout": [
+        {
+          "large": "home.clipboard.paste"
+        },
+        {
+          "stack": [
+            "home.clipboard.cut",
+            "home.clipboard.copy",
+            "home.clipboard.format-painter"
+          ]
+        }
+      ]
+    },
+    "font": {
+      "keytip": "FN",
+      "collapseOrder": 8,
+      "layout": [
+        {
+          "rows": [
+            [
+              "home.font.font",
+              "home.font.font-size",
+              "home.font.increase-font-size",
+              "home.font.decrease-font-size",
+              "home.font.change-case",
+              "home.font.clear-all-formatting",
+              "home.font.phonetic-guide"
+            ],
+            [
+              "home.font.bold",
+              "home.font.italic",
+              "home.font.underline",
+              "home.font.strikethrough",
+              "home.font.subscript",
+              "home.font.superscript",
+              "home.font.character-border",
+              "home.font.enclose-characters",
+              "home.font.text-effects-and-typography",
+              "home.font.text-highlight-color",
+              "home.font.font-color"
+            ]
+          ]
+        }
+      ],
+      "widths": {
+        "home.font.font": 150,
+        "home.font.font-size": 52
+      }
+    },
+    "paragraph": {
+      "keytip": "PG",
+      "collapseOrder": 7,
+      "layout": [
+        {
+          "rows": [
+            [
+              "home.paragraph.bullets",
+              "home.paragraph.numbering",
+              "home.paragraph.multilevel-list",
+              "home.paragraph.decrease-indent",
+              "home.paragraph.increase-indent",
+              "home.paragraph.sort",
+              "home.paragraph.show-hide-marks"
+            ],
+            [
+              "home.paragraph.align-left",
+              "home.paragraph.center",
+              "home.paragraph.align-right",
+              "home.paragraph.justify",
+              "home.paragraph.distributed",
+              "home.paragraph.left-to-right-text-direction",
+              "home.paragraph.right-to-left-text-direction",
+              "home.paragraph.line-and-paragraph-spacing",
+              "home.paragraph.shading",
+              "home.paragraph.borders",
+              "home.paragraph.asian-layout"
+            ]
+          ]
+        }
+      ]
+    },
+    "styles": {
+      "keytip": "FY",
+      "collapseOrder": 1,
+      "layout": [
+        {
+          "gallery": "home.styles.styles",
+          "inline": true,
+          "columns": 6
+        }
+      ]
+    },
+    "editing": {
+      "collapseOrder": 5,
+      "layout": [
+        {
+          "stack": [
+            "home.editing.find",
+            "home.editing.replace",
+            "home.editing.select"
+          ]
+        }
+      ]
+    },
+    "voice": {
+      "collapseOrder": 4,
+      "layout": [
+        {
+          "large": "home.voice.dictate"
+        },
+        {
+          "large": "home.voice.transcribe"
+        }
+      ]
+    },
+    "editor": {
+      "collapseOrder": 3,
+      "layout": [
+        {
+          "large": "home.editor.editor"
+        }
+      ]
+    },
+    "add-ins": {
+      "collapseOrder": 2,
+      "layout": [
+        {
+          "large": "home.add-ins.add-ins"
+        }
+      ]
+    }
+  },
+  "keytips": {
+    "home.clipboard.paste": "V",
+    "home.clipboard.cut": "X",
+    "home.clipboard.copy": "C",
+    "home.clipboard.format-painter": "FP",
+    "home.font.font": "FF",
+    "home.font.font-size": "FS",
+    "home.font.increase-font-size": "FG",
+    "home.font.decrease-font-size": "FK",
+    "home.font.change-case": "7",
+    "home.font.clear-all-formatting": "E",
+    "home.font.bold": "1",
+    "home.font.italic": "2",
+    "home.font.underline": "3",
+    "home.font.strikethrough": "4",
+    "home.font.subscript": "5",
+    "home.font.superscript": "6",
+    "home.font.text-highlight-color": "I",
+    "home.font.font-color": "FC",
+    "home.paragraph.bullets": "U",
+    "home.paragraph.numbering": "N",
+    "home.paragraph.multilevel-list": "M",
+    "home.paragraph.decrease-indent": "AO",
+    "home.paragraph.increase-indent": "AI",
+    "home.paragraph.sort": "SO",
+    "home.paragraph.show-hide-marks": "8",
+    "home.paragraph.align-left": "AL",
+    "home.paragraph.center": "AC",
+    "home.paragraph.align-right": "AR",
+    "home.paragraph.justify": "AJ",
+    "home.paragraph.line-and-paragraph-spacing": "K",
+    "home.paragraph.shading": "H",
+    "home.paragraph.borders": "B",
+    "home.styles.styles": "L",
+    "home.editing.find": "FD",
+    "home.editing.replace": "R",
+    "home.editing.select": "SL"
+  }
+}

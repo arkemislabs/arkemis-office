@@ -1,0 +1,12 @@
+{
+  "source": "gridcraft crates/ui-egui/src/dialogs.rs:452 (Series) at 146161b4b450a56e5e59a083ba0478582d1e602b; Excel Series: Series in, Type and Date unit side by side, Trend, then Step value and Stop value",
+  "width": 420,
+  "height": 300,
+  "sections": [
+    {"fields": ["direction"]},
+    {"fields": ["type"]},
+    {"fields": ["dateUnit"]},
+    {"fields": ["trend"]},
+    {"fields": ["step", "stop"], "columns": 2}
+  ]
+}

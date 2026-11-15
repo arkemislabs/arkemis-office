@@ -1,0 +1,41 @@
+{
+  "tab": "header-and-footer",
+  "source": "gridcraft 146161b4b450a56e5e59a083ba0478582d1e602b crates/ui-egui/src/paper_view.rs (header & footer ribbon: Header/Footer large menus; the element buttons large; Go to Header/Footer large; Options as two checkbox columns)",
+  "groups": {
+    "header-and-footer": {
+      "collapseOrder": 4,
+      "layout": [
+        {"large": "headerFooter.hf.header"},
+        {"large": "headerFooter.hf.footer"}
+      ]
+    },
+    "header-and-footer-elements": {
+      "collapseOrder": 1,
+      "layout": [
+        {"large": "headerFooter.elements.pageNumber"},
+        {"large": "headerFooter.elements.numberofPages"},
+        {"large": "headerFooter.elements.currentDate"},
+        {"large": "headerFooter.elements.currentTime"},
+        {"large": "headerFooter.elements.filePath"},
+        {"large": "headerFooter.elements.fileName"},
+        {"large": "headerFooter.elements.sheetName"},
+        {"large": "headerFooter.elements.picture"},
+        {"large": "headerFooter.elements.formatPicture"}
+      ]
+    },
+    "navigation": {
+      "collapseOrder": 2,
+      "layout": [
+        {"large": "headerFooter.navigation.goToHeader"},
+        {"large": "headerFooter.navigation.goToFooter"}
+      ]
+    },
+    "options": {
+      "collapseOrder": 3,
+      "layout": [
+        {"stack": ["headerFooter.options.differentFirst", "headerFooter.options.differentOddEven"]},
+        {"stack": ["headerFooter.options.scaleWithDoc", "headerFooter.options.alignWithMargins"]}
+      ]
+    }
+  }
+}

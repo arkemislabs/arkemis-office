@@ -1,0 +1,10 @@
+{
+  "controls": {
+    "pivotAnalyze.show.buttons": {
+      "command": "pivot.showButtons",
+      "note": "U:grid/pivot: not in gridcraft; Excel's +/- Buttons: a minus or plus box beside each item that has another field inside it; a click expands or collapses it (pivot.toggleItem). Kept in .xlsx as showDrill. Not checked against upstream."
+    }
+  },
+  "dialogs": {},
+  "commands": {}
+}

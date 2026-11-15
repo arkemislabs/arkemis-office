@@ -1,0 +1,5 @@
+.notebook-location,.notebook-filters{display:flex;align-items:center;gap:16px;padding:10px 22px;background:var(--ark-surface-1);color:var(--ark-text-2);font-size:12px;flex-shrink:0}
+.notebook-location label,.notebook-filters label{display:flex;align-items:center;gap:10px}
+.notebook-location input,.notebook-filters select{background:var(--ark-surface-2);border:1px solid var(--ark-border);border-radius:10px;color:var(--ark-text-1);padding:8px 10px;max-width:220px;font:inherit}
+.notebook-filters{padding:0 0 18px;background:transparent}
+@media print{.notebook-location{display:none!important}}

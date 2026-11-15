@@ -1,0 +1,6 @@
+{
+  "source": "wordcraft crates/ui-egui/src/dialogs/dispatch.rs paste_special_dialog: Paste as list, Result line, OK / Cancel",
+  "width": 440,
+  "height": 300,
+  "fieldOrder": ["as", "result"]
+}

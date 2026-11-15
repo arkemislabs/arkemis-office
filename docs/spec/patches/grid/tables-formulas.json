@@ -1,0 +1,122 @@
+{
+  "controls": {
+    "formulas.definedNames.useInFormula": {
+      "kind": "dropdown",
+      "command": "formulas.useInFormula",
+      "items": [
+        {
+          "id": "formulas.definedNames.useInFormula.names",
+          "label": "Names",
+          "kind": "list",
+          "dynamic": true,
+          "command": "formulas.useInFormula",
+          "params": {
+            "name": "<name>"
+          }
+        },
+        {
+          "separator": true
+        },
+        {
+          "label": "Paste Names…",
+          "command": "formulas.pasteName",
+          "dialog": "dialog.pasteName"
+        }
+      ],
+      "note": "U:grid/formulas: checked against gridcraft (formulas.useInFormula: the menu lists the names Paste Names lists and puts the one clicked at the caret of the formula being typed)."
+    },
+    "formulas.auditing.errorChecking": {
+      "kind": "split",
+      "command": "formulas.errorChecking",
+      "items": [
+        {
+          "label": "Error Checking…",
+          "command": "formulas.errorChecking",
+          "dialog": "dialog.errorChecking"
+        },
+        {
+          "label": "Trace Error",
+          "command": "formulas.tracePrecedents",
+          "params": {
+            "errors": true
+          }
+        },
+        {
+          "label": "Circular References",
+          "items": [
+            {
+              "id": "formulas.auditing.errorChecking.circular-references.cells",
+              "label": "Cells",
+              "kind": "list",
+              "dynamic": true,
+              "command": "formulas.circularReference",
+              "params": {
+                "cell": "<cell>"
+              }
+            }
+          ]
+        }
+      ],
+      "note": "U:grid/formulas: checked against gridcraft (formulas.errorChecking and its list of circular references, up to 100, each of which selects its cell)."
+    },
+    "formulas.auditing.watchWindow": {
+      "note": "U:grid/formulas: checked against gridcraft (formulas.watchWindow: the watched cells with their value and formula); the Watch Window pane has Excel's Book, Sheet, Name, Cell, Value and Formula columns and Add Watch and Delete Watch."
+    },
+    "formulas.definedNames.defineName.apply-names": {
+      "note": "U:grid/formulas: not in gridcraft; Excel's Apply Names replaces references with the names they are (formulas.applyNames; not checked against upstream)."
+    }
+  },
+  "dialogs": {
+    "dialog.applyNames": {
+      "buttons": [
+        "OK",
+        "Cancel"
+      ],
+      "note": "U:grid/formulas: Excel's Apply Names drawn by src/apps/grid/dialogs/applyNames.tsx (the Options >> part is a button in the body). Not in gridcraft: not checked against upstream."
+    },
+    "dialog.addWatch": {
+      "title": "Add Watch",
+      "buttons": [
+        "Add",
+        "Cancel"
+      ],
+      "tabs": [
+        {
+          "name": "",
+          "fields": [
+            {
+              "id": "range",
+              "label": "Select the cells that you would like to watch the value of:",
+              "kind": "text",
+              "options": [],
+              "refPicker": true
+            }
+          ]
+        }
+      ],
+      "note": "U:grid/formulas: Excel's Add Watch, filled with the selection; runs gridcraft's formulas.watchWindow {add}."
+    },
+    "dialog.errorCheckingOptions": {
+      "title": "Error Checking Options",
+      "buttons": [
+        "Reset Ignored Errors",
+        "Cancel"
+      ],
+      "tabs": [
+        {
+          "name": "",
+          "fields": [
+            {
+              "id": "ignored",
+              "label": "Ignored errors",
+              "kind": "list",
+              "options": []
+            }
+          ]
+        }
+      ],
+      "note": "U:grid/formulas: Excel's Options of Error Checking: the ignored errors and Reset Ignored Errors (drawn by src/apps/grid/dialogs/errorCheckingOptions.tsx). The rules that decide what is flagged have no settings here. Not checked against upstream."
+    }
+  },
+  "commands": {}
+}

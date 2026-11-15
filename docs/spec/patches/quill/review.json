@@ -1,0 +1,173 @@
+{
+  "controls": {
+    "review.proofing.word-count": {
+      "command": "review.wordCount",
+      "args": null,
+      "dialog": "dialog.wordCount",
+      "note": "U:quill/review: wordcraft ribbon/review.rs opens the Word Count dialog (ui.dialog wordCount); review.wordCount without params opens it here."
+    },
+    "review.language.language": {
+      "note": "U:quill/review: wordcraft ribbon/language.rs language_menu: the languages (the selection's is checked), Do Not Check Spelling or Grammar, Set Proofing Language… (the Language dialog). Language Preferences… waits for File › Options.",
+      "items": [
+        {"id": "review.language.language.en-us", "label": "English (United States)", "kind": "toggle", "command": "review.language", "args": {"lang": "en-US"}, "source": "upstream"},
+        {"id": "review.language.language.en-gb", "label": "English (United Kingdom)", "kind": "toggle", "command": "review.language", "args": {"lang": "en-GB"}, "source": "upstream"},
+        {"id": "review.language.language.en-au", "label": "English (Australia)", "kind": "toggle", "command": "review.language", "args": {"lang": "en-AU"}, "source": "upstream"},
+        {"id": "review.language.language.en-ca", "label": "English (Canada)", "kind": "toggle", "command": "review.language", "args": {"lang": "en-CA"}, "source": "upstream"},
+        {"id": "review.language.language.pl-pl", "label": "Polish", "kind": "toggle", "command": "review.language", "args": {"lang": "pl-PL"}, "source": "upstream"},
+        {"id": "review.language.language.pt-br", "label": "Portuguese (Brazil)", "kind": "toggle", "command": "review.language", "args": {"lang": "pt-BR"}, "source": "upstream"},
+        {"id": "review.language.language.it-it", "label": "Italian", "kind": "toggle", "command": "review.language", "args": {"lang": "it-IT"}, "source": "upstream"},
+        {"id": "review.language.language.hr-hr", "label": "Croatian", "kind": "toggle", "command": "review.language", "args": {"lang": "hr-HR"}, "source": "upstream"},
+        {"id": "review.language.language.tr-tr", "label": "Turkish", "kind": "toggle", "command": "review.language", "args": {"lang": "tr-TR"}, "source": "upstream"},
+        {"id": "review.language.language.ru-ru", "label": "Russian", "kind": "toggle", "command": "review.language", "args": {"lang": "ru-RU"}, "source": "upstream"},
+        {"id": "review.language.language.cs-cz", "label": "Czech", "kind": "toggle", "command": "review.language", "args": {"lang": "cs-CZ"}, "source": "upstream"},
+        {"id": "review.language.language.id-id", "label": "Indonesian", "kind": "toggle", "command": "review.language", "args": {"lang": "id-ID"}, "source": "upstream"},
+        {"id": "review.language.language.es-es", "label": "Spanish (Spain)", "kind": "toggle", "command": "review.language", "args": {"lang": "es-ES"}, "source": "upstream"},
+        {"id": "review.language.language.es-mx", "label": "Spanish (Mexico)", "kind": "toggle", "command": "review.language", "args": {"lang": "es-MX"}, "source": "upstream"},
+        {"id": "review.language.language.es-419", "label": "Spanish (Latin America)", "kind": "toggle", "command": "review.language", "args": {"lang": "es-419"}, "source": "upstream"},
+        {"id": "review.language.language.es-uy", "label": "Spanish (Uruguay)", "kind": "toggle", "command": "review.language", "args": {"lang": "es-UY"}, "source": "upstream"},
+        "-",
+        {"id": "review.language.language.no-proof", "label": "Do Not Check Spelling or Grammar", "kind": "toggle", "command": "review.language", "args": {"noProofToggle": true}, "source": "upstream"},
+        "-",
+        {"id": "review.language.language.set-proofing-language", "label": "Set Proofing Language…", "command": null, "dialog": "dialog.language", "icon": "language", "source": "upstream"},
+        {"id": "review.language.language.language-preferences", "label": "Language Preferences…", "command": "file.options", "args": {"pane": "language"}, "source": "upstream"}
+      ]
+    },
+    "review.tracking.track-changes": {
+      "note": "U:quill/review: For Everyone is the document's Track Changes (w:trackRevisions); Just Mine tracks only this person's changes and is not saved with the document (Word). Lock Tracking… is review.lockTracking (U:quill/rest).",
+      "items": [
+        {"id": "review.tracking.track-changes.for-everyone", "label": "For Everyone", "kind": "toggle", "command": "review.trackChanges", "args": {"scope": "everyone"}, "source": "upstream"},
+        {"id": "review.tracking.track-changes.just-mine", "label": "Just Mine", "kind": "toggle", "command": "review.trackChanges", "args": {"scope": "mine"}, "source": "office"},
+        {"id": "review.tracking.track-changes.lock-tracking", "label": "Lock Tracking…", "kind": "toggle", "command": "review.lockTracking", "source": "office", "note": "U:quill/rest: Lock Tracking turns Track Changes on and restricts editing to tracked changes (Restrict Editing, without a password; set one in the Restrict Editing pane); used again it stops the protection. Not checked against upstream (follows Word)."}
+      ]
+    },
+    "review.tracking.display-for-review": {
+      "note": "U:quill/review: upstream has All Markup and No Markup; Simple Markup and Original are drawn as Word does (review-markup.mjs).",
+      "items": [
+        {"id": "review.tracking.display-for-review.simple-markup", "label": "Simple Markup", "kind": "toggle", "command": "review.markup", "args": {"value": "simple"}, "source": "office"},
+        {"id": "review.tracking.display-for-review.all-markup", "label": "All Markup", "kind": "toggle", "command": "review.markup", "args": {"value": "all"}, "source": "upstream"},
+        {"id": "review.tracking.display-for-review.no-markup", "label": "No Markup", "kind": "toggle", "command": "review.markup", "args": {"value": "noMarkup"}, "source": "upstream"},
+        {"id": "review.tracking.display-for-review.original", "label": "Original", "kind": "toggle", "command": "review.markup", "args": {"value": "original"}, "source": "office"}
+      ]
+    },
+    "review.tracking.show-markup": {
+      "note": "U:quill/review: each item turns one kind of markup on or off (the Track Changes Options' Show settings); Balloons sets the balloon mode. Specific People needs a reviewer filter upstream doesn't have and stays out.",
+      "items": [
+        {"id": "review.tracking.show-markup.comments", "label": "Comments", "kind": "toggle", "command": "review.showMarkup", "args": {"toggle": "comments"}, "source": "office"},
+        {"id": "review.tracking.show-markup.ink", "label": "Ink", "kind": "toggle", "command": "review.showMarkup", "args": {"toggle": "ink"}, "source": "office"},
+        {"id": "review.tracking.show-markup.insertions-and-deletions", "label": "Insertions and Deletions", "kind": "toggle", "command": "review.showMarkup", "args": {"toggle": "insertions"}, "source": "office"},
+        {"id": "review.tracking.show-markup.formatting", "label": "Formatting", "kind": "toggle", "command": "review.showMarkup", "args": {"toggle": "formatting"}, "source": "office"},
+        "-",
+        {"id": "review.tracking.show-markup.balloons", "label": "Balloons", "command": null, "source": "office", "items": [
+          {"id": "review.tracking.show-markup.balloons.revisions", "label": "Show Revisions in Balloons", "kind": "toggle", "command": "review.trackingOptions", "args": {"balloons": "revisions"}, "source": "upstream"},
+          {"id": "review.tracking.show-markup.balloons.inline", "label": "Show All Revisions Inline", "kind": "toggle", "command": "review.trackingOptions", "args": {"balloons": "inline"}, "source": "upstream"},
+          {"id": "review.tracking.show-markup.balloons.comments-and-formatting", "label": "Show Only Comments and Formatting in Balloons", "kind": "toggle", "command": "review.trackingOptions", "args": {"balloons": "commentsAndFormatting"}, "source": "upstream"}
+        ]},
+        {"id": "review.tracking.show-markup.specific-people", "label": "Specific People", "command": null, "source": "office"}
+      ]
+    },
+    "review.compare.compare": {
+      "items": [
+        {"id": "review.compare.compare.compare", "label": "Compare…", "command": null, "dialog": "dialog.compare", "icon": "compare", "source": "upstream"},
+        {"id": "review.compare.compare.combine", "label": "Combine…", "command": null, "dialog": "dialog.compare", "args": {"combine": true}, "source": "upstream"},
+        {"id": "review.compare.compare.show-source-documents", "label": "Show Source Documents", "command": null, "source": "office"}
+      ]
+    },
+    "review.protect.restrict-editing": {
+      "kind": "toggle",
+      "note": "U:quill/review: shows the Restrict Editing pane (wordcraft dialogs_review.rs:564 restrict_pane)."
+    }
+  },
+  "dialogs": {
+    "dialog.wordCount": {
+      "title": "Word Count",
+      "command": "review.wordCount",
+      "note": "U:quill/review: wordcraft dispatch.rs:760; the selection's counts, else the document's.",
+      "tabs": [{"name": "Statistics", "fields": [
+        {"id": "pages", "label": "Pages", "kind": "text", "readOnly": true},
+        {"id": "words", "label": "Words", "kind": "text", "readOnly": true},
+        {"id": "characters", "label": "Characters (no spaces)", "kind": "text", "readOnly": true},
+        {"id": "charactersWithSpaces", "label": "Characters (with spaces)", "kind": "text", "readOnly": true},
+        {"id": "paragraphs", "label": "Paragraphs", "kind": "text", "readOnly": true},
+        {"id": "lines", "label": "Lines", "kind": "text", "readOnly": true},
+        {"id": "includeTextBoxes", "label": "Include textboxes, footnotes and endnotes", "kind": "checkbox", "param": "includeTextBoxes"}
+      ]}],
+      "buttons": ["Close"]
+    },
+    "dialog.trackChangesOptions": {
+      "title": "Track Changes Options",
+      "command": "review.trackingOptions",
+      "note": "U:quill/review: wordcraft dialogs_lists.rs track_options (Show, Balloons, Comments, Advanced, Moves, Track formatting) with Word's Track moves (the document's w:doNotTrackMoves).",
+      "tabs": [{"name": "Track Changes Options", "fields": [
+        {"id": "comments", "label": "Comments", "kind": "checkbox"},
+        {"id": "ink", "label": "Ink", "kind": "checkbox"},
+        {"id": "insertionsDeletions", "label": "Insertions and Deletions", "kind": "checkbox"},
+        {"id": "formatting", "label": "Formatting", "kind": "checkbox"},
+        {"id": "balloons", "label": "Balloons", "kind": "radio", "options": [
+          {"value": "revisions", "label": "Show revisions in balloons"}, {"value": "inline", "label": "Show all revisions inline"},
+          {"value": "commentsAndFormatting", "label": "Show only comments and formatting in balloons"}]},
+        {"id": "commentDisplay", "label": "Comments", "kind": "radio", "options": [{"value": "margin", "label": "In the margin"}, {"value": "selected", "label": "Only for the selected text"}]},
+        {"id": "insertMark", "label": "Insertions:", "kind": "select", "options": [
+          {"value": "colorOnly", "label": "Color only"}, {"value": "bold", "label": "Bold"}, {"value": "italic", "label": "Italic"}, {"value": "underline", "label": "Underline"},
+          {"value": "doubleUnderline", "label": "Double underline"}, {"value": "strikethrough", "label": "Strikethrough"}, {"value": "none", "label": "(none)"}]},
+        {"id": "insertColor", "label": "Color:", "kind": "color", "options": ["By author"]},
+        {"id": "deleteMark", "label": "Deletions:", "kind": "select", "options": [
+          {"value": "colorOnly", "label": "Color only"}, {"value": "bold", "label": "Bold"}, {"value": "italic", "label": "Italic"}, {"value": "underline", "label": "Underline"},
+          {"value": "doubleUnderline", "label": "Double underline"}, {"value": "strikethrough", "label": "Strikethrough"}, {"value": "doubleStrikethrough", "label": "Double strikethrough"},
+          {"value": "hidden", "label": "Hidden"}, {"value": "caret", "label": "^"}, {"value": "hash", "label": "#"}, {"value": "none", "label": "(none)"}]},
+        {"id": "deleteColor", "label": "Color:", "kind": "color", "options": ["By author"]},
+        {"id": "changedLines", "label": "Changed lines:", "kind": "select", "options": [
+          {"value": "outside", "label": "Outside border"}, {"value": "left", "label": "Left border"}, {"value": "right", "label": "Right border"}, {"value": "none", "label": "(none)"}]},
+        {"id": "changedLinesColor", "label": "Color:", "kind": "color", "options": ["Automatic"]},
+        {"id": "moveFromMark", "label": "Moved from:", "kind": "select", "options": [
+          {"value": "doubleStrikethrough", "label": "Double strikethrough"}, {"value": "strikethrough", "label": "Strikethrough"}, {"value": "colorOnly", "label": "Color only"},
+          {"value": "bold", "label": "Bold"}, {"value": "italic", "label": "Italic"}, {"value": "underline", "label": "Underline"}, {"value": "doubleUnderline", "label": "Double underline"},
+          {"value": "hidden", "label": "Hidden"}, {"value": "caret", "label": "^"}, {"value": "hash", "label": "#"}, {"value": "none", "label": "(none)"}]},
+        {"id": "moveFromColor", "label": "Color:", "kind": "color", "options": ["By author"]},
+        {"id": "moveToMark", "label": "Moved to:", "kind": "select", "options": [
+          {"value": "doubleUnderline", "label": "Double underline"}, {"value": "underline", "label": "Underline"}, {"value": "colorOnly", "label": "Color only"},
+          {"value": "bold", "label": "Bold"}, {"value": "italic", "label": "Italic"}, {"value": "strikethrough", "label": "Strikethrough"}, {"value": "none", "label": "(none)"}]},
+        {"id": "moveToColor", "label": "Color:", "kind": "color", "options": ["By author"]},
+        {"id": "trackMoves", "label": "Track moves", "kind": "checkbox"},
+        {"id": "trackFormatting", "label": "Track formatting", "kind": "checkbox"}
+      ]}],
+      "buttons": ["OK", "Cancel"]
+    },
+    "dialog.compare": {
+      "title": "Compare Documents",
+      "command": "review.compare",
+      "note": "U:quill/review: wordcraft dialogs_review.rs compare_dialog; drawn by src/apps/quill/dialogs/compare.tsx (Browse… picks the revised document in the system Open dialog).",
+      "tabs": [{"name": "Compare", "fields": [
+        {"id": "original", "label": "Original document", "kind": "select", "options": [{"value": "this", "label": "This document"}]},
+        {"id": "revised", "label": "Revised document", "kind": "text", "readOnly": true},
+        {"id": "label", "label": "Label changes with:", "kind": "text"},
+        {"id": "settings", "label": "Comparison settings", "kind": "list", "multi": true, "options": [
+          {"value": "insertions", "label": "Insertions and deletions"}, {"value": "moves", "label": "Moves"}, {"value": "comments", "label": "Comments"},
+          {"value": "formatting", "label": "Formatting"}, {"value": "caseChanges", "label": "Case changes"}, {"value": "whiteSpace", "label": "White space"},
+          {"value": "tables", "label": "Tables"}, {"value": "headersFooters", "label": "Headers and footers"}, {"value": "footnotes", "label": "Footnotes and endnotes"},
+          {"value": "textBoxes", "label": "Text boxes"}, {"value": "fields", "label": "Fields"}]},
+        {"id": "level", "label": "Show changes at:", "kind": "radio", "options": [{"value": "word", "label": "Word level"}, {"value": "character", "label": "Character level"}]},
+        {"id": "showIn", "label": "Show changes in:", "kind": "radio", "options": [{"value": "original", "label": "Original document"}]}
+      ]}],
+      "buttons": ["OK", "Cancel"]
+    },
+    "dialog.language": {
+      "title": "Language",
+      "command": "review.language",
+      "note": "U:quill/review: wordcraft dialogs_layout/text.rs:329 over review.language.",
+      "tabs": [{"name": "Language", "fields": [
+        {"id": "lang", "label": "Mark selected text as:", "kind": "list", "options": [
+          {"value": "en-US", "label": "English (United States)"}, {"value": "en-GB", "label": "English (United Kingdom)"}, {"value": "en-AU", "label": "English (Australia)"},
+          {"value": "en-CA", "label": "English (Canada)"}, {"value": "pl-PL", "label": "Polish"}, {"value": "pt-BR", "label": "Portuguese (Brazil)"},
+          {"value": "pt-PT", "label": "Portuguese (Portugal)"}, {"value": "it-IT", "label": "Italian"}, {"value": "hr-HR", "label": "Croatian"},
+          {"value": "tr-TR", "label": "Turkish"}, {"value": "ru-RU", "label": "Russian"}, {"value": "cs-CZ", "label": "Czech"}, {"value": "id-ID", "label": "Indonesian"},
+          {"value": "es-ES", "label": "Spanish (Spain)"}, {"value": "es-MX", "label": "Spanish (Mexico)"}, {"value": "es-419", "label": "Spanish (Latin America)"},
+          {"value": "es-UY", "label": "Spanish (Uruguay)"}, {"value": "de-DE", "label": "German (Germany)"}, {"value": "fr-FR", "label": "French (France)"},
+          {"value": "nl-NL", "label": "Dutch (Netherlands)"}, {"value": "bg-BG", "label": "Bulgarian"}, {"value": "vi-VN", "label": "Vietnamese"},
+          {"value": "ja-JP", "label": "Japanese"}, {"value": "zh-CN", "label": "Chinese (Simplified, China)"}]},
+        {"id": "noProof", "label": "Do not check spelling or grammar", "kind": "checkbox"},
+        {"id": "detect", "label": "Detect language automatically", "kind": "checkbox"}
+      ]}],
+      "buttons": ["Set As Default", "OK", "Cancel"]
+    }
+  }
+}

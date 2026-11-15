@@ -1,0 +1,80 @@
+{
+  "dialogs": {
+    "dialog.defineList": {
+      "title": "Define New Multilevel List",
+      "command": "list.define",
+      "note": "U:quill/lists: wordcraft ui-egui/src/dialogs/dialogs_lists.rs (LevelForm, ListForm read/params/sample, define_list, preview) in Word's expanded (More >>) arrangement. Apply changes to, Level to show in gallery and ListNum field list name stay out (no ListNum fields).",
+      "tabs": [{"name": "", "fields": [
+        {"id": "level", "label": "Click level to modify:", "kind": "list", "options": [
+          {"value": 0, "label": "1"}, {"value": 1, "label": "2"}, {"value": 2, "label": "3"}, {"value": 3, "label": "4"}, {"value": 4, "label": "5"},
+          {"value": 5, "label": "6"}, {"value": 6, "label": "7"}, {"value": 7, "label": "8"}, {"value": 8, "label": "9"}]},
+        {"id": "preview", "label": "Preview", "kind": "preview"},
+        {"id": "text", "label": "Enter formatting for number:", "kind": "text"},
+        {"id": "font", "label": "Font for the number:", "kind": "combo"},
+        {"id": "bold", "label": "Bold", "kind": "checkbox"},
+        {"id": "italic", "label": "Italic", "kind": "checkbox"},
+        {"id": "format", "label": "Number style for this level:", "kind": "select", "options": [
+          {"value": "decimal", "label": "1, 2, 3, …"}, {"value": "lowerLetter", "label": "a, b, c, …"}, {"value": "upperLetter", "label": "A, B, C, …"},
+          {"value": "lowerRoman", "label": "i, ii, iii, …"}, {"value": "upperRoman", "label": "I, II, III, …"}, {"value": "decimalZero", "label": "01, 02, 03, …"},
+          {"value": "ordinal", "label": "1st, 2nd, 3rd, …"}, {"value": "cardinalText", "label": "One, Two, Three, …"}, {"value": "bullet", "label": "• Bullet"},
+          {"value": "none", "label": "(none)"}]},
+        {"id": "includeLevel", "label": "Include level number from:", "kind": "select", "visibleWhen": "level!=0", "options": [
+          {"value": "", "label": ""}, {"value": 1, "label": "Level 1"}, {"value": 2, "label": "Level 2"}, {"value": 3, "label": "Level 3"}, {"value": 4, "label": "Level 4"},
+          {"value": 5, "label": "Level 5"}, {"value": 6, "label": "Level 6"}, {"value": 7, "label": "Level 7"}, {"value": 8, "label": "Level 8"}]},
+        {"id": "start", "label": "Start at:", "kind": "number", "min": 0, "max": 32767, "step": 1},
+        {"id": "restart", "label": "Restart list after:", "kind": "checkbox", "visibleWhen": "level!=0"},
+        {"id": "restartAfter", "label": "Level", "kind": "select", "visibleWhen": "restart", "options": [
+          {"value": 1, "label": "Level 1"}, {"value": 2, "label": "Level 2"}, {"value": 3, "label": "Level 3"}, {"value": 4, "label": "Level 4"},
+          {"value": 5, "label": "Level 5"}, {"value": 6, "label": "Level 6"}, {"value": 7, "label": "Level 7"}, {"value": 8, "label": "Level 8"}]},
+        {"id": "linkStyle", "label": "Link level to style:", "kind": "select"},
+        {"id": "legal", "label": "Legal style numbering", "kind": "checkbox"},
+        {"id": "align", "label": "Number alignment:", "kind": "select", "options": [{"value": "left", "label": "Left"}, {"value": "center", "label": "Centered"}, {"value": "right", "label": "Right"}]},
+        {"id": "alignedAt", "label": "Aligned at:", "kind": "number", "unit": "in", "min": -10, "max": 22, "step": 0.1},
+        {"id": "indentAt", "label": "Text indent at:", "kind": "number", "unit": "in", "min": -10, "max": 22, "step": 0.1},
+        {"id": "follow", "label": "Follow number with:", "kind": "select", "options": [{"value": "tab", "label": "Tab character"}, {"value": "space", "label": "Space"}, {"value": "nothing", "label": "Nothing"}]},
+        {"id": "tabOn", "label": "Add tab stop at:", "kind": "checkbox", "visibleWhen": "follow==tab"},
+        {"id": "tabAt", "label": "Tab stop at:", "kind": "number", "unit": "in", "min": -10, "max": 22, "step": 0.1, "visibleWhen": "tabOn"}
+      ]}],
+      "buttons": ["OK", "Cancel"]
+    },
+    "dialog.defineBullet": {
+      "title": "Define New Bullet",
+      "command": "para.defineBullet",
+      "note": "U:quill/lists: Word's Define New Bullet (Bullet character, Alignment, Preview) over wordcraft tools/specs.rs:316 para.defineBullet {char}; Symbol…, Picture… and Font… stay out (para.defineBullet takes the character only).",
+      "tabs": [{"name": "", "fields": [
+        {"id": "char", "label": "Bullet character:", "kind": "list", "options": [
+          {"value": "•", "label": "•  Bullet"}, {"value": "○", "label": "○  White circle"}, {"value": "▪", "label": "▪  Square"}, {"value": "◆", "label": "◆  Diamond"},
+          {"value": "➢", "label": "➢  Arrowhead"}, {"value": "✓", "label": "✓  Check mark"}, {"value": "–", "label": "–  Dash"}, {"value": "★", "label": "★  Star"},
+          {"value": "►", "label": "►  Pointer"}, {"value": "■", "label": "■  Black square"}, {"value": "□", "label": "□  White square"}, {"value": "◊", "label": "◊  Lozenge"}]},
+        {"id": "custom", "label": "Or type a character:", "kind": "text"},
+        {"id": "preview", "label": "Preview", "kind": "preview"}
+      ]}],
+      "buttons": ["OK", "Cancel"]
+    },
+    "dialog.defineNumber": {
+      "title": "Define New Number Format",
+      "command": "para.defineNumber",
+      "note": "U:quill/lists: Word's Define New Number Format (Number style, Number format, Preview) over wordcraft tools/specs.rs:320 para.defineNumber {format, text, start}; Font… and Alignment stay out (para.defineNumber does not take them).",
+      "tabs": [{"name": "", "fields": [
+        {"id": "format", "label": "Number style:", "kind": "select", "options": [
+          {"value": "decimal", "label": "1, 2, 3, …"}, {"value": "upperRoman", "label": "I, II, III, …"}, {"value": "lowerRoman", "label": "i, ii, iii, …"},
+          {"value": "upperLetter", "label": "A, B, C, …"}, {"value": "lowerLetter", "label": "a, b, c, …"}, {"value": "ordinal", "label": "1st, 2nd, 3rd, …"},
+          {"value": "cardinalText", "label": "One, Two, Three, …"}, {"value": "ordinalText", "label": "First, Second, Third, …"}, {"value": "decimalZero", "label": "01, 02, 03, …"}]},
+        {"id": "text", "label": "Number format:", "kind": "text", "note": "%1 stands for the number"},
+        {"id": "start", "label": "Start at:", "kind": "number", "min": 0, "max": 100000, "step": 1},
+        {"id": "preview", "label": "Preview", "kind": "preview"}
+      ]}],
+      "buttons": ["OK", "Cancel"]
+    },
+    "dialog.setNumberingValue": {
+      "title": "Set Numbering Value",
+      "command": "para.setNumberingValue",
+      "note": "U:quill/lists: Word's Set Numbering Value (Start new list, Set value to, Preview) over wordcraft para.setNumberingValue {value}, which always starts a new list; Continue from previous list and Advance value stay out until translated.",
+      "tabs": [{"name": "", "fields": [
+        {"id": "value", "label": "Set value to:", "kind": "number", "min": 0, "max": 100000, "step": 1},
+        {"id": "preview", "label": "Preview:", "kind": "preview"}
+      ]}],
+      "buttons": ["OK", "Cancel"]
+    }
+  }
+}

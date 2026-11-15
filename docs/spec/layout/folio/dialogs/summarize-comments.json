@@ -1,0 +1,6 @@
+{
+  "source": "printcraft 3109bb2359759e24ef490e1cdbdba00722b20972 crates/ui-egui/src/dialogs.rs:1208 (Summarize Options: Choose a layout, Sort comments by, Create PDF Comment Summary / Cancel); Acrobat Summarize Options",
+  "width": 460,
+  "height": 260,
+  "sections": [{"fields": ["layout"]}, {"fields": ["sort"], "columns": 1}]
+}

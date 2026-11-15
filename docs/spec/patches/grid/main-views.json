@@ -1,0 +1,13 @@
+{
+  "dialogs": {
+    "dialog.addView": {
+      "id": "dialog.addView",
+      "title": "Add View",
+      "command": "view.customViews",
+      "source": "office",
+      "note": "U:grid/main: Custom Views > Add…, asked for the name of the view. Excel also asks which settings to keep (Print settings, Hidden rows, columns and filter settings); this view keeps the sheet, the selection, the zoom and the frozen panes, so only the name is asked. Not checked against upstream.",
+      "tabs": [{"name": "", "fields": [{"id": "name", "label": "Name:", "kind": "text", "options": []}]}],
+      "buttons": ["OK", "Cancel"]
+    }
+  }
+}

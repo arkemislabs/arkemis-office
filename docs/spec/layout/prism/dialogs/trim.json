@@ -1,0 +1,21 @@
+{
+  "source": "deckcraft crates/ui-egui/src/dialogs/body.rs:1220 dlg_trim (Start time, End trim, Fade in, Fade out in seconds) at f893f6af7d36a5409fd804e81a34fd895cfefedf; PowerPoint Trim Video",
+  "width": 360,
+  "height": 300,
+  "sections": [
+    {
+      "fields": [
+        "start",
+        "end"
+      ],
+      "columns": 2
+    },
+    {
+      "fields": [
+        "fin",
+        "fout"
+      ],
+      "columns": 2
+    }
+  ]
+}

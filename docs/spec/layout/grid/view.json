@@ -1,0 +1,75 @@
+{
+  "tab": "view",
+  "keytip": "W",
+  "source": "gridcraft 146161b4b450a56e5e59a083ba0478582d1e602b crates/ui-egui/src/ribbon/view.rs (view: Workbook Views large; Show as two columns of two checkboxes; Zoom, 100%, Zoom to Selection large; New Window, Arrange All, Freeze Panes large; Display theme/Animations column; Interface size and Interface language columns; Switch Windows large); keytips from crates/ui-egui/src/keytips/keytips.json; Sheet View, Custom Views, Split/Hide/Unhide, View Side by Side/Synchronous Scrolling/Reset Window Position and Macros placed as in Excel for Windows",
+  "groups": {
+    "sheet-view": {
+      "collapseOrder": 1,
+      "layout": [
+        {"rows": [["view.sheetView.select"], ["view.sheetView.keep", "view.sheetView.exit", "view.sheetView.new", "view.sheetView.options"]]}
+      ]
+    },
+    "workbook-views": {
+      "collapseOrder": 8,
+      "layout": [
+        {"large": "view.workbookViews.normal"},
+        {"large": "view.workbookViews.pageBreakPreview"},
+        {"large": "view.workbookViews.pageLayout"},
+        {"large": "view.workbookViews.customViews"}
+      ]
+    },
+    "show": {
+      "collapseOrder": 7,
+      "layout": [
+        {"stack": ["view.show.ruler", "view.show.gridlines"]},
+        {"stack": ["view.show.formulaBar", "view.show.headings"]}
+      ]
+    },
+    "zoom": {
+      "collapseOrder": 6,
+      "layout": [
+        {"large": "view.zoom.zoom"},
+        {"large": "view.zoom.zoom100"},
+        {"large": "view.zoom.zoomToSelection"}
+      ]
+    },
+    "window": {
+      "collapseOrder": 5,
+      "layout": [
+        {"large": "view.window.newWindow"},
+        {"large": "view.window.arrangeAll"},
+        {"large": "view.window.freezePanes"},
+        {"stack": ["view.window.split", "view.window.hide", "view.window.unhide"]},
+        {"stack": ["view.window.sideBySide", "view.window.syncScrolling", "view.window.resetPosition"]},
+        {"large": "view.window.switchWindows"}
+      ]
+    },
+    "appearance": {
+      "collapseOrder": 3,
+      "layout": [
+        {"stack": ["view.appearance.displayTheme", "view.appearance.animations"]}
+      ]
+    },
+    "interface": {
+      "collapseOrder": 2,
+      "layout": [
+        {"stack": ["view.interface.size"]},
+        {"stack": ["view.interface.language"]}
+      ]
+    },
+    "macros": {
+      "collapseOrder": 4,
+      "layout": [
+        {"large": "view.macros.macros"}
+      ]
+    }
+  },
+  "keytips": {
+    "view.workbookViews.normal": "L", "view.workbookViews.pageBreakPreview": "I", "view.workbookViews.pageLayout": "P", "view.workbookViews.customViews": "C",
+    "view.show.ruler": "R", "view.show.gridlines": "VG", "view.show.formulaBar": "VF", "view.show.headings": "VH",
+    "view.zoom.zoom": "Q", "view.zoom.zoom100": "J", "view.zoom.zoomToSelection": "G",
+    "view.window.newWindow": "N", "view.window.arrangeAll": "A", "view.window.freezePanes": "F", "view.window.split": "S",
+    "view.window.hide": "H", "view.window.unhide": "U", "view.window.resetPosition": "T", "view.window.switchWindows": "W",
+    "view.macros.macros": "M"
+  }
+}

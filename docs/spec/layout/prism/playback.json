@@ -1,0 +1,105 @@
+{
+  "tab": "playback",
+  "keytip": "JN",
+  "source": "deckcraft crates/ui-egui/src/ribbon/playback.rs (playback) @ f893f6af7d36a5409fd804e81a34fd895cfefedf; Preview, Bookmarks, Fade, Start and Audio Styles placed as PowerPoint",
+  "groups": {
+    "preview": {
+      "collapseOrder": 1,
+      "collapsedIcon": "play-pause",
+      "layout": [
+        {
+          "large": "playback.preview.play"
+        }
+      ]
+    },
+    "bookmarks": {
+      "collapseOrder": 2,
+      "layout": [
+        {
+          "large": "playback.bookmarks.add"
+        },
+        {
+          "large": "playback.bookmarks.remove"
+        }
+      ]
+    },
+    "editing": {
+      "collapseOrder": 3,
+      "collapsedIcon": "trim",
+      "layout": [
+        {
+          "large": "playback.editing.trim"
+        },
+        {
+          "rows": [
+            [
+              "playback.editing.fade-in"
+            ],
+            [
+              "playback.editing.fade-out"
+            ]
+          ]
+        }
+      ],
+      "widths": {
+        "playback.editing.fade-in": 60,
+        "playback.editing.fade-out": 60
+      }
+    },
+    "audio-video-options": {
+      "collapseOrder": 5,
+      "collapsedIcon": "volume",
+      "layout": [
+        {
+          "large": "playback.options.volume"
+        },
+        {
+          "medium": "playback.options.start"
+        },
+        {
+          "stack": [
+            "playback.options.autoplay",
+            "playback.options.across-slides",
+            "playback.options.loop"
+          ]
+        },
+        {
+          "stack": [
+            "playback.options.hide",
+            "playback.options.rewind",
+            "playback.options.full-screen"
+          ]
+        }
+      ],
+      "widths": {
+        "playback.options.start": 112
+      }
+    },
+    "audio-styles": {
+      "collapseOrder": 4,
+      "layout": [
+        {
+          "large": "playback.styles.none"
+        },
+        {
+          "large": "playback.styles.background"
+        }
+      ]
+    }
+  },
+  "keytips": {
+    "playback.preview.play": "PL",
+    "playback.bookmarks.add": "A",
+    "playback.bookmarks.remove": "R",
+    "playback.editing.trim": "T",
+    "playback.editing.fade-in": "FI",
+    "playback.editing.fade-out": "FO",
+    "playback.options.volume": "V",
+    "playback.options.start": "S",
+    "playback.options.across-slides": "C",
+    "playback.options.loop": "L",
+    "playback.options.hide": "H",
+    "playback.options.rewind": "W",
+    "playback.options.full-screen": "U"
+  }
+}

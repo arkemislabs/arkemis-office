@@ -1,0 +1,14 @@
+{
+  "source": "deckcraft crates/ui-egui/src/dialogs/columns.rs (Number, Spacing) at f893f6af7d36a5409fd804e81a34fd895cfefedf; PowerPoint Columns dialog",
+  "width": 300,
+  "height": 200,
+  "sections": [
+    {
+      "fields": [
+        "count",
+        "spacing"
+      ],
+      "columns": 1
+    }
+  ]
+}

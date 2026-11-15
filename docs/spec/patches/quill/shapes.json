@@ -1,0 +1,2239 @@
+{
+ "controls": {
+  "picture-format.adjust.remove-background": {
+   "note": "U:quill/shapes: Remove Background (picture.removeBackground): the area connected to the picture's edge that is close to its corner colour becomes transparent; there is no marking tool (wordcraft has none)."
+  },
+  "picture-format.adjust.icon-color": {
+   "note": "U:quill/shapes: Icon Color (picture.iconColor): one colour everywhere in the picture with its transparency kept, for icons and other one-colour line art."
+  },
+  "picture-format.adjust.artistic-effects": {
+   "kind": "dropdown",
+   "note": "U:quill/shapes: the five effects wordcraft draws (blur, sharpen, invert, posterize, pixelate), one at a time; a second one replaces the first, and None takes it off.",
+   "items": [
+    {
+     "id": "picture-format.adjust.artistic-effects.none",
+     "label": "None",
+     "command": "picture.effects",
+     "args": {
+      "effect": "none"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "picture-format.adjust.artistic-effects.blur",
+     "label": "Blur",
+     "command": "picture.effects",
+     "args": {
+      "effect": "blur"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "picture-format.adjust.artistic-effects.sharpen",
+     "label": "Sharpen",
+     "command": "picture.effects",
+     "args": {
+      "effect": "sharpen"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "picture-format.adjust.artistic-effects.invert",
+     "label": "Invert",
+     "command": "picture.effects",
+     "args": {
+      "effect": "invert"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "picture-format.adjust.artistic-effects.posterize",
+     "label": "Posterize",
+     "command": "picture.effects",
+     "args": {
+      "effect": "posterize"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "picture-format.adjust.artistic-effects.pixelate",
+     "label": "Pixelate",
+     "command": "picture.effects",
+     "args": {
+      "effect": "pixelate"
+     },
+     "source": "upstream"
+    }
+   ]
+  },
+  "picture-format.adjust.compress-pictures": {
+   "note": "U:quill/shapes: Compress Pictures (picture.compress): the longer side is at most 1600 pixels (upstream resamples with Lanczos, here a box filter); Word's options dialog (resolution, delete cropped areas) is not upstream."
+  },
+  "picture-format.adjust.change-picture.from-stock-images": {
+   "command": null,
+   "note": "U:quill/shapes: From Stock Images needs Microsoft's online stock library; hidden."
+  },
+  "picture-format.adjust.change-picture.from-online-sources": {
+   "command": null,
+   "note": "U:quill/shapes: From Online Sources needs Bing image search; hidden."
+  },
+  "picture-format.adjust.reset-picture.reset-picture-and-size": {
+   "command": "picture.reset",
+   "args": {
+    "size": true
+   },
+   "note": "U:quill/shapes: Reset Picture & Size (not in wordcraft; follows Word): the original bitmap, no crop, and the size of what is left of the original."
+  },
+  "picture-format.picture-styles.styles": {
+   "kind": "gallery",
+   "command": "picture.style",
+   "args": {
+    "style": "<style>"
+   },
+   "items": null,
+   "note": "U:quill/shapes: wordcraft's five styles (Simple Frame, Thick Frame, Rounded, Soft Edge, Shadow), each drawn on a sample picture; the picture's bitmap is redrawn, and a second style replaces the first."
+  },
+  "picture-format.picture-styles.picture-border": {
+   "note": "U:quill/shapes: Picture Border (picture.border): a frame of 2, 4 or 8 pixels (or No Outline) in the chosen colour, keeping the style. Weight and Dashes are Word's and not upstream; hidden.",
+   "items": [
+    {
+     "id": "picture-format.picture-styles.picture-border.no-outline",
+     "label": "No Outline",
+     "command": "picture.border",
+     "args": {
+      "none": true
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "picture-format.picture-styles.picture-border.colors",
+     "label": "Colors",
+     "kind": "palette",
+     "command": "picture.border",
+     "source": "upstream"
+    },
+    {
+     "separator": true
+    },
+    {
+     "id": "picture-format.picture-styles.picture-border.thin",
+     "label": "Thin",
+     "command": "picture.border",
+     "args": {
+      "width": 2
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "picture-format.picture-styles.picture-border.medium",
+     "label": "Medium",
+     "command": "picture.border",
+     "args": {
+      "width": 4
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "picture-format.picture-styles.picture-border.thick",
+     "label": "Thick",
+     "command": "picture.border",
+     "args": {
+      "width": 8
+     },
+     "source": "upstream"
+    }
+   ]
+  },
+  "picture-format.picture-styles.picture-layout": {
+   "command": null,
+   "note": "U:quill/shapes: Picture Layout converts to SmartArt; wordcraft has no engine; hidden."
+  },
+  "picture-format.size.crop": {
+   "note": "U:quill/shapes: Crop opens the Format Picture pane on its Crop offsets (left, top, right, bottom, in percent; wordcraft crops with on-page handles, which this page view does not draw yet); Aspect Ratio crops the sides evenly to that shape (not in wordcraft; follows Word). Crop to Shape, Fill and Fit are U:quill/rest (not checked against upstream).",
+   "items": [
+    {
+     "id": "picture-format.size.crop.crop",
+     "label": "Crop",
+     "command": "ui.crop",
+     "source": "upstream"
+    },
+    {
+     "id": "picture-format.size.crop.aspect-ratio",
+     "label": "Aspect Ratio",
+     "kind": "dropdown",
+     "source": "upstream",
+     "items": [
+      {
+       "header": "Square"
+      },
+      {
+       "id": "picture-format.size.crop.aspect-ratio.square",
+       "label": "1:1",
+       "command": "picture.cropAspect",
+       "args": {
+        "aspect": "square"
+       },
+       "source": "upstream"
+      },
+      {
+       "header": "Portrait"
+      },
+      {
+       "id": "picture-format.size.crop.aspect-ratio.portrait2x3",
+       "label": "2:3",
+       "command": "picture.cropAspect",
+       "args": {
+        "aspect": "portrait2x3"
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "picture-format.size.crop.aspect-ratio.portrait3x4",
+       "label": "3:4",
+       "command": "picture.cropAspect",
+       "args": {
+        "aspect": "portrait3x4"
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "picture-format.size.crop.aspect-ratio.portrait3x5",
+       "label": "3:5",
+       "command": "picture.cropAspect",
+       "args": {
+        "aspect": "portrait3x5"
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "picture-format.size.crop.aspect-ratio.portrait4x5",
+       "label": "4:5",
+       "command": "picture.cropAspect",
+       "args": {
+        "aspect": "portrait4x5"
+       },
+       "source": "upstream"
+      },
+      {
+       "header": "Landscape"
+      },
+      {
+       "id": "picture-format.size.crop.aspect-ratio.landscape3x2",
+       "label": "3:2",
+       "command": "picture.cropAspect",
+       "args": {
+        "aspect": "landscape3x2"
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "picture-format.size.crop.aspect-ratio.landscape4x3",
+       "label": "4:3",
+       "command": "picture.cropAspect",
+       "args": {
+        "aspect": "landscape4x3"
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "picture-format.size.crop.aspect-ratio.landscape5x3",
+       "label": "5:3",
+       "command": "picture.cropAspect",
+       "args": {
+        "aspect": "landscape5x3"
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "picture-format.size.crop.aspect-ratio.landscape5x4",
+       "label": "5:4",
+       "command": "picture.cropAspect",
+       "args": {
+        "aspect": "landscape5x4"
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "picture-format.size.crop.aspect-ratio.landscape16x9",
+       "label": "16:9",
+       "command": "picture.cropAspect",
+       "args": {
+        "aspect": "landscape16x9"
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "picture-format.size.crop.aspect-ratio.landscape16x10",
+       "label": "16:10",
+       "command": "picture.cropAspect",
+       "args": {
+        "aspect": "landscape16x10"
+       },
+       "source": "upstream"
+      }
+     ]
+    },
+    {
+     "id": "picture-format.size.crop.crop-to-shape",
+     "label": "Crop to Shape",
+     "kind": "dropdown",
+     "command": "picture.cropToShape",
+     "args": {
+      "preset": "<preset>"
+     },
+     "items": [],
+     "source": "office",
+     "note": "U:quill/rest: Crop to Shape: what lies outside the chosen closed shape becomes transparent in the picture's bitmap; Reset Picture brings it back. Not checked against upstream (follows Word, which keeps the shape as the picture's geometry)."
+    },
+    {
+     "id": "picture-format.size.crop.fill",
+     "label": "Fill",
+     "kind": "button",
+     "command": "picture.fill",
+     "source": "office",
+     "note": "U:quill/rest: Fill: the picture fills its frame, the sides that do not fit cropped evenly. Not checked against upstream (follows Word)."
+    },
+    {
+     "id": "picture-format.size.crop.fit",
+     "label": "Fit",
+     "kind": "button",
+     "command": "picture.fit",
+     "source": "office",
+     "note": "U:quill/rest: Fit: the whole picture shown, uncropped, in the largest frame of its own shape inside the old one. Not checked against upstream (follows Word)."
+    }
+   ]
+  },
+  "picture-format.size.crop-l-t-r-b": {
+   "command": null,
+   "note": "U:quill/shapes: the four crop offsets are in the Format Picture pane (Crop), where each has its own field; hidden here."
+  },
+  "picture-format.size.width": {
+   "command": "picture.width",
+   "args": {
+    "width": "<pt>"
+   },
+   "note": "U:quill/shapes: Width in points; the height follows so the proportions stay."
+  },
+  "picture-format.size.height": {
+   "command": "picture.height",
+   "args": {
+    "height": "<pt>"
+   }
+  },
+  "shape-format.size.width": {
+   "command": "picture.width",
+   "args": {
+    "width": "<pt>",
+    "lockAspect": false
+   },
+   "note": "U:quill/shapes: Width in points of the shape; the height stays."
+  },
+  "shape-format.size.height": {
+   "command": "picture.height",
+   "args": {
+    "height": "<pt>",
+    "lockAspect": false
+   }
+  },
+  "shape-format.insert-shapes.shapes": {
+   "kind": "dropdown",
+   "note": "U:quill/shapes: the same shapes as Insert › Shapes, drawn from their geometry; the new shape is selected, so Shape Format stays.",
+   "items": [
+    {
+     "id": "shape-format.insert-shapes.shapes.rectangle",
+     "label": "Rectangle",
+     "command": "insert.shape",
+     "args": {
+      "kind": "rectangle"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "shape-format.insert-shapes.shapes.rounded-rectangle",
+     "label": "Rounded Rectangle",
+     "command": "insert.shape",
+     "args": {
+      "kind": "roundedRectangle"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "shape-format.insert-shapes.shapes.oval",
+     "label": "Oval",
+     "command": "insert.shape",
+     "args": {
+      "kind": "ellipse"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "shape-format.insert-shapes.shapes.triangle",
+     "label": "Triangle",
+     "command": "insert.shape",
+     "args": {
+      "kind": "triangle"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "shape-format.insert-shapes.shapes.diamond",
+     "label": "Diamond",
+     "command": "insert.shape",
+     "args": {
+      "kind": "diamond"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "shape-format.insert-shapes.shapes.line",
+     "label": "Line",
+     "command": "insert.shape",
+     "args": {
+      "kind": "line"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "shape-format.insert-shapes.shapes.arrow",
+     "label": "Arrow",
+     "command": "insert.shape",
+     "args": {
+      "kind": "arrow"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "shape-format.insert-shapes.shapes.star",
+     "label": "Star",
+     "command": "insert.shape",
+     "args": {
+      "kind": "star"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "shape-format.insert-shapes.shapes.heart",
+     "label": "Heart",
+     "command": "insert.shape",
+     "args": {
+      "kind": "heart"
+     },
+     "source": "upstream"
+    },
+    {
+     "separator": true
+    },
+    {
+     "id": "shape-format.insert-shapes.shapes.canvas",
+     "label": "New Drawing Canvas",
+     "command": "insert.canvas",
+     "source": "upstream"
+    },
+    {
+     "id": "shape-format.insert-shapes.shapes.straight-connector",
+     "label": "Straight Connector",
+     "command": "insert.shape",
+     "args": {
+      "kind": "straightConnector",
+      "arrow": "none"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "shape-format.insert-shapes.shapes.straight-arrow-connector",
+     "label": "Straight Arrow Connector",
+     "command": "insert.shape",
+     "args": {
+      "kind": "straightConnector",
+      "arrow": "end"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "shape-format.insert-shapes.shapes.elbow-connector",
+     "label": "Elbow Connector",
+     "command": "insert.shape",
+     "args": {
+      "kind": "elbowConnector",
+      "arrow": "none"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "shape-format.insert-shapes.shapes.elbow-arrow-connector",
+     "label": "Elbow Arrow Connector",
+     "command": "insert.shape",
+     "args": {
+      "kind": "elbowConnector",
+      "arrow": "end"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "shape-format.insert-shapes.shapes.curved-connector",
+     "label": "Curved Connector",
+     "command": "insert.shape",
+     "args": {
+      "kind": "curvedConnector",
+      "arrow": "none"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "shape-format.insert-shapes.shapes.curved-arrow-connector",
+     "label": "Curved Arrow Connector",
+     "command": "insert.shape",
+     "args": {
+      "kind": "curvedConnector",
+      "arrow": "end"
+     },
+     "source": "upstream"
+    }
+   ]
+  },
+  "shape-format.insert-shapes.edit-shape": {
+   "note": "U:quill/shapes: Change Shape turns the selected shape into one of the kinds the page view draws. Edit Points turns the shape into a freeform that keeps its curves and edits it with PowerPoint path engine (core/prism/lib/points.mjs); wordcraft has no Edit Points, not checked against upstream. Reroute Connectors is shape.rerouteConnectors (U:quill/rest).",
+   "items": [
+    {
+     "id": "shape-format.insert-shapes.edit-shape.change-shape",
+     "label": "Change Shape",
+     "kind": "dropdown",
+     "command": null,
+     "source": "upstream",
+     "items": [
+      {
+       "id": "shape-format.insert-shapes.edit-shape.change-shape.rectangle",
+       "label": "Rectangle",
+       "command": "shape.change",
+       "args": {
+        "kind": "rectangle"
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "shape-format.insert-shapes.edit-shape.change-shape.roundedRectangle",
+       "label": "Rectangle: Rounded Corners",
+       "command": "shape.change",
+       "args": {
+        "kind": "roundedRectangle"
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "shape-format.insert-shapes.edit-shape.change-shape.ellipse",
+       "label": "Oval",
+       "command": "shape.change",
+       "args": {
+        "kind": "ellipse"
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "shape-format.insert-shapes.edit-shape.change-shape.triangle",
+       "label": "Isosceles Triangle",
+       "command": "shape.change",
+       "args": {
+        "kind": "triangle"
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "shape-format.insert-shapes.edit-shape.change-shape.rightTriangle",
+       "label": "Right Triangle",
+       "command": "shape.change",
+       "args": {
+        "kind": "rightTriangle"
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "shape-format.insert-shapes.edit-shape.change-shape.diamond",
+       "label": "Diamond",
+       "command": "shape.change",
+       "args": {
+        "kind": "diamond"
+       },
+       "source": "upstream"
+      }
+     ]
+    },
+    {
+     "id": "shape-format.insert-shapes.edit-shape.edit-points",
+     "label": "Edit Points",
+     "kind": "toggle",
+     "command": "shape.editPoints",
+     "source": "office"
+    },
+    {
+     "id": "shape-format.insert-shapes.edit-shape.reroute-connectors",
+     "label": "Reroute Connectors",
+     "command": "shape.rerouteConnectors",
+     "source": "office"
+    }
+   ]
+  },
+  "chart-format.current-selection.element": {
+   "note": "U:quill/chart-format: the chart elements (Chart Area, Chart Title, Legend, a series by name) Format Selection acts on; type a series name for a series past the third. In Word, wordcraft has no Chart Format: not checked against upstream."
+  },
+  "chart-format.current-selection.format-selection": {
+   "note": "U:quill/chart-format: opens the Format pane on the chosen element: Fill & Line for the chart area (fill, border) and a series (colour), the title text, the legend position. Not checked against upstream."
+  },
+  "chart-format.shape-styles.shape-styles": {
+   "note": "U:quill/chart-format: the 42 Shape Styles of Shape Format; the chart area takes the fill and border of the style (saved as the chart space shape properties); the shadow of a style is not drawn on a chart. Not checked against upstream."
+  },
+  "shape-format.shape-styles.shape-fill.no-color": {
+   "command": null,
+   "note": "U:quill/shapes: the colour palette has its own No Color; this one is the same entry, hidden."
+  },
+  "shape-format.shape-styles.shape-fill.more-colors": {
+   "command": null,
+   "note": "U:quill/shapes: the colour palette has its own More Colors…; this one is the same entry, hidden."
+  },
+  "shape-format.shape-styles.shape-fill.gradient.no-gradient": {
+   "command": "shape.fill",
+   "args": {
+    "gradient": "none"
+   },
+   "note": "U:quill/shapes: the shape's colour, solid (a gradient's middle stop)."
+  },
+  "shape-format.shape-styles.shape-fill.gradient.light-variations-grid": {
+   "kind": "gallery",
+   "label": "Light Variations",
+   "command": "shape.lightVariation",
+   "args": {
+    "gradient": "<gradient>"
+   },
+   "note": "U:quill/shapes: the 13 light variations of the shape's colour (shape_fill.rs variations), in Word's order."
+  },
+  "shape-format.shape-styles.shape-fill.gradient.dark-variations-grid": {
+   "kind": "gallery",
+   "label": "Dark Variations",
+   "command": "shape.darkVariation",
+   "args": {
+    "gradient": "<gradient>"
+   },
+   "note": "U:quill/shapes: the 13 dark variations of the shape's colour."
+  },
+  "shape-format.shape-styles.shape-fill.gradient.more-gradients": {
+   "command": "view.formatShapePane",
+   "args": {
+    "value": true,
+    "tab": "fill"
+   }
+  },
+  "shape-format.shape-styles.shape-outline": {
+   "note": "U:quill/shapes: colour and weight; a weight keeps the current colour. Sketched, Dashes and Arrows have no engine upstream; hidden.",
+   "items": [
+    {
+     "id": "shape-format.shape-styles.shape-outline.no-color",
+     "label": "No Outline",
+     "command": "shape.outline",
+     "args": {
+      "color": null
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "shape-format.shape-styles.shape-outline.theme-colors-standard-colors-recent-colors-palette",
+     "label": "Theme Colors / Standard Colors / Recent Colors palette",
+     "kind": "palette",
+     "command": "shape.outline",
+     "source": "upstream"
+    },
+    {
+     "separator": true
+    },
+    {
+     "id": "shape-format.shape-styles.shape-outline.weight",
+     "label": "Weight",
+     "kind": "dropdown",
+     "command": null,
+     "source": "upstream",
+     "items": [
+      {
+       "id": "shape-format.shape-styles.shape-outline.weight.0-25-pt",
+       "label": "0.25 pt",
+       "command": "shape.outline",
+       "args": {
+        "width": 0.25
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "shape-format.shape-styles.shape-outline.weight.0-5-pt",
+       "label": "0.5 pt",
+       "command": "shape.outline",
+       "args": {
+        "width": 0.5
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "shape-format.shape-styles.shape-outline.weight.0-75-pt",
+       "label": "0.75 pt",
+       "command": "shape.outline",
+       "args": {
+        "width": 0.75
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "shape-format.shape-styles.shape-outline.weight.1-pt",
+       "label": "1 pt",
+       "command": "shape.outline",
+       "args": {
+        "width": 1
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "shape-format.shape-styles.shape-outline.weight.1-5-pt",
+       "label": "1.5 pt",
+       "command": "shape.outline",
+       "args": {
+        "width": 1.5
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "shape-format.shape-styles.shape-outline.weight.2-25-pt",
+       "label": "2.25 pt",
+       "command": "shape.outline",
+       "args": {
+        "width": 2.25
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "shape-format.shape-styles.shape-outline.weight.3-pt",
+       "label": "3 pt",
+       "command": "shape.outline",
+       "args": {
+        "width": 3
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "shape-format.shape-styles.shape-outline.weight.4-5-pt",
+       "label": "4.5 pt",
+       "command": "shape.outline",
+       "args": {
+        "width": 4.5
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "shape-format.shape-styles.shape-outline.weight.6-pt",
+       "label": "6 pt",
+       "command": "shape.outline",
+       "args": {
+        "width": 6
+       },
+       "source": "upstream"
+      }
+     ]
+    }
+   ]
+  },
+  "shape-format.shape-styles.shape-styles": {
+   "kind": "gallery",
+   "command": "shape.quickStyle",
+   "args": {
+    "index": "<n>"
+   },
+   "note": "U:quill/shapes: the 42 Shape Styles (6 rows × Dark 1 and Accent 1–6) in the theme colours, from deckcraft quick_style_for: fill, outline and effect of the selected shapes. Not in wordcraft."
+  },
+  "shape-format.wordart-styles.styles": {
+   "kind": "gallery",
+   "command": "wordArt.style",
+   "args": {
+    "style": "<style>"
+   },
+   "note": "U:quill/shapes: wordcraft's eight WordArt styles in the theme colours, each drawn with its fill, outline, shadow and glow."
+  },
+  "shape-format.wordart-styles.text-fill": {
+   "command": "wordArt.textFill",
+   "kind": "dropdown",
+   "note": "U:quill/shapes: Text Fill (wordArt.textFill): automatic (the text's colour), no fill (hollow), a colour or a two-colour gradient, on the whole text of the shape.",
+   "items": [
+    {
+     "id": "shape-format.wordart-styles.text-fill.automatic",
+     "label": "Automatic",
+     "command": "wordArt.textFill",
+     "args": {
+      "fill": null
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "shape-format.wordart-styles.text-fill.no-fill",
+     "label": "No Fill",
+     "command": "wordArt.textFill",
+     "args": {
+      "fill": "none"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "shape-format.wordart-styles.text-fill.colors",
+     "label": "Theme Colors / Standard Colors / Recent Colors palette",
+     "kind": "palette",
+     "command": "wordArt.textFill",
+     "source": "upstream"
+    },
+    {
+     "separator": true
+    },
+    {
+     "id": "shape-format.wordart-styles.text-fill.gradient",
+     "label": "Gradient",
+     "kind": "dropdown",
+     "command": null,
+     "source": "upstream",
+     "items": [
+      {
+       "id": "shape-format.wordart-styles.text-fill.gradient.1",
+       "label": "Accent 1 to Accent 4",
+       "command": "wordArt.textFill",
+       "args": {
+        "fill": {
+         "gradient": [
+          "156082",
+          "0F9ED5"
+         ],
+         "angle": 90
+        }
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "shape-format.wordart-styles.text-fill.gradient.2",
+       "label": "Accent 2 to Accent 5",
+       "command": "wordArt.textFill",
+       "args": {
+        "fill": {
+         "gradient": [
+          "E97132",
+          "A02B93"
+         ],
+         "angle": 90
+        }
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "shape-format.wordart-styles.text-fill.gradient.3",
+       "label": "Light to Accent 1",
+       "command": "wordArt.textFill",
+       "args": {
+        "fill": {
+         "gradient": [
+          "FFFFFF",
+          "156082"
+         ],
+         "angle": 90
+        }
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "shape-format.wordart-styles.text-fill.gradient.4",
+       "label": "Dark to Accent 6",
+       "command": "wordArt.textFill",
+       "args": {
+        "fill": {
+         "gradient": [
+          "0E2841",
+          "4EA72E"
+         ],
+         "angle": 90
+        }
+       },
+       "source": "upstream"
+      }
+     ]
+    }
+   ]
+  },
+  "shape-format.wordart-styles.text-outline": {
+   "command": "wordArt.textOutline",
+   "kind": "dropdown",
+   "note": "U:quill/shapes: Text Outline (wordArt.textOutline): automatic, none, a colour and a weight (a weight keeps the colour).",
+   "items": [
+    {
+     "id": "shape-format.wordart-styles.text-outline.automatic",
+     "label": "Automatic",
+     "command": "wordArt.textOutline",
+     "args": {
+      "outline": null
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "shape-format.wordart-styles.text-outline.no-outline",
+     "label": "No Outline",
+     "command": "wordArt.textOutline",
+     "args": {
+      "outline": "none"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "shape-format.wordart-styles.text-outline.colors",
+     "label": "Theme Colors / Standard Colors / Recent Colors palette",
+     "kind": "palette",
+     "command": "wordArt.textOutline",
+     "source": "upstream"
+    },
+    {
+     "separator": true
+    },
+    {
+     "id": "shape-format.wordart-styles.text-outline.weight",
+     "label": "Weight",
+     "kind": "dropdown",
+     "command": null,
+     "source": "upstream",
+     "items": [
+      {
+       "id": "shape-format.wordart-styles.text-outline.weight.0-25-pt",
+       "label": "0.25 pt",
+       "command": "wordArt.textOutline",
+       "args": {
+        "width": 0.25
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "shape-format.wordart-styles.text-outline.weight.0-5-pt",
+       "label": "0.5 pt",
+       "command": "wordArt.textOutline",
+       "args": {
+        "width": 0.5
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "shape-format.wordart-styles.text-outline.weight.0-75-pt",
+       "label": "0.75 pt",
+       "command": "wordArt.textOutline",
+       "args": {
+        "width": 0.75
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "shape-format.wordart-styles.text-outline.weight.1-pt",
+       "label": "1 pt",
+       "command": "wordArt.textOutline",
+       "args": {
+        "width": 1
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "shape-format.wordart-styles.text-outline.weight.1-5-pt",
+       "label": "1.5 pt",
+       "command": "wordArt.textOutline",
+       "args": {
+        "width": 1.5
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "shape-format.wordart-styles.text-outline.weight.2-25-pt",
+       "label": "2.25 pt",
+       "command": "wordArt.textOutline",
+       "args": {
+        "width": 2.25
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "shape-format.wordart-styles.text-outline.weight.3-pt",
+       "label": "3 pt",
+       "command": "wordArt.textOutline",
+       "args": {
+        "width": 3
+       },
+       "source": "upstream"
+      }
+     ]
+    }
+   ]
+  },
+  "shape-format.wordart-styles.text-effects": {
+   "command": "wordArt.transform",
+   "kind": "dropdown",
+   "note": "U:quill/shapes: Transform bends the shape's text along one of the twelve warps wordcraft draws (the others it keeps when it reads a file). Shadow, Glow and Reflection are Home › Font's format.textEffects; Bevel and 3-D Rotation have no engine upstream; hidden.",
+   "items": [
+    {
+     "id": "shape-format.wordart-styles.text-effects.shadow",
+     "label": "Shadow",
+     "kind": "dropdown",
+     "command": null,
+     "source": "upstream",
+     "items": [
+      {
+       "id": "shape-format.wordart-styles.text-effects.shadow.no-shadow",
+       "label": "No Shadow",
+       "command": "format.textEffects",
+       "args": {
+        "shadow": null
+       },
+       "source": "upstream"
+      },
+      {
+       "separator": true
+      },
+      {
+       "id": "shape-format.wordart-styles.text-effects.shadow.offset-bottom-right",
+       "label": "Offset: Bottom Right",
+       "command": "format.textEffects",
+       "args": {
+        "shadow": "offsetBottomRight"
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "shape-format.wordart-styles.text-effects.shadow.offset-bottom",
+       "label": "Offset: Bottom",
+       "command": "format.textEffects",
+       "args": {
+        "shadow": "offsetBottom"
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "shape-format.wordart-styles.text-effects.shadow.offset-bottom-left",
+       "label": "Offset: Bottom Left",
+       "command": "format.textEffects",
+       "args": {
+        "shadow": "offsetBottomLeft"
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "shape-format.wordart-styles.text-effects.shadow.offset-right",
+       "label": "Offset: Right",
+       "command": "format.textEffects",
+       "args": {
+        "shadow": "offsetRight"
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "shape-format.wordart-styles.text-effects.shadow.offset-center",
+       "label": "Offset: Center",
+       "command": "format.textEffects",
+       "args": {
+        "shadow": "offsetCenter"
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "shape-format.wordart-styles.text-effects.shadow.offset-left",
+       "label": "Offset: Left",
+       "command": "format.textEffects",
+       "args": {
+        "shadow": "offsetLeft"
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "shape-format.wordart-styles.text-effects.shadow.offset-top-right",
+       "label": "Offset: Top Right",
+       "command": "format.textEffects",
+       "args": {
+        "shadow": "offsetTopRight"
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "shape-format.wordart-styles.text-effects.shadow.offset-top",
+       "label": "Offset: Top",
+       "command": "format.textEffects",
+       "args": {
+        "shadow": "offsetTop"
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "shape-format.wordart-styles.text-effects.shadow.offset-top-left",
+       "label": "Offset: Top Left",
+       "command": "format.textEffects",
+       "args": {
+        "shadow": "offsetTopLeft"
+       },
+       "source": "upstream"
+      }
+     ]
+    },
+    {
+     "id": "shape-format.wordart-styles.text-effects.glow",
+     "label": "Glow",
+     "kind": "dropdown",
+     "command": null,
+     "source": "upstream",
+     "items": [
+      {
+       "id": "shape-format.wordart-styles.text-effects.glow.no-glow",
+       "label": "No Glow",
+       "command": "format.textEffects",
+       "args": {
+        "glow": null
+       },
+       "source": "upstream"
+      },
+      {
+       "separator": true
+      },
+      {
+       "id": "shape-format.wordart-styles.text-effects.glow.3-pt",
+       "label": "3 pt",
+       "command": "format.textEffects",
+       "args": {
+        "glow": 3
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "shape-format.wordart-styles.text-effects.glow.5-pt",
+       "label": "5 pt",
+       "command": "format.textEffects",
+       "args": {
+        "glow": 5
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "shape-format.wordart-styles.text-effects.glow.8-pt",
+       "label": "8 pt",
+       "command": "format.textEffects",
+       "args": {
+        "glow": 8
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "shape-format.wordart-styles.text-effects.glow.11-pt",
+       "label": "11 pt",
+       "command": "format.textEffects",
+       "args": {
+        "glow": 11
+       },
+       "source": "upstream"
+      }
+     ]
+    },
+    {
+     "id": "shape-format.wordart-styles.text-effects.reflection",
+     "label": "Reflection",
+     "kind": "dropdown",
+     "command": null,
+     "source": "upstream",
+     "items": [
+      {
+       "id": "shape-format.wordart-styles.text-effects.reflection.no-reflection",
+       "label": "No Reflection",
+       "command": "format.textEffects",
+       "args": {
+        "reflection": null
+       },
+       "source": "upstream"
+      },
+      {
+       "separator": true
+      },
+      {
+       "id": "shape-format.wordart-styles.text-effects.reflection.25",
+       "label": "25%",
+       "command": "format.textEffects",
+       "args": {
+        "reflection": {
+         "size": 25
+        }
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "shape-format.wordart-styles.text-effects.reflection.50",
+       "label": "50%",
+       "command": "format.textEffects",
+       "args": {
+        "reflection": {
+         "size": 50
+        }
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "shape-format.wordart-styles.text-effects.reflection.90",
+       "label": "90%",
+       "command": "format.textEffects",
+       "args": {
+        "reflection": {
+         "size": 90
+        }
+       },
+       "source": "upstream"
+      }
+     ]
+    },
+    {
+     "id": "shape-format.wordart-styles.text-effects.transform",
+     "label": "Transform",
+     "kind": "dropdown",
+     "command": null,
+     "source": "upstream",
+     "items": [
+      {
+       "id": "shape-format.wordart-styles.text-effects.transform.none",
+       "label": "No Transform",
+       "command": "wordArt.transform",
+       "args": {
+        "preset": "none"
+       },
+       "source": "upstream"
+      },
+      {
+       "separator": true
+      },
+      {
+       "id": "shape-format.wordart-styles.text-effects.transform.text-arch-up",
+       "label": "Arch Up",
+       "command": "wordArt.transform",
+       "args": {
+        "preset": "textArchUp"
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "shape-format.wordart-styles.text-effects.transform.text-arch-down",
+       "label": "Arch Down",
+       "command": "wordArt.transform",
+       "args": {
+        "preset": "textArchDown"
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "shape-format.wordart-styles.text-effects.transform.text-circle",
+       "label": "Circle",
+       "command": "wordArt.transform",
+       "args": {
+        "preset": "textCircle"
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "shape-format.wordart-styles.text-effects.transform.text-wave1",
+       "label": "Wave",
+       "command": "wordArt.transform",
+       "args": {
+        "preset": "textWave1"
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "shape-format.wordart-styles.text-effects.transform.text-slant-up",
+       "label": "Slant Up",
+       "command": "wordArt.transform",
+       "args": {
+        "preset": "textSlantUp"
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "shape-format.wordart-styles.text-effects.transform.text-slant-down",
+       "label": "Slant Down",
+       "command": "wordArt.transform",
+       "args": {
+        "preset": "textSlantDown"
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "shape-format.wordart-styles.text-effects.transform.text-inflate",
+       "label": "Inflate",
+       "command": "wordArt.transform",
+       "args": {
+        "preset": "textInflate"
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "shape-format.wordart-styles.text-effects.transform.text-deflate",
+       "label": "Deflate",
+       "command": "wordArt.transform",
+       "args": {
+        "preset": "textDeflate"
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "shape-format.wordart-styles.text-effects.transform.text-chevron",
+       "label": "Chevron Up",
+       "command": "wordArt.transform",
+       "args": {
+        "preset": "textChevron"
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "shape-format.wordart-styles.text-effects.transform.text-chevron-inverted",
+       "label": "Chevron Down",
+       "command": "wordArt.transform",
+       "args": {
+        "preset": "textChevronInverted"
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "shape-format.wordart-styles.text-effects.transform.text-triangle",
+       "label": "Triangle Up",
+       "command": "wordArt.transform",
+       "args": {
+        "preset": "textTriangle"
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "shape-format.wordart-styles.text-effects.transform.text-triangle-inverted",
+       "label": "Triangle Down",
+       "command": "wordArt.transform",
+       "args": {
+        "preset": "textTriangleInverted"
+       },
+       "source": "upstream"
+      }
+     ]
+    }
+   ]
+  },
+  "shape-format.text.text-direction": {
+   "note": "U:quill/shapes: Text Direction (shape.textDirection): horizontal, rotated 90° or 270°, or stacked, for the selected text box or the one the caret is in."
+  },
+  "shape-format.text.create-link": {
+   "kind": "split",
+   "command": "shape.link",
+   "note": "U:quill/shapes: Create Link continues the selected text box in the next empty, unlinked text box of the document; Break Link ends it (shape.breakLink).",
+   "items": [
+    {
+     "id": "shape-format.text.create-link.create",
+     "label": "Create Link",
+     "command": "shape.link",
+     "source": "upstream"
+    },
+    {
+     "id": "shape-format.text.create-link.break",
+     "label": "Break Link",
+     "command": "shape.breakLink",
+     "source": "upstream"
+    }
+   ]
+  },
+  "home.font.text-effects-and-typography": {
+   "note": "U:quill/shapes: Text Effects (format.textEffects): WordArt styles, text fill, outline, shadow, glow and reflection on the selected text, drawn by the page view and saved as w14 text effects. Ligatures and Stylistic Sets have no engine (wordcraft keeps them as they are read); hidden.",
+   "items": [
+    {
+     "id": "home.font.text-effects-and-typography.wordart-styles",
+     "label": "WordArt Styles",
+     "kind": "gallery",
+     "command": "format.textEffects",
+     "args": {
+      "style": "<style>"
+     },
+     "source": "upstream"
+    },
+    {
+     "separator": true
+    },
+    {
+     "id": "home.font.text-effects-and-typography.text-fill",
+     "label": "Text Fill",
+     "kind": "dropdown",
+     "command": null,
+     "source": "upstream",
+     "items": [
+      {
+       "id": "home.font.text-effects-and-typography.text-fill.automatic",
+       "label": "Automatic",
+       "command": "format.textEffects",
+       "args": {
+        "fill": null
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "home.font.text-effects-and-typography.text-fill.no-fill",
+       "label": "No Fill",
+       "command": "format.textEffects",
+       "args": {
+        "fill": "none"
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "home.font.text-effects-and-typography.text-fill.colors",
+       "label": "Colors",
+       "kind": "palette",
+       "command": "format.textEffects",
+       "args": {
+        "fill": "<hex>"
+       },
+       "source": "upstream"
+      },
+      {
+       "separator": true
+      },
+      {
+       "id": "home.font.text-effects-and-typography.text-fill.gradient",
+       "label": "Gradient",
+       "kind": "dropdown",
+       "command": null,
+       "source": "upstream",
+       "items": [
+        {
+         "id": "home.font.text-effects-and-typography.text-fill.gradient.1",
+         "label": "Accent 1 to Accent 4",
+         "command": "format.textEffects",
+         "args": {
+          "fill": {
+           "gradient": [
+            "156082",
+            "0F9ED5"
+           ],
+           "angle": 90
+          }
+         },
+         "source": "upstream"
+        },
+        {
+         "id": "home.font.text-effects-and-typography.text-fill.gradient.2",
+         "label": "Accent 2 to Accent 5",
+         "command": "format.textEffects",
+         "args": {
+          "fill": {
+           "gradient": [
+            "E97132",
+            "A02B93"
+           ],
+           "angle": 90
+          }
+         },
+         "source": "upstream"
+        },
+        {
+         "id": "home.font.text-effects-and-typography.text-fill.gradient.3",
+         "label": "Light to Accent 1",
+         "command": "format.textEffects",
+         "args": {
+          "fill": {
+           "gradient": [
+            "FFFFFF",
+            "156082"
+           ],
+           "angle": 90
+          }
+         },
+         "source": "upstream"
+        },
+        {
+         "id": "home.font.text-effects-and-typography.text-fill.gradient.4",
+         "label": "Dark to Accent 6",
+         "command": "format.textEffects",
+         "args": {
+          "fill": {
+           "gradient": [
+            "0E2841",
+            "4EA72E"
+           ],
+           "angle": 90
+          }
+         },
+         "source": "upstream"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "home.font.text-effects-and-typography.text-outline",
+     "label": "Text Outline",
+     "kind": "dropdown",
+     "command": null,
+     "source": "upstream",
+     "items": [
+      {
+       "id": "home.font.text-effects-and-typography.text-outline.automatic",
+       "label": "Automatic",
+       "command": "format.textEffects",
+       "args": {
+        "outline": null
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "home.font.text-effects-and-typography.text-outline.no-outline",
+       "label": "No Outline",
+       "command": "format.textEffects",
+       "args": {
+        "outline": "none"
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "home.font.text-effects-and-typography.text-outline.colors",
+       "label": "Colors",
+       "kind": "palette",
+       "command": "format.textEffects",
+       "args": {
+        "outline": "<hex>"
+       },
+       "source": "upstream"
+      },
+      {
+       "separator": true
+      },
+      {
+       "id": "home.font.text-effects-and-typography.text-outline.weight",
+       "label": "Weight",
+       "kind": "dropdown",
+       "command": null,
+       "source": "upstream",
+       "items": [
+        {
+         "id": "home.font.text-effects-and-typography.text-outline.weight.0-25-pt",
+         "label": "0.25 pt",
+         "command": "format.textEffects",
+         "args": {
+          "outline": {
+           "width": 0.25
+          }
+         },
+         "source": "upstream"
+        },
+        {
+         "id": "home.font.text-effects-and-typography.text-outline.weight.0-5-pt",
+         "label": "0.5 pt",
+         "command": "format.textEffects",
+         "args": {
+          "outline": {
+           "width": 0.5
+          }
+         },
+         "source": "upstream"
+        },
+        {
+         "id": "home.font.text-effects-and-typography.text-outline.weight.0-75-pt",
+         "label": "0.75 pt",
+         "command": "format.textEffects",
+         "args": {
+          "outline": {
+           "width": 0.75
+          }
+         },
+         "source": "upstream"
+        },
+        {
+         "id": "home.font.text-effects-and-typography.text-outline.weight.1-pt",
+         "label": "1 pt",
+         "command": "format.textEffects",
+         "args": {
+          "outline": {
+           "width": 1
+          }
+         },
+         "source": "upstream"
+        },
+        {
+         "id": "home.font.text-effects-and-typography.text-outline.weight.1-5-pt",
+         "label": "1.5 pt",
+         "command": "format.textEffects",
+         "args": {
+          "outline": {
+           "width": 1.5
+          }
+         },
+         "source": "upstream"
+        },
+        {
+         "id": "home.font.text-effects-and-typography.text-outline.weight.2-25-pt",
+         "label": "2.25 pt",
+         "command": "format.textEffects",
+         "args": {
+          "outline": {
+           "width": 2.25
+          }
+         },
+         "source": "upstream"
+        },
+        {
+         "id": "home.font.text-effects-and-typography.text-outline.weight.3-pt",
+         "label": "3 pt",
+         "command": "format.textEffects",
+         "args": {
+          "outline": {
+           "width": 3
+          }
+         },
+         "source": "upstream"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "home.font.text-effects-and-typography.shadow",
+     "label": "Shadow",
+     "kind": "dropdown",
+     "command": null,
+     "source": "upstream",
+     "items": [
+      {
+       "id": "home.font.text-effects-and-typography.shadow.no-shadow",
+       "label": "No Shadow",
+       "command": "format.textEffects",
+       "args": {
+        "shadow": null
+       },
+       "source": "upstream"
+      },
+      {
+       "separator": true
+      },
+      {
+       "id": "home.font.text-effects-and-typography.shadow.offset-bottom-right",
+       "label": "Offset: Bottom Right",
+       "command": "format.textEffects",
+       "args": {
+        "shadow": "offsetBottomRight"
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "home.font.text-effects-and-typography.shadow.offset-bottom",
+       "label": "Offset: Bottom",
+       "command": "format.textEffects",
+       "args": {
+        "shadow": "offsetBottom"
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "home.font.text-effects-and-typography.shadow.offset-bottom-left",
+       "label": "Offset: Bottom Left",
+       "command": "format.textEffects",
+       "args": {
+        "shadow": "offsetBottomLeft"
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "home.font.text-effects-and-typography.shadow.offset-right",
+       "label": "Offset: Right",
+       "command": "format.textEffects",
+       "args": {
+        "shadow": "offsetRight"
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "home.font.text-effects-and-typography.shadow.offset-center",
+       "label": "Offset: Center",
+       "command": "format.textEffects",
+       "args": {
+        "shadow": "offsetCenter"
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "home.font.text-effects-and-typography.shadow.offset-left",
+       "label": "Offset: Left",
+       "command": "format.textEffects",
+       "args": {
+        "shadow": "offsetLeft"
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "home.font.text-effects-and-typography.shadow.offset-top-right",
+       "label": "Offset: Top Right",
+       "command": "format.textEffects",
+       "args": {
+        "shadow": "offsetTopRight"
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "home.font.text-effects-and-typography.shadow.offset-top",
+       "label": "Offset: Top",
+       "command": "format.textEffects",
+       "args": {
+        "shadow": "offsetTop"
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "home.font.text-effects-and-typography.shadow.offset-top-left",
+       "label": "Offset: Top Left",
+       "command": "format.textEffects",
+       "args": {
+        "shadow": "offsetTopLeft"
+       },
+       "source": "upstream"
+      }
+     ]
+    },
+    {
+     "id": "home.font.text-effects-and-typography.glow",
+     "label": "Glow",
+     "kind": "dropdown",
+     "command": null,
+     "source": "upstream",
+     "items": [
+      {
+       "id": "home.font.text-effects-and-typography.glow.no-glow",
+       "label": "No Glow",
+       "command": "format.textEffects",
+       "args": {
+        "glow": null
+       },
+       "source": "upstream"
+      },
+      {
+       "separator": true
+      },
+      {
+       "id": "home.font.text-effects-and-typography.glow.3-pt",
+       "label": "3 pt",
+       "command": "format.textEffects",
+       "args": {
+        "glow": 3
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "home.font.text-effects-and-typography.glow.5-pt",
+       "label": "5 pt",
+       "command": "format.textEffects",
+       "args": {
+        "glow": 5
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "home.font.text-effects-and-typography.glow.8-pt",
+       "label": "8 pt",
+       "command": "format.textEffects",
+       "args": {
+        "glow": 8
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "home.font.text-effects-and-typography.glow.11-pt",
+       "label": "11 pt",
+       "command": "format.textEffects",
+       "args": {
+        "glow": 11
+       },
+       "source": "upstream"
+      }
+     ]
+    },
+    {
+     "id": "home.font.text-effects-and-typography.reflection",
+     "label": "Reflection",
+     "kind": "dropdown",
+     "command": null,
+     "source": "upstream",
+     "items": [
+      {
+       "id": "home.font.text-effects-and-typography.reflection.no-reflection",
+       "label": "No Reflection",
+       "command": "format.textEffects",
+       "args": {
+        "reflection": null
+       },
+       "source": "upstream"
+      },
+      {
+       "separator": true
+      },
+      {
+       "id": "home.font.text-effects-and-typography.reflection.25",
+       "label": "25%",
+       "command": "format.textEffects",
+       "args": {
+        "reflection": {
+         "size": 25
+        }
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "home.font.text-effects-and-typography.reflection.50",
+       "label": "50%",
+       "command": "format.textEffects",
+       "args": {
+        "reflection": {
+         "size": 50
+        }
+       },
+       "source": "upstream"
+      },
+      {
+       "id": "home.font.text-effects-and-typography.reflection.90",
+       "label": "90%",
+       "command": "format.textEffects",
+       "args": {
+        "reflection": {
+         "size": 90
+        }
+       },
+       "source": "upstream"
+      }
+     ]
+    }
+   ]
+  },
+  "insert.text.wordart": {
+   "kind": "gallery",
+   "command": "insert.wordArt",
+   "args": {
+    "style": "<style>"
+   },
+   "note": "U:quill/shapes: WordArt (insert.wordArt): a floating text box at the caret in one of wordcraft's eight styles, drawn and saved as w14 text effects."
+  }
+ },
+ "dialogs": {
+  "dialog.pictureSize": {
+   "title": "Layout",
+   "command": "picture.size",
+   "note": "U:quill/shapes: Word's Layout dialog (Position, Text Wrapping, Size) over arrange.layout, picture.size and arrange.rotation, in one undo step. Not offered: relative (percent) positions and sizes, Move object with text, Lock anchor, Allow overlap and Layout in table cell (no such fields in the float model), and a left and right distance apart (one for both sides); the Size tab's relative-to-original box and original-size read-out are hidden.",
+   "tabs": [
+    {
+     "name": "Position",
+     "fields": [
+      {
+       "id": "hMode",
+       "label": "Horizontal",
+       "kind": "radio",
+       "options": [
+        {
+         "value": "alignment",
+         "label": "Alignment"
+        },
+        {
+         "value": "absolute",
+         "label": "Absolute position"
+        }
+       ]
+      },
+      {
+       "id": "hAlign",
+       "label": "Alignment:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "left",
+         "label": "Left"
+        },
+        {
+         "value": "center",
+         "label": "Centered"
+        },
+        {
+         "value": "right",
+         "label": "Right"
+        },
+        {
+         "value": "inside",
+         "label": "Inside"
+        },
+        {
+         "value": "outside",
+         "label": "Outside"
+        }
+       ],
+       "visibleWhen": "hMode==alignment"
+      },
+      {
+       "id": "hAlignRel",
+       "label": "relative to",
+       "kind": "select",
+       "options": [
+        {
+         "value": "margin",
+         "label": "Margin"
+        },
+        {
+         "value": "page",
+         "label": "Page"
+        },
+        {
+         "value": "column",
+         "label": "Column"
+        },
+        {
+         "value": "leftMargin",
+         "label": "Left margin"
+        },
+        {
+         "value": "rightMargin",
+         "label": "Right margin"
+        },
+        {
+         "value": "insideMargin",
+         "label": "Inside margin"
+        },
+        {
+         "value": "outsideMargin",
+         "label": "Outside margin"
+        }
+       ],
+       "visibleWhen": "hMode==alignment"
+      },
+      {
+       "id": "hPos",
+       "label": "Position:",
+       "kind": "number",
+       "unit": "pt",
+       "min": -31680,
+       "max": 31680,
+       "step": 1,
+       "visibleWhen": "hMode==absolute"
+      },
+      {
+       "id": "hPosRel",
+       "label": "to the right of",
+       "kind": "select",
+       "options": [
+        {
+         "value": "margin",
+         "label": "Margin"
+        },
+        {
+         "value": "page",
+         "label": "Page"
+        },
+        {
+         "value": "column",
+         "label": "Column"
+        },
+        {
+         "value": "character",
+         "label": "Character"
+        },
+        {
+         "value": "leftMargin",
+         "label": "Left margin"
+        },
+        {
+         "value": "rightMargin",
+         "label": "Right margin"
+        },
+        {
+         "value": "insideMargin",
+         "label": "Inside margin"
+        },
+        {
+         "value": "outsideMargin",
+         "label": "Outside margin"
+        }
+       ],
+       "visibleWhen": "hMode==absolute"
+      },
+      {
+       "id": "vMode",
+       "label": "Vertical",
+       "kind": "radio",
+       "options": [
+        {
+         "value": "alignment",
+         "label": "Alignment"
+        },
+        {
+         "value": "absolute",
+         "label": "Absolute position"
+        }
+       ]
+      },
+      {
+       "id": "vAlign",
+       "label": "Alignment:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "top",
+         "label": "Top"
+        },
+        {
+         "value": "center",
+         "label": "Centered"
+        },
+        {
+         "value": "bottom",
+         "label": "Bottom"
+        },
+        {
+         "value": "inside",
+         "label": "Inside"
+        },
+        {
+         "value": "outside",
+         "label": "Outside"
+        }
+       ],
+       "visibleWhen": "vMode==alignment"
+      },
+      {
+       "id": "vAlignRel",
+       "label": "relative to",
+       "kind": "select",
+       "options": [
+        {
+         "value": "margin",
+         "label": "Margin"
+        },
+        {
+         "value": "page",
+         "label": "Page"
+        },
+        {
+         "value": "topMargin",
+         "label": "Top margin"
+        },
+        {
+         "value": "bottomMargin",
+         "label": "Bottom margin"
+        },
+        {
+         "value": "insideMargin",
+         "label": "Inside margin"
+        },
+        {
+         "value": "outsideMargin",
+         "label": "Outside margin"
+        }
+       ],
+       "visibleWhen": "vMode==alignment"
+      },
+      {
+       "id": "vPos",
+       "label": "Position:",
+       "kind": "number",
+       "unit": "pt",
+       "min": -31680,
+       "max": 31680,
+       "step": 1,
+       "visibleWhen": "vMode==absolute"
+      },
+      {
+       "id": "vPosRel",
+       "label": "below",
+       "kind": "select",
+       "options": [
+        {
+         "value": "margin",
+         "label": "Margin"
+        },
+        {
+         "value": "page",
+         "label": "Page"
+        },
+        {
+         "value": "paragraph",
+         "label": "Paragraph"
+        },
+        {
+         "value": "line",
+         "label": "Line"
+        },
+        {
+         "value": "topMargin",
+         "label": "Top margin"
+        },
+        {
+         "value": "bottomMargin",
+         "label": "Bottom margin"
+        },
+        {
+         "value": "insideMargin",
+         "label": "Inside margin"
+        },
+        {
+         "value": "outsideMargin",
+         "label": "Outside margin"
+        }
+       ],
+       "visibleWhen": "vMode==absolute"
+      }
+     ]
+    },
+    {
+     "name": "Text Wrapping",
+     "fields": [
+      {
+       "id": "wrap",
+       "label": "Wrapping style",
+       "kind": "radio",
+       "options": [
+        {
+         "value": "inline",
+         "label": "In line with text",
+         "icon": "inline"
+        },
+        {
+         "value": "square",
+         "label": "Square",
+         "icon": "wrap-square"
+        },
+        {
+         "value": "tight",
+         "label": "Tight",
+         "icon": "wrap-tight"
+        },
+        {
+         "value": "through",
+         "label": "Through",
+         "icon": "wrap-through"
+        },
+        {
+         "value": "topAndBottom",
+         "label": "Top and bottom",
+         "icon": "wrap-top-bottom"
+        },
+        {
+         "value": "behindText",
+         "label": "Behind text",
+         "icon": "wrap-behind"
+        },
+        {
+         "value": "inFrontOfText",
+         "label": "In front of text",
+         "icon": "wrap-front"
+        }
+       ]
+      },
+      {
+       "id": "wrapText",
+       "label": "Wrap text",
+       "kind": "radio",
+       "options": [
+        {
+         "value": "bothSides",
+         "label": "Both sides"
+        },
+        {
+         "value": "left",
+         "label": "Left only"
+        },
+        {
+         "value": "right",
+         "label": "Right only"
+        },
+        {
+         "value": "largest",
+         "label": "Largest only"
+        }
+       ],
+       "enabledWhen": "wrap in square|tight|through"
+      },
+      {
+       "id": "distTop",
+       "label": "Distance from text, top:",
+       "kind": "number",
+       "unit": "pt",
+       "min": 0,
+       "max": 1584,
+       "step": 1,
+       "enabledWhen": "wrap in square|tight|through|topAndBottom"
+      },
+      {
+       "id": "distBottom",
+       "label": "Bottom:",
+       "kind": "number",
+       "unit": "pt",
+       "min": 0,
+       "max": 1584,
+       "step": 1,
+       "enabledWhen": "wrap in square|tight|through|topAndBottom"
+      },
+      {
+       "id": "dist",
+       "label": "Left and right:",
+       "kind": "number",
+       "unit": "pt",
+       "min": 0,
+       "max": 1584,
+       "step": 1,
+       "enabledWhen": "wrap in square|tight|through"
+      }
+     ]
+    },
+    {
+     "name": "Size",
+     "fields": [
+      {
+       "id": "height",
+       "label": "Height:",
+       "kind": "number",
+       "unit": "pt",
+       "min": 1,
+       "max": 4000,
+       "step": 1
+      },
+      {
+       "id": "width",
+       "label": "Width:",
+       "kind": "number",
+       "unit": "pt",
+       "min": 1,
+       "max": 4000,
+       "step": 1
+      },
+      {
+       "id": "rotation",
+       "label": "Rotation:",
+       "kind": "number",
+       "unit": "°",
+       "min": 0,
+       "max": 360,
+       "step": 1
+      },
+      {
+       "id": "scaleH",
+       "label": "Scale Height:",
+       "kind": "number",
+       "unit": "%",
+       "min": 1,
+       "max": 10000,
+       "step": 1
+      },
+      {
+       "id": "scaleW",
+       "label": "Scale Width:",
+       "kind": "number",
+       "unit": "%",
+       "min": 1,
+       "max": 10000,
+       "step": 1
+      },
+      {
+       "id": "lock",
+       "label": "Lock aspect ratio",
+       "kind": "checkbox"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ]
+  }
+ }
+}

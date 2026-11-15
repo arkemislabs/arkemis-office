@@ -1,0 +1,65 @@
+{
+  "commands": {
+    "text.compose": {
+      "label": "Compose Text",
+      "args": ["text", "active?"],
+      "params": "{text, active?: [start, end]} — an input method's composition (preedit) at the insertion point; empty text cancels it",
+      "sourceRef": "crates/engine/src/cmd/text.rs:66",
+      "implRef": "crates/engine/src/cmd/text/ime.rs:255",
+      "layer": "engine",
+      "mode": "noUndo",
+      "shortcut": null,
+      "enabledWhen": "has_text",
+      "summary": "U:prism/text: deckcraft's text.compose (CommandSpec without the cmd! macro, so the spec pass missed it): the pre-edit is shown in place and is no undo step until text.commit; an empty pre-edit restores the text and selection."
+    },
+    "text.deleteSurrounding": {
+      "label": "Delete Surrounding Text",
+      "args": ["before?", "after?", "bytes?"],
+      "params": "{before, after, bytes?: bool}",
+      "sourceRef": "crates/engine/src/cmd/text.rs:108",
+      "implRef": "crates/engine/src/cmd/text/caret.rs:94",
+      "layer": "engine",
+      "mode": "undoable",
+      "shortcut": null,
+      "enabledWhen": "has_text",
+      "summary": "U:prism/text: deckcraft's text.deleteSurrounding (an input method removes text around the caret: macOS press-and-hold, dictation); the spec pass missed it for the same reason."
+    }
+  },
+  "dialogs": {
+    "dialog.replaceFonts": {
+      "note": "U:prism/text: deckcraft body.rs:808 dlg_replace_fonts. Replace: lists the fonts the presentation uses (font.used); With: a font name with the installed families listed; Replace stays open and reports the result, as PowerPoint does; Close.",
+      "tabs": [
+        {"name": "Replace", "fields": [
+          {"id": "from", "label": "Replace:", "kind": "select", "options": [], "param": "from", "source": "upstream", "sourceRef": "crates/ui-egui/src/dialogs/body.rs:813"},
+          {"id": "to", "label": "With:", "kind": "combo", "options": [], "param": "to", "source": "upstream", "sourceRef": "crates/ui-egui/src/dialogs/body.rs:821"},
+          {"id": "replace", "label": "Replace", "kind": "button", "options": [], "source": "upstream", "sourceRef": "crates/ui-egui/src/dialogs/body.rs:840"},
+          {"id": "result", "label": "", "kind": "label", "options": [], "source": "upstream", "sourceRef": "crates/ui-egui/src/dialogs/body.rs:829"}
+        ]}
+      ],
+      "buttons": ["Close"]
+    },
+    "dialog.autocorrect": {
+      "note": "U:prism/text: deckcraft body.rs:1290 (the AutoCorrect options and the replacement list with Add and Delete per row) and PowerPoint's AutoFormat As You Type tab with the options deckcraft implements (fractions, ordinals, automatic lists, smart quotes from Preferences). Table cell capitals, Exceptions…, hyphens, smileys, hyperlinks, AutoFit, Actions and Math AutoCorrect have no engine support and stay hidden.",
+      "tabs": [
+        {"name": "AutoCorrect", "fields": [
+          {"id": "twoInitials", "label": "Correct TWo INitial CApitals", "kind": "checkbox", "options": [], "source": "upstream", "sourceRef": "crates/ui-egui/src/dialogs/body.rs:1292"},
+          {"id": "sentenceCaps", "label": "Capitalize first letter of sentences", "kind": "checkbox", "options": [], "source": "upstream", "sourceRef": "crates/ui-egui/src/dialogs/body.rs:1293"},
+          {"id": "days", "label": "Capitalize names of days", "kind": "checkbox", "options": [], "source": "upstream", "sourceRef": "crates/ui-egui/src/dialogs/body.rs:1294"},
+          {"id": "capsLock", "label": "Correct accidental use of cAPS LOCK key", "kind": "checkbox", "options": [], "source": "upstream", "sourceRef": "crates/ui-egui/src/dialogs/body.rs:1295"},
+          {"id": "replaceText", "label": "Replace text as you type", "kind": "checkbox", "options": [], "source": "upstream", "sourceRef": "crates/ui-egui/src/dialogs/body.rs:1299"},
+          {"id": "from", "label": "Replace", "kind": "text", "options": [], "source": "upstream", "sourceRef": "crates/ui-egui/src/dialogs/body.rs:1304"},
+          {"id": "to", "label": "With", "kind": "text", "options": [], "source": "upstream", "sourceRef": "crates/ui-egui/src/dialogs/body.rs:1306"},
+          {"id": "add", "label": "Add", "kind": "button", "options": [], "source": "upstream", "sourceRef": "crates/ui-egui/src/dialogs/body.rs:1308"},
+          {"id": "entries", "label": "Replacement list", "kind": "list", "options": [], "source": "upstream", "sourceRef": "crates/ui-egui/src/dialogs/body.rs:1320"}
+        ]},
+        {"name": "AutoFormat As You Type", "fields": [
+          {"id": "smartQuotes", "label": "\"Straight quotes\" with “smart quotes”", "kind": "checkbox", "options": [], "note": "deckcraft keeps this in Preferences (prefs.smart_quotes)", "source": "office"},
+          {"id": "fractions", "label": "Fractions (1/2) with fraction character (½)", "kind": "checkbox", "options": [], "source": "upstream", "sourceRef": "crates/ui-egui/src/dialogs/body.rs:1296"},
+          {"id": "ordinals", "label": "Ordinals (1st) with superscript", "kind": "checkbox", "options": [], "source": "upstream", "sourceRef": "crates/ui-egui/src/dialogs/body.rs:1297"},
+          {"id": "lists", "label": "Automatic bulleted and numbered lists", "kind": "checkbox", "options": [], "source": "upstream", "sourceRef": "crates/ui-egui/src/dialogs/body.rs:1298"}
+        ]}
+      ],
+      "buttons": ["OK", "Cancel"]
+    }
+  }
+}

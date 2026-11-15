@@ -1,0 +1,10 @@
+{
+  "source": "Excel Function Arguments over gridcraft 146161b4b450a56e5e59a083ba0478582d1e602b crates/engine/src/cmd/formulas.rs function_list",
+  "width": 560,
+  "height": 420,
+  "sections": [
+    {"fields": ["args"]},
+    {"fields": ["description"]},
+    {"fields": ["result"]}
+  ]
+}

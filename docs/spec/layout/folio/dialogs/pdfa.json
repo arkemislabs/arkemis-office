@@ -1,0 +1,4 @@
+{
+  "source": "The report dialogs draw their own body (src/apps/folio/dialogs/pdfa.tsx): the width is theirs",
+  "width": 640
+}

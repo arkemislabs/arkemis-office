@@ -1,0 +1,310 @@
+{
+  "controls": {
+    "data.analysis.solver": {
+      "command": "data.solver",
+      "args": null,
+      "dialog": "dialog.solver",
+      "note": "U:grid/tables-solver: Solver opens Solver Parameters (core/grid/dialogs/solver.mjs, drawn by src/apps/grid/dialogs/solver.tsx); Solve runs gridcraft's data.solver (Simplex LP, GRG Nonlinear, Evolutionary) and shows Solver Results."
+    }
+  },
+  "commands": {
+    "data.solverKeep": {
+      "args": [],
+      "sourceRef": "office:Excel Data > Analysis > Solver > Solver Results > OK",
+      "summary": "Solver Results' OK: keep the Solver solution or restore the original values, write the Answer and Limits reports, return to Solver Parameters (not in gridcraft; its dialog writes the solution when Solve runs and undoes it on Restore)."
+    }
+  },
+  "dialogs": {
+    "dialog.solver": {
+      "title": "Solver Parameters",
+      "command": "data.solver",
+      "buttons": [
+        "Solve",
+        "Close"
+      ],
+      "note": "U:grid/tables-solver: Excel's Solver Parameters drawn by src/apps/grid/dialogs/solver.tsx: Set Objective, To (Max, Min, Value Of), By Changing Variable Cells, the constraint list with Add, Change, Delete and Reset All (Add and Change open Add Constraint), Make Unconstrained Variables Non-Negative, the solving method and Options, then Solve. Load/Save and Help are left out (no saved ranges of models, no offline help); the cell boxes take typed references (no collapse-to-pick box). Solve with an objective and variable cells opens Solver Results.",
+      "tabs": [
+        {
+          "name": "",
+          "fields": [
+            {
+              "id": "objective",
+              "label": "Set Objective:",
+              "kind": "text",
+              "options": []
+            },
+            {
+              "id": "goal",
+              "label": "To:",
+              "kind": "radio",
+              "options": [
+                {
+                  "value": "max",
+                  "label": "Max"
+                },
+                {
+                  "value": "min",
+                  "label": "Min"
+                },
+                {
+                  "value": "value",
+                  "label": "Value Of:"
+                }
+              ]
+            },
+            {
+              "id": "value",
+              "label": "Value Of:",
+              "kind": "text",
+              "options": [],
+              "enabledWhen": "goal==value"
+            },
+            {
+              "id": "variables",
+              "label": "By Changing Variable Cells:",
+              "kind": "text",
+              "options": []
+            },
+            {
+              "id": "constraints",
+              "label": "Subject to the Constraints:",
+              "kind": "list",
+              "options": []
+            },
+            {
+              "id": "nonNegative",
+              "label": "Make Unconstrained Variables Non-Negative",
+              "kind": "checkbox",
+              "options": []
+            },
+            {
+              "id": "method",
+              "label": "Select a Solving Method:",
+              "kind": "select",
+              "options": [
+                {
+                  "value": "grg",
+                  "label": "GRG Nonlinear"
+                },
+                {
+                  "value": "simplex",
+                  "label": "Simplex LP"
+                },
+                {
+                  "value": "evolutionary",
+                  "label": "Evolutionary"
+                }
+              ]
+            },
+            {
+              "id": "methodHelp",
+              "label": "<method description>",
+              "kind": "preview",
+              "options": []
+            }
+          ]
+        }
+      ]
+    },
+    "dialog.addConstraint": {
+      "id": "dialog.addConstraint",
+      "title": "Add Constraint",
+      "command": null,
+      "source": "office",
+      "buttons": [
+        "OK",
+        "Cancel"
+      ],
+      "note": "U:grid/tables-solver: Excel's Add Constraint drawn by src/apps/grid/dialogs/addConstraint.tsx (Cell Reference, the relation, Constraint, with Add to enter one and keep the box open); OK hands the constraint to Solver Parameters. The dif (all different) relation is left out: no solving method here has it.",
+      "tabs": [
+        {
+          "name": "",
+          "fields": [
+            {
+              "id": "lhs",
+              "label": "Cell Reference:",
+              "kind": "text",
+              "options": []
+            },
+            {
+              "id": "op",
+              "label": "Relation",
+              "kind": "select",
+              "options": [
+                {
+                  "value": "<=",
+                  "label": "<="
+                },
+                {
+                  "value": "=",
+                  "label": "="
+                },
+                {
+                  "value": ">=",
+                  "label": ">="
+                },
+                {
+                  "value": "int",
+                  "label": "int"
+                },
+                {
+                  "value": "bin",
+                  "label": "bin"
+                }
+              ]
+            },
+            {
+              "id": "rhs",
+              "label": "Constraint:",
+              "kind": "text",
+              "options": [],
+              "enabledWhen": "op in <=|=|>="
+            }
+          ]
+        }
+      ]
+    },
+    "dialog.solverOptions": {
+      "id": "dialog.solverOptions",
+      "title": "Options",
+      "command": null,
+      "source": "office",
+      "buttons": [
+        "OK",
+        "Cancel"
+      ],
+      "note": "U:grid/tables-solver: Excel's Options with its All Methods, GRG Nonlinear and Evolutionary pages. Drawn: Integer Optimality, Iterations (Max Evaluations), and the Evolutionary Convergence, Mutation Rate, Population Size, Random Seed, Generations without Improvement (for the time without improvement) and Require Bounds. Not drawn (no engine): Constraint Precision, Use Automatic Scaling, Show Iteration Results, Ignore Integer Constraints, Max Time, Max Subproblems, Max Feasible Solutions, and the GRG Derivatives and Multistart settings; src/apps/grid/dialogs/solverOptions.tsx draws the three pages and says so (not checked against upstream).",
+      "tabs": [
+        {
+          "name": "All Methods",
+          "fields": [
+            {
+              "id": "integerOptimality",
+              "label": "Integer Optimality (%):",
+              "kind": "number",
+              "options": [],
+              "min": 0,
+              "max": 100,
+              "step": 1
+            },
+            {
+              "id": "maxEvaluations",
+              "label": "Iterations (most evaluations):",
+              "kind": "number",
+              "options": [],
+              "min": 1,
+              "max": 200000,
+              "step": 1000
+            },
+            {
+              "id": "convergence",
+              "label": "Convergence:",
+              "kind": "number",
+              "options": [],
+              "min": 0,
+              "max": 1,
+              "step": 0.0001
+            },
+            {
+              "id": "mutationRate",
+              "label": "Mutation Rate:",
+              "kind": "number",
+              "options": [],
+              "min": 0,
+              "max": 1,
+              "step": 0.005
+            },
+            {
+              "id": "populationSize",
+              "label": "Population Size:",
+              "kind": "number",
+              "options": [],
+              "min": 10,
+              "max": 1000,
+              "step": 10
+            },
+            {
+              "id": "randomSeed",
+              "label": "Random Seed:",
+              "kind": "number",
+              "options": [],
+              "min": 0,
+              "max": 4294967295,
+              "step": 1
+            },
+            {
+              "id": "generationsWithoutImprovement",
+              "label": "Generations without Improvement:",
+              "kind": "number",
+              "options": [],
+              "min": 1,
+              "max": 100000,
+              "step": 1
+            },
+            {
+              "id": "requireBounds",
+              "label": "Require Bounds on Variable Cells",
+              "kind": "checkbox",
+              "options": []
+            }
+          ]
+        }
+      ]
+    },
+    "dialog.solverResults": {
+      "title": "Solver Results",
+      "command": "data.solverKeep",
+      "buttons": [
+        "OK",
+        "Cancel"
+      ],
+      "note": "U:grid/tables-solver: Excel's Solver Results drawn by src/apps/grid/dialogs/solverResults.tsx: the outcome, Keep Solver Solution or Restore Original Values, the Answer and Limits reports, Return to Solver Parameters Dialog. The cells keep their original values until OK (Cancel leaves them); Sensitivity and Outline Reports and Save Scenario are left out (no engine). Limits is available for Simplex LP and GRG Nonlinear without integer constraints.",
+      "tabs": [
+        {
+          "name": "",
+          "fields": [
+            {
+              "id": "message",
+              "label": "<solver outcome>",
+              "kind": "preview",
+              "options": []
+            },
+            {
+              "id": "restore",
+              "label": "Keep Solver Solution / Restore Original Values",
+              "kind": "radio",
+              "options": [
+                {
+                  "value": false,
+                  "label": "Keep Solver Solution"
+                },
+                {
+                  "value": true,
+                  "label": "Restore Original Values"
+                }
+              ]
+            },
+            {
+              "id": "answerReport",
+              "label": "Answer",
+              "kind": "checkbox",
+              "options": []
+            },
+            {
+              "id": "limitsReport",
+              "label": "Limits",
+              "kind": "checkbox",
+              "options": []
+            },
+            {
+              "id": "returnToParams",
+              "label": "Return to Solver Parameters Dialog",
+              "kind": "checkbox",
+              "options": []
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

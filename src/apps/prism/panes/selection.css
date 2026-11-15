@@ -1,0 +1,24 @@
+/* The Selection Pane (panes/selection.tsx): a list of the slide's objects, front-most first. */
+.selp { position: relative; display: flex; flex-direction: column; gap: 6px; min-height: 0; font: 12.5px var(--ark-font, system-ui); color: var(--sh-text-1, #f2f2f3); }
+.selp-note { color: var(--sh-text-3, #85858c); line-height: 1.45; }
+.selp-bar { display: flex; align-items: center; gap: 6px; }
+.selp-gap { flex: 1; }
+.selp-small { padding: 3px 9px; font-size: 12px; }
+.selp-sq { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 22px; padding: 0; }
+.selp-list { position: relative; display: flex; flex-direction: column; min-height: 0; overflow-y: auto; }
+.selp-row { display: flex; align-items: center; gap: 2px; height: 24px; padding-right: 4px; border-radius: 3px; cursor: default; outline: none; }
+.selp-row:hover { background: var(--sh-hover, rgba(255,255,255,.07)); }
+.selp-row.is-selected { background: var(--sh-selected, rgba(232,119,78,.22)); box-shadow: inset 0 0 0 1px var(--sh-text-3, #85858c); }
+.selp-row:focus-visible { box-shadow: inset 0 0 0 2px var(--prism-accent, #e8774e); }
+.selp-row.is-dim .selp-name { color: var(--sh-text-3, #85858c); }
+.selp-fold { display: inline-flex; align-items: center; justify-content: center; flex: none; width: 16px; height: 16px; padding: 0; border: 0; background: none; color: var(--sh-text-2, #b4b4ba); }
+.selp-name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.selp-rename { flex: 1; min-width: 0; height: 20px; padding: 0 3px; font: inherit; color: inherit; background: var(--sh-field, rgba(0,0,0,.35)); border: 1px solid var(--prism-accent, #e8774e); border-radius: 3px; }
+.selp-icon { display: inline-flex; align-items: center; justify-content: center; flex: none; width: 22px; height: 20px; padding: 0; border: 0; border-radius: 3px; background: none; color: var(--sh-text-2, #b4b4ba); }
+.selp-icon:hover { background: var(--sh-hover, rgba(255,255,255,.1)); color: var(--sh-text-1, #f2f2f3); }
+.selp-drop { position: absolute; left: 0; right: 0; height: 0; margin-top: -1px; border-top: 2px solid var(--prism-accent, #e8774e); pointer-events: none; }
+.selp-scrim { position: fixed; inset: 0; z-index: 40; }
+.selp-menu { position: fixed; z-index: 41; display: flex; flex-direction: column; min-width: 150px; padding: 4px; border: 1px solid var(--sh-border, rgba(255,255,255,.16)); border-radius: 6px; background: var(--sh-surface, #2a2a2e); box-shadow: 0 6px 20px rgba(0,0,0,.4); }
+.selp-menu button { padding: 5px 10px; border: 0; border-radius: 4px; background: none; color: inherit; text-align: left; font: inherit; }
+.selp-menu button:hover { background: var(--sh-hover, rgba(255,255,255,.1)); }
+.selp-menu hr { width: 100%; margin: 3px 0; border: 0; border-top: 1px solid var(--sh-border, rgba(255,255,255,.12)); }

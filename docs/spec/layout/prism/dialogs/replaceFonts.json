@@ -1,0 +1,24 @@
+{
+  "source": "deckcraft crates/ui-egui/src/dialogs/body.rs:808 (dlg_replace_fonts: a two-column grid Replace: / With:, the installed-family list under With, the result line, Replace) at f893f6af7d36a5409fd804e81a34fd895cfefedf; PowerPoint Replace Font",
+  "width": 420,
+  "height": 280,
+  "sections": [
+    {
+      "fields": [
+        "from",
+        "to"
+      ],
+      "columns": 1
+    },
+    {
+      "fields": [
+        "replace"
+      ]
+    },
+    {
+      "fields": [
+        "result"
+      ]
+    }
+  ]
+}

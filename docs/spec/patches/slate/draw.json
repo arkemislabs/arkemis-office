@@ -1,0 +1,13 @@
+{
+  "controls": {
+    "draw.convert.ink-to-text": {
+      "note": "U:slate/draw: hidden. Ink to Text needs a handwriting recogniser; the app has no handwriting engine (its OCR reads printed text from pictures, not pen strokes)."
+    },
+    "draw.convert.math": {
+      "note": "U:slate/draw: hidden. Ink to Math needs Microsoft's math handwriting recogniser; the app has no handwriting engine. Type equations in linear format on the Insert tab."
+    },
+    "draw.convert.ink-editor": {
+      "note": "U:slate/draw: hidden. The Ink Editor is the correction pane of Ink to Text and Ink to Math, which are not offered."
+    }
+  }
+}

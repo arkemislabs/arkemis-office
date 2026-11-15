@@ -1,0 +1,192 @@
+{
+ "controls": {
+  "organize.more.print": {
+   "command": "print.pages",
+   "note": "printcraft crates/print and print_ui/body.rs (commands/print.mjs): the pages chosen, laid on sheets (one to a sheet, several, or a booklet) and written as a PDF to print from any viewer; nothing is sent to a printer from here."
+  }
+ },
+ "dialogs": {
+  "dialog.print": {
+   "title": "Print pages",
+   "tabs": [
+    {
+     "name": "Paper",
+     "fields": [
+      {
+       "id": "paper",
+       "label": "Paper:",
+       "kind": "select",
+       "options": [
+        "US Letter",
+        "US Legal",
+        "Tabloid",
+        "A3",
+        "A4",
+        "A5",
+        "A6",
+        "A2",
+        "A1",
+        "A0"
+       ]
+      },
+      {
+       "id": "orientation",
+       "label": "Orientation:",
+       "kind": "radio",
+       "options": [
+        "Auto portrait/landscape",
+        "Portrait",
+        "Landscape"
+       ]
+      },
+      {
+       "id": "preview-paper",
+       "label": "Preview",
+       "kind": "preview"
+      }
+     ]
+    },
+    {
+     "name": "Pages to Print",
+     "fields": [
+      {
+       "id": "pages",
+       "label": "Pages to Print",
+       "kind": "radio",
+       "options": [
+        "All",
+        "Current page",
+        "Pages"
+       ]
+      },
+      {
+       "id": "range",
+       "label": "Pages",
+       "kind": "text",
+       "hint": "1-3, 6",
+       "visibleWhen": "pages == Pages"
+      },
+      {
+       "id": "subset",
+       "label": "More options:",
+       "kind": "select",
+       "options": [
+        "All pages in range",
+        "Odd pages only",
+        "Even pages only"
+       ]
+      },
+      {
+       "id": "reverse",
+       "label": "Reverse pages",
+       "kind": "checkbox"
+      },
+      {
+       "id": "preview-pages",
+       "label": "Preview",
+       "kind": "preview"
+      }
+     ]
+    },
+    {
+     "name": "Page Sizing & Handling",
+     "fields": [
+      {
+       "id": "handling",
+       "label": "Mode",
+       "kind": "radio",
+       "options": [
+        "Size",
+        "Multiple",
+        "Booklet"
+       ]
+      },
+      {
+       "id": "fit",
+       "label": "Size",
+       "kind": "radio",
+       "options": [
+        "Fit",
+        "Actual size",
+        "Shrink oversized pages",
+        "Custom scale:"
+       ],
+       "visibleWhen": "handling == Size"
+      },
+      {
+       "id": "scale",
+       "label": "Custom scale (%)",
+       "kind": "number",
+       "min": 1,
+       "max": 1000,
+       "visibleWhen": "fit == Custom scale:"
+      },
+      {
+       "id": "pps",
+       "label": "Pages per sheet:",
+       "kind": "select",
+       "options": [
+        "2",
+        "4",
+        "6",
+        "9",
+        "16"
+       ],
+       "visibleWhen": "handling == Multiple"
+      },
+      {
+       "id": "order",
+       "label": "Page order:",
+       "kind": "select",
+       "options": [
+        "Horizontal",
+        "Horizontal reversed",
+        "Vertical",
+        "Vertical reversed",
+        "Cut and stack"
+       ],
+       "visibleWhen": "handling == Multiple"
+      },
+      {
+       "id": "border",
+       "label": "Print page border",
+       "kind": "checkbox",
+       "visibleWhen": "handling == Multiple"
+      },
+      {
+       "id": "booklet",
+       "label": "Booklet subset:",
+       "kind": "select",
+       "options": [
+        "Both sides",
+        "Front side only",
+        "Back side only"
+       ],
+       "visibleWhen": "handling == Booklet"
+      },
+      {
+       "id": "binding",
+       "label": "Binding:",
+       "kind": "select",
+       "options": [
+        "Left",
+        "Right"
+       ],
+       "visibleWhen": "handling == Booklet"
+      },
+      {
+       "id": "preview-sizing",
+       "label": "Preview",
+       "kind": "preview"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "Print to PDF",
+    "Cancel"
+   ],
+   "note": "printcraft print_ui/body.rs. The printer, Poster, Label and Comments & Forms are not offered: the sheets are written as a PDF (commands/print.mjs). The preview draws the sheets the settings make (Acrobat's Print dialog shows the page). Not checked against upstream."
+  }
+ }
+}

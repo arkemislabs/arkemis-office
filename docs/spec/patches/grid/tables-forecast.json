@@ -1,0 +1,47 @@
+{
+  "controls": {
+    "data.forecast.forecastSheet": {
+      "note": "U:grid/tables: checked against gridcraft (data.forecastSheet, the command Forecast Sheet runs, and the FORECAST.ETS functions it writes); the dialog is Excel's Create Forecast Worksheet."
+    }
+  },
+  "dialogs": {
+    "dialog.forecastSheet": {
+      "title": "Create Forecast Worksheet",
+      "buttons": ["Create", "Cancel"],
+      "tabs": [{"name": "", "fields": [
+        {"id": "chart", "label": "Chart", "kind": "radio", "options": [{"value": "line", "label": "Line chart"}, {"value": "column", "label": "Column chart"}]},
+        {"id": "end", "label": "Forecast End", "kind": "text", "options": []},
+        {"id": "forecastStart", "label": "Forecast Start", "kind": "text", "options": []},
+        {"id": "confidenceInterval", "label": "Confidence Interval", "kind": "checkbox", "options": []},
+        {"id": "confidence", "label": "Confidence level (%)", "kind": "text", "options": []},
+        {"id": "seasonalityMode", "label": "Seasonality", "kind": "radio", "options": [{"value": "auto", "label": "Detect Automatically"}, {"value": "manual", "label": "Set Manually"}]},
+        {"id": "seasonality", "label": "Season length (points, 0 for none)", "kind": "text", "options": []},
+        {"id": "statistics", "label": "Include forecast statistics", "kind": "checkbox", "options": []},
+        {"id": "timeline", "label": "Timeline Range", "kind": "text", "options": [], "refPicker": true},
+        {"id": "values", "label": "Values Range", "kind": "text", "options": [], "refPicker": true},
+        {"id": "fillMissing", "label": "Fill Missing Points Using", "kind": "select", "options": [{"value": "interpolate", "label": "Interpolation"}, {"value": "zeros", "label": "Zeros"}]},
+        {"id": "aggregate", "label": "Aggregate Duplicates Using", "kind": "select", "options": [
+          {"value": "average", "label": "Average"}, {"value": "count", "label": "Count"}, {"value": "counta", "label": "CountA"}, {"value": "max", "label": "Max"},
+          {"value": "median", "label": "Median"}, {"value": "min", "label": "Min"}, {"value": "sum", "label": "Sum"}]},
+        {"id": "preview", "label": "Forecast chart preview", "kind": "preview", "options": [], "source": "office"}
+      ]}],
+      "defaults": {
+        "chart": "line",
+        "confidenceInterval": true,
+        "confidence": "95",
+        "seasonalityMode": "auto",
+        "seasonality": null,
+        "fillMissing": "interpolate",
+        "aggregate": "average",
+        "statistics": false
+      },
+      "note": "U:grid/tables: Excel's Create Forecast Worksheet drawn by src/apps/grid/dialogs/forecastSheet.tsx (the chart type buttons beside the preview, the Options part folds); Forecast End starts at a third of the history past its last point. Runs gridcraft's data.forecastSheet."
+    }
+  },
+  "commands": {
+    "data.forecastSheet": {
+      "args": ["timeline?", "values?", "range?", "end?", "periods?", "forecastStart?", "confidenceInterval?", "confidence?", "seasonality?", "fillMissing?", "aggregate?", "statistics?", "chart?"],
+      "note": "U:grid/tables: translated from gridcraft crates/engine/src/cmd/forecast.rs (core/grid/commands/data/forecast.mjs); a column chart is a combo chart (columns for the values and the forecast, lines for the bounds), as Excel draws it."
+    }
+  }
+}

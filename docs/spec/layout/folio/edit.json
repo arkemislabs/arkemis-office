@@ -1,0 +1,161 @@
+{
+  "tab": "edit",
+  "source": "printcraft crates/ui-egui/src/panels/edit.rs (edit_panel), panels/format_text_ui.rs (panel) @ 3109bb2359759e24ef490e1cdbdba00722b20972",
+  "note": "The Edit panel in ribbon form: header, Format text in its panel rows, the Modify page icon row, Add content rows, Other options. The panel header is the title with Preferences and Close (edit.rs): Edit text & images itself is on the floating toolbar, on from the moment Edit opens, so its toggle is not repeated in the header.",
+  "groups": {
+    "panel-header": {
+      "collapseOrder": 1,
+      "collapsedIcon": "chevron-left",
+      "layout": [
+        {
+          "large": "edit.header.edit-text-images"
+        },
+        {
+          "stack": [
+            "edit.header.back",
+            "edit.header.preferences",
+            "edit.header.close"
+          ]
+        }
+      ]
+    },
+    "format-text": {
+      "collapseOrder": 6,
+      "collapsedIcon": "type",
+      "layout": [
+        {
+          "rows": [
+            [
+              "edit.format.font"
+            ],
+            [
+              "edit.format.size",
+              "edit.format.colour",
+              "edit.format.bullets",
+              "edit.format.numbering",
+              "edit.format.align"
+            ],
+            [
+              "edit.format.bold",
+              "edit.format.italic",
+              "edit.format.underline",
+              "edit.format.superscript",
+              "edit.format.subscript"
+            ]
+          ]
+        },
+        {
+          "rows": [
+            [
+              "edit.format.line-spacing",
+              "edit.format.paragraph-spacing"
+            ],
+            [
+              "edit.format.horizontal-scale",
+              "edit.format.char-spacing"
+            ]
+          ]
+        }
+      ],
+      "widths": {
+        "edit.format.font": 196,
+        "edit.format.size": 64,
+        "edit.format.line-spacing": 76,
+        "edit.format.paragraph-spacing": 64,
+        "edit.format.horizontal-scale": 76,
+        "edit.format.char-spacing": 76
+      }
+    },
+    "image": {
+      "collapseOrder": 3,
+      "collapsedIcon": "rotate-ccw",
+      "layout": [
+        {
+          "rows": [
+            [
+              {"medium": "edit.image.rotate-ccw"},
+              {"medium": "edit.image.rotate-cw"}
+            ],
+            [
+              {"medium": "edit.image.flip-h"},
+              {"medium": "edit.image.flip-v"}
+            ],
+            [
+              {"medium": "edit.image.replace"},
+              "edit.image.crop"
+            ]
+          ]
+        }
+      ],
+      "widths": {
+        "edit.image.crop": 56
+      }
+    },
+    "modify-page": {
+      "collapseOrder": 4,
+      "collapsedIcon": "rotate-cw",
+      "layout": [
+        {
+          "rows": [
+            [
+              "edit.modify.page-rotate",
+              "edit.modify.page-insert",
+              "edit.modify.page-delete",
+              "edit.modify.page-extract"
+            ],
+            [
+              "edit.modify.crop",
+              "edit.modify.arrange",
+              "edit.modify.align"
+            ]
+          ]
+        },
+        {
+          "stack": [
+            "edit.modify.organize"
+          ]
+        }
+      ]
+    },
+    "add-content": {
+      "collapseOrder": 5,
+      "collapsedIcon": "type",
+      "layout": [
+        {
+          "stack": [
+            "edit.add.text",
+            "edit.add.image",
+            "edit.add.header-and-footer"
+          ]
+        },
+        {
+          "stack": [
+            "edit.add.watermark",
+            "edit.add.link",
+            "edit.add.bates-numbering"
+          ]
+        },
+        {
+          "stack": [
+            "edit.add.background",
+            "edit.add.attach-file",
+            "edit.add.more"
+          ]
+        }
+      ]
+    },
+    "other-options": {
+      "collapseOrder": 2,
+      "collapsedIcon": "files",
+      "layout": [
+        {
+          "stack": [
+            "edit.other.combine",
+            "edit.other.redact",
+            "edit.other.form"
+          ]
+        }
+      ]
+    }
+  }
+}

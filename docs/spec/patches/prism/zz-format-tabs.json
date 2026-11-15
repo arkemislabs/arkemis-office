@@ -1,0 +1,496 @@
+{
+  "controls": {
+    "home.paragraph.direction.more-options": {
+      "command": "pane.toggle",
+      "args": null,
+      "params": {
+        "pane": "format",
+        "tab": "text"
+      },
+      "note": "U:prism/format-tabs: opens the Format Shape pane on Text Options."
+    },
+    "home.paragraph.align-text.more-options": {
+      "command": "pane.toggle",
+      "args": null,
+      "params": {
+        "pane": "format",
+        "tab": "text"
+      },
+      "note": "U:prism/format-tabs: opens the Format Shape pane on Text Options."
+    },
+    "home.drawing.arrange.order-objects": {
+      "label": null,
+      "command": null,
+      "header": "Order Objects"
+    },
+    "home.drawing.arrange.group-objects": {
+      "label": null,
+      "command": null,
+      "header": "Group Objects"
+    },
+    "home.drawing.arrange.position-objects": {
+      "label": null,
+      "command": null,
+      "header": "Position Objects"
+    },
+    "home.drawing.arrange.selection-pane": {
+      "command": "pane.toggle",
+      "args": null,
+      "params": {
+        "pane": "selection"
+      },
+      "kind": "toggle",
+      "note": "U:prism/format-tabs: shows or hides the Selection Pane (panes/selection.tsx); on while it is open."
+    },
+    "home.editing.select.selection-pane": {
+      "command": "pane.toggle",
+      "args": null,
+      "params": {
+        "pane": "selection"
+      },
+      "kind": "toggle",
+      "note": "U:prism/format-tabs: shows or hides the Selection Pane (panes/selection.tsx); on while it is open."
+    },
+    "home.editing.selection-pane": {
+      "command": "pane.toggle",
+      "args": null,
+      "params": {
+        "pane": "selection"
+      },
+      "kind": "toggle",
+      "note": "U:prism/format-tabs: shows or hides the Selection Pane (panes/selection.tsx); on while it is open."
+    },
+    "shapeformat.arrange.selection-pane": {
+      "command": "pane.toggle",
+      "args": null,
+      "params": {
+        "pane": "selection"
+      },
+      "kind": "toggle",
+      "note": "U:prism/format-tabs: shows or hides the Selection Pane (panes/selection.tsx); on while it is open."
+    },
+    "pictureformat.arrange.selection-pane": {
+      "command": "pane.toggle",
+      "args": null,
+      "params": {
+        "pane": "selection"
+      },
+      "kind": "toggle",
+      "note": "U:prism/format-tabs: shows or hides the Selection Pane (panes/selection.tsx); on while it is open."
+    },
+    "home.drawing.outline.more-lines": {
+      "command": "pane.toggle",
+      "args": null,
+      "params": {
+        "pane": "format",
+        "tab": "fill"
+      },
+      "note": "U:prism/format-tabs: opens the Format Shape pane on Fill & Line."
+    },
+    "shapeformat.styles.outline.more-lines": {
+      "command": "pane.toggle",
+      "args": null,
+      "params": {
+        "pane": "format",
+        "tab": "fill"
+      },
+      "note": "U:prism/format-tabs: opens the Format Shape pane on Fill & Line."
+    },
+    "shapeformat.styles.fill.gradient": {
+      "command": "pane.toggle",
+      "args": null,
+      "params": {
+        "pane": "format",
+        "tab": "fill"
+      },
+      "note": "U:prism/format-tabs: Gradient opens the Format Shape pane on Fill & Line, where the gradient is edited (presets, type, direction, stops)."
+    },
+    "home.drawing.effects.format-shape": {
+      "command": "pane.toggle",
+      "args": null,
+      "params": {
+        "pane": "format",
+        "tab": "effects"
+      },
+      "note": "U:prism/format-tabs: opens the Format Shape pane on Effects."
+    },
+    "shapeformat.styles.effects.format-shape": {
+      "command": "pane.toggle",
+      "args": null,
+      "params": {
+        "pane": "format",
+        "tab": "effects"
+      },
+      "note": "U:prism/format-tabs: opens the Format Shape pane on Effects."
+    },
+    "pictureformat.styles.effects.format-shape": {
+      "command": "pane.toggle",
+      "args": null,
+      "params": {
+        "pane": "format",
+        "tab": "effects"
+      },
+      "note": "U:prism/format-tabs: opens the Format Shape pane on Effects."
+    },
+    "shapeformat.pane.format": {
+      "command": "pane.toggle",
+      "args": null,
+      "params": {
+        "pane": "format"
+      },
+      "kind": "toggle",
+      "note": "U:prism/format-tabs: shows or hides the Format Shape pane (panes/format.tsx); on while it is open."
+    },
+    "pictureformat.adjust.corrections.picture-corrections-options": {
+      "command": "pane.toggle",
+      "args": null,
+      "params": {
+        "pane": "format",
+        "tab": "picture"
+      },
+      "note": "U:prism/format-tabs: opens the Format Shape pane on Picture."
+    },
+    "pictureformat.adjust.color.picture-color-options": {
+      "command": "pane.toggle",
+      "args": null,
+      "params": {
+        "pane": "format",
+        "tab": "picture"
+      },
+      "note": "U:prism/format-tabs: opens the Format Shape pane on Picture."
+    },
+    "home.designer.design-ideas": {
+      "command": "pane.toggle",
+      "args": null,
+      "params": {
+        "pane": "designer"
+      },
+      "kind": "toggle",
+      "note": "U:prism/format-tabs: shows or hides the Design Ideas pane, the same as Design > Design Ideas."
+    },
+    "pictureformat.arrange.align.align-to-slide": {
+      "command": "arrange.alignTo",
+      "args": {
+        "slide": true
+      },
+      "params": null,
+      "kind": "toggle",
+      "source": "upstream",
+      "sourceRef": "deckcraft crates/ui-egui/src/ribbon/arrange.rs align_menu"
+    },
+    "pictureformat.arrange.align.align-selected-objects": {
+      "command": "arrange.alignTo",
+      "args": {
+        "slide": false
+      },
+      "params": null,
+      "kind": "toggle",
+      "source": "upstream",
+      "sourceRef": "deckcraft crates/ui-egui/src/ribbon/arrange.rs align_menu"
+    },
+    "pictureformat.adjust.color.recolor": {
+      "args": null,
+      "params": null,
+      "dynamic": true,
+      "note": "U:prism/format-tabs: the recolor presets (picture.recolors) as rows with their two colours: No Recolor, Grayscale, Sepia, Washout, Black and White 25/50/75%, then each theme colour Dark and Light."
+    },
+    "home.slides.section.collapse-all": {
+      "command": "section.collapseAll",
+      "args": null,
+      "params": null,
+      "note": "U:prism/format-tabs: folds every section of the slide pane shut (view state, not undoable); not checked against upstream (deckcraft's thumbnail pane does not fold)."
+    },
+    "home.slides.section.expand-all": {
+      "command": "section.expandAll",
+      "args": null,
+      "params": null,
+      "note": "U:prism/format-tabs: opens every section of the slide pane."
+    },
+    "shapeformat.insert.merge": {
+      "command": null,
+      "args": null,
+      "params": null,
+      "items": [
+        {
+          "label": "Union",
+          "command": "shape.merge",
+          "args": {
+            "op": "union"
+          }
+        },
+        {
+          "label": "Combine",
+          "command": "shape.merge",
+          "args": {
+            "op": "combine"
+          }
+        },
+        {
+          "label": "Fragment",
+          "command": "shape.merge",
+          "args": {
+            "op": "fragment"
+          }
+        },
+        {
+          "label": "Intersect",
+          "command": "shape.merge",
+          "args": {
+            "op": "intersect"
+          }
+        },
+        {
+          "label": "Subtract",
+          "command": "shape.merge",
+          "args": {
+            "op": "subtract"
+          }
+        }
+      ],
+      "note": "U:prism/merge: Merge Shapes (union, combine, fragment, intersect, subtract) of the selected shapes; the result keeps the first shape's formatting (core/prism/lib/polybool.mjs). A text box with no fill and no outline merges as its box: deckcraft merges its letters, and the app has no text outlines."
+    },
+    "shapeformat.insert.edit-shape.edit-points": {
+      "command": "shape.editPoints",
+      "args": null,
+      "params": null,
+      "kind": "toggle"
+    },
+    "playback.preview.play": {
+      "command": "media.toggle",
+      "args": null,
+      "params": null,
+      "kind": "toggle",
+      "checkedLabel": "Pause",
+      "note": "U:prism/media: plays or pauses the clip in the editor (the player over its frame, trim, fades, volume and loop applied); nothing plays by itself outside Slide Show."
+    },
+    "videoformat.preview.play": {
+      "command": "media.toggle",
+      "args": null,
+      "params": null,
+      "kind": "toggle",
+      "checkedLabel": "Pause",
+      "note": "U:prism/media: plays or pauses the video in the editor."
+    },
+    "videoformat.adjust.poster": {
+      "command": null,
+      "args": null,
+      "params": null,
+      "note": "U:prism/media: the picture shown before the video plays: the frame the player shows, a picture from file, or none."
+    },
+    "home.images.picture": {
+      "command": "insert.picture",
+      "args": null,
+      "params": null,
+      "note": "U:prism/format-tabs: the same as Insert > Pictures > This Device…: the system Open dialog picks the picture."
+    },
+    "pictureformat.adjust.change": {
+      "command": "picture.change",
+      "args": null,
+      "params": null,
+      "note": "U:prism/format-tabs: the system Open dialog picks the new picture; it keeps the picture's place and size (picture.change)."
+    },
+    "insert.media.video.this-device": {
+      "command": "insert.video",
+      "args": null,
+      "params": null
+    },
+    "insert.media.audio.audio-on-my-pc": {
+      "command": "insert.audio",
+      "args": null,
+      "params": null
+    },
+    "record.content.video": {
+      "command": "insert.video",
+      "args": null,
+      "params": null,
+      "note": "U:prism/format-tabs: the system Open dialog picks a video file (insert.video); the tab never records from a camera."
+    },
+    "record.content.audio": {
+      "command": "insert.audio",
+      "args": null,
+      "params": null,
+      "note": "U:prism/format-tabs: the system Open dialog picks an audio file (insert.audio); the tab never records from a microphone."
+    },
+    "record.save.save-as-show": {
+      "command": "file.saveAs",
+      "args": {
+        "format": "ppsx"
+      },
+      "params": null,
+      "note": "U:prism/format-tabs: Save As with the PowerPoint Show type (.ppsx); the same package opens straight into the show."
+    },
+    "record.record.cameo": {
+      "note": "Hidden: Cameo records the camera into the slide. Nothing upstream, and a camera is never opened without the person starting it; no engine."
+    },
+    "record.content.screenshot": {
+      "note": "Hidden: deckcraft has no screenshot or screen clipping, and the app never captures the screen on its own."
+    },
+    "record.content.screen-recording": {
+      "note": "Hidden: deckcraft has no screen recording. A recording would have to be started by the person with a visible recording indicator; there is no engine for it."
+    },
+    "record.help.learn-more": {
+      "note": "Hidden: it only opened deckcraft's own web page (links::APP_PAGE)."
+    },
+    "insert.media.video.stock-videos": {
+      "note": "Hidden: deckcraft has no stock videos."
+    },
+    "insert.media.video.online-videos": {
+      "note": "Hidden: deckcraft has no online videos."
+    },
+    "insert.media.audio.record-audio": {
+      "note": "Hidden: deckcraft cannot record audio, and the app never opens a microphone on its own."
+    },
+    "insert.images.pictures.stock-images": {
+      "note": "Hidden: deckcraft has no stock images."
+    },
+    "insert.images.pictures.online-pictures": {
+      "note": "Hidden: deckcraft has no online pictures."
+    },
+    "insert.images.screenshot.available-windows": {
+      "note": "Hidden: deckcraft has no screenshot; the app never captures another window."
+    },
+    "insert.images.screenshot.screen-clipping": {
+      "note": "Hidden: deckcraft has no screen clipping; the app never captures the screen."
+    },
+    "insert.symbols.equation.ink-equation": {
+      "note": "Hidden: deckcraft has no ink equation (its Ink to Math is a disabled 'coming soon' button)."
+    },
+    "shapeformat.insert.edit-shape.reroute-connectors": {
+      "note": "Hidden: Reroute Connectors has no upstream engine; connectors keep their glue (connect.mjs) and follow their shapes."
+    },
+    "playback.bookmarks.add": {
+      "note": "Hidden: deckcraft has no media bookmarks."
+    },
+    "playback.bookmarks.remove": {
+      "note": "Hidden: deckcraft has no media bookmarks."
+    },
+    "videoformat.adjust.corrections": {
+      "note": "Hidden: deckcraft draws no brightness or contrast change on a video."
+    },
+    "videoformat.adjust.color": {
+      "note": "Hidden: deckcraft draws no recolor on a video."
+    },
+    "videoformat.adjust.reset": {
+      "note": "Hidden: deckcraft has no video corrections or recolor to reset."
+    },
+    "record.record.from-beginning": {
+      "command": "show.rehearse",
+      "args": null,
+      "params": null,
+      "note": "U:prism/format-tabs: deckcraft's From Beginning rehearses the show (clock, slide times kept at the end); narration and camera are not recorded."
+    },
+    "record.record.from-current": {
+      "command": "show.rehearse",
+      "args": {
+        "current": true
+      },
+      "params": null,
+      "note": "U:prism/format-tabs: the same from the current slide."
+    }
+  },
+  "dialogs": {
+    "dialog.gridOptions": {
+      "note": "U:prism/format-tabs: deckcraft's Grid Options: snap to grid and to other objects, the spacing, display the grid and the drawing guides. PowerPoint's separate smart-guides display box and Set as Default have no engine (deckcraft's smart guides are the one 'Snap objects to other objects' setting), so they are not shown.",
+      "tabs": [
+        {
+          "name": "Grid and Guides",
+          "fields": [
+            {
+              "id": "snap",
+              "label": "Snap objects to grid",
+              "kind": "checkbox",
+              "param": "snap",
+              "source": "upstream"
+            },
+            {
+              "id": "smart",
+              "label": "Snap objects to other objects",
+              "kind": "checkbox",
+              "param": "smartGuides",
+              "source": "upstream"
+            },
+            {
+              "id": "spacing",
+              "label": "Spacing (pt):",
+              "kind": "number",
+              "unit": "pt",
+              "param": "spacing",
+              "source": "upstream"
+            },
+            {
+              "id": "gridlines",
+              "label": "Display grid on screen",
+              "kind": "checkbox",
+              "param": "gridlines",
+              "source": "upstream"
+            },
+            {
+              "id": "guides",
+              "label": "Display drawing guides on screen",
+              "kind": "checkbox",
+              "param": "guides",
+              "source": "upstream"
+            }
+          ]
+        }
+      ],
+      "buttons": [
+        "OK",
+        "Cancel"
+      ]
+    },
+    "dialog.compressPictures": {
+      "note": "U:prism/compress: deckcraft's Compress Pictures options (apply to this picture or all, delete cropped areas, 330/220/150/96 ppi). PowerPoint's Use original resolution and Use default resolution have no engine and are not shown.",
+      "tabs": [
+        {
+          "name": "Compression",
+          "fields": [
+            {
+              "id": "onlySelected",
+              "label": "Apply only to this picture",
+              "kind": "checkbox",
+              "param": "all (inverted)",
+              "source": "upstream"
+            },
+            {
+              "id": "deleteCropped",
+              "label": "Delete cropped areas of pictures",
+              "kind": "checkbox",
+              "param": "deleteCropped",
+              "source": "upstream"
+            },
+            {
+              "id": "ppi",
+              "label": "Resolution",
+              "kind": "radio",
+              "param": "ppi",
+              "source": "upstream",
+              "options": [
+                {
+                  "value": "330",
+                  "label": "HD (330 ppi): good quality for high-definition displays"
+                },
+                {
+                  "value": "220",
+                  "label": "Print (220 ppi): excellent quality on most printers and screens"
+                },
+                {
+                  "value": "150",
+                  "label": "Web (150 ppi): good for web pages and projectors"
+                },
+                {
+                  "value": "96",
+                  "label": "E-mail (96 ppi): minimise document size for sharing"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "buttons": [
+        "Compress",
+        "Cancel"
+      ]
+    }
+  }
+}

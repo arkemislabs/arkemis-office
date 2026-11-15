@@ -1,0 +1,27 @@
+{
+  "tab": "help",
+  "source": "office: OneNote for Microsoft 365, Help tab (Slate has no ArtCraft upstream; architecture section 1)",
+  "groups": {
+    "help": {
+      "collapseOrder": 1,
+      "collapsedIcon": "question-circle",
+      "layout": [
+        {
+          "large": "help.help.help"
+        },
+        {
+          "large": "help.help.contact-support"
+        },
+        {
+          "large": "help.help.feedback"
+        },
+        {
+          "large": "help.help.show-training"
+        },
+        {
+          "large": "help.help.whats-new"
+        }
+      ]
+    }
+  }
+}

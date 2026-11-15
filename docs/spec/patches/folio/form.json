@@ -1,0 +1,30 @@
+{
+  "dialogs": {
+    "dialog.field-properties": {
+      "title": "Field Properties",
+      "buttons": ["OK", "Cancel"],
+      "command": "form.field.properties",
+      "note": "printcraft tools/prepare/properties.rs: Tabs vary by field kind (prepare/draft.rs:236): General, Appearance and Position always; Options for most; Format, Validate and Calculate for text and drop-down fields; Actions always. Locked is a General-tab check box that greys the others. OK applies every change as one edit (core/folio/commands/form.mjs form.field.properties). Office-only Orientation, Visibility, Units, Check Box Style Layout and Custom scripts are not in printcraft and are not shown."
+    },
+    "dialog.bulk-field-properties": {
+      "command": "form.field.properties",
+      "note": "printcraft tools/bulk_fields.rs: several fields selected open Shared Field Properties; only checked properties change (form.field.properties with `names`)."
+    },
+    "dialog.duplicate-field": {"command": "form.field.duplicate"}
+  },
+  "controls": {
+    "alltools.form.preview": {"command": "form.preview", "note": "Preview / Edit fields: try the form as people filling it in will see it."},
+    "calc.back": {"command": "form.calc.back"},
+    "calc.fix": {"command": "form.calc.fix", "note": "calc_order_ui.rs:431 Fix order."},
+    "calc.earlier": {"command": "form.calc.move", "args": {"earlier": true}},
+    "calc.later": {"command": "form.calc.move", "args": {"earlier": false}},
+    "calc.edit-formula": {"label": "Edit formula", "command": "form.field.properties", "note": "Opens Field Properties on the Calculate tab of the field picked in the order."},
+    "calc.links": {"command": null, "note": "Links on page (calc_order_ui.rs:678) draws the reads between calculated fields on the page: not translated, so hidden."},
+    "notice.highlight-fields": {"command": "form.highlight_fields"},
+    "alltools.form.text-field-table": {"note": "Text field table (field_table_ui.rs) is not translated yet: hidden."},
+    "alltools.form.barcode": {"note": "Hidden: printcraft has no barcode field (Acrobat Pro only)."},
+    "alltools.form.distribute": {"note": "Hidden: printcraft has no Distribute form / tracking service (Acrobat Pro only)."},
+    "alltools.form.track": {"note": "Hidden: printcraft has no form tracker (Acrobat Pro only)."},
+    "alltools.form.highlight-fields": {"note": "Upstream offers this only from the notice bar (canvas/bars.rs:210: Highlight fields / Hide field highlights); the tool panel toggle is the same command."}
+  }
+}

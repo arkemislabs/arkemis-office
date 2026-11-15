@@ -1,0 +1,39 @@
+{
+  "source": "deckcraft crates/ui-egui/src/dialogs/paragraph.rs (Alignment; Indentation; Spacing; Line spacing with At; Tabs…) at f893f6af7d36a5409fd804e81a34fd895cfefedf; PowerPoint Paragraph dialog (General / Indentation / Spacing sections)",
+  "width": 540,
+  "height": 430,
+  "sections": [
+    {
+      "title": "General",
+      "fields": [
+        "align"
+      ],
+      "columns": 3
+    },
+    {
+      "title": "Indentation",
+      "fields": [
+        "before",
+        "special",
+        "by",
+        "after"
+      ],
+      "columns": 3
+    },
+    {
+      "title": "Spacing",
+      "fields": [
+        "spaceBefore",
+        "lineKind",
+        "lineValue",
+        "spaceAfter"
+      ],
+      "columns": 3
+    },
+    {
+      "fields": [
+        "tabs"
+      ]
+    }
+  ]
+}

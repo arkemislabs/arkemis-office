@@ -1,0 +1,71 @@
+{
+  "tab": "audio-and-video",
+  "keytip": "JA",
+  "source": "office: OneNote for Microsoft 365, Audio & Video > Playback tab (Slate has no ArtCraft upstream; architecture section 1)",
+  "groups": {
+    "recording": {
+      "collapseOrder": 3,
+      "collapsedIcon": "microphone-record",
+      "layout": [
+        {
+          "large": "media.recording.audio"
+        },
+        {
+          "large": "media.recording.video"
+        }
+      ]
+    },
+    "playback": {
+      "collapseOrder": 2,
+      "collapsedIcon": "play",
+      "layout": [
+        {
+          "large": "media.playback.play"
+        },
+        {
+          "large": "media.playback.pause"
+        },
+        {
+          "large": "media.playback.stop"
+        },
+        {
+          "large": "media.playback.rewind-10-minutes"
+        },
+        {
+          "large": "media.playback.rewind-10-seconds"
+        },
+        {
+          "large": "media.playback.fast-forward-10-seconds"
+        },
+        {
+          "large": "media.playback.fast-forward-10-minutes"
+        }
+      ]
+    },
+    "options": {
+      "collapseOrder": 1,
+      "collapsedIcon": "eye-play",
+      "layout": [
+        {
+          "large": "media.options.see-playback"
+        },
+        {
+          "large": "media.options.audio-video-settings"
+        }
+      ]
+    }
+  },
+  "keytips": {
+    "media.recording.audio": "A",
+    "media.recording.video": "V",
+    "media.playback.play": "P",
+    "media.playback.pause": "U",
+    "media.playback.stop": "S",
+    "media.playback.rewind-10-minutes": "RM",
+    "media.playback.rewind-10-seconds": "RS",
+    "media.playback.fast-forward-10-seconds": "FS",
+    "media.playback.fast-forward-10-minutes": "FM",
+    "media.options.see-playback": "E",
+    "media.options.audio-video-settings": "T"
+  }
+}

@@ -1,0 +1,53 @@
+{
+ "controls": {
+  "alltools.actions.action-wizard": {
+   "command": null,
+   "dialog": "dialog.action-wizard",
+   "note": "printcraft engine/actions.rs and actions_ui.rs (commands/actions.mjs): the action runs on the open document, step by step, as one undo step. Running an action over many files into a folder is not offered."
+  },
+  "alltools.actions.prepare-for-distribution": {
+   "command": null,
+   "dialog": "dialog.action-wizard",
+   "args": {
+    "action": "Prepare for Distribution"
+   },
+   "note": "printcraft engine/actions.rs and actions_ui.rs (commands/actions.mjs): the action runs on the open document, step by step, as one undo step. Opens the Action Wizard on Prepare for Distribution."
+  },
+  "alltools.actions.optimize-scanned-documents": {
+   "command": null,
+   "dialog": "dialog.action-wizard",
+   "args": {
+    "action": "Optimize Scanned Documents"
+   },
+   "note": "printcraft engine/actions.rs and actions_ui.rs (commands/actions.mjs): the action runs on the open document, step by step, as one undo step. Opens the Action Wizard on Optimize Scanned Documents."
+  },
+  "alltools.actions.archive-documents": {
+   "command": null,
+   "dialog": "dialog.action-wizard",
+   "args": {
+    "action": "Archive Documents"
+   },
+   "note": "The Archive Documents action: Save as PDF/A as far as can be done, and what remains (not checked against upstream: it lists the action as planned). Opens the Action Wizard on it."
+  }
+ },
+ "dialogs": {
+  "dialog.action-wizard": {
+   "tabs": [
+    {
+     "name": "Actions",
+     "fields": [
+      {
+       "id": "action",
+       "label": "Action:",
+       "kind": "text"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "Close"
+   ],
+   "note": "printcraft actions_ui.rs: the list of actions, their steps, New Action, Edit, Delete. The body is src/apps/folio/dialogs/action-wizard.tsx; the action runs on the open document (upstream runs it over files into a folder). \"Run a JavaScript\" is not a step: scripts are never run."
+  }
+ }
+}

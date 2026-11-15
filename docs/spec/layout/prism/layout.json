@@ -1,0 +1,170 @@
+{
+  "tab": "layout",
+  "keytip": "JL",
+  "source": "deckcraft crates/ui-egui/src/ribbon/table.rs (table_layout), arrange.rs (arrange_group) @ f893f6af7d36a5409fd804e81a34fd895cfefedf; Table, Cell Size spinners and Table Size placed as PowerPoint",
+  "groups": {
+    "table": {
+      "collapseOrder": 1,
+      "layout": [
+        {
+          "large": "tablelayout.table.select"
+        },
+        {
+          "large": "tablelayout.table.gridlines"
+        }
+      ]
+    },
+    "rows-and-columns": {
+      "collapseOrder": 6,
+      "collapsedIcon": "table-delete",
+      "layout": [
+        {
+          "large": "tablelayout.rows.delete"
+        },
+        {
+          "large": "tablelayout.rows.insert-above"
+        },
+        {
+          "large": "tablelayout.rows.insert-below"
+        },
+        {
+          "large": "tablelayout.rows.insert-left"
+        },
+        {
+          "large": "tablelayout.rows.insert-right"
+        }
+      ]
+    },
+    "merge": {
+      "collapseOrder": 2,
+      "collapsedIcon": "merge-cells",
+      "layout": [
+        {
+          "large": "tablelayout.merge.merge"
+        },
+        {
+          "large": "tablelayout.merge.split"
+        }
+      ]
+    },
+    "cell-size": {
+      "collapseOrder": 4,
+      "collapsedIcon": "distribute-rows",
+      "layout": [
+        {
+          "rows": [
+            [
+              "tablelayout.size.height"
+            ],
+            [
+              "tablelayout.size.width"
+            ]
+          ]
+        },
+        {
+          "stack": [
+            "tablelayout.size.distribute-rows",
+            "tablelayout.size.distribute-columns"
+          ]
+        }
+      ],
+      "widths": {
+        "tablelayout.size.height": 72,
+        "tablelayout.size.width": 72
+      }
+    },
+    "alignment": {
+      "collapseOrder": 5,
+      "collapsedIcon": "align-left",
+      "layout": [
+        {
+          "rows": [
+            [
+              "tablelayout.align.left",
+              "tablelayout.align.center",
+              "tablelayout.align.right"
+            ],
+            [
+              "tablelayout.align.top",
+              "tablelayout.align.middle",
+              "tablelayout.align.bottom"
+            ]
+          ]
+        },
+        {
+          "large": "tablelayout.align.direction"
+        },
+        {
+          "large": "tablelayout.align.margins"
+        }
+      ]
+    },
+    "table-size": {
+      "collapseOrder": 3,
+      "layout": [
+        {
+          "stack": [
+            "tablelayout.tablesize.height",
+            "tablelayout.tablesize.width",
+            "tablelayout.tablesize.lock"
+          ]
+        }
+      ],
+      "widths": {
+        "tablelayout.tablesize.height": 72,
+        "tablelayout.tablesize.width": 72
+      }
+    },
+    "arrange": {
+      "collapseOrder": 7,
+      "collapsedIcon": "bring-forward",
+      "layout": [
+        {
+          "large": "tablelayout.arrange.bring-forward"
+        },
+        {
+          "large": "tablelayout.arrange.send-backward"
+        },
+        {
+          "large": "tablelayout.arrange.selection-pane"
+        },
+        {
+          "large": "tablelayout.arrange.align"
+        },
+        {
+          "stack": [
+            "tablelayout.arrange.group",
+            "tablelayout.arrange.rotate"
+          ]
+        }
+      ]
+    }
+  },
+  "keytips": {
+    "tablelayout.table.select": "K",
+    "tablelayout.table.gridlines": "TG",
+    "tablelayout.rows.delete": "D",
+    "tablelayout.rows.insert-above": "IA",
+    "tablelayout.rows.insert-below": "IB",
+    "tablelayout.rows.insert-left": "IL",
+    "tablelayout.rows.insert-right": "IR",
+    "tablelayout.merge.merge": "M",
+    "tablelayout.merge.split": "P",
+    "tablelayout.size.distribute-rows": "HD",
+    "tablelayout.size.distribute-columns": "WD",
+    "tablelayout.align.left": "TL",
+    "tablelayout.align.center": "TC",
+    "tablelayout.align.right": "TR",
+    "tablelayout.align.top": "VT",
+    "tablelayout.align.middle": "VC",
+    "tablelayout.align.bottom": "VB",
+    "tablelayout.align.direction": "X",
+    "tablelayout.align.margins": "N",
+    "tablelayout.arrange.bring-forward": "AF",
+    "tablelayout.arrange.send-backward": "AE",
+    "tablelayout.arrange.selection-pane": "AP",
+    "tablelayout.arrange.align": "AA",
+    "tablelayout.arrange.group": "GG",
+    "tablelayout.arrange.rotate": "AY"
+  }
+}

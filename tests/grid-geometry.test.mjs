@@ -1,0 +1,6 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {axisGeometry,visibleAxis,mergeAt,mergeSelection,unmergeSelection} from '../core/grid-geometry.mjs';
+test('variable dimensions keep virtualization bounded and offsets exact',()=>{const g=axisGeometry(100000,{1:42,3:60},30,4/3);assert.equal(g.offsets[1],56);assert.equal(g.sizes[2],80);const v=visibleAxis(g,800000,600);assert.ok(v.length<35);assert.ok(g.offsets[v[0]]<=800000);});
+test('merge refuses destructive contents, maps children to anchor and can unmerge',()=>{const s={rows:20,columns:10,cells:{A1:{value:'Title'},B1:{value:'Keep me'}}};assert.throws(()=>mergeSelection(s,{r1:0,c1:0,r2:1,c2:1}),/nonempty/i);delete s.cells.B1;const m=mergeSelection(s,{r1:0,c1:0,r2:1,c2:1});assert.equal(mergeAt(m.xlsxLayout,1,1).anchor,'A1');assert.deepEqual(m.xlsxLayout.merges,['A1:B2']);assert.deepEqual(unmergeSelection(m,{r1:1,c1:1,r2:1,c2:1}).xlsxLayout.merges,[]);assert.equal(s.xlsxLayout,undefined);});
+
+test('zero-width columns remain hidden despite character-to-pixel padding',()=>{const g=axisGeometry(4,{1:0,2:10},112,7,5);assert.equal(g.sizes[0],0);assert.equal(g.offsets[1],0);assert.equal(g.sizes[1],75);assert.deepEqual(visibleAxis(g,0,200),[1,2,3]);});

@@ -1,0 +1,5 @@
+import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs/promises';import os from 'node:os';import path from 'node:path';
+test('failed export writes leave an existing destination untouched and remove partial files',async()=>{
+ const {writeExportAtomically}=await import('../core/atomic-export.mjs');const directory=await fs.mkdtemp(path.join(os.tmpdir(),'arkemis-export-')),target=path.join(directory,'report.pdf');await fs.writeFile(target,'original');
+ try{async function* broken(){yield Buffer.from('partial output');throw new Error('simulated conversion interruption');}await assert.rejects(()=>writeExportAtomically(target,broken()),/interruption/);assert.equal(await fs.readFile(target,'utf8'),'original');assert.deepEqual(await fs.readdir(directory),['report.pdf']);await writeExportAtomically(target,Buffer.from('complete'));assert.equal(await fs.readFile(target,'utf8'),'complete');assert.deepEqual(await fs.readdir(directory),['report.pdf']);}finally{await fs.rm(directory,{recursive:true,force:true});}
+});

@@ -1,0 +1,39 @@
+{
+ "dialogs": {
+  "dialog.equation": {
+   "note": "U:prism/fix-unit: deckcraft dlg_equation is one linear-form line, prettified and inserted as an italic serif text box; PowerPoint's structure gallery, Ink Equation and the equation ribbon have no engine here and stay hidden. The dialog now shows the prettified result as a preview.",
+   "tabs": [
+    {
+     "name": "Equation",
+     "fields": [
+      {
+       "id": "text",
+       "label": "Equation (linear form, e.g. a^2+b^2=c^2 or x=(-b±sqrt(b^2-4ac))/2a)",
+       "kind": "text",
+       "options": [],
+       "note": "prettified (sqrt→√, <=→≤ …) and inserted as an italic 28 pt Liberation Serif text box",
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/dialogs/body.rs:882"
+      },
+      {
+       "id": "preview",
+       "label": "Preview",
+       "kind": "preview",
+       "options": [],
+       "source": "office",
+       "sourceRef": "office: Microsoft PowerPoint Equation"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "controls": {
+  "playback.options.start": {
+   "command": null,
+   "dialog": null,
+   "params": null,
+   "note": "Hidden: deckcraft starts media with the Start Automatically check box (Audio/Video Options) and has no click-sequence or when-clicked-on start, so the Start combo had nothing to set."
+  }
+ }
+}

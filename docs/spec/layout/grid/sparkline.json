@@ -1,0 +1,41 @@
+{
+  "tab": "sparkline",
+  "source": "Microsoft Excel for Windows › Sparkline; gridcraft draws no Sparkline tab, the spec takes it from Excel",
+  "groups": {
+    "sparkline": {
+      "collapseOrder": 5,
+      "layout": [
+        {"large": "sparkline.sparkline.editData"}
+      ]
+    },
+    "type": {
+      "collapseOrder": 4,
+      "layout": [
+        {"large": "sparkline.type.line"},
+        {"large": "sparkline.type.column"},
+        {"large": "sparkline.type.winLoss"}
+      ]
+    },
+    "show": {
+      "collapseOrder": 3,
+      "layout": [
+        {"stack": ["sparkline.show.highPoint", "sparkline.show.lowPoint", "sparkline.show.negativePoints"]},
+        {"stack": ["sparkline.show.firstPoint", "sparkline.show.lastPoint", "sparkline.show.markers"]}
+      ]
+    },
+    "style": {
+      "collapseOrder": 1,
+      "layout": [
+        {"gallery": "sparkline.style.gallery", "inline": true, "columns": 6},
+        {"stack": ["sparkline.style.color", "sparkline.style.markerColor"]}
+      ]
+    },
+    "group": {
+      "collapseOrder": 2,
+      "layout": [
+        {"large": "sparkline.group.axis"},
+        {"stack": ["sparkline.group.group", "sparkline.group.ungroup", "sparkline.group.clear"]}
+      ]
+    }
+  }
+}

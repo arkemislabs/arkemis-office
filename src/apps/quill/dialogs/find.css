@@ -1,0 +1,32 @@
+/* Find and Replace and Paste Special (U:quill/edit, U:quill/paste): Word's arrangement in the shell's glass tokens. */
+.qf { display: flex; flex-direction: column; min-height: 100%; }
+.qf-row { display: grid; grid-template-columns: 96px minmax(0, 1fr); align-items: center; gap: 10px; margin: 0 0 10px; }
+.qf-row .sf-label { font-size: 12px; color: #d4d5db; }
+.qf-checks { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 22px; margin: 4px 0 8px; }
+.qf-more { align-self: flex-start; margin: 4px 0 6px; padding: 3px 8px 3px 4px; border: 0; border-radius: 7px; background: transparent; color: #d4d5db; font: inherit; cursor: default; }
+.qf-more:hover, .qf-more.is-open { background: rgba(255,255,255,.07); color: #fff; }
+.qf-more span { display: inline-block; width: 14px; color: #a9aab2; }
+.qf-options { margin: 0 0 4px 18px; padding: 6px 0 0 12px; border-left: 1px solid rgba(255,255,255,.09); }
+.qf-special { position: relative; }
+.qf-special .gd-button { min-width: 0; height: 28px; padding: 0 12px; }
+.qf-menu { position: absolute; z-index: 5; left: 0; top: 32px; width: 250px; max-height: 300px; overflow-y: auto; padding: 5px; border-radius: 12px;
+  background: rgba(40,41,46,.97); box-shadow: 0 14px 38px rgba(0,0,0,.45), inset 0 0 0 1px rgba(255,255,255,.1); }
+.qf-menu button { display: flex; justify-content: space-between; width: 100%; height: 26px; padding: 0 8px; border: 0; border-radius: 6px; background: transparent; color: #ececf0; font: inherit; text-align: left; cursor: default; }
+.qf-menu button:hover { background: rgba(255,255,255,.1); }
+.qf-menu kbd { color: #9d9ea6; font: 11.5px ui-monospace, SFMono-Regular, Consolas, monospace; }
+.qf-message { min-height: 18px; margin: 6px 0 4px; color: #a9aab2; font-size: 12px; }
+.qf-buttons { display: flex; justify-content: flex-end; gap: 8px; margin-top: auto; padding-top: 6px; }
+.qf-buttons .gd-button.is-pressed { background: rgba(255,255,255,.2); box-shadow: inset 0 0 0 1px rgba(255,255,255,.3); }
+.qf-goto { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 18px; }
+.qf-goto .sf-list { min-height: 120px; }
+.qf-goto .sf-select { display: flex; }
+.qps-list { display: flex; flex-direction: column; gap: 8px; margin: 6px 0 14px; }
+.qps-list label { display: flex; align-items: center; gap: 9px; color: #e8e8ec; }
+.qps-head { margin: 0 0 4px; color: #f2f2f4; font-size: 12.5px; font-weight: 600; }
+.qps-hint { margin: 2px 0 0; color: #a9aab2; font-size: 12px; }
+
+.qps-src { font-weight: 400; color: #c9cad1; }
+.qps-body { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 14px; margin: 8px 0 12px; align-items: start; }
+.qps-radios label { display: flex; align-items: center; gap: 9px; color: #e8e8ec; }
+.qps-result { display: flex; gap: 12px; align-items: flex-start; padding: 10px 12px; border-radius: 9px; background: rgba(0,0,0,.2); box-shadow: inset 0 0 0 1px rgba(255,255,255,.12); color: #c9cad1; }
+.qps-result .qps-head { margin: 0 0 2px; }

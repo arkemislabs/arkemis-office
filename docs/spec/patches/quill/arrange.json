@@ -1,0 +1,601 @@
+{
+ "controls": {
+  "layout.arrange.position": {
+   "kind": "dropdown",
+   "note": "U:quill/objects/arrange: Word's Position gallery: In Line with Text, then the nine With Text Wrapping places (arrange.position presets of objects/specs.rs, square wrapping on the margins). More Layout Options… opens the Layout dialog on its Position tab.",
+   "items": [
+    {
+     "id": "layout.arrange.position.in-line-with-text",
+     "label": "In Line with Text",
+     "kind": "toggle",
+     "command": "arrange.wrap",
+     "args": {
+      "wrap": "inline"
+     },
+     "icon": "inline",
+     "source": "upstream"
+    },
+    {
+     "header": "With Text Wrapping"
+    },
+    {
+     "id": "layout.arrange.position.top-left",
+     "label": "Position in Top Left",
+     "command": "arrange.position",
+     "args": {
+      "preset": "topLeft"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "layout.arrange.position.top-center",
+     "label": "Position in Top Center",
+     "command": "arrange.position",
+     "args": {
+      "preset": "topCenter"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "layout.arrange.position.top-right",
+     "label": "Position in Top Right",
+     "command": "arrange.position",
+     "args": {
+      "preset": "topRight"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "layout.arrange.position.middle-left",
+     "label": "Position in Middle Left",
+     "command": "arrange.position",
+     "args": {
+      "preset": "middleLeft"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "layout.arrange.position.middle-center",
+     "label": "Position in Middle Center",
+     "command": "arrange.position",
+     "args": {
+      "preset": "middleCenter"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "layout.arrange.position.middle-right",
+     "label": "Position in Middle Right",
+     "command": "arrange.position",
+     "args": {
+      "preset": "middleRight"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "layout.arrange.position.bottom-left",
+     "label": "Position in Bottom Left",
+     "command": "arrange.position",
+     "args": {
+      "preset": "bottomLeft"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "layout.arrange.position.bottom-center",
+     "label": "Position in Bottom Center",
+     "command": "arrange.position",
+     "args": {
+      "preset": "bottomCenter"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "layout.arrange.position.bottom-right",
+     "label": "Position in Bottom Right",
+     "command": "arrange.position",
+     "args": {
+      "preset": "bottomRight"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "layout.arrange.position.more-layout-options",
+     "label": "More Layout Options…",
+     "dialog": "dialog.pictureSize",
+     "args": {
+      "tab": "Position"
+     },
+     "source": "upstream"
+    }
+   ]
+  },
+  "layout.arrange.wrap-text.tight": {
+   "kind": "toggle",
+   "note": "U:quill/objects/arrange: Tight and Through wrap text round the shape's outline (a banded contour from its geometry or wrap polygon; wordcraft's contour.rs is not translated, so not checked against upstream). A picture and a rectangle wrap round their frame."
+  },
+  "layout.arrange.wrap-text.through": {
+   "kind": "toggle",
+   "note": "U:quill/objects/arrange: Tight and Through wrap text round the shape's outline (a banded contour from its geometry or wrap polygon; wordcraft's contour.rs is not translated, so not checked against upstream). A picture and a rectangle wrap round their frame."
+  },
+  "layout.arrange.wrap-text.in-line-with-text": {
+   "kind": "toggle"
+  },
+  "layout.arrange.wrap-text.square": {
+   "kind": "toggle"
+  },
+  "layout.arrange.wrap-text.top-and-bottom": {
+   "kind": "toggle"
+  },
+  "layout.arrange.wrap-text.behind-text": {
+   "kind": "toggle"
+  },
+  "layout.arrange.wrap-text.in-front-of-text": {
+   "kind": "toggle"
+  },
+  "layout.arrange.wrap-text.wrap-text-sides.both-sides": {
+   "kind": "toggle"
+  },
+  "layout.arrange.wrap-text.wrap-text-sides.left-only": {
+   "kind": "toggle"
+  },
+  "layout.arrange.wrap-text.wrap-text-sides.right-only": {
+   "kind": "toggle"
+  },
+  "layout.arrange.wrap-text.wrap-text-sides.largest-only": {
+   "kind": "toggle"
+  },
+  "picture-format.arrange.position": {
+   "kind": "dropdown",
+   "note": "U:quill/objects/arrange: Word's Position gallery: In Line with Text, then the nine With Text Wrapping places (arrange.position presets of objects/specs.rs, square wrapping on the margins). More Layout Options… opens the Layout dialog on its Position tab.",
+   "items": [
+    {
+     "id": "picture-format.arrange.position.in-line-with-text",
+     "label": "In Line with Text",
+     "kind": "toggle",
+     "command": "arrange.wrap",
+     "args": {
+      "wrap": "inline"
+     },
+     "icon": "inline",
+     "source": "upstream"
+    },
+    {
+     "header": "With Text Wrapping"
+    },
+    {
+     "id": "picture-format.arrange.position.top-left",
+     "label": "Position in Top Left",
+     "command": "arrange.position",
+     "args": {
+      "preset": "topLeft"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "picture-format.arrange.position.top-center",
+     "label": "Position in Top Center",
+     "command": "arrange.position",
+     "args": {
+      "preset": "topCenter"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "picture-format.arrange.position.top-right",
+     "label": "Position in Top Right",
+     "command": "arrange.position",
+     "args": {
+      "preset": "topRight"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "picture-format.arrange.position.middle-left",
+     "label": "Position in Middle Left",
+     "command": "arrange.position",
+     "args": {
+      "preset": "middleLeft"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "picture-format.arrange.position.middle-center",
+     "label": "Position in Middle Center",
+     "command": "arrange.position",
+     "args": {
+      "preset": "middleCenter"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "picture-format.arrange.position.middle-right",
+     "label": "Position in Middle Right",
+     "command": "arrange.position",
+     "args": {
+      "preset": "middleRight"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "picture-format.arrange.position.bottom-left",
+     "label": "Position in Bottom Left",
+     "command": "arrange.position",
+     "args": {
+      "preset": "bottomLeft"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "picture-format.arrange.position.bottom-center",
+     "label": "Position in Bottom Center",
+     "command": "arrange.position",
+     "args": {
+      "preset": "bottomCenter"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "picture-format.arrange.position.bottom-right",
+     "label": "Position in Bottom Right",
+     "command": "arrange.position",
+     "args": {
+      "preset": "bottomRight"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "picture-format.arrange.position.more-layout-options",
+     "label": "More Layout Options…",
+     "dialog": "dialog.pictureSize",
+     "args": {
+      "tab": "Position"
+     },
+     "source": "upstream"
+    }
+   ]
+  },
+  "picture-format.arrange.wrap-text.tight": {
+   "kind": "toggle",
+   "note": "U:quill/objects/arrange: Tight and Through wrap text round the shape's outline (a banded contour from its geometry or wrap polygon; wordcraft's contour.rs is not translated, so not checked against upstream). A picture and a rectangle wrap round their frame."
+  },
+  "picture-format.arrange.wrap-text.through": {
+   "kind": "toggle",
+   "note": "U:quill/objects/arrange: Tight and Through wrap text round the shape's outline (a banded contour from its geometry or wrap polygon; wordcraft's contour.rs is not translated, so not checked against upstream). A picture and a rectangle wrap round their frame."
+  },
+  "picture-format.arrange.wrap-text.in-line-with-text": {
+   "kind": "toggle"
+  },
+  "picture-format.arrange.wrap-text.square": {
+   "kind": "toggle"
+  },
+  "picture-format.arrange.wrap-text.top-and-bottom": {
+   "kind": "toggle"
+  },
+  "picture-format.arrange.wrap-text.behind-text": {
+   "kind": "toggle"
+  },
+  "picture-format.arrange.wrap-text.in-front-of-text": {
+   "kind": "toggle"
+  },
+  "picture-format.arrange.wrap-text.wrap-text-sides.both-sides": {
+   "kind": "toggle"
+  },
+  "picture-format.arrange.wrap-text.wrap-text-sides.left-only": {
+   "kind": "toggle"
+  },
+  "picture-format.arrange.wrap-text.wrap-text-sides.right-only": {
+   "kind": "toggle"
+  },
+  "picture-format.arrange.wrap-text.wrap-text-sides.largest-only": {
+   "kind": "toggle"
+  },
+  "shape-format.arrange.position": {
+   "kind": "dropdown",
+   "note": "U:quill/objects/arrange: Word's Position gallery: In Line with Text, then the nine With Text Wrapping places (arrange.position presets of objects/specs.rs, square wrapping on the margins). More Layout Options… opens the Layout dialog on its Position tab.",
+   "items": [
+    {
+     "id": "shape-format.arrange.position.in-line-with-text",
+     "label": "In Line with Text",
+     "kind": "toggle",
+     "command": "arrange.wrap",
+     "args": {
+      "wrap": "inline"
+     },
+     "icon": "inline",
+     "source": "upstream"
+    },
+    {
+     "header": "With Text Wrapping"
+    },
+    {
+     "id": "shape-format.arrange.position.top-left",
+     "label": "Position in Top Left",
+     "command": "arrange.position",
+     "args": {
+      "preset": "topLeft"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "shape-format.arrange.position.top-center",
+     "label": "Position in Top Center",
+     "command": "arrange.position",
+     "args": {
+      "preset": "topCenter"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "shape-format.arrange.position.top-right",
+     "label": "Position in Top Right",
+     "command": "arrange.position",
+     "args": {
+      "preset": "topRight"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "shape-format.arrange.position.middle-left",
+     "label": "Position in Middle Left",
+     "command": "arrange.position",
+     "args": {
+      "preset": "middleLeft"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "shape-format.arrange.position.middle-center",
+     "label": "Position in Middle Center",
+     "command": "arrange.position",
+     "args": {
+      "preset": "middleCenter"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "shape-format.arrange.position.middle-right",
+     "label": "Position in Middle Right",
+     "command": "arrange.position",
+     "args": {
+      "preset": "middleRight"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "shape-format.arrange.position.bottom-left",
+     "label": "Position in Bottom Left",
+     "command": "arrange.position",
+     "args": {
+      "preset": "bottomLeft"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "shape-format.arrange.position.bottom-center",
+     "label": "Position in Bottom Center",
+     "command": "arrange.position",
+     "args": {
+      "preset": "bottomCenter"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "shape-format.arrange.position.bottom-right",
+     "label": "Position in Bottom Right",
+     "command": "arrange.position",
+     "args": {
+      "preset": "bottomRight"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "shape-format.arrange.position.more-layout-options",
+     "label": "More Layout Options…",
+     "dialog": "dialog.pictureSize",
+     "args": {
+      "tab": "Position"
+     },
+     "source": "upstream"
+    }
+   ]
+  },
+  "shape-format.arrange.wrap-text.tight": {
+   "kind": "toggle",
+   "note": "U:quill/objects/arrange: Tight and Through wrap text round the shape's outline (a banded contour from its geometry or wrap polygon; wordcraft's contour.rs is not translated, so not checked against upstream). A picture and a rectangle wrap round their frame."
+  },
+  "shape-format.arrange.wrap-text.through": {
+   "kind": "toggle",
+   "note": "U:quill/objects/arrange: Tight and Through wrap text round the shape's outline (a banded contour from its geometry or wrap polygon; wordcraft's contour.rs is not translated, so not checked against upstream). A picture and a rectangle wrap round their frame."
+  },
+  "shape-format.arrange.wrap-text.in-line-with-text": {
+   "kind": "toggle"
+  },
+  "shape-format.arrange.wrap-text.square": {
+   "kind": "toggle"
+  },
+  "shape-format.arrange.wrap-text.top-and-bottom": {
+   "kind": "toggle"
+  },
+  "shape-format.arrange.wrap-text.behind-text": {
+   "kind": "toggle"
+  },
+  "shape-format.arrange.wrap-text.in-front-of-text": {
+   "kind": "toggle"
+  },
+  "shape-format.arrange.wrap-text.wrap-text-sides.both-sides": {
+   "kind": "toggle"
+  },
+  "shape-format.arrange.wrap-text.wrap-text-sides.left-only": {
+   "kind": "toggle"
+  },
+  "shape-format.arrange.wrap-text.wrap-text-sides.right-only": {
+   "kind": "toggle"
+  },
+  "shape-format.arrange.wrap-text.wrap-text-sides.largest-only": {
+   "kind": "toggle"
+  },
+  "layout.arrange.align.distribute-horizontally": {
+   "command": "arrange.distribute",
+   "args": {
+    "axis": "horizontal"
+   },
+   "note": "U:quill/objects/arrange: three or more selected floating objects spaced evenly (not in wordcraft; follows Word)."
+  },
+  "layout.arrange.align.distribute-vertically": {
+   "command": "arrange.distribute",
+   "args": {
+    "axis": "vertical"
+   }
+  },
+  "layout.arrange.align.align-to-page": {
+   "kind": "toggle",
+   "command": "arrange.alignTo",
+   "args": {
+    "to": "page"
+   },
+   "note": "U:quill/objects/arrange: what Align aligns to: the page, the margins or the selected objects (Align Selected Objects needs two or more picked with Shift+click); not in wordcraft, follows Word."
+  },
+  "layout.arrange.align.align-to-margin": {
+   "kind": "toggle",
+   "command": "arrange.alignTo",
+   "args": {
+    "to": "margin"
+   }
+  },
+  "layout.arrange.align.align-selected-objects": {
+   "kind": "toggle",
+   "command": "arrange.alignTo",
+   "args": {
+    "to": "objects"
+   }
+  },
+  "layout.arrange.align.use-alignment-guides": {
+   "command": null,
+   "note": "U:quill/objects/arrange: alignment guides while dragging: the page view has no object dragging yet and wordcraft has none; hidden."
+  },
+  "layout.arrange.group.regroup": {
+   "command": "arrange.group",
+   "note": "U:quill/objects/arrange: Ungroup leaves the members selected, so Group (and Regroup) puts them back together."
+  },
+  "layout.arrange.rotate.more-rotation-options": {
+   "dialog": "dialog.pictureSize",
+   "note": "U:quill/objects/arrange: the Size box, with the exact Rotation."
+  },
+  "picture-format.arrange.align.distribute-horizontally": {
+   "command": "arrange.distribute",
+   "args": {
+    "axis": "horizontal"
+   },
+   "note": "U:quill/objects/arrange: three or more selected floating objects spaced evenly (not in wordcraft; follows Word)."
+  },
+  "picture-format.arrange.align.distribute-vertically": {
+   "command": "arrange.distribute",
+   "args": {
+    "axis": "vertical"
+   }
+  },
+  "picture-format.arrange.align.align-to-page": {
+   "kind": "toggle",
+   "command": "arrange.alignTo",
+   "args": {
+    "to": "page"
+   },
+   "note": "U:quill/objects/arrange: what Align aligns to: the page, the margins or the selected objects (Align Selected Objects needs two or more picked with Shift+click); not in wordcraft, follows Word."
+  },
+  "picture-format.arrange.align.align-to-margin": {
+   "kind": "toggle",
+   "command": "arrange.alignTo",
+   "args": {
+    "to": "margin"
+   }
+  },
+  "picture-format.arrange.align.align-selected-objects": {
+   "kind": "toggle",
+   "command": "arrange.alignTo",
+   "args": {
+    "to": "objects"
+   }
+  },
+  "picture-format.arrange.align.use-alignment-guides": {
+   "command": null,
+   "note": "U:quill/objects/arrange: alignment guides while dragging: the page view has no object dragging yet and wordcraft has none; hidden."
+  },
+  "picture-format.arrange.group.regroup": {
+   "command": "arrange.group",
+   "note": "U:quill/objects/arrange: Ungroup leaves the members selected, so Group (and Regroup) puts them back together."
+  },
+  "picture-format.arrange.rotate.more-rotation-options": {
+   "dialog": "dialog.pictureSize",
+   "note": "U:quill/objects/arrange: the Size box, with the exact Rotation."
+  },
+  "shape-format.arrange.align.distribute-horizontally": {
+   "command": "arrange.distribute",
+   "args": {
+    "axis": "horizontal"
+   },
+   "note": "U:quill/objects/arrange: three or more selected floating objects spaced evenly (not in wordcraft; follows Word)."
+  },
+  "shape-format.arrange.align.distribute-vertically": {
+   "command": "arrange.distribute",
+   "args": {
+    "axis": "vertical"
+   }
+  },
+  "shape-format.arrange.align.align-to-page": {
+   "kind": "toggle",
+   "command": "arrange.alignTo",
+   "args": {
+    "to": "page"
+   },
+   "note": "U:quill/objects/arrange: what Align aligns to: the page, the margins or the selected objects (Align Selected Objects needs two or more picked with Shift+click); not in wordcraft, follows Word."
+  },
+  "shape-format.arrange.align.align-to-margin": {
+   "kind": "toggle",
+   "command": "arrange.alignTo",
+   "args": {
+    "to": "margin"
+   }
+  },
+  "shape-format.arrange.align.align-selected-objects": {
+   "kind": "toggle",
+   "command": "arrange.alignTo",
+   "args": {
+    "to": "objects"
+   }
+  },
+  "shape-format.arrange.align.use-alignment-guides": {
+   "command": null,
+   "note": "U:quill/objects/arrange: alignment guides while dragging: the page view has no object dragging yet and wordcraft has none; hidden."
+  },
+  "shape-format.arrange.group.regroup": {
+   "command": "arrange.group",
+   "note": "U:quill/objects/arrange: Ungroup leaves the members selected, so Group (and Regroup) puts them back together."
+  },
+  "shape-format.arrange.rotate.more-rotation-options": {
+   "dialog": "dialog.pictureSize",
+   "note": "U:quill/objects/arrange: the Size box, with the exact Rotation."
+  },
+  "layout.arrange.wrap-text.more-layout-options": {
+   "dialog": "dialog.pictureSize",
+   "args": {
+    "tab": "Text Wrapping"
+   },
+   "note": "U:quill/objects/arrange: Word's Layout dialog on its Text Wrapping tab (Position and Size are its other tabs)."
+  },
+  "picture-format.arrange.wrap-text.more-layout-options": {
+   "dialog": "dialog.pictureSize",
+   "args": {
+    "tab": "Text Wrapping"
+   },
+   "note": "U:quill/objects/arrange: Word's Layout dialog on its Text Wrapping tab (Position and Size are its other tabs)."
+  },
+  "shape-format.arrange.wrap-text.more-layout-options": {
+   "dialog": "dialog.pictureSize",
+   "args": {
+    "tab": "Text Wrapping"
+   },
+   "note": "U:quill/objects/arrange: Word's Layout dialog on its Text Wrapping tab (Position and Size are its other tabs)."
+  }
+ }
+}

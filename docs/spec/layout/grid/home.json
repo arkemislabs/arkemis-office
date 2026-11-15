@@ -1,0 +1,217 @@
+{
+  "tab": "home",
+  "keytip": "H",
+  "source": "gridcraft 146161b4b450a56e5e59a083ba0478582d1e602b crates/ui-egui/src/ribbon/home.rs (home: Paste large + Cut/Copy/Format Painter icon column; Font rows with 150 px name and 52 px size; Alignment and Number rows, 150 px number format; Styles three large menus; Cells labelled stack; Editing AutoSum/Fill/Clear icon column + Sort & Filter and Find & Select large); keytips from crates/ui-egui/src/keytips/keytips.json (keytip_table); Add-ins and Analysis placed as in Excel for Windows",
+  "groups": {
+    "clipboard": {
+      "keytip": "FO",
+      "collapseOrder": 7,
+      "layout": [
+        {
+          "large": "home.clipboard.paste"
+        },
+        {
+          "rows": [
+            [
+              "home.clipboard.cut"
+            ],
+            [
+              "home.clipboard.copy"
+            ],
+            [
+              "home.clipboard.formatPainter"
+            ]
+          ]
+        }
+      ]
+    },
+    "font": {
+      "keytip": "FN",
+      "collapseOrder": 9,
+      "layout": [
+        {
+          "rows": [
+            [
+              "home.font.name",
+              "home.font.size",
+              "home.font.grow",
+              "home.font.shrink"
+            ],
+            [
+              "home.font.bold",
+              "home.font.italic",
+              "home.font.underline",
+              "home.font.strikethrough",
+              "home.font.borders",
+              "home.font.fillColor",
+              "home.font.fontColor"
+            ]
+          ]
+        }
+      ],
+      "widths": {
+        "home.font.name": 150,
+        "home.font.size": 52
+      }
+    },
+    "alignment": {
+      "keytip": "FA",
+      "collapseOrder": 8,
+      "layout": [
+        {
+          "rows": [
+            [
+              "home.alignment.top",
+              "home.alignment.middle",
+              "home.alignment.bottom",
+              "home.alignment.orientation",
+              "home.alignment.wrapText"
+            ],
+            [
+              "home.alignment.left",
+              "home.alignment.center",
+              "home.alignment.right",
+              "home.alignment.decreaseIndent",
+              "home.alignment.increaseIndent",
+              "home.alignment.mergeCenter"
+            ]
+          ]
+        }
+      ]
+    },
+    "number": {
+      "keytip": "FM",
+      "collapseOrder": 6,
+      "layout": [
+        {
+          "rows": [
+            [
+              "home.number.format"
+            ],
+            [
+              "home.number.accounting",
+              "home.number.percent",
+              "home.number.comma",
+              "home.number.increaseDecimal",
+              "home.number.decreaseDecimal"
+            ]
+          ]
+        }
+      ],
+      "widths": {
+        "home.number.format": 150
+      }
+    },
+    "styles": {
+      "collapseOrder": 3,
+      "layout": [
+        {
+          "large": "home.styles.conditionalFormatting"
+        },
+        {
+          "large": "home.styles.formatAsTable"
+        },
+        {
+          "large": "home.styles.cellStyles"
+        }
+      ]
+    },
+    "cells": {
+      "collapseOrder": 4,
+      "layout": [
+        {
+          "stack": [
+            "home.cells.insert",
+            "home.cells.delete",
+            "home.cells.format"
+          ]
+        }
+      ]
+    },
+    "editing": {
+      "collapseOrder": 5,
+      "layout": [
+        {
+          "rows": [
+            [
+              "home.editing.autoSum"
+            ],
+            [
+              "home.editing.fill"
+            ],
+            [
+              "home.editing.clear"
+            ]
+          ]
+        },
+        {
+          "large": "home.editing.sortFilter"
+        },
+        {
+          "large": "home.editing.findSelect"
+        }
+      ]
+    },
+    "add-ins": {
+      "collapseOrder": 2,
+      "layout": [
+        {
+          "large": "home.addins.addIns"
+        }
+      ]
+    },
+    "analysis": {
+      "collapseOrder": 1,
+      "layout": [
+        {
+          "large": "home.analysis.analyzeData"
+        }
+      ]
+    }
+  },
+  "keytips": {
+    "home.clipboard.paste": "V",
+    "home.clipboard.cut": "X",
+    "home.clipboard.copy": "C",
+    "home.clipboard.formatPainter": "FP",
+    "home.font.name": "FF",
+    "home.font.size": "FS",
+    "home.font.grow": "FG",
+    "home.font.shrink": "FK",
+    "home.font.bold": "1",
+    "home.font.italic": "2",
+    "home.font.underline": "3",
+    "home.font.borders": "B",
+    "home.font.fillColor": "H",
+    "home.font.fontColor": "FC",
+    "home.alignment.top": "AT",
+    "home.alignment.middle": "AM",
+    "home.alignment.bottom": "AB",
+    "home.alignment.orientation": "FQ",
+    "home.alignment.wrapText": "W",
+    "home.alignment.left": "AL",
+    "home.alignment.center": "AC",
+    "home.alignment.right": "AR",
+    "home.alignment.decreaseIndent": "5",
+    "home.alignment.increaseIndent": "6",
+    "home.alignment.mergeCenter": "M",
+    "home.number.format": "N",
+    "home.number.accounting": "AN",
+    "home.number.percent": "P",
+    "home.number.comma": "K",
+    "home.number.increaseDecimal": "0",
+    "home.number.decreaseDecimal": "9",
+    "home.styles.conditionalFormatting": "L",
+    "home.styles.formatAsTable": "T",
+    "home.styles.cellStyles": "J",
+    "home.cells.insert": "I",
+    "home.cells.delete": "D",
+    "home.cells.format": "O",
+    "home.editing.autoSum": "U",
+    "home.editing.fill": "FI",
+    "home.editing.clear": "E",
+    "home.editing.sortFilter": "S",
+    "home.editing.findSelect": "FD",
+    "home.addins.addIns": "AS"
+  }
+}

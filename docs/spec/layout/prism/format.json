@@ -1,0 +1,41 @@
+{
+  "tab": "format",
+  "keytip": "JO",
+  "source": "office: PowerPoint Chart Tools > Format (deckcraft chart.rs has no Format tab)",
+  "groups": {
+    "current-selection": {
+      "collapseOrder": 2,
+      "layout": [
+        {
+          "stack": [
+            "chartformat.selection.elements",
+            "chartformat.selection.format",
+            "chartformat.selection.reset"
+          ]
+        }
+      ],
+      "widths": {
+        "chartformat.selection.elements": 140
+      }
+    },
+    "shape-styles": {
+      "collapseOrder": 1,
+      "layout": [
+        {
+          "stack": [
+            "chartformat.styles.fill",
+            "chartformat.styles.outline",
+            "chartformat.styles.effects"
+          ]
+        }
+      ]
+    }
+  },
+  "keytips": {
+    "chartformat.selection.format": "M",
+    "chartformat.selection.reset": "A",
+    "chartformat.styles.fill": "SF",
+    "chartformat.styles.outline": "SO",
+    "chartformat.styles.effects": "SE"
+  }
+}

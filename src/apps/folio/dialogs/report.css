@@ -1,0 +1,26 @@
+/* The report dialogs (dialogs/_report.tsx): Arkemis glass tokens, a list of rows with a status icon and the scope of the check underneath. */
+.rp { display: flex; flex-direction: column; gap: 10px; min-width: 0; width: 100%; box-sizing: border-box; font-size: 12px; color: var(--sh-text-1); }
+.rp-line { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.rp-line label { color: var(--sh-text-2); }
+.rp-line select { height: 28px; border: 1px solid var(--sh-field-border); border-radius: 7px; background: var(--sh-field); color: var(--sh-text-1); font: inherit; padding: 0 8px; min-width: 200px; }
+.rp-muted { color: var(--sh-text-3); }
+.rp-spacer { flex: 1; }
+.rp-box { display: flex; flex-direction: column; gap: 2px; min-height: 120px; max-height: 300px; overflow: auto; padding: 8px; border-radius: 9px; background: var(--sh-hover); }
+.rp-row { display: flex; gap: 8px; align-items: flex-start; padding: 3px 0; }
+.rp-row svg { flex: none; margin-top: 1px; }
+.rp-row.is-passed svg { color: #2d9d4f; }
+.rp-row.is-failed svg { color: #d7373f; }
+.rp-row.is-not-checked svg, .rp-row.is-manual svg { color: #d98e04; }
+.rp-text { display: flex; flex-direction: column; min-width: 0; line-height: 1.35; }
+.rp-text small { color: var(--sh-text-3); font-size: 10.5px; }
+.rp-verdict { padding: 7px 9px; border-radius: 8px; background: rgba(217, 142, 4, .12); color: var(--sh-text-2); line-height: 1.4; }
+.rp-verdict.is-bad { background: rgba(215, 55, 63, .12); }
+.rp-scope { color: var(--sh-text-3); line-height: 1.4; }
+.rp-scope summary { cursor: default; color: var(--sh-text-2); }
+.rp-scope ul { margin: 2px 0 6px 16px; padding: 0; }
+.rp-scope b { color: var(--sh-text-2); }
+.rp-actions { display: flex; gap: 6px; }
+.rp-table { width: 100%; border-collapse: collapse; }
+.rp-table th, .rp-table td { text-align: left; padding: 3px 6px; border-bottom: 1px solid var(--sh-field-border); }
+.rp-table th { color: var(--sh-text-3); font-weight: 500; }
+.rp-table td.num { text-align: right; font-variant-numeric: tabular-nums; }

@@ -1,0 +1,690 @@
+{
+  "tab": "all-tools",
+  "source": "printcraft crates/engine/src/catalog.rs (TOOL_GROUPS sections), crates/ui-egui/src/panels/all_tools_ui.rs, chrome.rs @ 3109bb2359759e24ef490e1cdbdba00722b20972",
+  "note": "Acrobat has no ribbon: each tool of the All tools panel is one group, its entries icon-and-label rows as the tool panel lists them (catalog sections apart).",
+  "groups": {
+    "all-tools-panel": {
+      "collapseOrder": 27,
+      "collapsedIcon": "maximize-2",
+      "layout": [
+        {
+          "stack": [
+            "alltools.panel.search"
+          ]
+        },
+        {
+          "stack": [
+            "alltools.panel.view-more",
+            "alltools.panel.expand",
+            "alltools.panel.collapse"
+          ]
+        },
+        {
+          "stack": [
+            "alltools.panel.close"
+          ]
+        }
+      ],
+      "widths": {
+        "alltools.panel.search": 220
+      }
+    },
+    "export": {
+      "collapseOrder": 26,
+      "collapsedIcon": "file-text",
+      "layout": [
+        {
+          "stack": [
+            "alltools.export.microsoft-word-docx",
+            "alltools.export.spreadsheet-xlsx",
+            "alltools.export.presentation-pptx"
+          ]
+        },
+        {
+          "stack": [
+            "alltools.export.image-png",
+            "alltools.export.export-all-images",
+            "alltools.export.html-web-page"
+          ]
+        },
+        {
+          "stack": [
+            "alltools.export.rich-text-format-rtf",
+            "alltools.export.text-plain",
+            "alltools.export.postscript-eps"
+          ]
+        },
+        {
+          "stack": [
+            "alltools.export.xml",
+            "alltools.export.eps",
+            "alltools.export.jpeg2000"
+          ]
+        }
+      ]
+    },
+    "fill_sign": {
+      "collapseOrder": 25,
+      "collapsedIcon": "type",
+      "layout": [
+        {
+          "stack": [
+            "alltools.fill_sign.add-text",
+            "alltools.fill_sign.checkmark",
+            "alltools.fill_sign.cross"
+          ]
+        },
+        {
+          "stack": [
+            "alltools.fill_sign.dot",
+            "alltools.fill_sign.line",
+            "alltools.fill_sign.date"
+          ]
+        },
+        {
+          "separator": true
+        },
+        {
+          "stack": [
+            "alltools.fill_sign.signature",
+            "alltools.fill_sign.initials",
+            "alltools.fill_sign.change-signature"
+          ]
+        },
+        {
+          "stack": [
+            "alltools.fill_sign.change-initials",
+            "alltools.fill_sign.add-signature",
+            "alltools.fill_sign.add-initials"
+          ]
+        }
+      ]
+    },
+    "edit": {
+      "collapseOrder": 24,
+      "collapsedIcon": "text-cursor-input",
+      "layout": [
+        {
+          "stack": [
+            "alltools.edit.edit-text-images",
+            "alltools.edit.rotate-pages",
+            "alltools.edit.insert-pages"
+          ]
+        },
+        {
+          "stack": [
+            "alltools.edit.delete-pages",
+            "alltools.edit.extract-pages",
+            "alltools.edit.organize-pages"
+          ]
+        },
+        {
+          "separator": true
+        },
+        {
+          "stack": [
+            "alltools.edit.text",
+            "alltools.edit.image",
+            "alltools.edit.header-and-footer"
+          ]
+        },
+        {
+          "stack": [
+            "alltools.edit.watermark",
+            "alltools.edit.link",
+            "alltools.edit.bates-numbering"
+          ]
+        },
+        {
+          "stack": [
+            "alltools.edit.background",
+            "alltools.edit.attach-file"
+          ]
+        },
+        {
+          "separator": true
+        },
+        {
+          "stack": [
+            "alltools.edit.crop",
+            "alltools.edit.arrange",
+            "alltools.edit.align"
+          ]
+        },
+        {
+          "stack": [
+            "alltools.edit.flip-rotate",
+            "alltools.edit.edit-using"
+          ]
+        }
+      ]
+    },
+    "create": {
+      "collapseOrder": 23,
+      "collapsedIcon": "file-input",
+      "layout": [
+        {
+          "stack": [
+            "alltools.create.single-file",
+            "alltools.create.multiple-files",
+            "alltools.create.separate-pdfs"
+          ]
+        },
+        {
+          "stack": [
+            "alltools.create.images",
+            "alltools.create.clipboard",
+            "alltools.create.blank-page"
+          ]
+        },
+        {
+          "stack": [
+            "alltools.create.scanner",
+            "alltools.create.web-page"
+          ]
+        }
+      ]
+    },
+    "combine": {
+      "collapseOrder": 22,
+      "collapsedIcon": "files",
+      "layout": [
+        {
+          "large": "alltools.combine.add-files-to-combine"
+        }
+      ]
+    },
+    "organize": {
+      "collapseOrder": 21,
+      "collapsedIcon": "layout-grid",
+      "layout": [
+        {
+          "stack": [
+            "alltools.organize.page-grid",
+            "alltools.organize.rotate",
+            "alltools.organize.delete"
+          ]
+        },
+        {
+          "stack": [
+            "alltools.organize.extract",
+            "alltools.organize.insert",
+            "alltools.organize.replace"
+          ]
+        },
+        {
+          "stack": [
+            "alltools.organize.split"
+          ]
+        },
+        {
+          "separator": true
+        },
+        {
+          "stack": [
+            "alltools.organize.set-page-boxes",
+            "alltools.organize.crop-pages",
+            "alltools.organize.duplicate-pages"
+          ]
+        },
+        {
+          "stack": [
+            "alltools.organize.reverse-pages",
+            "alltools.organize.page-labels",
+            "alltools.organize.page-transitions"
+          ]
+        },
+        {
+          "stack": [
+            "alltools.organize.insert-clipboard",
+            "alltools.organize.insert-scanner",
+            "alltools.organize.page-templates"
+          ]
+        }
+      ]
+    },
+    "comment": {
+      "collapseOrder": 20,
+      "collapsedIcon": "sticky-note",
+      "layout": [
+        {
+          "stack": [
+            "alltools.comment.sticky-note",
+            "alltools.comment.highlight-text",
+            "alltools.comment.underline"
+          ]
+        },
+        {
+          "stack": [
+            "alltools.comment.strikethrough",
+            "alltools.comment.squiggly-underline",
+            "alltools.comment.text-box"
+          ]
+        },
+        {
+          "separator": true
+        },
+        {
+          "stack": [
+            "alltools.comment.draw-freehand",
+            "alltools.comment.rectangle",
+            "alltools.comment.oval"
+          ]
+        },
+        {
+          "stack": [
+            "alltools.comment.line",
+            "alltools.comment.arrow",
+            "alltools.comment.cloud"
+          ]
+        },
+        {
+          "stack": [
+            "alltools.comment.stamp"
+          ]
+        },
+        {
+          "separator": true
+        },
+        {
+          "stack": [
+            "alltools.comment.comment-list",
+            "alltools.comment.flatten-comments",
+            "alltools.comment.record-audio"
+          ]
+        },
+        {
+          "stack": [
+            "alltools.comment.text-correction",
+            "alltools.comment.spell-check",
+            "alltools.comment.print-summary"
+          ]
+        }
+      ]
+    },
+    "scan": {
+      "collapseOrder": 19,
+      "collapsedIcon": "scan-text",
+      "layout": [
+        {
+          "stack": [
+            "alltools.scan.in-this-file",
+            "alltools.scan.in-multiple-files",
+            "alltools.scan.enhance-scanned-file"
+          ]
+        },
+        {
+          "stack": [
+            "alltools.scan.enhance-camera-image",
+            "alltools.scan.correct-recognized-text",
+            "alltools.scan.scan-to-pdf"
+          ]
+        }
+      ]
+    },
+    "protect": {
+      "collapseOrder": 18,
+      "collapsedIcon": "lock",
+      "layout": [
+        {
+          "stack": [
+            "alltools.protect.protect-with-password",
+            "alltools.protect.remove-hidden-information"
+          ]
+        },
+        {
+          "separator": true
+        },
+        {
+          "stack": [
+            "alltools.protect.encrypt-with-certificate",
+            "alltools.protect.security-properties",
+            "alltools.protect.remove-security"
+          ]
+        },
+        {
+          "stack": [
+            "alltools.protect.restrict-editing"
+          ]
+        }
+      ]
+    },
+    "redact": {
+      "collapseOrder": 17,
+      "collapsedIcon": "rectangle-horizontal",
+      "layout": [
+        {
+          "stack": [
+            "alltools.redact.redact-text-and-images",
+            "alltools.redact.redact-pages",
+            "alltools.redact.find-text-and-redact"
+          ]
+        },
+        {
+          "stack": [
+            "alltools.redact.set-properties",
+            "alltools.redact.sanitize-document"
+          ]
+        },
+        {
+          "separator": true
+        },
+        {
+          "stack": [
+            "alltools.redact.clear-all",
+            "alltools.redact.redact-all"
+          ]
+        }
+      ]
+    },
+    "compress": {
+      "collapseOrder": 16,
+      "collapsedIcon": "file-down",
+      "layout": [
+        {
+          "stack": [
+            "alltools.compress.reduce-file-size",
+            "alltools.compress.advanced-optimization",
+            "alltools.compress.audit-space-usage"
+          ]
+        }
+      ]
+    },
+    "form": {
+      "collapseOrder": 15,
+      "collapsedIcon": "text-cursor-input",
+      "layout": [
+        {
+          "stack": [
+            "alltools.form.preview"
+          ]
+        },
+        {
+          "separator": true
+        },
+        {
+          "stack": [
+            "alltools.form.field-list",
+            "alltools.form.detect-form-fields",
+            "alltools.form.clear-form"
+          ]
+        },
+        {
+          "stack": [
+            "alltools.form.field-properties",
+            "alltools.form.tab-order-by-rows",
+            "alltools.form.tab-order-by-columns"
+          ]
+        },
+        {
+          "stack": [
+            "alltools.form.calculation-order",
+            "alltools.form.flatten-form-fields",
+            "alltools.form.import-data"
+          ]
+        },
+        {
+          "stack": [
+            "alltools.form.export-data"
+          ]
+        },
+        {
+          "separator": true
+        },
+        {
+          "stack": [
+            "alltools.form.text-field",
+            "alltools.form.text-field-table",
+            "alltools.form.checkbox"
+          ]
+        },
+        {
+          "stack": [
+            "alltools.form.radio-button",
+            "alltools.form.drop-down-list",
+            "alltools.form.list-box"
+          ]
+        },
+        {
+          "stack": [
+            "alltools.form.button",
+            "alltools.form.image-field",
+            "alltools.form.date-field"
+          ]
+        },
+        {
+          "stack": [
+            "alltools.form.digital-signature",
+            "alltools.form.barcode"
+          ]
+        },
+        {
+          "separator": true
+        },
+        {
+          "stack": [
+            "alltools.form.distribute",
+            "alltools.form.track",
+            "alltools.form.highlight-fields"
+          ]
+        }
+      ]
+    },
+    "stamp": {
+      "collapseOrder": 14,
+      "collapsedIcon": "stamp",
+      "layout": [
+        {
+          "large": "alltools.stamp.stamp-palette"
+        }
+      ]
+    },
+    "certificate": {
+      "collapseOrder": 13,
+      "collapsedIcon": "signature",
+      "layout": [
+        {
+          "stack": [
+            "alltools.certificate.digitally-sign",
+            "alltools.certificate.timestamp",
+            "alltools.certificate.validate-all-signatures"
+          ]
+        },
+        {
+          "stack": [
+            "alltools.certificate.certify-visible-signature",
+            "alltools.certificate.certify-invisible-signature",
+            "alltools.certificate.request-esign"
+          ]
+        }
+      ]
+    },
+    "print_production": {
+      "collapseOrder": 12,
+      "collapsedIcon": "layers",
+      "layout": [
+        {
+          "stack": [
+            "alltools.print_production.output-preview",
+            "alltools.print_production.preflight",
+            "alltools.print_production.convert-colors"
+          ]
+        },
+        {
+          "stack": [
+            "alltools.print_production.set-page-boxes",
+            "alltools.print_production.add-printer-marks",
+            "alltools.print_production.fix-hairlines"
+          ]
+        }
+      ]
+    },
+    "measure": {
+      "collapseOrder": 11,
+      "collapsedIcon": "ruler",
+      "layout": [
+        {
+          "stack": [
+            "alltools.measure.distance",
+            "alltools.measure.perimeter",
+            "alltools.measure.area"
+          ]
+        },
+        {
+          "separator": true
+        },
+        {
+          "stack": [
+            "alltools.measure.drawing-scale",
+            "alltools.measure.measurement-information",
+            "alltools.measure.snapping"
+          ]
+        },
+        {
+          "stack": [
+            "alltools.measure.export-measurements",
+            "alltools.measure.geospatial-location"
+          ]
+        }
+      ]
+    },
+    "compare": {
+      "collapseOrder": 10,
+      "collapsedIcon": "git-compare",
+      "layout": [
+        {
+          "large": "alltools.compare.select-files-to-compare"
+        }
+      ]
+    },
+    "actions": {
+      "collapseOrder": 9,
+      "collapsedIcon": "list-checks",
+      "layout": [
+        {
+          "stack": [
+            "alltools.actions.action-wizard",
+            "alltools.actions.make-accessible",
+            "alltools.actions.prepare-for-distribution"
+          ]
+        },
+        {
+          "stack": [
+            "alltools.actions.optimize-scanned-documents",
+            "alltools.actions.archive-documents"
+          ]
+        }
+      ]
+    },
+    "accessibility": {
+      "collapseOrder": 8,
+      "collapsedIcon": "tag",
+      "layout": [
+        {
+          "stack": [
+            "alltools.accessibility.automatically-tag-pdf",
+            "alltools.accessibility.tag-form-fields",
+            "alltools.accessibility.change-reading-options"
+          ]
+        },
+        {
+          "stack": [
+            "alltools.accessibility.check-for-accessibility",
+            "alltools.accessibility.find-untagged-content",
+            "alltools.accessibility.open-accessibility-report"
+          ]
+        },
+        {
+          "stack": [
+            "alltools.accessibility.add-alternate-text",
+            "alltools.accessibility.tags-panel",
+            "alltools.accessibility.fix-reading-order"
+          ]
+        }
+      ]
+    },
+    "standards": {
+      "collapseOrder": 7,
+      "collapsedIcon": "file-check",
+      "layout": [
+        {
+          "stack": [
+            "alltools.standards.save-as-pdf-a",
+            "alltools.standards.save-as-pdf-x",
+            "alltools.standards.save-as-pdf-ua"
+          ]
+        },
+        {
+          "stack": [
+            "alltools.standards.preflight",
+            "alltools.standards.pdfe"
+          ]
+        }
+      ]
+    },
+    "search_index": {
+      "collapseOrder": 6,
+      "collapsedIcon": "file-search",
+      "layout": [
+        {
+          "large": "alltools.search_index.manage-embedded-index"
+        }
+      ]
+    },
+    "javascript": {
+      "collapseOrder": 5,
+      "collapsedIcon": "braces",
+      "layout": [
+        {
+          "stack": [
+            "alltools.javascript.console",
+            "alltools.javascript.document-javascripts",
+            "alltools.javascript.document-actions"
+          ]
+        }
+      ]
+    },
+    "rich_media": {
+      "collapseOrder": 3,
+      "collapsedIcon": "box",
+      "layout": [
+        {
+          "stack": [
+            "alltools.rich_media.3d",
+            "alltools.rich_media.video",
+            "alltools.rich_media.sound"
+          ]
+        },
+        {
+          "stack": [
+            "alltools.rich_media.button",
+            "alltools.rich_media.select-object",
+            "alltools.rich_media.show-hide"
+          ]
+        }
+      ]
+    },
+    "share": {
+      "collapseOrder": 2,
+      "collapsedIcon": "share-2",
+      "layout": [
+        {
+          "stack": [
+            "alltools.share.share",
+            "alltools.share.email",
+            "alltools.share.send-comments"
+          ]
+        }
+      ]
+    },
+    "index_tools": {
+      "collapseOrder": 1,
+      "collapsedIcon": "library",
+      "layout": [
+        {
+          "large": "alltools.index_tools.full-text-index"
+        }
+      ]
+    }
+  }
+}

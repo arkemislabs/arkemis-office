@@ -1,0 +1,14 @@
+/* Create Forecast Worksheet: the chart preview, the chart type buttons and the Options part. */
+.fc-top { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; align-items: start; }
+.fc-preview { display: flex; flex-direction: column; gap: 6px; padding: 8px; border-radius: 10px; border: 1px solid rgba(255, 255, 255, .12); background: rgba(0, 0, 0, .18); min-height: 120px; justify-content: center; }
+.fc-preview svg { display: block; border-radius: 6px; background: #fff; }
+.fc-kinds { display: flex; flex-direction: column; gap: 6px; }
+.fc-kind { display: inline-grid; place-items: center; width: 40px; height: 36px; padding: 0; border-radius: 8px; border: 1px solid rgba(255, 255, 255, .16); background: transparent; color: var(--sh-text-1, #f2f2f3); cursor: pointer; }
+.fc-kind:hover { background: rgba(255, 255, 255, .08); }
+.fc-kind.is-on { background: rgba(138, 180, 255, .2); border-color: rgba(138, 180, 255, .55); color: #8ab4ff; }
+.fc-options { display: flex; flex-direction: column; gap: 8px; }
+.fc-toggle { align-self: flex-start; display: inline-flex; align-items: center; gap: 6px; padding: 2px 4px; border: 0; background: transparent; color: var(--sh-text-1, #f2f2f3); font: inherit; font-size: 12.5px; cursor: pointer; }
+.fc-toggle svg { transition: transform .12s; }
+.fc-toggle[aria-expanded="true"] svg { transform: rotate(90deg); }
+.fc-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 8px 16px; align-items: start; }
+.fc-season { display: flex; flex-direction: column; gap: 4px; }

@@ -1,0 +1,13 @@
+/* Data Analysis: the tool list and each tool's own box. */
+.analysis-pick .sf-list { min-height: 250px; }
+.analysis-form { gap: 10px; }
+.analysis-sec { display: flex; flex-direction: column; gap: 8px; margin: 0; padding: 8px 12px 10px; border-radius: 10px; border: 1px solid rgba(255, 255, 255, .12); min-width: 0; }
+.analysis-sec > legend { padding: 0 6px; }
+.analysis-pct { display: flex; align-items: center; gap: 10px; }
+.analysis-pct > .sf { flex: 1 1 auto; }
+.analysis-pct-box { display: flex; align-items: center; gap: 6px; width: 90px; flex: 0 0 90px; }
+.analysis-pct-box .sf { width: 100%; }
+.analysis-overwrite { display: flex; gap: 8px; align-items: center; padding: 6px 8px; border-radius: 8px; border: 1px solid rgba(255, 180, 90, .45); background: rgba(255, 180, 90, .1); }
+/* The prompt says what the refusal said, in its own words: the footer repeats it only for other errors. */
+.gd:has(.analysis-overwrite) .gd-message { visibility: hidden; }
+.analysis-overwrite span { flex: 1; font-size: 12.5px; }

@@ -1,0 +1,28 @@
+{
+  "tab": "pivot-table-design",
+  "source": "Microsoft Excel for Windows › PivotTable Design; gridcraft draws no ribbon tab for PivotTables, the spec takes the tab from Excel",
+  "groups": {
+    "layout": {
+      "collapseOrder": 1,
+      "layout": [
+        {"large": "pivotDesign.layout.subtotals"},
+        {"large": "pivotDesign.layout.grandTotals"},
+        {"large": "pivotDesign.layout.reportLayout"},
+        {"large": "pivotDesign.layout.blankRows"}
+      ]
+    },
+    "pivot-table-style-options": {
+      "collapseOrder": 2,
+      "layout": [
+        {"stack": ["pivotDesign.styleOptions.rowHeaders", "pivotDesign.styleOptions.columnHeaders"]},
+        {"stack": ["pivotDesign.styleOptions.bandedRows", "pivotDesign.styleOptions.bandedColumns"]}
+      ]
+    },
+    "pivot-table-styles": {
+      "collapseOrder": 3,
+      "layout": [
+        {"gallery": "pivotDesign.styles.gallery", "inline": true, "columns": 7}
+      ]
+    }
+  }
+}

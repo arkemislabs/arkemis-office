@@ -1,0 +1,87 @@
+{
+  "tab": "slide-show",
+  "keytip": "S",
+  "source": "deckcraft crates/ui-egui/src/ribbon/slide_show.rs (slide_show) @ f893f6af7d36a5409fd804e81a34fd895cfefedf; Present Online, Captions and Monitors placed as PowerPoint",
+  "groups": {
+    "start-slide-show": {
+      "collapseOrder": 3,
+      "collapsedIcon": "play-first",
+      "layout": [
+        {
+          "large": "slideshow.start.from-beginning"
+        },
+        {
+          "large": "slideshow.start.from-current"
+        },
+        {
+          "large": "slideshow.start.presenter-view"
+        },
+        {
+          "large": "slideshow.start.present-online"
+        },
+        {
+          "large": "slideshow.start.custom-show"
+        }
+      ]
+    },
+    "set-up": {
+      "collapseOrder": 4,
+      "collapsedIcon": "setup-show",
+      "layout": [
+        {
+          "large": "slideshow.setup.setup"
+        },
+        {
+          "large": "slideshow.setup.hide-slide"
+        },
+        {
+          "large": "slideshow.setup.rehearse"
+        },
+        {
+          "large": "slideshow.setup.record"
+        },
+        {
+          "stack": [
+            "slideshow.setup.use-timings",
+            "slideshow.setup.play-narrations",
+            "slideshow.setup.media-controls"
+          ]
+        }
+      ]
+    },
+    "captions-and-subtitles": {
+      "collapseOrder": 1,
+      "layout": [
+        {
+          "stack": [
+            "slideshow.captions.always",
+            "slideshow.captions.settings"
+          ]
+        }
+      ]
+    },
+    "monitors": {
+      "collapseOrder": 2,
+      "layout": [
+        {
+          "stack": [
+            "slideshow.monitors.monitor",
+            "slideshow.monitors.presenter"
+          ]
+        }
+      ],
+      "widths": {
+        "slideshow.monitors.monitor": 140
+      }
+    }
+  },
+  "keytips": {
+    "slideshow.start.from-beginning": "B",
+    "slideshow.start.from-current": "C",
+    "slideshow.start.custom-show": "W",
+    "slideshow.setup.setup": "S",
+    "slideshow.setup.hide-slide": "H",
+    "slideshow.setup.rehearse": "T",
+    "slideshow.setup.record": "N"
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "controls": {
+    "insert.links.zoom": {
+      "command": "insert.zoom",
+      "dialog": null,
+      "items": [
+        {
+          "label": "Summary Zoom",
+          "command": "insert.zoom",
+          "dialog": "dialog.insertZoomSummary",
+          "source": "upstream",
+          "sourceRef": "crates/ui-egui/src/ribbon/view.rs:101"
+        },
+        {
+          "label": "Section Zoom",
+          "command": "insert.zoom",
+          "dialog": "dialog.insertZoomSection",
+          "source": "upstream",
+          "sourceRef": "crates/ui-egui/src/ribbon/view.rs:101"
+        },
+        {
+          "label": "Slide Zoom",
+          "command": "insert.zoom",
+          "dialog": "dialog.insertZoom",
+          "source": "upstream",
+          "sourceRef": "crates/ui-egui/src/ribbon/view.rs:101"
+        }
+      ],
+      "note": "U:prism/zoom: each entry opens its own checklist. The zoom is a picture of the slide that jumps to it in the show (Return to Zoom: on for section and summary zooms); the picture is the slide drawn by the app, or a plain page with its title where nothing can draw it. PowerPoint's zoom styles, background and transitions are not in deckcraft and are not offered."
+    }
+  },
+  "dialogs": {
+    "dialog.insertZoom": {
+      "title": "Slide Zoom",
+      "command": "insert.zoom",
+      "buttons": [
+        "Insert",
+        "Cancel"
+      ],
+      "note": "U:prism/zoom: one zoom picture for each slide checked, on the current slide.",
+      "tabs": [
+        {
+          "name": "Zoom",
+          "fields": [
+            {
+              "id": "targets",
+              "label": "Slides to zoom to",
+              "kind": "list",
+              "options": [],
+              "param": "slides",
+              "note": "a checklist \"N. title\" with Select All and Select None (src/apps/prism/surface/ZoomList.tsx)",
+              "source": "upstream",
+              "sourceRef": "crates/ui-egui/src/ribbon/view.rs:127"
+            }
+          ]
+        }
+      ]
+    },
+    "dialog.insertZoomSection": {
+      "title": "Section Zoom",
+      "command": "insert.zoom",
+      "buttons": [
+        "Insert",
+        "Cancel"
+      ],
+      "note": "U:prism/zoom: with no sections: \"The presentation has no sections. Add one with Home > Section.\"",
+      "tabs": [
+        {
+          "name": "Zoom",
+          "fields": [
+            {
+              "id": "targets",
+              "label": "Sections to zoom to",
+              "kind": "list",
+              "options": [],
+              "param": "slides",
+              "note": "a checklist \"N. title\" with Select All and Select None (src/apps/prism/surface/ZoomList.tsx)",
+              "source": "upstream",
+              "sourceRef": "crates/ui-egui/src/ribbon/view.rs:127"
+            }
+          ]
+        }
+      ]
+    },
+    "dialog.insertZoomSummary": {
+      "title": "Summary Zoom",
+      "command": "insert.zoom",
+      "buttons": [
+        "Insert",
+        "Cancel"
+      ],
+      "note": "U:prism/zoom: a new Summary slide before the first part, one tile for each slide checked (the first slide of each section to begin with).",
+      "tabs": [
+        {
+          "name": "Zoom",
+          "fields": [
+            {
+              "id": "targets",
+              "label": "Slides each part starts at",
+              "kind": "list",
+              "options": [],
+              "param": "slides",
+              "note": "a checklist \"N. title\" with Select All and Select None (src/apps/prism/surface/ZoomList.tsx)",
+              "source": "upstream",
+              "sourceRef": "crates/ui-egui/src/ribbon/view.rs:127"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

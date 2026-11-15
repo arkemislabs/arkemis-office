@@ -1,0 +1,53 @@
+{
+  "tab": "formulas",
+  "keytip": "M",
+  "source": "gridcraft 146161b4b450a56e5e59a083ba0478582d1e602b crates/ui-egui/src/ribbon/formulas.rs (formulas: Insert Function, AutoSum and the seven category menus large; Name Manager large + Define Name/Use in Formula/Create from Selection column; two auditing columns + Watch Window large; Calculation Options large + Calculate Now/Sheet column); keytips from crates/ui-egui/src/keytips/keytips.json; Recently Used placed as in Excel for Windows",
+  "groups": {
+    "function-library": {
+      "collapseOrder": 1,
+      "layout": [
+        {"large": "formulas.functionLibrary.insertFunction"},
+        {"large": "formulas.functionLibrary.autoSum"},
+        {"large": "formulas.functionLibrary.recentlyUsed"},
+        {"large": "formulas.functionLibrary.financial"},
+        {"large": "formulas.functionLibrary.logical"},
+        {"large": "formulas.functionLibrary.text"},
+        {"large": "formulas.functionLibrary.dateTime"},
+        {"large": "formulas.functionLibrary.lookup"},
+        {"large": "formulas.functionLibrary.mathTrig"},
+        {"large": "formulas.functionLibrary.moreFunctions"}
+      ]
+    },
+    "defined-names": {
+      "collapseOrder": 2,
+      "layout": [
+        {"large": "formulas.definedNames.nameManager"},
+        {"stack": ["formulas.definedNames.defineName", "formulas.definedNames.useInFormula", "formulas.definedNames.createFromSelection"]}
+      ]
+    },
+    "formula-auditing": {
+      "collapseOrder": 3,
+      "layout": [
+        {"stack": ["formulas.auditing.tracePrecedents", "formulas.auditing.traceDependents", "formulas.auditing.removeArrows"]},
+        {"stack": ["formulas.auditing.showFormulas", "formulas.auditing.errorChecking", "formulas.auditing.evaluateFormula"]},
+        {"large": "formulas.auditing.watchWindow"}
+      ]
+    },
+    "calculation": {
+      "collapseOrder": 4,
+      "layout": [
+        {"large": "formulas.calculation.options"},
+        {"stack": ["formulas.calculation.calculateNow", "formulas.calculation.calculateSheet"]}
+      ]
+    }
+  },
+  "keytips": {
+    "formulas.functionLibrary.insertFunction": "F", "formulas.functionLibrary.autoSum": "U", "formulas.functionLibrary.financial": "I",
+    "formulas.functionLibrary.logical": "L", "formulas.functionLibrary.text": "T", "formulas.functionLibrary.dateTime": "E",
+    "formulas.functionLibrary.lookup": "O", "formulas.functionLibrary.mathTrig": "G", "formulas.functionLibrary.moreFunctions": "Q",
+    "formulas.definedNames.nameManager": "N", "formulas.definedNames.defineName": "M", "formulas.definedNames.useInFormula": "S", "formulas.definedNames.createFromSelection": "C",
+    "formulas.auditing.tracePrecedents": "P", "formulas.auditing.traceDependents": "D", "formulas.auditing.removeArrows": "A",
+    "formulas.auditing.showFormulas": "H", "formulas.auditing.errorChecking": "K", "formulas.auditing.evaluateFormula": "V", "formulas.auditing.watchWindow": "W",
+    "formulas.calculation.options": "X", "formulas.calculation.calculateNow": "B", "formulas.calculation.calculateSheet": "J"
+  }
+}

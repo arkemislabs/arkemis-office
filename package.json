@@ -1,0 +1,101 @@
+{
+  "name": "arkemis-office",
+  "version": "0.1.5",
+  "private": true,
+  "description": "Arkemis Office: a free, local-first desktop office suite (documents, spreadsheets, presentations, notes and PDF) built on Electron.",
+  "author": "Arkemis",
+  "license": "MIT",
+  "type": "module",
+  "main": "electron/main.cjs",
+  "scripts": {
+    "generate": "node scripts/generate.mjs",
+    "build": "node scripts/build.mjs",
+    "start": "npm run build && electron .",
+    "pretypecheck": "node scripts/generate.mjs",
+    "typecheck": "tsc --noEmit",
+    "pretest": "node scripts/generate.mjs",
+    "test": "node --test \"tests/**/*.test.mjs\"",
+    "test:e2e": "node scripts/verify-desktop.mjs",
+    "test:e2e:bridge": "node scripts/lint-e2e.mjs && node scripts/verify-bridge-e2e.mjs",
+    "verify:layout": "node scripts/verify-desktop.mjs shell-layout pdf-layout desktop-shell",
+    "package:win": "npm run build && node scripts/package-suite.mjs",
+    "package:office": "npm run build && node scripts/package-suite.mjs",
+    "start:folio": "npm run build && electron . --product=folio",
+    "start:quill": "npm run build && electron . --product=quill",
+    "start:grid": "npm run build && electron . --product=grid",
+    "start:prism": "npm run build && electron . --product=prism",
+    "start:slate": "npm run build && electron . --product=slate"
+  },
+  "dependencies": {
+    "@embedpdf/pdfium": "2.15.1",
+    "@pdf-lib/fontkit": "1.1.1",
+    "@tiptap/extension-image": "^3.0.0",
+    "@tiptap/extension-table": "^3.0.0",
+    "@tiptap/extension-text-align": "^3.0.0",
+    "@tiptap/pm": "^3.0.0",
+    "@tiptap/react": "^3.0.0",
+    "@tiptap/starter-kit": "^3.0.0",
+    "asn1js": "4.0.0",
+    "dictionary-en": "4.0.0",
+    "docx": "^9.5.1",
+    "exceljs": "^4.4.0",
+    "fast-xml-parser": "^5.0.0",
+    "jszip": "^3.10.1",
+    "lucide-react": "^0.468.0",
+    "mammoth": "^1.9.0",
+    "nspell": "2.1.5",
+    "pdf-lib": "^1.17.1",
+    "pdfjs-dist": "^6.4.299",
+    "pkijs": "4.0.1",
+    "pptxgenjs": "^3.12.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "regenerator-runtime": "0.13.11",
+    "ssf": "0.11.2",
+    "tesseract.js": "7.0.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.50.0",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "electron": "44.4.5",
+    "electron-builder": "26.15.3",
+    "esbuild": "^0.25.0",
+    "typescript": "^5.8.0"
+  },
+  "build": {
+    "appId": "ai.arkemis.studio",
+    "productName": "Arkemis Studio",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "core/**/*",
+      "package.json",
+      "LICENSE",
+      "LICENSES/**/*",
+      "THIRD_PARTY.md"
+    ],
+    "asar": true,
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "signAndEditExecutable": false
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true
+    },
+    "artifactName": "Arkemis-Studio-${version}-${arch}-${target}.${ext}"
+  },
+  "overrides": {
+    "image-size": "2.0.4",
+    "uuid": "11.1.1"
+  }
+}

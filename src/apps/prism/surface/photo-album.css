@@ -1,0 +1,30 @@
+/* The Photo Album dialog, in the Arkemis dark skin. */
+.pa { display: flex; flex-wrap: wrap; gap: 14px; width: 620px; max-width: 100%; font: 12px var(--ark-font, system-ui); color: var(--sh-text-1, #f2f2f3); }
+.pa-left { flex: 1 1 250px; min-width: 0; display: flex; flex-direction: column; gap: 8px; }
+.pa-right { flex: 1 1 280px; min-width: 0; display: flex; flex-direction: column; gap: 12px; }
+.pa-list { margin: 0; padding: 8px; list-style: none; height: 250px; overflow: auto; display: flex; flex-wrap: wrap; gap: 8px; align-content: flex-start; border-radius: 9px; background: rgba(0,0,0,.28); }
+.pa-list li { margin: 0; }
+.pa-list button { position: relative; display: block; width: 70px; height: 58px; padding: 0; border: 0; border-radius: 7px; background: rgba(255,255,255,.07); overflow: hidden; cursor: pointer; }
+.pa-list button:hover { background: rgba(255,255,255,.12); }
+.pa-list button.is-on { box-shadow: 0 0 0 2.5px var(--prism-accent, #e8774e); }
+.pa-thumb { display: block; width: 100%; height: 100%; object-fit: contain; }
+.pa-text { display: grid; place-items: center; color: var(--sh-text-2, #b4b4ba); }
+.pa-n { position: absolute; left: 4px; bottom: 3px; padding: 0 5px; border-radius: 8px; background: rgba(0,0,0,.6); font-size: 10px; }
+.pa-empty { width: 100%; color: var(--sh-text-3, #85858c); line-height: 1.4; }
+.pa-bar { display: flex; gap: 6px; flex-wrap: wrap; }
+.pa-btn { height: 28px; padding: 0 9px; display: inline-flex; align-items: center; gap: 5px; white-space: nowrap; }
+.pa-prev { height: 120px; border-radius: 8px; background: rgba(0,0,0,.28); display: grid; place-items: center; overflow: hidden; }
+.pa-prev img { max-width: 100%; max-height: 112px; object-fit: contain; }
+.pa-edit { display: flex; flex-direction: column; gap: 8px; min-height: 62px; }
+.pa-input { height: 28px; padding: 0 9px; border: 0; border-radius: 6px; background: rgba(0,0,0,.28); color: inherit; font: inherit; }
+.pa-input:focus { outline: none; box-shadow: inset 0 0 0 1.5px var(--prism-accent, #e8774e); }
+.pa-sum { color: var(--sh-text-3, #85858c); }
+.pa-opts { display: flex; flex-direction: column; gap: 10px; margin: 0; padding: 10px; border: 0; border-radius: 9px; background: rgba(255,255,255,.045); }
+.pa-opts label { display: flex; flex-direction: column; gap: 4px; color: var(--sh-text-2, #b4b4ba); }
+.pa-opts .pa-check { flex-direction: row; align-items: center; gap: 8px; color: var(--sh-text-1, #f2f2f3); }
+.pa-opts select { height: 28px; padding: 0 8px; border: 0; border-radius: 6px; background: rgba(0,0,0,.35); color: var(--sh-text-1, #f2f2f3); font: inherit; }
+.pa-err { flex-basis: 100%; }
+
+.pa-list .pa-empty { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; text-align: center; min-height: 150px; padding: 14px; border: 1.5px dashed rgba(255,255,255,.18); border-radius: 10px; }
+.pa-list .pa-empty strong { color: var(--sh-text-2, #b4b4ba); font-weight: 600; }
+.pa-list .pa-empty .shell-icon { opacity: .6; }

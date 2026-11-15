@@ -1,0 +1,6 @@
+/* Create Custom Combo Chart: the series table beside the preview. */
+.combo-series { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+.combo-series th { padding: 4px 8px; text-align: left; font-weight: 600; white-space: nowrap; color: var(--sh-text-2, #b4b4ba); }
+.combo-series td { padding: 4px 8px; white-space: nowrap; }
+.combo-series select { width: 100%; min-width: 140px; }
+.combo-series + .insert-chart-side { max-width: 320px; justify-self: center; width: 100%; }

@@ -1,0 +1,57 @@
+{
+  "tab": "title-bar",
+  "source": "printcraft crates/ui-egui/src/chrome.rs (title bar, mode bar) @ 3109bb2359759e24ef490e1cdbdba00722b20972",
+  "note": "Window chrome, not a ribbon tab (ShellController keeps it out of the tab strip): the tab strip and the mode bar each as one row, left to right.",
+  "groups": {
+    "tab-strip": {
+      "collapseOrder": 2,
+      "collapsedIcon": "house",
+      "layout": [
+        {
+          "rows": [
+            [
+              "chrome.tabs.home",
+              "chrome.tabs.document-tab",
+              "chrome.tabs.combine-tab",
+              "chrome.tabs.scroll-left",
+              "chrome.tabs.scroll-right",
+              "chrome.tabs.open",
+              "chrome.tabs.preferences",
+              "chrome.tabs.theme",
+              "chrome.tabs.shortcuts",
+              "chrome.tabs.discord",
+              "chrome.tabs.minimize",
+              "chrome.tabs.maximize",
+              "chrome.tabs.close-window"
+            ]
+          ]
+        }
+      ]
+    },
+    "mode-bar": {
+      "collapseOrder": 1,
+      "collapsedIcon": "menu",
+      "layout": [
+        {
+          "rows": [
+            [
+              "chrome.mode.menus",
+              "chrome.mode.all-tools",
+              "chrome.mode.edit",
+              "chrome.mode.convert",
+              "chrome.mode.esign",
+              "chrome.mode.find-tools",
+              "chrome.mode.properties",
+              "chrome.mode.save",
+              "chrome.mode.print",
+              "chrome.mode.share"
+            ]
+          ]
+        }
+      ],
+      "widths": {
+        "chrome.mode.find-tools": 220
+      }
+    }
+  }
+}

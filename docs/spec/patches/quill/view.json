@@ -1,0 +1,157 @@
+{
+  "controls": {
+    "view.zoom.zoom": {
+      "command": "view.zoom",
+      "args": null,
+      "dialog": "dialog.zoom",
+      "note": "U:quill/view: wordcraft ribbon/view.rs opens the Zoom dialog (ui.dialog zoom); view.zoom without a value opens it here."
+    },
+    "view.window.reset-window-position": {
+      "command": "view.resetWindowPosition",
+      "note": "U:quill/view: Word's Reset Window Position: the two windows viewed side by side share the screen equally again."
+    },
+    "view.window.switch-windows": {
+      "note": "U:quill/view: wordcraft documents.rs switch_windows_menu: the open windows in the order they were opened, the current one checked; a click brings that window to the front.",
+      "items": [
+        {
+          "id": "view.window.switch-windows.windows",
+          "label": "Windows",
+          "kind": "list",
+          "command": "view.switchWindows",
+          "args": {
+            "value": "<n>"
+          },
+          "dynamic": true,
+          "source": "upstream"
+        }
+      ]
+    },
+    "view.window.split": {
+      "checkedLabel": "Remove Split",
+      "note": "U:quill/view: Split, then Remove Split (Word): two panes on one document with a draggable split bar."
+    },
+    "outlining.outline-tools.outline-level": {
+      "args": {
+        "level": "<label>"
+      },
+      "options": [
+        "Level 1",
+        "Level 2",
+        "Level 3",
+        "Level 4",
+        "Level 5",
+        "Level 6",
+        "Level 7",
+        "Level 8",
+        "Level 9",
+        "Body Text"
+      ],
+      "note": "U:quill/view: wordcraft ribbon/view.rs outlining: Level 1…9, Body Text; shows the caret paragraph's level."
+    },
+    "outlining.outline-tools.show-level": {
+      "args": {
+        "level": "<label>"
+      },
+      "options": [
+        "Level 1",
+        "Level 2",
+        "Level 3",
+        "Level 4",
+        "Level 5",
+        "Level 6",
+        "Level 7",
+        "Level 8",
+        "Level 9",
+        "All Levels"
+      ],
+      "note": "U:quill/view: Word's Show Level list (Level 1…9, All Levels)."
+    },
+    "view.show.ruler": {
+      "kind": "checkbox",
+      "note": "U:quill/view: a ribbon check box, as Word draws it."
+    },
+    "view.show.gridlines": {
+      "kind": "checkbox",
+      "note": "U:quill/view: a ribbon check box, as Word draws it."
+    },
+    "view.show.navigation-pane": {
+      "kind": "checkbox",
+      "note": "U:quill/view: a ribbon check box, as Word draws it."
+    },
+    "outlining.outline-tools.show-text-formatting": {
+      "kind": "checkbox",
+      "note": "U:quill/view: a ribbon check box, as Word draws it."
+    },
+    "outlining.outline-tools.show-first-line-only": {
+      "kind": "checkbox",
+      "note": "U:quill/view: a ribbon check box, as Word draws it."
+    }
+  },
+  "dialogs": {
+    "dialog.zoom": {
+      "title": "Zoom",
+      "command": "view.zoom",
+      "note": "U:quill/view: Word's Zoom dialog: Zoom to 200% / 100% / 75% / Page width / Text width / Whole page / Many pages, Percent, Preview (wordcraft dispatch.rs:788 zoom).",
+      "tabs": [
+        {
+          "name": "Zoom",
+          "fields": [
+            {
+              "id": "preset",
+              "label": "Zoom to",
+              "kind": "radio",
+              "options": [
+                {
+                  "value": "200%",
+                  "label": "200%"
+                },
+                {
+                  "value": "100%",
+                  "label": "100%"
+                },
+                {
+                  "value": "75%",
+                  "label": "75%"
+                },
+                {
+                  "value": "pageWidth",
+                  "label": "Page width"
+                },
+                {
+                  "value": "textWidth",
+                  "label": "Text width"
+                },
+                {
+                  "value": "onePage",
+                  "label": "Whole page"
+                },
+                {
+                  "value": "multiplePages",
+                  "label": "Many pages"
+                }
+              ]
+            },
+            {
+              "id": "percent",
+              "label": "Percent:",
+              "kind": "number",
+              "min": 10,
+              "max": 500,
+              "step": 1,
+              "unit": "%"
+            },
+            {
+              "id": "preview",
+              "label": "Preview",
+              "kind": "preview"
+            }
+          ]
+        }
+      ],
+      "buttons": [
+        "OK",
+        "Cancel"
+      ]
+    }
+  }
+}

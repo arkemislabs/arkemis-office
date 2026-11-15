@@ -1,0 +1,165 @@
+{
+  "tab": "insert",
+  "keytip": "N",
+  "source": "office: OneNote for Microsoft 365, Insert tab (Slate has no ArtCraft upstream; architecture section 1)",
+  "groups": {
+    "insert": {
+      "collapseOrder": 12,
+      "collapsedIcon": "insert-space-arrows",
+      "layout": [
+        {
+          "large": "insert.insert.insert-space"
+        }
+      ]
+    },
+    "tables": {
+      "collapseOrder": 11,
+      "collapsedIcon": "table-grid",
+      "layout": [
+        {
+          "large": "insert.tables.table"
+        }
+      ]
+    },
+    "files": {
+      "collapseOrder": 10,
+      "collapsedIcon": "file-printout",
+      "layout": [
+        {
+          "large": "insert.files.file-printout"
+        },
+        {
+          "large": "insert.files.file-attachment"
+        },
+        {
+          "large": "insert.files.spreadsheet"
+        },
+        {
+          "large": "insert.files.diagram"
+        }
+      ]
+    },
+    "images": {
+      "collapseOrder": 9,
+      "collapsedIcon": "scissors-screen",
+      "layout": [
+        {
+          "large": "insert.images.screen-clipping"
+        },
+        {
+          "large": "insert.images.pictures"
+        },
+        {
+          "large": "insert.images.online-pictures"
+        },
+        {
+          "large": "insert.images.scanned-image"
+        }
+      ]
+    },
+    "links": {
+      "collapseOrder": 8,
+      "collapsedIcon": "link-chain",
+      "layout": [
+        {
+          "large": "insert.links.link"
+        }
+      ]
+    },
+    "recording": {
+      "collapseOrder": 7,
+      "collapsedIcon": "microphone-record",
+      "layout": [
+        {
+          "large": "insert.recording.record-audio"
+        },
+        {
+          "large": "insert.recording.record-video"
+        }
+      ]
+    },
+    "media": {
+      "collapseOrder": 6,
+      "collapsedIcon": "video-globe",
+      "layout": [
+        {
+          "large": "insert.media.online-video"
+        }
+      ]
+    },
+    "loop-components": {
+      "collapseOrder": 5,
+      "collapsedIcon": "loop",
+      "layout": [
+        {
+          "large": "insert.loop-components.loop-components"
+        }
+      ]
+    },
+    "forms": {
+      "collapseOrder": 4,
+      "collapsedIcon": "form-checklist",
+      "layout": [
+        {
+          "large": "insert.forms.forms"
+        }
+      ]
+    },
+    "time-stamp": {
+      "collapseOrder": 3,
+      "collapsedIcon": "calendar-day",
+      "layout": [
+        {
+          "stack": [
+            "insert.time-stamp.date",
+            "insert.time-stamp.time",
+            "insert.time-stamp.date-and-time"
+          ]
+        }
+      ]
+    },
+    "pages": {
+      "collapseOrder": 2,
+      "collapsedIcon": "page-template",
+      "layout": [
+        {
+          "large": "insert.pages.page-templates"
+        }
+      ]
+    },
+    "symbols": {
+      "collapseOrder": 1,
+      "collapsedIcon": "pi-equation",
+      "layout": [
+        {
+          "large": "insert.symbols.equation"
+        },
+        {
+          "large": "insert.symbols.symbol"
+        }
+      ]
+    }
+  },
+  "keytips": {
+    "insert.insert.insert-space": "SP",
+    "insert.tables.table": "T",
+    "insert.files.file-printout": "FO",
+    "insert.files.file-attachment": "FA",
+    "insert.files.spreadsheet": "SS",
+    "insert.files.diagram": "DG",
+    "insert.images.screen-clipping": "R",
+    "insert.images.pictures": "P",
+    "insert.images.online-pictures": "OP",
+    "insert.images.scanned-image": "C",
+    "insert.links.link": "I",
+    "insert.recording.record-audio": "A",
+    "insert.recording.record-video": "V",
+    "insert.media.online-video": "OV",
+    "insert.time-stamp.date": "DA",
+    "insert.time-stamp.time": "M",
+    "insert.time-stamp.date-and-time": "DT",
+    "insert.pages.page-templates": "G",
+    "insert.symbols.equation": "E",
+    "insert.symbols.symbol": "U"
+  }
+}

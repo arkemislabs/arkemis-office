@@ -1,0 +1,64 @@
+{
+  "tab": "references",
+  "keytip": "S",
+  "source": "wordcraft aadb077e072b7de05f724e359d8db82e151f125c crates/ui-egui/src/ribbon/references.rs (references); Research › Search placed as in Word for Windows; keytips from Word for Windows",
+  "groups": {
+    "table-of-contents": {
+      "collapseOrder": 7,
+      "layout": [
+        {"large": "references.table-of-contents.table-of-contents"},
+        {"stack": ["references.table-of-contents.add-text", "references.table-of-contents.update-table"]}
+      ]
+    },
+    "footnotes": {
+      "keytip": "Q", "collapseOrder": 6,
+      "layout": [
+        {"large": "references.footnotes.insert-footnote"},
+        {"stack": ["references.footnotes.insert-endnote", "references.footnotes.next-footnote", "references.footnotes.show-notes"]}
+      ]
+    },
+    "research": {
+      "collapseOrder": 1,
+      "layout": [
+        {"large": "references.research.search"},
+        {"large": "references.research.researcher"}
+      ]
+    },
+    "citations-and-bibliography": {
+      "collapseOrder": 5,
+      "layout": [
+        {"large": "references.citations-bibliography.insert-citation"},
+        {"stack": ["references.citations-bibliography.manage-sources", "references.citations-bibliography.style", "references.citations-bibliography.bibliography"]}
+      ]
+    },
+    "captions": {
+      "collapseOrder": 4,
+      "layout": [
+        {"large": "references.captions.insert-caption"},
+        {"stack": ["references.captions.insert-table-of-figures", "references.captions.update-table", "references.captions.cross-reference"]}
+      ]
+    },
+    "index": {
+      "collapseOrder": 3,
+      "layout": [
+        {"large": "references.index.mark-entry"},
+        {"stack": ["references.index.insert-index", "references.index.update-index"]}
+      ]
+    },
+    "table-of-authorities": {
+      "collapseOrder": 2,
+      "layout": [
+        {"large": "references.table-of-authorities.mark-citation"},
+        {"stack": ["references.table-of-authorities.insert-table-of-authorities", "references.table-of-authorities.update-table"]}
+      ]
+    }
+  },
+  "keytips": {
+    "references.table-of-contents.table-of-contents": "T", "references.table-of-contents.add-text": "A", "references.table-of-contents.update-table": "U",
+    "references.footnotes.insert-footnote": "F", "references.footnotes.insert-endnote": "E", "references.footnotes.next-footnote": "O", "references.footnotes.show-notes": "H",
+    "references.citations-bibliography.insert-citation": "C", "references.citations-bibliography.manage-sources": "M", "references.citations-bibliography.style": "L", "references.citations-bibliography.bibliography": "B",
+    "references.captions.insert-caption": "P", "references.captions.insert-table-of-figures": "G", "references.captions.update-table": "V", "references.captions.cross-reference": "RF",
+    "references.index.mark-entry": "N", "references.index.insert-index": "X", "references.index.update-index": "D",
+    "references.table-of-authorities.mark-citation": "I", "references.table-of-authorities.insert-table-of-authorities": "S"
+  }
+}

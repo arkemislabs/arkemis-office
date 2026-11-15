@@ -1,0 +1,233 @@
+/* Quill page view (Print Layout): rulers, the dark canvas, pages, overlays. Arkemis's skin over
+   Word's layout (wordcraft ui-egui canvas.rs, rulers.rs, caret_glide.rs). */
+
+.quill-surface { position: absolute; inset: 0; display: flex; flex-direction: column; overflow: hidden; background: #0a0a0b; user-select: none; }
+.quill-busy { display: grid; place-items: center; color: rgba(255,255,255,.6); font-size: 13px; }
+
+.quill-ruler-row { display: flex; flex: none; height: 22px; background: #121213; border-bottom: 1px solid rgba(255,255,255,.06); }
+.quill-ruler-corner { flex: none; width: 22px; height: 22px; background: #121213; }
+.quill-hruler, .quill-vruler { display: block; flex: none; }
+.quill-body { flex: 1; min-height: 0; display: flex; }
+.quill-vruler { border-right: 1px solid rgba(255,255,255,.06); }
+
+.quill-scroll { position: relative; flex: 1; min-width: 0; overflow: auto; outline: none; cursor: text; scrollbar-color: rgba(255,255,255,.22) transparent; }
+.quill-content { position: relative; }
+
+.quill-page { position: absolute; background: #ffffff; box-shadow: 0 0 0 1px rgba(0,0,0,.35), 0 2px 6px rgba(0,0,0,.45), 0 18px 40px -20px rgba(0,0,0,.85); }
+.quill-tile { position: absolute; left: 0; display: block; pointer-events: none; }
+
+.quill-selection { position: absolute; inset: 0; pointer-events: none; }
+.quill-selection i { position: absolute; background: rgba(66, 133, 244, .30); mix-blend-mode: multiply; }
+.quill-selection.is-inactive i { background: rgba(0, 0, 0, .14); }
+
+/* The caret: on 0.53 s, off 0.53 s, each change a 0.1 s fade; a key move glides 0.1 s (caret_glide.rs). */
+.quill-caret { position: absolute; left: 0; top: 0; width: 1.5px; margin-left: -0.75px; background: #000; pointer-events: none; animation: quill-blink 1.06s linear 0.53s infinite; }
+.quill-caret.is-gliding { transition: transform .1s cubic-bezier(.2,.8,.3,1); }
+@keyframes quill-blink { 0% { opacity: 1; } 9.4% { opacity: 0; } 50% { opacity: 0; } 59.4% { opacity: 1; } 100% { opacity: 1; } }
+
+/* IME composition (preedit) at the caret, underlined per clause. */
+.quill-preedit { position: absolute; display: inline-flex; align-items: flex-end; white-space: pre; color: #000; background: #fff; line-height: 1; pointer-events: none; font-family: Calibri, Carlito, sans-serif; }
+.quill-preedit u { text-decoration: underline 1px; text-underline-offset: 2px; }
+.quill-preedit u.is-thick { text-decoration-thickness: 2px; }
+
+/* A selected picture or shape: its frame and handles (selection only; resizing needs objects.*). */
+.quill-object-frame { position: absolute; border: 1px solid #5b8def; pointer-events: none; transform-origin: center; }
+.quill-object-frame b { position: absolute; width: 8px; height: 8px; margin: -4px 0 0 -4px; border-radius: 50%; background: #fff; border: 1px solid #5b8def; }
+.quill-object-frame .h-nw { left: 0; top: 0; } .quill-object-frame .h-n { left: 50%; top: 0; } .quill-object-frame .h-ne { left: 100%; top: 0; }
+.quill-object-frame .h-e { left: 100%; top: 50%; } .quill-object-frame .h-se { left: 100%; top: 100%; } .quill-object-frame .h-s { left: 50%; top: 100%; }
+.quill-object-frame .h-sw { left: 0; top: 100%; } .quill-object-frame .h-w { left: 0; top: 50%; }
+.quill-object-frame .h-rot { left: 50%; top: -22px; }
+
+/* The markup area beside the page and its balloons (balloons.rs): comment threads, "Deleted:" and
+   "Formatted:" cards in their author's colour, joined to their anchors by dashed leaders. */
+.quill-markup-area { position: absolute; top: 0; background: #f3f3f4; border-left: 1px solid #d6d6d9; pointer-events: none; }
+.quill-balloon-leaders { position: absolute; left: 0; top: 0; overflow: visible; pointer-events: none; }
+.quill-balloon-leaders polyline { fill: none; stroke: #c0504d; stroke-width: 1; stroke-dasharray: 3 2; opacity: .8; }
+.quill-balloon { position: absolute; display: flex; flex-direction: column; gap: 3px; padding: 6px 8px 6px 9px; text-align: left; font: 12px/15px system-ui, sans-serif; color: #222;
+  background: #ffffff; border: 1px solid #d9d9dd; border-left: 3px solid #c0504d; border-radius: 4px; cursor: pointer; overflow: hidden; box-shadow: 0 1px 2px rgba(0,0,0,.08); user-select: text; }
+.quill-balloon header { display: flex; align-items: baseline; gap: 6px; min-width: 0; }
+.quill-balloon b { font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.quill-balloon time { color: #77787e; font-size: 10.5px; white-space: nowrap; }
+.quill-balloon em { margin-left: auto; color: #2e8b3e; font-style: normal; font-size: 10.5px; }
+.quill-balloon span { white-space: pre-wrap; overflow-wrap: anywhere; }
+.quill-balloon.is-deleted span, .quill-balloon.is-formatted span { color: #4b4c52; }
+.quill-balloon.is-active { box-shadow: 0 0 0 1px #8fa9e6, 0 4px 12px rgba(0,0,0,.18); cursor: default; }
+.quill-balloon.is-resolved { opacity: .55; }
+.quill-reply { display: flex; flex-direction: column; gap: 2px; padding-top: 5px; margin-top: 2px; border-top: 1px solid #e3e3e6; }
+.quill-balloon-edit { width: 100%; box-sizing: border-box; resize: none; font: 12px/15px system-ui, sans-serif; color: #222; background: #fff; border: 1px solid #b9c6e6; border-radius: 3px; padding: 3px 4px; outline: none; }
+.quill-balloon-actions { display: flex; gap: 4px; padding-top: 3px; }
+.quill-balloon-actions button { font: 11px system-ui, sans-serif; color: #2b4f9e; background: transparent; border: 1px solid #d0d6e4; border-radius: 3px; padding: 2px 7px; cursor: pointer; }
+.quill-balloon-actions button:hover { background: #eef2fb; }
+/* The commented ranges (Word's pale highlight; the active comment's stronger). */
+.quill-comment-marks { position: absolute; inset: 0; pointer-events: none; }
+.quill-comment-marks i { position: absolute; background: rgba(240, 200, 120, .32); mix-blend-mode: multiply; border-bottom: 1px dashed rgba(192, 80, 77, .55); }
+.quill-comment-marks i.is-active { background: rgba(240, 180, 80, .55); }
+
+/* The accessible mirror: read by screen readers, never seen. */
+.quill-a11y { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.quill-input-fallback { position: absolute; left: 0; top: 0; width: 1px; height: 1px; opacity: 0; resize: none; border: 0; padding: 0; pointer-events: none; }
+
+.quill-status { display: contents; }
+
+/* ── View (U:quill/view) ─────────────────────────────────────────────────────────────────── */
+
+/* Web Layout, Draft and Outline: one sheet, no page edges; Word shows white around the text. */
+.quill-surface.is-web, .quill-surface.is-draft, .quill-surface.is-outline { background: #ffffff; }
+.quill-surface.is-web .quill-scroll, .quill-surface.is-draft .quill-scroll, .quill-surface.is-outline .quill-scroll { scrollbar-color: rgba(0,0,0,.28) transparent; }
+.quill-page.is-sheet { box-shadow: none; }
+
+/* Draft: Print Layout's page breaks as dotted lines; a manual one says so. */
+.quill-draft-breaks { position: absolute; inset: 0; pointer-events: none; }
+.quill-draft-break { position: absolute; left: 0; right: 0; height: 0; border-top: 1px dotted #8a8a8f; }
+.quill-draft-break.is-page { border-top: 1px dotted #6b6b70; }
+.quill-draft-break.is-section { border-top: 3px double #6b6b70; }
+.quill-draft-break span { position: absolute; left: 50%; top: -7px; transform: translateX(-50%); padding: 0 6px; background: #ffffff; color: #5f6066; font: 10.5px/13px system-ui, sans-serif; white-space: nowrap; }
+
+/* View › Gridlines: the drawing grid over the text area (screen only). */
+.quill-gridlines { position: absolute; pointer-events: none; overflow: visible; }
+.quill-gridlines line { stroke: rgba(66, 133, 244, .22); stroke-width: 1; shape-rendering: crispEdges; }
+
+/* Read Mode: the reading columns on the canvas, its bar in place of the ribbon, page turns at the sides. */
+.shell[data-quill-screen=read] .sr, .shell[data-quill-screen=read] .shell-inline-bars { display: none; }
+.quill-surface.is-read { background: #1b1b1d; }
+.quill-surface.is-read .quill-scroll { overflow: hidden; cursor: default; margin: 0 48px; }
+/* The page-turn arrows sit in the margins beside the columns, never over them. */
+.quill-surface.is-read .quill-page { box-shadow: 0 1px 2px rgba(0,0,0,.35); }
+.quill-read-bar { flex: none; display: flex; align-items: center; gap: 4px; height: 40px; padding: 0 10px 0 14px; background: #161617; border-bottom: 1px solid rgba(255,255,255,.06); color: #e7e7ea; font: 12px var(--ark-font, system-ui); }
+.quill-read-bar strong { margin-right: 8px; font-weight: 600; font-size: 13px; }
+.quill-read-gap { flex: 1; }
+.quill-read-btn { display: inline-flex; align-items: center; gap: 6px; height: 28px; padding: 0 10px; border: 0; border-radius: 8px; background: transparent; color: #d6d6da; white-space: nowrap; cursor: pointer; }
+.quill-read-btn:hover, .quill-read-btn[aria-expanded=true], .quill-read-btn[aria-pressed=true] { background: rgba(255,255,255,.08); color: #fff; }
+.quill-read-btn.is-primary { background: rgba(255,255,255,.12); color: #fff; }
+.quill-read-menu { position: relative; }
+.quill-read-list { position: absolute; z-index: 30; top: 32px; left: 0; min-width: 140px; display: flex; flex-direction: column; padding: 5px; border-radius: 10px; background: rgba(30,30,32,.97);
+  box-shadow: 0 0 0 1px rgba(255,255,255,.08), 0 12px 30px rgba(0,0,0,.5); }
+.quill-read-list button { position: relative; height: 26px; padding: 0 10px 0 26px; border: 0; border-radius: 6px; background: transparent; color: #e3e3e6; text-align: left; cursor: pointer; }
+.quill-read-list button:hover { background: rgba(255,255,255,.08); }
+.quill-read-list button[aria-checked=true]::before { content: ""; position: absolute; left: 10px; top: 10px; width: 6px; height: 6px; border-radius: 50%; background: #e8e8ea; }
+.quill-body { position: relative; }
+.quill-read-turn { position: absolute; top: 50%; z-index: 5; display: grid; place-items: center; width: 34px; height: 34px; margin-top: -17px; border: 0; border-radius: 50%;
+  background: rgba(40,40,44,.82); color: #f0f0f2; box-shadow: 0 0 0 1px rgba(255,255,255,.08); cursor: pointer; }
+.quill-read-turn.is-prev { left: 6px; }
+.quill-read-turn.is-next { right: 6px; }
+.quill-read-turn:disabled { opacity: .25; cursor: default; }
+.quill-read-turn:hover:not(:disabled) { background: rgba(60,60,66,.95); }
+/* The reading paper: sepia, or inverse (the page's lightness turned over; text light on dark). */
+.quill-surface.paper-inverse .quill-tile { filter: invert(1) hue-rotate(180deg); }
+.quill-surface.paper-inverse .quill-page { background: #000; }
+.quill-surface.paper-sepia .quill-page { background: rgb(226, 217, 208); }
+
+/* Immersive Reader: the reading column centred on the canvas. */
+.quill-surface.is-immersive { background: #141415; }
+.quill-surface.is-immersive .quill-page { box-shadow: 0 1px 3px rgba(0,0,0,.4); }
+
+/* Focus: the page alone on black; the title bar, ribbon, status bar and panes go (chrome.rs Screen::Focus). */
+.shell[data-quill-screen=focus] { background: #000; }
+.shell[data-quill-screen=focus] > .shell-titlebar, .shell[data-quill-screen=focus] > .shell-status,
+.shell[data-quill-screen=focus] .shell-panes, .shell[data-quill-screen=focus] .shell-inline-bars { display: none; }
+.shell[data-quill-screen=focus] > .sr { display: none; }
+.shell[data-quill-screen=focus][data-quill-peek] > .sr { display: flex; position: absolute; left: 0; right: 0; top: 30px; z-index: 40; box-shadow: 0 10px 30px rgba(0,0,0,.6); }
+.shell[data-quill-screen=focus] .shell-main { padding: 0; }
+.shell[data-quill-screen=focus] .shell-surface { border-radius: 0; box-shadow: none; background: #000; }
+.quill-surface.is-focus { background: #000; }
+.quill-focus-bar { flex: none; display: grid; place-items: center; height: 30px; background: #000; }
+.quill-focus-more { display: grid; place-items: center; width: 40px; height: 20px; border: 0; border-radius: 4px; background: #282828; color: #dcdcdc; cursor: pointer; }
+.quill-focus-more:hover, .quill-focus-more.is-on { background: #464646; }
+
+/* Split: two panes on the document, the bar between them dragged to resize. */
+.quill-panes { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.quill-panes > .quill-scroll { flex: 1 1 0; min-height: 0; }
+.quill-surface.is-split .quill-panes > .quill-scroll:first-child { flex: var(--split, .5) 1 0; }
+.quill-surface.is-split .quill-panes > .quill-scroll.is-lower { flex: calc(1 - var(--split, .5)) 1 0; }
+.quill-split-bar { flex: none; height: 7px; background: #26262a; border-top: 1px solid rgba(255,255,255,.1); border-bottom: 1px solid rgba(0,0,0,.6); cursor: row-resize; }
+.quill-split-bar:hover, .quill-split-bar:focus-visible { background: #34343a; }
+
+/* The Navigation pane: search, Headings / Pages / Results. */
+.quill-nav-pane { display: flex; flex-direction: column; gap: 8px; height: 100%; min-height: 0; }
+.quill-nav-search { display: flex; align-items: center; gap: 6px; height: 30px; padding: 0 8px; border-radius: 8px; background: rgba(255,255,255,.06); box-shadow: inset 0 0 0 1px rgba(255,255,255,.08); color: var(--sh-text-2, #a9a9ae); }
+.quill-nav-search input { flex: 1; min-width: 0; height: 100%; border: 0; outline: none; background: transparent; color: var(--sh-text-1, #eee); font: inherit; }
+.quill-nav-tabs { display: flex; gap: 2px; border-bottom: 1px solid rgba(255,255,255,.08); }
+.quill-nav-tabs button { height: 28px; padding: 0 10px; border: 0; border-bottom: 2px solid transparent; background: transparent; color: var(--sh-text-2, #a9a9ae); cursor: pointer; }
+.quill-nav-tabs button.is-active { color: var(--sh-text-1, #fff); border-bottom-color: #e8e8ea; }
+.quill-nav-body { flex: 1; min-height: 0; overflow: auto; }
+.quill-nav-empty { margin: 4px 2px; color: var(--sh-text-3, #8f9098); white-space: pre-wrap; font-size: 12px; line-height: 1.45; }
+.quill-nav-tree { display: flex; flex-direction: column; gap: 1px; padding-bottom: 16px; }
+.quill-nav-heading { display: flex; align-items: flex-start; gap: 2px; min-height: 26px; padding: 4px 6px 4px 4px; border-radius: 6px; cursor: pointer; font-size: 12.5px; line-height: 18px; overflow-wrap: anywhere; }
+.quill-nav-heading:hover { background: rgba(255,255,255,.06); }
+.quill-nav-heading.is-current { background: rgba(255,255,255,.11); }
+.quill-nav-heading.is-dragging { opacity: .45; }
+.quill-nav-heading.is-drop { box-shadow: inset 0 2px 0 #8fb3ff; }
+.quill-nav-heading .is-top { font-weight: 600; }
+.quill-nav-twisty { flex: none; display: grid; place-items: center; width: 16px; height: 18px; padding: 0; border: 0; background: transparent; color: var(--sh-text-2, #aaa); cursor: pointer; }
+.quill-nav-twisty:disabled { cursor: default; }
+.quill-nav-end { height: 18px; border-radius: 6px; }
+.quill-nav-end.is-drop { box-shadow: inset 0 2px 0 #8fb3ff; }
+.quill-nav-pages { display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 6px 0 16px; }
+.quill-nav-thumb { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 6px; border: 0; border-radius: 8px; background: transparent; color: var(--sh-text-2, #aaa); cursor: pointer; }
+.quill-nav-thumb:hover { background: rgba(255,255,255,.06); }
+.quill-nav-thumb.is-current { background: rgba(255,255,255,.1); color: var(--sh-text-1, #fff); }
+.quill-nav-thumb.is-current .quill-nav-thumb-art { box-shadow: 0 0 0 2px #8fb3ff; }
+.quill-nav-thumb-art { display: block; background: #fff; box-shadow: 0 0 0 1px rgba(0,0,0,.4), 0 2px 6px rgba(0,0,0,.4); }
+.quill-nav-results { display: flex; flex-direction: column; gap: 2px; }
+.quill-nav-count { margin: 2px 2px 6px; color: var(--sh-text-3, #8f9098); }
+.quill-nav-result { padding: 7px 8px; border: 0; border-bottom: 1px solid rgba(255,255,255,.06); background: transparent; color: var(--sh-text-1, #eee); text-align: left; font-size: 12px; line-height: 1.4; cursor: pointer; overflow-wrap: anywhere; }
+.quill-nav-result:hover { background: rgba(255,255,255,.06); }
+.quill-nav-result mark { background: #f3d36b; color: #111; border-radius: 2px; padding: 0 1px; font-weight: 600; }
+
+/* The Draw tab (U:quill/draw): the stroke, lasso loop and selection box drawn over a page, and the crosshair while a pen is picked. */
+.quill-draw-layer { position: absolute; left: 0; top: 0; pointer-events: none; overflow: visible; }
+.quill-surface.is-drawing .quill-content { cursor: crosshair; }
+
+/* Content controls (Developer): the outline of the control at the caret, and every control with its tab in Design Mode. */
+.quill-control-marks { position: absolute; inset: 0; pointer-events: none; }
+.quill-control-marks i { position: absolute; box-sizing: border-box; border: 1px dashed rgba(91, 141, 239, .75); border-radius: 2px; }
+.quill-control-marks i.is-active { border-style: solid; border-color: rgba(91, 141, 239, .9); }
+.quill-control-marks i b { position: absolute; left: -1px; bottom: 100%; padding: 0 5px; max-width: 220px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font: 600 10px/14px system-ui, 'Segoe UI', sans-serif; color: #fff; background: rgba(91, 141, 239, .92); border-radius: 3px 3px 0 0; }
+
+/* Several objects picked (Shift+click): the others' frames, and crop mode's black handles. */
+.quill-object-frame.is-picked { border-style: dashed; }
+.quill-crop-frame { position: absolute; transform-origin: center; pointer-events: none; outline: 1px solid #111; }
+.quill-crop-frame b { position: absolute; background: #111; pointer-events: auto; touch-action: none; }
+.quill-crop-frame .c-n, .quill-crop-frame .c-s { width: 22px; height: 4px; left: calc(50% - 11px); cursor: ns-resize; }
+.quill-crop-frame .c-e, .quill-crop-frame .c-w { width: 4px; height: 22px; top: calc(50% - 11px); cursor: ew-resize; }
+.quill-crop-frame .c-n { top: -4px; } .quill-crop-frame .c-s { bottom: -4px; } .quill-crop-frame .c-w { left: -4px; } .quill-crop-frame .c-e { right: -4px; }
+.quill-crop-frame .c-nw, .quill-crop-frame .c-ne, .quill-crop-frame .c-sw, .quill-crop-frame .c-se { width: 16px; height: 16px; background: none; border: 0 solid #111; }
+.quill-crop-frame .c-nw { left: -4px; top: -4px; border-left-width: 4px; border-top-width: 4px; cursor: nwse-resize; }
+.quill-crop-frame .c-ne { right: -4px; top: -4px; border-right-width: 4px; border-top-width: 4px; cursor: nesw-resize; }
+.quill-crop-frame .c-sw { left: -4px; bottom: -4px; border-left-width: 4px; border-bottom-width: 4px; cursor: nesw-resize; }
+.quill-crop-frame .c-se { right: -4px; bottom: -4px; border-right-width: 4px; border-bottom-width: 4px; cursor: nwse-resize; }
+/* Edit Points: the outline's vertices and the picked point's handles over the page (surface/EditPoints.tsx). */
+.quill-edit-points { position: absolute; left: 0; top: 0; overflow: visible; pointer-events: none; }
+.quill-ep-outline { stroke: #111; stroke-width: 1; stroke-dasharray: 4 3; pointer-events: none; }
+.quill-ep-hit { stroke: transparent; stroke-width: 12; pointer-events: stroke; cursor: crosshair; }
+.quill-ep-vertex { fill: #111; stroke: #fff; stroke-width: 1; pointer-events: all; cursor: move; touch-action: none; }
+.quill-ep-vertex.is-chosen { fill: #fff; stroke: #111; stroke-width: 2; }
+.quill-ep-arm { stroke: #111; stroke-width: 1; pointer-events: none; }
+.quill-ep-handle { fill: #fff; stroke: #111; stroke-width: 1.5; pointer-events: all; cursor: pointer; touch-action: none; }
+.quill-crop-preview { position: absolute; border: 1px dashed #111; background: rgba(0, 0, 0, 0.12); pointer-events: none; }
+
+/* The in-place equation editor (Insert › Equation, a double-click on an equation): the equation's text over the equation, on the page's own white. */
+.quill-eq-editor { position: absolute; z-index: 6; box-sizing: border-box; padding: 2px 6px; border: 1.5px solid #5b9bd5; border-radius: 3px; background: #fff; color: #111; font-family: "Cambria Math", "Cambria", "STIX Two Math", serif; outline: 0; box-shadow: 0 1px 6px rgba(0,0,0,.25); }
+.quill-eq-editor::placeholder { color: #8a8a8a; font-style: italic; }
+
+/* View › Hide White Space: a page shows only its band; the thin gap between two bands is the divider (U:quill/rest). */
+.quill-page.is-cut { box-shadow: none; }
+.quill-surface.is-hide-ws .quill-page { outline: 1px solid rgba(0,0,0,.25); }
+
+/* Immersive Reader › Line Focus: everything outside the lit lines dims (U:quill/rest). */
+.quill-line-focus { position: absolute; inset: 0; z-index: 5; pointer-events: none; }
+.quill-line-focus i { position: absolute; left: 0; right: 0; background: rgba(255,255,255,.72); transition: top .12s ease, height .12s ease; }
+
+/* View › Dark Mode › Interface Theme: the work area round the pages (U:quill/rest). Dark is the default look. */
+.quill-surface.theme-light:not(.is-read):not(.is-immersive):not(.is-focus) { background: #dcdce0; }
+.quill-surface.theme-light .quill-ruler-row, .quill-surface.theme-light .quill-ruler-corner { background: #ececef; border-bottom-color: rgba(0,0,0,.1); }
+.quill-surface.theme-light .quill-scroll { scrollbar-color: rgba(0,0,0,.3) transparent; }
+@media (prefers-color-scheme: light) {
+  .quill-surface.theme-system:not(.is-read):not(.is-immersive):not(.is-focus) { background: #dcdce0; }
+  .quill-surface.theme-system .quill-ruler-row, .quill-surface.theme-system .quill-ruler-corner { background: #ececef; border-bottom-color: rgba(0,0,0,.1); }
+  .quill-surface.theme-system .quill-scroll { scrollbar-color: rgba(0,0,0,.3) transparent; }
+}
+.quill-scroll.is-pick, .quill-scroll.is-pick * { cursor: crosshair; }
+.quill-surface.is-table-pen .quill-scroll, .quill-surface.is-table-pen .quill-scroll * { cursor: crosshair; }
+.quill-surface.paper-inverse .quill-line-focus i { background: rgba(0,0,0,.7); }
+.quill-surface.paper-sepia .quill-line-focus i { background: rgba(226,217,208,.75); }

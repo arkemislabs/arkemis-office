@@ -1,0 +1,96 @@
+{
+  "tab": "table-design",
+  "keytip": "JT",
+  "source": "deckcraft crates/ui-egui/src/ribbon/table.rs (table_design) @ f893f6af7d36a5409fd804e81a34fd895cfefedf; WordArt Styles and Draw Borders placed as PowerPoint",
+  "groups": {
+    "table-style-options": {
+      "collapseOrder": 4,
+      "layout": [
+        {
+          "rows": [
+            [
+              "tabledesign.options.header-row",
+              "tabledesign.options.first-column"
+            ],
+            [
+              "tabledesign.options.total-row",
+              "tabledesign.options.last-column"
+            ],
+            [
+              "tabledesign.options.banded-rows",
+              "tabledesign.options.banded-columns"
+            ]
+          ]
+        }
+      ]
+    },
+    "table-styles": {
+      "collapseOrder": 3,
+      "collapsedIcon": "table-style",
+      "layout": [
+        {
+          "gallery": "tabledesign.styles.gallery",
+          "inline": true,
+          "columns": 5
+        },
+        {
+          "stack": [
+            "tabledesign.styles.shading",
+            "tabledesign.styles.borders",
+            "tabledesign.styles.effects"
+          ]
+        }
+      ]
+    },
+    "word-art-styles": {
+      "collapseOrder": 2,
+      "layout": [
+        {
+          "large": "tabledesign.wordart.quick"
+        },
+        {
+          "stack": [
+            "tabledesign.wordart.text-fill",
+            "tabledesign.wordart.text-outline",
+            "tabledesign.wordart.text-effects"
+          ]
+        }
+      ]
+    },
+    "draw-borders": {
+      "collapseOrder": 1,
+      "collapsedIcon": "pen-style",
+      "layout": [
+        {
+          "stack": [
+            "tabledesign.draw.pen-style",
+            "tabledesign.draw.pen-weight",
+            "tabledesign.draw.pen-color"
+          ]
+        },
+        {
+          "large": "tabledesign.draw.draw-table"
+        },
+        {
+          "large": "tabledesign.draw.eraser"
+        }
+      ]
+    }
+  },
+  "keytips": {
+    "tabledesign.options.header-row": "A",
+    "tabledesign.options.first-column": "F",
+    "tabledesign.options.total-row": "T",
+    "tabledesign.options.last-column": "L",
+    "tabledesign.options.banded-rows": "R",
+    "tabledesign.options.banded-columns": "C",
+    "tabledesign.styles.shading": "H",
+    "tabledesign.styles.borders": "B",
+    "tabledesign.styles.effects": "E",
+    "tabledesign.draw.pen-style": "PS",
+    "tabledesign.draw.pen-weight": "I",
+    "tabledesign.draw.pen-color": "PC",
+    "tabledesign.draw.draw-table": "D",
+    "tabledesign.draw.eraser": "X"
+  }
+}

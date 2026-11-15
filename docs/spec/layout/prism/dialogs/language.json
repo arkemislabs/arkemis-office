@@ -1,0 +1,22 @@
+{
+  "source": "deckcraft crates/ui-egui/src/dialogs/body.rs:1090 dlg_language (Apply to, the language list 220 px high, Do not check spelling or grammar) at f893f6af7d36a5409fd804e81a34fd895cfefedf; PowerPoint Language dialog",
+  "width": 420,
+  "height": 440,
+  "sections": [
+    {
+      "fields": [
+        "scope"
+      ]
+    },
+    {
+      "fields": [
+        "lang"
+      ]
+    },
+    {
+      "fields": [
+        "noProof"
+      ]
+    }
+  ]
+}

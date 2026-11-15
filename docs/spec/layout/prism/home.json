@@ -1,0 +1,219 @@
+{
+  "tab": "home",
+  "keytip": "H",
+  "source": "deckcraft crates/ui-egui/src/ribbon/home.rs (home, clipboard_group, slides_group, font_group, paragraph_group, drawing_group) @ f893f6af7d36a5409fd804e81a34fd895cfefedf; Reuse Slides and Select placed as PowerPoint",
+  "groups": {
+    "clipboard": {
+      "collapseOrder": 10,
+      "collapsedIcon": "clipboard-paste",
+      "layout": [
+        {
+          "large": "home.clipboard.paste"
+        },
+        {
+          "stack": [
+            "home.clipboard.cut",
+            "home.clipboard.copy",
+            "home.clipboard.format-painter"
+          ]
+        }
+      ]
+    },
+    "slides": {
+      "collapseOrder": 9,
+      "collapsedIcon": "slide-plus",
+      "layout": [
+        {
+          "large": "home.slides.new-slide"
+        },
+        {
+          "large": "home.slides.reuse-slides"
+        },
+        {
+          "stack": [
+            "home.slides.layout",
+            "home.slides.reset",
+            "home.slides.section"
+          ]
+        }
+      ]
+    },
+    "font": {
+      "collapseOrder": 7,
+      "collapsedIcon": "font-family",
+      "layout": [
+        {
+          "rows": [
+            [
+              "home.font.family",
+              "home.font.size",
+              "home.font.grow",
+              "home.font.shrink",
+              "home.font.clear"
+            ],
+            [
+              "home.font.bold",
+              "home.font.italic",
+              "home.font.underline",
+              "home.font.shadow",
+              "home.font.strikethrough",
+              "home.font.superscript",
+              "home.font.subscript",
+              "home.font.spacing",
+              "home.font.case",
+              "home.font.highlight",
+              "home.font.color"
+            ]
+          ]
+        }
+      ],
+      "widths": {
+        "home.font.family": 150,
+        "home.font.size": 52
+      }
+    },
+    "paragraph": {
+      "collapseOrder": 6,
+      "collapsedIcon": "list-bullets",
+      "layout": [
+        {
+          "rows": [
+            [
+              "home.paragraph.bullets",
+              "home.paragraph.numbering",
+              "home.paragraph.outdent",
+              "home.paragraph.indent",
+              "home.paragraph.rtl",
+              "home.paragraph.line-spacing",
+              "home.paragraph.columns"
+            ],
+            [
+              "home.paragraph.align-left",
+              "home.paragraph.align-center",
+              "home.paragraph.align-right",
+              "home.paragraph.justify",
+              "home.paragraph.direction",
+              "home.paragraph.align-text",
+              "home.paragraph.smartart"
+            ]
+          ]
+        }
+      ]
+    },
+    "images": {
+      "collapseOrder": 4,
+      "collapsedIcon": "image",
+      "layout": [
+        {
+          "large": "home.images.picture"
+        }
+      ]
+    },
+    "drawing": {
+      "collapseOrder": 5,
+      "collapsedIcon": "shapes",
+      "layout": [
+        {
+          "large": "home.drawing.shapes"
+        },
+        {
+          "large": "home.drawing.text-box"
+        },
+        {
+          "large": "home.drawing.arrange"
+        },
+        {
+          "large": "home.drawing.quick-styles"
+        },
+        {
+          "stack": [
+            "home.drawing.fill",
+            "home.drawing.outline",
+            "home.drawing.effects"
+          ]
+        }
+      ]
+    },
+    "editing": {
+      "collapseOrder": 8,
+      "collapsedIcon": "search",
+      "layout": [
+        {
+          "stack": [
+            "home.editing.find",
+            "home.editing.replace",
+            "home.editing.replace-fonts"
+          ]
+        },
+        {
+          "stack": [
+            "home.editing.select"
+          ]
+        },
+        {
+          "large": "home.editing.selection-pane"
+        }
+      ]
+    },
+    "voice": {
+      "collapseOrder": 3,
+      "collapsedIcon": "microphone",
+      "layout": [
+        {
+          "large": "home.voice.dictate"
+        }
+      ]
+    },
+    "designer": {
+      "collapseOrder": 2,
+      "collapsedIcon": "sparkle-layout",
+      "layout": [
+        {
+          "large": "home.designer.design-ideas"
+        }
+      ]
+    }
+  },
+  "keytips": {
+    "home.clipboard.paste": "V",
+    "home.clipboard.cut": "X",
+    "home.clipboard.copy": "C",
+    "home.clipboard.format-painter": "FP",
+    "home.slides.new-slide": "I",
+    "home.slides.layout": "L",
+    "home.slides.section": "T",
+    "home.font.family": "FF",
+    "home.font.size": "FS",
+    "home.font.grow": "FG",
+    "home.font.shrink": "FK",
+    "home.font.clear": "E",
+    "home.font.bold": "1",
+    "home.font.italic": "2",
+    "home.font.underline": "3",
+    "home.font.strikethrough": "4",
+    "home.font.shadow": "5",
+    "home.font.spacing": "6",
+    "home.font.case": "7",
+    "home.font.color": "FC",
+    "home.paragraph.bullets": "U",
+    "home.paragraph.numbering": "N",
+    "home.paragraph.outdent": "AO",
+    "home.paragraph.indent": "AI",
+    "home.paragraph.line-spacing": "K",
+    "home.paragraph.align-left": "AL",
+    "home.paragraph.align-center": "AC",
+    "home.paragraph.align-right": "AR",
+    "home.paragraph.justify": "AJ",
+    "home.paragraph.direction": "AD",
+    "home.paragraph.align-text": "AT",
+    "home.paragraph.smartart": "M",
+    "home.drawing.shapes": "SH",
+    "home.drawing.arrange": "G",
+    "home.drawing.quick-styles": "Q",
+    "home.drawing.fill": "SF",
+    "home.drawing.outline": "SO",
+    "home.drawing.effects": "SE",
+    "home.editing.find": "FD",
+    "home.editing.select": "SL"
+  }
+}

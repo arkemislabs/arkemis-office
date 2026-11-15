@@ -1,0 +1,340 @@
+{
+ "dialogs": {
+  "dialog.redact-pages": {
+   "note": "printcraft tools/redact_ui.rs pages_body: Current page, or Pages from N to M. The even/odd subset is Office-only and is not in printcraft: not shown.",
+   "tabs": [
+    {
+     "name": "General",
+     "fields": [
+      {
+       "id": "scope",
+       "label": "Pages",
+       "kind": "radio",
+       "options": [
+        "Current page",
+        "Pages from"
+       ]
+      },
+      {
+       "id": "from",
+       "label": "From",
+       "kind": "number",
+       "min": 1,
+       "visibleWhen": "scope==Pages from"
+      },
+      {
+       "id": "to",
+       "label": "to",
+       "kind": "number",
+       "min": 1,
+       "visibleWhen": "scope==Pages from"
+      }
+     ]
+    }
+   ]
+  },
+  "dialog.redact-search": {
+   "note": "printcraft tools/redact_ui.rs search_body. Import list... and the Office-only 'All PDFs in folder' scope are not translated: not shown.",
+   "tabs": [
+    {
+     "name": "General",
+     "fields": [
+      {
+       "id": "mode",
+       "label": "Search",
+       "kind": "radio",
+       "options": [
+        "Single word or phrase",
+        "Multiple words or phrases",
+        "Patterns"
+       ]
+      },
+      {
+       "id": "text",
+       "label": "Text to find",
+       "kind": "text",
+       "visibleWhen": "mode==Single word or phrase"
+      },
+      {
+       "id": "words",
+       "label": "Words or phrases to redact (one per line)",
+       "kind": "text",
+       "multiline": true,
+       "visibleWhen": "mode==Multiple words or phrases"
+      },
+      {
+       "id": "whole",
+       "label": "Whole words only",
+       "kind": "checkbox",
+       "visibleWhen": "mode!=Patterns"
+      },
+      {
+       "id": "case",
+       "label": "Case-sensitive",
+       "kind": "checkbox",
+       "visibleWhen": "mode!=Patterns"
+      },
+      {
+       "id": "pattern",
+       "label": "Pattern",
+       "kind": "select",
+       "options": [
+        "Phone Numbers",
+        "Email Addresses",
+        "Credit Card Numbers",
+        "Social Security Numbers",
+        "Dates"
+       ],
+       "visibleWhen": "mode==Patterns"
+      },
+      {
+       "id": "result",
+       "label": "Note",
+       "kind": "text",
+       "readOnly": true,
+       "multiline": true
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "Search & mark",
+    "Close"
+   ]
+  },
+  "dialog.redact-properties": {
+   "note": "printcraft tools/redact_ui.rs props_body (RedactPrefs). Properties are always kept for the next run (Make properties default is not shown); the redaction codes are typed as a comma separated list.",
+   "tabs": [
+    {
+     "name": "General",
+     "fields": [
+      {
+       "id": "no-fill",
+       "label": "No color",
+       "kind": "checkbox"
+      },
+      {
+       "id": "fill",
+       "label": "Redacted area fill color:",
+       "kind": "color",
+       "visibleWhen": "no-fill==false"
+      },
+      {
+       "id": "overlay",
+       "label": "Use overlay text",
+       "kind": "checkbox"
+      },
+      {
+       "id": "use-code",
+       "label": "Use redaction codes instead of custom text",
+       "kind": "checkbox",
+       "visibleWhen": "overlay"
+      },
+      {
+       "id": "custom",
+       "label": "Custom text:",
+       "kind": "text",
+       "visibleWhen": "use-code==false"
+      },
+      {
+       "id": "code",
+       "label": "Redaction code:",
+       "kind": "select",
+       "options": [
+        "U.S. FOIA",
+        "U.S. Privacy Act"
+       ],
+       "visibleWhen": "use-code"
+      },
+      {
+       "id": "codes",
+       "label": "Codes to use (comma separated, e.g. (b)(6), (b)(7)(C))",
+       "kind": "text",
+       "visibleWhen": "use-code"
+      },
+      {
+       "id": "font",
+       "label": "Font:",
+       "kind": "select",
+       "options": [
+        "Helvetica",
+        "Times Roman",
+        "Courier"
+       ],
+       "visibleWhen": "overlay"
+      },
+      {
+       "id": "auto",
+       "label": "Auto-size text to fit redaction region",
+       "kind": "checkbox",
+       "visibleWhen": "overlay"
+      },
+      {
+       "id": "size",
+       "label": "Font size:",
+       "kind": "number",
+       "min": 2,
+       "max": 144,
+       "unit": "pt",
+       "visibleWhen": "auto==false"
+      },
+      {
+       "id": "font-color",
+       "label": "Font color:",
+       "kind": "color",
+       "visibleWhen": "overlay"
+      },
+      {
+       "id": "repeat",
+       "label": "Repeat overlay text",
+       "kind": "checkbox",
+       "visibleWhen": "overlay"
+      },
+      {
+       "id": "align",
+       "label": "Text alignment:",
+       "kind": "radio",
+       "options": [
+        "Left",
+        "Center",
+        "Right"
+       ],
+       "visibleWhen": "overlay"
+      },
+      {
+       "id": "outline",
+       "label": "Redaction mark appearance: Outline color:",
+       "kind": "color"
+      },
+      {
+       "id": "mark-fill",
+       "label": "Fill color (shown while the pointer is over a mark):",
+       "kind": "color"
+      },
+      {
+       "id": "opacity",
+       "label": "Opacity:",
+       "kind": "number",
+       "min": 10,
+       "max": 100,
+       "unit": "%"
+      },
+      {
+       "id": "result",
+       "label": "Overlay",
+       "kind": "preview"
+      }
+     ]
+    }
+   ]
+  },
+  "dialog.redact-apply": {
+   "note": "printcraft tools/redact_ui.rs apply_body. The Office-only 'Also remove hidden information' option is not shown: Sanitize document does that.",
+   "tabs": [
+    {
+     "name": "General",
+     "fields": [
+      {
+       "id": "message",
+       "label": "Apply redactions",
+       "kind": "preview"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ]
+  },
+  "dialog.remove-hidden": {
+   "note": "printcraft tools/redact_ui.rs hidden_body: the nine categories of crates/redact/src/sanitize.rs. Overlapping objects is Office-only and is not shown.",
+   "tabs": [
+    {
+     "name": "General",
+     "fields": [
+      {
+       "id": "metadata",
+       "label": "Metadata",
+       "kind": "checkbox"
+      },
+      {
+       "id": "attachments",
+       "label": "File attachments",
+       "kind": "checkbox"
+      },
+      {
+       "id": "comments",
+       "label": "Comments and markups",
+       "kind": "checkbox"
+      },
+      {
+       "id": "form-fields",
+       "label": "Form fields",
+       "kind": "checkbox"
+      },
+      {
+       "id": "hidden-text",
+       "label": "Hidden text",
+       "kind": "checkbox"
+      },
+      {
+       "id": "hidden-layers",
+       "label": "Hidden layers",
+       "kind": "checkbox"
+      },
+      {
+       "id": "bookmarks",
+       "label": "Bookmarks",
+       "kind": "checkbox"
+      },
+      {
+       "id": "links-actions-scripts",
+       "label": "Links, actions and JavaScripts",
+       "kind": "checkbox"
+      },
+      {
+       "id": "private-data",
+       "label": "Private data of other applications",
+       "kind": "checkbox"
+      },
+      {
+       "id": "note",
+       "label": "Note",
+       "kind": "text",
+       "readOnly": true,
+       "multiline": true
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "Remove",
+    "Cancel"
+   ]
+  },
+  "dialog.sanitize": {
+   "tabs": [
+    {
+     "name": "General",
+     "fields": [
+      {
+       "id": "message",
+       "label": "Sanitize document",
+       "kind": "message"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "Sanitize",
+    "Cancel"
+   ]
+  }
+ },
+ "commands": {
+  "redact.apply": {
+   "note": "Checked against printcraft 8f16855 (redact image.rs): a CCITT fax image under a mark is cleared there like any other image; here it is removed whole, as every codec this app does not decode is (fail closed, nothing readable stays). The other change there (filter parameters and /Decode given by reference) is not checked against this app's image decoder."
+  }
+ }
+}

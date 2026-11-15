@@ -1,0 +1,10 @@
+{
+  "source": "gridcraft crates/ui-egui/src/dialogs/paste.rs (paste_special: Paste and Operation each in two columns filled column by column, Skip blanks and Transpose side by side, Paste Link at the left of OK / Cancel) at 146161b4b450a56e5e59a083ba0478582d1e602b",
+  "width": 480,
+  "height": 430,
+  "sections": [
+    {"fields": ["what"], "columns": 2},
+    {"fields": ["operation"], "columns": 2},
+    {"fields": ["skipBlanks", "transpose"], "columns": 2}
+  ]
+}

@@ -1,0 +1,41 @@
+/* The Accessibility Checker and Standards panels (panes/accessibility.tsx, panes/standards.tsx): Arkemis glass tokens, Acrobat's results layout. */
+.ax-pane { gap: 6px; }
+.ax-empty { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 28px 8px; color: var(--sh-text-3); text-align: center; }
+.ax-empty p { margin: 0; color: var(--sh-text-2); }
+.ax-note { color: var(--sh-text-3); font-size: 11px; line-height: 1.35; }
+.ax-caution { padding: 6px 8px; border-radius: 8px; background: rgba(217, 142, 4, .12); color: var(--sh-text-2); }
+.ax-compare { padding: 6px 8px; border-radius: 8px; background: var(--sh-hover); color: var(--sh-text-2); font-size: 11px; line-height: 1.5; }
+.ax-list { gap: 1px; }
+.ax-cat { display: flex; align-items: center; gap: 4px; min-height: 26px; padding: 2px 4px; border-radius: 7px; font-weight: 600; font-size: 12px; cursor: default; }
+.ax-cat:hover { background: var(--sh-hover); }
+.ax-cat.has-issues { color: #d7373f; }
+.ax-rule { display: flex; align-items: center; gap: 6px; min-height: 26px; margin-left: 16px; padding: 2px 6px; border-radius: 7px; cursor: default; }
+.ax-rule:hover { background: var(--sh-hover); }
+.ax-rule.is-passed svg { color: #2d9d4f; }
+.ax-rule.is-failed svg { color: #d7373f; }
+.ax-rule.is-manual svg { color: #d98e04; }
+.ax-rule.is-skipped svg { color: var(--sh-text-3); }
+.ax-name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ax-actions { display: none; gap: 3px; flex: none; }
+.ax-rule:hover .ax-actions, .ax-rule:focus-within .ax-actions { display: inline-flex; }
+.ax-actions .ff-action { height: 22px; padding: 0 7px; font-size: 11px; }
+.ax-explain, .ax-findings { margin: 0 4px 6px 46px; color: var(--sh-text-3); font-size: 11px; line-height: 1.4; }
+.ax-finding { padding: 1px 0; }
+.ax-finding.is-link { cursor: pointer; }
+.ax-finding.is-link:hover { color: var(--sh-text-1); text-decoration: underline; }
+/* Standards */
+.sd-block { padding: 8px; border-radius: 9px; background: var(--sh-hover); display: flex; flex-direction: column; gap: 4px; }
+.sd-block h4 { margin: 0; font-size: 12px; }
+.sd-block p { margin: 0; color: var(--sh-text-2); line-height: 1.4; }
+.sd-issue { color: var(--sh-text-2); font-size: 11px; padding: 1px 0; }
+.sd-issue b { color: var(--sh-text-3); font-weight: 600; margin-right: 6px; }
+.sd-unverified { color: var(--sh-text-3); font-size: 11px; }
+/* Tags: the selected tag's properties */
+.tg-props { display: flex; flex-direction: column; gap: 6px; padding: 8px; border-radius: 9px; background: var(--sh-hover); flex: none; }
+.tg-field { display: grid; grid-template-columns: 96px 1fr; align-items: center; gap: 6px; }
+.tg-field span { color: var(--sh-text-3); font-size: 11px; }
+.tg-field input, .tg-field select { min-width: 0; box-sizing: border-box; height: 26px; border: 1px solid var(--sh-field-border); border-radius: 6px; background: var(--sh-field); color: var(--sh-text-1); font: inherit; padding: 0 6px; }
+.tg-row.is-selected { background: var(--sh-hover); box-shadow: inset 0 0 0 1px var(--sh-focus); }
+
+/* A list that scrolls shows it: a thin visible scroll bar, so results past the bottom are not mistaken for the end. */
+.ax-list, .tg-tree, .ff-list.ax-list { scrollbar-width: thin; scrollbar-color: rgba(255, 255, 255, .34) transparent; scrollbar-gutter: stable; padding-right: 4px; }

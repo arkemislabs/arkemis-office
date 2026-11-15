@@ -1,0 +1,32 @@
+{
+  "source": "Word Compare Documents (Original / Revised document, Label changes with, More >> Comparison settings, Show changes); wordcraft dialogs_review.rs compare_dialog",
+  "width": 620,
+  "sections": [
+    {
+      "fields": [
+        "original",
+        "revised"
+      ],
+      "columns": 2
+    },
+    {
+      "fields": [
+        "label"
+      ]
+    },
+    {
+      "title": "Comparison settings",
+      "fields": [
+        "settings"
+      ]
+    },
+    {
+      "title": "Show changes",
+      "fields": [
+        "level",
+        "showIn"
+      ],
+      "columns": 2
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "tab": "view",
+  "keytip": "W",
+  "source": "office: OneNote for Microsoft 365, View tab (Slate has no ArtCraft upstream; architecture section 1)",
+  "groups": {
+    "views": {
+      "collapseOrder": 6,
+      "collapsedIcon": "window-normal",
+      "layout": [
+        {
+          "large": "view.views.normal-view"
+        },
+        {
+          "large": "view.views.full-page-view"
+        },
+        {
+          "large": "view.views.dock-to-desktop"
+        }
+      ]
+    },
+    "immersive-reader": {
+      "collapseOrder": 5,
+      "collapsedIcon": "book-open-speaker",
+      "layout": [
+        {
+          "large": "view.immersive-reader.immersive-reader"
+        }
+      ]
+    },
+    "show": {
+      "collapseOrder": 4,
+      "collapsedIcon": "sidebar",
+      "layout": [
+        {
+          "large": "view.show.navigation-panes"
+        },
+        {
+          "large": "view.show.tabs-layout"
+        },
+        {
+          "large": "view.show.deleted-notes"
+        },
+        {
+          "large": "view.show.switch-background"
+        }
+      ]
+    },
+    "page-setup": {
+      "collapseOrder": 3,
+      "collapsedIcon": "page-fill",
+      "layout": [
+        {
+          "large": "view.page-setup.page-color"
+        },
+        {
+          "large": "view.page-setup.rule-lines"
+        },
+        {
+          "large": "view.page-setup.hide-page-title"
+        },
+        {
+          "large": "view.page-setup.paper-size"
+        }
+      ]
+    },
+    "zoom": {
+      "collapseOrder": 2,
+      "collapsedIcon": "magnify-minus",
+      "layout": [
+        {
+          "large": "view.zoom.zoom-out"
+        },
+        {
+          "large": "view.zoom.zoom-in"
+        },
+        {
+          "stack": [
+            "view.zoom.zoom",
+            "view.zoom.zoom-100",
+            "view.zoom.page-width"
+          ]
+        }
+      ],
+      "widths": {
+        "view.zoom.zoom": 64
+      }
+    },
+    "window": {
+      "collapseOrder": 1,
+      "collapsedIcon": "window-plus",
+      "layout": [
+        {
+          "large": "view.window.new-window"
+        },
+        {
+          "large": "view.window.new-docked-window"
+        },
+        {
+          "large": "view.window.send-to-onenote-tool"
+        },
+        {
+          "large": "view.window.always-on-top"
+        }
+      ]
+    }
+  },
+  "keytips": {
+    "view.views.normal-view": "J",
+    "view.views.full-page-view": "F",
+    "view.views.dock-to-desktop": "K",
+    "view.immersive-reader.immersive-reader": "L",
+    "view.show.navigation-panes": "NP",
+    "view.show.tabs-layout": "TL",
+    "view.show.deleted-notes": "DN",
+    "view.show.switch-background": "SB",
+    "view.page-setup.page-color": "PC",
+    "view.page-setup.rule-lines": "R",
+    "view.page-setup.hide-page-title": "H",
+    "view.page-setup.paper-size": "PS",
+    "view.zoom.zoom-out": "O",
+    "view.zoom.zoom-in": "I",
+    "view.zoom.zoom": "Q",
+    "view.zoom.zoom-100": "1",
+    "view.zoom.page-width": "PW",
+    "view.window.new-window": "W",
+    "view.window.new-docked-window": "DW",
+    "view.window.send-to-onenote-tool": "Y",
+    "view.window.always-on-top": "A"
+  }
+}

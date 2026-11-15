@@ -1,0 +1,30 @@
+{
+  "tab": "slicer",
+  "source": "Microsoft Excel for Windows › Slicer; gridcraft draws no Slicer tab, the spec takes it from Excel (Actions holds the engine's slicer commands)",
+  "groups": {
+    "slicer": {
+      "collapseOrder": 3,
+      "layout": [
+        {"stack": ["slicer.slicer.caption", "slicer.slicer.reportConnections", "slicer.slicer.settings"]}
+      ]
+    },
+    "slicer-styles": {
+      "collapseOrder": 1,
+      "layout": [
+        {"gallery": "slicer.styles.gallery", "inline": true, "columns": 6}
+      ]
+    },
+    "buttons": {
+      "collapseOrder": 2,
+      "layout": [
+        {"stack": ["slicer.buttons.columns", "slicer.buttons.height", "slicer.buttons.width"]}
+      ]
+    },
+    "actions": {
+      "collapseOrder": 4,
+      "layout": [
+        {"stack": ["slicer.actions.clearFilter", "slicer.actions.selectAll", "slicer.actions.delete"]}
+      ]
+    }
+  }
+}

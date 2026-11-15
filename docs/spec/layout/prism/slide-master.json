@@ -1,0 +1,114 @@
+{
+  "tab": "slide-master",
+  "keytip": "M",
+  "source": "deckcraft crates/ui-egui/src/ribbon/masters.rs (slide_master) @ f893f6af7d36a5409fd804e81a34fd895cfefedf; Insert Slide Master, Master Layout and Colors/Fonts/Effects placed as PowerPoint",
+  "groups": {
+    "edit-master": {
+      "collapseOrder": 5,
+      "collapsedIcon": "layout-plus",
+      "layout": [
+        {
+          "large": "slidemaster.edit.insert-master"
+        },
+        {
+          "large": "slidemaster.edit.insert-layout"
+        },
+        {
+          "large": "slidemaster.edit.delete"
+        },
+        {
+          "large": "slidemaster.edit.rename"
+        },
+        {
+          "stack": [
+            "slidemaster.edit.preserve"
+          ]
+        }
+      ]
+    },
+    "master-layout": {
+      "collapseOrder": 4,
+      "collapsedIcon": "placeholder-plus",
+      "layout": [
+        {
+          "large": "slidemaster.layout.master-layout"
+        },
+        {
+          "large": "slidemaster.layout.insert-placeholder"
+        },
+        {
+          "stack": [
+            "slidemaster.layout.title",
+            "slidemaster.layout.footers"
+          ]
+        }
+      ]
+    },
+    "edit-theme": {
+      "collapseOrder": 3,
+      "collapsedIcon": "theme-Aa",
+      "layout": [
+        {
+          "large": "slidemaster.theme.themes"
+        }
+      ]
+    },
+    "background": {
+      "collapseOrder": 6,
+      "collapsedIcon": "background-styles",
+      "layout": [
+        {
+          "stack": [
+            "slidemaster.background.colors",
+            "slidemaster.background.fonts",
+            "slidemaster.background.effects"
+          ]
+        },
+        {
+          "large": "slidemaster.background.styles"
+        },
+        {
+          "stack": [
+            "slidemaster.background.hide-graphics"
+          ]
+        }
+      ]
+    },
+    "size": {
+      "collapseOrder": 2,
+      "layout": [
+        {
+          "large": "slidemaster.size.slide-size"
+        }
+      ]
+    },
+    "close": {
+      "collapseOrder": 1,
+      "collapsedIcon": "close-x",
+      "layout": [
+        {
+          "large": "slidemaster.close.close"
+        }
+      ]
+    }
+  },
+  "keytips": {
+    "slidemaster.edit.insert-master": "I",
+    "slidemaster.edit.insert-layout": "L",
+    "slidemaster.edit.delete": "D",
+    "slidemaster.edit.rename": "R",
+    "slidemaster.edit.preserve": "P",
+    "slidemaster.layout.master-layout": "M",
+    "slidemaster.layout.insert-placeholder": "A",
+    "slidemaster.layout.title": "TI",
+    "slidemaster.layout.footers": "F",
+    "slidemaster.theme.themes": "H",
+    "slidemaster.background.colors": "TC",
+    "slidemaster.background.fonts": "TF",
+    "slidemaster.background.effects": "TE",
+    "slidemaster.background.styles": "B",
+    "slidemaster.background.hide-graphics": "G",
+    "slidemaster.size.slide-size": "S",
+    "slidemaster.close.close": "C"
+  }
+}

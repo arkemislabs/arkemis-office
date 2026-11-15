@@ -1,0 +1,70 @@
+{
+  "tab": "right-rail",
+  "source": "printcraft crates/ui-egui/src/chrome.rs (right rail), panels/right.rs @ 3109bb2359759e24ef490e1cdbdba00722b20972",
+  "note": "The right rail, not a ribbon tab: its panel icons and the page navigation and zoom controls in rail order.",
+  "groups": {
+    "panels": {
+      "collapseOrder": 2,
+      "collapsedIcon": "message-square-text",
+      "layout": [
+        {
+          "rows": [
+            [
+              "rail.panels.comments",
+              "rail.panels.bookmarks",
+              "rail.panels.pages",
+              "rail.panels.fields",
+              "rail.panels.layers"
+            ],
+            [
+              "rail.panels.attachments",
+              "rail.panels.signatures",
+              "rail.panels.accessibility",
+              "rail.panels.tags",
+              "rail.panels.destinations"
+            ],
+            [
+              "rail.panels.content",
+              "rail.panels.order",
+              "rail.panels.articles",
+              "rail.panels.model-tree",
+              "rail.panels.standards"
+            ]
+          ]
+        }
+      ]
+    },
+    "page-navigation-and-zoom": {
+      "collapseOrder": 1,
+      "collapsedIcon": "zoom-out",
+      "layout": [
+        {
+          "rows": [
+            [
+              "rail.nav.zoom-out",
+              "rail.nav.zoom-in",
+              "rail.nav.zoom-input",
+              "rail.nav.fit-toggle"
+            ],
+            [
+              "rail.nav.page-display",
+              "rail.nav.rotate-view",
+              "rail.nav.previous-page",
+              "rail.nav.next-page"
+            ],
+            [
+              "rail.nav.previous-view",
+              "rail.nav.next-view",
+              "rail.nav.page-input",
+              "rail.nav.position"
+            ]
+          ]
+        }
+      ],
+      "widths": {
+        "rail.nav.zoom-input": 64,
+        "rail.nav.page-input": 48
+      }
+    }
+  }
+}

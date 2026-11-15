@@ -1,0 +1,45 @@
+{
+  "controls": {
+    "help.help.help": {
+      "command": null,
+      "dialog": null,
+      "note": "U:grid/main: Help (F1) opens the application's own help, a searchable list of the keyboard shortcuts and ribbon commands drawn from the command list (not checked against upstream). Excel's Help is Microsoft's online help. It is the only control of the Help tab that works here, so the tab itself is not shown (see the tab patch); F1 and the search box of the title bar reach it."
+    },
+    "help.help.contactSupport": {
+      "command": null,
+      "note": "U:grid/main: hidden. Contact Support is a Microsoft online service; the application has no support service and makes no web requests of its own."
+    },
+    "help.help.feedback": {
+      "command": null,
+      "note": "U:grid/main: hidden. Feedback goes to a Microsoft online service; the application has none and makes no web requests of its own."
+    },
+    "help.help.showTraining": {
+      "command": null,
+      "note": "U:grid/main: hidden. Show Training opens Microsoft's online training videos; the application has none and makes no web requests of its own."
+    },
+    "help.help.whatsNew": {
+      "command": null,
+      "note": "U:grid/main: hidden. What's New is a Microsoft online page; the application has no release feed and makes no web requests of its own."
+    },
+    "help.help.checkForUpdates": {
+      "command": null,
+      "note": "U:grid/main: hidden. Check for Updates asks a Microsoft update service; this application is updated by installing a new version and has no update service to ask."
+    }
+  },
+  "dialogs": {
+    "dialog.help": {
+      "id": "dialog.help",
+      "title": "Help",
+      "command": "help.open",
+      "source": "office",
+      "note": "U:grid/main: not checked against upstream. The list under the search box is drawn from the application's command list.",
+      "tabs": [{"name": "", "fields": [{"id": "search", "label": "What do you want to do?", "kind": "text", "options": []}]}],
+      "buttons": ["Close"]
+    },
+    "dialog.defaultWidth": {
+      "note": "U:grid/main: the box takes characters of the default font's digits (8.43 for 64 px), as Excel's Standard Width does; gridcraft asks in pixels (the command keeps pixels).",
+      "tabs": [{"name": "", "fields": [{"id": "width", "label": "Standard column width:", "kind": "number", "options": [], "min": 0, "max": 255}]}],
+      "defaults": {"width": 8.43}
+    }
+  }
+}

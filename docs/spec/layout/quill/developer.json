@@ -1,0 +1,57 @@
+{
+  "tab": "developer",
+  "keytip": "L",
+  "source": "wordcraft aadb077e072b7de05f724e359d8db82e151f125c crates/ui-egui/src/ribbon/review.rs (developer: Controls is three rows of three icon buttons, then Design Mode / Properties); Code, Add-ins, Mapping, Protect and Templates groups and keytips from Word for Windows",
+  "groups": {
+    "code": {
+      "collapseOrder": 6,
+      "layout": [
+        {"large": "developer.code.visual-basic"},
+        {"large": "developer.code.macros"},
+        {"stack": ["developer.code.record-macro", "developer.code.pause-recording", "developer.code.macro-security"]}
+      ]
+    },
+    "add-ins": {
+      "collapseOrder": 5,
+      "layout": [
+        {"large": "developer.add-ins.add-ins"},
+        {"large": "developer.add-ins.word-add-ins"},
+        {"large": "developer.add-ins.com-add-ins"}
+      ]
+    },
+    "controls": {
+      "collapseOrder": 4,
+      "layout": [
+        {"rows": [
+          ["developer.controls.rich-text-content-control", "developer.controls.plain-text-content-control", "developer.controls.picture-content-control"],
+          ["developer.controls.building-block-gallery-content-control", "developer.controls.check-box-content-control", "developer.controls.combo-box-content-control"],
+          ["developer.controls.drop-down-list-content-control", "developer.controls.date-picker-content-control", "developer.controls.repeating-section-content-control", "developer.controls.legacy-tools"]
+        ]},
+        {"stack": ["developer.controls.design-mode", "developer.controls.properties", "developer.controls.group"]}
+      ]
+    },
+    "mapping": {
+      "collapseOrder": 3,
+      "layout": [
+        {"large": "developer.mapping.xml-mapping-pane"}
+      ]
+    },
+    "protect": {
+      "collapseOrder": 2,
+      "layout": [
+        {"large": "developer.protect.block-authors"},
+        {"large": "developer.protect.restrict-editing"}
+      ]
+    },
+    "templates": {
+      "collapseOrder": 1,
+      "layout": [
+        {"large": "developer.templates.document-template"}
+      ]
+    }
+  },
+  "keytips": {
+    "developer.code.visual-basic": "V", "developer.code.macros": "PM", "developer.code.record-macro": "R", "developer.code.macro-security": "AS",
+    "developer.controls.design-mode": "DM", "developer.protect.restrict-editing": "PE"
+  }
+}

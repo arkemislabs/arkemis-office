@@ -1,0 +1,16 @@
+{
+  "controls": {
+    "review.notes.notes.edit-note": {
+      "command": "review.newNote",
+      "args": {
+        "threaded": false
+      },
+      "dialog": "dialog.note",
+      "note": "U:grid/review: Excel's Edit Note: the note dialog starts with the cell's note, as gridcraft's New Note does on a cell that has one."
+    },
+    "review.accessibility.check.accessibility-ribbon": {
+      "command": null,
+      "note": "U:grid/review: not in gridcraft; hidden."
+    }
+  }
+}

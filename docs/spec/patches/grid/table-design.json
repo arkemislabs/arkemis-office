@@ -1,0 +1,47 @@
+{
+  "controls": {
+    "tableDesign.properties.tableName": {
+      "args": {"table": null, "name": "<name>"},
+      "note": "U:grid/data: Table Name shows the table at the selection; Enter renames it (table.rename: structured references, slicers and PivotTables follow). Checked against gridcraft (cmd/insert/table.rs table_rename)."
+    },
+    "tableDesign.properties.resize": {
+      "note": "U:grid/data: Resize Table opens Excel's dialog (new data range); the headers stay in their row and the new range overlaps the old one. Checked against gridcraft (cmd/extra/data.rs table_resize)."
+    },
+    "tableDesign.tools.convertToRange": {
+      "args": null,
+      "note": "U:grid/data: the table look stays as formatting and structured references become cell references. Checked against gridcraft (table_convert), extended with the reference conversion."
+    },
+    "tableDesign.external.export": {
+      "command": null,
+      "note": "U:grid/data: hidden. Export Table to SharePoint List / Visio PivotDiagram need a SharePoint connection; gridcraft has none."
+    },
+    "tableDesign.external.properties": {
+      "command": null,
+      "note": "U:grid/data: hidden. Linked-table properties need a SharePoint link; gridcraft has none."
+    },
+    "tableDesign.external.openInBrowser": {
+      "command": null,
+      "note": "U:grid/data: hidden. Open in Browser needs a SharePoint link; gridcraft has none."
+    },
+    "tableDesign.external.unlink": {
+      "command": null,
+      "note": "U:grid/data: hidden. Unlink needs a SharePoint link; gridcraft has none."
+    },
+    "tableDesign.styleOptions.headerRow": {
+      "args": null,
+      "note": "U:grid/data: Excel's Header Row: hiding it clears the header cells and keeps the column names; showing it writes them back above the data (a row is inserted when that row holds data). gridcraft's table.headerRow toggled the filter buttons, which is the Filter Button box here."
+    },
+    "tableDesign.styleOptions.totalRow": {"args": null, "note": "U:grid/data: checked against gridcraft (table_flag totals, write_totals); cells below move down when the row under the table holds data."},
+    "tableDesign.styleOptions.bandedRows": {"args": null, "note": "U:grid/data: checked against gridcraft (table_flag bandedRows)."},
+    "tableDesign.styleOptions.firstColumn": {"args": null, "note": "U:grid/data: checked against gridcraft (table_flag firstCol)."},
+    "tableDesign.styleOptions.lastColumn": {"args": null, "note": "U:grid/data: checked against gridcraft (table_flag lastCol)."},
+    "tableDesign.styleOptions.bandedColumns": {"args": null, "note": "U:grid/data: checked against gridcraft (table_flag bandedCols)."},
+    "tableDesign.styles.gallery": {
+      "args": {"table": null, "style": "<TableStyle…>"},
+      "note": "U:grid/data: the 21 Light, 28 Medium and 11 Dark styles drawn as tiles from the style's header, band and line colours (gridcraft tables.rs gallery); Clear removes the style."
+    },
+    "tableDesign.styles.gallery.new-table-style": {
+      "note": "U:grid/data: hidden. gridcraft has no custom table styles (a style is one of its built-in names), so New Table Style has no engine."
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "dialogs": {
+    "dialog.export-text": {
+      "tabs": [{"name": "General", "fields": [
+        {"id": "pages", "label": "Pages", "kind": "radio", "options": ["All", "Current page", "Range"]},
+        {"id": "from", "label": "From", "kind": "number", "min": 1, "visibleWhen": "pages == Range"},
+        {"id": "to", "label": "to", "kind": "number", "min": 1, "visibleWhen": "pages == Range"}
+      ]}],
+      "buttons": ["Export", "Cancel"]
+    }
+  },
+  "controls": {
+    "alltools.export.microsoft-word-docx": {
+      "note": "printcraft commands.rs:579 export_office_dialog: the Save dialog titled Export, then the file. Pictures, the page background and the report of pages read in part are not translated: the paragraphs and tables are."
+    },
+    "alltools.export.presentation-pptx": {
+      "note": "printcraft commands.rs:579 export_office_dialog: the Save dialog titled Export, then the file. Pictures, the page background and the report of pages read in part are not translated: the paragraphs and tables are."
+    },
+    "alltools.export.html-web-page": {
+      "note": "printcraft commands.rs:579 export_office_dialog: the Save dialog titled Export, then the file. Pictures, the page background and the report of pages read in part are not translated: the paragraphs and tables are."
+    },
+    "alltools.export.rich-text-format-rtf": {
+      "note": "printcraft commands.rs:579 export_office_dialog: the Save dialog titled Export, then the file. Pictures, the page background and the report of pages read in part are not translated: the paragraphs and tables are."
+    },
+    "convert.export.microsoft-word-docx": {
+      "note": "printcraft commands.rs:579 export_office_dialog: the Save dialog titled Export, then the file. Pictures, the page background and the report of pages read in part are not translated: the paragraphs and tables are."
+    },
+    "convert.export.presentation-pptx": {
+      "note": "printcraft commands.rs:579 export_office_dialog: the Save dialog titled Export, then the file. Pictures, the page background and the report of pages read in part are not translated: the paragraphs and tables are."
+    },
+    "convert.export.html-web-page": {
+      "note": "printcraft commands.rs:579 export_office_dialog: the Save dialog titled Export, then the file. Pictures, the page background and the report of pages read in part are not translated: the paragraphs and tables are."
+    },
+    "convert.export.rich-text-format-rtf": {
+      "note": "printcraft commands.rs:579 export_office_dialog: the Save dialog titled Export, then the file. Pictures, the page background and the report of pages read in part are not translated: the paragraphs and tables are."
+    }
+  }
+}

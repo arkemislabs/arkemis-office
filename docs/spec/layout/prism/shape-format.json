@@ -1,0 +1,135 @@
+{
+  "tab": "shape-format",
+  "keytip": "JD",
+  "source": "deckcraft crates/ui-egui/src/ribbon/shape_format.rs (shape_format), arrange.rs (arrange_group, size_group) @ f893f6af7d36a5409fd804e81a34fd895cfefedf; WordArt Quick Styles placed as PowerPoint",
+  "groups": {
+    "insert-shapes": {
+      "collapseOrder": 2,
+      "collapsedIcon": "shapes",
+      "layout": [
+        {
+          "large": "shapeformat.insert.shapes"
+        },
+        {
+          "large": "shapeformat.insert.text-box"
+        },
+        {
+          "large": "shapeformat.insert.edit-shape"
+        },
+        {
+          "large": "shapeformat.insert.merge"
+        }
+      ]
+    },
+    "shape-styles": {
+      "collapseOrder": 5,
+      "collapsedIcon": "quick-styles",
+      "layout": [
+        {
+          "large": "shapeformat.styles.gallery"
+        },
+        {
+          "stack": [
+            "shapeformat.styles.fill",
+            "shapeformat.styles.outline",
+            "shapeformat.styles.effects"
+          ]
+        }
+      ]
+    },
+    "word-art-styles": {
+      "collapseOrder": 4,
+      "collapsedIcon": "text-fill-A",
+      "layout": [
+        {
+          "large": "shapeformat.wordart.quick"
+        },
+        {
+          "stack": [
+            "shapeformat.wordart.text-fill",
+            "shapeformat.wordart.text-outline",
+            "shapeformat.wordart.text-effects"
+          ]
+        }
+      ]
+    },
+    "accessibility": {
+      "collapseOrder": 3,
+      "collapsedIcon": "alt-text",
+      "layout": [
+        {
+          "large": "shapeformat.accessibility.alt-text"
+        }
+      ]
+    },
+    "arrange": {
+      "collapseOrder": 6,
+      "collapsedIcon": "bring-forward",
+      "layout": [
+        {
+          "large": "shapeformat.arrange.bring-forward"
+        },
+        {
+          "large": "shapeformat.arrange.send-backward"
+        },
+        {
+          "large": "shapeformat.arrange.selection-pane"
+        },
+        {
+          "large": "shapeformat.arrange.align"
+        },
+        {
+          "stack": [
+            "shapeformat.arrange.group",
+            "shapeformat.arrange.rotate"
+          ]
+        }
+      ]
+    },
+    "size": {
+      "collapseOrder": 7,
+      "collapsedIcon": "height",
+      "layout": [
+        {
+          "rows": [
+            [
+              "shapeformat.size.height"
+            ],
+            [
+              "shapeformat.size.width"
+            ]
+          ]
+        }
+      ],
+      "widths": {
+        "shapeformat.size.height": 72,
+        "shapeformat.size.width": 72
+      }
+    },
+    "format-pane": {
+      "collapseOrder": 1,
+      "collapsedIcon": "format-pane",
+      "layout": [
+        {
+          "large": "shapeformat.pane.format"
+        }
+      ]
+    }
+  },
+  "keytips": {
+    "shapeformat.styles.fill": "SF",
+    "shapeformat.styles.outline": "SO",
+    "shapeformat.styles.effects": "SE",
+    "shapeformat.wordart.text-fill": "TI",
+    "shapeformat.wordart.text-outline": "TO",
+    "shapeformat.wordart.text-effects": "TX",
+    "shapeformat.arrange.bring-forward": "AF",
+    "shapeformat.arrange.send-backward": "AE",
+    "shapeformat.arrange.selection-pane": "AP",
+    "shapeformat.arrange.align": "AA",
+    "shapeformat.arrange.group": "GG",
+    "shapeformat.arrange.rotate": "AY",
+    "shapeformat.size.height": "HH",
+    "shapeformat.size.width": "WW"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "tab": "table-design",
+  "source": "gridcraft 146161b4b450a56e5e59a083ba0478582d1e602b crates/ui-egui/src/ribbon/contextual.rs (table_design: Table Name field 120 px + Resize Table large; Remove Duplicates and Convert to Range large; Insert Slicer large; two checkbox columns; table_style_strip with seven tiles and a More arrow); Summarize with PivotTable, External Table Data and Filter Button placed as in Excel for Windows",
+  "groups": {
+    "properties": {
+      "collapseOrder": 5,
+      "layout": [
+        {"stack": ["tableDesign.properties.tableName"]},
+        {"large": "tableDesign.properties.resize"}
+      ],
+      "widths": {"tableDesign.properties.tableName": 120}
+    },
+    "tools": {
+      "collapseOrder": 4,
+      "layout": [
+        {"stack": ["tableDesign.tools.summarizePivot"]},
+        {"large": "tableDesign.tools.removeDuplicates"},
+        {"large": "tableDesign.tools.convertToRange"},
+        {"large": "tableDesign.tools.insertSlicer"}
+      ]
+    },
+    "external-table-data": {
+      "collapseOrder": 1,
+      "layout": [
+        {"large": "tableDesign.external.export"},
+        {"large": "tableDesign.external.refresh"},
+        {"stack": ["tableDesign.external.properties", "tableDesign.external.openInBrowser", "tableDesign.external.unlink"]}
+      ]
+    },
+    "table-style-options": {
+      "collapseOrder": 2,
+      "layout": [
+        {"stack": ["tableDesign.styleOptions.headerRow", "tableDesign.styleOptions.totalRow", "tableDesign.styleOptions.bandedRows"]},
+        {"stack": ["tableDesign.styleOptions.firstColumn", "tableDesign.styleOptions.lastColumn", "tableDesign.styleOptions.bandedColumns"]},
+        {"stack": ["tableDesign.styleOptions.filterButton"]}
+      ]
+    },
+    "table-styles": {
+      "collapseOrder": 3,
+      "layout": [
+        {"gallery": "tableDesign.styles.gallery", "inline": true, "columns": 7}
+      ]
+    }
+  }
+}

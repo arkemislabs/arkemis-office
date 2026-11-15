@@ -1,0 +1,18 @@
+{
+  "source": "U:quill/mailings: wordcraft dialogs_layout/print.rs envelopes_ui",
+  "width": 620,
+  "sections": [
+    {
+      "fields": [
+        "delivery",
+        "omit",
+        "ret"
+      ]
+    },
+    {
+      "fields": [
+        "size"
+      ]
+    }
+  ]
+}

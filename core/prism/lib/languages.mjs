@@ -1,0 +1,36 @@
+// The languages a presentation's text can be marked as (Review > Language > Language; deckcraft canvas/squiggles.rs LANGS) and Language Preferences
+// chooses its preferred editing language from.
+
+export const LANGUAGES = Object.freeze([
+  {value: 'en-US', label: 'English (United States)'},
+  {value: 'en-GB', label: 'English (United Kingdom)'},
+  {value: 'en-AU', label: 'English (Australia)'},
+  {value: 'en-CA', label: 'English (Canada)'},
+  {value: 'es-ES', label: 'Español (España)'},
+  {value: 'es-MX', label: 'Español (México)'},
+  {value: 'fr-FR', label: 'Français (France)'},
+  {value: 'fr-CA', label: 'Français (Canada)'},
+  {value: 'de-DE', label: 'Deutsch (Deutschland)'},
+  {value: 'de-CH', label: 'Deutsch (Schweiz)'},
+  {value: 'it-IT', label: 'Italiano'},
+  {value: 'nl-NL', label: 'Nederlands'},
+  {value: 'pt-BR', label: 'Português (Brasil)'},
+  {value: 'pt-PT', label: 'Português (Portugal)'},
+  {value: 'pl-PL', label: 'Polski'},
+  {value: 'sv-SE', label: 'Svenska'},
+  {value: 'da-DK', label: 'Dansk'},
+  {value: 'nb-NO', label: 'Norsk bokmål'},
+  {value: 'fi-FI', label: 'Suomi'},
+  {value: 'cs-CZ', label: 'Čeština'},
+  {value: 'uk-UA', label: 'Українська'},
+  {value: 'ru-RU', label: 'Русский'},
+  {value: 'be-BY', label: 'Беларуская'},
+  {value: 'tr-TR', label: 'Türkçe'},
+  {value: 'el-GR', label: 'Ελληνικά'},
+  {value: 'ja-JP', label: '日本語'},
+  {value: 'zh-CN', label: '中文(中国)'},
+  {value: 'ko-KR', label: '한국어'},
+  {value: 'ar-SA', label: 'العربية'},
+  {value: 'he-IL', label: 'עברית'},
+]);
+export const languageLabel = value => LANGUAGES.find(l => l.value === value)?.label ?? value;

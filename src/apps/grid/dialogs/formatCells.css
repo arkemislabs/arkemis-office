@@ -1,0 +1,47 @@
+/* Format Cells (Ctrl+1): Excel's page layouts in the Arkemis glass skin. */
+.fc-root { display: flex; flex-direction: column; gap: 10px; min-height: 0; }
+.fc-page { display: flex; flex-direction: column; gap: 10px; min-height: 360px; }
+.fc-group { margin: 0; padding: 8px 12px 10px; display: flex; flex-direction: column; gap: 6px; }
+.fc-cols { display: flex; gap: 14px; align-items: flex-start; }
+.fc-col { display: flex; flex-direction: column; gap: 10px; flex: 1; min-width: 0; }
+.fc-note { margin: 4px 0 0; color: #a9aab2; font-size: 11.5px; line-height: 1.45; }
+
+.fc-number { display: flex; gap: 16px; align-items: stretch; }
+.fc-number .sf-list { height: 300px; }
+.fc-number-right { flex: 1; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.fc-number-right .sf-list { height: 150px; }
+.fc-sample { min-height: 22px; padding: 4px 8px; border-radius: 8px; background: rgba(255,255,255,.05); font-variant-numeric: tabular-nums;
+  font-size: 13px; white-space: pre; overflow: hidden; text-overflow: ellipsis; }
+
+.fc-orient { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.fc-vertical { display: flex; flex-direction: column; align-items: center; width: 28px; padding: 6px 0; border-radius: 8px; border: 1px solid rgba(255,255,255,.12);
+  background: transparent; color: inherit; font-size: 11px; line-height: 1.1; cursor: default; }
+.fc-vertical.is-on { background: rgba(138,180,255,.18); border-color: rgba(138,180,255,.5); }
+.fc-dial { cursor: pointer; color: #c9cad1; }
+
+.fc-font { display: flex; flex-direction: column; gap: 10px; }
+.fc-font-row { display: flex; gap: 12px; align-items: stretch; }
+.fc-font-list { display: flex; flex-direction: column; gap: 4px; flex: 1; min-width: 0; }
+.fc-font-list .sf-list { height: 118px; }
+.fc-fontpreview { display: flex; align-items: center; justify-content: center; height: 64px; border-radius: 8px; background: #fff; color: #111; overflow: hidden; }
+
+.fc-lines { display: flex; flex-direction: column; gap: 2px; max-height: 228px; overflow-y: auto; }
+.fc-line { display: flex; align-items: center; justify-content: center; height: 16px; border: 1px solid transparent; border-radius: 6px; background: transparent;
+  color: inherit; font-size: 11px; }
+.fc-line.is-selected { border-color: rgba(138,180,255,.6); background: rgba(138,180,255,.12); }
+.fc-presets { display: flex; gap: 8px; }
+.fc-border { display: flex; gap: 10px; align-items: center; }
+.fc-border-box { background: #fff; color: #222; border-radius: 6px; }
+.fc-border-box .fc-text { font-size: 12px; fill: #333; text-anchor: middle; }
+.fc-edges-v { display: flex; flex-direction: column; gap: 22px; }
+.fc-edges-h { display: flex; gap: 10px; padding-left: 34px; margin-top: 6px; }
+.fc-edge { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 24px; border-radius: 6px;
+  border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.04); color: #e4e5ea; }
+.fc-edge.is-on { background: rgba(138,180,255,.2); border-color: rgba(138,180,255,.55); }
+.fc-edge:disabled { opacity: .35; }
+
+.fc-palette .shell-palette { padding: 0; }
+.fc-fill-sample { height: 46px; border-radius: 8px; border: 1px solid rgba(255,255,255,.12); }
+
+.mc-list .sf-list { height: 150px; }
+.fc-negatives { height: 110px; overflow-y: auto; }

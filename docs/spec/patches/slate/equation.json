@@ -1,0 +1,7 @@
+{
+  "controls": {
+    "equation.tools.ink-equation": {
+      "note": "U:slate/equation: hidden. Ink Equation recognises handwriting with Microsoft's math input recogniser; the app has no handwriting engine. Type equations in linear format (or LaTeX with the LaTeX button) instead."
+    }
+  }
+}

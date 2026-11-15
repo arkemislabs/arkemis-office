@@ -1,0 +1,54 @@
+{
+ "contextMenus": {
+  "misspelled-word": {
+   "items": [
+    {
+     "label": "Suggestions",
+     "command": "review.spellingApply",
+     "args": {
+      "text": "<suggestion>"
+     },
+     "kind": "list",
+     "dynamic": true,
+     "style": "strong",
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/canvas/context_menu.rs:104"
+    },
+    {
+     "label": "Delete Repeated Word",
+     "command": "review.spellingDeleteRepeat",
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/canvas/context_menu.rs:104"
+    },
+    {
+     "label": "Ignore All",
+     "command": "review.ignoreAll",
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/canvas/context_menu.rs:104"
+    },
+    {
+     "label": "Add to Dictionary",
+     "command": "review.addToDictionary",
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/canvas/context_menu.rs:104"
+    },
+    "-",
+    {
+     "label": "Cut",
+     "command": "edit.cut",
+     "source": "upstream"
+    },
+    {
+     "label": "Copy",
+     "command": "edit.copy",
+     "source": "upstream"
+    },
+    {
+     "label": "Paste",
+     "command": "edit.paste",
+     "source": "upstream"
+    }
+   ]
+  }
+ }
+}

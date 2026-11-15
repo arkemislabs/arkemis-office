@@ -1,0 +1,14 @@
+{
+  "source": "deckcraft crates/ui-egui/src/dialogs/body.rs:245 dlg_setup_show (Show type, Loop, Show without narration / animation, Slides, Use timings) at f893f6af7d36a5409fd804e81a34fd895cfefedf; PowerPoint Set Up Show",
+  "width": 520,
+  "height": 540,
+  "sections": [
+    {"fields": ["type"]},
+    {"fields": ["loop", "nn", "na"]},
+    {"fields": ["penColor", "laserColor"], "columns": 2},
+    {"fields": ["slides"]},
+    {"fields": ["from", "to"], "columns": 2},
+    {"fields": ["custom"]},
+    {"fields": ["ut"]}
+  ]
+}

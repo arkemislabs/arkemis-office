@@ -1,0 +1,100 @@
+{
+  "controls": {
+    "home.tags.outlook-tasks.today": {
+      "note": "U:slate/pending: hidden with Outlook Tasks (home.tags.outlook-tasks): it creates and lists tasks in Microsoft Outlook, which the app does not have."
+    },
+    "home.tags.outlook-tasks.tomorrow": {
+      "note": "U:slate/pending: hidden with Outlook Tasks (home.tags.outlook-tasks): it creates and lists tasks in Microsoft Outlook, which the app does not have."
+    },
+    "home.tags.outlook-tasks.this-week": {
+      "note": "U:slate/pending: hidden with Outlook Tasks (home.tags.outlook-tasks): it creates and lists tasks in Microsoft Outlook, which the app does not have."
+    },
+    "home.tags.outlook-tasks.next-week": {
+      "note": "U:slate/pending: hidden with Outlook Tasks (home.tags.outlook-tasks): it creates and lists tasks in Microsoft Outlook, which the app does not have."
+    },
+    "home.tags.outlook-tasks.no-date": {
+      "note": "U:slate/pending: hidden with Outlook Tasks (home.tags.outlook-tasks): it creates and lists tasks in Microsoft Outlook, which the app does not have."
+    },
+    "home.tags.outlook-tasks.custom": {
+      "note": "U:slate/pending: hidden with Outlook Tasks (home.tags.outlook-tasks): it creates and lists tasks in Microsoft Outlook, which the app does not have."
+    },
+    "home.tags.outlook-tasks.mark-complete": {
+      "note": "U:slate/pending: hidden with Outlook Tasks (home.tags.outlook-tasks): it creates and lists tasks in Microsoft Outlook, which the app does not have."
+    },
+    "home.tags.outlook-tasks.delete-task": {
+      "note": "U:slate/pending: hidden with Outlook Tasks (home.tags.outlook-tasks): it creates and lists tasks in Microsoft Outlook, which the app does not have."
+    },
+    "home.tags.outlook-tasks.open-task": {
+      "note": "U:slate/pending: hidden with Outlook Tasks (home.tags.outlook-tasks): it creates and lists tasks in Microsoft Outlook, which the app does not have."
+    },
+    "home.meetings.meeting-details.previous-day": {
+      "note": "U:slate/pending: hidden with Meeting Details (home.meetings.meeting-details): it reads the person's Outlook calendar, which the app does not have."
+    },
+    "home.meetings.meeting-details.today": {
+      "note": "U:slate/pending: hidden with Meeting Details (home.meetings.meeting-details): it reads the person's Outlook calendar, which the app does not have."
+    },
+    "home.meetings.meeting-details.next-day": {
+      "note": "U:slate/pending: hidden with Meeting Details (home.meetings.meeting-details): it reads the person's Outlook calendar, which the app does not have."
+    },
+    "home.meetings.meeting-details.choose-different-day": {
+      "note": "U:slate/pending: hidden with Meeting Details (home.meetings.meeting-details): it reads the person's Outlook calendar, which the app does not have."
+    },
+    "home.voice.dictate.dictate-start": {
+      "note": "U:slate/pending: hidden with Dictate (home.voice.dictate): there is no speech recognition service in the app."
+    },
+    "home.voice.dictate.dictation-settings": {
+      "note": "U:slate/pending: hidden with Dictate (home.voice.dictate): there is no speech recognition service in the app."
+    },
+    "insert.loop-components.loop-components.bulleted-list": {
+      "note": "U:slate/pending: hidden with Loop Components (insert.loop-components.loop-components): Loop components are live shared objects of Microsoft 365, which the app does not have."
+    },
+    "insert.loop-components.loop-components.checklist": {
+      "note": "U:slate/pending: hidden with Loop Components (insert.loop-components.loop-components): Loop components are live shared objects of Microsoft 365, which the app does not have."
+    },
+    "insert.loop-components.loop-components.numbered-list": {
+      "note": "U:slate/pending: hidden with Loop Components (insert.loop-components.loop-components): Loop components are live shared objects of Microsoft 365, which the app does not have."
+    },
+    "insert.loop-components.loop-components.paragraph": {
+      "note": "U:slate/pending: hidden with Loop Components (insert.loop-components.loop-components): Loop components are live shared objects of Microsoft 365, which the app does not have."
+    },
+    "insert.loop-components.loop-components.table": {
+      "note": "U:slate/pending: hidden with Loop Components (insert.loop-components.loop-components): Loop components are live shared objects of Microsoft 365, which the app does not have."
+    },
+    "insert.loop-components.loop-components.task-list": {
+      "note": "U:slate/pending: hidden with Loop Components (insert.loop-components.loop-components): Loop components are live shared objects of Microsoft 365, which the app does not have."
+    },
+    "insert.loop-components.loop-components.voting-table": {
+      "note": "U:slate/pending: hidden with Loop Components (insert.loop-components.loop-components): Loop components are live shared objects of Microsoft 365, which the app does not have."
+    },
+    "insert.loop-components.loop-components.progress-tracker": {
+      "note": "U:slate/pending: hidden with Loop Components (insert.loop-components.loop-components): Loop components are live shared objects of Microsoft 365, which the app does not have."
+    },
+    "insert.loop-components.loop-components.q-and-a": {
+      "note": "U:slate/pending: hidden with Loop Components (insert.loop-components.loop-components): Loop components are live shared objects of Microsoft 365, which the app does not have."
+    },
+    "review.language.language.language-preferences": {
+      "note": "U:slate/pending: hidden. It opens the Options dialog's Language page; the full Options dialog is not part of this app (Set Proofing Language is the language control)."
+    },
+    "help.help.contact-support": {
+      "note": "U:slate/pending: hidden. This Help command goes to a Microsoft online service (support, feedback, training or the what's-new page); the app has none and makes no web requests of its own."
+    },
+    "help.help.feedback": {
+      "note": "U:slate/pending: hidden. This Help command goes to a Microsoft online service (support, feedback, training or the what's-new page); the app has none and makes no web requests of its own."
+    },
+    "qat.customize-qat": {
+      "kind": "button",
+      "command": "tools.customizeRibbon",
+      "args": null,
+      "dialog": "dialog.customizeRibbon",
+      "note": "U:slate/pending: opens the Customize Ribbon dialog, whose Quick Access Toolbar page lists and orders the toolbar (the full Options dialog is not part of this app)."
+    }
+  },
+  "commands": {
+    "tools.customizeRibbon": {
+      "id": "tools.customizeRibbon",
+      "args": [],
+      "sourceRef": "office:OneNote/Quick Access Toolbar > Customize Quick Access Toolbar",
+      "summary": "Open Customize Ribbon and Quick Access Toolbar"
+    }
+  }
+}

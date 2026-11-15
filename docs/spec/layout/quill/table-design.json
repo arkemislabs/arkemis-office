@@ -1,0 +1,30 @@
+{
+  "tab": "table-design",
+  "keytip": "JT",
+  "source": "wordcraft aadb077e072b7de05f724e359d8db82e151f125c crates/ui-egui/src/ribbon/table.rs (table_design: Style Options grid of 2 x 3 checkboxes, Table Styles scroll gallery 420 px + Styles/Shading stack, Borders); Border Styles, Line Style, Line Weight and Pen Color placed as in Word for Windows",
+  "groups": {
+    "table-style-options": {
+      "collapseOrder": 1,
+      "layout": [
+        {"stack": ["table-design.table-style-options.header-row", "table-design.table-style-options.total-row", "table-design.table-style-options.banded-rows"]},
+        {"stack": ["table-design.table-style-options.first-column", "table-design.table-style-options.last-column", "table-design.table-style-options.banded-columns"]}
+      ]
+    },
+    "table-styles": {
+      "collapseOrder": 2,
+      "layout": [
+        {"gallery": "table-design.table-styles.table-styles", "inline": true, "columns": 5},
+        {"stack": ["table-design.table-styles.styles", "table-design.table-styles.shading"]}
+      ]
+    },
+    "borders": {
+      "collapseOrder": 3,
+      "layout": [
+        {"large": "table-design.borders.border-styles"},
+        {"stack": ["table-design.borders.line-style", "table-design.borders.line-weight", "table-design.borders.pen-color"]},
+        {"large": "table-design.borders.borders"},
+        {"large": "table-design.borders.border-painter"}
+      ]
+    }
+  }
+}

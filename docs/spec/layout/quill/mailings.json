@@ -1,0 +1,60 @@
+{
+  "tab": "mailings",
+  "keytip": "M",
+  "source": "wordcraft aadb077e072b7de05f724e359d8db82e151f125c crates/ui-egui/src/ribbon/mailings.rs (mailings: Preview Results is a stack of the record-navigation row, Find Recipient and Check for Errors); Update Labels placed as in Word for Windows",
+  "groups": {
+    "create": {
+      "collapseOrder": 1,
+      "layout": [
+        {"large": "mailings.create.envelopes"},
+        {"large": "mailings.create.labels"}
+      ]
+    },
+    "start-mail-merge": {
+      "collapseOrder": 2,
+      "layout": [
+        {"large": "mailings.start-mail-merge.start-mail-merge"},
+        {"large": "mailings.start-mail-merge.select-recipients"},
+        {"large": "mailings.start-mail-merge.edit-recipient-list"}
+      ]
+    },
+    "write-and-insert-fields": {
+      "collapseOrder": 3,
+      "layout": [
+        {"large": "mailings.write-insert-fields.highlight-merge-fields"},
+        {"large": "mailings.write-insert-fields.address-block"},
+        {"large": "mailings.write-insert-fields.greeting-line"},
+        {"large": "mailings.write-insert-fields.insert-merge-field"},
+        {"stack": ["mailings.write-insert-fields.rules", "mailings.write-insert-fields.match-fields", "mailings.write-insert-fields.update-labels"]}
+      ]
+    },
+    "preview-results": {
+      "collapseOrder": 4,
+      "layout": [
+        {"large": "mailings.preview-results.preview-results"},
+        {"rows": [
+          ["mailings.preview-results.first-record", "mailings.preview-results.previous-record", "mailings.preview-results.go-to-record", "mailings.preview-results.next-record", "mailings.preview-results.last-record"],
+          [{"medium": "mailings.preview-results.find-recipient"}],
+          [{"medium": "mailings.preview-results.check-for-errors"}]
+        ]}
+      ],
+      "widths": {"mailings.preview-results.go-to-record": 36}
+    },
+    "finish": {
+      "collapseOrder": 5,
+      "layout": [
+        {"large": "mailings.finish.finish-merge"}
+      ]
+    }
+  },
+  "keytips": {
+    "mailings.create.envelopes": "E", "mailings.create.labels": "L",
+    "mailings.start-mail-merge.start-mail-merge": "S", "mailings.start-mail-merge.select-recipients": "R", "mailings.start-mail-merge.edit-recipient-list": "D",
+    "mailings.write-insert-fields.highlight-merge-fields": "H", "mailings.write-insert-fields.address-block": "A", "mailings.write-insert-fields.greeting-line": "G",
+    "mailings.write-insert-fields.insert-merge-field": "I", "mailings.write-insert-fields.rules": "U", "mailings.write-insert-fields.match-fields": "T", "mailings.write-insert-fields.update-labels": "B",
+    "mailings.preview-results.preview-results": "P", "mailings.preview-results.first-record": "F", "mailings.preview-results.previous-record": "V",
+    "mailings.preview-results.next-record": "X",
+    "mailings.preview-results.find-recipient": "N", "mailings.preview-results.check-for-errors": "K",
+    "mailings.finish.finish-merge": "M"
+  }
+}

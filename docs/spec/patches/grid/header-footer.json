@@ -1,0 +1,122 @@
+{
+  "controls": {
+    "headerFooter.hf.header": {
+      "command": null,
+      "args": null,
+      "note": "U:grid/header-and-footer: checked against gridcraft (paper_view.rs ribbon_tab): the header presets as the result will read, with this sheet's and file's names; choosing one writes it for the kind of page being edited and ends the edit.",
+      "items": [
+        {
+          "id": "headerFooter.hf.header.presets",
+          "label": "Presets",
+          "kind": "list",
+          "command": "pageLayout.headerFooterPreset",
+          "args": {
+            "part": "header",
+            "preset": "<n>"
+          },
+          "dynamic": true,
+          "source": "upstream"
+        }
+      ]
+    },
+    "headerFooter.hf.footer": {
+      "command": null,
+      "args": null,
+      "note": "U:grid/header-and-footer: checked against gridcraft (paper_view.rs ribbon_tab): the footer presets as the result will read, with this sheet's and file's names; choosing one writes it for the kind of page being edited and ends the edit.",
+      "items": [
+        {
+          "id": "headerFooter.hf.footer.presets",
+          "label": "Presets",
+          "kind": "list",
+          "command": "pageLayout.headerFooterPreset",
+          "args": {
+            "part": "footer",
+            "preset": "<n>"
+          },
+          "dynamic": true,
+          "source": "upstream"
+        }
+      ]
+    },
+    "headerFooter.elements.pageNumber": {
+      "command": "pageLayout.headerFooterField",
+      "args": {
+        "insertField": "&[Page]"
+      },
+      "note": "U:grid/header-and-footer: checked against gridcraft (paper_view.rs insert_field): inserts &[Page] at the caret of the section being edited."
+    },
+    "headerFooter.elements.numberofPages": {
+      "command": "pageLayout.headerFooterField",
+      "args": {
+        "insertField": "&[Pages]"
+      },
+      "note": "U:grid/header-and-footer: checked against gridcraft (paper_view.rs insert_field): inserts &[Pages] at the caret of the section being edited."
+    },
+    "headerFooter.elements.currentDate": {
+      "command": "pageLayout.headerFooterField",
+      "args": {
+        "insertField": "&[Date]"
+      },
+      "note": "U:grid/header-and-footer: checked against gridcraft (paper_view.rs insert_field): inserts &[Date] at the caret of the section being edited."
+    },
+    "headerFooter.elements.currentTime": {
+      "command": "pageLayout.headerFooterField",
+      "args": {
+        "insertField": "&[Time]"
+      },
+      "note": "U:grid/header-and-footer: checked against gridcraft (paper_view.rs insert_field): inserts &[Time] at the caret of the section being edited."
+    },
+    "headerFooter.elements.filePath": {
+      "command": "pageLayout.headerFooterField",
+      "args": {
+        "insertField": "&[Path]&[File]"
+      },
+      "note": "U:grid/header-and-footer: checked against gridcraft (paper_view.rs insert_field): inserts &[Path]&[File] at the caret of the section being edited."
+    },
+    "headerFooter.elements.fileName": {
+      "command": "pageLayout.headerFooterField",
+      "args": {
+        "insertField": "&[File]"
+      },
+      "note": "U:grid/header-and-footer: checked against gridcraft (paper_view.rs insert_field): inserts &[File] at the caret of the section being edited."
+    },
+    "headerFooter.elements.sheetName": {
+      "command": "pageLayout.headerFooterField",
+      "args": {
+        "insertField": "&[Tab]"
+      },
+      "note": "U:grid/header-and-footer: checked against gridcraft (paper_view.rs insert_field): inserts &[Tab] at the caret of the section being edited."
+    },
+    "headerFooter.elements.picture": {
+      "command": null,
+      "args": null,
+      "dialog": null,
+      "note": "U:grid/header-and-footer: gridcraft keeps &[Picture] as a field name only (no picture is stored or printed); hidden."
+    },
+    "headerFooter.elements.formatPicture": {
+      "command": null,
+      "args": null,
+      "dialog": null,
+      "note": "U:grid/header-and-footer: a header picture is not stored (see Picture); hidden."
+    },
+    "headerFooter.navigation.goToHeader": {
+      "command": "pageLayout.headerFooterGoTo",
+      "args": {
+        "footer": false
+      },
+      "note": "U:grid/header-and-footer: checked against gridcraft (paper_view.rs go_to): moves the edit to the header of the same page."
+    },
+    "headerFooter.navigation.goToFooter": {
+      "command": "pageLayout.headerFooterGoTo",
+      "args": {
+        "footer": true
+      },
+      "note": "U:grid/header-and-footer: checked against gridcraft (paper_view.rs go_to): moves the edit to the footer of the same page."
+    }
+  },
+  "dialogs": {
+    "dialog.formatPicture": {
+      "note": "U:grid/header-and-footer: not translated (a header picture is not stored); nothing opens it."
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "tab": "outlining",
+  "position": "afterFile",
+  "source": "wordcraft aadb077e072b7de05f724e359d8db82e151f125c crates/ui-egui/src/ribbon/view.rs (outlining: Outline Tools is three rows, level combo 100 px, show-level combo 90 px; Close Outline View large); Master Document group placed as in Word for Windows",
+  "groups": {
+    "outline-tools": {
+      "collapseOrder": 3,
+      "layout": [
+        {"rows": [
+          ["outlining.outline-tools.promote-to-heading-1", "outlining.outline-tools.promote", "outlining.outline-tools.outline-level", "outlining.outline-tools.demote", "outlining.outline-tools.demote-to-body-text"],
+          ["outlining.outline-tools.move-up", "outlining.outline-tools.move-down", "outlining.outline-tools.expand", "outlining.outline-tools.collapse", "outlining.outline-tools.show-level"],
+          ["outlining.outline-tools.show-text-formatting", "outlining.outline-tools.show-first-line-only"]
+        ]}
+      ],
+      "widths": {"outlining.outline-tools.outline-level": 100, "outlining.outline-tools.show-level": 90}
+    },
+    "master-document": {
+      "collapseOrder": 1,
+      "layout": [
+        {"large": "outlining.master-document.show-document"},
+        {"large": "outlining.master-document.collapse-subdocuments"}
+      ]
+    },
+    "close": {
+      "collapseOrder": 2,
+      "layout": [
+        {"large": "outlining.close.close-outline-view"}
+      ]
+    }
+  }
+}

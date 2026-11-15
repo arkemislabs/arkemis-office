@@ -1,0 +1,145 @@
+{
+  "controls": {
+    "home.slides.new-slide": {
+      "items": [
+        {
+          "label": "Layouts",
+          "command": "slide.new",
+          "kind": "gallery",
+          "params": {
+            "layout": "<layout>"
+          },
+          "note": "U:prism/slide: the current master's layouts (slide.new state().value); a click runs slide.new {layout: id}",
+          "source": "upstream",
+          "sourceRef": "crates/ui-egui/src/ribbon/home.rs:51"
+        },
+        {
+          "separator": true
+        },
+        {
+          "label": "Duplicate Selected Slides",
+          "command": "slide.duplicate",
+          "source": "upstream",
+          "sourceRef": "crates/ui-egui/src/ribbon/home.rs:127"
+        },
+        {
+          "label": "Slides from Outline…",
+          "command": "slide.fromOutline",
+          "dialog": "dialog.outline",
+          "source": "upstream",
+          "sourceRef": "crates/ui-egui/src/ribbon/home.rs:130"
+        },
+        {
+          "label": "Reuse Slides…",
+          "command": "slide.reuse",
+          "dialog": "dialog.reuseSlides",
+          "note": "U:prism/reuse: Browse for a presentation, check its slides, Keep source formatting (a check box in the dialog, so the second menu entry upstream has is not needed).",
+          "source": "upstream",
+          "sourceRef": "crates/ui-egui/src/ribbon/home.rs:134"
+        }
+      ]
+    },
+    "insert.slides.new-slide": {
+      "items": [
+        {
+          "label": "Layouts",
+          "command": "slide.new",
+          "kind": "gallery",
+          "params": {
+            "layout": "<layout>"
+          },
+          "note": "U:prism/slide: the current master's layouts (slide.new state().value); a click runs slide.new {layout: id}",
+          "source": "upstream",
+          "sourceRef": "crates/ui-egui/src/ribbon/home.rs:51"
+        }
+      ]
+    },
+    "home.slides.layout": {
+      "items": [
+        {
+          "label": "Layouts",
+          "command": "slide.layout",
+          "kind": "gallery",
+          "params": {
+            "layout": "<layout>"
+          },
+          "note": "U:prism/slide: the current master's layouts (slide.layout state().value); a click runs slide.layout {layout: id}",
+          "source": "upstream",
+          "sourceRef": "crates/ui-egui/src/ribbon/home.rs:51"
+        }
+      ]
+    },
+    "home.slides.reuse-slides": {
+      "command": "slide.reuse",
+      "note": "U:prism/reuse: the Reuse Slides dialog (dialog.reuseSlides)."
+    },
+    "insert.slides.reuse": {
+      "command": "slide.reuse",
+      "note": "U:prism/reuse: the Reuse Slides dialog (dialog.reuseSlides)."
+    }
+  },
+  "dialogs": {
+    "dialog.outline": {
+      "note": "U:prism/slide: deckcraft body.rs:617 dlg_outline: the instruction line, a 10-row monospace outline box, Insert / Cancel (PowerPoint opens a .txt/.rtf/.docx file instead; deckcraft takes the outline as text).",
+      "tabs": [
+        {
+          "name": "Outline",
+          "fields": [
+            {
+              "id": "hint",
+              "label": "Paste or type an outline. Unindented lines become slide titles; tab-indented lines become bullets.",
+              "kind": "label",
+              "options": [],
+              "source": "upstream",
+              "sourceRef": "crates/ui-egui/src/dialogs/body.rs:618"
+            },
+            {
+              "id": "text",
+              "label": "Outline",
+              "kind": "text",
+              "multiline": true,
+              "options": [],
+              "param": "text",
+              "note": "10 rows, monospace",
+              "source": "upstream",
+              "sourceRef": "crates/ui-egui/src/dialogs/body.rs:620"
+            }
+          ]
+        }
+      ],
+      "buttons": [
+        "Insert",
+        "Cancel"
+      ]
+    },
+    "dialog.reuseSlides": {
+      "tabs": [
+        {
+          "name": "Slides",
+          "fields": [
+            {
+              "id": "slides",
+              "label": "Slides of the presentation",
+              "kind": "list",
+              "options": [],
+              "param": "slides",
+              "note": "a checklist \"N  title\" (no title: \"(no title)\") with Browse, Select All and Select None (src/apps/prism/dialogs/reuseSlides.tsx)",
+              "source": "upstream",
+              "sourceRef": "crates/ui-egui/src/dialogs/body.rs:644"
+            },
+            {
+              "id": "keep",
+              "label": "Keep source formatting",
+              "kind": "checkbox",
+              "options": [],
+              "param": "keepFormatting",
+              "source": "upstream",
+              "sourceRef": "crates/ui-egui/src/dialogs/body.rs:673"
+            }
+          ]
+        }
+      ],
+      "note": "U:prism/reuse: PowerPoint uses a Reuse Slides pane with a search box and thumbnails."
+    }
+  }
+}

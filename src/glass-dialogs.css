@@ -1,0 +1,135 @@
+/* Shared floating material. Keep document and slide canvases outside this scope.
+   body qualification intentionally wins over lazy-loaded editor styles. */
+:root {
+  --ark-glass-surface: linear-gradient(145deg, rgba(255,255,255,.085), rgba(255,255,255,.015) 48%), rgba(31,32,36,.84);
+  --ark-glass-border: rgba(255,255,255,.19);
+  --ark-glass-shadow: inset 0 1px 0 rgba(255,255,255,.13), inset 0 -1px 0 rgba(255,255,255,.035), 0 24px 70px rgba(0,0,0,.4), 0 4px 16px rgba(0,0,0,.2);
+  --ark-glass-blur: blur(30px) saturate(145%);
+  --ark-glass-focus: #aacbff;
+}
+body :is(.modal-backdrop,.grid-pivot-backdrop) {
+  padding:20px;
+  background:rgba(8,9,12,.32);
+  backdrop-filter:blur(7px) saturate(85%);
+  -webkit-backdrop-filter:blur(7px) saturate(85%);
+  -webkit-app-region:no-drag;
+}
+body :is(.rich-search-dialog,.rich-border-dialog,.rich-link-dialog,.rich-story-dialog)::backdrop {
+  background:rgba(8,9,12,.32);
+  backdrop-filter:blur(7px) saturate(85%);
+  -webkit-backdrop-filter:blur(7px) saturate(85%);
+}
+body :is(.modal,.grid-pivot-dialog,.rich-search-dialog,.rich-border-dialog,.rich-link-dialog,.rich-story-dialog) {
+  box-sizing:border-box;
+  max-width:calc(100vw - 40px);
+  max-height:calc(100dvh - 40px);
+  overflow:auto;
+  overscroll-behavior:contain;
+  color:#f4f4f6;
+  color-scheme:dark;
+  background:var(--ark-glass-surface);
+  border:1px solid var(--ark-glass-border);
+  border-radius:20px;
+  box-shadow:var(--ark-glass-shadow);
+  backdrop-filter:var(--ark-glass-blur);
+  -webkit-backdrop-filter:var(--ark-glass-blur);
+  padding:24px;
+  font:13px/1.5 var(--ark-font);
+  -webkit-app-region:no-drag;
+  scrollbar-width:thin;
+  scrollbar-color:rgba(255,255,255,.26) transparent;
+}
+body :is(.modal,.grid-pivot-dialog,.rich-search-dialog,.rich-border-dialog,.rich-link-dialog,.rich-story-dialog) :is(h2,header>strong):not(.rich-story-editor *) {
+  font-size:18px;
+  line-height:1.3;
+  font-weight:600;
+  letter-spacing:-.025em;
+}
+body :is(.modal,.grid-pivot-dialog,.rich-search-dialog,.rich-border-dialog,.rich-link-dialog,.rich-story-dialog) h2:not(.rich-story-editor *) {margin:0 28px 14px 0}
+body :is(.modal,.grid-pivot-dialog,.rich-search-dialog,.rich-border-dialog,.rich-link-dialog,.rich-story-dialog) :is(p,small,legend):not(.rich-story-editor *) {color:#c1c2c9}
+body :is(.modal,.grid-pivot-dialog,.rich-search-dialog,.rich-border-dialog,.rich-link-dialog,.rich-story-dialog) :is(input:not([type=checkbox]):not([type=radio]):not([type=color]),select,textarea) {
+  box-sizing:border-box;
+  min-width:0;
+  min-height:32px;
+  padding:6px 10px;
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:8px;
+  background:rgba(0,0,0,.17);
+  color:#f4f4f6;
+  font:inherit;
+  box-shadow:inset 0 1px 2px rgba(0,0,0,.08);
+}
+body :is(.modal,.grid-pivot-dialog,.rich-search-dialog,.rich-border-dialog,.rich-link-dialog,.rich-story-dialog) :is(input,textarea)::placeholder {color:#a5a7b0}
+body :is(.modal,.grid-pivot-dialog,.rich-search-dialog,.rich-border-dialog,.rich-link-dialog,.rich-story-dialog) option {background:#292a2f;color:#f4f4f6}
+body :is(.modal,.grid-pivot-dialog,.rich-search-dialog,.rich-border-dialog,.rich-link-dialog,.rich-story-dialog) :is(input[type=checkbox],input[type=radio]) {accent-color:#c6daff}
+body :is(.modal,.grid-pivot-dialog,.rich-search-dialog,.rich-border-dialog,.rich-link-dialog,.rich-story-dialog) button {
+  border-radius:8px;
+  transition:background-color .12s ease,border-color .12s ease;
+}
+body :is(.grid-pivot-dialog,.rich-search-dialog,.rich-border-dialog,.rich-link-dialog,.rich-story-dialog) button {
+  min-height:30px;
+  padding:5px 11px;
+  border:1px solid rgba(255,255,255,.13);
+  background:rgba(255,255,255,.055);
+  color:inherit;
+  font:inherit;
+}
+body :is(.modal,.grid-pivot-dialog,.rich-search-dialog,.rich-border-dialog,.rich-link-dialog,.rich-story-dialog) button:not(:disabled):hover {background-color:rgba(255,255,255,.12)}
+body :is(.modal,.grid-pivot-dialog,.rich-search-dialog,.rich-border-dialog,.rich-link-dialog,.rich-story-dialog) :focus-visible {
+  outline:2px solid var(--ark-glass-focus);
+  outline-offset:3px;
+}
+body :is(.modal,.grid-pivot-dialog,.rich-search-dialog,.rich-border-dialog,.rich-link-dialog,.rich-story-dialog) :disabled {opacity:.45;cursor:default}
+body :is(.modal,.grid-pivot-dialog,.rich-search-dialog,.rich-border-dialog,.rich-link-dialog,.rich-story-dialog) :is(footer,.dialog-actions) {
+  display:flex;
+  justify-content:flex-end;
+  flex-wrap:wrap;
+  gap:8px;
+  padding-top:16px;
+  margin-top:8px;
+  border-top:1px solid rgba(255,255,255,.09);
+}
+body :is(.grid-pivot-dialog,.rich-link-dialog) button[type=submit],
+body :is(.rich-border-dialog,.rich-story-dialog) footer button:last-child {
+  background:#e5e9f0;
+  border-color:rgba(255,255,255,.6);
+  color:#20232b;
+  font-weight:600;
+}
+body :is(.grid-pivot-dialog,.rich-link-dialog) button[type=submit]:hover,
+body :is(.rich-border-dialog,.rich-story-dialog) footer button:last-child:hover {background:#fff}
+/* Related options form quiet rows within the material, not nested cards. */
+body .modal :is(.create-options,.export-options) {gap:0}
+body .modal :is(.create-options,.export-options)>button {background:transparent;box-shadow:none;border:0;border-bottom:1px solid rgba(255,255,255,.08);border-radius:0;padding:12px 8px}
+body .modal :is(.create-options,.export-options)>button:last-child {border-bottom:0}
+body .modal :is(.create-options,.export-options) small {color:#b6b8c2}
+body .modal .metric-grid {background:transparent;padding:4px 0;border-radius:0}
+body .modal .settings-section {padding:16px 0;border-color:rgba(255,255,255,.1)}
+body .modal .command-search {padding:3px 10px;background:rgba(0,0,0,.15)}
+body .modal .command-search input {border:0;background:transparent;box-shadow:none}
+body .grid-pivot-dialog {gap:12px}
+body .grid-pivot-dialog fieldset,body .rich-border-dialog fieldset {border:0;border-top:1px solid rgba(255,255,255,.12);border-radius:0;background:transparent;padding:12px 0 0}
+body .grid-pivot-dialog legend,body .rich-border-dialog legend {padding:0 8px 0 0}
+body .grid-pivot-dialog .grid-pivot-error,body .rich-link-dialog [role=alert],body .rich-story-dialog [role=alert] {color:#ffb9b4}
+body .rich-search-dialog [role=tablist] {gap:4px;border-color:rgba(255,255,255,.1);padding-bottom:8px}
+body .rich-search-dialog [role=tab] {background:transparent;border-color:transparent}
+body .rich-search-dialog [role=tab][aria-selected=true] {background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.12)}
+body .rich-search-dialog .ed-rich-search {background:transparent;border:0;padding:0;gap:8px;flex-wrap:wrap}
+body .rich-search-dialog .rich-search-options {padding-block:12px;border-block:1px solid rgba(255,255,255,.09)}
+body .rich-search-dialog .rich-search-results button {text-align:left;width:100%;background:transparent;border:0}
+@media (max-width:600px) {
+  body :is(.modal,.grid-pivot-dialog,.rich-search-dialog,.rich-border-dialog,.rich-link-dialog,.rich-story-dialog) {padding:18px;border-radius:16px}
+  body :is(.grid-pivot-source,.grid-pivot-fields) {grid-template-columns:1fr}
+  body .grid-pivot-measures>div {grid-template-columns:minmax(0,1fr) minmax(0,1fr) auto}
+}
+@media (prefers-reduced-motion:reduce) {
+  body :is(.modal,.grid-pivot-dialog,.rich-search-dialog,.rich-border-dialog,.rich-link-dialog,.rich-story-dialog) button {transition:none}
+}
+@media (prefers-contrast:more) {
+  :root {--ark-glass-surface:#222329;--ark-glass-border:#9296a3;--ark-glass-blur:none}
+  body :is(.modal,.grid-pivot-dialog,.rich-search-dialog,.rich-border-dialog,.rich-link-dialog,.rich-story-dialog) :is(input,select,textarea,button) {border-color:#9296a3}
+}
+@media (forced-colors:active) {
+  body :is(.modal,.grid-pivot-dialog,.rich-search-dialog,.rich-border-dialog,.rich-link-dialog,.rich-story-dialog) {background:Canvas;color:CanvasText;border:1px solid CanvasText;box-shadow:none;backdrop-filter:none}
+}
+

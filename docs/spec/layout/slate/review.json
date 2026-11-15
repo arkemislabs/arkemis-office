@@ -1,0 +1,76 @@
+{
+  "tab": "review",
+  "keytip": "R",
+  "source": "office: OneNote for Microsoft 365, Review tab (Slate has no ArtCraft upstream; architecture section 1)",
+  "groups": {
+    "proofing": {
+      "collapseOrder": 6,
+      "collapsedIcon": "abc-check",
+      "layout": [
+        {
+          "large": "review.proofing.spelling"
+        },
+        {
+          "large": "review.proofing.thesaurus"
+        }
+      ]
+    },
+    "accessibility": {
+      "collapseOrder": 5,
+      "collapsedIcon": "person-check",
+      "layout": [
+        {
+          "large": "review.accessibility.check-accessibility"
+        }
+      ]
+    },
+    "insights": {
+      "collapseOrder": 4,
+      "collapsedIcon": "globe-search",
+      "layout": [
+        {
+          "large": "review.insights.search"
+        }
+      ]
+    },
+    "language": {
+      "collapseOrder": 3,
+      "collapsedIcon": "translate-a",
+      "layout": [
+        {
+          "large": "review.language.translate"
+        },
+        {
+          "large": "review.language.language"
+        }
+      ]
+    },
+    "section": {
+      "collapseOrder": 2,
+      "collapsedIcon": "lock-section",
+      "layout": [
+        {
+          "large": "review.section.password"
+        }
+      ]
+    },
+    "notes": {
+      "collapseOrder": 1,
+      "collapsedIcon": "link-dock",
+      "layout": [
+        {
+          "large": "review.notes.linked-notes"
+        }
+      ]
+    }
+  },
+  "keytips": {
+    "review.proofing.spelling": "S",
+    "review.proofing.thesaurus": "E",
+    "review.accessibility.check-accessibility": "A1",
+    "review.language.translate": "L",
+    "review.language.language": "U",
+    "review.section.password": "P",
+    "review.notes.linked-notes": "N"
+  }
+}

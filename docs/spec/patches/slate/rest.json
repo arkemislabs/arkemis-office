@@ -1,0 +1,311 @@
+{
+ "controls": {
+  "insert.files.spreadsheet.existing-spreadsheet": {
+   "label": "Existing Spreadsheet",
+   "note": "U:slate/rest: opens the Insert Spreadsheet dialog: choose an .xlsx, .xlsm, .csv or .tsv file and Insert Spreadsheet (its first sheet, formulas kept, at most 100 rows by 26 columns; number formats and charts are not carried) or Attach File. Not checked against upstream (there is none).",
+   "args": null
+  },
+  "insert.files.spreadsheet.new-spreadsheet": {
+   "label": "New Spreadsheet",
+   "note": "U:slate/rest: puts a worksheet of the app's own on the page (OneNote embeds an Excel worksheet; the app has no Excel). Cells are typed as in a worksheet and a formula starting with = is calculated by the Grid engine (core/grid, imported, not edited). Rows and columns are added with the plus buttons on the worksheet. Not checked against upstream (there is none). New Spreadsheet is a new, empty worksheet (6 rows by 5 columns) at the caret."
+  },
+  "insert.files.diagram.existing-diagram": {
+   "command": "insert.existingDiagram",
+   "dialog": null,
+   "args": null,
+   "note": "U:slate/rest: hidden. Existing Visio Diagram opens a .vsdx drawing; the app has no Visio and cannot read the format. Attach the file with File Attachment."
+  },
+  "insert.files.diagram.new-diagram": {
+   "label": "New Diagram",
+   "note": "U:slate/rest: puts a diagram on the page, drawn by the app from an outline of one line per box (OneNote embeds a Visio drawing; the app has no Visio): Flowchart, Hierarchy, Process or Cycle. Double-click it to change the outline or the kind. Not checked against upstream (there is none). New Diagram puts a starter flowchart at the caret."
+  },
+  "insert.images.scanned-image": {
+   "note": "U:slate/rest: the Scanned Image dialog takes the scan from an image file (the app cannot reach a scanner or camera) and, if asked, reads the text in it offline through the app's OCR worker (English) and keeps it as the picture's alternative text, which Search finds, and optionally types it under the picture. Not checked against upstream (there is none)."
+  },
+  "table.convert.convert-to-spreadsheet": {
+   "label": "Convert to Spreadsheet",
+   "note": "U:slate/rest: replaces the table by a worksheet holding each cell's text (up to 100 rows by 26 columns); Undo brings the table back. OneNote opens Excel; the app uses its own worksheet. Not checked against upstream (there is none)."
+  },
+  "review.accessibility.check-accessibility": {
+   "note": "U:slate/rest: lists the page's errors (pictures without alternative text, no page title), warnings (a table without a header row, low text contrast, ink with no typed text) and tips (links that show their address, recordings with no transcript, blank table rows or columns) in a pane; selecting one goes to its object, and a picture's alternative text can be typed in the pane. The rules are Office's for these objects. Not checked against upstream (there is none)."
+  },
+  "review.insights.search": {
+   "note": "U:slate/rest: Smart Lookup looks the selection up on the web, which the app cannot do; this button searches the notebook for the selected words instead (pages, titles, picture text, file names; page, section, group or notebook) in a results pane. Not checked against upstream (there is none)."
+  },
+  "review.notes.linked-notes": {
+   "note": "U:slate/rest: the Select Location dialog picks a file on this computer and the section (or page) for the notes; a page 'Notes: <file>' is made there with a link to the file at the top. The app cannot watch another program's window, so the notes are not docked beside the file and are not linked to what is on its pages. Not checked against upstream (there is none)."
+  },
+  "help.help.help": {
+   "note": "U:slate/rest: F1 opens a Help pane of topics written for this app and kept in it (searchable, offline); the app makes no web requests of its own. Not checked against upstream (there is none)."
+  },
+  "help.help.show-training": {
+   "note": "U:slate/rest: opens the Help pane on short lessons for the first hour, kept in the app (Microsoft's training videos are online)."
+  },
+  "help.help.whats-new": {
+   "note": "U:slate/rest: opens the Help pane on what the latest version of the app added (Microsoft's What's New page is online)."
+  },
+  "media.options.audio-video-settings": {
+   "command": "media.settings",
+   "dialog": "dialog.audio-video-settings",
+   "args": null,
+   "note": "U:slate/rest: its own dialog (OneNote's Options dialog is not part of this app): the microphone, the camera, the audio quality (32, 64 or 128 kbit/s) and the video size (320 by 240, 640 by 480 or 1280 by 720), read when a recording starts. 'Make audio and video searchable' is not offered: the app has no speech recogniser."
+  },
+  "qat.touch-mouse-mode.mouse": {
+   "note": "U:slate/rest: normal spacing."
+  },
+  "qat.touch-mouse-mode.touch": {
+   "note": "U:slate/rest: Touch makes the page's own controls larger (section tabs, page list, note container handles, panes and results) so a finger can use them; the ribbon is measured for one spacing and is not changed. Mouse turns it off."
+  }
+ },
+ "commands": {
+  "diagram.edit": {
+   "id": "diagram.edit",
+   "args": [
+    "id",
+    "kind?",
+    "text?"
+   ],
+   "sourceRef": "office:OneNote/Insert > Files > Diagram (edit)",
+   "summary": "Change the outline or the kind of a diagram on the page"
+  },
+  "spreadsheet.setCell": {
+   "id": "spreadsheet.setCell",
+   "args": [
+    "id",
+    "ref",
+    "text"
+   ],
+   "sourceRef": "office:OneNote/Insert > Files > Spreadsheet (edit)",
+   "summary": "Type into a cell of a worksheet on the page"
+  },
+  "spreadsheet.resize": {
+   "id": "spreadsheet.resize",
+   "args": [
+    "id",
+    "rows?",
+    "cols?"
+   ],
+   "sourceRef": "office:OneNote/Insert > Files > Spreadsheet (edit)",
+   "summary": "Set the number of rows and columns of a worksheet on the page"
+  },
+  "review.accessibilitySelect": {
+   "id": "review.accessibilitySelect",
+   "args": [
+    "address"
+   ],
+   "sourceRef": "office:OneNote/Review > Accessibility > Check Accessibility (pane)",
+   "summary": "Select the object an accessibility issue is about"
+  },
+  "review.setAltText": {
+   "id": "review.setAltText",
+   "args": [
+    "id",
+    "alt"
+   ],
+   "sourceRef": "office:OneNote/Review > Accessibility > Check Accessibility (pane)",
+   "summary": "Set the alternative text of a picture"
+  },
+  "media.settings": {
+   "id": "media.settings",
+   "args": [
+    "audioInput?",
+    "videoInput?",
+    "audioQuality?",
+    "videoSize?"
+   ],
+   "sourceRef": "office:OneNote/Audio & Video > Options > Audio & Video Settings",
+   "summary": "Choose the microphone, camera and recording quality"
+  }
+ },
+ "dialogs": {
+  "dialog.insert-spreadsheet": {
+   "title": "Insert Spreadsheet",
+   "note": "U:slate/rest: the workbook is chosen with the system Open dialog; Insert Spreadsheet needs an .xlsx, .xlsm, .csv or .tsv file, Attach File takes any file. 'Insert a Chart or Table' is not offered: the worksheet holds the first sheet's cells, not Excel's charts or tables.",
+   "tabs": [
+    {
+     "name": "Insert",
+     "fields": [
+      {
+       "id": "file",
+       "label": "Workbook",
+       "kind": "text",
+       "options": []
+      },
+      {
+       "id": "insertAs",
+       "label": "Insert",
+       "kind": "radio",
+       "options": [
+        "Insert Spreadsheet",
+        "Attach File"
+       ],
+       "default": "Insert Spreadsheet"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "Insert",
+    "Cancel"
+   ]
+  },
+  "dialog.scanned-image": {
+   "title": "Insert Picture from Scanner or Camera",
+   "note": "U:slate/rest: the image comes from a file; the text in it is read offline (English) and kept as the picture's alternative text.",
+   "tabs": [
+    {
+     "name": "Scan",
+     "fields": [
+      {
+       "id": "file",
+       "label": "Image of the scan",
+       "kind": "text",
+       "options": []
+      },
+      {
+       "id": "recognize",
+       "label": "Read the text in the picture",
+       "kind": "checkbox",
+       "options": [],
+       "default": true
+      },
+      {
+       "id": "insertText",
+       "label": "Also type the text under the picture",
+       "kind": "checkbox",
+       "options": [],
+       "default": false
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "Insert",
+    "Cancel"
+   ]
+  },
+  "dialog.diagram": {
+   "id": "dialog.diagram",
+   "title": "Diagram",
+   "command": "diagram.edit",
+   "sourceRef": "office:OneNote/Insert > Files > Diagram (edit)",
+   "note": "U:slate/rest: the kind of diagram and its outline, one line per box. Flowchart: (Start) is a rounded box, <Is it done?> a diamond. Hierarchy: indent a line to hang it under the one above.",
+   "tabs": [
+    {
+     "name": "Diagram",
+     "fields": [
+      {
+       "id": "kind",
+       "label": "Kind",
+       "kind": "radio",
+       "options": [
+        "flowchart",
+        "hierarchy",
+        "process",
+        "cycle"
+       ]
+      },
+      {
+       "id": "text",
+       "label": "Outline (one box to a line)",
+       "kind": "text",
+       "options": [],
+       "multiline": true
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ]
+  },
+  "dialog.select-location": {
+   "title": "Select Location in Notebook",
+   "note": "U:slate/rest: the file the notes are about, and where in the notebook the notes go (this notebook's sections and pages). Copy to Clipboard is not offered.",
+   "tabs": [
+    {
+     "name": "Location",
+     "fields": [
+      {
+       "id": "file",
+       "label": "File",
+       "kind": "text",
+       "options": []
+      },
+      {
+       "id": "search",
+       "label": "Search",
+       "kind": "text",
+       "options": []
+      },
+      {
+       "id": "location",
+       "label": "All Notebooks",
+       "kind": "list",
+       "options": []
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ]
+  },
+  "dialog.audio-video-settings": {
+   "id": "dialog.audio-video-settings",
+   "title": "Audio & Video Settings",
+   "command": "media.settings",
+   "sourceRef": "office:OneNote/Audio & Video > Options > Audio & Video Settings",
+   "note": "U:slate/rest: Options > Audio & Video, without the search and speech settings the app has no engine for.",
+   "tabs": [
+    {
+     "name": "Audio & Video",
+     "fields": [
+      {
+       "id": "audioInput",
+       "label": "Microphone",
+       "kind": "select",
+       "options": []
+      },
+      {
+       "id": "audioQuality",
+       "label": "Audio quality",
+       "kind": "select",
+       "options": [
+        "low",
+        "medium",
+        "high"
+       ]
+      },
+      {
+       "id": "videoInput",
+       "label": "Camera",
+       "kind": "select",
+       "options": []
+      },
+      {
+       "id": "videoSize",
+       "label": "Video size",
+       "kind": "select",
+       "options": [
+        "small",
+        "medium",
+        "large"
+       ]
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ]
+  },
+  "dialog.insert-diagram": {
+   "command": null,
+   "note": "Existing Visio Diagram stays hidden (the app cannot read .vsdx), so this dialog has no model and no submit command; New Diagram uses dialog.diagram (diagram.edit)."
+  }
+ }
+}

@@ -1,0 +1,295 @@
+{
+ "controls": {
+  "data.analysis.dataAnalysis": {
+   "note": "U:grid/tables: checked against gridcraft (data.analysisToolPak: the Data Analysis list, then the tool's own dialog; the report is static values on a new sheet or at an output range). Not offered, no engine upstream: Anova Two-Factor With and Without Replication, Fourier Analysis, Random Number Generation, Sampling, z-Test (not checked against upstream), and the New Workbook output."
+  }
+ },
+ "dialogs": {
+  "dialog.analysisToolPak": {
+   "title": "Data Analysis",
+   "command": "data.analysisToolPak",
+   "tabs": [
+    {
+     "name": "Analysis Tools",
+     "fields": [
+      {
+       "id": "tool",
+       "label": "Analysis Tools:",
+       "kind": "list",
+       "options": [
+        {
+         "value": "anovaSingle",
+         "label": "Anova: Single Factor"
+        },
+        {
+         "value": "correlation",
+         "label": "Correlation"
+        },
+        {
+         "value": "covariance",
+         "label": "Covariance"
+        },
+        {
+         "value": "descriptive",
+         "label": "Descriptive Statistics"
+        },
+        {
+         "value": "exponentialSmoothing",
+         "label": "Exponential Smoothing"
+        },
+        {
+         "value": "fTest",
+         "label": "F-Test Two-Sample for Variances"
+        },
+        {
+         "value": "histogram",
+         "label": "Histogram"
+        },
+        {
+         "value": "movingAverage",
+         "label": "Moving Average"
+        },
+        {
+         "value": "rankPercentile",
+         "label": "Rank and Percentile"
+        },
+        {
+         "value": "regression",
+         "label": "Regression"
+        },
+        {
+         "value": "tTestPaired",
+         "label": "t-Test: Paired Two Sample for Means"
+        },
+        {
+         "value": "tTestEqual",
+         "label": "t-Test: Two-Sample Assuming Equal Variances"
+        },
+        {
+         "value": "tTestUnequal",
+         "label": "t-Test: Two-Sample Assuming Unequal Variances"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Input",
+     "fields": [
+      {
+       "id": "range",
+       "label": "Input Range:",
+       "kind": "text",
+       "options": [],
+       "refPicker": true
+      },
+      {
+       "id": "groupedBy",
+       "label": "Grouped By:",
+       "kind": "radio",
+       "options": [
+        {
+         "value": "columns",
+         "label": "Columns"
+        },
+        {
+         "value": "rows",
+         "label": "Rows"
+        }
+       ]
+      },
+      {
+       "id": "labels",
+       "label": "Labels in First Row",
+       "kind": "checkbox",
+       "options": []
+      },
+      {
+       "id": "range1",
+       "label": "Variable 1 Range:",
+       "kind": "text",
+       "options": [],
+       "refPicker": true
+      },
+      {
+       "id": "range2",
+       "label": "Variable 2 Range:",
+       "kind": "text",
+       "options": [],
+       "refPicker": true
+      },
+      {
+       "id": "hypothesizedDifference",
+       "label": "Hypothesized Mean Difference:",
+       "kind": "text",
+       "options": []
+      },
+      {
+       "id": "alpha",
+       "label": "Alpha:",
+       "kind": "text",
+       "options": []
+      },
+      {
+       "id": "summary",
+       "label": "Summary statistics",
+       "kind": "checkbox",
+       "options": []
+      },
+      {
+       "id": "confidenceOn",
+       "label": "Confidence Level for Mean:",
+       "kind": "checkbox",
+       "options": []
+      },
+      {
+       "id": "confidence",
+       "label": "Confidence level (%)",
+       "kind": "text",
+       "options": []
+      },
+      {
+       "id": "kthLargestOn",
+       "label": "Kth Largest:",
+       "kind": "checkbox",
+       "options": []
+      },
+      {
+       "id": "kthLargest",
+       "label": "Kth Largest value",
+       "kind": "text",
+       "options": []
+      },
+      {
+       "id": "kthSmallestOn",
+       "label": "Kth Smallest:",
+       "kind": "checkbox",
+       "options": []
+      },
+      {
+       "id": "kthSmallest",
+       "label": "Kth Smallest value",
+       "kind": "text",
+       "options": []
+      },
+      {
+       "id": "bins",
+       "label": "Bin Range:",
+       "kind": "text",
+       "options": [],
+       "refPicker": true
+      },
+      {
+       "id": "pareto",
+       "label": "Pareto (sorted histogram)",
+       "kind": "checkbox",
+       "options": []
+      },
+      {
+       "id": "cumulative",
+       "label": "Cumulative Percentage",
+       "kind": "checkbox",
+       "options": []
+      },
+      {
+       "id": "inputY",
+       "label": "Input Y Range:",
+       "kind": "text",
+       "options": [],
+       "refPicker": true
+      },
+      {
+       "id": "inputX",
+       "label": "Input X Range:",
+       "kind": "text",
+       "options": [],
+       "refPicker": true
+      },
+      {
+       "id": "constantZero",
+       "label": "Constant is Zero",
+       "kind": "checkbox",
+       "options": []
+      },
+      {
+       "id": "residuals",
+       "label": "Residuals",
+       "kind": "checkbox",
+       "options": []
+      },
+      {
+       "id": "standardizedResiduals",
+       "label": "Standardized Residuals",
+       "kind": "checkbox",
+       "options": []
+      },
+      {
+       "id": "normalProbability",
+       "label": "Normal Probability",
+       "kind": "checkbox",
+       "options": []
+      },
+      {
+       "id": "interval",
+       "label": "Interval:",
+       "kind": "text",
+       "options": []
+      },
+      {
+       "id": "damping",
+       "label": "Damping factor:",
+       "kind": "text",
+       "options": []
+      },
+      {
+       "id": "standardErrors",
+       "label": "Standard Errors",
+       "kind": "checkbox",
+       "options": []
+      }
+     ]
+    },
+    {
+     "name": "Output options",
+     "fields": [
+      {
+       "id": "outputTo",
+       "label": "Output options",
+       "kind": "radio",
+       "options": [
+        {
+         "value": "range",
+         "label": "Output Range:"
+        },
+        {
+         "value": "newSheet",
+         "label": "New Worksheet Ply:"
+        }
+       ]
+      },
+      {
+       "id": "output",
+       "label": "Output Range:",
+       "kind": "text",
+       "options": [],
+       "refPicker": true
+      },
+      {
+       "id": "newSheet",
+       "label": "New Worksheet Ply:",
+       "kind": "text",
+       "options": []
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ],
+   "source": "upstream",
+   "sourceRef": "crates/ui-egui/src/dialogs/analysis.rs:110",
+   "note": "U:grid/tables: checked against gridcraft (the tool list, then the chosen tool's fields per toolpak_fields; the overwrite confirm when the output cells hold data). Drawn by src/apps/grid/dialogs/analysisToolPak.tsx as Excel's two boxes: the Data Analysis list, then the tool's own dialog. Hidden, no engine or not offered: New Workbook output, Chart Output, Residual Plots, Line Fit Plots (the report is static values), Help, and the Office-only tools Anova Two-Factor, Fourier Analysis, Random Number Generation, Sampling and z-Test (not checked against upstream)."
+  }
+ }
+}

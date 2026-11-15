@@ -1,0 +1,1700 @@
+{
+ "controls": {
+  "home.drawing.quick-styles": {
+   "args": {
+    "index": "<index>"
+   }
+  },
+  "shapeformat.styles.gallery": {
+   "args": {
+    "index": "<index>"
+   }
+  },
+  "home.drawing.outline.weight": {
+   "args": null,
+   "params": null,
+   "items": [
+    {
+     "label": "0.25 pt",
+     "command": "shape.line",
+     "args": {
+      "width": 0.25
+     }
+    },
+    {
+     "label": "0.5 pt",
+     "command": "shape.line",
+     "args": {
+      "width": 0.5
+     }
+    },
+    {
+     "label": "0.75 pt",
+     "command": "shape.line",
+     "args": {
+      "width": 0.75
+     }
+    },
+    {
+     "label": "1 pt",
+     "command": "shape.line",
+     "args": {
+      "width": 1
+     }
+    },
+    {
+     "label": "1.5 pt",
+     "command": "shape.line",
+     "args": {
+      "width": 1.5
+     }
+    },
+    {
+     "label": "2.25 pt",
+     "command": "shape.line",
+     "args": {
+      "width": 2.25
+     }
+    },
+    {
+     "label": "3 pt",
+     "command": "shape.line",
+     "args": {
+      "width": 3
+     }
+    },
+    {
+     "label": "4.5 pt",
+     "command": "shape.line",
+     "args": {
+      "width": 4.5
+     }
+    },
+    {
+     "label": "6 pt",
+     "command": "shape.line",
+     "args": {
+      "width": 6
+     }
+    }
+   ],
+   "source": "upstream",
+   "sourceRef": "deckcraft crates/ui-egui/src/ribbon/galleries.rs outline_menu"
+  },
+  "home.drawing.outline.dashes": {
+   "args": null,
+   "params": null,
+   "items": [
+    {
+     "label": "Solid",
+     "command": "shape.line",
+     "args": {
+      "dash": "solid"
+     }
+    },
+    {
+     "label": "Round Dot",
+     "command": "shape.line",
+     "args": {
+      "dash": "sysDot"
+     }
+    },
+    {
+     "label": "Square Dot",
+     "command": "shape.line",
+     "args": {
+      "dash": "sysDash"
+     }
+    },
+    {
+     "label": "Dash",
+     "command": "shape.line",
+     "args": {
+      "dash": "dash"
+     }
+    },
+    {
+     "label": "Dash Dot",
+     "command": "shape.line",
+     "args": {
+      "dash": "dashDot"
+     }
+    },
+    {
+     "label": "Long Dash",
+     "command": "shape.line",
+     "args": {
+      "dash": "lgDash"
+     }
+    },
+    {
+     "label": "Long Dash Dot",
+     "command": "shape.line",
+     "args": {
+      "dash": "lgDashDot"
+     }
+    }
+   ],
+   "source": "upstream",
+   "sourceRef": "deckcraft crates/ui-egui/src/ribbon/galleries.rs outline_menu"
+  },
+  "home.drawing.outline.arrows": {
+   "args": null,
+   "params": null,
+   "items": [
+    {
+     "label": "None",
+     "command": "shape.line",
+     "args": {
+      "head": "none",
+      "tail": "none"
+     }
+    },
+    {
+     "label": "Arrow at end",
+     "command": "shape.line",
+     "args": {
+      "head": "none",
+      "tail": "triangle"
+     }
+    },
+    {
+     "label": "Arrow at start",
+     "command": "shape.line",
+     "args": {
+      "head": "triangle",
+      "tail": "none"
+     }
+    },
+    {
+     "label": "Arrows at both ends",
+     "command": "shape.line",
+     "args": {
+      "head": "triangle",
+      "tail": "triangle"
+     }
+    },
+    {
+     "label": "Stealth end",
+     "command": "shape.line",
+     "args": {
+      "head": "none",
+      "tail": "stealth"
+     }
+    },
+    {
+     "label": "Oval ends",
+     "command": "shape.line",
+     "args": {
+      "head": "oval",
+      "tail": "oval"
+     }
+    }
+   ],
+   "source": "upstream",
+   "sourceRef": "deckcraft crates/ui-egui/src/ribbon/galleries.rs outline_menu"
+  },
+  "shapeformat.styles.outline.weight": {
+   "args": null,
+   "params": null,
+   "items": [
+    {
+     "label": "0.25 pt",
+     "command": "shape.line",
+     "args": {
+      "width": 0.25
+     }
+    },
+    {
+     "label": "0.5 pt",
+     "command": "shape.line",
+     "args": {
+      "width": 0.5
+     }
+    },
+    {
+     "label": "0.75 pt",
+     "command": "shape.line",
+     "args": {
+      "width": 0.75
+     }
+    },
+    {
+     "label": "1 pt",
+     "command": "shape.line",
+     "args": {
+      "width": 1
+     }
+    },
+    {
+     "label": "1.5 pt",
+     "command": "shape.line",
+     "args": {
+      "width": 1.5
+     }
+    },
+    {
+     "label": "2.25 pt",
+     "command": "shape.line",
+     "args": {
+      "width": 2.25
+     }
+    },
+    {
+     "label": "3 pt",
+     "command": "shape.line",
+     "args": {
+      "width": 3
+     }
+    },
+    {
+     "label": "4.5 pt",
+     "command": "shape.line",
+     "args": {
+      "width": 4.5
+     }
+    },
+    {
+     "label": "6 pt",
+     "command": "shape.line",
+     "args": {
+      "width": 6
+     }
+    }
+   ],
+   "source": "upstream",
+   "sourceRef": "deckcraft crates/ui-egui/src/ribbon/galleries.rs outline_menu"
+  },
+  "shapeformat.styles.outline.dashes": {
+   "args": null,
+   "params": null,
+   "items": [
+    {
+     "label": "Solid",
+     "command": "shape.line",
+     "args": {
+      "dash": "solid"
+     }
+    },
+    {
+     "label": "Round Dot",
+     "command": "shape.line",
+     "args": {
+      "dash": "sysDot"
+     }
+    },
+    {
+     "label": "Square Dot",
+     "command": "shape.line",
+     "args": {
+      "dash": "sysDash"
+     }
+    },
+    {
+     "label": "Dash",
+     "command": "shape.line",
+     "args": {
+      "dash": "dash"
+     }
+    },
+    {
+     "label": "Dash Dot",
+     "command": "shape.line",
+     "args": {
+      "dash": "dashDot"
+     }
+    },
+    {
+     "label": "Long Dash",
+     "command": "shape.line",
+     "args": {
+      "dash": "lgDash"
+     }
+    },
+    {
+     "label": "Long Dash Dot",
+     "command": "shape.line",
+     "args": {
+      "dash": "lgDashDot"
+     }
+    }
+   ],
+   "source": "upstream",
+   "sourceRef": "deckcraft crates/ui-egui/src/ribbon/galleries.rs outline_menu"
+  },
+  "shapeformat.styles.outline.arrows": {
+   "args": null,
+   "params": null,
+   "items": [
+    {
+     "label": "None",
+     "command": "shape.line",
+     "args": {
+      "head": "none",
+      "tail": "none"
+     }
+    },
+    {
+     "label": "Arrow at end",
+     "command": "shape.line",
+     "args": {
+      "head": "none",
+      "tail": "triangle"
+     }
+    },
+    {
+     "label": "Arrow at start",
+     "command": "shape.line",
+     "args": {
+      "head": "triangle",
+      "tail": "none"
+     }
+    },
+    {
+     "label": "Arrows at both ends",
+     "command": "shape.line",
+     "args": {
+      "head": "triangle",
+      "tail": "triangle"
+     }
+    },
+    {
+     "label": "Stealth end",
+     "command": "shape.line",
+     "args": {
+      "head": "none",
+      "tail": "stealth"
+     }
+    },
+    {
+     "label": "Oval ends",
+     "command": "shape.line",
+     "args": {
+      "head": "oval",
+      "tail": "oval"
+     }
+    }
+   ],
+   "source": "upstream",
+   "sourceRef": "deckcraft crates/ui-egui/src/ribbon/galleries.rs outline_menu"
+  },
+  "pictureformat.styles.border.weight": {
+   "args": null,
+   "params": null,
+   "items": [
+    {
+     "label": "0.25 pt",
+     "command": "shape.line",
+     "args": {
+      "width": 0.25
+     }
+    },
+    {
+     "label": "0.5 pt",
+     "command": "shape.line",
+     "args": {
+      "width": 0.5
+     }
+    },
+    {
+     "label": "0.75 pt",
+     "command": "shape.line",
+     "args": {
+      "width": 0.75
+     }
+    },
+    {
+     "label": "1 pt",
+     "command": "shape.line",
+     "args": {
+      "width": 1
+     }
+    },
+    {
+     "label": "1.5 pt",
+     "command": "shape.line",
+     "args": {
+      "width": 1.5
+     }
+    },
+    {
+     "label": "2.25 pt",
+     "command": "shape.line",
+     "args": {
+      "width": 2.25
+     }
+    },
+    {
+     "label": "3 pt",
+     "command": "shape.line",
+     "args": {
+      "width": 3
+     }
+    },
+    {
+     "label": "4.5 pt",
+     "command": "shape.line",
+     "args": {
+      "width": 4.5
+     }
+    },
+    {
+     "label": "6 pt",
+     "command": "shape.line",
+     "args": {
+      "width": 6
+     }
+    }
+   ],
+   "source": "upstream",
+   "sourceRef": "deckcraft crates/ui-egui/src/ribbon/galleries.rs outline_menu"
+  },
+  "pictureformat.styles.border.dashes": {
+   "args": null,
+   "params": null,
+   "items": [
+    {
+     "label": "Solid",
+     "command": "shape.line",
+     "args": {
+      "dash": "solid"
+     }
+    },
+    {
+     "label": "Round Dot",
+     "command": "shape.line",
+     "args": {
+      "dash": "sysDot"
+     }
+    },
+    {
+     "label": "Square Dot",
+     "command": "shape.line",
+     "args": {
+      "dash": "sysDash"
+     }
+    },
+    {
+     "label": "Dash",
+     "command": "shape.line",
+     "args": {
+      "dash": "dash"
+     }
+    },
+    {
+     "label": "Dash Dot",
+     "command": "shape.line",
+     "args": {
+      "dash": "dashDot"
+     }
+    },
+    {
+     "label": "Long Dash",
+     "command": "shape.line",
+     "args": {
+      "dash": "lgDash"
+     }
+    },
+    {
+     "label": "Long Dash Dot",
+     "command": "shape.line",
+     "args": {
+      "dash": "lgDashDot"
+     }
+    }
+   ],
+   "source": "upstream",
+   "sourceRef": "deckcraft crates/ui-egui/src/ribbon/galleries.rs outline_menu"
+  },
+  "home.drawing.effects.shadow": {
+   "args": null,
+   "params": null,
+   "items": [
+    {
+     "label": "No Shadow",
+     "command": "shape.effects",
+     "args": {
+      "shadow": "none"
+     }
+    },
+    {
+     "label": "Outer",
+     "command": "shape.effects",
+     "args": {
+      "shadow": "outer"
+     }
+    },
+    {
+     "label": "Bottom",
+     "command": "shape.effects",
+     "args": {
+      "shadow": "bottom"
+     }
+    },
+    {
+     "label": "Centered",
+     "command": "shape.effects",
+     "args": {
+      "shadow": "center"
+     }
+    },
+    {
+     "label": "Inner",
+     "command": "shape.effects",
+     "args": {
+      "shadow": "inner"
+     }
+    },
+    {
+     "label": "Perspective",
+     "command": "shape.effects",
+     "args": {
+      "shadow": "perspective"
+     }
+    }
+   ],
+   "source": "upstream",
+   "sourceRef": "deckcraft crates/ui-egui/src/ribbon/galleries.rs effects_menu"
+  },
+  "home.drawing.effects.reflection": {
+   "args": null,
+   "params": null,
+   "items": [
+    {
+     "label": "No Reflection",
+     "command": "shape.effects",
+     "args": {
+      "reflection": "none"
+     }
+    },
+    {
+     "label": "Tight",
+     "command": "shape.effects",
+     "args": {
+      "reflection": "tight"
+     }
+    },
+    {
+     "label": "Half",
+     "command": "shape.effects",
+     "args": {
+      "reflection": "half"
+     }
+    },
+    {
+     "label": "Full",
+     "command": "shape.effects",
+     "args": {
+      "reflection": "full"
+     }
+    }
+   ],
+   "source": "upstream",
+   "sourceRef": "deckcraft crates/ui-egui/src/ribbon/galleries.rs effects_menu"
+  },
+  "home.drawing.effects.glow": {
+   "args": null,
+   "params": null,
+   "items": [
+    {
+     "label": "No Glow",
+     "command": "shape.effects",
+     "args": {
+      "glow": null
+     }
+    },
+    {
+     "label": "5 pt glow",
+     "command": "shape.effects",
+     "args": {
+      "glow": 5
+     }
+    },
+    {
+     "label": "8 pt glow",
+     "command": "shape.effects",
+     "args": {
+      "glow": 8
+     }
+    },
+    {
+     "label": "11 pt glow",
+     "command": "shape.effects",
+     "args": {
+      "glow": 11
+     }
+    },
+    {
+     "label": "18 pt glow",
+     "command": "shape.effects",
+     "args": {
+      "glow": 18
+     }
+    }
+   ],
+   "source": "upstream",
+   "sourceRef": "deckcraft crates/ui-egui/src/ribbon/galleries.rs effects_menu"
+  },
+  "home.drawing.effects.soft-edges": {
+   "args": null,
+   "params": null,
+   "items": [
+    {
+     "label": "No Soft Edges",
+     "command": "shape.effects",
+     "args": {
+      "softEdges": 0
+     }
+    },
+    {
+     "label": "1 pt",
+     "command": "shape.effects",
+     "args": {
+      "softEdges": 1
+     }
+    },
+    {
+     "label": "2.5 pt",
+     "command": "shape.effects",
+     "args": {
+      "softEdges": 2.5
+     }
+    },
+    {
+     "label": "5 pt",
+     "command": "shape.effects",
+     "args": {
+      "softEdges": 5
+     }
+    },
+    {
+     "label": "10 pt",
+     "command": "shape.effects",
+     "args": {
+      "softEdges": 10
+     }
+    },
+    {
+     "label": "25 pt",
+     "command": "shape.effects",
+     "args": {
+      "softEdges": 25
+     }
+    }
+   ],
+   "source": "upstream",
+   "sourceRef": "deckcraft crates/ui-egui/src/ribbon/galleries.rs effects_menu"
+  },
+  "home.drawing.effects.bevel": {
+   "command": null,
+   "args": null,
+   "params": null,
+   "items": [
+    {
+     "label": "No Bevel",
+     "command": "shape.effects",
+     "args": {
+      "bevel": "none"
+     }
+    },
+    {
+     "label": "Circle",
+     "command": "shape.effects",
+     "args": {
+      "bevel": "circle"
+     }
+    },
+    {
+     "label": "Relaxed Inset",
+     "command": "shape.effects",
+     "args": {
+      "bevel": "relaxedInset"
+     }
+    },
+    {
+     "label": "Cross",
+     "command": "shape.effects",
+     "args": {
+      "bevel": "cross"
+     }
+    },
+    {
+     "label": "Cool Slant",
+     "command": "shape.effects",
+     "args": {
+      "bevel": "coolSlant"
+     }
+    },
+    {
+     "label": "Angle",
+     "command": "shape.effects",
+     "args": {
+      "bevel": "angle"
+     }
+    },
+    {
+     "label": "Soft Round",
+     "command": "shape.effects",
+     "args": {
+      "bevel": "softRound"
+     }
+    },
+    {
+     "label": "Convex",
+     "command": "shape.effects",
+     "args": {
+      "bevel": "convex"
+     }
+    },
+    {
+     "label": "Slope",
+     "command": "shape.effects",
+     "args": {
+      "bevel": "slope"
+     }
+    },
+    {
+     "label": "Divot",
+     "command": "shape.effects",
+     "args": {
+      "bevel": "divot"
+     }
+    },
+    {
+     "label": "Riblet",
+     "command": "shape.effects",
+     "args": {
+      "bevel": "riblet"
+     }
+    },
+    {
+     "label": "Hard Edge",
+     "command": "shape.effects",
+     "args": {
+      "bevel": "hardEdge"
+     }
+    },
+    {
+     "label": "Art Deco",
+     "command": "shape.effects",
+     "args": {
+      "bevel": "artDeco"
+     }
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "3-D Options…",
+     "command": "pane.toggle",
+     "args": {
+      "pane": "format",
+      "tab": "effects"
+     },
+     "source": "office",
+     "sourceRef": "office: Microsoft PowerPoint"
+    }
+   ],
+   "note": "U:prism/shape: the Bevel menu; each row runs shape.effects {bevel} (deckcraft cmd/three_d.rs, core/prism/lib/three-d.mjs) and the slide draws it lit from the upper left. 3-D Options… opens the Format Shape pane on Effects."
+  },
+  "shapeformat.styles.effects.shadow": {
+   "args": null,
+   "params": null,
+   "items": [
+    {
+     "label": "No Shadow",
+     "command": "shape.effects",
+     "args": {
+      "shadow": "none"
+     }
+    },
+    {
+     "label": "Outer",
+     "command": "shape.effects",
+     "args": {
+      "shadow": "outer"
+     }
+    },
+    {
+     "label": "Bottom",
+     "command": "shape.effects",
+     "args": {
+      "shadow": "bottom"
+     }
+    },
+    {
+     "label": "Centered",
+     "command": "shape.effects",
+     "args": {
+      "shadow": "center"
+     }
+    },
+    {
+     "label": "Inner",
+     "command": "shape.effects",
+     "args": {
+      "shadow": "inner"
+     }
+    },
+    {
+     "label": "Perspective",
+     "command": "shape.effects",
+     "args": {
+      "shadow": "perspective"
+     }
+    }
+   ],
+   "source": "upstream",
+   "sourceRef": "deckcraft crates/ui-egui/src/ribbon/galleries.rs effects_menu"
+  },
+  "shapeformat.styles.effects.reflection": {
+   "args": null,
+   "params": null,
+   "items": [
+    {
+     "label": "No Reflection",
+     "command": "shape.effects",
+     "args": {
+      "reflection": "none"
+     }
+    },
+    {
+     "label": "Tight",
+     "command": "shape.effects",
+     "args": {
+      "reflection": "tight"
+     }
+    },
+    {
+     "label": "Half",
+     "command": "shape.effects",
+     "args": {
+      "reflection": "half"
+     }
+    },
+    {
+     "label": "Full",
+     "command": "shape.effects",
+     "args": {
+      "reflection": "full"
+     }
+    }
+   ],
+   "source": "upstream",
+   "sourceRef": "deckcraft crates/ui-egui/src/ribbon/galleries.rs effects_menu"
+  },
+  "shapeformat.styles.effects.glow": {
+   "args": null,
+   "params": null,
+   "items": [
+    {
+     "label": "No Glow",
+     "command": "shape.effects",
+     "args": {
+      "glow": null
+     }
+    },
+    {
+     "label": "5 pt glow",
+     "command": "shape.effects",
+     "args": {
+      "glow": 5
+     }
+    },
+    {
+     "label": "8 pt glow",
+     "command": "shape.effects",
+     "args": {
+      "glow": 8
+     }
+    },
+    {
+     "label": "11 pt glow",
+     "command": "shape.effects",
+     "args": {
+      "glow": 11
+     }
+    },
+    {
+     "label": "18 pt glow",
+     "command": "shape.effects",
+     "args": {
+      "glow": 18
+     }
+    }
+   ],
+   "source": "upstream",
+   "sourceRef": "deckcraft crates/ui-egui/src/ribbon/galleries.rs effects_menu"
+  },
+  "shapeformat.styles.effects.soft-edges": {
+   "args": null,
+   "params": null,
+   "items": [
+    {
+     "label": "No Soft Edges",
+     "command": "shape.effects",
+     "args": {
+      "softEdges": 0
+     }
+    },
+    {
+     "label": "1 pt",
+     "command": "shape.effects",
+     "args": {
+      "softEdges": 1
+     }
+    },
+    {
+     "label": "2.5 pt",
+     "command": "shape.effects",
+     "args": {
+      "softEdges": 2.5
+     }
+    },
+    {
+     "label": "5 pt",
+     "command": "shape.effects",
+     "args": {
+      "softEdges": 5
+     }
+    },
+    {
+     "label": "10 pt",
+     "command": "shape.effects",
+     "args": {
+      "softEdges": 10
+     }
+    },
+    {
+     "label": "25 pt",
+     "command": "shape.effects",
+     "args": {
+      "softEdges": 25
+     }
+    }
+   ],
+   "source": "upstream",
+   "sourceRef": "deckcraft crates/ui-egui/src/ribbon/galleries.rs effects_menu"
+  },
+  "shapeformat.styles.effects.bevel": {
+   "command": null,
+   "args": null,
+   "params": null,
+   "items": [
+    {
+     "label": "No Bevel",
+     "command": "shape.effects",
+     "args": {
+      "bevel": "none"
+     }
+    },
+    {
+     "label": "Circle",
+     "command": "shape.effects",
+     "args": {
+      "bevel": "circle"
+     }
+    },
+    {
+     "label": "Relaxed Inset",
+     "command": "shape.effects",
+     "args": {
+      "bevel": "relaxedInset"
+     }
+    },
+    {
+     "label": "Cross",
+     "command": "shape.effects",
+     "args": {
+      "bevel": "cross"
+     }
+    },
+    {
+     "label": "Cool Slant",
+     "command": "shape.effects",
+     "args": {
+      "bevel": "coolSlant"
+     }
+    },
+    {
+     "label": "Angle",
+     "command": "shape.effects",
+     "args": {
+      "bevel": "angle"
+     }
+    },
+    {
+     "label": "Soft Round",
+     "command": "shape.effects",
+     "args": {
+      "bevel": "softRound"
+     }
+    },
+    {
+     "label": "Convex",
+     "command": "shape.effects",
+     "args": {
+      "bevel": "convex"
+     }
+    },
+    {
+     "label": "Slope",
+     "command": "shape.effects",
+     "args": {
+      "bevel": "slope"
+     }
+    },
+    {
+     "label": "Divot",
+     "command": "shape.effects",
+     "args": {
+      "bevel": "divot"
+     }
+    },
+    {
+     "label": "Riblet",
+     "command": "shape.effects",
+     "args": {
+      "bevel": "riblet"
+     }
+    },
+    {
+     "label": "Hard Edge",
+     "command": "shape.effects",
+     "args": {
+      "bevel": "hardEdge"
+     }
+    },
+    {
+     "label": "Art Deco",
+     "command": "shape.effects",
+     "args": {
+      "bevel": "artDeco"
+     }
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "3-D Options…",
+     "command": "pane.toggle",
+     "args": {
+      "pane": "format",
+      "tab": "effects"
+     },
+     "source": "office",
+     "sourceRef": "office: Microsoft PowerPoint"
+    }
+   ],
+   "note": "U:prism/shape: the Bevel menu; each row runs shape.effects {bevel} (deckcraft cmd/three_d.rs, core/prism/lib/three-d.mjs) and the slide draws it lit from the upper left. 3-D Options… opens the Format Shape pane on Effects."
+  },
+  "pictureformat.styles.effects.shadow": {
+   "args": null,
+   "params": null,
+   "items": [
+    {
+     "label": "No Shadow",
+     "command": "shape.effects",
+     "args": {
+      "shadow": "none"
+     }
+    },
+    {
+     "label": "Outer",
+     "command": "shape.effects",
+     "args": {
+      "shadow": "outer"
+     }
+    },
+    {
+     "label": "Bottom",
+     "command": "shape.effects",
+     "args": {
+      "shadow": "bottom"
+     }
+    },
+    {
+     "label": "Centered",
+     "command": "shape.effects",
+     "args": {
+      "shadow": "center"
+     }
+    },
+    {
+     "label": "Inner",
+     "command": "shape.effects",
+     "args": {
+      "shadow": "inner"
+     }
+    },
+    {
+     "label": "Perspective",
+     "command": "shape.effects",
+     "args": {
+      "shadow": "perspective"
+     }
+    }
+   ],
+   "source": "upstream",
+   "sourceRef": "deckcraft crates/ui-egui/src/ribbon/galleries.rs effects_menu"
+  },
+  "pictureformat.styles.effects.reflection": {
+   "args": null,
+   "params": null,
+   "items": [
+    {
+     "label": "No Reflection",
+     "command": "shape.effects",
+     "args": {
+      "reflection": "none"
+     }
+    },
+    {
+     "label": "Tight",
+     "command": "shape.effects",
+     "args": {
+      "reflection": "tight"
+     }
+    },
+    {
+     "label": "Half",
+     "command": "shape.effects",
+     "args": {
+      "reflection": "half"
+     }
+    },
+    {
+     "label": "Full",
+     "command": "shape.effects",
+     "args": {
+      "reflection": "full"
+     }
+    }
+   ],
+   "source": "upstream",
+   "sourceRef": "deckcraft crates/ui-egui/src/ribbon/galleries.rs effects_menu"
+  },
+  "pictureformat.styles.effects.glow": {
+   "args": null,
+   "params": null,
+   "items": [
+    {
+     "label": "No Glow",
+     "command": "shape.effects",
+     "args": {
+      "glow": null
+     }
+    },
+    {
+     "label": "5 pt glow",
+     "command": "shape.effects",
+     "args": {
+      "glow": 5
+     }
+    },
+    {
+     "label": "8 pt glow",
+     "command": "shape.effects",
+     "args": {
+      "glow": 8
+     }
+    },
+    {
+     "label": "11 pt glow",
+     "command": "shape.effects",
+     "args": {
+      "glow": 11
+     }
+    },
+    {
+     "label": "18 pt glow",
+     "command": "shape.effects",
+     "args": {
+      "glow": 18
+     }
+    }
+   ],
+   "source": "upstream",
+   "sourceRef": "deckcraft crates/ui-egui/src/ribbon/galleries.rs effects_menu"
+  },
+  "pictureformat.styles.effects.soft-edges": {
+   "args": null,
+   "params": null,
+   "items": [
+    {
+     "label": "No Soft Edges",
+     "command": "shape.effects",
+     "args": {
+      "softEdges": 0
+     }
+    },
+    {
+     "label": "1 pt",
+     "command": "shape.effects",
+     "args": {
+      "softEdges": 1
+     }
+    },
+    {
+     "label": "2.5 pt",
+     "command": "shape.effects",
+     "args": {
+      "softEdges": 2.5
+     }
+    },
+    {
+     "label": "5 pt",
+     "command": "shape.effects",
+     "args": {
+      "softEdges": 5
+     }
+    },
+    {
+     "label": "10 pt",
+     "command": "shape.effects",
+     "args": {
+      "softEdges": 10
+     }
+    },
+    {
+     "label": "25 pt",
+     "command": "shape.effects",
+     "args": {
+      "softEdges": 25
+     }
+    }
+   ],
+   "source": "upstream",
+   "sourceRef": "deckcraft crates/ui-egui/src/ribbon/galleries.rs effects_menu"
+  },
+  "pictureformat.styles.effects.bevel": {
+   "command": null,
+   "args": null,
+   "params": null,
+   "items": [
+    {
+     "label": "No Bevel",
+     "command": "shape.effects",
+     "args": {
+      "bevel": "none"
+     }
+    },
+    {
+     "label": "Circle",
+     "command": "shape.effects",
+     "args": {
+      "bevel": "circle"
+     }
+    },
+    {
+     "label": "Relaxed Inset",
+     "command": "shape.effects",
+     "args": {
+      "bevel": "relaxedInset"
+     }
+    },
+    {
+     "label": "Cross",
+     "command": "shape.effects",
+     "args": {
+      "bevel": "cross"
+     }
+    },
+    {
+     "label": "Cool Slant",
+     "command": "shape.effects",
+     "args": {
+      "bevel": "coolSlant"
+     }
+    },
+    {
+     "label": "Angle",
+     "command": "shape.effects",
+     "args": {
+      "bevel": "angle"
+     }
+    },
+    {
+     "label": "Soft Round",
+     "command": "shape.effects",
+     "args": {
+      "bevel": "softRound"
+     }
+    },
+    {
+     "label": "Convex",
+     "command": "shape.effects",
+     "args": {
+      "bevel": "convex"
+     }
+    },
+    {
+     "label": "Slope",
+     "command": "shape.effects",
+     "args": {
+      "bevel": "slope"
+     }
+    },
+    {
+     "label": "Divot",
+     "command": "shape.effects",
+     "args": {
+      "bevel": "divot"
+     }
+    },
+    {
+     "label": "Riblet",
+     "command": "shape.effects",
+     "args": {
+      "bevel": "riblet"
+     }
+    },
+    {
+     "label": "Hard Edge",
+     "command": "shape.effects",
+     "args": {
+      "bevel": "hardEdge"
+     }
+    },
+    {
+     "label": "Art Deco",
+     "command": "shape.effects",
+     "args": {
+      "bevel": "artDeco"
+     }
+    },
+    {
+     "separator": true
+    },
+    {
+     "label": "3-D Options…",
+     "command": "pane.toggle",
+     "args": {
+      "pane": "format",
+      "tab": "effects"
+     },
+     "source": "office",
+     "sourceRef": "office: Microsoft PowerPoint"
+    }
+   ],
+   "note": "U:prism/shape: the Bevel menu; each row runs shape.effects {bevel} (deckcraft cmd/three_d.rs, core/prism/lib/three-d.mjs) and the slide draws it lit from the upper left. 3-D Options… opens the Format Shape pane on Effects."
+  },
+  "home.drawing.fill.gradient": {
+   "command": "pane.toggle",
+   "args": {
+    "pane": "format",
+    "tab": "fill",
+    "on": true
+   },
+   "params": null,
+   "note": "U:prism/shape: Gradient opens the Format Shape pane on Fill & Line, where the gradient is edited (presets, type, direction, stops)."
+  },
+  "home.drawing.fill.picture": {
+   "command": "shape.fill",
+   "args": {
+    "pick": true
+   },
+   "params": null,
+   "note": "U:prism/shape: Picture… opens the system Open dialog and fills the shape with the chosen picture (shape.fill {pick: true})."
+  },
+  "shapeformat.styles.fill.picture": {
+   "command": "shape.fill",
+   "args": {
+    "pick": true
+   },
+   "params": null,
+   "note": "U:prism/shape: Picture… opens the system Open dialog and fills the shape with the chosen picture (shape.fill {pick: true})."
+  },
+  "shapeformat.insert.edit-shape.smooth-corners": {
+   "args": {
+    "smoothing": "<percent>"
+   }
+  },
+  "pictureformat.adjust.transparency": {
+   "args": null,
+   "params": null,
+   "items": [
+    {
+     "label": "Transparency: 0%",
+     "command": "picture.adjust",
+     "args": {
+      "transparency": 0
+     }
+    },
+    {
+     "label": "Transparency: 15%",
+     "command": "picture.adjust",
+     "args": {
+      "transparency": 0.15
+     }
+    },
+    {
+     "label": "Transparency: 30%",
+     "command": "picture.adjust",
+     "args": {
+      "transparency": 0.3
+     }
+    },
+    {
+     "label": "Transparency: 50%",
+     "command": "picture.adjust",
+     "args": {
+      "transparency": 0.5
+     }
+    },
+    {
+     "label": "Transparency: 65%",
+     "command": "picture.adjust",
+     "args": {
+      "transparency": 0.65
+     }
+    },
+    {
+     "label": "Transparency: 80%",
+     "command": "picture.adjust",
+     "args": {
+      "transparency": 0.8
+     }
+    },
+    {
+     "label": "Transparency: 95%",
+     "command": "picture.adjust",
+     "args": {
+      "transparency": 0.95
+     }
+    }
+   ],
+   "source": "office"
+  },
+  "pictureformat.adjust.corrections.sharpen-soften": {
+   "command": null,
+   "args": null,
+   "params": null,
+   "note": "U:prism/shape: deckcraft picture.adjust has no sharpen"
+  },
+  "pictureformat.adjust.color.color-tone": {
+   "command": null,
+   "args": null,
+   "params": null,
+   "note": "U:prism/shape: deckcraft picture.adjust has no colour temperature"
+  },
+  "pictureformat.adjust.change.from-clipboard": {
+   "command": null,
+   "args": null,
+   "params": null,
+   "note": "U:prism/shape: needs a clipboard picture read"
+  },
+  "pictureformat.size.crop.aspect-ratio": {
+   "command": null,
+   "args": null,
+   "params": null,
+   "note": "U:prism/shape: deckcraft picture.crop has no aspect presets"
+  },
+  "pictureformat.size.crop.fill": {
+   "command": null,
+   "args": null,
+   "params": null,
+   "note": "U:prism/shape: deckcraft picture.crop has no Fill"
+  },
+  "pictureformat.size.crop.fit": {
+   "command": null,
+   "args": null,
+   "params": null,
+   "note": "U:prism/shape: deckcraft picture.crop has no Fit"
+  },
+  "shapeformat.accessibility.alt-text": {
+   "params": null,
+   "note": "U:prism/shape: deckcraft ribbon shape_format.rs:220 runs app.dialog {id: altText}; the control runs shape.altText, which opens dialog.altText, so the front-end request id is not a parameter."
+  },
+  "playback.editing.trim": {
+   "params": null,
+   "note": "U:prism/shape: deckcraft app.dialog {id: trim} opens the Trim dialog; the control runs media.options, so the front-end request id is not a parameter."
+  }
+ },
+ "dialogs": {
+  "dialog.sizePosition": {
+   "note": "U:prism/shape: deckcraft size_position.rs (Size: height, width, rotation, scale, lock aspect ratio; Position from the top-left corner). PowerPoint-only fields (picture sizing, from Center, Text Box and Alt Text tabs) are left out: deckcraft has them elsewhere or not at all.",
+   "tabs": [
+    {
+     "name": "Size",
+     "fields": [
+      {
+       "id": "h",
+       "label": "Height:",
+       "kind": "number",
+       "unit": "in",
+       "min": 0.01,
+       "max": 220,
+       "step": 0.1,
+       "param": "h (pt)",
+       "source": "upstream",
+       "sourceRef": "deckcraft crates/ui-egui/src/dialogs/size_position.rs:184"
+      },
+      {
+       "id": "w",
+       "label": "Width:",
+       "kind": "number",
+       "unit": "in",
+       "min": 0.01,
+       "max": 220,
+       "step": 0.1,
+       "param": "w (pt)",
+       "source": "upstream",
+       "sourceRef": "deckcraft crates/ui-egui/src/dialogs/size_position.rs:185"
+      },
+      {
+       "id": "rot",
+       "label": "Rotation:",
+       "kind": "number",
+       "unit": "°",
+       "min": -3600,
+       "max": 3600,
+       "step": 1,
+       "param": "rot",
+       "source": "upstream",
+       "sourceRef": "deckcraft crates/ui-egui/src/dialogs/size_position.rs:186"
+      },
+      {
+       "id": "scaleH",
+       "label": "Scale Height:",
+       "kind": "number",
+       "unit": "%",
+       "min": 1,
+       "max": 10000,
+       "step": 1,
+       "default": 100,
+       "source": "upstream",
+       "sourceRef": "deckcraft crates/ui-egui/src/dialogs/size_position.rs:187"
+      },
+      {
+       "id": "scaleW",
+       "label": "Scale Width:",
+       "kind": "number",
+       "unit": "%",
+       "min": 1,
+       "max": 10000,
+       "step": 1,
+       "default": 100,
+       "source": "upstream",
+       "sourceRef": "deckcraft crates/ui-egui/src/dialogs/size_position.rs:188"
+      },
+      {
+       "id": "lock",
+       "label": "Lock aspect ratio",
+       "kind": "checkbox",
+       "param": "lockAspect",
+       "source": "upstream",
+       "sourceRef": "deckcraft crates/ui-egui/src/dialogs/size_position.rs:189"
+      }
+     ]
+    },
+    {
+     "name": "Position",
+     "fields": [
+      {
+       "id": "x",
+       "label": "Horizontal position:",
+       "kind": "number",
+       "unit": "in",
+       "min": -1388,
+       "max": 1388,
+       "step": 0.1,
+       "param": "x (pt)",
+       "note": "From the top-left corner of the slide",
+       "source": "upstream",
+       "sourceRef": "deckcraft crates/ui-egui/src/dialogs/size_position.rs:193"
+      },
+      {
+       "id": "y",
+       "label": "Vertical position:",
+       "kind": "number",
+       "unit": "in",
+       "min": -1388,
+       "max": 1388,
+       "step": 0.1,
+       "param": "y (pt)",
+       "source": "upstream",
+       "sourceRef": "deckcraft crates/ui-egui/src/dialogs/size_position.rs:194"
+      }
+     ]
+    }
+   ]
+  },
+  "dialog.altText": {
+   "tabs": [
+    {
+     "name": "Alt Text",
+     "fields": [
+      {
+       "id": "text",
+       "label": "How would you describe this object and its context to someone who is blind or has low vision?",
+       "kind": "text",
+       "multiline": true,
+       "param": "text",
+       "source": "upstream",
+       "sourceRef": "deckcraft crates/ui-egui/src/dialogs/alt_text.rs"
+      },
+      {
+       "id": "deco",
+       "label": "Mark as decorative",
+       "kind": "checkbox",
+       "param": "decorative",
+       "source": "upstream",
+       "sourceRef": "deckcraft crates/ui-egui/src/dialogs/alt_text.rs"
+      }
+     ]
+    }
+   ]
+  },
+  "dialog.trim": {
+   "note": "U:prism/shape: deckcraft body.rs:1220 dlg_trim has the four fields (seconds), OK = media.options {trimStart, trimEnd, fadeIn, fadeOut} in ms. PowerPoint's timeline, Play and frame stepping are not offered: no media playback in the dialog.",
+   "tabs": [
+    {
+     "name": "Trim",
+     "fields": [
+      {
+       "id": "start",
+       "label": "Start time (s):",
+       "kind": "number",
+       "options": [],
+       "param": "trimStart (ms)",
+       "unit": "s",
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/dialogs/body.rs:1222"
+      },
+      {
+       "id": "end",
+       "label": "End trim (s):",
+       "kind": "number",
+       "options": [],
+       "param": "trimEnd (ms)",
+       "unit": "s",
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/dialogs/body.rs:1223"
+      },
+      {
+       "id": "fin",
+       "label": "Fade in (s):",
+       "kind": "number",
+       "options": [],
+       "param": "fadeIn (ms)",
+       "unit": "s",
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/dialogs/body.rs:1224"
+      },
+      {
+       "id": "fout",
+       "label": "Fade out (s):",
+       "kind": "number",
+       "options": [],
+       "param": "fadeOut (ms)",
+       "unit": "s",
+       "source": "upstream",
+       "sourceRef": "crates/ui-egui/src/dialogs/body.rs:1225"
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

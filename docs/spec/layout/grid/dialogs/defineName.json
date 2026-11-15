@@ -1,0 +1,10 @@
+{
+  "source": "gridcraft 146161b4b450a56e5e59a083ba0478582d1e602b crates/ui-egui/src/dialogs.rs:712 (defineName); Excel New Name",
+  "width": 420,
+  "height": 330,
+  "sections": [
+    {"fields": ["name", "scope"], "columns": 1},
+    {"fields": ["comment"]},
+    {"fields": ["refersTo"], "columns": 1}
+  ]
+}

@@ -1,0 +1,124 @@
+{
+ "controls": {
+  "draw.drawing-tools.select": {
+   "note": "U:quill/draw: wordcraft ribbon/draw.rs and engine/cmd/draw.rs (DrawMode::Select): dragging on the page selects text and drawings again."
+  },
+  "draw.drawing-tools.lasso": {
+   "note": "U:quill/draw: Lasso Select: drag a loop round ink and drawings to select them (draw.lasso {page, points}); dragging the selection moves it (draw.lassoMove), the Color menu recolours it (draw.lassoColor)."
+  },
+  "draw.drawing-tools.eraser": {
+   "note": "U:quill/draw: Eraser: dragging over ink strokes deletes them (draw.erase), each stroke one undo step."
+  },
+  "draw.drawing-tools.gallery-pens": {
+   "command": "draw.usePen",
+   "args": {
+    "color": null,
+    "width": null,
+    "index": "<n>"
+   },
+   "note": "U:quill/draw: the pens added with Add Pen (ribbon/draw.rs gallery_pen): each tile is its kind's pen drawn in its colour over a bar of its thickness; a click picks it up (draw.usePen {index}), right-click offers Remove Pen (draw.removePen {index}). A fresh profile has Word's default pens (a black, red and blue pen, a pencil and a yellow highlighter: a deliberate deviation, wordcraft 0.13.1 ships an empty gallery), then the person's own: kept per profile in the settings, empty only when every pen was removed."
+  },
+  "draw.drawing-tools.add-pen": {
+   "items": [
+    {
+     "id": "draw.drawing-tools.add-pen.pen",
+     "label": "Pen",
+     "command": "draw.addPen",
+     "args": {
+      "kind": "pen",
+      "current": true
+     },
+     "icon": "pen",
+     "source": "upstream"
+    },
+    {
+     "id": "draw.drawing-tools.add-pen.pencil",
+     "label": "Pencil",
+     "command": "draw.addPen",
+     "args": {
+      "kind": "pencil",
+      "current": true
+     },
+     "icon": "pencil",
+     "source": "upstream"
+    },
+    {
+     "id": "draw.drawing-tools.add-pen.highlighter",
+     "label": "Highlighter",
+     "command": "draw.addPen",
+     "args": {
+      "kind": "highlighter",
+      "current": true
+     },
+     "icon": "highlight",
+     "source": "upstream"
+    }
+   ],
+   "note": "U:quill/draw: a new pen starts as that kind's colour and thickness in use (`current`), joins the gallery and is picked up."
+  },
+  "draw.drawing-tools.color": {
+   "command": "draw.penColor",
+   "items": [
+    {
+     "id": "draw.drawing-tools.color.theme-colors-standard-colors-recent-colors-palette",
+     "label": "Theme Colors / Standard Colors / Recent Colors palette",
+     "command": "draw.penColor",
+     "kind": "palette",
+     "source": "upstream",
+     "args": {
+      "color": "<hex>"
+     }
+    },
+    {
+     "id": "draw.drawing-tools.color.more-colors",
+     "label": "More Colors…",
+     "command": "draw.penColor",
+     "kind": "moreColors",
+     "source": "upstream",
+     "args": {
+      "color": "<hex>"
+     }
+    }
+   ],
+   "note": "U:quill/draw: the colour of the pen in use (and of its gallery pen); with ink lasso-selected the colour goes to the selection's outline instead (draw.lassoColor), as ribbon/draw.rs decides.",
+   "args": {
+    "color": "<hex>"
+   }
+  },
+  "draw.drawing-tools.thickness": {
+   "command": "draw.penWidth",
+   "items": [
+    {
+     "id": "draw.drawing-tools.thickness.widths",
+     "label": "Widths",
+     "kind": "list",
+     "command": "draw.penWidth",
+     "args": {
+      "width": "<pt>"
+     },
+     "dynamic": true,
+     "source": "upstream"
+    }
+   ],
+   "note": "U:quill/draw: the thickness of the pen in use: 0.5, 1, 1.5, 2.5, 3.5 and 5 pt for the pen and pencil, 4, 8, 12, 18 and 24 pt for the highlighter.",
+   "args": {
+    "width": "<pt>"
+   }
+  },
+  "draw.stencils.ruler": {
+   "note": "U:quill/draw: Word's Ruler stencil has no upstream engine (wordcraft's Draw tab has no Stencils group); hidden."
+  },
+  "draw.convert.ink-to-shape": {
+   "note": "U:quill/draw: Ink to Shape: with strokes lasso-selected it converts them (a line and an arrowhead drawn apart become one arrow); otherwise it turns on: strokes drawn from then on that look like a line, arrow, rectangle, ellipse, triangle or polygon become that shape."
+  },
+  "draw.convert.ink-to-math": {
+   "note": "U:quill/draw: Ink to Math is catalogued upstream with no engine (needs handwriting recognition); hidden."
+  },
+  "draw.insert.drawing-canvas": {
+   "note": "U:quill/draw: Insert Drawing Canvas (canvas.rs insert): an empty canvas in line with the text at the caret, selected; it saves to .docx as an empty Word drawing canvas."
+  },
+  "draw.replay.ink-replay": {
+   "note": "U:quill/draw: Ink Replay plays the ink back stroke by stroke in the order it was drawn (each stroke keeps its place in that order, also in .docx), then turns itself off."
+  }
+ }
+}

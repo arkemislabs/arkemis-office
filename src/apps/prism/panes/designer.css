@@ -1,0 +1,8 @@
+/* The Design Ideas pane (panes/designer.tsx): slide thumbnails, one per idea and per theme. */
+.dsg { display: flex; flex-direction: column; gap: 10px; padding-right: 6px; font: 12px var(--ark-font, system-ui); color: var(--sh-text-1, #f2f2f3); }
+.dsg-note { color: var(--sh-text-3, #85858c); line-height: 1.45; }
+.dsg-h { margin-top: 4px; color: var(--sh-text-2, #b4b4ba); }
+.dsg-thumb { display: block; width: 100%; padding: 0; border: 0; border-radius: 4px; background: #fff; box-shadow: 0 0 0 1px rgba(255,255,255,.2); cursor: pointer; overflow: hidden; }
+.dsg-thumb:hover { box-shadow: 0 0 0 2.5px var(--prism-accent, #e8774e); }
+.dsg-thumb.is-on { box-shadow: 0 0 0 2px var(--prism-accent, #e8774e); }
+.dsg-slide { display: block; width: 100%; height: auto; }

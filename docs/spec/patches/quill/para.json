@@ -1,0 +1,150 @@
+{
+  "dialogs": {
+    "dialog.paragraph": {
+      "title": "Paragraph",
+      "command": "para.set",
+      "note": "U:quill/para: Word's Paragraph dialog over wordcraft ui-egui/src/dialogs/paragraph.rs (paragraph_dialog, para_fields, apply_paragraph: one para.set with only what changed, alignment and indents as seen on the page). Tabs… opens the Tabs dialog on top (a body button until footer buttons can open dialogs, see design note quill-format--integrator--footer-button-dialog). Collapsed by default, Snap to grid, Tight wrap and Asian text alignment stay out: the layout does not honour them.",
+      "tabs": [
+        {"name": "Indents and Spacing", "fields": [
+          {"id": "alignment", "label": "Alignment:", "kind": "select", "options": [
+            {"value": "left", "label": "Left"}, {"value": "center", "label": "Centered"}, {"value": "right", "label": "Right"},
+            {"value": "justify", "label": "Justified"}, {"value": "distribute", "label": "Distributed"}]},
+          {"id": "outlineLevel", "label": "Outline level:", "kind": "select", "options": [
+            {"value": "body", "label": "Body Text"}, {"value": "1", "label": "Level 1"}, {"value": "2", "label": "Level 2"}, {"value": "3", "label": "Level 3"},
+            {"value": "4", "label": "Level 4"}, {"value": "5", "label": "Level 5"}, {"value": "6", "label": "Level 6"}, {"value": "7", "label": "Level 7"},
+            {"value": "8", "label": "Level 8"}, {"value": "9", "label": "Level 9"}]},
+          {"id": "direction", "label": "Direction:", "kind": "radio", "options": [{"value": "rtl", "label": "Right-to-left"}, {"value": "ltr", "label": "Left-to-right"}]},
+          {"id": "left", "label": "Left:", "kind": "number", "unit": "in", "min": -22, "max": 22, "step": 0.1},
+          {"id": "right", "label": "Right:", "kind": "number", "unit": "in", "min": -22, "max": 22, "step": 0.1},
+          {"id": "special", "label": "Special:", "kind": "select", "options": [
+            {"value": "none", "label": "(none)"}, {"value": "firstLine", "label": "First line"}, {"value": "hanging", "label": "Hanging"}]},
+          {"id": "by", "label": "By:", "kind": "number", "unit": "in", "min": 0, "max": 22, "step": 0.1, "visibleWhen": "special!=none"},
+          {"id": "mirrorIndents", "label": "Mirror indents", "kind": "checkbox"},
+          {"id": "before", "label": "Before:", "kind": "number", "unit": "pt", "min": 0, "max": 1584, "step": 6},
+          {"id": "after", "label": "After:", "kind": "number", "unit": "pt", "min": 0, "max": 1584, "step": 6},
+          {"id": "lineRule", "label": "Line spacing:", "kind": "select", "options": [
+            {"value": "single", "label": "Single"}, {"value": "onePointFive", "label": "1.5 lines"}, {"value": "double", "label": "Double"},
+            {"value": "atLeast", "label": "At least"}, {"value": "exactly", "label": "Exactly"}, {"value": "multiple", "label": "Multiple"}]},
+          {"id": "lineAt", "label": "At:", "kind": "number", "min": 0.06, "max": 132, "step": 0.5, "visibleWhen": "lineRule==multiple"},
+          {"id": "lineAtPt", "label": "At:", "kind": "number", "unit": "pt", "min": 0, "max": 1584, "step": 1, "visibleWhen": "lineRule in atLeast|exactly"},
+          {"id": "contextualSpacing", "label": "Don't add space between paragraphs of the same style", "kind": "checkbox"},
+          {"id": "tabsButton", "label": "Tabs…", "kind": "button", "dialog": "dialog.tabs"},
+          {"id": "preview", "label": "Preview", "kind": "preview"}
+        ]},
+        {"name": "Line and Page Breaks", "fields": [
+          {"id": "widowControl", "label": "Widow/Orphan control", "kind": "checkbox"},
+          {"id": "keepNext", "label": "Keep with next", "kind": "checkbox"},
+          {"id": "keepLines", "label": "Keep lines together", "kind": "checkbox"},
+          {"id": "pageBreakBefore", "label": "Page break before", "kind": "checkbox"},
+          {"id": "suppressLineNumbers", "label": "Suppress line numbers", "kind": "checkbox"},
+          {"id": "suppressHyphens", "label": "Don't hyphenate", "kind": "checkbox"},
+          {"id": "previewBreaks", "label": "Preview", "kind": "preview"}
+        ]},
+        {"name": "Asian Typography", "fields": [
+          {"id": "kinsoku", "label": "Apply Asian rules to control first and last characters", "kind": "checkbox"},
+          {"id": "wordWrap", "label": "Allow Latin text to wrap in the middle of a word", "kind": "checkbox"},
+          {"id": "overflowPunct", "label": "Allow punctuation to extend into the margin", "kind": "checkbox"},
+          {"id": "topLinePunct", "label": "Allow punctuation at the start of a line to compress", "kind": "checkbox"},
+          {"id": "autoSpaceDE", "label": "Automatically adjust space between Asian and Latin text", "kind": "checkbox"},
+          {"id": "autoSpaceDN", "label": "Automatically adjust space between Asian text and numbers", "kind": "checkbox"},
+          {"id": "previewAsian", "label": "Preview", "kind": "preview"}
+        ]}
+      ],
+      "buttons": ["OK", "Cancel"]
+    },
+    "dialog.tabs": {
+      "title": "Tabs",
+      "command": "para.tabs",
+      "note": "U:quill/para: wordcraft ui-egui/src/dialogs/dialogs_para.rs:36 TabsForm (read, new_stop, set_pos, remove_stop, clear_all, params) in Word's arrangement: Tab stop position box and list, Default tab stops, Tab stops to be cleared, Alignment, Leader, Set / Clear / Clear All.",
+      "tabs": [{"name": "", "fields": [
+        {"id": "stops", "label": "Tab stop position:", "kind": "list", "note": "(none)"},
+        {"id": "defaultTab", "label": "Default tab stops:", "kind": "number", "unit": "in", "min": 0.01, "max": 22, "step": 0.1},
+        {"id": "toBeCleared", "label": "Tab stops to be cleared: {clearedText}", "kind": "label"}
+      ]}],
+      "buttons": ["OK", "Cancel"]
+    },
+    "dialog.newStyle": {
+      "title": "Create New Style from Formatting",
+      "command": "styles.create",
+      "note": "U:quill/para: wordcraft dispatch.rs:898 new_style_dialog (name, based on, the current paragraph's formatting) with Word's Properties and Formatting sections; Format ▾, Automatically update and New documents based on this template stay out (no template store).",
+      "tabs": [{"name": "", "fields": [
+        {"id": "name", "label": "Name:", "kind": "text"},
+        {"id": "styleType", "label": "Style type:", "kind": "select", "options": [
+          {"value": "paragraph", "label": "Paragraph"}, {"value": "character", "label": "Character"}, {"value": "linked", "label": "Linked (paragraph and character)"}]},
+        {"id": "basedOn", "label": "Style based on:", "kind": "select"},
+        {"id": "next", "label": "Style for following paragraph:", "kind": "select", "visibleWhen": "styleType!=character"},
+        {"id": "font", "label": "Font:", "kind": "combo"},
+        {"id": "size", "label": "Size:", "kind": "combo", "options": ["8", "9", "10", "10.5", "11", "12", "14", "16", "18", "20", "22", "24", "26", "28", "36", "48", "72"]},
+        {"id": "color", "label": "Font color:", "kind": "color", "options": ["Automatic"]},
+        {"id": "bold", "label": "Bold", "kind": "checkbox"},
+        {"id": "italic", "label": "Italic", "kind": "checkbox"},
+        {"id": "underline", "label": "Underline", "kind": "checkbox"},
+        {"id": "alignment", "label": "Alignment:", "kind": "radio", "visibleWhen": "styleType!=character", "options": [
+          {"value": "left", "label": "Left"}, {"value": "center", "label": "Center"}, {"value": "right", "label": "Right"}, {"value": "justify", "label": "Justify"}]},
+        {"id": "lineRule", "label": "Line spacing:", "kind": "select", "visibleWhen": "styleType!=character", "options": [
+          {"value": "single", "label": "Single"}, {"value": "multiple115", "label": "1.15"}, {"value": "onePointFive", "label": "1.5 lines"}, {"value": "double", "label": "Double"}]},
+        {"id": "before", "label": "Spacing before:", "kind": "number", "unit": "pt", "min": 0, "max": 1584, "step": 6, "visibleWhen": "styleType!=character"},
+        {"id": "after", "label": "Spacing after:", "kind": "number", "unit": "pt", "min": 0, "max": 1584, "step": 6, "visibleWhen": "styleType!=character"},
+        {"id": "preview", "label": "Preview", "kind": "preview"},
+        {"id": "addToGallery", "label": "Add to the Styles gallery", "kind": "checkbox"}
+      ]}],
+      "buttons": ["OK", "Cancel"]
+    },
+    "dialog.modifyStyle": {
+      "title": "Modify Style",
+      "command": "styles.modify",
+      "note": "U:quill/para: wordcraft dispatch.rs:922 modify_style_dialog (name, font, size, colour, space before/after, bold, italic) with Word's Properties and Formatting sections; Format ▾ and Automatically update stay out.",
+      "tabs": [{"name": "", "fields": [
+        {"id": "name", "label": "Name:", "kind": "text"},
+        {"id": "styleType", "label": "Style type:", "kind": "select", "readOnly": true, "options": [
+          {"value": "paragraph", "label": "Paragraph"}, {"value": "character", "label": "Character"}, {"value": "linked", "label": "Linked (paragraph and character)"}, {"value": "table", "label": "Table"}]},
+        {"id": "basedOn", "label": "Style based on:", "kind": "select"},
+        {"id": "next", "label": "Style for following paragraph:", "kind": "select", "visibleWhen": "styleType!=character"},
+        {"id": "font", "label": "Font:", "kind": "combo"},
+        {"id": "size", "label": "Size:", "kind": "combo", "options": ["8", "9", "10", "10.5", "11", "12", "14", "16", "18", "20", "22", "24", "26", "28", "36", "48", "72"]},
+        {"id": "color", "label": "Font color:", "kind": "color", "options": ["Automatic"]},
+        {"id": "bold", "label": "Bold", "kind": "checkbox"},
+        {"id": "italic", "label": "Italic", "kind": "checkbox"},
+        {"id": "underline", "label": "Underline", "kind": "checkbox"},
+        {"id": "alignment", "label": "Alignment:", "kind": "radio", "visibleWhen": "styleType!=character", "options": [
+          {"value": "left", "label": "Left"}, {"value": "center", "label": "Center"}, {"value": "right", "label": "Right"}, {"value": "justify", "label": "Justify"}]},
+        {"id": "lineRule", "label": "Line spacing:", "kind": "select", "visibleWhen": "styleType!=character", "options": [
+          {"value": "keep", "label": "(as it is)"}, {"value": "single", "label": "Single"}, {"value": "multiple115", "label": "1.15"}, {"value": "onePointFive", "label": "1.5 lines"}, {"value": "double", "label": "Double"}]},
+        {"id": "before", "label": "Spacing before:", "kind": "number", "unit": "pt", "min": 0, "max": 1584, "step": 6, "visibleWhen": "styleType!=character"},
+        {"id": "after", "label": "Spacing after:", "kind": "number", "unit": "pt", "min": 0, "max": 1584, "step": 6, "visibleWhen": "styleType!=character"},
+        {"id": "preview", "label": "Preview", "kind": "preview"},
+        {"id": "addToGallery", "label": "Add to the Styles gallery", "kind": "checkbox"}
+      ]}],
+      "buttons": ["OK", "Cancel"]
+    },
+    "dialog.manageStyles": {
+      "title": "Manage Styles",
+      "command": null,
+      "note": "U:quill/para: wordcraft ui-egui/src/dialogs/styles.rs manage_styles (sort order, the style list, description, show in gallery, hide, Modify…, New Style…, Delete) as Word's Edit page; Recommend, Restrict, Set Defaults and Import/Export stay out until translated.",
+      "tabs": [{"name": "Edit", "fields": [
+        {"id": "sortOrder", "label": "Sort order:", "kind": "select", "options": [{"value": "recommended", "label": "As Recommended"}, {"value": "alphabetical", "label": "Alphabetical"}]},
+        {"id": "style", "label": "Select a style to edit:", "kind": "list"},
+        {"id": "description", "label": "Preview:", "kind": "preview"},
+        {"id": "showInGallery", "label": "Show in the Styles gallery", "kind": "checkbox"},
+        {"id": "hide", "label": "Hide from style lists", "kind": "checkbox"},
+        {"id": "modifyButton", "label": "Modify…", "kind": "button", "dialog": "dialog.modifyStyle"},
+        {"id": "newStyleButton", "label": "New Style…", "kind": "button", "dialog": "dialog.newStyle"},
+        {"id": "deleteButton", "label": "Delete", "kind": "button", "command": "styles.delete"}
+      ]}],
+      "buttons": ["OK", "Cancel"]
+    },
+    "dialog.sortText": {
+      "title": "Sort Text",
+      "command": "para.sort",
+      "note": "U:quill/para: Word's Sort Text dialog (office); wordcraft runs para.sort directly. Sort by Paragraphs only (fields need a separator; Options… stays out), Type Text/Number/Date, Ascending/Descending, header row.",
+      "tabs": [{"name": "", "fields": [
+        {"id": "sortBy", "label": "Sort by:", "kind": "select", "options": [{"value": "paragraphs", "label": "Paragraphs"}]},
+        {"id": "type", "label": "Type:", "kind": "select", "options": [{"value": "text", "label": "Text"}, {"value": "number", "label": "Number"}, {"value": "date", "label": "Date"}]},
+        {"id": "using", "label": "Using:", "kind": "select", "options": [{"value": "paragraphs", "label": "Paragraphs"}]},
+        {"id": "order", "label": "", "kind": "radio", "options": [{"value": "ascending", "label": "Ascending"}, {"value": "descending", "label": "Descending"}]},
+        {"id": "header", "label": "My list has", "kind": "radio", "options": [{"value": "yes", "label": "Header row"}, {"value": "no", "label": "No header row"}]}
+      ]}],
+      "buttons": ["OK", "Cancel"]
+    }
+  }
+}

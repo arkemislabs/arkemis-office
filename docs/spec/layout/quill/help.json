@@ -1,0 +1,25 @@
+{
+  "tab": "help",
+  "keytip": "Y",
+  "source": "wordcraft aadb077e072b7de05f724e359d8db82e151f125c crates/ui-egui/src/ribbon/review.rs (help: Help, Check for Updates, Community Discord, then Agents › Commands, all large); Contact Support, Feedback, Show Training and What's New placed as in Word for Windows",
+  "groups": {
+    "help": {
+      "collapseOrder": 2,
+      "layout": [
+        {"large": "help.help.help"},
+        {"large": "help.help.check-for-updates"},
+        {"large": "help.help.community-discord"},
+        {"large": "help.help.contact-support"},
+        {"large": "help.help.feedback"},
+        {"large": "help.help.show-training"},
+        {"large": "help.help.what-s-new"}
+      ]
+    },
+    "agents": {
+      "collapseOrder": 1,
+      "layout": [
+        {"large": "help.agents.commands"}
+      ]
+    }
+  }
+}

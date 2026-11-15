@@ -1,0 +1,303 @@
+{
+  "controls": {
+    "layout.page-setup.hyphenation": {
+      "note": "U:quill/word-core: layout.hyphenation and layout.manualHyphenation (wordcraft page.rs): Automatic hyphenates with wordcraft's dictionary and Liang patterns (core/quill/lib/hyphen.mjs; Bulgarian, Turkish and Russian have syllable rules upstream that are not translated), Manual walks the words that could end a line.",
+      "items": [
+        {
+          "id": "layout.page-setup.hyphenation.automatic",
+          "label": "Automatic",
+          "kind": "button",
+          "command": "layout.hyphenation",
+          "args": {
+            "value": true
+          },
+          "checkable": true,
+          "source": "upstream"
+        },
+        {
+          "id": "layout.page-setup.hyphenation.none",
+          "label": "None",
+          "kind": "button",
+          "command": "layout.hyphenation",
+          "args": {
+            "value": false
+          },
+          "checkable": true,
+          "source": "upstream"
+        },
+        {
+          "id": "layout.page-setup.hyphenation.manual",
+          "label": "Manual…",
+          "kind": "button",
+          "command": "layout.manualHyphenation",
+          "dialog": "dialog.manualHyphenation",
+          "source": "upstream"
+        },
+        {
+          "separator": true
+        },
+        {
+          "id": "layout.page-setup.hyphenation.hyphenation-options",
+          "label": "Hyphenation Options…",
+          "kind": "button",
+          "command": "layout.hyphenation",
+          "dialog": "dialog.hyphenation",
+          "source": "upstream"
+        }
+      ]
+    },
+    "home.clipboard.paste.set-default-paste": {
+      "note": "U:quill/word-core: no engine upstream (Word-only), so it stays hidden."
+    },
+    "home.font.text-highlight-color.stop-highlighting": {
+      "note": "U:quill/word-core: no engine upstream (Word-only), so it stays hidden."
+    },
+    "home.paragraph.multilevel-list.define-new-list-style": {
+      "note": "U:quill/word-core: no engine upstream (Word-only), so it stays hidden."
+    },
+    "home.paragraph.borders.view-gridlines": {
+      "note": "U:quill/word-core: table.viewGridlines belongs with Table Layout (the tables helper); hidden here."
+    },
+    "home.paragraph.asian-layout.combine-characters": {
+      "note": "U:quill/word-core: Asian Layout's Combine Characters, Two Lines in One and Fit Text have no engine upstream and the layout has no such runs; hidden."
+    },
+    "home.paragraph.asian-layout.two-lines-in-one": {
+      "note": "U:quill/word-core: Asian Layout's Combine Characters, Two Lines in One and Fit Text have no engine upstream and the layout has no such runs; hidden."
+    },
+    "home.paragraph.asian-layout.fit-text": {
+      "note": "U:quill/word-core: Asian Layout's Combine Characters, Two Lines in One and Fit Text have no engine upstream and the layout has no such runs; hidden."
+    },
+    "home.editing.select.select-objects": {
+      "note": "U:quill/word-core: select.objects and the Selection pane need an object-selection mode and a pane the page view does not have yet; hidden."
+    },
+    "home.editing.select.selection-pane": {
+      "note": "U:quill/word-core: select.objects and the Selection pane need an object-selection mode and a pane the page view does not have yet; hidden."
+    },
+    "home.editor.editor": {
+      "note": "U:quill/spelling: Editor opens the Editor pane on the next misspelt word (review.spelling, as Review > Spelling & Grammar); spelling only, US English."
+    },
+    "home.add-ins.add-ins": {
+      "note": "U:quill/word-core: no engine upstream (Word-only), so it stays hidden."
+    },
+    "insert.pages.cover-page.more-cover-pages-from-office-com": {
+      "note": "U:quill/word-core: an Office.com / recent-items feature with no engine upstream; hidden."
+    },
+    "insert.links.link.recent-items": {
+      "note": "U:quill/word-core: an Office.com / recent-items feature with no engine upstream; hidden."
+    },
+    "insert.header-footer.header.more-headers-from-office-com": {
+      "note": "U:quill/word-core: an Office.com / recent-items feature with no engine upstream; hidden."
+    },
+    "insert.header-footer.footer.more-footers-from-office-com": {
+      "note": "U:quill/word-core: an Office.com / recent-items feature with no engine upstream; hidden."
+    },
+    "layout.page-setup.text-direction": {
+      "note": "U:quill/word-core: layout.textDirection (wordcraft page.rs) turns a section's text 90 or 270 degrees; vertical sections are not laid out (layout vertical.rs is not translated), so the control stays hidden."
+    },
+    "layout.page-setup.text-direction.horizontal": {
+      "note": "U:quill/word-core: layout.textDirection (wordcraft page.rs) turns a section's text 90 or 270 degrees; vertical sections are not laid out (layout vertical.rs is not translated), so the control stays hidden."
+    },
+    "layout.page-setup.text-direction.rotate-all-text-90": {
+      "note": "U:quill/word-core: layout.textDirection (wordcraft page.rs) turns a section's text 90 or 270 degrees; vertical sections are not laid out (layout vertical.rs is not translated), so the control stays hidden."
+    },
+    "layout.page-setup.text-direction.rotate-all-text-270": {
+      "note": "U:quill/word-core: layout.textDirection (wordcraft page.rs) turns a section's text 90 or 270 degrees; vertical sections are not laid out (layout vertical.rs is not translated), so the control stays hidden."
+    },
+    "layout.page-setup.text-direction.text-direction-options": {
+      "note": "U:quill/word-core: layout.textDirection (wordcraft page.rs) turns a section's text 90 or 270 degrees; vertical sections are not laid out (layout vertical.rs is not translated), so the control stays hidden."
+    },
+    "review.proofing.spelling-grammar": {
+      "note": "U:quill/spelling: opens the Editor pane (panes/editor.tsx) on the next misspelt word after the caret (review.spelling, F7): the word in its sentence, the suggestions, Change, Change All, Ignore Once, Ignore All, Add to Dictionary and Recheck Document. Spelling only and US English only: the app bundles the en_US dictionary (nspell over dictionary-en, core/common/lib/spelling.mjs) and has no grammar engine, so grammar issues are never reported. Text marked with another language, or Do not check spelling, is left out."
+    },
+    "review.accessibility.check-accessibility.alt-text": {
+      "note": "U:quill/word-core: file.accessibility (the accessibility checker) and the alt-text pane are not translated yet; hidden."
+    },
+    "review.accessibility.check-accessibility.options-accessibility": {
+      "note": "U:quill/word-core: file.accessibility (the accessibility checker) and the alt-text pane are not translated yet; hidden."
+    },
+    "review.comments.show-comments.contextual": {
+      "note": "U:quill/word-core: no engine upstream (Word-only: contextual comments, accept or reject only the changes shown, delete all ink, linked notes); hidden."
+    },
+    "review.changes.accept.accept-all-changes-shown": {
+      "note": "U:quill/word-core: no engine upstream (Word-only: contextual comments, accept or reject only the changes shown, delete all ink, linked notes); hidden."
+    },
+    "review.changes.reject.reject-all-changes-shown": {
+      "note": "U:quill/word-core: no engine upstream (Word-only: contextual comments, accept or reject only the changes shown, delete all ink, linked notes); hidden."
+    },
+    "review.onenote.linked-notes": {
+      "note": "U:quill/word-core: no engine upstream (Word-only: contextual comments, accept or reject only the changes shown, delete all ink, linked notes); hidden."
+    },
+    "insert.header-footer.page-number.format-page-numbers": {
+      "command": "layout.pageNumberFormat",
+      "args": null,
+      "dialog": "dialog.pageNumbers"
+    }
+  },
+  "dialogs": {
+    "dialog.phonetic": {
+      "title": "Phonetic Guide",
+      "command": "format.phonetic",
+      "note": "U:quill/word-core: wordcraft's Phonetic Guide box (dispatch.rs phonetic_dialog): the six alignments it has; Word's Font and preview are not upstream.",
+      "tabs": [
+        {
+          "name": "Phonetic Guide",
+          "fields": [
+            {
+              "id": "base",
+              "label": "Base text:",
+              "kind": "text"
+            },
+            {
+              "id": "ruby",
+              "label": "Ruby text:",
+              "kind": "text"
+            },
+            {
+              "id": "alignment",
+              "label": "Alignment:",
+              "kind": "select",
+              "options": [
+                "Center",
+                "Distribute letters",
+                "Distribute spacing",
+                "Left",
+                "Right",
+                "Right (vertical)"
+              ]
+            },
+            {
+              "id": "offset",
+              "label": "Offset (pt):",
+              "kind": "number"
+            },
+            {
+              "id": "size",
+              "label": "Size (pt):",
+              "kind": "number"
+            }
+          ]
+        }
+      ],
+      "buttons": [
+        "Remove",
+        "OK",
+        "Cancel"
+      ]
+    },
+    "dialog.pageNumbers": {
+      "title": "Page Number Format",
+      "command": "layout.pageNumberFormat",
+      "note": "U:quill/word-core: Word's Page Number Format over layout.pageNumberFormat (wordcraft page.rs); Include chapter number is not offered (the layout has no chapter numbers).",
+      "tabs": [
+        {
+          "name": "Page Number Format",
+          "fields": [
+            {
+              "id": "format",
+              "label": "Number format",
+              "kind": "select",
+              "options": [
+                "1, 2, 3, …",
+                "- 1 -, - 2 -, …",
+                "a, b, c, …",
+                "A, B, C, …",
+                "i, ii, iii, …",
+                "I, II, III, …"
+              ]
+            },
+            {
+              "id": "numbering",
+              "label": "Page numbering",
+              "kind": "radio",
+              "options": [
+                "Continue from previous section",
+                "Start at:"
+              ]
+            },
+            {
+              "id": "startAt",
+              "label": "Start at:",
+              "kind": "number"
+            }
+          ]
+        }
+      ],
+      "buttons": [
+        "OK",
+        "Cancel"
+      ]
+    },
+    "dialog.hyphenation": {
+      "title": "Hyphenation",
+      "command": "layout.hyphenation",
+      "note": "U:quill/word-core: Hyphenation over layout.hyphenation (wordcraft page.rs): Automatically hyphenate document, Hyphenate words in CAPS, the Hyphenation zone and the consecutive-hyphen limit, and Manual… for manual hyphenation.",
+      "tabs": [
+        {
+          "name": "Hyphenation",
+          "fields": [
+            {
+              "id": "auto",
+              "label": "Automatically hyphenate document",
+              "kind": "checkbox"
+            },
+            {
+              "id": "caps",
+              "label": "Hyphenate words in CAPS",
+              "kind": "checkbox"
+            },
+            {
+              "id": "zone",
+              "label": "Hyphenation zone (pt):",
+              "kind": "number"
+            },
+            {
+              "id": "limit",
+              "label": "Limit consecutive hyphens to (0 = no limit):",
+              "kind": "number"
+            },
+            {
+              "id": "manual",
+              "label": "Manual…",
+              "kind": "button",
+              "dialog": "dialog.manualHyphenation"
+            }
+          ]
+        }
+      ],
+      "buttons": [
+        "OK",
+        "Cancel"
+      ]
+    },
+    "dialog.manualHyphenation": {
+      "title": "Manual Hyphenation",
+      "command": "layout.manualHyphenation",
+      "note": "U:quill/word-core: wordcraft's Manual Hyphenation box (text.rs manual_ui) over layout.manualHyphenation: the word with its break points; Yes puts an optional hyphen at the chosen one and goes on, No skips the word; drawn by src/apps/quill/dialogs/manualHyphenation.tsx.",
+      "tabs": [
+        {
+          "name": "Manual Hyphenation",
+          "fields": [
+            {
+              "id": "word",
+              "label": "Hyphenate at:",
+              "kind": "text"
+            },
+            {
+              "id": "yes",
+              "label": "Yes",
+              "kind": "button"
+            },
+            {
+              "id": "no",
+              "label": "No",
+              "kind": "button"
+            }
+          ]
+        }
+      ],
+      "buttons": [
+        "Cancel"
+      ]
+    }
+  }
+}

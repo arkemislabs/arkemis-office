@@ -1,0 +1,306 @@
+{
+  "controls": {
+    "design.themes.gallery": {
+      "note": "U:prism/design: every built-in theme as a drawn tile (Aa in the theme's heading font on its light colour, its six accents below), the current theme marked; a tile runs design.theme {name}. Browse for Themes is beside it."
+    },
+    "design.themes.browse": {
+      "command": "design.browseTheme",
+      "note": "U:prism/design: the system Open dialog picks a .pptx, .potx or .thmx; a deck or template brings its slide master and layouts (slides move to the layout of the same name or kind), a .thmx its theme alone (design.browseTheme)."
+    },
+    "design.themes.save": {
+      "note": "Hidden: deckcraft has no Save Current Theme (design.browseTheme reads a theme but nothing writes one out as a .thmx)."
+    },
+    "design.variants.gallery": {
+      "note": "U:prism/design: the current theme in its four colour variations (as designed, two with the accents rotated, one dark), the one in use marked; a tile runs design.variant {index}.",
+      "params": {
+        "index": "<n>"
+      }
+    },
+    "design.variants.colors": {
+      "items": [
+        {
+          "label": "Colour schemes",
+          "command": "design.colors",
+          "params": {
+            "name": "<scheme>"
+          },
+          "kind": "list",
+          "dynamic": true,
+          "source": "upstream",
+          "sourceRef": "crates/ui-egui/src/ribbon/design.rs:59"
+        },
+        {
+          "separator": true
+        },
+        {
+          "label": "Customize Colors…",
+          "command": "design.colors",
+          "dialog": "dialog.themeColors",
+          "source": "upstream",
+          "sourceRef": "crates/ui-egui/src/ribbon/design.rs:81"
+        }
+      ],
+      "note": "U:prism/design: each built-in colour scheme with its eight swatches, the current one checked; Customize Colors… opens Create New Theme Colors."
+    },
+    "design.variants.fonts": {
+      "items": [
+        {
+          "label": "Font schemes",
+          "command": "design.fonts",
+          "params": {
+            "name": "<scheme>"
+          },
+          "kind": "list",
+          "dynamic": true,
+          "source": "upstream",
+          "sourceRef": "crates/ui-egui/src/ribbon/design.rs:86"
+        },
+        {
+          "separator": true
+        },
+        {
+          "label": "Customize Fonts…",
+          "command": "design.fonts",
+          "dialog": "dialog.themeFonts",
+          "source": "upstream",
+          "sourceRef": "crates/ui-egui/src/ribbon/design.rs:95"
+        }
+      ],
+      "note": "U:prism/design: each built-in font scheme, its name and the heading and body faces drawn in themselves, the current one checked."
+    },
+    "design.variants.effects": {
+      "items": [
+        {
+          "label": "Effect schemes",
+          "command": "design.effects",
+          "params": {
+            "name": "<scheme>"
+          },
+          "kind": "list",
+          "dynamic": true,
+          "source": "upstream",
+          "sourceRef": "crates/ui-egui/src/ribbon/design.rs:100"
+        }
+      ],
+      "note": "U:prism/design: each built-in effect scheme drawn as a sample shape (outline weight, shadow or glow), the current one checked."
+    },
+    "design.variants.background-styles": {
+      "params": {
+        "style": "<n>",
+        "all": true,
+        "field": "styles"
+      },
+      "items": [
+        {
+          "separator": true
+        },
+        {
+          "label": "Reset Slide Background",
+          "command": "design.background",
+          "params": {
+            "reset": true
+          },
+          "source": "upstream",
+          "sourceRef": "crates/ui-egui/src/ribbon/design.rs:138"
+        },
+        {
+          "label": "Format Background…",
+          "command": "pane.toggle",
+          "params": {
+            "pane": "background",
+            "on": true
+          },
+          "source": "office",
+          "sourceRef": "office: Microsoft PowerPoint"
+        }
+      ],
+      "note": "U:prism/design: the twelve background styles as drawn tiles (three of the theme's background fills by Background 1, Background 2, Text 2, Text 1); a tile sets the background on every slide and the master they use (design.background {style, all})."
+    },
+    "design.customize.slide-size": {
+      "items": [
+        {
+          "label": "Standard (4:3)",
+          "command": null,
+          "dialog": "dialog.scaleContent",
+          "params": {
+            "preset": "standard"
+          },
+          "source": "upstream",
+          "sourceRef": "crates/ui-egui/src/ribbon/design.rs:146"
+        },
+        {
+          "label": "Widescreen (16:9)",
+          "command": null,
+          "dialog": "dialog.scaleContent",
+          "params": {
+            "preset": "widescreen"
+          },
+          "source": "upstream",
+          "sourceRef": "crates/ui-egui/src/ribbon/design.rs:149"
+        },
+        {
+          "label": "Custom Slide Size…",
+          "command": null,
+          "dialog": "dialog.slideSize",
+          "source": "upstream",
+          "sourceRef": "crates/ui-egui/src/ribbon/design.rs:152"
+        }
+      ],
+      "note": "U:prism/design: Standard and Widescreen ask Maximize or Ensure Fit first (dialog.scaleContent, as PowerPoint does), then run design.slideSize; Custom Slide Size… opens the Slide Size dialog."
+    },
+    "design.customize.format-background": {
+      "command": "pane.toggle",
+      "params": {
+        "pane": "background"
+      },
+      "kind": "toggle",
+      "note": "U:prism/design: shows or hides the Format Background pane (panes/background.tsx); on while it is open."
+    },
+    "design.designer.design-ideas": {
+      "command": "pane.toggle",
+      "params": {
+        "pane": "designer"
+      },
+      "kind": "toggle",
+      "note": "U:prism/design: shows or hides the Design Ideas pane (panes/designer.tsx): layout ideas for the slide and every theme, computed on the device."
+    }
+  },
+  "dialogs": {
+    "dialog.slideSize": {
+      "tabs": [
+        {
+          "name": "General",
+          "fields": [
+            {
+              "id": "preset",
+              "label": "Slides sized for:",
+              "kind": "select",
+              "options": [
+                "Widescreen (16:9)",
+                "Standard (4:3)",
+                "On-screen Show (16:10)",
+                "Letter Paper (8.5x11 in)",
+                "Ledger Paper (11x17 in)",
+                "A3 Paper (297x420 mm)",
+                "A4 Paper (210x297 mm)",
+                "B4 (ISO) Paper (250x353 mm)",
+                "B5 (ISO) Paper (176x250 mm)",
+                "35mm Slides",
+                "Overhead",
+                "Banner",
+                "Widescreen (13.333x7.5 in)",
+                "Square (1:1)",
+                "Portrait (9:16)",
+                "Custom"
+              ],
+              "note": "crates/model/src/defaults.rs SLIDE_SIZES; editing a dimension shows Custom",
+              "source": "upstream",
+              "sourceRef": "crates/ui-egui/src/dialogs/body.rs:102"
+            },
+            {
+              "id": "w",
+              "label": "Width (in):",
+              "kind": "number",
+              "options": [],
+              "param": "w (pt)",
+              "source": "upstream",
+              "sourceRef": "crates/ui-egui/src/dialogs/body.rs:116"
+            },
+            {
+              "id": "h",
+              "label": "Height (in):",
+              "kind": "number",
+              "options": [],
+              "param": "h (pt)",
+              "source": "upstream",
+              "sourceRef": "crates/ui-egui/src/dialogs/body.rs:117"
+            },
+            {
+              "id": "orientation",
+              "label": "Orientation",
+              "kind": "radio",
+              "options": [
+                {
+                  "value": "portrait",
+                  "label": "Portrait"
+                },
+                {
+                  "value": "landscape",
+                  "label": "Landscape"
+                }
+              ],
+              "note": "swaps width and height",
+              "source": "upstream",
+              "sourceRef": "crates/ui-egui/src/dialogs/body.rs:120"
+            },
+            {
+              "id": "max",
+              "label": "Maximize content (else ensure fit)",
+              "kind": "checkbox",
+              "options": [],
+              "default": false,
+              "param": "scale: maximize|ensureFit",
+              "source": "upstream",
+              "sourceRef": "crates/ui-egui/src/dialogs/body.rs:129"
+            }
+          ]
+        }
+      ],
+      "note": "U:prism/design: Number slides from and the Notes, Handouts and Outline orientation are not offered (nothing upstream)."
+    },
+    "dialog.themeColors": {
+      "buttons": [
+        "Save",
+        "Cancel"
+      ],
+      "note": "U:prism/design: Save runs design.colors {name, colors}; PowerPoint's Reset button is not offered (nothing upstream)."
+    },
+    "dialog.scaleContent": {
+      "title": "Microsoft PowerPoint",
+      "source": "upstream",
+      "sourceRef": "crates/ui-egui/src/dialogs/body.rs:129",
+      "command": "design.slideSize",
+      "openedBy": [
+        "design.customize.slide-size › Standard (4:3)",
+        "design.customize.slide-size › Widescreen (16:9)"
+      ],
+      "tabs": [
+        {
+          "name": "General",
+          "fields": [
+            {
+              "id": "message",
+              "label": "This changes the slide size. Maximize makes your content as large as the new size allows; Ensure Fit scales it down so it fits.",
+              "kind": "label",
+              "options": [],
+              "source": "office"
+            },
+            {
+              "id": "scale",
+              "label": "Scale content",
+              "kind": "radio",
+              "options": [
+                {
+                  "value": "maximize",
+                  "label": "Maximize"
+                },
+                {
+                  "value": "ensureFit",
+                  "label": "Ensure Fit"
+                }
+              ],
+              "param": "scale",
+              "source": "upstream",
+              "sourceRef": "crates/ui-egui/src/dialogs/body.rs:129"
+            }
+          ]
+        }
+      ],
+      "buttons": [
+        "OK",
+        "Cancel"
+      ],
+      "note": "U:prism/design: the follow-up prompt PowerPoint asks when the slide size changes; deckcraft folds it into the Slide Size dialog's Maximize check box."
+    }
+  }
+}

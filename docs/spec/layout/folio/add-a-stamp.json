@@ -1,0 +1,56 @@
+{
+  "tab": "add-a-stamp",
+  "source": "printcraft crates/ui-egui/src/panels/edit.rs (stamp_palette) @ 3109bb2359759e24ef490e1cdbdba00722b20972",
+  "groups": {
+    "dynamic": {
+      "collapseOrder": 4,
+      "collapsedIcon": "stamp",
+      "layout": [
+        {
+          "gallery": "stamp.dynamic.gallery",
+          "inline": true,
+          "columns": 4
+        }
+      ]
+    },
+    "sign-here": {
+      "collapseOrder": 3,
+      "collapsedIcon": "stamp",
+      "layout": [
+        {
+          "gallery": "stamp.sign-here.gallery",
+          "inline": true,
+          "columns": 4
+        }
+      ]
+    },
+    "standard-business": {
+      "collapseOrder": 2,
+      "collapsedIcon": "stamp",
+      "layout": [
+        {
+          "gallery": "stamp.standard-business.gallery",
+          "inline": true,
+          "columns": 4
+        }
+      ]
+    },
+    "custom": {
+      "collapseOrder": 1,
+      "collapsedIcon": "stamp",
+      "layout": [
+        {
+          "gallery": "stamp.custom.gallery",
+          "inline": true,
+          "columns": 3
+        },
+        {
+          "stack": [
+            "stamp.custom.create",
+            "stamp.custom.delete"
+          ]
+        }
+      ]
+    }
+  }
+}

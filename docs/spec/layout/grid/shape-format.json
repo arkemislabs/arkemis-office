@@ -1,0 +1,46 @@
+{
+  "tab": "shape-format",
+  "source": "Microsoft Excel for Windows › Shape Format; gridcraft draws no Shape Format tab, the spec takes it from Excel",
+  "groups": {
+    "insert-shapes": {
+      "collapseOrder": 1,
+      "layout": [
+        {"gallery": "shapeFormat.insertShapes.shapes", "inline": true, "columns": 6},
+        {"rows": [["shapeFormat.insertShapes.editShape"], ["shapeFormat.insertShapes.textBox"]]}
+      ]
+    },
+    "shape-styles": {
+      "collapseOrder": 2,
+      "layout": [
+        {"gallery": "shapeFormat.styles.gallery", "inline": true, "columns": 5},
+        {"stack": ["shapeFormat.styles.fill", "shapeFormat.styles.outline", "shapeFormat.styles.effects"]}
+      ]
+    },
+    "word-art-styles": {
+      "collapseOrder": 3,
+      "layout": [
+        {"gallery": "shapeFormat.wordArt.gallery", "inline": true, "columns": 3},
+        {"rows": [["shapeFormat.wordArt.textFill"], ["shapeFormat.wordArt.textOutline"], ["shapeFormat.wordArt.textEffects"]]}
+      ]
+    },
+    "accessibility": {
+      "collapseOrder": 4,
+      "layout": [
+        {"large": "shapeFormat.accessibility.altText"}
+      ]
+    },
+    "arrange": {
+      "collapseOrder": 5,
+      "layout": [
+        {"stack": ["shapeFormat.arrange.bringForward", "shapeFormat.arrange.sendBackward", "shapeFormat.arrange.selectionPane"]},
+        {"rows": [["shapeFormat.arrange.align"], ["shapeFormat.arrange.group"], ["shapeFormat.arrange.rotate"]]}
+      ]
+    },
+    "size": {
+      "collapseOrder": 6,
+      "layout": [
+        {"stack": ["shapeFormat.size.height", "shapeFormat.size.width"]}
+      ]
+    }
+  }
+}

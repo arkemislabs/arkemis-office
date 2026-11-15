@@ -1,0 +1,93 @@
+{
+  "tab": "handout-master",
+  "keytip": "U",
+  "source": "deckcraft crates/ui-egui/src/ribbon/masters.rs (handout_master) @ f893f6af7d36a5409fd804e81a34fd895cfefedf; Handout Orientation, Slide Size and Colors/Fonts/Effects placed as PowerPoint",
+  "groups": {
+    "page-setup": {
+      "collapseOrder": 4,
+      "collapsedIcon": "grid-pages",
+      "layout": [
+        {
+          "large": "handoutmaster.setup.orientation"
+        },
+        {
+          "large": "handoutmaster.setup.slide-size"
+        },
+        {
+          "large": "handoutmaster.setup.per-page"
+        }
+      ]
+    },
+    "placeholders": {
+      "collapseOrder": 3,
+      "layout": [
+        {
+          "stack": [
+            "handoutmaster.placeholders.header",
+            "handoutmaster.placeholders.footer"
+          ]
+        },
+        {
+          "stack": [
+            "handoutmaster.placeholders.date",
+            "handoutmaster.placeholders.pageNumber"
+          ]
+        }
+      ]
+    },
+    "edit-theme": {
+      "collapseOrder": 2,
+      "layout": [
+        {
+          "large": "handoutmaster.theme.themes"
+        }
+      ]
+    },
+    "background": {
+      "collapseOrder": 5,
+      "collapsedIcon": "background-styles",
+      "layout": [
+        {
+          "stack": [
+            "handoutmaster.background.colors",
+            "handoutmaster.background.fonts",
+            "handoutmaster.background.effects"
+          ]
+        },
+        {
+          "large": "handoutmaster.background.styles"
+        },
+        {
+          "stack": [
+            "handoutmaster.background.hide-graphics"
+          ]
+        }
+      ]
+    },
+    "close": {
+      "collapseOrder": 1,
+      "collapsedIcon": "close-x",
+      "layout": [
+        {
+          "large": "handoutmaster.close.close"
+        }
+      ]
+    }
+  },
+  "keytips": {
+    "handoutmaster.setup.orientation": "O",
+    "handoutmaster.setup.slide-size": "S",
+    "handoutmaster.setup.per-page": "P",
+    "handoutmaster.placeholders.header": "H",
+    "handoutmaster.placeholders.footer": "F",
+    "handoutmaster.placeholders.date": "D",
+    "handoutmaster.placeholders.pageNumber": "N",
+    "handoutmaster.theme.themes": "TH",
+    "handoutmaster.background.colors": "TC",
+    "handoutmaster.background.fonts": "TF",
+    "handoutmaster.background.effects": "TE",
+    "handoutmaster.background.styles": "B",
+    "handoutmaster.background.hide-graphics": "G",
+    "handoutmaster.close.close": "C"
+  }
+}

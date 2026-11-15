@@ -1,0 +1,46 @@
+{
+  "tab": "draw",
+  "keytip": "D",
+  "source": "wordcraft aadb077e072b7de05f724e359d8db82e151f125c crates/ui-egui/src/ribbon/draw.rs (draw); Stencils group placed as in Word for Windows",
+  "groups": {
+    "drawing-tools": {
+      "collapseOrder": 5,
+      "layout": [
+        {"large": "draw.drawing-tools.select"},
+        {"large": "draw.drawing-tools.lasso"},
+        {"large": "draw.drawing-tools.eraser"},
+        {"large": "draw.drawing-tools.pen"},
+        {"large": "draw.drawing-tools.pencil"},
+        {"large": "draw.drawing-tools.highlighter"},
+        {"gallery": "draw.drawing-tools.gallery-pens", "inline": true, "columns": 3},
+        {"large": "draw.drawing-tools.add-pen"},
+        {"rows": [["draw.drawing-tools.color"], ["draw.drawing-tools.thickness"]]}
+      ]
+    },
+    "stencils": {
+      "collapseOrder": 1,
+      "layout": [
+        {"large": "draw.stencils.ruler"}
+      ]
+    },
+    "convert": {
+      "collapseOrder": 4,
+      "layout": [
+        {"large": "draw.convert.ink-to-shape"},
+        {"large": "draw.convert.ink-to-math"}
+      ]
+    },
+    "insert": {
+      "collapseOrder": 3,
+      "layout": [
+        {"large": "draw.insert.drawing-canvas"}
+      ]
+    },
+    "replay": {
+      "collapseOrder": 2,
+      "layout": [
+        {"large": "draw.replay.ink-replay"}
+      ]
+    }
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "controls": {
+    "design.themes.themes": {
+      "note": "U:quill/design: wordcraft ribbon/design.rs (the THEMES of cmd/design.rs). Reset, Browse and Save Current Theme have no upstream engine counterpart and stay out.",
+      "items": [
+        {"id": "design.themes.themes.craft", "label": "Craft", "kind": "toggle", "command": "design.theme", "args": {"name": "Craft"}, "source": "upstream"},
+        {"id": "design.themes.themes.studio", "label": "Studio", "kind": "toggle", "command": "design.theme", "args": {"name": "Studio"}, "source": "upstream"},
+        {"id": "design.themes.themes.gallery", "label": "Gallery", "kind": "toggle", "command": "design.theme", "args": {"name": "Gallery"}, "source": "upstream"},
+        {"id": "design.themes.themes.atelier", "label": "Atelier", "kind": "toggle", "command": "design.theme", "args": {"name": "Atelier"}, "source": "upstream"},
+        {"id": "design.themes.themes.darkroom", "label": "Darkroom", "kind": "toggle", "command": "design.theme", "args": {"name": "Darkroom"}, "source": "upstream"},
+        {"id": "design.themes.themes.sketchbook", "label": "Sketchbook", "kind": "toggle", "command": "design.theme", "args": {"name": "Sketchbook"}, "source": "upstream"}
+      ]
+    },
+    "design.document-formatting.style-set": {
+      "args": {"name": "<set>"},
+      "note": "U:quill/design: the eight style sets of cmd/design.rs style_set; tiles come from design.styleSet's state (value: [{id, label, value}])."
+    },
+    "design.document-formatting.colors": {
+      "items": [
+        {"id": "design.document-formatting.colors.craft", "label": "Craft", "kind": "toggle", "command": "design.themeColors", "args": {"name": "Craft"}, "source": "upstream"},
+        {"id": "design.document-formatting.colors.studio", "label": "Studio", "kind": "toggle", "command": "design.themeColors", "args": {"name": "Studio"}, "source": "upstream"},
+        {"id": "design.document-formatting.colors.gallery", "label": "Gallery", "kind": "toggle", "command": "design.themeColors", "args": {"name": "Gallery"}, "source": "upstream"},
+        {"id": "design.document-formatting.colors.atelier", "label": "Atelier", "kind": "toggle", "command": "design.themeColors", "args": {"name": "Atelier"}, "source": "upstream"},
+        {"id": "design.document-formatting.colors.darkroom", "label": "Darkroom", "kind": "toggle", "command": "design.themeColors", "args": {"name": "Darkroom"}, "source": "upstream"},
+        {"id": "design.document-formatting.colors.sketchbook", "label": "Sketchbook", "kind": "toggle", "command": "design.themeColors", "args": {"name": "Sketchbook"}, "source": "upstream"}
+      ]
+    },
+    "design.document-formatting.fonts": {
+      "note": "U:quill/design: ribbon/design.rs lists each theme's heading and body fonts (\"{name}: {heading} / {body}\").",
+      "items": [
+        {"id": "design.document-formatting.fonts.craft", "label": "Craft: Aptos Display, Aptos", "kind": "toggle", "command": "design.themeFonts", "args": {"heading": "Aptos Display", "body": "Aptos"}, "source": "upstream"},
+        {"id": "design.document-formatting.fonts.studio", "label": "Studio: Georgia", "kind": "toggle", "command": "design.themeFonts", "args": {"heading": "Georgia", "body": "Georgia"}, "source": "upstream"},
+        {"id": "design.document-formatting.fonts.gallery", "label": "Gallery: Helvetica Neue", "kind": "toggle", "command": "design.themeFonts", "args": {"heading": "Helvetica Neue", "body": "Helvetica Neue"}, "source": "upstream"},
+        {"id": "design.document-formatting.fonts.atelier", "label": "Atelier: Palatino", "kind": "toggle", "command": "design.themeFonts", "args": {"heading": "Palatino", "body": "Palatino"}, "source": "upstream"},
+        {"id": "design.document-formatting.fonts.darkroom", "label": "Darkroom: Futura, Avenir Next", "kind": "toggle", "command": "design.themeFonts", "args": {"heading": "Futura", "body": "Avenir Next"}, "source": "upstream"},
+        {"id": "design.document-formatting.fonts.sketchbook", "label": "Sketchbook: Gill Sans", "kind": "toggle", "command": "design.themeFonts", "args": {"heading": "Gill Sans", "body": "Gill Sans"}, "source": "upstream"}
+      ]
+    },
+    "design.document-formatting.paragraph-spacing": {
+      "items": [
+        {"id": "design.document-formatting.paragraph-spacing.default", "label": "Default", "kind": "toggle", "command": "design.paragraphSpacing", "args": {"value": "default"}, "source": "upstream"},
+        {"id": "design.document-formatting.paragraph-spacing.no-paragraph-space", "label": "No Paragraph Space", "kind": "toggle", "command": "design.paragraphSpacing", "args": {"value": "none"}, "source": "upstream"},
+        {"id": "design.document-formatting.paragraph-spacing.compact", "label": "Compact", "kind": "toggle", "command": "design.paragraphSpacing", "args": {"value": "compact"}, "source": "upstream"},
+        {"id": "design.document-formatting.paragraph-spacing.tight", "label": "Tight", "kind": "toggle", "command": "design.paragraphSpacing", "args": {"value": "tight"}, "source": "upstream"},
+        {"id": "design.document-formatting.paragraph-spacing.open", "label": "Open", "kind": "toggle", "command": "design.paragraphSpacing", "args": {"value": "open"}, "source": "upstream"},
+        {"id": "design.document-formatting.paragraph-spacing.relaxed", "label": "Relaxed", "kind": "toggle", "command": "design.paragraphSpacing", "args": {"value": "relaxed"}, "source": "upstream"},
+        {"id": "design.document-formatting.paragraph-spacing.double", "label": "Double", "kind": "toggle", "command": "design.paragraphSpacing", "args": {"value": "double"}, "source": "upstream"}
+      ]
+    },
+    "design.document-formatting.set-as-default": {
+      "command": null,
+      "note": "U:quill/design: upstream's design.setDefault only reports a status; there is no store of defaults for new documents yet, so the button stays hidden."
+    },
+    "design.page-background.watermark": {
+      "items": [
+        {"header": "Disclaimers"},
+        {"id": "design.page-background.watermark.confidential", "label": "CONFIDENTIAL", "kind": "toggle", "command": "design.watermark", "args": {"text": "CONFIDENTIAL"}, "icon": "watermark", "source": "upstream"},
+        {"id": "design.page-background.watermark.do-not-copy", "label": "DO NOT COPY", "kind": "toggle", "command": "design.watermark", "args": {"text": "DO NOT COPY"}, "icon": "watermark", "source": "upstream"},
+        {"id": "design.page-background.watermark.draft", "label": "DRAFT", "kind": "toggle", "command": "design.watermark", "args": {"text": "DRAFT"}, "icon": "watermark", "source": "upstream"},
+        {"id": "design.page-background.watermark.sample", "label": "SAMPLE", "kind": "toggle", "command": "design.watermark", "args": {"text": "SAMPLE"}, "icon": "watermark", "source": "upstream"},
+        {"header": "Urgent"},
+        {"id": "design.page-background.watermark.asap", "label": "ASAP", "kind": "toggle", "command": "design.watermark", "args": {"text": "ASAP"}, "icon": "watermark", "source": "upstream"},
+        {"id": "design.page-background.watermark.urgent", "label": "URGENT", "kind": "toggle", "command": "design.watermark", "args": {"text": "URGENT"}, "icon": "watermark", "source": "upstream"},
+        "-",
+        {"id": "design.page-background.watermark.custom-watermark", "label": "Custom Watermark…", "command": null, "dialog": "dialog.watermark", "icon": "watermark", "source": "upstream"},
+        {"id": "design.page-background.watermark.remove-watermark", "label": "Remove Watermark", "command": "design.watermark", "args": {"remove": true}, "source": "upstream"}
+      ]
+    },
+    "design.page-background.page-color.more-colors": {
+      "command": null,
+      "note": "U:quill/design: the palette above carries More Colors… (it applies the colour it returns); this entry would clear the page colour."
+    },
+    "design.page-background.page-borders": {
+      "command": null,
+      "dialog": "dialog.borders",
+      "args": {"tab": "Page Border"},
+      "note": "U:quill/design: Word opens Borders and Shading on its Page Border tab (design.pageBorders opensDialogWithoutArgs dialog.borders)."
+    }
+  },
+  "dialogs": {
+    "dialog.watermark": {
+      "title": "Printed Watermark",
+      "command": "design.watermark",
+      "note": "U:quill/design: wordcraft dispatch.rs watermark_dialog (Text, Diagonal/Horizontal) with Word's No watermark, Font, Color and Semitransparent, which the watermark model carries. Apply runs the watermark and keeps the dialog open. Picture watermark: Select Picture (the system Open dialog, pickImage), Scale and Washout, drawn behind the text and saved in the header as a VML picture shape; drawn by src/apps/quill/dialogs/watermark.tsx. Language and Size stay out (the text fills Word's box, Word's Auto size).",
+      "tabs": [
+        {"name": "Printed Watermark", "fields": [
+          {"id": "kind", "label": "", "kind": "radio", "options": [{"value": "none", "label": "No watermark"}, {"value": "picture", "label": "Picture watermark"}, {"value": "text", "label": "Text watermark"}]},
+          {"id": "image", "label": "Select Picture…", "kind": "text", "enabledWhen": "kind==picture"},
+          {"id": "imageName", "label": "Picture", "kind": "text", "readOnly": true},
+          {"id": "scale", "label": "Scale:", "kind": "select", "enabledWhen": "kind==picture", "options": [{"value": "0", "label": "Auto"}, {"value": "500", "label": "500%"}, {"value": "200", "label": "200%"}, {"value": "150", "label": "150%"}, {"value": "100", "label": "100%"}, {"value": "50", "label": "50%"}]},
+          {"id": "washout", "label": "Washout", "kind": "checkbox", "enabledWhen": "kind==picture"},
+          {"id": "text", "label": "Text:", "kind": "combo", "enabledWhen": "kind==text", "options": ["ASAP", "CONFIDENTIAL", "COPY", "DO NOT COPY", "DRAFT", "ORIGINAL", "PERSONAL", "SAMPLE", "TOP SECRET", "URGENT"]},
+          {"id": "font", "label": "Font:", "kind": "combo", "enabledWhen": "kind==text"},
+          {"id": "color", "label": "Color:", "kind": "color", "enabledWhen": "kind==text", "options": ["Automatic"]},
+          {"id": "semitransparent", "label": "Semitransparent", "kind": "checkbox", "enabledWhen": "kind==text"},
+          {"id": "layout", "label": "Layout:", "kind": "radio", "enabledWhen": "kind==text", "options": [{"value": "diagonal", "label": "Diagonal"}, {"value": "horizontal", "label": "Horizontal"}]}
+        ]}
+      ],
+      "buttons": ["OK", "Apply", "Cancel"]
+    },
+    "dialog.borders": {
+      "title": "Borders and Shading",
+      "command": "design.pageBorders",
+      "note": "U:quill/design: wordcraft dialogs_para.rs BordersForm/LineForm/borders (Borders, Page Border and Shading; only what changed runs, one undo step); drawn by src/apps/quill/dialogs/borders.tsx. Word's Art borders, pattern shading, Horizontal Line… and Options… have no upstream counterpart and stay out.",
+      "tabs": [
+        {"name": "Borders", "fields": [
+          {"id": "paraSetting", "label": "Setting:", "kind": "radio", "options": [{"value": "none", "label": "None"}, {"value": "box", "label": "Box"}, {"value": "shadow", "label": "Shadow"}, {"value": "threeD", "label": "3-D"}, {"value": "custom", "label": "Custom"}]},
+          {"id": "paraStyle", "label": "Style:", "kind": "select", "options": [{"value": "single", "label": "Single"}, {"value": "dotted", "label": "Dotted"}, {"value": "dashed", "label": "Dashed"}, {"value": "dotDash", "label": "Dot dash"}, {"value": "double", "label": "Double"}, {"value": "triple", "label": "Triple"}, {"value": "thick", "label": "Thick"}, {"value": "wave", "label": "Wave"}]},
+          {"id": "paraColor", "label": "Color:", "kind": "color", "options": ["Automatic"]},
+          {"id": "paraWidth", "label": "Width:", "kind": "select", "options": [{"value": 0.25, "label": "¼ pt"}, {"value": 0.5, "label": "½ pt"}, {"value": 0.75, "label": "¾ pt"}, {"value": 1, "label": "1 pt"}, {"value": 1.5, "label": "1½ pt"}, {"value": 2.25, "label": "2¼ pt"}, {"value": 3, "label": "3 pt"}, {"value": 4.5, "label": "4½ pt"}, {"value": 6, "label": "6 pt"}]},
+          {"id": "paraSides", "label": "Preview", "kind": "preview"},
+          {"id": "paraApplyTo", "label": "Apply to:", "kind": "select", "options": [{"value": "paragraph", "label": "Paragraph"}, {"value": "text", "label": "Text"}]}
+        ]},
+        {"name": "Page Border", "fields": [
+          {"id": "pageSetting", "label": "Setting:", "kind": "radio", "options": [{"value": "none", "label": "None"}, {"value": "box", "label": "Box"}, {"value": "shadow", "label": "Shadow"}, {"value": "threeD", "label": "3-D"}, {"value": "custom", "label": "Custom"}]},
+          {"id": "pageStyle", "label": "Style:", "kind": "select", "options": [{"value": "single", "label": "Single"}, {"value": "dotted", "label": "Dotted"}, {"value": "dashed", "label": "Dashed"}, {"value": "dotDash", "label": "Dot dash"}, {"value": "double", "label": "Double"}, {"value": "triple", "label": "Triple"}, {"value": "thick", "label": "Thick"}, {"value": "wave", "label": "Wave"}]},
+          {"id": "pageColor", "label": "Color:", "kind": "color", "options": ["Automatic"]},
+          {"id": "pageWidth", "label": "Width:", "kind": "select", "options": [{"value": 0.25, "label": "¼ pt"}, {"value": 0.5, "label": "½ pt"}, {"value": 0.75, "label": "¾ pt"}, {"value": 1, "label": "1 pt"}, {"value": 1.5, "label": "1½ pt"}, {"value": 2.25, "label": "2¼ pt"}, {"value": 3, "label": "3 pt"}, {"value": 4.5, "label": "4½ pt"}, {"value": 6, "label": "6 pt"}]},
+          {"id": "pageSides", "label": "Preview", "kind": "preview"},
+          {"id": "pageApplyTo", "label": "Apply to:", "kind": "select", "options": [{"value": "document", "label": "Whole document"}, {"value": "section", "label": "This section"}]}
+        ]},
+        {"name": "Shading", "fields": [
+          {"id": "fill", "label": "Fill", "kind": "color", "options": ["No Color"]},
+          {"id": "fillPreview", "label": "Preview", "kind": "preview"},
+          {"id": "fillApplyTo", "label": "Apply to:", "kind": "select", "options": [{"value": "paragraph", "label": "Paragraph"}, {"value": "text", "label": "Text"}]}
+        ]}
+      ],
+      "buttons": ["OK", "Cancel"]
+    }
+  }
+}

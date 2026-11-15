@@ -1,0 +1,19 @@
+{
+ "controls": {
+  "home.drawing.shapes": {
+   "args": {
+    "preset": "<preset>"
+   }
+  },
+  "insert.illustrations.shapes": {
+   "args": {
+    "preset": "<preset>"
+   }
+  },
+  "shapeformat.insert.shapes": {
+   "args": {
+    "preset": "<preset>"
+   }
+  }
+ }
+}

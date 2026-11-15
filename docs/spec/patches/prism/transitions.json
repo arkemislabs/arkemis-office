@@ -1,0 +1,569 @@
+{
+  "controls": {
+    "transitions.preview.preview": {
+      "command": "transition.preview",
+      "kind": "button",
+      "note": "U:prism/transitions: plays the current slide's transition on the slide canvas, from the slide before it (deckcraft starts a preview-only show; PowerPoint plays it in the editing view)."
+    },
+    "transitions.gallery": {
+      "params": {
+        "kind": "<id>"
+      },
+      "note": "U:prism/transitions: the first twelve effects in the ribbon's strip, every effect by category (Subtle, Exciting, Dynamic Content) in the drop-down; each tile is a drawn picture of the effect (assets/icons/ribbon/transition-<id>.svg); the current effect is marked."
+    },
+    "transitions.effect-options": {
+      "items": [
+        {
+          "label": "Effect options",
+          "command": "transition.options",
+          "params": {
+            "option": "<option>"
+          },
+          "kind": "list",
+          "dynamic": true,
+          "source": "upstream",
+          "sourceRef": "crates/ui-egui/src/ribbon/transitions.rs:64"
+        }
+      ],
+      "note": "U:prism/transitions: the options of the current transition, labelled by transition_option_label, the current one checked; disabled when the effect has none."
+    },
+    "transitions.timing.sound": {
+      "kind": "dropdown",
+      "valueLabel": true,
+      "command": "transition.sound",
+      "items": [
+        {
+          "label": "No Sound",
+          "command": "transition.sound",
+          "params": {
+            "none": true
+          },
+          "source": "upstream",
+          "sourceRef": "crates/ui-egui/src/ribbon/transitions.rs:81",
+          "kind": "toggle"
+        },
+        {
+          "label": "Stop Previous Sound",
+          "command": "transition.sound",
+          "params": {
+            "stopPrevious": true
+          },
+          "source": "upstream",
+          "sourceRef": "crates/ui-egui/src/ribbon/transitions.rs:84",
+          "kind": "toggle"
+        },
+        {
+          "separator": true
+        },
+        {
+          "label": "Chime",
+          "command": "transition.sound",
+          "params": {
+            "builtin": "chime"
+          },
+          "source": "upstream",
+          "sourceRef": "crates/ui-egui/src/ribbon/transitions.rs:90",
+          "kind": "toggle"
+        },
+        {
+          "label": "Click",
+          "command": "transition.sound",
+          "params": {
+            "builtin": "click"
+          },
+          "source": "upstream",
+          "sourceRef": "crates/ui-egui/src/ribbon/transitions.rs:90",
+          "kind": "toggle"
+        },
+        {
+          "label": "Camera",
+          "command": "transition.sound",
+          "params": {
+            "builtin": "camera"
+          },
+          "source": "upstream",
+          "sourceRef": "crates/ui-egui/src/ribbon/transitions.rs:90",
+          "kind": "toggle"
+        },
+        {
+          "label": "Whoosh",
+          "command": "transition.sound",
+          "params": {
+            "builtin": "whoosh"
+          },
+          "source": "upstream",
+          "sourceRef": "crates/ui-egui/src/ribbon/transitions.rs:90",
+          "kind": "toggle"
+        },
+        {
+          "label": "Drum Roll",
+          "command": "transition.sound",
+          "params": {
+            "builtin": "drumRoll"
+          },
+          "source": "upstream",
+          "sourceRef": "crates/ui-egui/src/ribbon/transitions.rs:90",
+          "kind": "toggle"
+        },
+        {
+          "label": "Laser",
+          "command": "transition.sound",
+          "params": {
+            "builtin": "laser"
+          },
+          "source": "upstream",
+          "sourceRef": "crates/ui-egui/src/ribbon/transitions.rs:90",
+          "kind": "toggle"
+        },
+        {
+          "separator": true
+        },
+        {
+          "label": "Other Sound…",
+          "command": "transition.sound",
+          "params": {
+            "pick": true
+          },
+          "source": "upstream",
+          "sourceRef": "crates/ui-egui/src/ribbon/transitions.rs:99"
+        },
+        {
+          "separator": true
+        },
+        {
+          "label": "Loop Until Next Sound",
+          "kind": "toggle",
+          "command": "transition.sound",
+          "params": {
+            "field": "loop"
+          },
+          "source": "upstream",
+          "sourceRef": "crates/ui-egui/src/ribbon/transitions.rs:107"
+        }
+      ],
+      "note": "U:prism/transitions: shows the current sound; the menu is upstream's No Sound, Stop Previous Sound, the six built-in sounds, Other Sound… (system Open dialog) and the Loop Until Next Sound check."
+    },
+    "transitions.timing.duration": {
+      "params": {
+        "field": "duration",
+        "duration": "<ms>"
+      },
+      "step": 0.25,
+      "scale": 1000,
+      "decimals": 2,
+      "note": "seconds, step 0.25 (the command takes milliseconds)"
+    },
+    "transitions.timing.on-click": {
+      "params": {
+        "field": "onClick",
+        "onClick": "<bool>"
+      }
+    },
+    "transitions.timing.after": {
+      "params": {
+        "after": null,
+        "field": "after",
+        "afterOn": "<bool>"
+      }
+    },
+    "transitions.timing.after-time": {
+      "params": {
+        "field": "afterTime",
+        "after": "<ms>"
+      },
+      "step": 1,
+      "scale": 1000,
+      "decimals": 2,
+      "note": "seconds, step 1 s",
+      "noLabel": true
+    },
+    "animations.gallery": {
+      "params": {
+        "effect": "<id>",
+        "class": null
+      },
+      "items": [],
+      "note": "U:prism/transitions: the quick strip (None, Appear, Fade, Fly In, Float In, Split, Wipe, Zoom, Pulse, Spin, Grow/Shrink, Fade out, Fly Out, Lines) and, in the drop-down, every effect by Entrance, Emphasis, Exit and Motion Paths (assets/icons/ribbon/anim-<id>.svg), the current one marked. A tile runs animation.set {effect: '<class>:<id>'}. Hidden: Office's More Entrance/Emphasis/Exit Effects… and More Motion Paths… dialogs (deckcraft has none)."
+    },
+    "animations.effect-options": {
+      "items": [
+        {
+          "label": "Direction options",
+          "command": "animation.options",
+          "params": {
+            "option": "<option>"
+          },
+          "kind": "list",
+          "dynamic": true,
+          "source": "upstream",
+          "sourceRef": "crates/ui-egui/src/ribbon/animations.rs:94"
+        },
+        {
+          "separator": true
+        },
+        {
+          "label": "As One Object",
+          "kind": "toggle",
+          "command": "animation.options",
+          "params": {
+            "textBuild": "asOne"
+          },
+          "source": "upstream",
+          "sourceRef": "crates/ui-egui/src/ribbon/animations.rs:98"
+        },
+        {
+          "label": "By Paragraph",
+          "kind": "toggle",
+          "command": "animation.options",
+          "params": {
+            "textBuild": "byParagraph"
+          },
+          "source": "upstream",
+          "sourceRef": "crates/ui-egui/src/ribbon/animations.rs:98"
+        }
+      ],
+      "note": "U:prism/transitions: the effect's options (direction, shape, …) with the current one checked, then the text sequence (As One Object, By Paragraph); acts on the animation chosen in the Animation Pane, else the selected shape's first."
+    },
+    "animations.advanced.add": {
+      "params": {
+        "effect": "<id>",
+        "class": null
+      },
+      "note": "U:prism/transitions: every effect by class; adds one more animation to the selected shapes."
+    },
+    "animations.advanced.trigger": {
+      "command": "animation.timing",
+      "items": [
+        {
+          "label": "Animate as Part of Click Sequence",
+          "kind": "toggle",
+          "command": "animation.timing",
+          "params": {
+            "trigger": null
+          },
+          "source": "upstream",
+          "sourceRef": "crates/ui-egui/src/ribbon/animations.rs:128"
+        },
+        {
+          "separator": true
+        },
+        {
+          "label": "On Click of shape",
+          "command": "animation.timing",
+          "params": {
+            "trigger": "<shape id>",
+            "field": "trigger"
+          },
+          "kind": "list",
+          "dynamic": true,
+          "source": "upstream",
+          "sourceRef": "crates/ui-egui/src/ribbon/animations.rs:133"
+        }
+      ],
+      "note": "U:prism/transitions: starts the effect when a shape is clicked (a triggered sequence), or puts it back in the click sequence. Hidden: On Bookmark (deckcraft has no media bookmarks)."
+    },
+    "animations.advanced.painter": {
+      "note": "Click to pick the selected shape's animations, click shapes to paint them; click again to turn it off. (Double-click to keep it on is animation.painter {sticky: true}.)"
+    },
+    "animations.timing.start": {
+      "params": {
+        "field": "start",
+        "start": "<start>"
+      },
+      "labelled": true
+    },
+    "animations.timing.duration": {
+      "params": {
+        "field": "duration",
+        "duration": "<ms>"
+      },
+      "step": 0.25,
+      "scale": 1000,
+      "decimals": 2
+    },
+    "animations.timing.delay": {
+      "params": {
+        "field": "delay",
+        "delay": "<ms>"
+      },
+      "step": 0.25,
+      "scale": 1000,
+      "decimals": 2
+    },
+    "animations.timing.earlier": {
+      "params": {
+        "by": -1
+      },
+      "note": "Reorder Animation: moves the current animation one place earlier in the Animation Pane's list."
+    },
+    "animations.timing.later": {
+      "params": {
+        "by": 1
+      }
+    },
+    "slideshow.start.presenter-view": {
+      "command": "show.presenter",
+      "args": null,
+      "params": null,
+      "kind": "toggle",
+      "note": "U:prism/presenter: Presenter View opens a second window with the show: the current slide, the next slide, the notes, a timer and the slide count; Next and Previous there drive the show window. It never captures a screen."
+    },
+    "slideshow.start.present-online": {
+      "note": "Hidden: Present Online is a Microsoft 365 service; nothing upstream."
+    },
+    "slideshow.setup.rehearse": {
+      "command": "show.rehearse",
+      "args": null,
+      "params": null,
+      "note": "U:prism/format-tabs: plays the show with a clock for the slide and the total; when it ends each slide's time becomes its Advance Slide After time (show.rehearse, show.rehearsed)."
+    },
+    "slideshow.setup.record": {
+      "note": "Hidden: Record needs audio/video capture; deckcraft disables it too."
+    },
+    "slideshow.setup.play-narrations": {
+      "params": {
+        "field": "noNarration",
+        "playNarrations": "<bool>"
+      },
+      "note": "U:prism/transitions: checked while narrations play (the deck's without-narration flag is off)."
+    },
+    "slideshow.setup.use-timings": {
+      "params": {
+        "field": "useTimings",
+        "useTimings": "<bool>"
+      }
+    },
+    "slideshow.setup.media-controls": {
+      "params": {
+        "field": "showMediaControls",
+        "showMediaControls": "<bool>"
+      }
+    },
+    "slideshow.captions.always": {
+      "note": "Hidden: live subtitles need speech recognition; nothing upstream."
+    },
+    "slideshow.captions.settings": {
+      "note": "Hidden: live subtitles need speech recognition; nothing upstream."
+    },
+    "slideshow.monitors.monitor": {
+      "command": null,
+      "params": null,
+      "note": "Hidden: choosing a monitor for the show is a window-placement feature of the desktop app; the show covers this window's screen."
+    },
+    "slideshow.monitors.presenter": {
+      "command": "show.presenter",
+      "args": null,
+      "params": null,
+      "kind": "toggle",
+      "note": "U:prism/presenter: Presenter View opens a second window with the show: the current slide, the next slide, the notes, a timer and the slide count; Next and Previous there drive the show window. It never captures a screen."
+    },
+    "animations.advanced.pane": {
+      "command": "animation.pane",
+      "params": {
+        "pane": null
+      },
+      "kind": "toggle",
+      "note": "U:prism/transitions: shows or hides the Animation Pane (panes/animation.tsx); on while it is open."
+    },
+    "slideshow.setup.setup": {
+      "command": null,
+      "note": "U:prism/transitions: the Set Up Show dialog (show type, loop, without narration / animation, slides, use timings).",
+      "params": null
+    },
+    "slideshow.start.custom-show": {
+      "command": null,
+      "dialog": "dialog.customShow",
+      "args": null,
+      "params": null,
+      "note": "U:prism/format-tabs: the Custom Shows dialog (src/apps/prism/dialogs/customShow.tsx): the shows with Show, Edit, Copy and Remove, and a definition from the presentation's slides (show.customShow {name, slides})."
+    }
+  },
+  "dialogs": {
+    "dialog.setupShow": {
+      "title": "Set Up Show",
+      "tabs": [
+        {
+          "name": "General",
+          "fields": [
+            {
+              "id": "type",
+              "label": "Show type",
+              "kind": "radio",
+              "options": [
+                {
+                  "value": "speaker",
+                  "label": "Presented by a speaker (full screen)"
+                },
+                {
+                  "value": "browsed",
+                  "label": "Browsed by an individual (window)"
+                },
+                {
+                  "value": "kiosk",
+                  "label": "Browsed at a kiosk (full screen)"
+                }
+              ],
+              "source": "upstream",
+              "sourceRef": "crates/ui-egui/src/dialogs/body.rs:245",
+              "param": "type"
+            },
+            {
+              "id": "loop",
+              "label": "Loop continuously until 'Esc'",
+              "kind": "checkbox",
+              "options": [],
+              "source": "upstream",
+              "sourceRef": "crates/ui-egui/src/dialogs/body.rs:245",
+              "param": "loop"
+            },
+            {
+              "id": "nn",
+              "label": "Show without narration",
+              "kind": "checkbox",
+              "options": [],
+              "source": "upstream",
+              "sourceRef": "crates/ui-egui/src/dialogs/body.rs:245",
+              "param": "noNarration"
+            },
+            {
+              "id": "na",
+              "label": "Show without animation",
+              "kind": "checkbox",
+              "options": [],
+              "source": "upstream",
+              "sourceRef": "crates/ui-egui/src/dialogs/body.rs:245",
+              "param": "noAnimation"
+            },
+            {
+              "id": "penColor",
+              "label": "Pen color",
+              "kind": "color",
+              "options": [],
+              "param": "penColor",
+              "source": "office",
+              "sourceRef": "office: PowerPoint Set Up Show",
+              "swatch": true
+            },
+            {
+              "id": "laserColor",
+              "label": "Laser pointer color",
+              "kind": "color",
+              "options": [],
+              "param": "laserColor",
+              "source": "office",
+              "sourceRef": "office: PowerPoint Set Up Show",
+              "swatch": true
+            },
+            {
+              "id": "slides",
+              "label": "Show slides",
+              "kind": "radio",
+              "options": [
+                {
+                  "value": "all",
+                  "label": "All"
+                },
+                {
+                  "value": "range",
+                  "label": "From / To"
+                },
+                {
+                  "value": "custom",
+                  "label": "Custom show"
+                }
+              ],
+              "source": "upstream",
+              "sourceRef": "crates/ui-egui/src/dialogs/body.rs:245"
+            },
+            {
+              "id": "from",
+              "label": "From",
+              "kind": "number",
+              "options": [],
+              "source": "upstream",
+              "sourceRef": "crates/ui-egui/src/dialogs/body.rs:245",
+              "min": 1,
+              "max": 5000,
+              "step": 1
+            },
+            {
+              "id": "to",
+              "label": "To",
+              "kind": "number",
+              "options": [],
+              "source": "upstream",
+              "sourceRef": "crates/ui-egui/src/dialogs/body.rs:245",
+              "min": 1,
+              "max": 5000,
+              "step": 1
+            },
+            {
+              "id": "custom",
+              "label": "Custom show name",
+              "kind": "text",
+              "options": [],
+              "source": "upstream",
+              "sourceRef": "crates/ui-egui/src/dialogs/body.rs:245",
+              "param": "custom"
+            },
+            {
+              "id": "ut",
+              "label": "Use timings, if present",
+              "kind": "checkbox",
+              "options": [],
+              "source": "upstream",
+              "sourceRef": "crates/ui-egui/src/dialogs/body.rs:245",
+              "param": "useTimings",
+              "note": "PowerPoint: Advance slides radio Manually / Using timings, if present"
+            }
+          ]
+        }
+      ],
+      "buttons": [
+        "OK",
+        "Cancel"
+      ],
+      "note": "U:prism/transitions: Pen color and Laser pointer color are hidden: the file keeps the two colours (they round trip in .pptx) but the slide show draws neither a pen nor a laser pointer, so a colour would change nothing you can see. Monitor, resolution, Presenter View and hardware graphics acceleration are not offered either (nothing upstream)."
+    },
+    "dialog.customShow": {
+      "command": "show.customShow",
+      "title": "Custom Shows",
+      "presentation": "modal",
+      "note": "U:prism/format-tabs: deckcraft lists the shows with Show and Delete and creates one from a name and slide numbers; PowerPoint's Edit, Copy and the two slide lists replace the typed numbers. The body is drawn by dialogs/customShow.tsx; Save runs show.customShow.",
+      "tabs": [
+        {
+          "name": "Custom Shows",
+          "fields": [
+            {
+              "id": "shows",
+              "label": "Custom shows",
+              "kind": "list",
+              "source": "upstream"
+            },
+            {
+              "id": "name",
+              "label": "Slide show name:",
+              "kind": "text",
+              "default": "Custom Show 1",
+              "source": "upstream"
+            },
+            {
+              "id": "chosen",
+              "label": "Slides in custom show",
+              "kind": "list",
+              "source": "upstream"
+            }
+          ]
+        }
+      ],
+      "buttons": [
+        "Save",
+        "Close"
+      ]
+    },
+    "dialog.animationEffectOptions": {
+      "command": null,
+      "note": "Hidden: deckcraft has no Effect Options dialog (the ribbon has Effect Options, Start, Duration, Delay, Trigger and the pane); its model keeps smoothStart, smoothEnd, bounceEnd, after, repeat and rewind, so animation.timing {repeat, rewind} and the file round trip handle what exists."
+    }
+  }
+}

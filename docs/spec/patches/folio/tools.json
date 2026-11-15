@@ -1,0 +1,565 @@
+{
+ "controls": {
+  "chrome.mode.all-tools": {
+   "command": "view.mode",
+   "args": {
+    "mode": "all-tools"
+   },
+   "note": "printcraft chrome.rs mode_bar: Mode::AllTools. Drawn by the mode bar's own tab; the command is what the bridge and the keyboard run."
+  },
+  "chrome.mode.edit": {
+   "command": "view.mode",
+   "args": {
+    "mode": "edit"
+   },
+   "note": "printcraft chrome.rs mode_bar: Mode::Edit."
+  },
+  "chrome.mode.convert": {
+   "command": "view.mode",
+   "args": {
+    "mode": "convert"
+   },
+   "note": "printcraft chrome.rs mode_bar: Mode::Convert."
+  },
+  "chrome.mode.esign": {
+   "command": "view.mode",
+   "args": {
+    "mode": "esign"
+   },
+   "note": "printcraft chrome.rs mode_bar: Mode::ESign."
+  },
+  "chrome.mode.print": {
+   "command": "file.print",
+   "note": "printcraft chrome.rs:506 Print opens the print dialog (print.dialog); here that is File > Print."
+  },
+  "chrome.mode.menus": {
+   "command": null,
+   "note": "Hidden: the menu button at the left of the mode bar opens the File menu (backstage); Edit, View, Sign, Window and Help menus of the desktop menu bar are the tabs and panels of this window."
+  },
+  "chrome.mode.share": {
+   "command": null,
+   "note": "Hidden: Share (file.share) sends a link through Acrobat's cloud; printcraft has no share engine (not checked against upstream: the control is Acrobat-only)."
+  },
+  "alltools.panel.expand": {
+   "command": "view.tools_full",
+   "args": {
+    "open": true
+   },
+   "note": "printcraft panels/tools.rs:65 expand_all_tools: the expanded All tools view over the pages (panels/all_tools_ui.rs), every tool under its category."
+  },
+  "alltools.panel.collapse": {
+   "command": "view.tools_full",
+   "args": {
+    "open": false
+   },
+   "note": "printcraft panels/all_tools_ui.rs:59 Collapse all tools (also Escape or choosing a tile)."
+  },
+  "alltools.panel.view-more": {
+   "command": "view.tools_more",
+   "note": "printcraft panels/tools.rs:81: the list shows the first 14 tools until View more."
+  },
+  "quick.bar.more-tools": {
+   "command": "view.mode",
+   "args": {
+    "mode": "all-tools"
+   },
+   "note": "Acrobat's More tools opens the All tools panel. Not checked against upstream (printcraft has no such button)."
+  },
+  "rail.nav.fit-toggle": {
+   "command": "view.fit_toggle",
+   "note": "printcraft chrome.rs:605: the rail's fit button toggles Fit::Width and Fit::Page and returns to the current page."
+  },
+  "rail.nav.position": {
+   "command": null,
+   "note": "Hidden as a control: the page position (count, or n/count when labels differ) is the label drawn under the page box (chrome.rs page_position), not a button."
+  },
+  "notice.dismiss": {
+   "command": "notice.dismiss",
+   "note": "printcraft canvas/bars.rs:92: closes the notice bar for the document."
+  },
+  "notice.dont-show": {
+   "command": "notice.hide_secured",
+   "note": "printcraft canvas/bars.rs:226 HideSecured (#4035): the secured notice stops showing in every document."
+  },
+  "notice.reload": {
+   "command": null,
+   "note": "Hidden: \"This file changed on disk\" needs the window to watch the file; the host has no file watcher for open PDFs (printcraft view.disk_changed)."
+  },
+  "notice.close-revision": {
+   "command": null,
+   "note": "Hidden: viewing a signed version or a revision as a snapshot tab (view.snapshot) is not translated; signatures list their revisions in the Signatures panel only."
+  },
+  "notice.js-console": {
+   "command": null,
+   "note": "Hidden: \"scripts turned off\" never appears here because a document's JavaScript is never run, so there is no console to open (and printcraft's JavaScript Console is planned only)."
+  },
+  "notice.details": {
+   "command": null,
+   "note": "Hidden: the repair log of a damaged file; this window opens files through pdf-lib and pdfium and keeps no repair log (printcraft doc.repairs)."
+  },
+  "quick.comment.colour": {
+   "command": "comment.tool_color",
+   "args": {
+    "color": "<hex>"
+   },
+   "note": "printcraft tools/comments/menu.rs:295 quick_bar_controls: the colour of the comment tool in use (its default style, and the selected comment when this tool made it)."
+  },
+  "quick.comment.fill": {
+   "command": "comment.tool_fill",
+   "args": {
+    "fill": "<hex>"
+   },
+   "note": "printcraft menu.rs:307: the fill of rectangle, oval, polygon, cloud, text box and callout; shown for those tools only."
+  },
+  "quick.comment.opacity": {
+   "command": "comment.tool_opacity",
+   "args": {
+    "percent": "<percent>"
+   },
+   "note": "printcraft menu.rs:314: opacity 10 to 100 % in steps of 5."
+  },
+  "quick.comment.thickness": {
+   "command": "comment.tool_width",
+   "args": {
+    "width": "<pt>"
+   },
+   "note": "printcraft menu.rs:324: line thickness for the drawing tools, the point tools, text box and callout (at least 0.5 pt, none allowed for text box and callout)."
+  },
+  "quick.comment.keep-tool": {
+   "command": null,
+   "note": "Hidden: printcraft keeps a comment tool selected only when pinned (comment_prefs.pinned) and otherwise returns to Select after one use. The page view here has no one-shot comment tools to pin: a tool stays picked until Escape or another tool."
+  },
+  "quick.fill.font-size": {
+   "command": "sign.fill.text_size",
+   "args": {
+    "size": "<pt>"
+   },
+   "note": "printcraft canvas/bars.rs:437 Font size for Fill & Sign text and date (4 to 300 pt); also sizes the selected Fill & Sign text (#1274)."
+  },
+  "camera.mode": {
+   "kind": "dropdown",
+   "label": "Color mode",
+   "command": "camera.mode",
+   "valueLabel": true,
+   "items": [
+    {
+     "id": "camera.mode.original",
+     "label": "Original",
+     "command": "camera.mode",
+     "args": {
+      "look": "original"
+     }
+    },
+    {
+     "id": "camera.mode.colour",
+     "label": "Color",
+     "command": "camera.mode",
+     "args": {
+      "look": "colour"
+     }
+    },
+    {
+     "id": "camera.mode.greyscale",
+     "label": "Grayscale",
+     "command": "camera.mode",
+     "args": {
+      "look": "greyscale"
+     }
+    },
+    {
+     "id": "camera.mode.bw",
+     "label": "Black and white",
+     "command": "camera.mode",
+     "args": {
+      "look": "bw"
+     }
+    }
+   ],
+   "note": "printcraft tools/camera_ui.rs bar (8f16855). The look of the straightened page; after Enhance page it enhances the page again in that look."
+  },
+  "camera.cleanup": {
+   "command": "camera.cleanup",
+   "args": {
+    "level": "<n>"
+   },
+   "note": "printcraft tools/camera_ui.rs bar (8f16855). The Clean-up slider, 0 to 100 (for black and white, the threshold)."
+  },
+  "camera.rotate-ccw": {
+   "command": "camera.rotate_ccw",
+   "note": "printcraft tools/camera_ui.rs bar (8f16855). After Enhance page: turn the page a quarter counterclockwise (one undo step)."
+  },
+  "camera.rotate-cw": {
+   "command": "camera.rotate_cw",
+   "note": "printcraft tools/camera_ui.rs bar (8f16855). After Enhance page: turn the page a quarter clockwise (one undo step)."
+  },
+  "camera.done": {
+   "command": "camera.done",
+   "note": "printcraft tools/camera_ui.rs bar (8f16855). Leave the tool."
+  },
+  "camera.enhance": {
+   "command": "camera.enhance",
+   "note": "printcraft camera.rs enhance_camera_page_at: straighten the corners to a rectangle and clean it up; the page becomes the picture (Replace pages), one undo step. Finding the document's edges by itself (camera_edges.rs) is not translated: the corners start inset on the page, as upstream's do when no edges are found. The page is read at 300 dpi, not at its picture's own resolution."
+  },
+  "camera.cancel": {
+   "command": "camera.cancel",
+   "note": "printcraft tools/camera_ui.rs bar (8f16855). Put the tool away."
+  },
+  "alltools.scan.enhance-camera-image": {
+   "note": "printcraft commands.rs:543 ocr.enhance_camera picks the tool with the corners on the page; the bar is the Enhance camera image tab."
+  },
+  "combine.add.files.add-files": {
+   "command": "combine.add",
+   "note": "printcraft combine_ui/view.rs:616: Add files… opens the system Open dialog with several files selectable."
+  },
+  "alltools.create.single-file": {
+   "command": "create.file",
+   "note": "printcraft commands.rs create.file and create_ui.rs open_converted: a PDF opens; a JPEG or PNG picture or a text file becomes a new unsaved PDF in its own window."
+  },
+  "alltools.create.multiple-files": {
+   "command": "create.multiple",
+   "dialog": null,
+   "note": "printcraft create_ui.rs, create_multiple_ui.rs, crates/create. The new PDF opens in its own window through the host (files.create); separate PDFs are written into a folder chosen in the system folder dialog."
+  },
+  "alltools.create.separate-pdfs": {
+   "command": "create.multiple_separate",
+   "dialog": null,
+   "note": "printcraft create_ui.rs, create_multiple_ui.rs, crates/create. The new PDF opens in its own window through the host (files.create); separate PDFs are written into a folder chosen in the system folder dialog."
+  },
+  "alltools.create.images": {
+   "command": "create.images",
+   "dialog": null,
+   "note": "printcraft create_ui.rs, create_multiple_ui.rs, crates/create. The new PDF opens in its own window through the host (files.create); separate PDFs are written into a folder chosen in the system folder dialog."
+  },
+  "alltools.create.blank-page": {
+   "command": "create.blank",
+   "dialog": null,
+   "note": "printcraft create_ui.rs, create_multiple_ui.rs, crates/create. The new PDF opens in its own window through the host (files.create); separate PDFs are written into a folder chosen in the system folder dialog."
+  },
+  "alltools.export.image-png": {
+   "note": "printcraft export_ui.rs: the pictures are written into a folder chosen in the system folder dialog (host files.pickFolder / writeInFolder). The pages are drawn by pdf.js: the comments this window paints itself are not in the pictures."
+  },
+  "convert.export.image-png": {
+   "note": "printcraft export_ui.rs: the pictures are written into a folder chosen in the system folder dialog (host files.pickFolder / writeInFolder). The pages are drawn by pdf.js: the comments this window paints itself are not in the pictures."
+  },
+  "alltools.export.export-all-images": {
+   "note": "printcraft export_ui.rs: the pictures are written into a folder chosen in the system folder dialog (host files.pickFolder / writeInFolder). JPEG pictures unchanged, others as PNG; JBIG2, CCITT, JPEG 2000, CMYK and transparent JPEG pictures are reported as skipped."
+  },
+  "convert.export.export-all-images": {
+   "note": "printcraft export_ui.rs: the pictures are written into a folder chosen in the system folder dialog (host files.pickFolder / writeInFolder). JPEG pictures unchanged, others as PNG; JBIG2, CCITT, JPEG 2000, CMYK and transparent JPEG pictures are reported as skipped."
+  },
+  "chrome.tabs.preferences": {
+   "note": "printcraft chrome.rs:290 Preferences. Identity (the name comments are made under), the secured-document notice and the Fill & Sign text size are translated; the interface language and size, the tools panel side, the title bar, animation, theme and the default view are not (this shell does not offer them or does not read them from preferences)."
+  },
+  "chrome.tabs.shortcuts": {
+   "note": "printcraft chrome.rs:309 Keyboard shortcuts: every key of the spec with the command it runs (dialogs/shortcuts.tsx)."
+  },
+  "alltools.compress.reduce-file-size": {
+   "note": "Reduce File Size: an optimized copy \"<name> (reduced).pdf\", not saved when it is not smaller. printcraft crates/optimize (8f16855): the structural settings are translated; the picture settings (down-sampling and re-compressing pictures), merging stacked fragments, unused XObject names, invalid links and unreferenced destinations are not, so a picture-heavy file shrinks little."
+  },
+  "convert.other.reduced": {
+   "note": "Reduce File Size: an optimized copy \"<name> (reduced).pdf\", not saved when it is not smaller. printcraft crates/optimize (8f16855): the structural settings are translated; the picture settings (down-sampling and re-compressing pictures), merging stacked fragments, unused XObject names, invalid links and unreferenced destinations are not, so a picture-heavy file shrinks little."
+  },
+  "alltools.compress.advanced-optimization": {
+   "note": "PDF Optimizer: an optimized copy \"<name> (optimized).pdf\" with the chosen settings. printcraft crates/optimize (8f16855): the structural settings are translated; the picture settings (down-sampling and re-compressing pictures), merging stacked fragments, unused XObject names, invalid links and unreferenced destinations are not, so a picture-heavy file shrinks little."
+  },
+  "convert.other.optimized": {
+   "note": "PDF Optimizer: an optimized copy \"<name> (optimized).pdf\" with the chosen settings. printcraft crates/optimize (8f16855): the structural settings are translated; the picture settings (down-sampling and re-compressing pictures), merging stacked fragments, unused XObject names, invalid links and unreferenced destinations are not, so a picture-heavy file shrinks little."
+  },
+  "alltools.scan.in-multiple-files": {
+   "note": "printcraft ocr_ui.rs ocr_files: PDFs picked in the Open dialog, a folder chosen in the system folder dialog, a searchable copy of each written under its own name; recognition runs in the OCR worker."
+  }
+ },
+ "dialogs": {
+  "dialog.create-images": {
+   "tabs": [
+    {
+     "name": "General",
+     "fields": [
+      {
+       "id": "count",
+       "label": "Selected image files",
+       "kind": "text",
+       "readOnly": true
+      },
+      {
+       "id": "mode",
+       "label": "Resolution",
+       "kind": "radio",
+       "options": [
+        {
+         "value": "image",
+         "label": "Use image resolution"
+        },
+        {
+         "value": "dpi72",
+         "label": "Use 72 DPI (one point per pixel)"
+        },
+        {
+         "value": "custom",
+         "label": "Use custom DPI"
+        }
+       ]
+      },
+      {
+       "id": "dpi",
+       "label": "Custom DPI",
+       "kind": "number",
+       "min": 1,
+       "max": 1200,
+       "visibleWhen": "mode == custom"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "Create",
+    "Cancel"
+   ]
+  },
+  "dialog.export-image": {
+   "tabs": [
+    {
+     "name": "General",
+     "fields": [
+      {
+       "id": "resolution",
+       "label": "Resolution",
+       "kind": "select",
+       "options": [
+        {
+         "value": 72,
+         "label": "72 pixels/inch"
+        },
+        {
+         "value": 96,
+         "label": "96 pixels/inch"
+        },
+        {
+         "value": 150,
+         "label": "150 pixels/inch"
+        },
+        {
+         "value": 300,
+         "label": "300 pixels/inch"
+        },
+        {
+         "value": 600,
+         "label": "600 pixels/inch"
+        }
+       ]
+      },
+      {
+       "id": "format",
+       "label": "Format",
+       "kind": "select",
+       "options": [
+        "PNG",
+        "JPEG",
+        "TIFF"
+       ]
+      },
+      {
+       "id": "quality",
+       "label": "Quality",
+       "kind": "number",
+       "min": 10,
+       "max": 100,
+       "visibleWhen": "format == JPEG"
+      },
+      {
+       "id": "pages",
+       "label": "Pages",
+       "kind": "radio",
+       "options": [
+        "All",
+        "Current page",
+        "Range"
+       ]
+      },
+      {
+       "id": "from",
+       "label": "From",
+       "kind": "number",
+       "min": 1,
+       "visibleWhen": "pages == Range"
+      },
+      {
+       "id": "to",
+       "label": "to",
+       "kind": "number",
+       "min": 1,
+       "visibleWhen": "pages == Range"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "Export",
+    "Cancel"
+   ]
+  },
+  "dialog.export-all-images": {
+   "tabs": [
+    {
+     "name": "General",
+     "fields": [
+      {
+       "id": "min",
+       "label": "Exclude images smaller than",
+       "kind": "select",
+       "options": [
+        {
+         "value": 0,
+         "label": "No limit"
+        },
+        {
+         "value": 16,
+         "label": "16 pixels"
+        },
+        {
+         "value": 32,
+         "label": "32 pixels"
+        },
+        {
+         "value": 64,
+         "label": "64 pixels"
+        },
+        {
+         "value": 128,
+         "label": "128 pixels"
+        },
+        {
+         "value": 256,
+         "label": "256 pixels"
+        }
+       ]
+      },
+      {
+       "id": "pages",
+       "label": "Pages",
+       "kind": "radio",
+       "options": [
+        "All",
+        "Current page",
+        "Range"
+       ]
+      },
+      {
+       "id": "from",
+       "label": "From",
+       "kind": "number",
+       "min": 1,
+       "visibleWhen": "pages == Range"
+      },
+      {
+       "id": "to",
+       "label": "to",
+       "kind": "number",
+       "min": 1,
+       "visibleWhen": "pages == Range"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "Export",
+    "Cancel"
+   ]
+  },
+  "dialog.preferences": {
+   "tabs": [
+    {
+     "name": "General",
+     "fields": [
+      {
+       "id": "secured",
+       "label": "Show the notice for secured documents",
+       "kind": "checkbox"
+      }
+     ]
+    },
+    {
+     "name": "Identity",
+     "fields": [
+      {
+       "id": "name",
+       "label": "Name for comments",
+       "kind": "text",
+       "maxLength": 120
+      }
+     ]
+    },
+    {
+     "name": "Fill & Sign",
+     "fields": [
+      {
+       "id": "fillTextSize",
+       "label": "Text size (pt)",
+       "kind": "number",
+       "min": 4,
+       "max": 300
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ],
+   "note": "Acrobat's Preferences lists its categories on the left; only the categories this app has settings for are listed (General, Identity, Fill & Sign). The others (Documents, Page Display, Commenting colours...) are not translated: printcraft's Preferences has none of them."
+  },
+  "dialog.optimize": {
+   "tabs": [
+    {
+     "name": "Settings",
+     "fields": [
+      {
+       "id": "discardThumbnails",
+       "label": "Discard page thumbnails",
+       "kind": "checkbox"
+      },
+      {
+       "id": "discardAlternates",
+       "label": "Discard alternate images",
+       "kind": "checkbox"
+      },
+      {
+       "id": "discardTags",
+       "label": "Discard tags (the structure tree)",
+       "kind": "checkbox"
+      },
+      {
+       "id": "discardPrintSettings",
+       "label": "Discard print settings of the viewer preferences",
+       "kind": "checkbox"
+      },
+      {
+       "id": "lzwToFlate",
+       "label": "In streams that use LZW encoding, use Flate instead",
+       "kind": "checkbox"
+      },
+      {
+       "id": "flateUnencoded",
+       "label": "Compress streams that are not compressed",
+       "kind": "checkbox"
+      },
+      {
+       "id": "objectStreams",
+       "label": "Compress document structure (object streams)",
+       "kind": "checkbox"
+      },
+      {
+       "id": "discardUnused",
+       "label": "Discard objects the document no longer uses",
+       "kind": "checkbox"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ]
+  }
+ }
+}

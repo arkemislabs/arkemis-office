@@ -1,0 +1,76 @@
+{
+ "dialogs": {
+  "dialog.comment-properties": {
+   "command": "comment.properties",
+   "note": "printcraft comment_props.rs: OK applies every change as one edit (core/folio/commands/comment.mjs comment.properties).",
+   "title": "Comment Properties"
+  },
+  "dialog.summarize-comments": {
+   "command": "comment.summarize",
+   "tabs": [
+    {
+     "name": "General",
+     "fields": [
+      {
+       "id": "layout",
+       "label": "Choose a layout:",
+       "kind": "radio",
+       "options": [
+        "Comments only"
+       ]
+      },
+      {
+       "id": "sort",
+       "label": "Sort comments by:",
+       "kind": "select",
+       "options": [
+        "Page",
+        "Author",
+        "Date",
+        "Type"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "printcraft dialogs.rs:1208 offers one layout (comments only) and the sort; Acrobat other three layouts, Include and Font Size have no engine and are not shown."
+  },
+  "dialog.create-stamp": {
+   "command": "comment.stamp.custom.create",
+   "tabs": [
+    {
+     "name": "General",
+     "fields": [
+      {
+       "id": "file",
+       "label": "File",
+       "kind": "text",
+       "input": "file-picker",
+       "accept": ["png", "jpg", "jpeg"]
+      },
+      {
+       "id": "category",
+       "label": "Category:",
+       "kind": "combo"
+      },
+      {
+       "id": "name",
+       "label": "Name:",
+       "kind": "text"
+      },
+      {
+       "id": "preview",
+       "label": "Preview",
+       "kind": "preview"
+      },
+      {
+       "id": "downsample",
+       "label": "Down sample stamp to reduce file size",
+       "kind": "checkbox"
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

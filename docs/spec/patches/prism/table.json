@@ -1,0 +1,639 @@
+{
+ "controls": {
+  "tabledesign.options.header-row": {
+   "args": {
+    "toggle": "headerRow",
+    "headerRow": null
+   },
+   "params": null
+  },
+  "tabledesign.options.first-column": {
+   "args": {
+    "toggle": "firstColumn",
+    "firstColumn": null
+   },
+   "params": null
+  },
+  "tabledesign.options.total-row": {
+   "args": {
+    "toggle": "totalRow",
+    "totalRow": null
+   },
+   "params": null
+  },
+  "tabledesign.options.last-column": {
+   "args": {
+    "toggle": "lastColumn",
+    "lastColumn": null
+   },
+   "params": null
+  },
+  "tabledesign.options.banded-rows": {
+   "args": {
+    "toggle": "bandedRows",
+    "bandedRows": null
+   },
+   "params": null
+  },
+  "tabledesign.options.banded-columns": {
+   "args": {
+    "toggle": "bandedColumns",
+    "bandedColumns": null
+   },
+   "params": null
+  },
+  "tabledesign.styles.gallery": {
+   "note": "U:prism/table: deckcraft ribbon/table.rs table_design: the inline strip is none, grid and Medium Style 2 (up to 8), the drop-down holds every built-in style (Light, Medium, Dark each for Text 1 and Accent 1-6) and the styles the file defines, each drawn with the table's own style options and the theme colours. Clear Table is No Style, No Grid."
+  },
+  "tabledesign.styles.shading": {
+   "note": "U:prism/table: deckcraft cell_fill (a colour or none). Table Background is PowerPoint's fill behind the whole table (deckcraft keeps it in the model and draws it). Gradient (light and dark variations of the cell's colour, in four directions) is PowerPoint's own and not checked against upstream. Picture needs a picture chooser (table.cellFill takes `picture` as base64 over the bridge) and Texture has no gallery, so both stay hidden.",
+   "items": [
+    {
+     "label": "Theme Colors / Standard Colors",
+     "command": "table.cellFill",
+     "params": {
+      "color": "<colorRef>"
+     },
+     "kind": "color",
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/widgets.rs:378"
+    },
+    {
+     "label": "No Fill",
+     "command": "table.cellFill",
+     "params": {
+      "none": true
+     },
+     "source": "upstream"
+    },
+    {
+     "label": "Gradient",
+     "kind": "submenu",
+     "source": "office",
+     "sourceRef": "office: Microsoft PowerPoint",
+     "items": [
+      {
+       "header": "Light Variations"
+      },
+      {
+       "label": "Light Linear Down",
+       "command": "table.cellFill",
+       "params": {
+        "variation": "light",
+        "angle": 90
+       },
+       "source": "office"
+      },
+      {
+       "label": "Light Linear Up",
+       "command": "table.cellFill",
+       "params": {
+        "variation": "light",
+        "angle": 270
+       },
+       "source": "office"
+      },
+      {
+       "label": "Light Linear Left",
+       "command": "table.cellFill",
+       "params": {
+        "variation": "light",
+        "angle": 180
+       },
+       "source": "office"
+      },
+      {
+       "label": "Light Linear Right",
+       "command": "table.cellFill",
+       "params": {
+        "variation": "light",
+        "angle": 0
+       },
+       "source": "office"
+      },
+      {
+       "header": "Dark Variations"
+      },
+      {
+       "label": "Dark Linear Down",
+       "command": "table.cellFill",
+       "params": {
+        "variation": "dark",
+        "angle": 90
+       },
+       "source": "office"
+      },
+      {
+       "label": "Dark Linear Up",
+       "command": "table.cellFill",
+       "params": {
+        "variation": "dark",
+        "angle": 270
+       },
+       "source": "office"
+      },
+      {
+       "label": "Dark Linear Left",
+       "command": "table.cellFill",
+       "params": {
+        "variation": "dark",
+        "angle": 180
+       },
+       "source": "office"
+      },
+      {
+       "label": "Dark Linear Right",
+       "command": "table.cellFill",
+       "params": {
+        "variation": "dark",
+        "angle": 0
+       },
+       "source": "office"
+      }
+     ]
+    },
+    {
+     "label": "Table Background",
+     "kind": "submenu",
+     "source": "office",
+     "sourceRef": "office: Microsoft PowerPoint",
+     "items": [
+      {
+       "label": "No Fill",
+       "command": "table.background",
+       "params": {
+        "none": true
+       },
+       "source": "office"
+      },
+      {
+       "label": "Theme Colors / Standard Colors",
+       "command": "table.background",
+       "params": {
+        "color": "<colorRef>"
+       },
+       "kind": "color",
+       "source": "office"
+      }
+     ]
+    }
+   ]
+  },
+  "tabledesign.styles.effects": {
+   "command": null,
+   "note": "U:prism/table: hidden: deckcraft has no table effects (a table has no cell bevel, shadow or reflection engine; shape.effects acts on the frame, which a table does not draw).",
+   "items": [
+    {
+     "label": "Cell Bevel",
+     "kind": "submenu",
+     "source": "office"
+    },
+    {
+     "label": "Shadow",
+     "kind": "submenu",
+     "source": "office"
+    },
+    {
+     "label": "Reflection",
+     "kind": "submenu",
+     "source": "office"
+    }
+   ]
+  },
+  "tabledesign.wordart.quick": {
+   "note": "U:prism/table: hidden: deckcraft only inserts new WordArt (insert.wordArt); it has no engine that applies a WordArt look to existing table text. Text Fill, Text Outline and Text Effects format the text of the selected cells (or every cell)."
+  },
+  "tabledesign.draw.pen-style": {
+   "command": "table.pen",
+   "options": null,
+   "note": "U:prism/table: the pen Borders and Draw Table draw with (deckcraft app.table_pen dash: solid, dash, dot, dash dot, long dash).",
+   "items": [
+    {
+     "label": "Solid",
+     "command": "table.pen",
+     "params": {
+      "dash": "solid"
+     },
+     "kind": "toggle",
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/table.rs:131"
+    },
+    {
+     "label": "Dash",
+     "command": "table.pen",
+     "params": {
+      "dash": "dash"
+     },
+     "kind": "toggle",
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/table.rs:131"
+    },
+    {
+     "label": "Dot",
+     "command": "table.pen",
+     "params": {
+      "dash": "sysDot"
+     },
+     "kind": "toggle",
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/table.rs:131"
+    },
+    {
+     "label": "Dash Dot",
+     "command": "table.pen",
+     "params": {
+      "dash": "dashDot"
+     },
+     "kind": "toggle",
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/table.rs:131"
+    },
+    {
+     "label": "Long Dash",
+     "command": "table.pen",
+     "params": {
+      "dash": "lgDash"
+     },
+     "kind": "toggle",
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/table.rs:131"
+    }
+   ]
+  },
+  "tabledesign.draw.pen-weight": {
+   "command": "table.pen",
+   "options": null,
+   "note": "U:prism/table: the pen weight Borders and Draw Table draw with (deckcraft app.table_pen width, 0.25 to 6 pt).",
+   "items": [
+    {
+     "label": "0.25 pt",
+     "command": "table.pen",
+     "params": {
+      "weight": 0.25
+     },
+     "kind": "toggle",
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/table.rs:123"
+    },
+    {
+     "label": "0.5 pt",
+     "command": "table.pen",
+     "params": {
+      "weight": 0.5
+     },
+     "kind": "toggle",
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/table.rs:123"
+    },
+    {
+     "label": "0.75 pt",
+     "command": "table.pen",
+     "params": {
+      "weight": 0.75
+     },
+     "kind": "toggle",
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/table.rs:123"
+    },
+    {
+     "label": "1 pt",
+     "command": "table.pen",
+     "params": {
+      "weight": 1
+     },
+     "kind": "toggle",
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/table.rs:123"
+    },
+    {
+     "label": "1.5 pt",
+     "command": "table.pen",
+     "params": {
+      "weight": 1.5
+     },
+     "kind": "toggle",
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/table.rs:123"
+    },
+    {
+     "label": "2.25 pt",
+     "command": "table.pen",
+     "params": {
+      "weight": 2.25
+     },
+     "kind": "toggle",
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/table.rs:123"
+    },
+    {
+     "label": "3 pt",
+     "command": "table.pen",
+     "params": {
+      "weight": 3
+     },
+     "kind": "toggle",
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/table.rs:123"
+    },
+    {
+     "label": "4.5 pt",
+     "command": "table.pen",
+     "params": {
+      "weight": 4.5
+     },
+     "kind": "toggle",
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/table.rs:123"
+    },
+    {
+     "label": "6 pt",
+     "command": "table.pen",
+     "params": {
+      "weight": 6
+     },
+     "kind": "toggle",
+     "source": "upstream",
+     "sourceRef": "crates/ui-egui/src/ribbon/table.rs:123"
+    }
+   ]
+  },
+  "tabledesign.draw.pen-color": {
+   "command": "table.pen",
+   "params": {
+    "color": "<colorRef>"
+   },
+   "note": "U:prism/table: the pen colour Borders and Draw Table draw with (deckcraft app.table_pen colour)."
+  },
+  "tablelayout.table.select": {
+   "items": [
+    {
+     "label": "Select Cell",
+     "command": "table.selectCells",
+     "params": {
+      "mode": "cell"
+     },
+     "source": "office",
+     "sourceRef": "office: Microsoft PowerPoint"
+    },
+    {
+     "label": "Select Column",
+     "command": "table.selectCells",
+     "params": {
+      "mode": "column"
+     },
+     "source": "office",
+     "sourceRef": "office: Microsoft PowerPoint"
+    },
+    {
+     "label": "Select Row",
+     "command": "table.selectCells",
+     "params": {
+      "mode": "row"
+     },
+     "source": "office",
+     "sourceRef": "office: Microsoft PowerPoint"
+    },
+    {
+     "label": "Select Table",
+     "command": "table.selectCells",
+     "params": {
+      "mode": "table"
+     },
+     "source": "office",
+     "sourceRef": "office: Microsoft PowerPoint"
+    }
+   ]
+  },
+  "tablelayout.table.gridlines": {
+   "command": "table.gridlines",
+   "note": "U:prism/table: draws the cell borders of tables as dotted lines on the slide while editing (not in a show, a picture or an export)."
+  },
+  "tablelayout.align.margins": {
+   "params": null,
+   "args": null
+  },
+  "tablelayout.merge.split": {
+   "dialog": "dialog.splitCells"
+  },
+  "tablelayout.size.height": {
+   "args": {
+    "height": "<pt>"
+   }
+  },
+  "tablelayout.size.width": {
+   "args": {
+    "width": "<pt>"
+   }
+  },
+  "tablelayout.align.direction": {
+   "command": "table.textDirection",
+   "options": null,
+   "note": "U:prism/table: the direction of the text of the selected cells (a:tcPr vert), PowerPoint's four directions.",
+   "items": [
+    {
+     "label": "Horizontal",
+     "command": "table.textDirection",
+     "params": {
+      "dir": "horizontal"
+     },
+     "kind": "toggle",
+     "source": "office",
+     "sourceRef": "office: Microsoft PowerPoint"
+    },
+    {
+     "label": "Rotate all text 90°",
+     "command": "table.textDirection",
+     "params": {
+      "dir": "rotate90"
+     },
+     "kind": "toggle",
+     "source": "office",
+     "sourceRef": "office: Microsoft PowerPoint"
+    },
+    {
+     "label": "Rotate all text 270°",
+     "command": "table.textDirection",
+     "params": {
+      "dir": "rotate270"
+     },
+     "kind": "toggle",
+     "source": "office",
+     "sourceRef": "office: Microsoft PowerPoint"
+    },
+    {
+     "label": "Stacked",
+     "command": "table.textDirection",
+     "params": {
+      "dir": "stacked"
+     },
+     "kind": "toggle",
+     "source": "office",
+     "sourceRef": "office: Microsoft PowerPoint"
+    }
+   ]
+  },
+  "tablelayout.tablesize.height": {
+   "command": "table.size",
+   "args": {
+    "dim": "height",
+    "h": "<pt>"
+   },
+   "note": "U:prism/table: scales every row of the table together (PowerPoint's Table Size), the columns too when Lock Aspect Ratio is on."
+  },
+  "tablelayout.tablesize.width": {
+   "command": "table.size",
+   "args": {
+    "dim": "width",
+    "w": "<pt>"
+   },
+   "note": "U:prism/table: scales every column of the table together (PowerPoint's Table Size), the rows too when Lock Aspect Ratio is on."
+  },
+  "tablelayout.tablesize.lock": {
+   "command": "table.lockAspect"
+  },
+  "tablelayout.arrange.align.align-to-slide": {
+   "command": "arrange.alignTo",
+   "args": {
+    "slide": true
+   },
+   "kind": "toggle",
+   "source": "upstream",
+   "sourceRef": "deckcraft crates/ui-egui/src/ribbon/arrange.rs align_menu"
+  },
+  "tablelayout.arrange.align.align-selected-objects": {
+   "command": "arrange.alignTo",
+   "args": {
+    "slide": false
+   },
+   "kind": "toggle",
+   "source": "upstream",
+   "sourceRef": "deckcraft crates/ui-egui/src/ribbon/arrange.rs align_menu"
+  }
+ },
+ "dialogs": {
+  "dialog.cellMargins": {
+   "note": "U:prism/table: PowerPoint's Cell Text Layout: vertical alignment, text direction and the four internal margins of the selected cells, in inches. deckcraft has the four margin presets only (not checked against upstream).",
+   "tabs": [
+    {
+     "name": "Layout",
+     "fields": [
+      {
+       "id": "anchor",
+       "label": "Vertical alignment:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "top",
+         "label": "Top"
+        },
+        {
+         "value": "middle",
+         "label": "Middle"
+        },
+        {
+         "value": "bottom",
+         "label": "Bottom"
+        }
+       ],
+       "source": "office"
+      },
+      {
+       "id": "direction",
+       "label": "Text direction:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "horizontal",
+         "label": "Horizontal"
+        },
+        {
+         "value": "rotate90",
+         "label": "Rotate all text 90°"
+        },
+        {
+         "value": "rotate270",
+         "label": "Rotate all text 270°"
+        },
+        {
+         "value": "stacked",
+         "label": "Stacked"
+        }
+       ],
+       "source": "office"
+      },
+      {
+       "id": "left",
+       "label": "Left:",
+       "kind": "number",
+       "min": 0,
+       "max": 5.5,
+       "step": 0.05,
+       "unit": "in",
+       "source": "office"
+      },
+      {
+       "id": "right",
+       "label": "Right:",
+       "kind": "number",
+       "min": 0,
+       "max": 5.5,
+       "step": 0.05,
+       "unit": "in",
+       "source": "office"
+      },
+      {
+       "id": "top",
+       "label": "Top:",
+       "kind": "number",
+       "min": 0,
+       "max": 5.5,
+       "step": 0.05,
+       "unit": "in",
+       "source": "office"
+      },
+      {
+       "id": "bottom",
+       "label": "Bottom:",
+       "kind": "number",
+       "min": 0,
+       "max": 5.5,
+       "step": 0.05,
+       "unit": "in",
+       "source": "office"
+      }
+     ]
+    }
+   ]
+  },
+  "dialog.splitCells": {
+   "note": "U:prism/table: PowerPoint's Split Cells; deckcraft's table.split only undoes a merge (not checked against upstream). A merged cell starts with the columns and rows it spans.",
+   "tabs": [
+    {
+     "name": "Split",
+     "fields": [
+      {
+       "id": "cols",
+       "label": "Number of columns:",
+       "kind": "number",
+       "min": 1,
+       "max": 63,
+       "step": 1,
+       "default": 2,
+       "source": "office"
+      },
+      {
+       "id": "rows",
+       "label": "Number of rows:",
+       "kind": "number",
+       "min": 1,
+       "max": 63,
+       "step": 1,
+       "default": 1,
+       "source": "office"
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

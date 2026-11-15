@@ -1,0 +1,72 @@
+{
+  "tab": "design",
+  "keytip": "G",
+  "source": "deckcraft crates/ui-egui/src/ribbon/design.rs (design) @ f893f6af7d36a5409fd804e81a34fd895cfefedf; Save Current Theme placed with Browse as PowerPoint",
+  "groups": {
+    "themes": {
+      "collapseOrder": 3,
+      "collapsedIcon": "theme-Aa",
+      "layout": [
+        {
+          "gallery": "design.themes.gallery",
+          "inline": true,
+          "columns": 4
+        },
+        {
+          "stack": [
+            "design.themes.browse",
+            "design.themes.save"
+          ]
+        }
+      ]
+    },
+    "variants": {
+      "collapseOrder": 4,
+      "collapsedIcon": "variants",
+      "layout": [
+        {
+          "gallery": "design.variants.gallery",
+          "inline": true,
+          "columns": 4
+        },
+        {
+          "large": "design.variants.colors"
+        },
+        {
+          "large": "design.variants.fonts"
+        },
+        {
+          "large": "design.variants.effects"
+        },
+        {
+          "large": "design.variants.background-styles"
+        }
+      ]
+    },
+    "customize": {
+      "collapseOrder": 2,
+      "collapsedIcon": "slide-size",
+      "layout": [
+        {
+          "large": "design.customize.slide-size"
+        },
+        {
+          "large": "design.customize.format-background"
+        }
+      ]
+    },
+    "designer": {
+      "collapseOrder": 1,
+      "collapsedIcon": "sparkle-layout",
+      "layout": [
+        {
+          "large": "design.designer.design-ideas"
+        }
+      ]
+    }
+  },
+  "keytips": {
+    "design.customize.slide-size": "S",
+    "design.customize.format-background": "B"
+  }
+}

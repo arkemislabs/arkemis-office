@@ -1,0 +1,31 @@
+{
+  "tab": "calculation-order",
+  "source": "printcraft crates/ui-egui/src/tools/calc_order_ui.rs @ 3109bb2359759e24ef490e1cdbdba00722b20972",
+  "groups": {
+    "order": {
+      "collapseOrder": 1,
+      "collapsedIcon": "chevron-left",
+      "layout": [
+        {
+          "stack": [
+            "calc.back",
+            "calc.fix",
+            "calc.undo"
+          ]
+        },
+        {
+          "stack": [
+            "calc.earlier",
+            "calc.later",
+            "calc.links"
+          ]
+        },
+        {
+          "stack": [
+            "calc.edit-formula"
+          ]
+        }
+      ]
+    }
+  }
+}

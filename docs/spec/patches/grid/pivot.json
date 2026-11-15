@@ -1,0 +1,439 @@
+{
+  "controls": {
+    "insert.tables.pivotTable.from-table-range": {
+      "dialog": "dialog.createPivotTable"
+    },
+    "insert.tables.pivotTable.from-external-data-source": {
+      "command": null,
+      "note": "U:grid/pivot: external data sources need a connection engine gridcraft does not have; hidden."
+    },
+    "insert.tables.pivotTable.from-data-model": {
+      "command": null,
+      "note": "U:grid/pivot: the data model is not in gridcraft; hidden."
+    },
+    "tableDesign.tools.summarizePivot": {
+      "dialog": "dialog.createPivotTable",
+      "note": "U:grid/pivot: translated from gridcraft (table.summarizePivot): opens Create PivotTable with the table as its source."
+    },
+    "pivotAnalyze.pivotTable.options": {
+      "command": "pivot.options",
+      "dialog": "dialog.pivotTableOptions",
+      "note": "U:grid/pivot: checked against gridcraft (pivot.options: Enable show details); the dialog also renames the PivotTable."
+    },
+    "pivotAnalyze.activeField.fieldSettings": {
+      "command": "pivot.valueSettings",
+      "dialog": "dialog.valueFieldSettings",
+      "note": "U:grid/pivot: checked against gridcraft (pivot.valueSettings: summarize by, show values as, number format) for the value field under the selected cell."
+    },
+    "pivotAnalyze.activeField.drillDown": {
+      "command": null,
+      "note": "U:grid/pivot: Show Details (pivot.showDetails: the source records behind a value on a new sheet) is not translated yet; hidden."
+    },
+    "pivotAnalyze.activeField.drillUp": {
+      "command": null,
+      "note": "U:grid/pivot: not in gridcraft; hidden."
+    },
+    "pivotAnalyze.activeField.expandField": {
+      "command": "pivot.collapse",
+      "args": {
+        "collapse": false
+      },
+      "note": "U:grid/pivot: checked against gridcraft (pivot.collapse {collapse: false}) for the field under the selected cell."
+    },
+    "pivotAnalyze.activeField.collapseField": {
+      "command": "pivot.collapse",
+      "args": {
+        "collapse": true
+      },
+      "note": "U:grid/pivot: checked against gridcraft (pivot.collapse) for the field under the selected cell."
+    },
+    "pivotAnalyze.group.groupSelection": {
+      "command": "pivot.group",
+      "dialog": "dialog.pivotGrouping",
+      "note": "U:grid/pivot: gridcraft groups a whole date field (years, quarters, months, days); a selection of items is not grouped separately."
+    },
+    "pivotAnalyze.group.groupField": {
+      "command": "pivot.group",
+      "dialog": "dialog.pivotGrouping",
+      "note": "U:grid/pivot: checked against gridcraft (pivot.group)."
+    },
+    "pivotAnalyze.group.ungroup": {
+      "command": "pivot.group",
+      "args": {
+        "by": "none"
+      },
+      "note": "U:grid/pivot: checked against gridcraft (pivot.group {by: none})."
+    },
+    "pivotAnalyze.data.refresh": {
+      "command": "pivot.refresh",
+      "note": "U:grid/pivot: checked against gridcraft (pivot.refresh, data.refreshAll)."
+    },
+    "pivotAnalyze.data.changeSource": {
+      "command": "pivot.changeSource",
+      "dialog": "dialog.changePivotSource",
+      "note": "U:grid/pivot: checked against gridcraft (pivot.changeSource: fields missing from the new source are removed)."
+    },
+    "pivotAnalyze.actions.clear": {
+      "command": "pivot.clear",
+      "note": "U:grid/pivot: Clear All takes every field out of the PivotTable; Clear Filters shows every item again. Delete PivotTable is pivot.delete."
+    },
+    "pivotAnalyze.calculations.olapTools": {
+      "command": null,
+      "note": "U:grid/pivot: OLAP is not in gridcraft; hidden."
+    },
+    "pivotAnalyze.calculations.relationships": {
+      "command": null,
+      "note": "U:grid/pivot: the data model is not in gridcraft; hidden."
+    },
+    "pivotAnalyze.show.fieldList": {
+      "command": "pivot.fieldList",
+      "note": "U:grid/pivot: the PivotTable Fields pane (gridcraft pivot_pane.rs), as a view flag."
+    },
+    "pivotAnalyze.show.fieldHeaders": {
+      "command": "pivot.fieldHeaders",
+      "note": "U:grid/pivot: checked against gridcraft (pivot.layout showHeaders)."
+    },
+    "pivotDesign.layout.subtotals": {
+      "command": "pivot.subtotals",
+      "note": "U:grid/pivot: checked against gridcraft (pivot.subtotals: none, top, bottom)."
+    },
+    "pivotDesign.layout.grandTotals": {
+      "command": "pivot.grandTotals",
+      "note": "U:grid/pivot: checked against gridcraft (pivot.grandTotals: off, on, rows, columns)."
+    },
+    "pivotDesign.styles.gallery": {
+      "command": "pivot.style",
+      "args": {
+        "style": "<style>"
+      },
+      "note": "U:grid/pivot: checked against gridcraft (pivot.style: PivotStyleLight1 to 28, Medium and Dark); every style is drawn as a tile under its Light, Medium or Dark heading."
+    },
+    "tableDesign.tools.insertSlicer": {
+      "dialog": "dialog.insertSlicers",
+      "note": "U:grid/slicer: checked against gridcraft (table.insertSlicer): opens Insert Slicers for the table."
+    },
+    "slicer.slicer.caption": {
+      "command": "slicer.caption",
+      "args": {"caption": "<caption>"},
+      "note": "U:grid/slicer: the caption box of the tab shows the selected slicer's header caption and Enter sets it (gridcraft Slicer.caption)."
+    },
+    "slicer.slicer.settings": {
+      "command": "slicer.set",
+      "dialog": "dialog.slicerSettings",
+      "note": "U:grid/slicer: the header caption (gridcraft Slicer.caption)."
+    },
+    "slicer.buttons.columns": {
+      "command": "slicer.columns",
+      "args": {
+        "columns": "<n>"
+      },
+      "note": "U:grid/slicer: checked against gridcraft (Slicer.columns, 1 to 10 tile columns)."
+    },
+    "slicer.buttons.height": {
+      "command": "slicer.height",
+      "args": {
+        "height": "<pt>"
+      },
+      "note": "U:grid/slicer: the slicer's height (its anchor)."
+    },
+    "slicer.buttons.width": {
+      "command": "slicer.width",
+      "args": {
+        "width": "<pt>"
+      },
+      "note": "U:grid/slicer: the slicer's width (its anchor)."
+    },
+    "slicer.actions.clearFilter": {
+      "command": "slicer.clear",
+      "note": "U:grid/slicer: checked against gridcraft (slicer.clear)."
+    },
+    "slicer.actions.selectAll": {
+      "command": "slicer.selectAll",
+      "note": "U:grid/slicer: checked against gridcraft (slicer.selectAll)."
+    },
+    "slicer.actions.delete": {
+      "command": "slicer.delete",
+      "note": "U:grid/slicer: checked against gridcraft (slicer.delete, which also clears the filter it set)."
+    }
+  },
+  "dialogs": {
+    "dialog.createPivotTable": {
+      "note": "U:grid/pivot: Excel's Create PivotTable over gridcraft's insert.pivotTable (source, new sheet at A3 or an existing cell).",
+      "buttons": [
+        "OK",
+        "Cancel"
+      ],
+      "tabs": [
+        {
+          "name": "",
+          "fields": [
+            {
+              "id": "source",
+              "label": "Table/Range:",
+              "kind": "text",
+              "options": []
+            },
+            {
+              "id": "destination",
+              "label": "Choose where you want the PivotTable to be placed",
+              "kind": "radio",
+              "options": [
+                {
+                  "value": "new",
+                  "label": "New Worksheet"
+                },
+                {
+                  "value": "existing",
+                  "label": "Existing Worksheet"
+                }
+              ]
+            },
+            {
+              "id": "location",
+              "label": "Location:",
+              "kind": "text",
+              "options": [],
+              "visibleWhen": "destination==existing"
+            }
+          ]
+        }
+      ]
+    },
+    "dialog.changePivotSource": {
+      "note": "U:grid/pivot: Excel's Change PivotTable Data Source over gridcraft's pivot.changeSource.",
+      "buttons": [
+        "OK",
+        "Cancel"
+      ],
+      "tabs": [
+        {
+          "name": "",
+          "fields": [
+            {
+              "id": "source",
+              "label": "Table/Range:",
+              "kind": "text",
+              "options": []
+            }
+          ]
+        }
+      ]
+    },
+    "dialog.pivotGrouping": {
+      "note": "U:grid/pivot: Excel's Grouping for a date field over gridcraft's pivot.group (one level: days, months, quarters or years).",
+      "buttons": [
+        "OK",
+        "Cancel"
+      ],
+      "tabs": [
+        {
+          "name": "",
+          "fields": [
+            {
+              "id": "by",
+              "label": "By",
+              "kind": "radio",
+              "options": [
+                {
+                  "value": "days",
+                  "label": "Days"
+                },
+                {
+                  "value": "months",
+                  "label": "Months"
+                },
+                {
+                  "value": "quarters",
+                  "label": "Quarters"
+                },
+                {
+                  "value": "years",
+                  "label": "Years"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "dialog.pivotTableOptions": {
+      "note": "U:grid/pivot: Excel's PivotTable Options (name, enable show details) over gridcraft's pivot.options.",
+      "buttons": [
+        "OK",
+        "Cancel"
+      ],
+      "tabs": [
+        {
+          "name": "",
+          "fields": [
+            {
+              "id": "name",
+              "label": "PivotTable Name:",
+              "kind": "text",
+              "options": []
+            },
+            {
+              "id": "enableShowDetails",
+              "label": "Enable show details",
+              "kind": "checkbox",
+              "options": []
+            }
+          ]
+        }
+      ]
+    },
+    "dialog.valueFieldSettings": {
+      "note": "U:grid/pivot: Excel's Value Field Settings over gridcraft's pivot.valueSettings: Custom Name, Summarize Values By, Show Values As, Number Format. Drawn by src/apps/grid/dialogs/valueFieldSettings.tsx.",
+      "buttons": [
+        "OK",
+        "Cancel"
+      ],
+      "tabs": [
+        {
+          "name": "Summarize Values By",
+          "fields": [
+            {
+              "id": "name",
+              "label": "Custom Name:",
+              "kind": "text",
+              "options": []
+            },
+            {
+              "id": "func",
+              "label": "Summarize value field by",
+              "kind": "select",
+              "options": [
+                {
+                  "value": "sum",
+                  "label": "Sum"
+                },
+                {
+                  "value": "count",
+                  "label": "Count"
+                },
+                {
+                  "value": "average",
+                  "label": "Average"
+                },
+                {
+                  "value": "max",
+                  "label": "Max"
+                },
+                {
+                  "value": "min",
+                  "label": "Min"
+                },
+                {
+                  "value": "product",
+                  "label": "Product"
+                },
+                {
+                  "value": "countNumbers",
+                  "label": "Count Numbers"
+                },
+                {
+                  "value": "stdDev",
+                  "label": "StdDev"
+                },
+                {
+                  "value": "stdDevP",
+                  "label": "StdDevp"
+                },
+                {
+                  "value": "var",
+                  "label": "Var"
+                },
+                {
+                  "value": "varP",
+                  "label": "Varp"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Show Values As",
+          "fields": [
+            {
+              "id": "showAs",
+              "label": "Show values as",
+              "kind": "select",
+              "options": [
+                {
+                  "value": "normal",
+                  "label": "No Calculation"
+                },
+                {
+                  "value": "percentOfGrandTotal",
+                  "label": "% of Grand Total"
+                },
+                {
+                  "value": "percentOfColumnTotal",
+                  "label": "% of Column Total"
+                },
+                {
+                  "value": "percentOfRowTotal",
+                  "label": "% of Row Total"
+                },
+                {
+                  "value": "runningTotal",
+                  "label": "Running Total In"
+                },
+                {
+                  "value": "rank",
+                  "label": "Rank Largest to Smallest"
+                }
+              ]
+            },
+            {
+              "id": "numberFormat",
+              "label": "Number Format (leave empty for the source's)",
+              "kind": "text",
+              "options": []
+            }
+          ]
+        }
+      ]
+    },
+    "dialog.insertSlicers": {
+      "note": "U:grid/slicer: Excel's Insert Slicers over gridcraft's insert.slicer, drawn by src/apps/grid/dialogs/insertSlicers.tsx.",
+      "buttons": [
+        "OK",
+        "Cancel"
+      ],
+      "tabs": [
+        {
+          "name": "",
+          "fields": [
+            {
+              "id": "columns",
+              "label": "Columns",
+              "kind": "list",
+              "options": []
+            }
+          ]
+        }
+      ]
+    },
+    "dialog.slicerSettings": {
+      "note": "U:grid/slicer: the slicer's header caption (gridcraft Slicer.caption); Excel's sorting and hiding options are not in gridcraft.",
+      "buttons": [
+        "OK",
+        "Cancel"
+      ],
+      "tabs": [
+        {
+          "name": "",
+          "fields": [
+            {
+              "id": "caption",
+              "label": "Header caption:",
+              "kind": "text",
+              "options": []
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

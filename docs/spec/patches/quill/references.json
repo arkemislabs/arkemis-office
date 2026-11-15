@@ -1,0 +1,1522 @@
+{
+ "controls": {
+  "references.table-of-contents.table-of-contents": {
+   "note": "U:quill/references: Word's gallery drawn as pictures (Automatic Table 1 'Contents', Automatic Table 2 'Table of Contents', Manual Table); Custom Table of Contents… and Remove. More Tables from Office.com and Save Selection to the gallery have no upstream counterpart and stay hidden.",
+   "items": [
+    {
+     "header": "Built-In"
+    },
+    {
+     "id": "references.table-of-contents.table-of-contents.automatic-1",
+     "label": "Automatic Table 1",
+     "command": "references.toc",
+     "args": {
+      "levels": 3,
+      "title": "Contents"
+     },
+     "source": "upstream",
+     "thumb": {
+      "title": "Contents",
+      "lines": [
+       [
+        0,
+        "Heading 1",
+        "1"
+       ],
+       [
+        1,
+        "Heading 2",
+        "1"
+       ],
+       [
+        2,
+        "Heading 3",
+        "1"
+       ]
+      ],
+      "leader": "."
+     }
+    },
+    {
+     "id": "references.table-of-contents.table-of-contents.automatic-2",
+     "label": "Automatic Table 2",
+     "command": "references.toc",
+     "args": {
+      "levels": 3,
+      "title": "Table of Contents"
+     },
+     "source": "office",
+     "thumb": {
+      "title": "Table of Contents",
+      "lines": [
+       [
+        0,
+        "Heading 1",
+        "1"
+       ],
+       [
+        1,
+        "Heading 2",
+        "1"
+       ],
+       [
+        2,
+        "Heading 3",
+        "1"
+       ]
+      ],
+      "leader": "."
+     }
+    },
+    {
+     "id": "references.table-of-contents.table-of-contents.manual",
+     "label": "Manual Table",
+     "command": "references.toc",
+     "args": {
+      "manual": true
+     },
+     "source": "office",
+     "thumb": {
+      "title": "Contents",
+      "lines": [
+       [
+        0,
+        "Type chapter title (level 1)",
+        "1"
+       ],
+       [
+        1,
+        "Type chapter title (level 2)",
+        "2"
+       ],
+       [
+        2,
+        "Type chapter title (level 3)",
+        "3"
+       ]
+      ],
+      "leader": "."
+     }
+    },
+    {
+     "id": "references.table-of-contents.table-of-contents.more",
+     "label": "More Tables of Contents from Office.com",
+     "command": null,
+     "source": "office"
+    },
+    "-",
+    {
+     "id": "references.table-of-contents.table-of-contents.custom",
+     "label": "Custom Table of Contents…",
+     "command": null,
+     "dialog": "dialog.toc",
+     "icon": "toc-custom",
+     "source": "upstream"
+    },
+    {
+     "id": "references.table-of-contents.table-of-contents.remove",
+     "label": "Remove Table of Contents",
+     "command": "references.removeToc",
+     "icon": "toc-remove",
+     "source": "upstream"
+    },
+    "-",
+    {
+     "id": "references.table-of-contents.table-of-contents.save",
+     "label": "Save Selection to Table of Contents Gallery…",
+     "command": null,
+     "source": "office"
+    }
+   ]
+  },
+  "references.table-of-contents.add-text": {
+   "items": [
+    {
+     "id": "references.table-of-contents.add-text.none",
+     "label": "Do Not Show in Table of Contents",
+     "kind": "toggle",
+     "command": "references.addText",
+     "args": {
+      "level": 0
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "references.table-of-contents.add-text.level-1",
+     "label": "Level 1",
+     "kind": "toggle",
+     "command": "references.addText",
+     "args": {
+      "level": 1
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "references.table-of-contents.add-text.level-2",
+     "label": "Level 2",
+     "kind": "toggle",
+     "command": "references.addText",
+     "args": {
+      "level": 2
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "references.table-of-contents.add-text.level-3",
+     "label": "Level 3",
+     "kind": "toggle",
+     "command": "references.addText",
+     "args": {
+      "level": 3
+     },
+     "source": "upstream"
+    }
+   ]
+  },
+  "references.table-of-contents.update-table": {
+   "dialog": "dialog.updateToc",
+   "note": "U:quill/references: Word asks Update page numbers only / Update entire table (dialog.updateToc); upstream rebuilds the entire table."
+  },
+  "references.footnotes.insert-endnote": {
+   "shortcut": "Ctrl+Alt+D"
+  },
+  "references.footnotes.insert-footnote": {
+   "shortcut": "Ctrl+Alt+F"
+  },
+  "references.footnotes.next-footnote": {
+   "items": [
+    {
+     "id": "references.footnotes.next-footnote.next-footnote",
+     "label": "Next Footnote",
+     "command": "references.nextFootnote",
+     "args": {},
+     "icon": "nextFootnote",
+     "source": "upstream"
+    },
+    {
+     "id": "references.footnotes.next-footnote.previous-footnote",
+     "label": "Previous Footnote",
+     "command": "references.nextFootnote",
+     "args": {
+      "previous": true
+     },
+     "icon": "footnote-previous",
+     "source": "office"
+    },
+    {
+     "id": "references.footnotes.next-footnote.next-endnote",
+     "label": "Next Endnote",
+     "command": "references.nextFootnote",
+     "args": {
+      "endnote": true
+     },
+     "icon": "endnote-next",
+     "source": "office"
+    },
+    {
+     "id": "references.footnotes.next-footnote.previous-endnote",
+     "label": "Previous Endnote",
+     "command": "references.nextFootnote",
+     "args": {
+      "endnote": true,
+      "previous": true
+     },
+     "icon": "endnote-previous",
+     "source": "office"
+    }
+   ]
+  },
+  "references.citations-bibliography.insert-citation": {
+   "note": "U:quill/references: the document's sources (Author — Title — Year), then Add New Source… and Add New Placeholder… as Word.",
+   "items": [
+    {
+     "id": "references.citations-bibliography.insert-citation.sources",
+     "label": "Sources",
+     "kind": "list",
+     "command": "references.citation",
+     "args": {
+      "tag": "<tag>"
+     },
+     "dynamic": true,
+     "source": "upstream"
+    },
+    "-",
+    {
+     "id": "references.citations-bibliography.insert-citation.add-source",
+     "label": "Add New Source…",
+     "command": null,
+     "dialog": "dialog.source",
+     "icon": "source-add",
+     "source": "upstream"
+    },
+    {
+     "id": "references.citations-bibliography.insert-citation.add-placeholder",
+     "label": "Add New Placeholder…",
+     "command": null,
+     "dialog": "dialog.placeholder",
+     "icon": "placeholder-add",
+     "source": "office"
+    }
+   ]
+  },
+  "references.citations-bibliography.style": {
+   "valueLabel": true,
+   "items": [
+    {
+     "id": "references.citations-bibliography.style.apa",
+     "label": "APA",
+     "kind": "toggle",
+     "command": "references.citationStyle",
+     "args": {
+      "style": "APA"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "references.citations-bibliography.style.chicago",
+     "label": "Chicago",
+     "kind": "toggle",
+     "command": "references.citationStyle",
+     "args": {
+      "style": "Chicago"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "references.citations-bibliography.style.gb-t-7714",
+     "label": "GB/T 7714",
+     "kind": "toggle",
+     "command": "references.citationStyle",
+     "args": {
+      "style": "GB/T 7714"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "references.citations-bibliography.style.gost-name",
+     "label": "GOST - Name Sort",
+     "kind": "toggle",
+     "command": "references.citationStyle",
+     "args": {
+      "style": "GOST (name sort)"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "references.citations-bibliography.style.gost-title",
+     "label": "GOST - Title Sort",
+     "kind": "toggle",
+     "command": "references.citationStyle",
+     "args": {
+      "style": "GOST (title sort)"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "references.citations-bibliography.style.harvard",
+     "label": "Harvard - Anglia",
+     "kind": "toggle",
+     "command": "references.citationStyle",
+     "args": {
+      "style": "Harvard (Anglia)"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "references.citations-bibliography.style.ieee",
+     "label": "IEEE",
+     "kind": "toggle",
+     "command": "references.citationStyle",
+     "args": {
+      "style": "IEEE"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "references.citations-bibliography.style.iso-690-date",
+     "label": "ISO 690 - First Element and Date",
+     "kind": "toggle",
+     "command": "references.citationStyle",
+     "args": {
+      "style": "ISO 690 (author-date)"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "references.citations-bibliography.style.iso-690-numerical",
+     "label": "ISO 690 - Numerical Reference",
+     "kind": "toggle",
+     "command": "references.citationStyle",
+     "args": {
+      "style": "ISO 690 (numerical)"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "references.citations-bibliography.style.mla",
+     "label": "MLA",
+     "kind": "toggle",
+     "command": "references.citationStyle",
+     "args": {
+      "style": "MLA"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "references.citations-bibliography.style.sist02",
+     "label": "SIST02",
+     "kind": "toggle",
+     "command": "references.citationStyle",
+     "args": {
+      "style": "SIST02"
+     },
+     "source": "upstream"
+    },
+    {
+     "id": "references.citations-bibliography.style.turabian",
+     "label": "Turabian",
+     "kind": "toggle",
+     "command": "references.citationStyle",
+     "args": {
+      "style": "Turabian"
+     },
+     "source": "upstream"
+    }
+   ]
+  },
+  "references.citations-bibliography.bibliography": {
+   "kind": "dropdown",
+   "command": "references.bibliography",
+   "note": "U:quill/references: Word's Built-In gallery drawn as pictures; Insert Bibliography inserts the list without a heading (Word). Save Selection to the gallery stays hidden.",
+   "items": [
+    {
+     "header": "Built-In"
+    },
+    {
+     "id": "references.citations-bibliography.bibliography.bibliography",
+     "label": "Bibliography",
+     "command": "references.bibliography",
+     "args": {
+      "title": "Bibliography"
+     },
+     "source": "upstream",
+     "thumb": {
+      "title": "Bibliography",
+      "lines": [
+       [
+        0,
+        "Chen, J. (2003). Citations and References.",
+        ""
+       ],
+       [
+        1,
+        "Publisher.",
+        ""
+       ],
+       [
+        0,
+        "Haas, J. (2005). Creating a Formal Publication.",
+        ""
+       ],
+       [
+        1,
+        "Boston: Proseware, Inc.",
+        ""
+       ]
+      ]
+     }
+    },
+    {
+     "id": "references.citations-bibliography.bibliography.references",
+     "label": "References",
+     "command": "references.bibliography",
+     "args": {
+      "title": "References"
+     },
+     "source": "upstream",
+     "thumb": {
+      "title": "References",
+      "lines": [
+       [
+        0,
+        "Chen, J. (2003). Citations and References.",
+        ""
+       ],
+       [
+        1,
+        "Publisher.",
+        ""
+       ],
+       [
+        0,
+        "Haas, J. (2005). Creating a Formal Publication.",
+        ""
+       ],
+       [
+        1,
+        "Boston: Proseware, Inc.",
+        ""
+       ]
+      ]
+     }
+    },
+    {
+     "id": "references.citations-bibliography.bibliography.works-cited",
+     "label": "Works Cited",
+     "command": "references.bibliography",
+     "args": {
+      "title": "Works Cited"
+     },
+     "source": "upstream",
+     "thumb": {
+      "title": "Works Cited",
+      "lines": [
+       [
+        0,
+        "Chen, J. (2003). Citations and References.",
+        ""
+       ],
+       [
+        1,
+        "Publisher.",
+        ""
+       ],
+       [
+        0,
+        "Haas, J. (2005). Creating a Formal Publication.",
+        ""
+       ],
+       [
+        1,
+        "Boston: Proseware, Inc.",
+        ""
+       ]
+      ]
+     }
+    },
+    "-",
+    {
+     "id": "references.citations-bibliography.bibliography.insert",
+     "label": "Insert Bibliography",
+     "command": "references.bibliography",
+     "args": {
+      "title": ""
+     },
+     "icon": "bibliography-insert",
+     "source": "upstream"
+    },
+    {
+     "id": "references.citations-bibliography.bibliography.save",
+     "label": "Save Selection to Bibliography Gallery…",
+     "command": null,
+     "source": "office"
+    }
+   ]
+  },
+  "references.captions.update-table": {
+   "icon": "updateTable"
+  },
+  "references.index.update-index": {
+   "icon": "updateTable"
+  },
+  "references.index.mark-entry": {
+   "shortcut": "Alt+Shift+X"
+  },
+  "references.table-of-authorities.mark-citation": {
+   "shortcut": "Alt+Shift+I",
+   "note": "U:quill/references: wordcraft citations.rs references.markCitation (a TA field for the selected citation); Word's Mark Citation dialog's categories are not upstream."
+  },
+  "references.table-of-authorities.update-table": {
+   "icon": "updateTable"
+  }
+ },
+ "dialogs": {
+  "dialog.toc": {
+   "title": "Table of Contents",
+   "command": "references.toc",
+   "note": "U:quill/references: wordcraft dialogs_refs/toc.rs toc_ui and toc_options_ui (Options… is the Build table of contents from section); drawn by src/apps/quill/dialogs/toc.tsx.",
+   "tabs": [
+    {
+     "name": "Table of Contents",
+     "fields": [
+      {
+       "id": "printPreview",
+       "label": "Print Preview",
+       "kind": "preview"
+      },
+      {
+       "id": "pageNumbers",
+       "label": "Show page numbers",
+       "kind": "checkbox"
+      },
+      {
+       "id": "rightAlign",
+       "label": "Right align page numbers",
+       "kind": "checkbox"
+      },
+      {
+       "id": "tabLeader",
+       "label": "Tab leader:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "none",
+         "label": "(none)"
+        },
+        {
+         "value": "dot",
+         "label": "........"
+        },
+        {
+         "value": "hyphen",
+         "label": "--------"
+        },
+        {
+         "value": "underscore",
+         "label": "________"
+        }
+       ]
+      },
+      {
+       "id": "hyperlinks",
+       "label": "Use hyperlinks instead of page numbers in Web view",
+       "kind": "checkbox"
+      },
+      {
+       "id": "levels",
+       "label": "Show levels:",
+       "kind": "number",
+       "min": 1,
+       "max": 9
+      },
+      {
+       "id": "headingStyles",
+       "label": "Styles",
+       "kind": "checkbox"
+      },
+      {
+       "id": "outlineLevels",
+       "label": "Outline levels",
+       "kind": "checkbox"
+      },
+      {
+       "id": "tcFields",
+       "label": "Table entry fields",
+       "kind": "checkbox"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ]
+  },
+  "dialog.updateToc": {
+   "title": "Update Table of Contents",
+   "command": "references.updateToc",
+   "note": "U:quill/references: Word's Update Table of Contents dialog (office).",
+   "tabs": [
+    {
+     "name": "Update",
+     "fields": [
+      {
+       "id": "mode",
+       "label": "Quill is updating the table of contents. Select one of the following options:",
+       "kind": "radio",
+       "options": [
+        {
+         "value": "pages",
+         "label": "Update page numbers only"
+        },
+        {
+         "value": "entire",
+         "label": "Update entire table"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ],
+   "source": "office"
+  },
+  "dialog.noteOptions": {
+   "title": "Footnote and Endnote",
+   "command": "references.noteOptions",
+   "note": "U:quill/references: wordcraft dialogs_notes.rs note_options (Location, Convert…, Format, Apply changes); drawn by src/apps/quill/dialogs/noteOptions.tsx.",
+   "tabs": [
+    {
+     "name": "Footnote and Endnote",
+     "fields": [
+      {
+       "id": "kind",
+       "label": "Location",
+       "kind": "radio",
+       "options": [
+        {
+         "value": "footnote",
+         "label": "Footnotes:"
+        },
+        {
+         "value": "endnote",
+         "label": "Endnotes:"
+        }
+       ]
+      },
+      {
+       "id": "footnotePos",
+       "label": "",
+       "kind": "select",
+       "options": [
+        {
+         "value": "pageBottom",
+         "label": "Bottom of page"
+        },
+        {
+         "value": "beneathText",
+         "label": "Below text"
+        }
+       ]
+      },
+      {
+       "id": "endnotePos",
+       "label": "",
+       "kind": "select",
+       "options": [
+        {
+         "value": "sectEnd",
+         "label": "End of section"
+        },
+        {
+         "value": "docEnd",
+         "label": "End of document"
+        }
+       ]
+      },
+      {
+       "id": "numFmt",
+       "label": "Number format:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "decimal",
+         "label": "1, 2, 3, …"
+        },
+        {
+         "value": "lowerLetter",
+         "label": "a, b, c, …"
+        },
+        {
+         "value": "upperLetter",
+         "label": "A, B, C, …"
+        },
+        {
+         "value": "lowerRoman",
+         "label": "i, ii, iii, …"
+        },
+        {
+         "value": "upperRoman",
+         "label": "I, II, III, …"
+        }
+       ]
+      },
+      {
+       "id": "customMark",
+       "label": "Custom mark:",
+       "kind": "text"
+      },
+      {
+       "id": "startAt",
+       "label": "Start at:",
+       "kind": "number",
+       "min": 1,
+       "max": 32767
+      },
+      {
+       "id": "numbering",
+       "label": "Numbering:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "continuous",
+         "label": "Continuous"
+        },
+        {
+         "value": "eachSect",
+         "label": "Restart each section"
+        },
+        {
+         "value": "eachPage",
+         "label": "Restart each page"
+        }
+       ]
+      },
+      {
+       "id": "applyTo",
+       "label": "Apply changes to:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "document",
+         "label": "Whole document"
+        },
+        {
+         "value": "section",
+         "label": "This section"
+        }
+       ]
+      },
+      {
+       "id": "convertEndnote",
+       "label": "Convert footnotes to endnotes",
+       "kind": "button",
+       "command": "references.convertNotes"
+      },
+      {
+       "id": "convertFootnote",
+       "label": "Convert endnotes to footnotes",
+       "kind": "button",
+       "command": "references.convertNotes"
+      },
+      {
+       "id": "convertSwap",
+       "label": "Swap footnotes and endnotes",
+       "kind": "button",
+       "command": "references.convertNotes"
+      },
+      {
+       "id": "applyChanges",
+       "label": "Apply",
+       "kind": "button",
+       "command": "references.noteOptions"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "Insert",
+    "Cancel"
+   ]
+  },
+  "dialog.source": {
+   "title": "Create Source",
+   "command": "references.sources",
+   "note": "U:quill/references: wordcraft dialogs_refs/sources.rs source_ui (SOURCE_TYPES with their fields, Show All Bibliography Fields, the tag made from author and year); drawn by src/apps/quill/dialogs/source.tsx.",
+   "tabs": [
+    {
+     "name": "Source",
+     "fields": [
+      {
+       "id": "kind",
+       "label": "",
+       "kind": "select",
+       "options": [
+        {
+         "value": "book",
+         "label": "Book"
+        },
+        {
+         "value": "bookSection",
+         "label": "Book Section"
+        },
+        {
+         "value": "article",
+         "label": "Journal Article"
+        },
+        {
+         "value": "periodical",
+         "label": "Article in a Periodical"
+        },
+        {
+         "value": "conference",
+         "label": "Conference Proceedings"
+        },
+        {
+         "value": "report",
+         "label": "Report"
+        },
+        {
+         "value": "website",
+         "label": "Web site"
+        },
+        {
+         "value": "film",
+         "label": "Film"
+        },
+        {
+         "value": "other",
+         "label": "Miscellaneous"
+        }
+       ]
+      },
+      {
+       "id": "author",
+       "label": "Author",
+       "kind": "text"
+      },
+      {
+       "id": "editor",
+       "label": "Editor",
+       "kind": "text"
+      },
+      {
+       "id": "title",
+       "label": "Title",
+       "kind": "text"
+      },
+      {
+       "id": "journal",
+       "label": "Container Title",
+       "kind": "text"
+      },
+      {
+       "id": "year",
+       "label": "Year",
+       "kind": "text"
+      },
+      {
+       "id": "month",
+       "label": "Month",
+       "kind": "text"
+      },
+      {
+       "id": "day",
+       "label": "Day",
+       "kind": "text"
+      },
+      {
+       "id": "city",
+       "label": "City",
+       "kind": "text"
+      },
+      {
+       "id": "publisher",
+       "label": "Publisher",
+       "kind": "text"
+      },
+      {
+       "id": "edition",
+       "label": "Edition",
+       "kind": "text"
+      },
+      {
+       "id": "volume",
+       "label": "Volume",
+       "kind": "text"
+      },
+      {
+       "id": "issue",
+       "label": "Issue",
+       "kind": "text"
+      },
+      {
+       "id": "pages",
+       "label": "Pages",
+       "kind": "text"
+      },
+      {
+       "id": "url",
+       "label": "URL",
+       "kind": "text"
+      },
+      {
+       "id": "doi",
+       "label": "DOI",
+       "kind": "text"
+      },
+      {
+       "id": "accessed",
+       "label": "Accessed on",
+       "kind": "text"
+      },
+      {
+       "id": "showAll",
+       "label": "Show All Bibliography Fields",
+       "kind": "checkbox"
+      },
+      {
+       "id": "tag",
+       "label": "Tag name",
+       "kind": "text"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ]
+  },
+  "dialog.placeholder": {
+   "title": "Placeholder Name",
+   "command": "references.citation",
+   "note": "U:quill/references: Word's Add New Placeholder… (office): a citation of a source that only has its tag.",
+   "tabs": [
+    {
+     "name": "Placeholder",
+     "fields": [
+      {
+       "id": "name",
+       "label": "Type the tag name of the source. You can add more information to this source later by clicking Edit in the placeholder menu.",
+       "kind": "text"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ],
+   "source": "office"
+  },
+  "dialog.sourceManager": {
+   "title": "Source Manager",
+   "command": "references.sources",
+   "note": "U:quill/references: wordcraft dialogs_refs/sources.rs sources_ui (New…, Import…, Edit…, Delete, Insert Citation) with Word's preview of the selected source; the master list is Word's and stays out; drawn by src/apps/quill/dialogs/sourceManager.tsx.",
+   "tabs": [
+    {
+     "name": "Sources",
+     "fields": [
+      {
+       "id": "list",
+       "label": "Current List",
+       "kind": "list"
+      },
+      {
+       "id": "preview",
+       "label": "Preview (APA):",
+       "kind": "preview"
+      },
+      {
+       "id": "delete",
+       "label": "Delete",
+       "kind": "button",
+       "command": "references.sources"
+      },
+      {
+       "id": "insertCitation",
+       "label": "Insert Citation",
+       "kind": "button",
+       "command": "references.citation"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "Close"
+   ]
+  },
+  "dialog.caption": {
+   "title": "Caption",
+   "command": "references.caption",
+   "note": "U:quill/references: wordcraft dialogs_refs/caption.rs caption_ui, numbering_ui and new_label_ui; drawn by src/apps/quill/dialogs/caption.tsx.",
+   "tabs": [
+    {
+     "name": "Caption",
+     "fields": [
+      {
+       "id": "text",
+       "label": "Caption:",
+       "kind": "text"
+      },
+      {
+       "id": "label",
+       "label": "Label:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "Equation",
+         "label": "Equation"
+        },
+        {
+         "value": "Figure",
+         "label": "Figure"
+        },
+        {
+         "value": "Table",
+         "label": "Table"
+        }
+       ]
+      },
+      {
+       "id": "position",
+       "label": "Position:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "below",
+         "label": "Below selected item"
+        },
+        {
+         "value": "above",
+         "label": "Above selected item"
+        }
+       ]
+      },
+      {
+       "id": "excludeLabel",
+       "label": "Exclude label from caption",
+       "kind": "checkbox"
+      },
+      {
+       "id": "format",
+       "label": "Format:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "ARABIC",
+         "label": "1, 2, 3, …"
+        },
+        {
+         "value": "alphabetic",
+         "label": "a, b, c, …"
+        },
+        {
+         "value": "ALPHABETIC",
+         "label": "A, B, C, …"
+        },
+        {
+         "value": "roman",
+         "label": "i, ii, iii, …"
+        },
+        {
+         "value": "ROMAN",
+         "label": "I, II, III, …"
+        }
+       ]
+      },
+      {
+       "id": "chapter",
+       "label": "Include chapter number",
+       "kind": "checkbox"
+      },
+      {
+       "id": "chapterLevel",
+       "label": "Chapter starts with style:",
+       "kind": "select",
+       "options": [
+        {
+         "value": 1,
+         "label": "Heading 1"
+        },
+        {
+         "value": 2,
+         "label": "Heading 2"
+        },
+        {
+         "value": 3,
+         "label": "Heading 3"
+        },
+        {
+         "value": 4,
+         "label": "Heading 4"
+        },
+        {
+         "value": 5,
+         "label": "Heading 5"
+        },
+        {
+         "value": 6,
+         "label": "Heading 6"
+        },
+        {
+         "value": 7,
+         "label": "Heading 7"
+        },
+        {
+         "value": 8,
+         "label": "Heading 8"
+        },
+        {
+         "value": 9,
+         "label": "Heading 9"
+        }
+       ]
+      },
+      {
+       "id": "separator",
+       "label": "Use separator:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "-",
+         "label": "- (hyphen)"
+        },
+        {
+         "value": ".",
+         "label": ". (period)"
+        },
+        {
+         "value": ":",
+         "label": ": (colon)"
+        },
+        {
+         "value": "—",
+         "label": "— (em dash)"
+        },
+        {
+         "value": "–",
+         "label": "– (en dash)"
+        }
+       ]
+      },
+      {
+       "id": "newLabel",
+       "label": "Label:",
+       "kind": "text"
+      },
+      {
+       "id": "addLabel",
+       "label": "New Label…",
+       "kind": "button",
+       "command": "references.captionLabels"
+      },
+      {
+       "id": "deleteLabel",
+       "label": "Delete Label",
+       "kind": "button",
+       "command": "references.captionLabels"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ]
+  },
+  "dialog.tableOfFigures": {
+   "title": "Table of Figures",
+   "command": "references.tableOfFigures",
+   "note": "U:quill/references: wordcraft dialogs_refs/toc.rs figures_ui; drawn by src/apps/quill/dialogs/tableOfFigures.tsx.",
+   "tabs": [
+    {
+     "name": "Table of Figures",
+     "fields": [
+      {
+       "id": "preview",
+       "label": "Print Preview",
+       "kind": "preview"
+      },
+      {
+       "id": "pageNumbers",
+       "label": "Show page numbers",
+       "kind": "checkbox"
+      },
+      {
+       "id": "rightAlign",
+       "label": "Right align page numbers",
+       "kind": "checkbox"
+      },
+      {
+       "id": "tabLeader",
+       "label": "Tab leader:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "none",
+         "label": "(none)"
+        },
+        {
+         "value": "dot",
+         "label": "........"
+        },
+        {
+         "value": "hyphen",
+         "label": "--------"
+        },
+        {
+         "value": "underscore",
+         "label": "________"
+        }
+       ]
+      },
+      {
+       "id": "label",
+       "label": "Caption label:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "Equation",
+         "label": "Equation"
+        },
+        {
+         "value": "Figure",
+         "label": "Figure"
+        },
+        {
+         "value": "Table",
+         "label": "Table"
+        }
+       ]
+      },
+      {
+       "id": "includeLabel",
+       "label": "Include label and number",
+       "kind": "checkbox"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ]
+  },
+  "dialog.crossReference": {
+   "title": "Cross-reference",
+   "command": "insert.crossReference",
+   "note": "U:quill/references: wordcraft dialogs_refs/cross_ref.rs with Word's Insert as hyperlink; drawn by src/apps/quill/dialogs/crossReference.tsx.",
+   "tabs": [
+    {
+     "name": "Cross-reference",
+     "fields": [
+      {
+       "id": "to",
+       "label": "Reference type:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "heading",
+         "label": "Heading"
+        },
+        {
+         "value": "bookmark",
+         "label": "Bookmark"
+        },
+        {
+         "value": "equation",
+         "label": "Equation"
+        },
+        {
+         "value": "figure",
+         "label": "Figure"
+        },
+        {
+         "value": "table",
+         "label": "Table"
+        }
+       ]
+      },
+      {
+       "id": "show",
+       "label": "Insert reference to:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "text",
+         "label": "Heading text"
+        },
+        {
+         "value": "page",
+         "label": "Page number"
+        },
+        {
+         "value": "number",
+         "label": "Only label and number"
+        },
+        {
+         "value": "aboveBelow",
+         "label": "Above/below"
+        }
+       ]
+      },
+      {
+       "id": "hyperlink",
+       "label": "Insert as hyperlink",
+       "kind": "checkbox"
+      },
+      {
+       "id": "target",
+       "label": "",
+       "kind": "list"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "Insert",
+    "Cancel"
+   ]
+  },
+  "dialog.markEntry": {
+   "title": "Mark Index Entry",
+   "command": "references.markEntry",
+   "note": "U:quill/references: wordcraft dialogs_refs/index.rs mark_entry_ui; Mark All marks every paragraph's first whole-word match; drawn by src/apps/quill/dialogs/markEntry.tsx.",
+   "tabs": [
+    {
+     "name": "Mark Index Entry",
+     "fields": [
+      {
+       "id": "entry",
+       "label": "Main entry:",
+       "kind": "text"
+      },
+      {
+       "id": "subentry",
+       "label": "Subentry:",
+       "kind": "text"
+      },
+      {
+       "id": "option",
+       "label": "",
+       "kind": "radio",
+       "options": [
+        {
+         "value": "see",
+         "label": "Cross-reference:"
+        },
+        {
+         "value": "page",
+         "label": "Current page"
+        },
+        {
+         "value": "range",
+         "label": "Page range"
+        }
+       ]
+      },
+      {
+       "id": "crossReference",
+       "label": "Cross-reference",
+       "kind": "text"
+      },
+      {
+       "id": "bookmark",
+       "label": "Bookmark:",
+       "kind": "select",
+       "options": []
+      },
+      {
+       "id": "bold",
+       "label": "Bold",
+       "kind": "checkbox"
+      },
+      {
+       "id": "italic",
+       "label": "Italic",
+       "kind": "checkbox"
+      },
+      {
+       "id": "markAll",
+       "label": "Mark All",
+       "kind": "button",
+       "command": "references.markEntry"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "Mark",
+    "Cancel"
+   ]
+  },
+  "dialog.index": {
+   "title": "Index",
+   "command": "references.index",
+   "note": "U:quill/references: wordcraft dialogs_refs/index.rs index_ui; drawn by src/apps/quill/dialogs/index.tsx.",
+   "tabs": [
+    {
+     "name": "Index",
+     "fields": [
+      {
+       "id": "preview",
+       "label": "Print Preview",
+       "kind": "preview"
+      },
+      {
+       "id": "type",
+       "label": "Type:",
+       "kind": "radio",
+       "options": [
+        {
+         "value": "indented",
+         "label": "Indented"
+        },
+        {
+         "value": "runIn",
+         "label": "Run-in"
+        }
+       ]
+      },
+      {
+       "id": "columns",
+       "label": "Columns:",
+       "kind": "number",
+       "min": 1,
+       "max": 4
+      },
+      {
+       "id": "rightAlign",
+       "label": "Right align page numbers",
+       "kind": "checkbox"
+      },
+      {
+       "id": "tabLeader",
+       "label": "Tab leader:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "none",
+         "label": "(none)"
+        },
+        {
+         "value": "dot",
+         "label": "........"
+        },
+        {
+         "value": "hyphen",
+         "label": "--------"
+        },
+        {
+         "value": "underscore",
+         "label": "________"
+        }
+       ]
+      },
+      {
+       "id": "headings",
+       "label": "Letter headings",
+       "kind": "checkbox"
+      },
+      {
+       "id": "markEntry",
+       "label": "Mark Entry…",
+       "kind": "button",
+       "dialog": "dialog.markEntry"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ]
+  },
+  "dialog.fieldCode": {
+   "title": "Edit Field",
+   "command": "fields.setCode",
+   "note": "U:quill/references: wordcraft fields.rs set_code; the selected field's code, updated on OK.",
+   "tabs": [
+    {
+     "name": "Field codes",
+     "fields": [
+      {
+       "id": "code",
+       "label": "Field codes:",
+       "kind": "text"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ]
+  }
+ }
+}

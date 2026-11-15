@@ -1,0 +1,110 @@
+{
+  "tab": "smart-art-design",
+  "keytip": "JS",
+  "source": "deckcraft crates/ui-egui/src/ribbon/smartart.rs (smartart_design), arrange.rs (arrange_group) @ f893f6af7d36a5409fd804e81a34fd895cfefedf; Add Bullet, Right to Left, Move Up/Down, Layout and Reset Graphic placed as PowerPoint",
+  "groups": {
+    "create-graphic": {
+      "collapseOrder": 5,
+      "collapsedIcon": "text-pane",
+      "layout": [
+        {
+          "large": "smartart.create.text-pane"
+        },
+        {
+          "stack": [
+            "smartart.create.add-shape",
+            "smartart.create.promote",
+            "smartart.create.demote"
+          ]
+        },
+        {
+          "stack": [
+            "smartart.create.insert-picture",
+            "smartart.create.add-bullet",
+            "smartart.create.rtl"
+          ]
+        },
+        {
+          "stack": [
+            "smartart.create.move-up",
+            "smartart.create.move-down",
+            "smartart.create.layout"
+          ]
+        }
+      ]
+    },
+    "layouts": {
+      "collapseOrder": 3,
+      "collapsedIcon": "smartart-layouts",
+      "layout": [
+        {
+          "stack": [
+            "smartart.layouts.gallery"
+          ]
+        }
+      ]
+    },
+    "smart-art-styles": {
+      "collapseOrder": 2,
+      "collapsedIcon": "palette",
+      "layout": [
+        {
+          "stack": [
+            "smartart.styles.colors",
+            "smartart.styles.gallery"
+          ]
+        }
+      ]
+    },
+    "reset": {
+      "collapseOrder": 1,
+      "collapsedIcon": "convert",
+      "layout": [
+        {
+          "stack": [
+            "smartart.reset.reset",
+            "smartart.reset.convert"
+          ]
+        }
+      ]
+    },
+    "arrange": {
+      "collapseOrder": 4,
+      "collapsedIcon": "bring-forward",
+      "layout": [
+        {
+          "large": "smartart.arrange.bring-forward"
+        },
+        {
+          "large": "smartart.arrange.send-backward"
+        },
+        {
+          "large": "smartart.arrange.selection-pane"
+        },
+        {
+          "large": "smartart.arrange.align"
+        },
+        {
+          "stack": [
+            "smartart.arrange.group",
+            "smartart.arrange.rotate"
+          ]
+        }
+      ]
+    }
+  },
+  "keytips": {
+    "smartart.create.add-shape": "AS",
+    "smartart.create.add-bullet": "AB",
+    "smartart.create.text-pane": "X",
+    "smartart.create.promote": "P",
+    "smartart.create.demote": "D",
+    "smartart.create.rtl": "RL",
+    "smartart.create.move-up": "MU",
+    "smartart.create.move-down": "MD",
+    "smartart.create.layout": "L",
+    "smartart.styles.colors": "C",
+    "smartart.reset.reset": "G",
+    "smartart.reset.convert": "V"
+  }
+}

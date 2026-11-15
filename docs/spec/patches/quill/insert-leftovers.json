@@ -1,0 +1,581 @@
+{
+ "controls": {
+  "insert.text.quick-parts": {
+   "note": "U:quill/insert: insert.quickParts (wordcraft tools/actions.rs quick_parts): the building blocks kept (the person's, in the settings, and the document's), AutoText, Document Property, Field…, Save Selection and the Building Blocks Organizer. Checked against wordcraft 0.13.1 (f2dfa0d); Save Selection and the Organizer are Word's boxes over upstream's save / insert / delete.",
+   "items": [
+    {
+     "id": "insert.text.quick-parts.gallery",
+     "label": "Saved Quick Parts",
+     "kind": "list",
+     "command": "insert.quickParts",
+     "args": {
+      "insert": "<block>"
+     },
+     "dynamic": true,
+     "source": "upstream"
+    },
+    {
+     "id": "insert.text.quick-parts.auto-text",
+     "label": "AutoText",
+     "kind": "dropdown",
+     "command": null,
+     "source": "office",
+     "items": [
+      {
+       "id": "insert.text.quick-parts.auto-text.gallery",
+       "label": "Saved AutoText",
+       "kind": "list",
+       "command": "insert.autoText",
+       "args": {
+        "insert": "<block>"
+       },
+       "dynamic": true,
+       "source": "office"
+      },
+      {
+       "id": "insert.text.quick-parts.auto-text.save",
+       "label": "Save Selection as AutoText…",
+       "kind": "button",
+       "command": "insert.autoText",
+       "dialog": "dialog.newBuildingBlock",
+       "source": "office"
+      }
+     ]
+    },
+    {
+     "id": "insert.text.quick-parts.document-property",
+     "label": "Document Property",
+     "kind": "dropdown",
+     "command": null,
+     "icon": "document-info",
+     "source": "office",
+     "items": [
+      {
+       "id": "insert.text.quick-parts.document-property.author",
+       "label": "Author",
+       "kind": "button",
+       "command": "insert.docProperty",
+       "args": {
+        "name": "Author"
+       },
+       "source": "office"
+      },
+      {
+       "id": "insert.text.quick-parts.document-property.comments",
+       "label": "Comments",
+       "kind": "button",
+       "command": "insert.docProperty",
+       "args": {
+        "name": "Comments"
+       },
+       "source": "office"
+      },
+      {
+       "id": "insert.text.quick-parts.document-property.category",
+       "label": "Category",
+       "kind": "button",
+       "command": "insert.docProperty",
+       "args": {
+        "name": "Category"
+       },
+       "source": "office"
+      },
+      {
+       "id": "insert.text.quick-parts.document-property.keywords",
+       "label": "Keywords",
+       "kind": "button",
+       "command": "insert.docProperty",
+       "args": {
+        "name": "Keywords"
+       },
+       "source": "office"
+      },
+      {
+       "id": "insert.text.quick-parts.document-property.subject",
+       "label": "Subject",
+       "kind": "button",
+       "command": "insert.docProperty",
+       "args": {
+        "name": "Subject"
+       },
+       "source": "office"
+      },
+      {
+       "id": "insert.text.quick-parts.document-property.title",
+       "label": "Title",
+       "kind": "button",
+       "command": "insert.docProperty",
+       "args": {
+        "name": "Title"
+       },
+       "source": "office"
+      }
+     ]
+    },
+    {
+     "id": "insert.text.quick-parts.field",
+     "label": "Field…",
+     "kind": "button",
+     "command": "insert.field",
+     "dialog": "dialog.field",
+     "icon": "text-field",
+     "source": "upstream"
+    },
+    {
+     "id": "insert.text.quick-parts.save-selection",
+     "label": "Save Selection as Quick Part…",
+     "kind": "button",
+     "command": "insert.quickParts",
+     "dialog": "dialog.newBuildingBlock",
+     "source": "office"
+    },
+    {
+     "id": "insert.text.quick-parts.building-blocks-organizer",
+     "label": "Building Blocks Organizer…",
+     "kind": "button",
+     "command": "insert.quickParts",
+     "dialog": "dialog.buildingBlocks",
+     "source": "office"
+    }
+   ]
+  },
+  "header-footer.insert.quick-parts": {
+   "note": "U:quill/header-footer: the same Quick Parts menu as Insert (insert.quickParts).",
+   "items": [
+    {
+     "id": "header-footer.insert.quick-parts.gallery",
+     "label": "Saved Quick Parts",
+     "kind": "list",
+     "command": "insert.quickParts",
+     "args": {
+      "insert": "<block>"
+     },
+     "dynamic": true,
+     "source": "upstream"
+    },
+    {
+     "id": "header-footer.insert.quick-parts.auto-text",
+     "label": "AutoText",
+     "kind": "dropdown",
+     "command": null,
+     "source": "office",
+     "items": [
+      {
+       "id": "header-footer.insert.quick-parts.auto-text.gallery",
+       "label": "Saved AutoText",
+       "kind": "list",
+       "command": "insert.autoText",
+       "args": {
+        "insert": "<block>"
+       },
+       "dynamic": true,
+       "source": "office"
+      },
+      {
+       "id": "header-footer.insert.quick-parts.auto-text.save",
+       "label": "Save Selection as AutoText…",
+       "kind": "button",
+       "command": "insert.autoText",
+       "dialog": "dialog.newBuildingBlock",
+       "source": "office"
+      }
+     ]
+    },
+    {
+     "id": "header-footer.insert.quick-parts.document-property",
+     "label": "Document Property",
+     "kind": "dropdown",
+     "command": null,
+     "icon": "document-info",
+     "source": "office",
+     "items": [
+      {
+       "id": "header-footer.insert.quick-parts.document-property.author",
+       "label": "Author",
+       "kind": "button",
+       "command": "insert.docProperty",
+       "args": {
+        "name": "Author"
+       },
+       "source": "office"
+      },
+      {
+       "id": "header-footer.insert.quick-parts.document-property.comments",
+       "label": "Comments",
+       "kind": "button",
+       "command": "insert.docProperty",
+       "args": {
+        "name": "Comments"
+       },
+       "source": "office"
+      },
+      {
+       "id": "header-footer.insert.quick-parts.document-property.category",
+       "label": "Category",
+       "kind": "button",
+       "command": "insert.docProperty",
+       "args": {
+        "name": "Category"
+       },
+       "source": "office"
+      },
+      {
+       "id": "header-footer.insert.quick-parts.document-property.keywords",
+       "label": "Keywords",
+       "kind": "button",
+       "command": "insert.docProperty",
+       "args": {
+        "name": "Keywords"
+       },
+       "source": "office"
+      },
+      {
+       "id": "header-footer.insert.quick-parts.document-property.subject",
+       "label": "Subject",
+       "kind": "button",
+       "command": "insert.docProperty",
+       "args": {
+        "name": "Subject"
+       },
+       "source": "office"
+      },
+      {
+       "id": "header-footer.insert.quick-parts.document-property.title",
+       "label": "Title",
+       "kind": "button",
+       "command": "insert.docProperty",
+       "args": {
+        "name": "Title"
+       },
+       "source": "office"
+      }
+     ]
+    },
+    {
+     "id": "header-footer.insert.quick-parts.field",
+     "label": "Field…",
+     "kind": "button",
+     "command": "insert.field",
+     "dialog": "dialog.field",
+     "icon": "text-field",
+     "source": "upstream"
+    },
+    {
+     "id": "header-footer.insert.quick-parts.save-selection",
+     "label": "Save Selection as Quick Part…",
+     "kind": "button",
+     "command": "insert.quickParts",
+     "dialog": "dialog.newBuildingBlock",
+     "source": "office"
+    },
+    {
+     "id": "header-footer.insert.quick-parts.building-blocks-organizer",
+     "label": "Building Blocks Organizer…",
+     "kind": "button",
+     "command": "insert.quickParts",
+     "dialog": "dialog.buildingBlocks",
+     "source": "office"
+    }
+   ]
+  },
+  "header-footer.insert.document-info.document-property": {
+   "command": null,
+   "kind": "dropdown",
+   "items": [
+    {
+     "id": "header-footer.insert.document-info.document-property.author",
+     "label": "Author",
+     "kind": "button",
+     "command": "insert.docProperty",
+     "args": {
+      "name": "Author"
+     },
+     "source": "office"
+    },
+    {
+     "id": "header-footer.insert.document-info.document-property.comments",
+     "label": "Comments",
+     "kind": "button",
+     "command": "insert.docProperty",
+     "args": {
+      "name": "Comments"
+     },
+     "source": "office"
+    },
+    {
+     "id": "header-footer.insert.document-info.document-property.category",
+     "label": "Category",
+     "kind": "button",
+     "command": "insert.docProperty",
+     "args": {
+      "name": "Category"
+     },
+     "source": "office"
+    },
+    {
+     "id": "header-footer.insert.document-info.document-property.keywords",
+     "label": "Keywords",
+     "kind": "button",
+     "command": "insert.docProperty",
+     "args": {
+      "name": "Keywords"
+     },
+     "source": "office"
+    },
+    {
+     "id": "header-footer.insert.document-info.document-property.subject",
+     "label": "Subject",
+     "kind": "button",
+     "command": "insert.docProperty",
+     "args": {
+      "name": "Subject"
+     },
+     "source": "office"
+    },
+    {
+     "id": "header-footer.insert.document-info.document-property.title",
+     "label": "Title",
+     "kind": "button",
+     "command": "insert.docProperty",
+     "args": {
+      "name": "Title"
+     },
+     "source": "office"
+    }
+   ]
+  },
+  "insert.tables.table.excel-spreadsheet": {
+   "command": null,
+   "note": "U:quill/insert: Excel Spreadsheet embeds a live workbook (no engine upstream; insert.spreadsheet there only builds a table from CSV text). Hidden."
+  },
+  "insert.text.signature-line": {
+   "note": "U:quill/insert: insert.signatureLine (wordcraft tools/specs.rs): an \"X ____\" line with the signer and title below it."
+  },
+  "insert.text.signature-line.microsoft-office-signature-line": {
+   "note": "U:quill/insert: the line only (no Office signing services upstream); opens no dialog."
+  },
+  "insert.text.object": {
+   "note": "U:quill/insert: insert.object and insert.textFromFile (wordcraft): the text of a file in place of the selection; no embedded OLE objects."
+  },
+  "insert.illustrations.3d-models": {
+   "note": "U:quill/insert: 3D Models: no engine upstream; hidden."
+  },
+  "insert.illustrations.smartart": {
+   "note": "U:quill/smartart: insert.smartArt opens Choose a SmartArt Graphic (all 45 layouts drawn as thumbnails, by category: PowerPoint's engine and dialog body); the graphic is edited on the SmartArt Design tab and saved to .docx as Word's diagram parts (data, layout, quick style, colours, drawing)."
+  },
+  "insert.illustrations.screenshot": {
+   "note": "U:quill/insert: Screenshot: no engine upstream (and capturing the screen is not offered); hidden."
+  },
+  "insert.add-ins.get-add-ins": {
+   "note": "U:quill/insert: Get Add-ins: no add-in store or host upstream (catalogued with no engine); hidden."
+  },
+  "insert.add-ins.my-add-ins": {
+   "note": "U:quill/insert: My Add-ins: no add-in host; hidden."
+  },
+  "insert.add-ins.wikipedia": {
+   "note": "U:quill/insert: Wikipedia add-in: no add-in host; hidden."
+  },
+  "insert.media.online-video": {
+   "note": "U:quill/insert: Online Video: no engine upstream; hidden."
+  },
+  "header-footer.insert.online-pictures": {
+   "note": "U:quill/insert: Online Pictures: no engine upstream; hidden."
+  },
+  "header-footer.options.show-document-text": {
+   "note": "U:quill/insert: Show Document Text: no engine upstream (the page view always shows the body while a header is edited); hidden."
+  },
+  "header-footer.position.insert-alignment-tab": {
+   "note": "U:quill/insert: Insert Alignment Tab: not upstream (the header and footer presets use tab stops); hidden."
+  },
+  "header-footer.position.header-from-top": {
+   "command": "hf.headerFromTop",
+   "args": {
+    "header": null,
+    "distance": "<pt>"
+   },
+   "step": 3.6,
+   "decimals": 1,
+   "note": "U:quill/header-footer: hf.position (wordcraft tools/specs.rs) through hf.headerFromTop, which also shows the section's distance; points, 0 to 300."
+  },
+  "header-footer.position.footer-from-bottom": {
+   "command": "hf.footerFromBottom",
+   "args": {
+    "footer": null,
+    "distance": "<pt>"
+   },
+   "step": 3.6,
+   "decimals": 1,
+   "note": "U:quill/header-footer: hf.position (wordcraft tools/specs.rs) through hf.footerFromBottom, which also shows the section's distance; points, 0 to 300."
+  },
+  "header-footer.navigation.link-to-previous": {
+   "note": "U:quill/header-footer: layout.linkToPrevious (wordcraft tools/specs.rs): the section's headers (and footers) are the previous section's again."
+  }
+ },
+ "dialogs": {
+  "dialog.newBuildingBlock": {
+   "title": "Create New Building Block",
+   "command": "insert.quickParts",
+   "note": "U:quill/insert: Word's Create New Building Block over insert.quickParts / insert.autoText `save` (the name, gallery, category, description and where it is kept). Word's Options (insert content only, in its own paragraph or page) are not kept.",
+   "tabs": [
+    {
+     "name": "Create New Building Block",
+     "fields": [
+      {
+       "id": "name",
+       "label": "Name:",
+       "kind": "text"
+      },
+      {
+       "id": "gallery",
+       "label": "Gallery:",
+       "kind": "select",
+       "options": [
+        "Quick Parts",
+        "AutoText"
+       ]
+      },
+      {
+       "id": "category",
+       "label": "Category:",
+       "kind": "text"
+      },
+      {
+       "id": "description",
+       "label": "Description:",
+       "kind": "textarea"
+      },
+      {
+       "id": "location",
+       "label": "Save in:",
+       "kind": "select",
+       "options": [
+        "Settings (all documents)",
+        "This document"
+       ]
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ]
+  },
+  "dialog.buildingBlocks": {
+   "title": "Building Blocks Organizer",
+   "command": "insert.quickParts",
+   "note": "U:quill/insert: Word's Building Blocks Organizer over insert.quickParts (insert, delete) and insert.buildingBlockProperties (Edit Properties…); a table that sorts by Name, Gallery, Category or Template, with a preview and the description; drawn by src/apps/quill/dialogs/buildingBlocks.tsx.",
+   "tabs": [
+    {
+     "name": "Building Blocks",
+     "fields": [
+      {
+       "id": "name",
+       "label": "Building block:",
+       "kind": "text"
+      },
+      {
+       "id": "list",
+       "label": "Building blocks:",
+       "kind": "list"
+      },
+      {
+       "id": "delete",
+       "label": "Delete",
+       "kind": "button"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "Insert",
+    "Close"
+   ]
+  },
+  "dialog.modifyBuildingBlock": {
+   "title": "Modify Building Block",
+   "command": "insert.buildingBlockProperties",
+   "note": "U:quill/insert: Word's Modify Building Block (the Organizer's Edit Properties…): the fields of Create New Building Block over insert.buildingBlockProperties.",
+   "tabs": [
+    {
+     "name": "Modify Building Block",
+     "fields": [
+      {
+       "id": "name",
+       "label": "Name:",
+       "kind": "text"
+      },
+      {
+       "id": "gallery",
+       "label": "Gallery:",
+       "kind": "select",
+       "options": [
+        "Quick Parts",
+        "AutoText"
+       ]
+      },
+      {
+       "id": "category",
+       "label": "Category:",
+       "kind": "text"
+      },
+      {
+       "id": "description",
+       "label": "Description:",
+       "kind": "textarea"
+      },
+      {
+       "id": "location",
+       "label": "Save in:",
+       "kind": "select",
+       "options": [
+        "Settings (all documents)",
+        "This document"
+       ]
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ]
+  },
+  "dialog.icons": {
+   "title": "Icons",
+   "command": "insert.icon",
+   "note": "U:quill/insert: the icon picker (wordcraft ui-egui dialogs/bookmarks.rs icons_body) over insert.icon and the library translated from wordcraft_render::icon_lib; drawn by src/apps/quill/dialogs/icons.tsx.",
+   "tabs": [
+    {
+     "name": "Icons",
+     "fields": [
+      {
+       "id": "query",
+       "label": "Search icons",
+       "kind": "text"
+      },
+      {
+       "id": "category",
+       "label": "All / categories",
+       "kind": "list"
+      },
+      {
+       "id": "selected",
+       "label": "Icon",
+       "kind": "text"
+      },
+      {
+       "id": "grid",
+       "label": "icon grid",
+       "kind": "list"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "Insert",
+    "Cancel"
+   ]
+  }
+ }
+}

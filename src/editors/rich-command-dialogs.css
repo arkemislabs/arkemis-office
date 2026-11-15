@@ -1,0 +1,50 @@
+body .rich-command-dialog {width:560px}
+body .rich-command-dialog>p {margin:0 0 18px;font-size:12px;line-height:1.6}
+body .rich-command-dialog fieldset {margin:16px 0;padding:12px 0 0;border:0;border-top:1px solid #ffffff18;border-radius:0;min-width:0}
+body .rich-command-dialog legend {font-size:12px;font-weight:600;padding:0 9px 0 0;color:#e2e3e9}
+body .rich-command-dialog .rich-dialog-fields {display:grid;grid-template-columns:1fr 1fr;gap:10px 18px}
+body .rich-command-dialog label {margin:0;gap:5px;font-size:12px;min-width:0}
+body .rich-command-dialog .rich-dialog-unit {display:flex;align-items:center;gap:8px;min-width:0}
+body .rich-command-dialog .rich-dialog-unit input {width:100%;min-width:0}
+body .rich-command-dialog .rich-dialog-unit>span {min-width:26px;font-size:11px;color:#aeb1bd}
+body .rich-command-dialog input:is([type=radio],[type=checkbox]) {width:14px;height:14px;padding:0;flex:none;box-shadow:none}
+body .rich-command-dialog .rich-dialog-check {display:flex;flex-direction:row;align-items:center;gap:8px;margin:16px 0}
+body .rich-command-dialog .rich-dialog-preview {margin-top:18px;border-top:1px solid #ffffff18;padding-top:12px}
+body .rich-command-dialog .rich-dialog-preview>small,body .rich-command-dialog .rich-paste-preview>small {display:block;margin-bottom:8px;font-size:11px}
+body .rich-command-dialog .rich-dialog-preview>div {font:13px/1.6 Georgia,serif;color:#dce0e9;min-height:50px;max-height:90px;overflow:hidden}
+body .rich-command-dialog .rich-table-preview>div {display:grid;gap:1px;max-width:320px;margin:16px auto 10px;border:1px solid #b8bdcc55;background:#aeb4c94d}
+body .rich-command-dialog .rich-table-preview span {height:18px;background:#32343d}
+body .rich-command-dialog .rich-table-preview .is-header {background:#73839f}
+body .rich-command-dialog .rich-table-preview>small {display:block;text-align:center;font-size:11px}
+body .rich-command-dialog .rich-paste-options>label {display:flex;flex-direction:row;align-items:flex-start;gap:10px;padding:12px 0;border-bottom:1px solid #ffffff10}
+body .rich-command-dialog .rich-paste-options input {margin-top:3px}
+body .rich-command-dialog .rich-paste-options strong {font-size:13px;font-weight:500}
+body .rich-command-dialog .rich-paste-options small {display:block;margin-top:4px;font-size:11px}
+body .rich-command-dialog .rich-clipboard-source {display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:11px}
+body .rich-command-dialog .rich-paste-preview {margin-top:16px;border-top:1px solid #ffffff18;padding-top:12px}
+body .rich-command-dialog .rich-paste-preview pre {font:12px/1.6 var(--ark-font);white-space:pre-wrap;overflow-wrap:anywhere;max-height:130px;overflow:auto;color:#c9ccd6}
+body .rich-command-dialog [role=alert] {color:#ffb9b4}
+@media(max-width:480px){body .rich-command-dialog .rich-dialog-fields {grid-template-columns:1fr}}
+@media print{.rich-command-dialog{display:none!important}}
+/* Keep the decision controls reachable while long paragraph settings scroll. */
+body .rich-command-dialog {scroll-padding-bottom:88px}
+body .rich-command-dialog form>footer {
+  position:sticky;
+  bottom:-24px;
+  z-index:2;
+  margin:18px -24px -24px;
+  padding:14px 24px;
+  background:rgba(36,37,42,.96);
+  backdrop-filter:blur(18px) saturate(135%);
+  -webkit-backdrop-filter:blur(18px) saturate(135%);
+  box-shadow:0 -8px 18px rgba(20,21,25,.12);
+}
+@media(max-width:600px) {
+  body .rich-command-dialog form>footer {bottom:-18px;margin-inline:-18px;margin-bottom:-18px;padding-inline:18px}
+}
+@media(prefers-contrast:more) {
+  body .rich-command-dialog form>footer {background:#222329;backdrop-filter:none}
+}
+@media(forced-colors:active) {
+  body .rich-command-dialog form>footer {background:Canvas;box-shadow:none;backdrop-filter:none}
+}

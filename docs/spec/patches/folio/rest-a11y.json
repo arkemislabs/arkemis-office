@@ -1,0 +1,425 @@
+{
+ "controls": {
+  "alltools.accessibility.automatically-tag-pdf": {
+   "command": "a11y.autotag",
+   "note": "printcraft crates/a11y and crates/ui-egui/src/workflows/a11y_ui.rs at 8f16855 (commands/a11y.mjs). Text-only pages; says what stops it otherwise."
+  },
+  "alltools.accessibility.tag-form-fields": {
+   "command": "a11y.autotag_fields",
+   "note": "printcraft crates/a11y and crates/ui-egui/src/workflows/a11y_ui.rs at 8f16855 (commands/a11y.mjs)."
+  },
+  "alltools.accessibility.change-reading-options": {
+   "command": "a11y.reading_options",
+   "dialog": null,
+   "note": "Upstream opens Document Properties on its Advanced tab; here the Reading Options dialog sets the language, title, title bar and tab order. Not checked against upstream."
+  },
+  "alltools.accessibility.check-for-accessibility": {
+   "command": "a11y.check",
+   "dialog": null,
+   "note": "printcraft crates/a11y and crates/ui-egui/src/workflows/a11y_ui.rs at 8f16855 (commands/a11y.mjs). The options dialog, then the Accessibility Checker panel."
+  },
+  "alltools.accessibility.find-untagged-content": {
+   "command": "a11y.find_untagged",
+   "note": "printcraft crates/a11y and crates/ui-egui/src/workflows/a11y_ui.rs at 8f16855 (commands/a11y.mjs)."
+  },
+  "alltools.accessibility.open-accessibility-report": {
+   "command": "a11y.report",
+   "note": "printcraft crates/a11y and crates/ui-egui/src/workflows/a11y_ui.rs at 8f16855 (commands/a11y.mjs). Saves the HTML report."
+  },
+  "alltools.accessibility.add-alternate-text": {
+   "command": "a11y.alt_text",
+   "dialog": null,
+   "note": "printcraft crates/a11y and crates/ui-egui/src/workflows/a11y_ui.rs at 8f16855 (commands/a11y.mjs). Set Alternate Text, figure by figure (no picture of the figure is drawn)."
+  },
+  "alltools.accessibility.fix-reading-order": {
+   "command": "a11y.reading_order",
+   "note": "Upstream plans a Reading Order tool (catalog.rs, M12) and has no engine at 8f16855: this opens the Tags panel, where tags move up and down. Not checked against upstream."
+  },
+  "alltools.actions.make-accessible": {
+   "command": "a11y.make_accessible",
+   "note": "Upstream plans this action (catalog.rs, M12) and has no engine at 8f16855: it runs the steps this app can do and then the checker; it never says the document is accessible. Not checked against upstream."
+  },
+  "rail.panels.accessibility": {
+   "command": "a11y.panel",
+   "args": null,
+   "note": "printcraft a11y_ui.rs panel: the Accessibility Checker results (panes/accessibility.tsx)."
+  },
+  "rail.panels.order": {
+   "command": "a11y.reading_order",
+   "args": null,
+   "note": "The reading order is the order of the tags: this opens the Tags panel (Move up, Move down). Not checked against upstream."
+  }
+ },
+ "dialogs": {
+  "dialog.accessibility-options": {
+   "tabs": [
+    {
+     "name": "General",
+     "fields": [
+      {
+       "id": "report",
+       "label": "Create accessibility report",
+       "kind": "checkbox"
+      },
+      {
+       "id": "pages",
+       "label": "Page Range",
+       "kind": "radio",
+       "options": [
+        {
+         "value": "All",
+         "label": "All pages in document"
+        },
+        {
+         "value": "Range",
+         "label": "Pages from"
+        }
+       ]
+      },
+      {
+       "id": "from",
+       "label": "From",
+       "kind": "number",
+       "min": 1,
+       "visibleWhen": "pages == Range"
+      },
+      {
+       "id": "to",
+       "label": "to",
+       "kind": "number",
+       "min": 1,
+       "visibleWhen": "pages == Range"
+      },
+      {
+       "id": "checking",
+       "label": "Checking Options",
+       "kind": "label"
+      },
+      {
+       "id": "category",
+       "label": "Category:",
+       "kind": "select",
+       "options": [
+        {
+         "value": "document",
+         "label": "Document"
+        },
+        {
+         "value": "page-content",
+         "label": "Page Content"
+        },
+        {
+         "value": "forms",
+         "label": "Forms"
+        },
+        {
+         "value": "alternate-text",
+         "label": "Alternate Text"
+        },
+        {
+         "value": "tables",
+         "label": "Tables"
+        },
+        {
+         "value": "lists",
+         "label": "Lists"
+        },
+        {
+         "value": "headings",
+         "label": "Headings"
+        }
+       ]
+      },
+      {
+       "id": "r-permission-flag",
+       "label": "Accessibility permission flag is set",
+       "kind": "checkbox",
+       "visibleWhen": "category == document"
+      },
+      {
+       "id": "r-image-only",
+       "label": "Document is not image-only PDF",
+       "kind": "checkbox",
+       "visibleWhen": "category == document"
+      },
+      {
+       "id": "r-tagged-pdf",
+       "label": "Document is tagged PDF",
+       "kind": "checkbox",
+       "visibleWhen": "category == document"
+      },
+      {
+       "id": "r-logical-reading-order",
+       "label": "Document structure provides a logical reading order",
+       "kind": "checkbox",
+       "visibleWhen": "category == document"
+      },
+      {
+       "id": "r-primary-language",
+       "label": "Text language is specified",
+       "kind": "checkbox",
+       "visibleWhen": "category == document"
+      },
+      {
+       "id": "r-title",
+       "label": "Document title is showing in title bar",
+       "kind": "checkbox",
+       "visibleWhen": "category == document"
+      },
+      {
+       "id": "r-bookmarks",
+       "label": "Bookmarks are present in large documents",
+       "kind": "checkbox",
+       "visibleWhen": "category == document"
+      },
+      {
+       "id": "r-color-contrast",
+       "label": "Document has appropriate color contrast",
+       "kind": "checkbox",
+       "visibleWhen": "category == document"
+      },
+      {
+       "id": "r-tagged-content",
+       "label": "All page content is tagged",
+       "kind": "checkbox",
+       "visibleWhen": "category == page-content"
+      },
+      {
+       "id": "r-tagged-annotations",
+       "label": "All annotations are tagged",
+       "kind": "checkbox",
+       "visibleWhen": "category == page-content"
+      },
+      {
+       "id": "r-tab-order",
+       "label": "Tab order is consistent with structure order",
+       "kind": "checkbox",
+       "visibleWhen": "category == page-content"
+      },
+      {
+       "id": "r-character-encoding",
+       "label": "Reliable character encoding is provided",
+       "kind": "checkbox",
+       "visibleWhen": "category == page-content"
+      },
+      {
+       "id": "r-tagged-multimedia",
+       "label": "All multimedia objects are tagged",
+       "kind": "checkbox",
+       "visibleWhen": "category == page-content"
+      },
+      {
+       "id": "r-screen-flicker",
+       "label": "Page will not cause screen flicker",
+       "kind": "checkbox",
+       "visibleWhen": "category == page-content"
+      },
+      {
+       "id": "r-scripts",
+       "label": "No inaccessible scripts",
+       "kind": "checkbox",
+       "visibleWhen": "category == page-content"
+      },
+      {
+       "id": "r-timed-responses",
+       "label": "Page does not require timed responses",
+       "kind": "checkbox",
+       "visibleWhen": "category == page-content"
+      },
+      {
+       "id": "r-navigation-links",
+       "label": "Navigation links are not repetitive",
+       "kind": "checkbox",
+       "visibleWhen": "category == page-content"
+      },
+      {
+       "id": "r-tagged-form-fields",
+       "label": "All form fields are tagged",
+       "kind": "checkbox",
+       "visibleWhen": "category == forms"
+      },
+      {
+       "id": "r-field-descriptions",
+       "label": "All form fields have description",
+       "kind": "checkbox",
+       "visibleWhen": "category == forms"
+      },
+      {
+       "id": "r-figures-alt-text",
+       "label": "Figures require alternate text",
+       "kind": "checkbox",
+       "visibleWhen": "category == alternate-text"
+      },
+      {
+       "id": "r-nested-alt-text",
+       "label": "Alternate text that will never be read",
+       "kind": "checkbox",
+       "visibleWhen": "category == alternate-text"
+      },
+      {
+       "id": "r-alt-text-associated",
+       "label": "Alternate text must be associated with some content",
+       "kind": "checkbox",
+       "visibleWhen": "category == alternate-text"
+      },
+      {
+       "id": "r-alt-text-hides-annotation",
+       "label": "Alternate text should not hide annotation",
+       "kind": "checkbox",
+       "visibleWhen": "category == alternate-text"
+      },
+      {
+       "id": "r-other-elements-alt-text",
+       "label": "Other elements that require alternate text",
+       "kind": "checkbox",
+       "visibleWhen": "category == alternate-text"
+      },
+      {
+       "id": "r-table-rows",
+       "label": "TR must be a child of Table, THead, TBody, or TFoot",
+       "kind": "checkbox",
+       "visibleWhen": "category == tables"
+      },
+      {
+       "id": "r-table-cells",
+       "label": "TH and TD must be children of TR",
+       "kind": "checkbox",
+       "visibleWhen": "category == tables"
+      },
+      {
+       "id": "r-table-headers",
+       "label": "Tables should have headers",
+       "kind": "checkbox",
+       "visibleWhen": "category == tables"
+      },
+      {
+       "id": "r-table-regularity",
+       "label": "Tables must contain the same number of columns in each row and rows in each column",
+       "kind": "checkbox",
+       "visibleWhen": "category == tables"
+      },
+      {
+       "id": "r-table-summary",
+       "label": "Tables must have a summary",
+       "kind": "checkbox",
+       "visibleWhen": "category == tables"
+      },
+      {
+       "id": "r-list-items",
+       "label": "LI must be a child of L",
+       "kind": "checkbox",
+       "visibleWhen": "category == lists"
+      },
+      {
+       "id": "r-lbl-lbody",
+       "label": "Lbl and LBody must be children of LI",
+       "kind": "checkbox",
+       "visibleWhen": "category == lists"
+      },
+      {
+       "id": "r-heading-nesting",
+       "label": "Appropriate nesting",
+       "kind": "checkbox",
+       "visibleWhen": "category == headings"
+      },
+      {
+       "id": "selectAll",
+       "label": "Select All",
+       "kind": "button"
+      },
+      {
+       "id": "clearAll",
+       "label": "Clear All",
+       "kind": "button"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "Start Checking",
+    "Cancel"
+   ]
+  },
+  "dialog.alt-text": {
+   "tabs": [
+    {
+     "name": "General",
+     "fields": [
+      {
+       "id": "info",
+       "label": "Figure",
+       "kind": "label"
+      },
+      {
+       "id": "text",
+       "label": "Alternate text",
+       "kind": "text",
+       "multiline": true,
+       "hint": "Describe the figure",
+       "enabledWhen": "!decorative"
+      },
+      {
+       "id": "decorative",
+       "label": "Decorative figure",
+       "kind": "checkbox"
+      },
+      {
+       "id": "prev",
+       "label": "Previous figure",
+       "kind": "button",
+       "enabledWhen": "index != 0"
+      },
+      {
+       "id": "next",
+       "label": "Next figure",
+       "kind": "button",
+       "enabledWhen": "more"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "Save & Close",
+    "Cancel"
+   ]
+  },
+  "dialog.reading-options": {
+   "title": "Reading Options",
+   "tabs": [
+    {
+     "name": "General",
+     "fields": [
+      {
+       "id": "language",
+       "label": "Language",
+       "kind": "text",
+       "hint": "en-US",
+       "maxLength": 40
+      },
+      {
+       "id": "title",
+       "label": "Title",
+       "kind": "text",
+       "maxLength": 1000
+      },
+      {
+       "id": "displayTitle",
+       "label": "Show the document title in the window title bar",
+       "kind": "checkbox"
+      },
+      {
+       "id": "tabOrder",
+       "label": "Tab order: use document structure on pages with links, comments or fields",
+       "kind": "checkbox"
+      }
+     ]
+    }
+   ],
+   "buttons": [
+    "OK",
+    "Cancel"
+   ],
+   "note": "Upstream sets these in Document Properties > Advanced (a11y_ui.rs PanelAction::Fix). Not checked against upstream."
+  }
+ }
+}

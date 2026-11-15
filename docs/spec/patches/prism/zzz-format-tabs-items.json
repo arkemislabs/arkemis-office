@@ -1,0 +1,31 @@
+{
+  "controls": {
+    "pictureformat.adjust.change.from-a-file": {
+      "command": "picture.change",
+      "args": null,
+      "params": null
+    },
+    "videoformat.adjust.poster.current-frame": {
+      "command": "media.posterFrame",
+      "args": null,
+      "params": null,
+      "note": "U:prism/media: takes the frame the player shows now as the poster."
+    },
+    "videoformat.adjust.poster.image-from-file": {
+      "command": "media.posterFrame",
+      "args": {
+        "pick": true
+      },
+      "params": null,
+      "note": "U:prism/media: the system Open dialog picks a picture for the poster."
+    },
+    "videoformat.adjust.poster.reset": {
+      "command": "media.posterFrame",
+      "args": {
+        "reset": true
+      },
+      "params": null,
+      "note": "U:prism/media: no poster: the clip shows its dark frame."
+    }
+  }
+}

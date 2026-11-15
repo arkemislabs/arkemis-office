@@ -1,0 +1,214 @@
+{
+  "controls": {
+    "pivotAnalyze.pivotTable.name": {
+      "command": "pivot.options",
+      "args": {
+        "name": "<name>"
+      },
+      "dialog": null,
+      "note": "U:grid/pivot: the PivotTable Name box shows the PivotTable at the selection and Enter renames it (pivot.options name; slicers follow). Not checked against upstream (gridcraft renames in its options)."
+    },
+    "pivotAnalyze.activeField.name": {
+      "command": "pivot.fieldCaption",
+      "args": {
+        "caption": "<caption>"
+      },
+      "dialog": null,
+      "note": "U:grid/pivot: Excel's Active Field box shows the field under the selected cell; Enter gives a row, column or filter field a caption (its heading in the report) or renames a value field. Not in gridcraft: not checked against upstream."
+    },
+    "pivotAnalyze.filter.insertSlicer": {
+      "command": "insert.slicer",
+      "dialog": "dialog.insertSlicers",
+      "note": "U:grid/slicer: Excel's PivotTable slicer: Insert Slicers lists the PivotTable's fields and each one checked gets a slicer whose tiles are the field's items; clicking a tile filters the PivotTable. Not in gridcraft (its slicers filter tables): not checked against upstream."
+    },
+    "pivotAnalyze.filter.filterConnections": {
+      "command": "pivot.filterConnections",
+      "dialog": "dialog.filterConnections",
+      "note": "U:grid/slicer: Excel's Filter Connections: which PivotTable slicers filter this PivotTable. Not in gridcraft: not checked against upstream."
+    },
+    "pivotAnalyze.actions.select": {
+      "kind": "dropdown",
+      "command": null,
+      "items": [
+        {
+          "id": "pivotAnalyze.actions.select.body",
+          "label": "Labels and Values",
+          "command": "pivot.select",
+          "params": {
+            "part": "body"
+          }
+        },
+        {
+          "id": "pivotAnalyze.actions.select.labels",
+          "label": "Labels",
+          "command": "pivot.select",
+          "params": {
+            "part": "labels"
+          }
+        },
+        {
+          "id": "pivotAnalyze.actions.select.values",
+          "label": "Values",
+          "command": "pivot.select",
+          "params": {
+            "part": "values"
+          }
+        },
+        {
+          "id": "pivotAnalyze.actions.select.entire",
+          "label": "Entire PivotTable",
+          "command": "pivot.select",
+          "params": {
+            "part": "entire"
+          }
+        }
+      ],
+      "note": "U:grid/pivot: Excel's Select menu (not in gridcraft; not checked against upstream): the report body, its row and column labels, its value cells or the whole report with its filters. Enable Selection is not drawn (clicking a label selects the cell, not its items)."
+    },
+    "pivotAnalyze.actions.move": {
+      "command": "pivot.move",
+      "dialog": "dialog.movePivotTable",
+      "note": "U:grid/pivot: Excel's Move PivotTable (New Worksheet or a cell); not in gridcraft (not checked against upstream)."
+    },
+    "pivotAnalyze.calculations.fieldsItemsSets": {
+      "kind": "dropdown",
+      "command": null,
+      "note": "U:grid/pivot: Calculated Field is translated from gridcraft (pivot.calculatedField, evaluated on the sums of each report cell). Calculated Item, Solve Order and List Formulas need calculated items, which gridcraft does not have and this app does not build; they are hidden."
+    },
+    "pivotAnalyze.tools.pivotChart": {
+      "command": "insert.pivotChart",
+      "note": "U:grid/pivot: the PivotChart command of the Insert tab (commands/insert/pivotchart.mjs); this is the same command."
+    },
+    "pivotAnalyze.tools.recommended": {
+      "command": "insert.recommendedPivotTables",
+      "note": "U:grid/pivot: the Recommended PivotTables command of the Insert tab (commands/insert/pivotchart.mjs); this is the same command."
+    },
+    "pivotDesign.layout.reportLayout": {
+      "command": "pivot.reportLayout",
+      "items": [
+        {
+          "label": "Show in Compact Form",
+          "command": "pivot.layout",
+          "params": {
+            "layout": "compact"
+          }
+        },
+        {
+          "label": "Show in Outline Form",
+          "command": "pivot.layout",
+          "params": {
+            "layout": "outline"
+          }
+        },
+        {
+          "label": "Show in Tabular Form",
+          "command": "pivot.layout",
+          "params": {
+            "layout": "tabular"
+          }
+        },
+        {
+          "label": "Repeat All Item Labels",
+          "command": "pivot.repeatLabels",
+          "params": {
+            "on": true
+          }
+        },
+        {
+          "label": "Do Not Repeat Item Labels",
+          "command": "pivot.repeatLabels",
+          "params": {
+            "on": false
+          }
+        }
+      ],
+      "note": "U:grid/pivot: Compact, Outline and Tabular are checked against gridcraft (pivot.reportLayout). Repeat All Item Labels and Do Not Repeat Item Labels are Excel's own (pivot.repeatLabels; not checked against upstream): every row of an Outline or Tabular report names its groups; it is kept in .xlsx as the x14 fillDownLabelsDefault extension."
+    },
+    "pivotDesign.layout.blankRows": {
+      "kind": "dropdown",
+      "command": null,
+      "items": [
+        {
+          "id": "pivotDesign.layout.blankRows.insert",
+          "label": "Insert Blank Line after Each Item",
+          "command": "pivot.blankRows",
+          "params": {
+            "on": true
+          }
+        },
+        {
+          "id": "pivotDesign.layout.blankRows.remove",
+          "label": "Remove Blank Line after Each Item",
+          "command": "pivot.blankRows",
+          "params": {
+            "on": false
+          }
+        }
+      ],
+      "note": "U:grid/pivot: not in gridcraft; Excel's Blank Rows puts an empty row after each outer item (pivot.blankRows; kept in .xlsx as insertBlankRow). Not checked against upstream."
+    },
+    "pivotDesign.styleOptions.rowHeaders": {
+      "command": "pivot.rowHeaders",
+      "args": null,
+      "note": "U:grid/pivot: not in gridcraft (its style is one name); Excel's Row Headers: a group's own label is bold. Kept in .xlsx (showRowHeaders); not checked against upstream."
+    },
+    "pivotDesign.styleOptions.columnHeaders": {
+      "command": "pivot.columnHeaders",
+      "args": null,
+      "note": "U:grid/pivot: not in gridcraft; Excel's Column Headers: the header rows have the style's header look. Kept in .xlsx (showColHeaders); not checked against upstream."
+    },
+    "pivotDesign.styleOptions.bandedRows": {
+      "command": "pivot.bandedRows",
+      "args": null,
+      "note": "U:grid/pivot: not in gridcraft; Excel's Banded Rows shades every other row of the report. Kept in .xlsx (showRowStripes); not checked against upstream."
+    },
+    "pivotDesign.styleOptions.bandedColumns": {
+      "command": "pivot.bandedColumns",
+      "args": null,
+      "note": "U:grid/pivot: not in gridcraft; Excel's Banded Columns shades every other value column. Kept in .xlsx (showColStripes); not checked against upstream."
+    },
+    "slicer.slicer.reportConnections": {
+      "command": "slicer.reportConnections",
+      "dialog": "dialog.reportConnections",
+      "note": "U:grid/slicer: Excel's Report Connections for a PivotTable slicer: the PivotTables it filters. Not in gridcraft: not checked against upstream. A slicer on a table has no connections to choose."
+    },
+    "slicer.styles.gallery": {
+      "command": "slicer.style",
+      "args": {
+        "style": "<style>"
+      },
+      "note": "U:grid/slicer: Excel's Slicer Styles (Light 1 to 6, Dark 1 to 6, Other 1 and 2), each drawn as a tile with its header, frame and tile colours. Not in gridcraft (one slicer look): not checked against upstream."
+    }
+  },
+  "dialogs": {
+    "dialog.reportConnections": {
+      "buttons": [
+        "OK",
+        "Cancel"
+      ],
+      "note": "U:grid/slicer: the PivotTables with a check box each, drawn by src/apps/grid/dialogs/reportConnections.tsx. Not checked against upstream."
+    },
+    "dialog.filterConnections": {
+      "title": "Filter Connections",
+      "buttons": [
+        "OK",
+        "Cancel"
+      ],
+      "tabs": [
+        {
+          "name": "",
+          "fields": [
+            {
+              "id": "connected",
+              "label": "Slicers",
+              "kind": "list",
+              "options": []
+            }
+          ]
+        }
+      ],
+      "note": "U:grid/slicer: the PivotTable slicers with a check box each, drawn by src/apps/grid/dialogs/filterConnections.tsx. Not checked against upstream."
+    }
+  },
+  "commands": {}
+}

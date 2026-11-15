@@ -1,0 +1,8 @@
+{
+  "source": "gridcraft 146161b4b450a56e5e59a083ba0478582d1e602b crates/ui-egui/src/dialogs.rs:969 (evaluateFormula); Excel Evaluate Formula",
+  "width": 560,
+  "height": 330,
+  "sections": [
+    {"fields": ["reference", "evaluation", "result"]}
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "tab": "design",
+  "keytip": "G",
+  "source": "wordcraft aadb077e072b7de05f724e359d8db82e151f125c crates/ui-egui/src/ribbon/design.rs (design, style_set_box), previews.rs STYLE_SETS (7 tiles); keytips from Word for Windows",
+  "groups": {
+    "themes": {
+      "collapseOrder": 3,
+      "layout": [
+        {"large": "design.themes.themes"}
+      ]
+    },
+    "document-formatting": {
+      "collapseOrder": 1,
+      "layout": [
+        {"gallery": "design.document-formatting.style-set", "inline": true, "columns": 7},
+        {"stack": ["design.document-formatting.colors", "design.document-formatting.fonts"]},
+        {"stack": ["design.document-formatting.paragraph-spacing", "design.document-formatting.effects", "design.document-formatting.set-as-default"]}
+      ]
+    },
+    "page-background": {
+      "collapseOrder": 2,
+      "layout": [
+        {"large": "design.page-background.watermark"},
+        {"large": "design.page-background.page-color"},
+        {"large": "design.page-background.page-borders"}
+      ]
+    }
+  },
+  "keytips": {
+    "design.themes.themes": "TH", "design.document-formatting.colors": "TC", "design.document-formatting.fonts": "TF",
+    "design.document-formatting.paragraph-spacing": "PS", "design.document-formatting.effects": "TE", "design.document-formatting.set-as-default": "SD",
+    "design.page-background.watermark": "PW", "design.page-background.page-color": "PC", "design.page-background.page-borders": "PB"
+  }
+}

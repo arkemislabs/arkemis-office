@@ -1,0 +1,15 @@
+/* The Format Shape pane (panes/format.tsx); the rows, radios and colour buttons come from background.css. */
+.fmt { padding-bottom: 12px; }
+.fmt-tabs { display: flex; gap: 2px; padding: 2px; border-radius: 8px; background: rgba(0,0,0,.22); }
+.fmt-tab { display: inline-flex; align-items: center; justify-content: center; flex: 1; height: 28px; padding: 0; border: 0; border-radius: 6px; background: none; color: var(--sh-text-2, #b4b4ba); }
+.fmt-tab:hover { background: rgba(255,255,255,.08); }
+.fmt-tab.is-on { background: rgba(255,255,255,.14); color: var(--sh-text-1, #f2f2f3); box-shadow: inset 0 -2px 0 var(--prism-accent, #e8774e); }
+.fmt-title { margin-top: 2px; color: var(--sh-text-3, #85858c); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.fmt-h { margin-top: 6px; padding-top: 6px; border-top: 1px solid rgba(255,255,255,.08); }
+.fmt-tiles { display: flex; flex-wrap: wrap; gap: 4px; }
+.fmt-tile { width: 46px; height: 38px; padding: 0; border: 0; border-radius: 5px; background: rgba(255,255,255,.07); box-shadow: inset 0 0 0 1px rgba(255,255,255,.14); cursor: pointer; overflow: hidden; }
+.fmt-tile:hover { background: rgba(255,255,255,.12); }
+.fmt-tile.is-on { box-shadow: inset 0 0 0 2px var(--prism-accent, #e8774e); }
+.fmt-seg { display: flex; gap: 4px; flex-wrap: wrap; }
+.fmt-alt { width: 100%; box-sizing: border-box; padding: 5px 7px; border: 0; border-radius: 6px; resize: vertical; background: rgba(0,0,0,.28); color: inherit; font: inherit; box-shadow: inset 0 0 0 1px rgba(255,255,255,.1); }
+.bgp-row input:disabled, .bgp-row select:disabled { opacity: .5; }

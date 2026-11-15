@@ -1,0 +1,18 @@
+{
+  "source": "deckcraft crates/ui-egui/src/dialogs/tabs.rs (Default tab stops, the stop list with Clear, position + alignment + Set, Clear All) at f893f6af7d36a5409fd804e81a34fd895cfefedf; PowerPoint Tabs dialog",
+  "width": 420,
+  "height": 440,
+  "sections": [
+    {
+      "fields": [
+        "defaultTab"
+      ],
+      "columns": 1
+    },
+    {
+      "fields": [
+        "stops"
+      ]
+    }
+  ]
+}

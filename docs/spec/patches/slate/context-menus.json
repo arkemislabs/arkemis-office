@@ -1,0 +1,2201 @@
+{
+ "contextMenus": {
+  "text-selection": {
+   "items": [
+    {
+     "label": "Suggestions",
+     "command": "review.spellingApply",
+     "args": {
+      "text": "<suggestion>"
+     },
+     "kind": "list",
+     "dynamic": true,
+     "style": "strong"
+    },
+    {
+     "label": "Ignore All",
+     "command": "review.ignoreAll"
+    },
+    {
+     "label": "Add to Dictionary",
+     "command": "review.addToDictionary"
+    },
+    "-",
+    {
+     "label": "Cut",
+     "command": "clipboard.cut",
+     "icon": "scissors"
+    },
+    {
+     "label": "Copy",
+     "command": "clipboard.copy",
+     "icon": "copy-pages"
+    },
+    {
+     "label": "Paste Options",
+     "items": [
+      {
+       "label": "Keep Source Formatting",
+       "command": "clipboard.paste",
+       "args": {
+        "mode": "keep-source"
+       },
+       "icon": "paste-keep-source"
+      },
+      {
+       "label": "Merge Formatting",
+       "command": "clipboard.paste",
+       "args": {
+        "mode": "merge"
+       },
+       "icon": "paste-merge"
+      },
+      {
+       "label": "Keep Text Only",
+       "command": "clipboard.paste",
+       "args": {
+        "mode": "text-only"
+       },
+       "icon": "paste-text-only"
+      }
+     ],
+     "icon": "paste"
+    },
+    "-",
+    {
+     "label": "Link...",
+     "command": "link.insert",
+     "icon": "link-chain"
+    },
+    {
+     "label": "Copy Link to Paragraph",
+     "command": "link.copy",
+     "args": {
+      "scope": "paragraph"
+     },
+     "icon": "link-chain"
+    },
+    {
+     "label": "Remove Link",
+     "command": "link.remove",
+     "icon": "unlink"
+    },
+    "-",
+    {
+     "label": "Tag",
+     "items": [
+      {
+       "label": "To Do",
+       "command": "tag.toggle",
+       "args": {
+        "tagId": "to-do"
+       },
+       "icon": "tag-checkbox"
+      },
+      {
+       "label": "Important",
+       "command": "tag.toggle",
+       "args": {
+        "tagId": "important"
+       },
+       "icon": "tag-star"
+      },
+      {
+       "label": "Question",
+       "command": "tag.toggle",
+       "args": {
+        "tagId": "question"
+       },
+       "icon": "tag-question-mark"
+      },
+      {
+       "label": "Remember for later",
+       "command": "tag.toggle",
+       "args": {
+        "tagId": "remember-for-later"
+       },
+       "icon": "tag-highlight-yellow"
+      },
+      {
+       "label": "Definition",
+       "command": "tag.toggle",
+       "args": {
+        "tagId": "definition"
+       },
+       "icon": "tag-highlight-green"
+      },
+      {
+       "label": "Highlight",
+       "command": "tag.toggle",
+       "args": {
+        "tagId": "highlight"
+       },
+       "icon": "tag-highlighter"
+      },
+      {
+       "label": "Contact",
+       "command": "tag.toggle",
+       "args": {
+        "tagId": "contact"
+       },
+       "icon": "tag-person-card"
+      },
+      {
+       "label": "Address",
+       "command": "tag.toggle",
+       "args": {
+        "tagId": "address"
+       },
+       "icon": "tag-house"
+      },
+      {
+       "label": "Phone number",
+       "command": "tag.toggle",
+       "args": {
+        "tagId": "phone-number"
+       },
+       "icon": "tag-phone"
+      },
+      {
+       "label": "Customize Tags...",
+       "command": "tag.customize",
+       "icon": "tag-settings"
+      }
+     ],
+     "icon": "tag"
+    },
+    {
+     "label": "Find Tags",
+     "command": "tags.find",
+     "icon": "tag-search"
+    },
+    "-",
+    {
+     "label": "Paragraph Alignment",
+     "items": [
+      {
+       "label": "Align Left",
+       "command": "paragraph.align",
+       "args": {
+        "alignment": "left"
+       },
+       "icon": "align-left"
+      },
+      {
+       "label": "Center",
+       "command": "paragraph.align",
+       "args": {
+        "alignment": "center"
+       },
+       "icon": "align-center"
+      },
+      {
+       "label": "Align Right",
+       "command": "paragraph.align",
+       "args": {
+        "alignment": "right"
+       },
+       "icon": "align-right"
+      }
+     ],
+     "icon": "align"
+    },
+    {
+     "label": "Paragraph Spacing Options...",
+     "command": "paragraph.spacing",
+     "icon": "line-spacing"
+    },
+    {
+     "label": "Format Painter",
+     "command": "clipboard.formatPainter",
+     "icon": "paintbrush"
+    },
+    {
+     "label": "Bullets",
+     "command": "list.bullets",
+     "icon": "list-bullets"
+    },
+    {
+     "label": "Numbering",
+     "command": "list.numbering",
+     "icon": "list-numbers"
+    },
+    {
+     "label": "Styles",
+     "items": [
+      {
+       "label": "Heading 1",
+       "command": "style.apply",
+       "args": {
+        "style": "heading-1"
+       },
+       "icon": "style-h1"
+      },
+      {
+       "label": "Heading 2",
+       "command": "style.apply",
+       "args": {
+        "style": "heading-2"
+       },
+       "icon": "style-h2"
+      },
+      {
+       "label": "Heading 3",
+       "command": "style.apply",
+       "args": {
+        "style": "heading-3"
+       },
+       "icon": "style-h3"
+      },
+      {
+       "label": "Heading 4",
+       "command": "style.apply",
+       "args": {
+        "style": "heading-4"
+       },
+       "icon": "style-h4"
+      },
+      {
+       "label": "Heading 5",
+       "command": "style.apply",
+       "args": {
+        "style": "heading-5"
+       },
+       "icon": "style-h5"
+      },
+      {
+       "label": "Heading 6",
+       "command": "style.apply",
+       "args": {
+        "style": "heading-6"
+       },
+       "icon": "style-h6"
+      },
+      {
+       "label": "Page Title",
+       "command": "style.apply",
+       "args": {
+        "style": "page-title"
+       },
+       "icon": "style-title"
+      },
+      {
+       "label": "Citation",
+       "command": "style.apply",
+       "args": {
+        "style": "citation"
+       },
+       "icon": "style-citation"
+      },
+      {
+       "label": "Quote",
+       "command": "style.apply",
+       "args": {
+        "style": "quote"
+       },
+       "icon": "style-quote"
+      },
+      {
+       "label": "Code",
+       "command": "style.apply",
+       "args": {
+        "style": "code"
+       },
+       "icon": "style-code"
+      },
+      {
+       "label": "Normal",
+       "command": "style.apply",
+       "args": {
+        "style": "normal"
+       },
+       "icon": "style-normal"
+      }
+     ],
+     "icon": "styles"
+    },
+    {
+     "label": "Clear All Formatting",
+     "command": "format.clear",
+     "icon": "eraser-A"
+    },
+    "-",
+    {
+     "label": "Set Language...",
+     "command": "review.setLanguage",
+     "icon": "globe-abc"
+    }
+   ]
+  },
+  "paragraph-handle": {
+   "items": [
+    {
+     "label": "Cut",
+     "command": "clipboard.cut",
+     "icon": "scissors"
+    },
+    {
+     "label": "Copy",
+     "command": "clipboard.copy",
+     "icon": "copy-pages"
+    },
+    {
+     "label": "Paste",
+     "command": "clipboard.paste",
+     "icon": "paste"
+    },
+    "-",
+    {
+     "label": "Move Up",
+     "command": "paragraph.moveUp",
+     "icon": "move-up"
+    },
+    {
+     "label": "Move Down",
+     "command": "paragraph.moveDown",
+     "icon": "move-down"
+    },
+    {
+     "label": "Select Paragraph and Subparagraphs",
+     "command": "paragraph.selectWithChildren",
+     "icon": "select"
+    },
+    {
+     "label": "Copy Link to Paragraph",
+     "command": "link.copy",
+     "args": {
+      "scope": "paragraph"
+     },
+     "icon": "link-chain"
+    },
+    {
+     "label": "Tag",
+     "items": [
+      {
+       "label": "To Do",
+       "command": "tag.toggle",
+       "args": {
+        "tagId": "to-do"
+       },
+       "icon": "tag-checkbox"
+      },
+      {
+       "label": "Important",
+       "command": "tag.toggle",
+       "args": {
+        "tagId": "important"
+       },
+       "icon": "tag-star"
+      },
+      {
+       "label": "Question",
+       "command": "tag.toggle",
+       "args": {
+        "tagId": "question"
+       },
+       "icon": "tag-question-mark"
+      },
+      {
+       "label": "Remember for later",
+       "command": "tag.toggle",
+       "args": {
+        "tagId": "remember-for-later"
+       },
+       "icon": "tag-highlight-yellow"
+      },
+      {
+       "label": "Definition",
+       "command": "tag.toggle",
+       "args": {
+        "tagId": "definition"
+       },
+       "icon": "tag-highlight-green"
+      },
+      {
+       "label": "Highlight",
+       "command": "tag.toggle",
+       "args": {
+        "tagId": "highlight"
+       },
+       "icon": "tag-highlighter"
+      },
+      {
+       "label": "Contact",
+       "command": "tag.toggle",
+       "args": {
+        "tagId": "contact"
+       },
+       "icon": "tag-person-card"
+      },
+      {
+       "label": "Address",
+       "command": "tag.toggle",
+       "args": {
+        "tagId": "address"
+       },
+       "icon": "tag-house"
+      },
+      {
+       "label": "Phone number",
+       "command": "tag.toggle",
+       "args": {
+        "tagId": "phone-number"
+       },
+       "icon": "tag-phone"
+      },
+      {
+       "label": "Customize Tags...",
+       "command": "tag.customize",
+       "icon": "tag-settings"
+      }
+     ],
+     "icon": "tag"
+    },
+    "-",
+    {
+     "label": "Delete",
+     "command": "edit.delete",
+     "icon": "x-delete"
+    }
+   ]
+  },
+  "note-container": {
+   "items": [
+    {
+     "label": "Cut",
+     "command": "clipboard.cut",
+     "icon": "scissors"
+    },
+    {
+     "label": "Copy",
+     "command": "clipboard.copy",
+     "icon": "copy-pages"
+    },
+    {
+     "label": "Paste",
+     "command": "clipboard.paste",
+     "icon": "paste"
+    },
+    "-",
+    {
+     "label": "Order",
+     "items": [
+      {
+       "label": "Bring Forward",
+       "command": "object.order",
+       "args": {
+        "to": "forward"
+       },
+       "icon": "layer-up"
+      },
+      {
+       "label": "Bring to Front",
+       "command": "object.order",
+       "args": {
+        "to": "front"
+       },
+       "icon": "layer-top"
+      },
+      {
+       "label": "Send Backward",
+       "command": "object.order",
+       "args": {
+        "to": "backward"
+       },
+       "icon": "layer-down"
+      },
+      {
+       "label": "Send to Back",
+       "command": "object.order",
+       "args": {
+        "to": "back"
+       },
+       "icon": "layer-bottom"
+      }
+     ],
+     "icon": "align-objects"
+    },
+    {
+     "label": "Copy Link to Paragraph",
+     "command": "link.copy",
+     "args": {
+      "scope": "paragraph"
+     },
+     "icon": "link-chain"
+    },
+    "-",
+    {
+     "label": "Delete",
+     "command": "edit.delete",
+     "icon": "x-delete"
+    }
+   ]
+  },
+  "page-canvas": {
+   "items": [
+    {
+     "label": "Paste",
+     "command": "clipboard.paste",
+     "icon": "paste"
+    },
+    {
+     "label": "Paste Options",
+     "items": [
+      {
+       "label": "Keep Source Formatting",
+       "command": "clipboard.paste",
+       "args": {
+        "mode": "keep-source"
+       },
+       "icon": "paste-keep-source"
+      },
+      {
+       "label": "Merge Formatting",
+       "command": "clipboard.paste",
+       "args": {
+        "mode": "merge"
+       },
+       "icon": "paste-merge"
+      },
+      {
+       "label": "Keep Text Only",
+       "command": "clipboard.paste",
+       "args": {
+        "mode": "text-only"
+       },
+       "icon": "paste-text-only"
+      }
+     ],
+     "icon": "paste"
+    },
+    "-",
+    {
+     "label": "Insert Space",
+     "command": "insert.space",
+     "icon": "insert-space-arrows"
+    },
+    {
+     "label": "Page Color",
+     "items": [
+      {
+       "label": "No Color",
+       "command": "page.setColor",
+       "args": {
+        "color": null
+       },
+       "icon": "swatch-none"
+      },
+      {
+       "label": "Blue",
+       "command": "page.setColor",
+       "args": {
+        "color": "#dae3f3"
+       },
+       "icon": "swatch-blue"
+      },
+      {
+       "label": "Yellow",
+       "command": "page.setColor",
+       "args": {
+        "color": "#fff2cc"
+       },
+       "icon": "swatch-yellow"
+      },
+      {
+       "label": "Green",
+       "command": "page.setColor",
+       "args": {
+        "color": "#e2f0d9"
+       },
+       "icon": "swatch-green"
+      },
+      {
+       "label": "Red",
+       "command": "page.setColor",
+       "args": {
+        "color": "#fbe5d6"
+       },
+       "icon": "swatch-red"
+      },
+      {
+       "label": "Purple",
+       "command": "page.setColor",
+       "args": {
+        "color": "#e4dff0"
+       },
+       "icon": "swatch-purple"
+      },
+      {
+       "label": "Cyan",
+       "command": "page.setColor",
+       "args": {
+        "color": "#ddf2f5"
+       },
+       "icon": "swatch-cyan"
+      },
+      {
+       "label": "Orange",
+       "command": "page.setColor",
+       "args": {
+        "color": "#fce4d6"
+       },
+       "icon": "swatch-orange"
+      },
+      {
+       "label": "Magenta",
+       "command": "page.setColor",
+       "args": {
+        "color": "#f7dcef"
+       },
+       "icon": "swatch-magenta"
+      },
+      {
+       "label": "Blue Mist",
+       "command": "page.setColor",
+       "args": {
+        "color": "#d9e6f2"
+       },
+       "icon": "swatch-blue-mist"
+      },
+      {
+       "label": "Purple Mist",
+       "command": "page.setColor",
+       "args": {
+        "color": "#e8e2f0"
+       },
+       "icon": "swatch-purple-mist"
+      },
+      {
+       "label": "Silver",
+       "command": "page.setColor",
+       "args": {
+        "color": "#ededed"
+       },
+       "icon": "swatch-silver"
+      },
+      {
+       "label": "Lemon Lime",
+       "command": "page.setColor",
+       "args": {
+        "color": "#effad2"
+       },
+       "icon": "swatch-lemon-lime"
+      },
+      {
+       "label": "Sunshine",
+       "command": "page.setColor",
+       "args": {
+        "color": "#fff5c2"
+       },
+       "icon": "swatch-sunshine"
+      },
+      {
+       "label": "Tan",
+       "command": "page.setColor",
+       "args": {
+        "color": "#f2e9dc"
+       },
+       "icon": "swatch-tan"
+      },
+      {
+       "label": "White",
+       "command": "page.setColor",
+       "args": {
+        "color": "#ffffff"
+       },
+       "icon": "swatch-white"
+      }
+     ],
+     "icon": "pageColor"
+    },
+    {
+     "label": "Rule Lines",
+     "items": [
+      {
+       "label": "Narrow Ruled",
+       "command": "page.ruleLines",
+       "args": {
+        "pattern": "narrow-ruled"
+       },
+       "icon": "rule-narrow-ruled"
+      },
+      {
+       "label": "College Ruled",
+       "command": "page.ruleLines",
+       "args": {
+        "pattern": "college-ruled"
+       },
+       "icon": "rule-college-ruled"
+      },
+      {
+       "label": "Standard Ruled",
+       "command": "page.ruleLines",
+       "args": {
+        "pattern": "standard-ruled"
+       },
+       "icon": "rule-standard-ruled"
+      },
+      {
+       "label": "Wide Ruled",
+       "command": "page.ruleLines",
+       "args": {
+        "pattern": "wide-ruled"
+       },
+       "icon": "rule-wide-ruled"
+      },
+      {
+       "label": "Small Grid",
+       "command": "page.ruleLines",
+       "args": {
+        "pattern": "small-grid"
+       },
+       "icon": "rule-small-grid"
+      },
+      {
+       "label": "Medium Grid",
+       "command": "page.ruleLines",
+       "args": {
+        "pattern": "medium-grid"
+       },
+       "icon": "rule-medium-grid"
+      },
+      {
+       "label": "Large Grid",
+       "command": "page.ruleLines",
+       "args": {
+        "pattern": "large-grid"
+       },
+       "icon": "rule-large-grid"
+      },
+      {
+       "label": "Very Large Grid",
+       "command": "page.ruleLines",
+       "args": {
+        "pattern": "very-large-grid"
+       },
+       "icon": "rule-very-large-grid"
+      },
+      {
+       "label": "None",
+       "command": "page.ruleLines",
+       "args": {
+        "pattern": "none"
+       },
+       "icon": "rule-none"
+      }
+     ],
+     "icon": "ruled-page"
+    },
+    {
+     "label": "Select All",
+     "command": "edit.selectAll",
+     "icon": "select-all"
+    },
+    "-",
+    {
+     "label": "Insert Picture...",
+     "command": "insert.picture",
+     "icon": "image"
+    },
+    {
+     "label": "Insert Table...",
+     "command": "insert.table",
+     "icon": "table-dialog"
+    }
+   ]
+  },
+  "page-title": {
+   "items": [
+    {
+     "label": "Cut",
+     "command": "clipboard.cut",
+     "icon": "scissors"
+    },
+    {
+     "label": "Copy",
+     "command": "clipboard.copy",
+     "icon": "copy-pages"
+    },
+    {
+     "label": "Paste",
+     "command": "clipboard.paste",
+     "icon": "paste"
+    },
+    "-",
+    {
+     "label": "Change Date",
+     "command": "page.setDate",
+     "icon": "calendar-clock"
+    },
+    {
+     "label": "Change Time",
+     "command": "page.setTime",
+     "icon": "clock"
+    },
+    {
+     "label": "Hide Page Title",
+     "command": "page.hideTitle",
+     "icon": "title-hide"
+    }
+   ]
+  },
+  "page-tab": {
+   "items": [
+    {
+     "label": "New Page",
+     "command": "page.new",
+     "icon": "insert-icon-plus"
+    },
+    {
+     "label": "New Subpage",
+     "command": "page.newSubpage",
+     "icon": "page-template"
+    },
+    "-",
+    {
+     "label": "Cut",
+     "command": "page.cut",
+     "icon": "cut"
+    },
+    {
+     "label": "Copy",
+     "command": "page.copy",
+     "icon": "copy"
+    },
+    {
+     "label": "Paste",
+     "command": "page.paste",
+     "icon": "paste"
+    },
+    "-",
+    {
+     "label": "Rename",
+     "command": "page.rename",
+     "icon": "rename"
+    },
+    {
+     "label": "Delete",
+     "command": "page.delete",
+     "icon": "trash"
+    },
+    {
+     "label": "Move or Copy...",
+     "command": "page.moveOrCopy",
+     "icon": "copy-pages"
+    },
+    "-",
+    {
+     "label": "Make Subpage",
+     "command": "page.makeSubpage",
+     "icon": "move-right"
+    },
+    {
+     "label": "Promote Subpage",
+     "command": "page.promoteSubpage",
+     "icon": "move-up"
+    },
+    {
+     "label": "Collapse Subpages",
+     "command": "page.collapseSubpages",
+     "icon": "rows-hide"
+    },
+    {
+     "label": "Expand Subpages",
+     "command": "page.expandSubpages",
+     "icon": "rows-unhide"
+    },
+    "-",
+    {
+     "label": "Copy Link to Page",
+     "command": "link.copy",
+     "args": {
+      "scope": "page"
+     },
+     "icon": "link-chain"
+    },
+    {
+     "label": "Mark as Read",
+     "command": "history.markRead",
+     "args": {
+      "scope": "page",
+      "read": true
+     },
+     "icon": "page-read"
+    },
+    {
+     "label": "Mark as Unread",
+     "command": "history.markRead",
+     "args": {
+      "scope": "page",
+      "read": false
+     },
+     "icon": "page-unread"
+    },
+    "-",
+    {
+     "label": "Save Page as Template...",
+     "command": "page.saveAsTemplate",
+     "icon": "document-template"
+    },
+    {
+     "label": "Sort Pages",
+     "items": [
+      {
+       "label": "By Date Created",
+       "command": "page.sort",
+       "args": {
+        "by": "created",
+        "order": "asc"
+       },
+       "icon": "calendar-clock"
+      },
+      {
+       "label": "By Date Modified",
+       "command": "page.sort",
+       "args": {
+        "by": "modified",
+        "order": "desc"
+       },
+       "icon": "calendar-clock"
+      },
+      {
+       "label": "Alphabetical",
+       "command": "page.sort",
+       "args": {
+        "by": "alphabetical",
+        "order": "asc"
+       },
+       "icon": "sort-az"
+      }
+     ],
+     "icon": "sort"
+    }
+   ]
+  },
+  "page-version": {
+   "items": [
+    {
+     "label": "Restore Version",
+     "command": "history.restoreVersion",
+     "icon": "update"
+    },
+    {
+     "label": "Delete Version",
+     "command": "history.deleteVersion",
+     "icon": "versions-delete"
+    },
+    "-",
+    {
+     "label": "Delete All Versions in Section",
+     "command": "history.deleteVersions",
+     "args": {
+      "scope": "section"
+     },
+     "icon": "versions-delete"
+    },
+    {
+     "label": "Delete All Versions in Section Group",
+     "command": "history.deleteVersions",
+     "args": {
+      "scope": "section-group"
+     },
+     "icon": "versions-delete"
+    },
+    {
+     "label": "Delete All Versions in Notebook",
+     "command": "history.deleteVersions",
+     "args": {
+      "scope": "notebook"
+     },
+     "icon": "versions-delete"
+    },
+    "-",
+    {
+     "label": "Hide Page Versions",
+     "command": "history.pageVersions",
+     "icon": "page-stack-clock"
+    }
+   ]
+  },
+  "section-tab": {
+   "items": [
+    {
+     "label": "Rename",
+     "command": "section.rename",
+     "icon": "rename"
+    },
+    {
+     "label": "Delete",
+     "command": "section.delete",
+     "icon": "trash"
+    },
+    {
+     "label": "Move or Copy...",
+     "command": "section.moveOrCopy",
+     "icon": "copy-pages"
+    },
+    {
+     "label": "Merge into Another Section...",
+     "command": "section.merge",
+     "icon": "merge"
+    },
+    {
+     "label": "Copy Link to Section",
+     "command": "link.copy",
+     "args": {
+      "scope": "section"
+     },
+     "icon": "link-chain"
+    },
+    "-",
+    {
+     "label": "New Section",
+     "command": "section.new",
+     "icon": "notebooks"
+    },
+    {
+     "label": "New Section Group",
+     "command": "sectionGroup.new",
+     "icon": "folder-theme"
+    },
+    "-",
+    {
+     "label": "Password Protect This Section...",
+     "command": "review.password",
+     "icon": "lock-section"
+    },
+    {
+     "label": "Lock This Section",
+     "command": "password.lock",
+     "icon": "lock"
+    },
+    {
+     "label": "Section Color",
+     "items": [
+      {
+       "label": "Blue",
+       "command": "section.setColor",
+       "args": {
+        "color": "#8aa8e4"
+       }
+      },
+      {
+       "label": "Green",
+       "command": "section.setColor",
+       "args": {
+        "color": "#91ba6e"
+       }
+      },
+      {
+       "label": "Orange",
+       "command": "section.setColor",
+       "args": {
+        "color": "#e7a87e"
+       }
+      },
+      {
+       "label": "Purple",
+       "command": "section.setColor",
+       "args": {
+        "color": "#bd94d3"
+       }
+      },
+      {
+       "label": "Yellow",
+       "command": "section.setColor",
+       "args": {
+        "color": "#e6c16a"
+       }
+      },
+      {
+       "label": "Teal",
+       "command": "section.setColor",
+       "args": {
+        "color": "#7fc6c4"
+       }
+      },
+      {
+       "label": "Pink",
+       "command": "section.setColor",
+       "args": {
+        "color": "#e48fa0"
+       }
+      },
+      {
+       "label": "Gray",
+       "command": "section.setColor",
+       "args": {
+        "color": "#b0b0b0"
+       }
+      }
+     ],
+     "icon": "swatch-pink"
+    },
+    "-",
+    {
+     "label": "Mark as Read",
+     "command": "history.markRead",
+     "args": {
+      "scope": "section",
+      "read": true
+     },
+     "icon": "section-read"
+    },
+    {
+     "label": "Mark as Unread",
+     "command": "history.markRead",
+     "args": {
+      "scope": "section",
+      "read": false
+     },
+     "icon": "page-unread"
+    },
+    "-",
+    {
+     "label": "Move Up",
+     "command": "section.moveUp",
+     "icon": "move-up"
+    },
+    {
+     "label": "Move Down",
+     "command": "section.moveDown",
+     "icon": "move-down"
+    },
+    {
+     "label": "Open Notebook Recycle Bin",
+     "command": "history.recycleBin",
+     "icon": "recycle-bin"
+    }
+   ]
+  },
+  "section-group": {
+   "items": [
+    {
+     "label": "Rename",
+     "command": "sectionGroup.rename",
+     "icon": "rename"
+    },
+    {
+     "label": "Delete",
+     "command": "sectionGroup.delete",
+     "icon": "trash"
+    },
+    {
+     "label": "Move...",
+     "command": "sectionGroup.move",
+     "icon": "move-right"
+    },
+    {
+     "label": "Copy Link to Section Group",
+     "command": "link.copy",
+     "args": {
+      "scope": "section-group"
+     },
+     "icon": "link-chain"
+    },
+    "-",
+    {
+     "label": "New Section",
+     "command": "section.new",
+     "icon": "notebooks"
+    },
+    {
+     "label": "New Section Group",
+     "command": "sectionGroup.new",
+     "icon": "folder-theme"
+    },
+    "-",
+    {
+     "label": "Mark as Read",
+     "command": "history.markRead",
+     "args": {
+      "scope": "notebook",
+      "read": true
+     },
+     "icon": "notebook-read"
+    }
+   ]
+  },
+  "notebook": {
+   "items": [
+    {
+     "label": "Mark as Read",
+     "command": "history.markRead",
+     "args": {
+      "scope": "notebook",
+      "read": true
+     },
+     "icon": "notebook-read"
+    },
+    {
+     "label": "Copy Link to Notebook",
+     "command": "link.copy",
+     "args": {
+      "scope": "notebook"
+     },
+     "icon": "link-chain"
+    },
+    "-",
+    {
+     "label": "Close This Notebook",
+     "command": "notebook.close",
+     "icon": "close"
+    },
+    {
+     "label": "Properties...",
+     "command": "notebook.properties",
+     "icon": "properties"
+    },
+    {
+     "label": "Notebook Color",
+     "items": [
+      {
+       "label": "Purple",
+       "command": "notebook.setColor",
+       "args": {
+        "color": "#7f6fd1"
+       }
+      },
+      {
+       "label": "Blue",
+       "command": "notebook.setColor",
+       "args": {
+        "color": "#4a8fdd"
+       }
+      },
+      {
+       "label": "Green",
+       "command": "notebook.setColor",
+       "args": {
+        "color": "#3fa68c"
+       }
+      },
+      {
+       "label": "Orange",
+       "command": "notebook.setColor",
+       "args": {
+        "color": "#d4884a"
+       }
+      },
+      {
+       "label": "Magenta",
+       "command": "notebook.setColor",
+       "args": {
+        "color": "#c45d8e"
+       }
+      },
+      {
+       "label": "Gray",
+       "command": "notebook.setColor",
+       "args": {
+        "color": "#6d7a8a"
+       }
+      }
+     ],
+     "icon": "swatch-pink"
+    },
+    "-",
+    {
+     "label": "New Section",
+     "command": "section.new",
+     "icon": "notebooks"
+    },
+    {
+     "label": "New Section Group",
+     "command": "sectionGroup.new",
+     "icon": "folder-theme"
+    },
+    "-",
+    {
+     "label": "Notebook Recycle Bin",
+     "command": "history.recycleBin",
+     "icon": "recycle-bin"
+    },
+    {
+     "label": "Hide Authors",
+     "command": "history.hideAuthors",
+     "icon": "initials-hide"
+    }
+   ]
+  },
+  "recycle-bin-item": {
+   "items": []
+  },
+  "picture": {
+   "items": [
+    {
+     "label": "Cut",
+     "command": "clipboard.cut",
+     "icon": "scissors"
+    },
+    {
+     "label": "Copy",
+     "command": "clipboard.copy",
+     "icon": "copy-pages"
+    },
+    {
+     "label": "Paste",
+     "command": "clipboard.paste",
+     "icon": "paste"
+    },
+    "-",
+    {
+     "label": "Order",
+     "items": [
+      {
+       "label": "Bring Forward",
+       "command": "object.order",
+       "args": {
+        "to": "forward"
+       },
+       "icon": "layer-up"
+      },
+      {
+       "label": "Bring to Front",
+       "command": "object.order",
+       "args": {
+        "to": "front"
+       },
+       "icon": "layer-top"
+      },
+      {
+       "label": "Send Backward",
+       "command": "object.order",
+       "args": {
+        "to": "backward"
+       },
+       "icon": "layer-down"
+      },
+      {
+       "label": "Send to Back",
+       "command": "object.order",
+       "args": {
+        "to": "back"
+       },
+       "icon": "layer-bottom"
+      }
+     ],
+     "icon": "align-objects"
+    },
+    {
+     "label": "Rotate",
+     "items": [
+      {
+       "label": "Rotate Right 90°",
+       "command": "object.rotate",
+       "args": {
+        "degrees": 90
+       },
+       "icon": "rotate-cw"
+      },
+      {
+       "label": "Rotate Left 90°",
+       "command": "object.rotate",
+       "args": {
+        "degrees": -90
+       },
+       "icon": "rotate-ccw"
+      },
+      {
+       "label": "Flip Vertical",
+       "command": "object.flip",
+       "args": {
+        "axis": "vertical"
+       },
+       "icon": "flip-v"
+      },
+      {
+       "label": "Flip Horizontal",
+       "command": "object.flip",
+       "args": {
+        "axis": "horizontal"
+       },
+       "icon": "flip-h"
+      }
+     ],
+     "icon": "rotate"
+    },
+    "-",
+    {
+     "label": "Link...",
+     "command": "link.insert",
+     "icon": "link-chain"
+    },
+    {
+     "label": "Copy Link to Paragraph",
+     "command": "link.copy",
+     "args": {
+      "scope": "paragraph"
+     },
+     "icon": "link-chain"
+    },
+    "-",
+    {
+     "label": "Delete",
+     "command": "edit.delete",
+     "icon": "x-delete"
+    }
+   ]
+  },
+  "printout": {
+   "items": [
+    {
+     "label": "Cut",
+     "command": "clipboard.cut",
+     "icon": "scissors"
+    },
+    {
+     "label": "Copy",
+     "command": "clipboard.copy",
+     "icon": "copy-pages"
+    },
+    {
+     "label": "Paste",
+     "command": "clipboard.paste",
+     "icon": "paste"
+    },
+    "-",
+    {
+     "label": "Order",
+     "items": [
+      {
+       "label": "Bring Forward",
+       "command": "object.order",
+       "args": {
+        "to": "forward"
+       },
+       "icon": "layer-up"
+      },
+      {
+       "label": "Bring to Front",
+       "command": "object.order",
+       "args": {
+        "to": "front"
+       },
+       "icon": "layer-top"
+      },
+      {
+       "label": "Send Backward",
+       "command": "object.order",
+       "args": {
+        "to": "backward"
+       },
+       "icon": "layer-down"
+      },
+      {
+       "label": "Send to Back",
+       "command": "object.order",
+       "args": {
+        "to": "back"
+       },
+       "icon": "layer-bottom"
+      }
+     ],
+     "icon": "align-objects"
+    },
+    "-",
+    {
+     "label": "Delete",
+     "command": "edit.delete",
+     "icon": "x-delete"
+    }
+   ]
+  },
+  "file-attachment": {
+   "items": [
+    {
+     "label": "Cut",
+     "command": "clipboard.cut",
+     "icon": "scissors"
+    },
+    {
+     "label": "Copy",
+     "command": "clipboard.copy",
+     "icon": "copy-pages"
+    },
+    {
+     "label": "Paste",
+     "command": "clipboard.paste",
+     "icon": "paste"
+    },
+    "-",
+    {
+     "label": "Order",
+     "items": [
+      {
+       "label": "Bring Forward",
+       "command": "object.order",
+       "args": {
+        "to": "forward"
+       },
+       "icon": "layer-up"
+      },
+      {
+       "label": "Bring to Front",
+       "command": "object.order",
+       "args": {
+        "to": "front"
+       },
+       "icon": "layer-top"
+      },
+      {
+       "label": "Send Backward",
+       "command": "object.order",
+       "args": {
+        "to": "backward"
+       },
+       "icon": "layer-down"
+      },
+      {
+       "label": "Send to Back",
+       "command": "object.order",
+       "args": {
+        "to": "back"
+       },
+       "icon": "layer-bottom"
+      }
+     ],
+     "icon": "align-objects"
+    },
+    {
+     "label": "Copy Link to Paragraph",
+     "command": "link.copy",
+     "args": {
+      "scope": "paragraph"
+     },
+     "icon": "link-chain"
+    },
+    "-",
+    {
+     "label": "Delete",
+     "command": "edit.delete",
+     "icon": "x-delete"
+    }
+   ]
+  },
+  "ink": {
+   "items": [
+    {
+     "label": "Cut",
+     "command": "clipboard.cut",
+     "icon": "scissors"
+    },
+    {
+     "label": "Copy",
+     "command": "clipboard.copy",
+     "icon": "copy-pages"
+    },
+    {
+     "label": "Paste",
+     "command": "clipboard.paste",
+     "icon": "paste"
+    },
+    "-",
+    {
+     "label": "Rotate",
+     "items": [
+      {
+       "label": "Rotate Right 90°",
+       "command": "object.rotate",
+       "args": {
+        "degrees": 90
+       },
+       "icon": "rotate-cw"
+      },
+      {
+       "label": "Rotate Left 90°",
+       "command": "object.rotate",
+       "args": {
+        "degrees": -90
+       },
+       "icon": "rotate-ccw"
+      },
+      {
+       "label": "Flip Vertical",
+       "command": "object.flip",
+       "args": {
+        "axis": "vertical"
+       },
+       "icon": "flip-v"
+      },
+      {
+       "label": "Flip Horizontal",
+       "command": "object.flip",
+       "args": {
+        "axis": "horizontal"
+       },
+       "icon": "flip-h"
+      }
+     ],
+     "icon": "rotate"
+    },
+    {
+     "label": "Order",
+     "items": [
+      {
+       "label": "Bring Forward",
+       "command": "object.order",
+       "args": {
+        "to": "forward"
+       },
+       "icon": "layer-up"
+      },
+      {
+       "label": "Bring to Front",
+       "command": "object.order",
+       "args": {
+        "to": "front"
+       },
+       "icon": "layer-top"
+      },
+      {
+       "label": "Send Backward",
+       "command": "object.order",
+       "args": {
+        "to": "backward"
+       },
+       "icon": "layer-down"
+      },
+      {
+       "label": "Send to Back",
+       "command": "object.order",
+       "args": {
+        "to": "back"
+       },
+       "icon": "layer-bottom"
+      }
+     ],
+     "icon": "align-objects"
+    },
+    "-",
+    {
+     "label": "Ink Replay",
+     "command": "ink.replay",
+     "icon": "ink-play"
+    },
+    "-",
+    {
+     "label": "Delete",
+     "command": "edit.delete",
+     "icon": "x-delete"
+    }
+   ]
+  },
+  "shape": {
+   "items": [
+    {
+     "label": "Cut",
+     "command": "clipboard.cut",
+     "icon": "scissors"
+    },
+    {
+     "label": "Copy",
+     "command": "clipboard.copy",
+     "icon": "copy-pages"
+    },
+    {
+     "label": "Paste",
+     "command": "clipboard.paste",
+     "icon": "paste"
+    },
+    "-",
+    {
+     "label": "Rotate",
+     "items": [
+      {
+       "label": "Rotate Right 90°",
+       "command": "object.rotate",
+       "args": {
+        "degrees": 90
+       },
+       "icon": "rotate-cw"
+      },
+      {
+       "label": "Rotate Left 90°",
+       "command": "object.rotate",
+       "args": {
+        "degrees": -90
+       },
+       "icon": "rotate-ccw"
+      },
+      {
+       "label": "Flip Vertical",
+       "command": "object.flip",
+       "args": {
+        "axis": "vertical"
+       },
+       "icon": "flip-v"
+      },
+      {
+       "label": "Flip Horizontal",
+       "command": "object.flip",
+       "args": {
+        "axis": "horizontal"
+       },
+       "icon": "flip-h"
+      }
+     ],
+     "icon": "rotate"
+    },
+    {
+     "label": "Order",
+     "items": [
+      {
+       "label": "Bring Forward",
+       "command": "object.order",
+       "args": {
+        "to": "forward"
+       },
+       "icon": "layer-up"
+      },
+      {
+       "label": "Bring to Front",
+       "command": "object.order",
+       "args": {
+        "to": "front"
+       },
+       "icon": "layer-top"
+      },
+      {
+       "label": "Send Backward",
+       "command": "object.order",
+       "args": {
+        "to": "backward"
+       },
+       "icon": "layer-down"
+      },
+      {
+       "label": "Send to Back",
+       "command": "object.order",
+       "args": {
+        "to": "back"
+       },
+       "icon": "layer-bottom"
+      }
+     ],
+     "icon": "align-objects"
+    },
+    "-",
+    {
+     "label": "Delete",
+     "command": "edit.delete",
+     "icon": "x-delete"
+    }
+   ]
+  },
+  "table-cell": {
+   "items": [
+    {
+     "label": "Cut",
+     "command": "clipboard.cut",
+     "icon": "scissors"
+    },
+    {
+     "label": "Copy",
+     "command": "clipboard.copy",
+     "icon": "copy-pages"
+    },
+    {
+     "label": "Paste",
+     "command": "clipboard.paste",
+     "icon": "paste"
+    },
+    "-",
+    {
+     "label": "Table",
+     "items": [
+      {
+       "label": "Insert Above",
+       "command": "table.insert",
+       "args": {
+        "where": "above"
+       },
+       "icon": "table-row-above"
+      },
+      {
+       "label": "Insert Below",
+       "command": "table.insert",
+       "args": {
+        "where": "below"
+       },
+       "icon": "table-row-below"
+      },
+      {
+       "label": "Insert Left",
+       "command": "table.insert",
+       "args": {
+        "where": "left"
+       },
+       "icon": "table-col-left"
+      },
+      {
+       "label": "Insert Right",
+       "command": "table.insert",
+       "args": {
+        "where": "right"
+       },
+       "icon": "table-col-right"
+      },
+      "-",
+      {
+       "label": "Delete Table",
+       "command": "table.delete",
+       "args": {
+        "scope": "table"
+       },
+       "icon": "table-delete"
+      },
+      {
+       "label": "Delete Columns",
+       "command": "table.delete",
+       "args": {
+        "scope": "columns"
+       },
+       "icon": "table-delete-col"
+      },
+      {
+       "label": "Delete Rows",
+       "command": "table.delete",
+       "args": {
+        "scope": "rows"
+       },
+       "icon": "table-delete-row"
+      },
+      "-",
+      {
+       "label": "Select Table",
+       "command": "table.select",
+       "args": {
+        "scope": "table"
+       },
+       "icon": "table-select"
+      },
+      {
+       "label": "Select Columns",
+       "command": "table.select",
+       "args": {
+        "scope": "columns"
+       },
+       "icon": "table-select-col"
+      },
+      {
+       "label": "Select Rows",
+       "command": "table.select",
+       "args": {
+        "scope": "rows"
+       },
+       "icon": "table-select-row"
+      },
+      {
+       "label": "Select Cell",
+       "command": "table.select",
+       "args": {
+        "scope": "cell"
+       },
+       "icon": "table-select-cell"
+      },
+      "-",
+      {
+       "label": "Hide Borders",
+       "command": "table.hideBorders",
+       "icon": "table-borders-off"
+      },
+      {
+       "label": "Header Row",
+       "command": "table.headerRow",
+       "icon": "table-header"
+      },
+      {
+       "label": "Sort",
+       "command": "table.sort",
+       "icon": "sort"
+      }
+     ],
+     "icon": "table"
+    },
+    {
+     "label": "Paragraph Alignment",
+     "items": [
+      {
+       "label": "Align Left",
+       "command": "paragraph.align",
+       "args": {
+        "alignment": "left"
+       },
+       "icon": "align-left"
+      },
+      {
+       "label": "Center",
+       "command": "paragraph.align",
+       "args": {
+        "alignment": "center"
+       },
+       "icon": "align-center"
+      },
+      {
+       "label": "Align Right",
+       "command": "paragraph.align",
+       "args": {
+        "alignment": "right"
+       },
+       "icon": "align-right"
+      }
+     ],
+     "icon": "align"
+    },
+    {
+     "label": "Tag",
+     "items": [
+      {
+       "label": "To Do",
+       "command": "tag.toggle",
+       "args": {
+        "tagId": "to-do"
+       },
+       "icon": "tag-checkbox"
+      },
+      {
+       "label": "Important",
+       "command": "tag.toggle",
+       "args": {
+        "tagId": "important"
+       },
+       "icon": "tag-star"
+      },
+      {
+       "label": "Question",
+       "command": "tag.toggle",
+       "args": {
+        "tagId": "question"
+       },
+       "icon": "tag-question-mark"
+      },
+      {
+       "label": "Remember for later",
+       "command": "tag.toggle",
+       "args": {
+        "tagId": "remember-for-later"
+       },
+       "icon": "tag-highlight-yellow"
+      },
+      {
+       "label": "Definition",
+       "command": "tag.toggle",
+       "args": {
+        "tagId": "definition"
+       },
+       "icon": "tag-highlight-green"
+      },
+      {
+       "label": "Highlight",
+       "command": "tag.toggle",
+       "args": {
+        "tagId": "highlight"
+       },
+       "icon": "tag-highlighter"
+      },
+      {
+       "label": "Contact",
+       "command": "tag.toggle",
+       "args": {
+        "tagId": "contact"
+       },
+       "icon": "tag-person-card"
+      },
+      {
+       "label": "Address",
+       "command": "tag.toggle",
+       "args": {
+        "tagId": "address"
+       },
+       "icon": "tag-house"
+      },
+      {
+       "label": "Phone number",
+       "command": "tag.toggle",
+       "args": {
+        "tagId": "phone-number"
+       },
+       "icon": "tag-phone"
+      },
+      {
+       "label": "Customize Tags...",
+       "command": "tag.customize",
+       "icon": "tag-settings"
+      }
+     ],
+     "icon": "tag"
+    },
+    {
+     "label": "Link...",
+     "command": "link.insert",
+     "icon": "link-chain"
+    }
+   ]
+  },
+  "equation": {
+   "items": [
+    {
+     "label": "Cut",
+     "command": "clipboard.cut",
+     "icon": "scissors"
+    },
+    {
+     "label": "Copy",
+     "command": "clipboard.copy",
+     "icon": "copy-pages"
+    },
+    {
+     "label": "Paste",
+     "command": "clipboard.paste",
+     "icon": "paste"
+    },
+    "-",
+    {
+     "label": "Professional",
+     "command": "equation.convert",
+     "args": {
+      "format": "professional",
+      "scope": "current"
+     },
+     "icon": "eq-professional"
+    },
+    {
+     "label": "Linear",
+     "command": "equation.convert",
+     "args": {
+      "format": "linear",
+      "scope": "current"
+     },
+     "icon": "eq-linear"
+    },
+    {
+     "label": "Normal Text",
+     "command": "equation.normalText",
+     "icon": "abc"
+    }
+   ]
+  },
+  "link": {
+   "items": [
+    {
+     "label": "Edit Link...",
+     "command": "link.insert",
+     "icon": "link-chain"
+    },
+    {
+     "label": "Copy Link",
+     "command": "link.copy",
+     "args": {
+      "scope": "link"
+     },
+     "icon": "link-chain"
+    },
+    {
+     "label": "Remove Link",
+     "command": "link.remove",
+     "icon": "unlink"
+    }
+   ]
+  },
+  "tag": {
+   "items": [
+    {
+     "label": "To Do",
+     "command": "tag.toggle",
+     "args": {
+      "tagId": "to-do"
+     },
+     "icon": "tag-checkbox"
+    },
+    {
+     "label": "Important",
+     "command": "tag.toggle",
+     "args": {
+      "tagId": "important"
+     },
+     "icon": "tag-star"
+    },
+    {
+     "label": "Question",
+     "command": "tag.toggle",
+     "args": {
+      "tagId": "question"
+     },
+     "icon": "tag-question-mark"
+    },
+    {
+     "label": "Remember for later",
+     "command": "tag.toggle",
+     "args": {
+      "tagId": "remember-for-later"
+     },
+     "icon": "tag-highlight-yellow"
+    },
+    {
+     "label": "Definition",
+     "command": "tag.toggle",
+     "args": {
+      "tagId": "definition"
+     },
+     "icon": "tag-highlight-green"
+    },
+    {
+     "label": "Highlight",
+     "command": "tag.toggle",
+     "args": {
+      "tagId": "highlight"
+     },
+     "icon": "tag-highlighter"
+    },
+    {
+     "label": "Contact",
+     "command": "tag.toggle",
+     "args": {
+      "tagId": "contact"
+     },
+     "icon": "tag-person-card"
+    },
+    {
+     "label": "Address",
+     "command": "tag.toggle",
+     "args": {
+      "tagId": "address"
+     },
+     "icon": "tag-house"
+    },
+    {
+     "label": "Phone number",
+     "command": "tag.toggle",
+     "args": {
+      "tagId": "phone-number"
+     },
+     "icon": "tag-phone"
+    },
+    {
+     "label": "Customize Tags...",
+     "command": "tag.customize",
+     "icon": "tag-settings"
+    },
+    "-",
+    {
+     "label": "Remove Tag",
+     "command": "tag.removeAll",
+     "icon": "tag-remove"
+    }
+   ]
+  },
+  "task-flag": {
+   "items": []
+  },
+  "search-result": {
+   "items": []
+  },
+  "linked-note-icon": {
+   "items": []
+  },
+  "quick-notes": {
+   "items": []
+  }
+ }
+}

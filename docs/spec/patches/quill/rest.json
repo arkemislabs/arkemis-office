@@ -1,0 +1,1729 @@
+{
+  "controls": {
+    "insert.header-footer.page-number.remove-page-numbers": {
+      "command": "insert.removePageNumbers",
+      "note": "U:quill/rest: Remove Page Numbers takes the PAGE, NUMPAGES and SECTIONPAGES fields out of every header and footer. Not checked against upstream (follows Word)."
+    },
+    "insert.pages.cover-page.remove-current-cover-page": {
+      "command": "insert.removeCoverPage",
+      "note": "U:quill/rest: Remove Current Cover Page takes the first page away when it is a cover page (a Title paragraph on a first page that ends in a page break, as Insert › Cover Page makes it). Not checked against upstream (follows Word)."
+    },
+    "review.ink.hide-ink.delete-all-ink-in-document": {
+      "command": "review.deleteAllInk",
+      "note": "U:quill/rest: Delete All Ink in Document removes every ink stroke, hidden or not; other shapes stay. Not checked against upstream (follows Word)."
+    },
+    "review.speech.read-aloud": {
+      "note": "U:quill/rest: Read Aloud speaks the selection, or the text from the caret on, with an offline voice of this computer (the Web Speech API's local voices; nothing is sent anywhere). Off on a computer with no installed voice. Not checked against upstream (follows Word)."
+    },
+    "view.show.hide-white-space": {
+      "kind": "checkbox",
+      "note": "U:quill/rest: Hide White Space (Print Layout): where two pages meet, the bottom margin with its footer and the next top margin with its header collapse into a thin divider; the first page keeps its top margin and the last its bottom one. Display only; the pagination does not change. Not checked against upstream (wordcraft's page geometry for it is not translated; follows Word)."
+    },
+    "view.dark-mode.interface-theme": {
+      "note": "U:quill/rest: Interface Theme (System, Light, Dark): the work area and rulers round the pages follow it; Dark is the default look. Kept in the person's settings, not the document. Not checked against upstream (follows Word).",
+      "items": [
+        {
+          "id": "view.dark-mode.interface-theme.system",
+          "label": "Use System Setting",
+          "kind": "toggle",
+          "command": "view.interfaceTheme",
+          "args": {
+            "value": "system"
+          },
+          "source": "office"
+        },
+        {
+          "id": "view.dark-mode.interface-theme.light",
+          "label": "Light",
+          "kind": "toggle",
+          "command": "view.interfaceTheme",
+          "args": {
+            "value": "light"
+          },
+          "source": "office"
+        },
+        {
+          "id": "view.dark-mode.interface-theme.dark",
+          "label": "Dark",
+          "kind": "toggle",
+          "command": "view.interfaceTheme",
+          "args": {
+            "value": "dark"
+          },
+          "source": "office"
+        }
+      ]
+    },
+    "immersive-reader.immersive-reader.line-focus": {
+      "note": "U:quill/rest: Line Focus keeps one, three or five lines lit round the caret and dims the rest of the page. Not checked against upstream (follows Word).",
+      "items": [
+        {
+          "id": "immersive-reader.immersive-reader.line-focus.none",
+          "label": "None",
+          "kind": "toggle",
+          "command": "view.lineFocus",
+          "args": {
+            "value": "none"
+          },
+          "source": "upstream"
+        },
+        {
+          "id": "immersive-reader.immersive-reader.line-focus.one",
+          "label": "One Line",
+          "kind": "toggle",
+          "command": "view.lineFocus",
+          "args": {
+            "value": "one"
+          },
+          "source": "upstream"
+        },
+        {
+          "id": "immersive-reader.immersive-reader.line-focus.three",
+          "label": "Three Lines",
+          "kind": "toggle",
+          "command": "view.lineFocus",
+          "args": {
+            "value": "three"
+          },
+          "source": "upstream"
+        },
+        {
+          "id": "immersive-reader.immersive-reader.line-focus.five",
+          "label": "Five Lines",
+          "kind": "toggle",
+          "command": "view.lineFocus",
+          "args": {
+            "value": "five"
+          },
+          "source": "upstream"
+        }
+      ]
+    },
+    "immersive-reader.immersive-reader.syllables": {
+      "note": "U:quill/rest: Syllables needs the layout to reserve room for a dot between syllables; the layout does not, so it stays hidden."
+    },
+    "picture-format.adjust.color.color-tone": {
+      "kind": "dropdown",
+      "command": null,
+      "note": "U:quill/rest: Color Tone: Word's eight temperature presets (4700 K to 11200 K, 6500 K as the picture is) as a white balance of the bitmap, absolute from the original. Not checked against upstream (follows Word).",
+      "items": [
+        {
+          "id": "picture-format.adjust.color.color-tone.t4700",
+          "label": "Temperature: 4700 K",
+          "command": "picture.colorTone",
+          "args": {
+            "temperature": 4700
+          },
+          "source": "office"
+        },
+        {
+          "id": "picture-format.adjust.color.color-tone.t5300",
+          "label": "Temperature: 5300 K",
+          "command": "picture.colorTone",
+          "args": {
+            "temperature": 5300
+          },
+          "source": "office"
+        },
+        {
+          "id": "picture-format.adjust.color.color-tone.t5900",
+          "label": "Temperature: 5900 K",
+          "command": "picture.colorTone",
+          "args": {
+            "temperature": 5900
+          },
+          "source": "office"
+        },
+        {
+          "id": "picture-format.adjust.color.color-tone.t6500",
+          "label": "Temperature: 6500 K (Original)",
+          "command": "picture.colorTone",
+          "args": {
+            "temperature": 6500
+          },
+          "source": "office"
+        },
+        {
+          "id": "picture-format.adjust.color.color-tone.t7200",
+          "label": "Temperature: 7200 K",
+          "command": "picture.colorTone",
+          "args": {
+            "temperature": 7200
+          },
+          "source": "office"
+        },
+        {
+          "id": "picture-format.adjust.color.color-tone.t8800",
+          "label": "Temperature: 8800 K",
+          "command": "picture.colorTone",
+          "args": {
+            "temperature": 8800
+          },
+          "source": "office"
+        },
+        {
+          "id": "picture-format.adjust.color.color-tone.t10500",
+          "label": "Temperature: 10500 K",
+          "command": "picture.colorTone",
+          "args": {
+            "temperature": 10500
+          },
+          "source": "office"
+        },
+        {
+          "id": "picture-format.adjust.color.color-tone.t11200",
+          "label": "Temperature: 11200 K",
+          "command": "picture.colorTone",
+          "args": {
+            "temperature": 11200
+          },
+          "source": "office"
+        }
+      ]
+    },
+    "picture-format.adjust.color.set-transparent-color": {
+      "kind": "toggle",
+      "command": "picture.pickTransparent",
+      "note": "U:quill/rest: Set Transparent Color: the next click on the picture picks the colour that becomes transparent (the pointer is a crosshair until then). Not checked against upstream (follows Word)."
+    },
+    "shape-format.shape-styles.shape-effects": {
+      "note": "U:quill/rest + U:quill/shapes: shadow (the nine offsets), reflection (tight, half, full), glow, soft edges and bevel (the twelve shapes), each with a \"No\" entry; every selected shape and picture. Reflection and bevel are deckcraft's effects (wordcraft has the other three). Preset is twelve combinations of them (not checked against upstream, follows Word).",
+      "items": [
+        {
+          "id": "shape-format.shape-styles.shape-effects.preset",
+          "label": "Preset",
+          "kind": "dropdown",
+          "command": null,
+          "source": "office",
+          "items": [
+            {
+              "id": "shape-format.shape-styles.shape-effects.preset.presets",
+              "label": "Presets",
+              "kind": "gallery",
+              "command": "shape.effectPreset",
+              "args": {
+                "preset": "<preset>"
+              },
+              "source": "office"
+            }
+          ]
+        },
+        {
+          "id": "shape-format.shape-styles.shape-effects.shadow",
+          "label": "Shadow",
+          "kind": "dropdown",
+          "command": null,
+          "source": "upstream",
+          "items": [
+            {
+              "id": "shape-format.shape-styles.shape-effects.shadow.no-shadow",
+              "label": "No Shadow",
+              "command": "shape.effects",
+              "args": {
+                "shadow": null
+              },
+              "source": "upstream"
+            },
+            {
+              "separator": true
+            },
+            {
+              "id": "shape-format.shape-styles.shape-effects.shadow.offset-bottom-right",
+              "label": "Offset: Bottom Right",
+              "command": "shape.effects",
+              "args": {
+                "shadow": "offsetBottomRight"
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "shape-format.shape-styles.shape-effects.shadow.offset-bottom",
+              "label": "Offset: Bottom",
+              "command": "shape.effects",
+              "args": {
+                "shadow": "offsetBottom"
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "shape-format.shape-styles.shape-effects.shadow.offset-bottom-left",
+              "label": "Offset: Bottom Left",
+              "command": "shape.effects",
+              "args": {
+                "shadow": "offsetBottomLeft"
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "shape-format.shape-styles.shape-effects.shadow.offset-right",
+              "label": "Offset: Right",
+              "command": "shape.effects",
+              "args": {
+                "shadow": "offsetRight"
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "shape-format.shape-styles.shape-effects.shadow.offset-center",
+              "label": "Offset: Center",
+              "command": "shape.effects",
+              "args": {
+                "shadow": "offsetCenter"
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "shape-format.shape-styles.shape-effects.shadow.offset-left",
+              "label": "Offset: Left",
+              "command": "shape.effects",
+              "args": {
+                "shadow": "offsetLeft"
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "shape-format.shape-styles.shape-effects.shadow.offset-top-right",
+              "label": "Offset: Top Right",
+              "command": "shape.effects",
+              "args": {
+                "shadow": "offsetTopRight"
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "shape-format.shape-styles.shape-effects.shadow.offset-top",
+              "label": "Offset: Top",
+              "command": "shape.effects",
+              "args": {
+                "shadow": "offsetTop"
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "shape-format.shape-styles.shape-effects.shadow.offset-top-left",
+              "label": "Offset: Top Left",
+              "command": "shape.effects",
+              "args": {
+                "shadow": "offsetTopLeft"
+              },
+              "source": "upstream"
+            }
+          ]
+        },
+        {
+          "id": "shape-format.shape-styles.shape-effects.reflection",
+          "label": "Reflection",
+          "kind": "dropdown",
+          "command": null,
+          "source": "upstream",
+          "items": [
+            {
+              "id": "shape-format.shape-styles.shape-effects.reflection.no-reflection",
+              "label": "No Reflection",
+              "command": "shape.effects",
+              "args": {
+                "reflection": null
+              },
+              "source": "upstream"
+            },
+            {
+              "separator": true
+            },
+            {
+              "id": "shape-format.shape-styles.shape-effects.reflection.tight",
+              "label": "Tight Reflection",
+              "command": "shape.effects",
+              "args": {
+                "reflection": "tight"
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "shape-format.shape-styles.shape-effects.reflection.half",
+              "label": "Half Reflection",
+              "command": "shape.effects",
+              "args": {
+                "reflection": "half"
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "shape-format.shape-styles.shape-effects.reflection.full",
+              "label": "Full Reflection",
+              "command": "shape.effects",
+              "args": {
+                "reflection": "full"
+              },
+              "source": "upstream"
+            }
+          ]
+        },
+        {
+          "id": "shape-format.shape-styles.shape-effects.glow",
+          "label": "Glow",
+          "kind": "dropdown",
+          "command": null,
+          "source": "upstream",
+          "items": [
+            {
+              "id": "shape-format.shape-styles.shape-effects.glow.no-glow",
+              "label": "No Glow",
+              "command": "shape.effects",
+              "args": {
+                "glow": null
+              },
+              "source": "upstream"
+            },
+            {
+              "separator": true
+            },
+            {
+              "id": "shape-format.shape-styles.shape-effects.glow.5-pt",
+              "label": "5 pt",
+              "command": "shape.effects",
+              "args": {
+                "glow": 5
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "shape-format.shape-styles.shape-effects.glow.8-pt",
+              "label": "8 pt",
+              "command": "shape.effects",
+              "args": {
+                "glow": 8
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "shape-format.shape-styles.shape-effects.glow.11-pt",
+              "label": "11 pt",
+              "command": "shape.effects",
+              "args": {
+                "glow": 11
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "shape-format.shape-styles.shape-effects.glow.18-pt",
+              "label": "18 pt",
+              "command": "shape.effects",
+              "args": {
+                "glow": 18
+              },
+              "source": "upstream"
+            }
+          ]
+        },
+        {
+          "id": "shape-format.shape-styles.shape-effects.soft-edges",
+          "label": "Soft Edges",
+          "kind": "dropdown",
+          "command": null,
+          "source": "upstream",
+          "items": [
+            {
+              "id": "shape-format.shape-styles.shape-effects.soft-edges.no-soft-edges",
+              "label": "No Soft Edges",
+              "command": "shape.effects",
+              "args": {
+                "softEdge": null
+              },
+              "source": "upstream"
+            },
+            {
+              "separator": true
+            },
+            {
+              "id": "shape-format.shape-styles.shape-effects.soft-edges.1-pt",
+              "label": "1 pt",
+              "command": "shape.effects",
+              "args": {
+                "softEdge": 1
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "shape-format.shape-styles.shape-effects.soft-edges.2-5-pt",
+              "label": "2.5 pt",
+              "command": "shape.effects",
+              "args": {
+                "softEdge": 2.5
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "shape-format.shape-styles.shape-effects.soft-edges.5-pt",
+              "label": "5 pt",
+              "command": "shape.effects",
+              "args": {
+                "softEdge": 5
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "shape-format.shape-styles.shape-effects.soft-edges.10-pt",
+              "label": "10 pt",
+              "command": "shape.effects",
+              "args": {
+                "softEdge": 10
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "shape-format.shape-styles.shape-effects.soft-edges.25-pt",
+              "label": "25 pt",
+              "command": "shape.effects",
+              "args": {
+                "softEdge": 25
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "shape-format.shape-styles.shape-effects.soft-edges.50-pt",
+              "label": "50 pt",
+              "command": "shape.effects",
+              "args": {
+                "softEdge": 50
+              },
+              "source": "upstream"
+            }
+          ]
+        },
+        {
+          "id": "shape-format.shape-styles.shape-effects.bevel",
+          "label": "Bevel",
+          "kind": "dropdown",
+          "command": null,
+          "source": "upstream",
+          "items": [
+            {
+              "id": "shape-format.shape-styles.shape-effects.bevel.no-bevel",
+              "label": "No Bevel",
+              "command": "shape.effects",
+              "args": {
+                "bevel": null
+              },
+              "source": "upstream"
+            },
+            {
+              "separator": true
+            },
+            {
+              "id": "shape-format.shape-styles.shape-effects.bevel.relaxed-inset",
+              "label": "Relaxed Inset",
+              "command": "shape.effects",
+              "args": {
+                "bevel": "relaxedInset"
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "shape-format.shape-styles.shape-effects.bevel.circle",
+              "label": "Circle",
+              "command": "shape.effects",
+              "args": {
+                "bevel": "circle"
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "shape-format.shape-styles.shape-effects.bevel.slope",
+              "label": "Slope",
+              "command": "shape.effects",
+              "args": {
+                "bevel": "slope"
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "shape-format.shape-styles.shape-effects.bevel.cross",
+              "label": "Cross",
+              "command": "shape.effects",
+              "args": {
+                "bevel": "cross"
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "shape-format.shape-styles.shape-effects.bevel.angle",
+              "label": "Angle",
+              "command": "shape.effects",
+              "args": {
+                "bevel": "angle"
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "shape-format.shape-styles.shape-effects.bevel.soft-round",
+              "label": "Soft Round",
+              "command": "shape.effects",
+              "args": {
+                "bevel": "softRound"
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "shape-format.shape-styles.shape-effects.bevel.convex",
+              "label": "Convex",
+              "command": "shape.effects",
+              "args": {
+                "bevel": "convex"
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "shape-format.shape-styles.shape-effects.bevel.cool-slant",
+              "label": "Cool Slant",
+              "command": "shape.effects",
+              "args": {
+                "bevel": "coolSlant"
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "shape-format.shape-styles.shape-effects.bevel.divot",
+              "label": "Divot",
+              "command": "shape.effects",
+              "args": {
+                "bevel": "divot"
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "shape-format.shape-styles.shape-effects.bevel.riblet",
+              "label": "Riblet",
+              "command": "shape.effects",
+              "args": {
+                "bevel": "riblet"
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "shape-format.shape-styles.shape-effects.bevel.hard-edge",
+              "label": "Hard Edge",
+              "command": "shape.effects",
+              "args": {
+                "bevel": "hardEdge"
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "shape-format.shape-styles.shape-effects.bevel.art-deco",
+              "label": "Art Deco",
+              "command": "shape.effects",
+              "args": {
+                "bevel": "artDeco"
+              },
+              "source": "upstream"
+            }
+          ]
+        }
+      ]
+    },
+    "picture-format.picture-styles.picture-effects": {
+      "kind": "dropdown",
+      "command": null,
+      "items": [
+        {
+          "id": "picture-format.picture-styles.picture-effects.preset",
+          "label": "Preset",
+          "kind": "dropdown",
+          "command": null,
+          "source": "office",
+          "items": [
+            {
+              "id": "picture-format.picture-styles.picture-effects.preset.presets",
+              "label": "Presets",
+              "kind": "gallery",
+              "command": "shape.effectPreset",
+              "args": {
+                "preset": "<preset>"
+              },
+              "source": "office"
+            }
+          ]
+        },
+        {
+          "id": "picture-format.picture-styles.picture-effects.shadow",
+          "label": "Shadow",
+          "kind": "dropdown",
+          "command": null,
+          "source": "upstream",
+          "items": [
+            {
+              "id": "picture-format.picture-styles.picture-effects.shadow.no-shadow",
+              "label": "No Shadow",
+              "command": "shape.effects",
+              "args": {
+                "shadow": null
+              },
+              "source": "upstream"
+            },
+            {
+              "separator": true
+            },
+            {
+              "id": "picture-format.picture-styles.picture-effects.shadow.offset-bottom-right",
+              "label": "Offset: Bottom Right",
+              "command": "shape.effects",
+              "args": {
+                "shadow": "offsetBottomRight"
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "picture-format.picture-styles.picture-effects.shadow.offset-bottom",
+              "label": "Offset: Bottom",
+              "command": "shape.effects",
+              "args": {
+                "shadow": "offsetBottom"
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "picture-format.picture-styles.picture-effects.shadow.offset-bottom-left",
+              "label": "Offset: Bottom Left",
+              "command": "shape.effects",
+              "args": {
+                "shadow": "offsetBottomLeft"
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "picture-format.picture-styles.picture-effects.shadow.offset-right",
+              "label": "Offset: Right",
+              "command": "shape.effects",
+              "args": {
+                "shadow": "offsetRight"
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "picture-format.picture-styles.picture-effects.shadow.offset-center",
+              "label": "Offset: Center",
+              "command": "shape.effects",
+              "args": {
+                "shadow": "offsetCenter"
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "picture-format.picture-styles.picture-effects.shadow.offset-left",
+              "label": "Offset: Left",
+              "command": "shape.effects",
+              "args": {
+                "shadow": "offsetLeft"
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "picture-format.picture-styles.picture-effects.shadow.offset-top-right",
+              "label": "Offset: Top Right",
+              "command": "shape.effects",
+              "args": {
+                "shadow": "offsetTopRight"
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "picture-format.picture-styles.picture-effects.shadow.offset-top",
+              "label": "Offset: Top",
+              "command": "shape.effects",
+              "args": {
+                "shadow": "offsetTop"
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "picture-format.picture-styles.picture-effects.shadow.offset-top-left",
+              "label": "Offset: Top Left",
+              "command": "shape.effects",
+              "args": {
+                "shadow": "offsetTopLeft"
+              },
+              "source": "upstream"
+            }
+          ]
+        },
+        {
+          "id": "picture-format.picture-styles.picture-effects.reflection",
+          "label": "Reflection",
+          "kind": "dropdown",
+          "command": null,
+          "source": "upstream",
+          "items": [
+            {
+              "id": "picture-format.picture-styles.picture-effects.reflection.no-reflection",
+              "label": "No Reflection",
+              "command": "shape.effects",
+              "args": {
+                "reflection": null
+              },
+              "source": "upstream"
+            },
+            {
+              "separator": true
+            },
+            {
+              "id": "picture-format.picture-styles.picture-effects.reflection.tight",
+              "label": "Tight Reflection",
+              "command": "shape.effects",
+              "args": {
+                "reflection": "tight"
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "picture-format.picture-styles.picture-effects.reflection.half",
+              "label": "Half Reflection",
+              "command": "shape.effects",
+              "args": {
+                "reflection": "half"
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "picture-format.picture-styles.picture-effects.reflection.full",
+              "label": "Full Reflection",
+              "command": "shape.effects",
+              "args": {
+                "reflection": "full"
+              },
+              "source": "upstream"
+            }
+          ]
+        },
+        {
+          "id": "picture-format.picture-styles.picture-effects.glow",
+          "label": "Glow",
+          "kind": "dropdown",
+          "command": null,
+          "source": "upstream",
+          "items": [
+            {
+              "id": "picture-format.picture-styles.picture-effects.glow.no-glow",
+              "label": "No Glow",
+              "command": "shape.effects",
+              "args": {
+                "glow": null
+              },
+              "source": "upstream"
+            },
+            {
+              "separator": true
+            },
+            {
+              "id": "picture-format.picture-styles.picture-effects.glow.5-pt",
+              "label": "5 pt",
+              "command": "shape.effects",
+              "args": {
+                "glow": 5
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "picture-format.picture-styles.picture-effects.glow.8-pt",
+              "label": "8 pt",
+              "command": "shape.effects",
+              "args": {
+                "glow": 8
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "picture-format.picture-styles.picture-effects.glow.11-pt",
+              "label": "11 pt",
+              "command": "shape.effects",
+              "args": {
+                "glow": 11
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "picture-format.picture-styles.picture-effects.glow.18-pt",
+              "label": "18 pt",
+              "command": "shape.effects",
+              "args": {
+                "glow": 18
+              },
+              "source": "upstream"
+            }
+          ]
+        },
+        {
+          "id": "picture-format.picture-styles.picture-effects.soft-edges",
+          "label": "Soft Edges",
+          "kind": "dropdown",
+          "command": null,
+          "source": "upstream",
+          "items": [
+            {
+              "id": "picture-format.picture-styles.picture-effects.soft-edges.no-soft-edges",
+              "label": "No Soft Edges",
+              "command": "shape.effects",
+              "args": {
+                "softEdge": null
+              },
+              "source": "upstream"
+            },
+            {
+              "separator": true
+            },
+            {
+              "id": "picture-format.picture-styles.picture-effects.soft-edges.1-pt",
+              "label": "1 pt",
+              "command": "shape.effects",
+              "args": {
+                "softEdge": 1
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "picture-format.picture-styles.picture-effects.soft-edges.2-5-pt",
+              "label": "2.5 pt",
+              "command": "shape.effects",
+              "args": {
+                "softEdge": 2.5
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "picture-format.picture-styles.picture-effects.soft-edges.5-pt",
+              "label": "5 pt",
+              "command": "shape.effects",
+              "args": {
+                "softEdge": 5
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "picture-format.picture-styles.picture-effects.soft-edges.10-pt",
+              "label": "10 pt",
+              "command": "shape.effects",
+              "args": {
+                "softEdge": 10
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "picture-format.picture-styles.picture-effects.soft-edges.25-pt",
+              "label": "25 pt",
+              "command": "shape.effects",
+              "args": {
+                "softEdge": 25
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "picture-format.picture-styles.picture-effects.soft-edges.50-pt",
+              "label": "50 pt",
+              "command": "shape.effects",
+              "args": {
+                "softEdge": 50
+              },
+              "source": "upstream"
+            }
+          ]
+        },
+        {
+          "id": "picture-format.picture-styles.picture-effects.bevel",
+          "label": "Bevel",
+          "kind": "dropdown",
+          "command": null,
+          "source": "upstream",
+          "items": [
+            {
+              "id": "picture-format.picture-styles.picture-effects.bevel.no-bevel",
+              "label": "No Bevel",
+              "command": "shape.effects",
+              "args": {
+                "bevel": null
+              },
+              "source": "upstream"
+            },
+            {
+              "separator": true
+            },
+            {
+              "id": "picture-format.picture-styles.picture-effects.bevel.relaxed-inset",
+              "label": "Relaxed Inset",
+              "command": "shape.effects",
+              "args": {
+                "bevel": "relaxedInset"
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "picture-format.picture-styles.picture-effects.bevel.circle",
+              "label": "Circle",
+              "command": "shape.effects",
+              "args": {
+                "bevel": "circle"
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "picture-format.picture-styles.picture-effects.bevel.slope",
+              "label": "Slope",
+              "command": "shape.effects",
+              "args": {
+                "bevel": "slope"
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "picture-format.picture-styles.picture-effects.bevel.cross",
+              "label": "Cross",
+              "command": "shape.effects",
+              "args": {
+                "bevel": "cross"
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "picture-format.picture-styles.picture-effects.bevel.angle",
+              "label": "Angle",
+              "command": "shape.effects",
+              "args": {
+                "bevel": "angle"
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "picture-format.picture-styles.picture-effects.bevel.soft-round",
+              "label": "Soft Round",
+              "command": "shape.effects",
+              "args": {
+                "bevel": "softRound"
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "picture-format.picture-styles.picture-effects.bevel.convex",
+              "label": "Convex",
+              "command": "shape.effects",
+              "args": {
+                "bevel": "convex"
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "picture-format.picture-styles.picture-effects.bevel.cool-slant",
+              "label": "Cool Slant",
+              "command": "shape.effects",
+              "args": {
+                "bevel": "coolSlant"
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "picture-format.picture-styles.picture-effects.bevel.divot",
+              "label": "Divot",
+              "command": "shape.effects",
+              "args": {
+                "bevel": "divot"
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "picture-format.picture-styles.picture-effects.bevel.riblet",
+              "label": "Riblet",
+              "command": "shape.effects",
+              "args": {
+                "bevel": "riblet"
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "picture-format.picture-styles.picture-effects.bevel.hard-edge",
+              "label": "Hard Edge",
+              "command": "shape.effects",
+              "args": {
+                "bevel": "hardEdge"
+              },
+              "source": "upstream"
+            },
+            {
+              "id": "picture-format.picture-styles.picture-effects.bevel.art-deco",
+              "label": "Art Deco",
+              "command": "shape.effects",
+              "args": {
+                "bevel": "artDeco"
+              },
+              "source": "upstream"
+            }
+          ]
+        }
+      ],
+      "note": "U:quill/rest + U:quill/shapes: shadow (the nine offsets), reflection (tight, half, full), glow, soft edges and bevel (the twelve shapes), each with a \"No\" entry; every selected shape and picture. Reflection and bevel are deckcraft's effects (wordcraft has the other three). Preset is twelve combinations of them (not checked against upstream, follows Word)."
+    },
+    "shape-format.shape-styles.shape-fill.picture": {
+      "command": "ui.fillPicture",
+      "note": "U:quill/rest: Picture… opens the system Open dialog; the shape, text box or canvas background is filled with the picture, stretched over it (saved as a:blipFill). Not checked against upstream (follows Word)."
+    },
+    "shape-format.shape-styles.shape-fill.texture": {
+      "kind": "gallery",
+      "command": "shape.fillTexture",
+      "args": {
+        "texture": "<texture>"
+      },
+      "items": null,
+      "note": "U:quill/rest: Texture: the 24 textures named as Word names them, drawn by Arkemis (seamless tiles from seeded noise, not Word's photographs), tiled over the shape and saved as a:blipFill with a:tile. Not checked against upstream (follows Word)."
+    },
+    "table-layout.draw.draw-table": {
+      "command": "table.drawMode",
+      "args": {
+        "mode": "draw"
+      },
+      "kind": "toggle",
+      "note": "U:quill/rest: Draw Table turns the pen on: a dragged rectangle draws a table, a dragged line splits the cells it crosses (table.draw, wordcraft table_draw.rs); click the button again to turn it off."
+    },
+    "table-layout.draw.eraser": {
+      "command": "table.drawMode",
+      "args": {
+        "mode": "erase"
+      },
+      "kind": "toggle",
+      "note": "U:quill/rest: Eraser turns the eraser on: a click removes the border under it (table.eraser, wordcraft table_draw.rs); click the button again to turn it off."
+    },
+    "table-design.borders.borders.draw-table": {
+      "command": "table.drawMode",
+      "args": {
+        "mode": "draw"
+      },
+      "kind": "toggle",
+      "note": "U:quill/rest: Draw Table, as on Table Layout."
+    },
+    "insert.tables.table.draw-table": {
+      "command": "table.drawMode",
+      "args": {
+        "mode": "draw"
+      },
+      "note": "U:quill/rest: Draw Table turns the pen on, as on Table Layout."
+    },
+    "table-design.borders.border-styles": {
+      "note": "U:quill/rest: Border Styles holds Border Sampler; the Theme Borders gallery (ready-made border sets) and Recently Used Borders have no engine, and Line Style, Line Weight, Pen Color and the Borders menu do the same by hand.",
+      "items": [
+        {
+          "id": "table-design.borders.border-styles.recently-used-borders",
+          "label": "Recently Used Borders",
+          "kind": "button",
+          "command": null,
+          "source": "office",
+          "note": "U:quill/rest: Recently Used Borders needs the Border Styles gallery, which has no engine; hidden."
+        },
+        {
+          "id": "table-design.borders.border-styles.border-sampler",
+          "label": "Border Sampler",
+          "kind": "toggle",
+          "command": "table.drawMode",
+          "args": {
+            "mode": "sample"
+          },
+          "source": "office",
+          "note": "U:quill/rest: Border Sampler: click a border and its line style, weight and colour become the pen of the Borders menu and Border Painter. Not checked against upstream (follows Word)."
+        }
+      ]
+    },
+    "table-design.borders.borders.diagonal-down-border": {
+      "command": "table.diagonalBorder",
+      "args": {
+        "direction": "down"
+      },
+      "kind": "toggle",
+      "note": "U:quill/rest: Diagonal Down Border: a line from the top left to the bottom right corner of each selected cell, in the table pen (w:tl2br). Not checked against upstream (follows Word)."
+    },
+    "table-design.borders.borders.diagonal-up-border": {
+      "command": "table.diagonalBorder",
+      "args": {
+        "direction": "up"
+      },
+      "kind": "toggle",
+      "note": "U:quill/rest: Diagonal Up Border: a line from the bottom left to the top right corner of each selected cell, in the table pen (w:tr2bl). Not checked against upstream (follows Word)."
+    },
+    "home.paragraph.borders.diagonal-down-border": {
+      "command": "table.diagonalBorder",
+      "args": {
+        "direction": "down"
+      },
+      "kind": "toggle",
+      "note": "U:quill/rest: Diagonal Down Border, as on Table Design; only in a table."
+    },
+    "home.paragraph.borders.diagonal-up-border": {
+      "command": "table.diagonalBorder",
+      "args": {
+        "direction": "up"
+      },
+      "kind": "toggle",
+      "note": "U:quill/rest: Diagonal Up Border, as on Table Design; only in a table."
+    },
+    "developer.controls.legacy-tools": {
+      "note": "U:quill/rest: Legacy Tools holds the legacy form fields of Word 97-2003 forms (Text Form Field, Check Box Form Field, Drop-Down Form Field, Reset Form Fields); ActiveX controls are Windows code Quill never runs, Insert Frame and Form Field Shading are not offered. Not checked against upstream (follows Word).",
+      "items": [
+        {
+          "header": "Legacy Forms"
+        },
+        {
+          "id": "developer.controls.legacy-tools.text-form-field",
+          "label": "Text Form Field",
+          "kind": "button",
+          "command": "developer.legacyField",
+          "args": {
+            "kind": "text"
+          },
+          "source": "office",
+          "icon": "ccPlainText"
+        },
+        {
+          "id": "developer.controls.legacy-tools.check-box-form-field",
+          "label": "Check Box Form Field",
+          "kind": "button",
+          "command": "developer.legacyField",
+          "args": {
+            "kind": "checkBox"
+          },
+          "source": "office",
+          "icon": "ccCheckBox"
+        },
+        {
+          "id": "developer.controls.legacy-tools.drop-down-form-field",
+          "label": "Drop-Down Form Field",
+          "kind": "button",
+          "command": "developer.legacyField",
+          "args": {
+            "kind": "dropDown"
+          },
+          "source": "office",
+          "icon": "ccDropDown"
+        },
+        {
+          "separator": true
+        },
+        {
+          "id": "developer.controls.legacy-tools.reset-form-fields",
+          "label": "Reset Form Fields",
+          "kind": "button",
+          "command": "developer.resetFormFields",
+          "source": "office",
+          "icon": "reset"
+        },
+        {
+          "separator": true
+        },
+        {
+          "id": "developer.controls.legacy-tools.active-x-controls",
+          "label": "ActiveX Controls",
+          "kind": "button",
+          "command": null,
+          "source": "office",
+          "note": "U:quill/developer: ActiveX controls are Windows code Quill never runs; hidden."
+        }
+      ]
+    },
+    "review.accessibility.check-accessibility": {
+      "note": "U:quill/rest: Check Accessibility (file.accessibility, wordcraft cmd/accessibility.rs) lists what makes the document hard to use with a screen reader or to read: Errors, Warnings and Tips in the Accessibility pane, each a jump to its place and maybe a fix."
+    },
+    "layout.arrange.wrap-text.edit-wrap-points": {
+      "command": "arrange.editWrapPoints",
+      "kind": "toggle",
+      "note": "U:quill/rest: Edit Wrap Points shows the outline text follows round a Tight or Through object as a polygon with a handle at each point (drag one to move it, Ctrl-click to delete it, click a side to add one); the first use makes the wrapping Tight with a polygon of the object's own outline. Not checked against upstream (follows Word)."
+    },
+    "layout.arrange.wrap-text.set-as-default-layout": {
+      "command": "arrange.setDefaultLayout",
+      "note": "U:quill/rest: Set as Default Layout keeps the selected object's wrapping, text sides and distance in the person's settings; a picture, shape, text box or canvas inserted afterwards starts with it. Not checked against upstream (follows Word)."
+    },
+    "layout.arrange.align.grid-settings": {
+      "command": "layout.gridSettings",
+      "dialog": "dialog.gridSettings",
+      "note": "U:quill/rest: Grid Settings opens the drawing grid box: the horizontal and vertical spacing and whether the page view draws the gridlines. Snap to grid is not offered. Not checked against upstream (follows Word)."
+    },
+    "picture-format.arrange.wrap-text.edit-wrap-points": {
+      "command": "arrange.editWrapPoints",
+      "kind": "toggle",
+      "note": "U:quill/rest: Edit Wrap Points shows the outline text follows round a Tight or Through object as a polygon with a handle at each point (drag one to move it, Ctrl-click to delete it, click a side to add one); the first use makes the wrapping Tight with a polygon of the object's own outline. Not checked against upstream (follows Word)."
+    },
+    "picture-format.arrange.wrap-text.set-as-default-layout": {
+      "command": "arrange.setDefaultLayout",
+      "note": "U:quill/rest: Set as Default Layout keeps the selected object's wrapping, text sides and distance in the person's settings; a picture, shape, text box or canvas inserted afterwards starts with it. Not checked against upstream (follows Word)."
+    },
+    "picture-format.arrange.align.grid-settings": {
+      "command": "layout.gridSettings",
+      "dialog": "dialog.gridSettings",
+      "note": "U:quill/rest: Grid Settings opens the drawing grid box: the horizontal and vertical spacing and whether the page view draws the gridlines. Snap to grid is not offered. Not checked against upstream (follows Word)."
+    },
+    "shape-format.arrange.wrap-text.edit-wrap-points": {
+      "command": "arrange.editWrapPoints",
+      "kind": "toggle",
+      "note": "U:quill/rest: Edit Wrap Points shows the outline text follows round a Tight or Through object as a polygon with a handle at each point (drag one to move it, Ctrl-click to delete it, click a side to add one); the first use makes the wrapping Tight with a polygon of the object's own outline. Not checked against upstream (follows Word)."
+    },
+    "shape-format.arrange.wrap-text.set-as-default-layout": {
+      "command": "arrange.setDefaultLayout",
+      "note": "U:quill/rest: Set as Default Layout keeps the selected object's wrapping, text sides and distance in the person's settings; a picture, shape, text box or canvas inserted afterwards starts with it. Not checked against upstream (follows Word)."
+    },
+    "shape-format.arrange.align.grid-settings": {
+      "command": "layout.gridSettings",
+      "dialog": "dialog.gridSettings",
+      "note": "U:quill/rest: Grid Settings opens the drawing grid box: the horizontal and vertical spacing and whether the page view draws the gridlines. Snap to grid is not offered. Not checked against upstream (follows Word)."
+    },
+    "chart-format.arrange.wrap-text.set-as-default-layout": {
+      "command": "arrange.setDefaultLayout",
+      "note": "U:quill/rest: Set as Default Layout keeps the selected object's wrapping, text sides and distance in the person's settings; a picture, shape, text box or canvas inserted afterwards starts with it. Not checked against upstream (follows Word)."
+    },
+    "chart-format.arrange.align.grid-settings": {
+      "command": "layout.gridSettings",
+      "dialog": "dialog.gridSettings",
+      "note": "U:quill/rest: Grid Settings opens the drawing grid box: the horizontal and vertical spacing and whether the page view draws the gridlines. Snap to grid is not offered. Not checked against upstream (follows Word)."
+    },
+    "design.page-background.page-color.fill-effects": {
+      "command": "design.pageFill",
+      "dialog": "dialog.fillEffects",
+      "note": "U:quill/rest: Fill Effects opens the box with Gradient, Texture and Pattern; Picture… (next item) picks a picture. The background is made as a bitmap and kept as the page picture (a gradient and a pattern are saved as pictures). Not checked against upstream (follows Word)."
+    },
+    "home.font.font-color.gradient": {
+      "kind": "dropdown",
+      "command": null,
+      "note": "U:quill/rest: Gradient: Light and Dark Variations are the eight linear gradients of the text's own colour (the tints and shades Shape Fill > Gradient makes), set as the text fill (w14:gradFill); No Gradient takes the fill off. Not checked against upstream (follows Word).",
+      "items": [
+        {
+          "id": "home.font.font-color.gradient.no-gradient",
+          "label": "No Gradient",
+          "kind": "button",
+          "command": "format.textEffects",
+          "args": {
+            "fill": null
+          },
+          "source": "office"
+        },
+        {
+          "id": "home.font.font-color.gradient.light-variations",
+          "label": "Light Variations",
+          "kind": "gallery",
+          "command": "format.textGradientLight",
+          "args": {
+            "gradient": "<gradient>"
+          },
+          "source": "office"
+        },
+        {
+          "id": "home.font.font-color.gradient.dark-variations",
+          "label": "Dark Variations",
+          "kind": "gallery",
+          "command": "format.textGradientDark",
+          "args": {
+            "gradient": "<gradient>"
+          },
+          "source": "office"
+        }
+      ]
+    },
+    "chart-design.data.select-data": {
+      "command": "chart.editData",
+      "dialog": "dialog.chartData",
+      "note": "U:quill/rest: Select Data opens the chart's data grid, the same box as Edit Data (Word picks the data in its embedded sheet; here the grid is that sheet, with Switch Row/Column beside it)."
+    },
+    "chart-format.arrange.align.distribute-horizontally": {
+      "command": "arrange.distribute",
+      "args": {
+        "axis": "horizontal"
+      },
+      "note": "U:quill/rest: as Layout > Align > Distribute Horizontally, with the chart among the selected objects."
+    },
+    "chart-format.arrange.align.distribute-vertically": {
+      "command": "arrange.distribute",
+      "args": {
+        "axis": "vertical"
+      },
+      "note": "U:quill/rest: as Layout > Align > Distribute Vertically, with the chart among the selected objects."
+    },
+    "chart-format.arrange.align.align-to-page": {
+      "command": "arrange.alignTo",
+      "args": {
+        "to": "page"
+      },
+      "note": "U:quill/rest: as Layout > Align > Align to Page."
+    },
+    "chart-format.arrange.align.align-to-margin": {
+      "command": "arrange.alignTo",
+      "args": {
+        "to": "margin"
+      },
+      "note": "U:quill/rest: as Layout > Align > Align to Margin."
+    },
+    "chart-format.arrange.align.align-selected-objects": {
+      "command": "arrange.alignTo",
+      "args": {
+        "to": "objects"
+      },
+      "note": "U:quill/rest: as Layout > Align > Align Selected Objects."
+    },
+    "chart-format.arrange.position.more-layout-options": {
+      "dialog": "dialog.pictureSize",
+      "note": "U:quill/rest: More Layout Options opens the Layout box of Picture Format and Shape Format for the chart."
+    },
+    "chart-format.arrange.wrap-text.more-layout-options": {
+      "dialog": "dialog.pictureSize",
+      "note": "U:quill/rest: More Layout Options opens the Layout box of Picture Format and Shape Format for the chart."
+    },
+    "picture-format.adjust.corrections.picture-corrections-options": {
+      "command": "view.formatShapePane",
+      "args": {
+        "value": true,
+        "tab": "picture"
+      },
+      "note": "U:quill/rest: Picture Corrections Options opens the Format Picture pane on its Picture tab (brightness, contrast, sharpness)."
+    },
+    "picture-format.adjust.color.picture-color-options": {
+      "command": "view.formatShapePane",
+      "args": {
+        "value": true,
+        "tab": "picture"
+      },
+      "note": "U:quill/rest: Picture Color Options opens the Format Picture pane on its Picture tab (colour saturation)."
+    }
+  },
+  "dialogs": {
+    "dialog.gridSettings": {
+      "title": "Grid Settings",
+      "command": "layout.gridSettings",
+      "note": "U:quill/rest: the drawing grid: spacing in points and Display gridlines on screen. Not checked against upstream.",
+      "tabs": [
+        {
+          "name": "Drawing Grid",
+          "fields": [
+            {
+              "id": "gridH",
+              "label": "Horizontal spacing (pt):",
+              "kind": "number"
+            },
+            {
+              "id": "gridV",
+              "label": "Vertical spacing (pt):",
+              "kind": "number"
+            },
+            {
+              "id": "gridlines",
+              "label": "Display gridlines on screen",
+              "kind": "checkbox"
+            }
+          ]
+        }
+      ],
+      "buttons": [
+        "OK",
+        "Cancel"
+      ],
+      "openedBy": [
+        "layout.arrange.align.grid-settings"
+      ],
+      "applies": "layout.gridSettings"
+    },
+    "dialog.fillEffects": {
+      "title": "Fill Effects",
+      "command": "design.pageFill",
+      "note": "U:quill/rest: the page background as a gradient, a texture or a pattern. Not checked against upstream.",
+      "tabs": [
+        {
+          "name": "Fill Effects",
+          "fields": [
+            {
+              "id": "kind",
+              "label": "",
+              "kind": "radio",
+              "options": [
+                {
+                  "value": "gradient",
+                  "label": "Gradient"
+                },
+                {
+                  "value": "texture",
+                  "label": "Texture"
+                },
+                {
+                  "value": "pattern",
+                  "label": "Pattern"
+                }
+              ]
+            },
+            {
+              "id": "color1",
+              "label": "Color 1:",
+              "kind": "color",
+              "enabledWhen": "kind==gradient"
+            },
+            {
+              "id": "color2",
+              "label": "Color 2:",
+              "kind": "color",
+              "enabledWhen": "kind==gradient"
+            },
+            {
+              "id": "style",
+              "label": "Shading style:",
+              "kind": "select",
+              "options": [
+                {
+                  "value": "horizontal",
+                  "label": "Horizontal"
+                },
+                {
+                  "value": "vertical",
+                  "label": "Vertical"
+                },
+                {
+                  "value": "diagonalUp",
+                  "label": "Diagonal up"
+                },
+                {
+                  "value": "diagonalDown",
+                  "label": "Diagonal down"
+                },
+                {
+                  "value": "fromCorner",
+                  "label": "From corner"
+                },
+                {
+                  "value": "fromCenter",
+                  "label": "From center"
+                }
+              ],
+              "enabledWhen": "kind==gradient"
+            },
+            {
+              "id": "variant",
+              "label": "Variant:",
+              "kind": "select",
+              "options": [
+                {
+                  "value": "1",
+                  "label": "Variant 1"
+                },
+                {
+                  "value": "2",
+                  "label": "Variant 2"
+                },
+                {
+                  "value": "3",
+                  "label": "Variant 3"
+                },
+                {
+                  "value": "4",
+                  "label": "Variant 4"
+                }
+              ],
+              "enabledWhen": "kind==gradient"
+            },
+            {
+              "id": "texture",
+              "label": "Texture:",
+              "kind": "select",
+              "options": [
+                {
+                  "value": "papyrus",
+                  "label": "Papyrus"
+                },
+                {
+                  "value": "canvas",
+                  "label": "Canvas"
+                },
+                {
+                  "value": "denim",
+                  "label": "Denim"
+                },
+                {
+                  "value": "woven-mat",
+                  "label": "Woven mat"
+                },
+                {
+                  "value": "water-droplets",
+                  "label": "Water droplets"
+                },
+                {
+                  "value": "paper-bag",
+                  "label": "Paper bag"
+                },
+                {
+                  "value": "fish-fossil",
+                  "label": "Fish fossil"
+                },
+                {
+                  "value": "sand",
+                  "label": "Sand"
+                },
+                {
+                  "value": "green-marble",
+                  "label": "Green marble"
+                },
+                {
+                  "value": "white-marble",
+                  "label": "White marble"
+                },
+                {
+                  "value": "brown-marble",
+                  "label": "Brown marble"
+                },
+                {
+                  "value": "granite",
+                  "label": "Granite"
+                },
+                {
+                  "value": "newsprint",
+                  "label": "Newsprint"
+                },
+                {
+                  "value": "recycled-paper",
+                  "label": "Recycled paper"
+                },
+                {
+                  "value": "parchment",
+                  "label": "Parchment"
+                },
+                {
+                  "value": "stationery",
+                  "label": "Stationery"
+                },
+                {
+                  "value": "blue-tissue-paper",
+                  "label": "Blue tissue paper"
+                },
+                {
+                  "value": "pink-tissue-paper",
+                  "label": "Pink tissue paper"
+                },
+                {
+                  "value": "purple-mesh",
+                  "label": "Purple mesh"
+                },
+                {
+                  "value": "bouquet",
+                  "label": "Bouquet"
+                },
+                {
+                  "value": "cork",
+                  "label": "Cork"
+                },
+                {
+                  "value": "walnut",
+                  "label": "Walnut"
+                },
+                {
+                  "value": "oak",
+                  "label": "Oak"
+                },
+                {
+                  "value": "medium-wood",
+                  "label": "Medium wood"
+                }
+              ],
+              "enabledWhen": "kind==texture"
+            },
+            {
+              "id": "pattern",
+              "label": "Pattern:",
+              "kind": "select",
+              "options": [
+                {
+                  "value": "percent5",
+                  "label": "5%"
+                },
+                {
+                  "value": "percent10",
+                  "label": "10%"
+                },
+                {
+                  "value": "percent25",
+                  "label": "25%"
+                },
+                {
+                  "value": "percent50",
+                  "label": "50%"
+                },
+                {
+                  "value": "percent75",
+                  "label": "75%"
+                },
+                {
+                  "value": "lightHorizontal",
+                  "label": "Light horizontal"
+                },
+                {
+                  "value": "lightVertical",
+                  "label": "Light vertical"
+                },
+                {
+                  "value": "darkHorizontal",
+                  "label": "Dark horizontal"
+                },
+                {
+                  "value": "darkVertical",
+                  "label": "Dark vertical"
+                },
+                {
+                  "value": "lightDownwardDiagonal",
+                  "label": "Light downward diagonal"
+                },
+                {
+                  "value": "lightUpwardDiagonal",
+                  "label": "Light upward diagonal"
+                },
+                {
+                  "value": "smallCheckerBoard",
+                  "label": "Small checker board"
+                },
+                {
+                  "value": "largeCheckerBoard",
+                  "label": "Large checker board"
+                },
+                {
+                  "value": "smallGrid",
+                  "label": "Small grid"
+                },
+                {
+                  "value": "dottedGrid",
+                  "label": "Dotted grid"
+                },
+                {
+                  "value": "trellis",
+                  "label": "Trellis"
+                }
+              ],
+              "enabledWhen": "kind==pattern"
+            },
+            {
+              "id": "fg",
+              "label": "Foreground:",
+              "kind": "color",
+              "enabledWhen": "kind==pattern"
+            },
+            {
+              "id": "bg",
+              "label": "Background:",
+              "kind": "color",
+              "enabledWhen": "kind==pattern"
+            }
+          ]
+        }
+      ],
+      "buttons": [
+        "OK",
+        "Cancel"
+      ],
+      "openedBy": [
+        "design.page-background.page-color.fill-effects"
+      ],
+      "applies": "design.pageFill"
+    }
+  },
+  "insertAfter": {
+    "design.page-background.page-color.fill-effects": [
+      {
+        "id": "design.page-background.page-color.picture",
+        "label": "Picture…",
+        "kind": "button",
+        "command": "ui.pagePicture",
+        "source": "office",
+        "note": "U:quill/rest: Picture… opens the system Open dialog; the picture becomes the page background, stretched over the page. Not checked against upstream (follows Word)."
+      }
+    ]
+  }
+}

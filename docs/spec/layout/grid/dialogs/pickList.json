@@ -1,0 +1,6 @@
+{
+  "source": "Excel Pick From Drop-down List (Alt+Down): the column's distinct entries in one list",
+  "width": 300,
+  "height": 300,
+  "sections": [{"fields": ["value"]}]
+}

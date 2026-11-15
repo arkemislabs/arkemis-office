@@ -1,0 +1,52 @@
+{
+  "source": "deckcraft crates/ui-egui/src/dialogs/body.rs:1290 (the AutoCorrect options, Replace / With / Add in a row, the replacement list) at f893f6af7d36a5409fd804e81a34fd895cfefedf; PowerPoint AutoCorrect (AutoCorrect and AutoFormat As You Type tabs)",
+  "width": 520,
+  "height": 520,
+  "fieldOrder": {
+    "AutoCorrect": [
+      "twoInitials",
+      "sentenceCaps",
+      "days",
+      "capsLock",
+      "replaceText",
+      "from",
+      "to",
+      "add",
+      "entries"
+    ],
+    "AutoFormat As You Type": [
+      "smartQuotes",
+      "fractions",
+      "ordinals",
+      "lists"
+    ]
+  },
+  "sections": [
+    {
+      "fields": [
+        "twoInitials",
+        "sentenceCaps",
+        "days",
+        "capsLock"
+      ]
+    },
+    {
+      "fields": [
+        "replaceText"
+      ]
+    },
+    {
+      "fields": [
+        "from",
+        "to",
+        "add"
+      ],
+      "columns": 3
+    },
+    {
+      "fields": [
+        "entries"
+      ]
+    }
+  ]
+}
